@@ -30,4 +30,21 @@ class Peep
       VALUES ('#{message}', CURRENT_TIMESTAMP)RETURNING message, timestamp;")
     Peep.new(message: result[0]['message'], timestamp: result[0]['timestamp'])
   end
+
+  def self.filter(filter:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{filter}%' ORDER BY timestamp DESC;")
+    
+    @filtered_messages = result.map do |peep| 
+      Peep.new(message: peep['message'], timestamp: peep['timestamp']) 
+    end
+  end
+
+  def self.filtered_messages
+    @filtered_messages
+  end
 end

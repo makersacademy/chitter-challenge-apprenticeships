@@ -22,11 +22,10 @@ describe Peep do
   end
 
   it "can filter peeps" do
-    messages = Peep.all
-    messages.filter(filter: "second")
+    messages = Peep.filter(filter: "second")
 
     expect(messages.length).to eq 1
-    expect(messages.last).not_to include "This is a peep!"
+    expect(messages.last).not_to eq "This is a peep!"
   end
 
 end

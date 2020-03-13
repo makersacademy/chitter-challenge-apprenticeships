@@ -8,9 +8,19 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
-  post '/' do
+  post '/post' do
     Peep.post(message: params['message'])
     redirect '/'
+  end
+
+  post '/filter' do
+    @filter = params['filter']
+    Peep.filter(filter: @filter)
+    redirect '/filter'
+  end
+
+  get '/filter' do
+    erb :filter
   end
 
   run! if app_file == $0
