@@ -1,0 +1,9 @@
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      <a href="<%= peep.message %>">
+        <%= peep.author %>
+      </a>
+    </li>
+  <% end %>
+</ul>
