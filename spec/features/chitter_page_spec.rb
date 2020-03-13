@@ -5,9 +5,16 @@ feature 'Viewing Chitter page' do
   end
 end
 
-feature 'Viewing Chitter page' do
-  scenario 'View all peeps' do
-    visit('/')
-    expect(page).to have_content "Welcome to Chitter!"
+feature 'Viewing peeps' do
+  scenario 'it can display a list of peeps' do
+    connection = PG.connect(dbname: 'chitter_test')
+
+    # Add the test data
+    connection.exec("INSERT INTO peeps VALUES(1, 'Test peep1')")
+
+    # visit the peeps page
+    visit('/peeps')
+
+    expect(page).to have_content "Test peep1"
   end
 end
