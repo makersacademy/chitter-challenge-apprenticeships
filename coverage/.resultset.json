@@ -20,8 +20,24 @@
           null,
           null
         ]
+      },
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584096531
+    "timestamp": 1584098273
   }
 }

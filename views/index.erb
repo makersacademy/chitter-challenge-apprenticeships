@@ -1,0 +1,7 @@
+<% if @peeps.length %>
+<ul>
+	<% for @peep in @peeps %>
+	<li><%= @peep.message %></li>
+	<% end %>
+</ul>
+<% end %>
