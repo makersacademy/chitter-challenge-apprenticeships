@@ -9,5 +9,12 @@ class Chitter < Sinatra::Base
     'Peep Manager'
   end
 
+  get '/peeps' do
+    peeps = [
+      'This is a peep!',
+      'I saw a panda!'
+    ]
+  end
+
   run! if app_file == $0
 end
