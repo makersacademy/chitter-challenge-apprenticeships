@@ -34,12 +34,20 @@
           null
         ]
       },
-      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/message_spec.rb": {
+      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
         "lines": [
-          1
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
         ]
       }
     },
-    "timestamp": 1584097113
+    "timestamp": 1584097659
   }
 }
