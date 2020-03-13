@@ -4,9 +4,7 @@ require './lib/peep'
 class Chitter < Sinatra::Base
 
   get '/' do
-    @messages = [
-      "This is a peep!"
-    ]
+    @messages = Peep.all
     erb :index
   end
 
