@@ -1,17 +1,45 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/add_peep_spec.rb": {
+        "lines": [
+          1
+        ]
+      },
+      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/see_date_spec.rb": {
+        "lines": [
+          1
+        ]
+      },
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
+        "lines": [
           1,
+          null,
           1,
           1,
           1,
           null,
+          1,
+          null,
           null
+        ]
+      },
+      "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/message_spec.rb": {
+        "lines": [
+          1
         ]
       }
     },
-    "timestamp": 1584095646
+    "timestamp": 1584097113
   }
 }
