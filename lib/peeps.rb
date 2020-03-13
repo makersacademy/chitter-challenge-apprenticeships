@@ -28,7 +28,7 @@ def self.create(message:)
   else
     connection = PG.connect(dbname: 'chitter')
 end
-result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}') RETURNING message;")
-Peep.new(id: result[0]['id'], message: result[0]['message'])
+result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}');")
+Peep.new(id: ['id'], message: ['message'])
 end
 end
