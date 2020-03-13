@@ -10,6 +10,7 @@ group :test do
   gem 'rspec'
   gem 'capybara'
   gem 'rubocop', '0.71.0'
+  gem 'rubocop-rails'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
