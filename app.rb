@@ -7,7 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    'Peep Manager'
+    'Welcome to Chitter'
   end
 
   get '/peeps' do
