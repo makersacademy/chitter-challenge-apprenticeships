@@ -13,9 +13,9 @@ describe Peep do
   end
   describe '.create' do
     it 'adds a bookmark' do
-    peep = Peep.create(message: 'Test peep')
-    persisted_data = persisted_data(id: peep.id)
-    expect(peep.message).to eq 'Test peep'
+      peep = Peep.create(message: 'Test peep')
+      persisted_data = persisted_data(id: peep.id)
+      expect(peep.message).to eq 'Test peep'
+    end
   end
-end
 end

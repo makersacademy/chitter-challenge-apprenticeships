@@ -7,7 +7,7 @@ class Peep
     @message = message
   end
 
-def self.all
+  def self.all
   if ENV['ENVIRONMENT'] == 'test'
     connection = PG.connect(dbname: 'chitter_test')
   else
@@ -15,10 +15,7 @@ def self.all
   end
   peeps = connection.exec("SELECT * FROM peeps;")
   peeps.map do |peep|
-    Peep.new(
-      id: peep['id'],
-      message: peep['message']
-    )
+  Peep.new(id: peep['id'], message: peep['message'])
   end
 end
 
