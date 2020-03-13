@@ -1,11 +1,13 @@
 require 'pg'
 
 class Peep
-  attr_reader :message
+  attr_reader :id, :message, :author
 
-  def initialize(message = '')
+  def initialize(id:, message:, author:)
+    @id = id
     @message = message
-  end 
+    @author = author
+  end
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
@@ -15,21 +17,24 @@ class Peep
     end
 
     result = connection.exec("SELECT * FROM peeps;")
-    result.map { |peep| peep['message'] }
+    result.map do |peep|
+      Peep.new(id: peep['id'], message: peep['message'], author: peep['author'])
+    end
     # [
     #   'This is a peep!',
     #   'I saw a fox!'
     # ]
   end
 
-  def self.post(message:)
+  def self.post(message:, author:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    result = connection.exec("INSERT INTO peeps (message, author) VALUES('#{message}', '#{author}') RETURNING id, message, author;")
+    Peep.new(id: result[0]['id'], message: result[0]['message'], author: result[0]['author'])
   end
 
 end

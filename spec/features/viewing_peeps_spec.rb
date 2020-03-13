@@ -15,12 +15,12 @@ feature 'Viewing peeps' do
     #
     # connection.exec("INSERT INTO peeps VALUES(1, 'This is a peep!');")
     # connection.exec("INSERT INTO peeps VALUES(2, 'I saw a fox!');")
-    Peep.post(message: 'This is a peep!')
-    Peep.post(message: 'I saw a fox!')
+    Peep.post(message: 'This is a peep!', author: 'Dumbo')
+    Peep.post(message: 'I saw a fox!', author: 'Pluto')
 
     visit ('/peeps')
 
-    expect(page).to have_content 'This is a peep!'
-    expect(page).to have_content 'I saw a fox!'
+    expect(page).to have_link('Dumbo', href: 'This is a peep!')
+    expect(page).to have_link('Pluto', href: 'I saw a fox!')
   end
 end

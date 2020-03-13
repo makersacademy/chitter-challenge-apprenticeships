@@ -19,6 +19,12 @@ class Chitter < Sinatra::Base
     erb :"/peeps/new"
   end
 
+  post '/peeps/new' do
+    Peep.post(message: params[:message], author: params[:author])
+    redirect '/peeps'
+  end
+
+  
   post '/peeps' do
 # Change toute cette partie pour que ca soit fait sous le model de MVC
     # message = params['message']
