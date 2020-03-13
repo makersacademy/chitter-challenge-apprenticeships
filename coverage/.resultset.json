@@ -1,7 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lindseydew/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/view_all_messages_spec.rb": {
         "lines": [
           1,
           1,
@@ -12,6 +22,6 @@
         ]
       }
     },
-    "timestamp": 1584032705
+    "timestamp": 1584096531
   }
 }
