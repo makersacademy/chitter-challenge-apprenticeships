@@ -6,7 +6,7 @@ class Peep
       connection = PG.connect(dbname: 'chitter_test')
     else
       connectipn = PG.connect(dbname: 'chitter')
-    end 
+    end
 
     result = connection.exec('SELECT * FROM peeps;')
     result.map { |peeps| peeps['message'] }
@@ -15,4 +15,15 @@ class Peep
     #   'I saw a fox!'
     # ]
   end
+
+  def self.post(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  end
+
 end

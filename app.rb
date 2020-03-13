@@ -20,9 +20,11 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    message = params['message']
-    connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+# Change toute cette partie pour que ca soit fait sous le model de MVC
+    # message = params['message']
+    # connection = PG.connect(dbname: 'chitter_test')
+    # connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    Peep.post(message: params[:message])
     redirect '/peeps'
   end
 
