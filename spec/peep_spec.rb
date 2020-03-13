@@ -5,7 +5,7 @@ describe Peep do
     messages = Peep.all
     expect(messages.length).to eq 2
     expect(messages.first).to be_a Peep
-    expect(messages.first.message).to eq "This is a peep!"
+    expect(messages.first.message).to eq "This is a second peep!"
   end
 
   it "can post a message" do
