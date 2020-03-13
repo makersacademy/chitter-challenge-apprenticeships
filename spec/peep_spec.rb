@@ -15,4 +15,11 @@ require 'peep'
     expect(peeps).to include 'I am new here'
     expect(peeps).to include 'Hello there'
   end
+
+  describe '.create' do
+    it 'creates a new peep' do
+      Peep.create(message: 'Hey, I want to join you guys')
+      expect(Peep.all).to include 'Hey, I want to join you guys'
+    end
+  end
  end
