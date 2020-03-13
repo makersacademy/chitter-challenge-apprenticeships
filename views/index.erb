@@ -2,8 +2,9 @@
 <h2>Latest Peeps</h2>
 <body>
   <ul>
-    <% @messages.each do |message| %>
-      <li><%= message %></li>
+    <% @messages.each do |peep| %>
+      <li><%= peep.message %></li>
+      <li><%= peep.timestamp %></li>
     <% end %>
   </ul>
 
