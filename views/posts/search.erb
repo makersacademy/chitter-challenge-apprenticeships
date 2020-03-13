@@ -1,4 +1,26 @@
-<form action="/posts/search" method="post">
-	<input type="text" name="keywords">
-	<input type="submit" value="Search">
-</form>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search</title>
+	<style type="text/css">
+		body {
+			width: 90vw; 
+			height: 100vh;
+			text-align: center;
+			background: radial-gradient(ellipse at top, #e66465, transparent),
+            radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+      display: flex; 
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<form action="/posts/search" method="post">
+		<input type="text" name="keywords">
+		<input type="submit" value="Search">
+	</form>
+</body>
+</html>
