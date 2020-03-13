@@ -13,9 +13,12 @@ img {
 .full-peep{
   background-color: #F6D55C;
   color: #ED553B;
-  width: 400px;
-  margin: 10px 5px 10px 5px; 
+  margin: 10px 5px 10px 0; 
   padding: 5px;
+}
+
+h2{
+  margin: 5px 0 0 0; 
 }
 
 .peep {
@@ -29,13 +32,19 @@ img {
   padding-left: 10;
 }
 
+.inline-block-child-1 {
+  display: inline-block;
+}
+
 .inline-block-child {
   display: inline-block;
+  width: 45%;
+  margin: 0 0 0 5px;
 }
 
 h1 {
   color: #173F5F;
-  height: 20px;
+  height: 30px;
   vertical-align: middle;
 }
 
