@@ -9,6 +9,6 @@ feature 'Viewing peeps' do
     visit ('/peeps')
 
     expect(page).to have_content 'This is a peep!'
-    expect(page).to have_content 'I saw a panda!'
+    expect(page).to have_content 'I saw a fox!'
   end
 end
