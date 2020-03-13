@@ -9,5 +9,14 @@ class Chitter < Sinatra::Base
     'Chitter homepage'
   end
 
+  get '/peeps' do
+    @peeps = [
+      "I am a peep!",
+      "I am another peep!"
+    ]
+  end
+
+  erb :'peeps/index'
+
   run! if app_file == $0
 end
