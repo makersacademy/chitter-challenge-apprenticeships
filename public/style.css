@@ -2,6 +2,7 @@ body {
   background-color: #f8f8ff; 
   color: #20639B; 
   font-family: Arial, Helvetica, sans-serif; 
+  font-size: 16;
 }
 
 img {
@@ -30,6 +31,7 @@ h2{
   list-style-type:none;
   font-style:italic;
   padding-left: 10;
+  font-size: 12;
 }
 
 .inline-block-child-1 {
