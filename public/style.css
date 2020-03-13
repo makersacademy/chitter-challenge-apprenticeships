@@ -1,7 +1,21 @@
 body {
-  background-color: #f5f0e1; 
-  color: #1e3d59; 
+  background-color: #f8f8ff; 
+  color: #20639B; 
   font-family: Arial, Helvetica, sans-serif; 
+}
+
+img {
+  width: 30px; 
+  height: 30px;
+  vertical-align: bottom;
+}
+
+.full-peep{
+  background-color: #F6D55C;
+  color: #ED553B;
+  width: 400px;
+  margin: 10px 5px 10px 5px; 
+  padding: 5px;
 }
 
 .peep {
@@ -15,8 +29,14 @@ body {
   padding-left: 10;
 }
 
+.inline-block-child {
+  display: inline-block;
+}
+
 h1 {
-  color: #ff6e40;
+  color: #173F5F;
+  height: 20px;
+  vertical-align: middle;
 }
 
 input[type=text] {
@@ -27,10 +47,9 @@ input[type=text] {
 input[type=submit] {
   margin: 20px; 
   font-weight: bold; 
-  color: #f5f0e1; 
+  color: #f8f8ff; 
   height: 25px; 
   font-size: 14px; 
-  background-color: #1e3d59; 
+  background-color: #20639B; 
   width: 60px; 
-  border: 2px solid  #ffc13b;
 }

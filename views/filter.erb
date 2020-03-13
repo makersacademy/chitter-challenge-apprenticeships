@@ -1,21 +1,22 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-
-
-<a href="/">Back to homepage</a>
-
-<h1>Welcome to Chitter!</h1>
+<div class='parent'>
+  <div class='child inline-block-child'><a href="/"><img src='rubber-duck.png'></a></div>
+  <div class='child inline-block-child'><h1>Welcome to Chitter!</h1></div>
+</div>
 <h2>Filtered Peeps</h2>
 <body>
   <ul class="peep">
     <% Peep.filtered_messages.each do |peep| %>
+    <div class="full-peep">
       <li><%= peep.message %></li>
       <ul class="timestamp">
         <li><%= peep.timestamp %></li>
       </ul>
+    </div>
     <% end %>
-      
+  
   </ul>
 
   <h2>Post a new Peep</h2>
