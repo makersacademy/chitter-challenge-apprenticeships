@@ -8,9 +8,10 @@ feature 'go to homepage' do
 
 feature 'Viewing list of peeps' do
   scenario 'I can see a list of peeps on homepage' do
-  Peep.create(message: 'This is a peep!')
+  Peep.create(message: 'This is a peep!', created_at: '2020-03-13 14:23:25.164956')
   visit('/')
     expect(page).to have_content('This is a peep!')
+    expect(page).to have_content('2020-03-13 14:23:25.164956')
   end
 end
 end
