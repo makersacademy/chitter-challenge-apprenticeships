@@ -1,6 +1,14 @@
+<h1> Latest Peeps </h1>
+<body>
+  <ul>
+    <% @messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
 
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
-</ul>
+  <form action="/" method="post">
+    <input type="text" name="message" />
+    <input type="submit" value="Post" />
+  </form>
+
+</body>
