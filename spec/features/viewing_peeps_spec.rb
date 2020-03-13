@@ -1,3 +1,4 @@
+require 'pg'
 # As a Maker
 # So that I can see what people are doing
 # I want to see all the messages (peeps)
@@ -9,7 +10,12 @@ feature 'viewing peeps' do
   end
 
   scenario 'to see all the peeps' do
+    connection = PG.connect(dbname: 'chitter_test')
+    connection.exec("INSERT INTO peeps VALUES(1, 'I am a peep!');")
+    connection.exec("INSERT INTO peeps VALUES(2, 'I am another peep!');")
+
     visit('/peeps')
+
       expect(page).to have_content 'I am a peep!'
       expect(page).to have_content 'I am another peep!'
     end
