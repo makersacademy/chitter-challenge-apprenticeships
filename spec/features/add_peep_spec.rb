@@ -1,4 +1,3 @@
-
 feature 'Posting a peep' do
   scenario 'Users can post a peep' do
     visit('/')

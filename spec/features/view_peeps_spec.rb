@@ -1,5 +1,3 @@
-
-
 feature 'View list of peeps' do
   scenario 'user visits the homepage' do
     visit '/'
