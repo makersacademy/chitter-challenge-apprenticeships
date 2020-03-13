@@ -21,14 +21,21 @@
 			padding: 10px 0;
 			border-top: 1px solid white;
 		}
-		h1 {
+		h1, h2, h3 {
 			color: white;
 		}
+		.container {
+			padding: 10px;
+			margin: 20vh auto;
+			text-align: left;
+			width: 30vw;
+		}
+
 	</style>
 </head>
 <body>
-	<h1><s>Shitter</s>  Chitter</h1>
-	<% if @peeps.length %>
+	<h1><s>Shitter</s>&nbsp;&nbsp;Chitter</h1>
+	<% if @peeps.length != 0 %>
 	<ul>
 		<% for @peep in @peeps %>
 			<li>
@@ -37,6 +44,12 @@
 			</li>
 		<% end %>
 	</ul>
+	<% else %>
+	  <div class="container">
+			<h2>No posts found</h2>
+			<h3>Go to&nbsp;&nbsp;&nbsp;'/posts/new'&nbsp;&nbsp;&nbsp;to make a new peep</h3>
+			<h3>Go to&nbsp;&nbsp;&nbsp;'/posts/search'&nbsp;&nbsp;&nbsp;to find posts</h3>
+	  </div>
 	<% end %>
 </body>
 </html>

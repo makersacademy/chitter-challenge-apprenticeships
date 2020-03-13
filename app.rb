@@ -2,6 +2,9 @@ require 'sinatra/base'
 require './lib/peep'
 
 class Chitter < Sinatra::Base
+	get '/' do
+		'haha gotcha, try type in "/posts" up there&#9757;&#9757;&#9757;&#9757;'
+	end
   get '/test' do
     'Test page'
   end
