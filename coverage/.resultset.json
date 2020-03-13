@@ -3,7 +3,6 @@
     "coverage": {
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/add_peep_spec.rb": {
         "lines": [
-          null,
           1,
           1,
           1,
@@ -38,8 +37,6 @@
       },
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
         "lines": [
-          null,
-          null,
           1,
           1,
           1,
@@ -78,6 +75,6 @@
         ]
       }
     },
-    "timestamp": 1584101373
+    "timestamp": 1584101608
   }
 }

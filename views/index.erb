@@ -1,11 +1,14 @@
 <h1>Welcome to Chitter!</h1>
 <h2>Latest Peeps</h2>
 <body>
-  <ul>
+  <ul style="list-style-type:none; padding-left: 0;">
     <% @messages.each do |peep| %>
       <li><%= peep.message %></li>
-      <li><%= peep.timestamp %></li>
+      <ul style="list-style-type:none; font-style:italic; padding-left: 10;">
+        <li><%= peep.timestamp %></li>
+      </ul>
     <% end %>
+      
   </ul>
 
   <h2>Post a new Peep</h2>
