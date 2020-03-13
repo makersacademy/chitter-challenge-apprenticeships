@@ -1,0 +1,36 @@
+body {
+  background-color: #f5f0e1; 
+  color: #1e3d59; 
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.peep {
+  list-style-type:none;
+  padding-left: 0;
+}
+
+.timestamp {
+  list-style-type:none;
+  font-style:italic;
+  padding-left: 10;
+}
+
+h1 {
+  color: #ff6e40;
+}
+
+input[type=text] {
+  height: 25px; 
+  font-size: 13px;
+}
+
+input[type=submit] {
+  margin: 20px; 
+  font-weight: bold; 
+  color: #f5f0e1; 
+  height: 25px; 
+  font-size: 14px; 
+  background-color: #1e3d59; 
+  width: 60px; 
+  border: 2px solid  #ffc13b;
+}

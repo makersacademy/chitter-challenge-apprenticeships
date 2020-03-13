@@ -1,10 +1,14 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
 <h1>Welcome to Chitter!</h1>
 <h2>Latest Peeps</h2>
 <body>
-  <ul style="list-style-type:none; padding-left: 0;">
+  <ul class="peep">
     <% @messages.each do |peep| %>
       <li><%= peep.message %></li>
-      <ul style="list-style-type:none; font-style:italic; padding-left: 10;">
+      <ul class="timestamp">
         <li><%= peep.timestamp %></li>
       </ul>
     <% end %>
