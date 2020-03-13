@@ -10,7 +10,7 @@ feature 'viewing peeps' do
 
   scenario 'to see all the peeps' do
     visit('/peeps')
-      expect(page).to have_content "I am a peep!"
-      expect(page).to have_content "I am another peep!"
+      expect(page).to have_content 'I am a peep!'
+      expect(page).to have_content 'I am another peep!'
     end
   end
