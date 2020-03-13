@@ -1,8 +1,8 @@
+require 'test_helper'
+
 feature 'make new peeps' do 
 	scenario 'add new peep' do 
-		visit '/posts/new'
-		fill_in('message', with:'Fill the blank: I am a natural ___')
-		click_button 'Post'
-		expect(page).to have_content 'Fill the blank: I am a natural ___'
+		create_new_post('yo')
+		expect(page).to have_content 'yo'
 	end
 end

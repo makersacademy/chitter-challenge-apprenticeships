@@ -33,16 +33,16 @@
       "/Users/student/projects/chitter-challenge-apprenticeships/spec/test_helper.rb": {
         "lines": [
           1,
-          2,
-          2,
-          2,
+          3,
+          3,
+          3,
           null
         ]
       },
       "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/make_peep_spec.rb": {
         "lines": [
           1,
-          1,
+          null,
           1,
           1,
           1,
@@ -88,6 +88,6 @@
         ]
       }
     },
-    "timestamp": 1584106241
+    "timestamp": 1584106323
   }
 }
