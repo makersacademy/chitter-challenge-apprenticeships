@@ -1,6 +1,19 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/student/Makers/individual-challenge/chitter-challenge/spec/features/post_a_peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/student/Makers/individual-challenge/chitter-challenge/spec/features/test_page_spec.rb": {
         "lines": [
           1,
@@ -61,6 +74,6 @@
         ]
       }
     },
-    "timestamp": 1584102841
+    "timestamp": 1584103059
   }
 }
