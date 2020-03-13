@@ -13,6 +13,32 @@
           null
         ]
       },
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/filter_post_by_tags_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/test_helper.rb": {
+        "lines": [
+          1,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
       "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/make_peep_spec.rb": {
         "lines": [
           1,
@@ -62,6 +88,6 @@
         ]
       }
     },
-    "timestamp": 1584102214
+    "timestamp": 1584104510
   }
 }
