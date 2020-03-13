@@ -9,11 +9,14 @@ feature 'Viewing peeps' do
 end
 
 feature 'Viewing peeps' do
-  scenario 'see peeps' do
-    connection = PG.connect(dbname: 'chitter_test')
-
-    connection.exec("INSERT INTO peeps VALUES(1, 'This is a peep!');")
-    connection.exec("INSERT INTO peeps VALUES(2, 'I saw a fox!');")
+  scenario 'Visiting /peeps shows all the peeps' do
+# Change cette partie parce qu'on a une meilleure facon d'inserer des datas
+    # connection = PG.connect(dbname: 'chitter_test')
+    #
+    # connection.exec("INSERT INTO peeps VALUES(1, 'This is a peep!');")
+    # connection.exec("INSERT INTO peeps VALUES(2, 'I saw a fox!');")
+    Peep.post(message: 'This is a peep!')
+    Peep.post(message: 'I saw a fox!')
 
     visit ('/peeps')
 
