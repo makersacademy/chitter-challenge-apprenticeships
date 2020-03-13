@@ -1,7 +1,10 @@
 <% if @peeps.length %>
 <ul>
 	<% for @peep in @peeps %>
-	<li><%= @peep.message %></li>
+		<li>
+			<p><%= @peep.message %></p>
+			<p>Date posted: <%= @peep.date %></p>
+		</li>
 	<% end %>
 </ul>
 <% end %>

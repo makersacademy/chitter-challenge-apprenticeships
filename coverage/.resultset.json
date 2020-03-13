@@ -1,6 +1,18 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/add_post_date_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/student/projects/chitter-challenge-apprenticeships/spec/features/make_peep_spec.rb": {
         "lines": [
           1,
@@ -50,6 +62,6 @@
         ]
       }
     },
-    "timestamp": 1584100512
+    "timestamp": 1584101820
   }
 }
