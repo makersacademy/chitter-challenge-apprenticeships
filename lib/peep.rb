@@ -11,7 +11,7 @@ class Peep
     result.map  do |peep| peep['message'] end
   end
 
-  def self.create(message:)
+  def self.post(message:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else

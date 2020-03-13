@@ -17,7 +17,13 @@
       },
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/see_date_spec.rb": {
         "lines": [
-          1
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
         ]
       },
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
@@ -32,7 +38,7 @@
       },
       "/Users/nora.vandenheuvel/Makers/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           1,
@@ -60,10 +66,16 @@
           1,
           null,
           null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1584098666
+    "timestamp": 1584099090
   }
 }

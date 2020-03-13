@@ -8,9 +8,15 @@ describe Peep do
   end
 
   it "can post a message" do
-    Peep.create(message: "This is my first peep!")
+    Peep.post(message: "This is my first peep!")
 
     expect(Peep.all).to include "This is my first peep!"
+  end
+
+  it "can check the timestamp of a message" do
+    peep = Peep.post(message: "This is my first peep!")
+
+    expect(peep.timestamp).to include '13/03/2020'
   end
 
 end
