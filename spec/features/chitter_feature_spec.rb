@@ -13,7 +13,10 @@ feature 'Viewing Chitter page' do
     expect(page).to have_content "Test peep1"
   end
 
-  # scenario 'it can add a peep' do
-  #
-  # end
+  scenario 'it can add a peep' do
+    visit ('/peeps')
+    fill_in :message, with: 'I have added a peep'
+    click_button 'submit'
+    expect(page).to have_content('I have added a peep')
+  end
 end

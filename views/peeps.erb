@@ -1,9 +1,16 @@
 <h1>Welcome to Chitter!</h1>
 
-<h2>Here's a list of all recent peeps</h2>
+<h3>Here's a list of all recent peeps</h3>
 
 <ul>
   <% @peeps.each do |peep| %>
   <li><%= peep %></li>
   <% end %>
 </ul>
+
+<h3>Add a peep</h3>
+<form action="/add_peep" method="POST">
+  <label for="Peep">Peep</label>
+  <input type="text" name="message"></input>
+  <button type="submit" value="submit">Submit</button>
+</form>

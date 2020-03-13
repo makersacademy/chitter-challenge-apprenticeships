@@ -10,4 +10,13 @@ describe Peeps do
 
     expect(peeps).to include("This is a peep!")
   end
+
+
+  it 'can add a peep' do
+    Peeps.add_peep(message: 'I have added a peep')
+
+    # Add the new peep data
+    expect(Peeps.all).to include 'I have added a peep'
+
+  end
 end
