@@ -25,7 +25,7 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
     
-    result = connection.exec("INSERT INTO peeps (message, timestamp) VALUES ('#{message}', CURRENT_TIMESTAMP)RETURNING message, timestamp;")
+    result = connection.exec("INSERT INTO peeps (message, timestamp) VALUES ('#{message}', CURRENT_TIMESTAMP)RETURNING message, timestamp ORDER BY timestamp DESC;")
     Peep.new(message: result[0]['message'], timestamp: result[0]['timestamp'])
   end
 end
