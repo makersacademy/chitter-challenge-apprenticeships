@@ -1,6 +1,12 @@
 require 'pg'
 
 class Peep
+  attr_reader :message
+
+  def initialize(message = '')
+    @message = message
+  end 
+
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
@@ -8,8 +14,8 @@ class Peep
       connectipn = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec('SELECT * FROM peeps;')
-    result.map { |peeps| peeps['message'] }
+    result = connection.exec("SELECT * FROM peeps;")
+    result.map { |peep| peep['message'] }
     # [
     #   'This is a peep!',
     #   'I saw a fox!'
