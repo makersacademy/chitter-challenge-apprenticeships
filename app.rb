@@ -24,7 +24,7 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
-  
+
   post '/peeps' do
 # Change toute cette partie pour que ca soit fait sous le model de MVC
     # message = params['message']
