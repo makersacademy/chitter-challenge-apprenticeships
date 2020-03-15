@@ -17,5 +17,11 @@ describe Peep do
 			expect(peeps).to include('This is a peep!')
 		end
 	end
-end
+	describe '.compose' do 
+		it 'allows user to compose a new peep' do 
+			Peep.compose(message: 'TGIF!! Thank God its FriYAY!')
 
+			expect(Peep.show_all).to include 'TGIF!! Thank God its FriYAY!'
+		end
+	end
+end

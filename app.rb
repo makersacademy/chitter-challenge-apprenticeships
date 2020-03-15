@@ -11,6 +11,14 @@ class Chitter < Sinatra::Base
   	erb :'peeps/index'
   end
 
+  get 'peeps' do 
+  	erb :'peeps'
+  end
+
+  post '/peeps' do 
+    Peep.compose(message: params[:message])
+    redirect '/peeps'
+  end
 
   run! if app_file == $0
 end
