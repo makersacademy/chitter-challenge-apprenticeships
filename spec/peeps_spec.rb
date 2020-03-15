@@ -13,7 +13,7 @@ describe 'Peeps' do
   it 'can add a peep' do
     setup_test_database
     add_row_to_test_database
-    test.add_tweet("This is another peep!")
+    test.add_peep("This is another peep!")
     expect(test.view_all).to include("This is another peep!")
   end
 end

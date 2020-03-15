@@ -101,6 +101,24 @@ end
 * Firstly, I created a test within the class spec file
 ```
 <-- within peep_spec.rb -->
-
+it 'can add a peep' do
+  setup_test_database
+  add_row_to_test_database
+  test.add_peep("This is another peep!")
+  expect(test.view_all).to include("This is another peep!")
 
 ```
+* Then, I created the add peep method within the Class peeps
+```
+def add_peep(peep)
+  @peep = peep
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'chitter')
+  else
+    connection = PG.connect(dbname: 'chitter_test')
+  end
+  result = connection.exec("INSERT INTO peeps (message) values ('#{@peep}')")
+end
+
+```
+* I then needed to create a webpage for add peeps and a pathway.

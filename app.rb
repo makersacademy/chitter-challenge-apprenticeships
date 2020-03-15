@@ -13,5 +13,19 @@ class Chitter < Sinatra::Base
     erb :homepage
   end
 
+  get '/add_peep' do
+  @params  = params[:peep]
+    erb :add_peep
+  end
+
+  post '/add_peep' do
+    test = Peeps.new
+    @params = params[:peep]
+    test.add_peep(@params)
+    erb :peep_posted
+  end
+
+
+
   run! if app_file == $0
 end
