@@ -4,9 +4,11 @@
       "/Users/hodan/projects/chitter-challenge-apprenticeships/spec/features/homepage_spec.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           1,
+          null,
           null,
           null
         ]
@@ -14,6 +16,7 @@
       "/Users/hodan/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           1,
@@ -38,6 +41,6 @@
         ]
       }
     },
-    "timestamp": 1584288963
+    "timestamp": 1584289493
   }
 }
