@@ -1,6 +1,6 @@
 require "pg"
 
-class Peeping 
+class Tweet
 	attr_reader :message, :date
 	def initialize(message, date = '')
 		@message = message
@@ -13,6 +13,6 @@ class Peeping
 			connection = PG.connect(dbname: 'chitter_test')
 		end
 		result = connection.exec("SELECT * FROM peeps;")
-		result.map { |peep| Peeping.new(message: peep['message']) }
+		result.map { |peep| Tweet.new(message: peep['message']) }
 	end
 end
