@@ -9,7 +9,7 @@ class Chitter < Sinatra::Base
 
   get '/' do
     test = Peeps.new
-    @message = test.peeps
+    @message = test.view_all
     erb :homepage
   end
 
