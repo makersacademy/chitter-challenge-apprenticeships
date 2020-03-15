@@ -1,4 +1,5 @@
 require 'peeps'
+require 'pg'
 
 describe 'Peeps' do
   let(test) { Peeps.new }

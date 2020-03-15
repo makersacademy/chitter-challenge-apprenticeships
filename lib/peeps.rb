@@ -1,10 +1,14 @@
+require 'pg'
+
 class Peeps
- attr_reader :peeps
+ attr_reader
   def initialize
-    @peeps = ["This is a peep!"]
+    @peep
   end
 
   def view_all
-    @peeps
+    connection = PG.connect(dbname: 'chitter')
+    result = connection.exec('SELECT * FROM peeps')
+    result.map { |peeps| peeps['message'] }
   end
 end
