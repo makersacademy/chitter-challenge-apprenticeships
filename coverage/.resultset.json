@@ -1,6 +1,17 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/hodan/projects/chitter-challenge-apprenticeships/spec/features/homepage_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/hodan/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
@@ -12,6 +23,6 @@
         ]
       }
     },
-    "timestamp": 1584277768
+    "timestamp": 1584279005
   }
 }
