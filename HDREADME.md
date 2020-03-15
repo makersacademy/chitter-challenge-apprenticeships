@@ -95,3 +95,12 @@ result = connection.exec('SELECT * FROM peeps')
 result.map { |peeps| peeps['message'] }
 end
 ```
+
+
+#USER STORY 2: I want to post a message (peep) to chitter
+* Firstly, I created a test within the class spec file
+```
+<-- within peep_spec.rb -->
+
+
+```
