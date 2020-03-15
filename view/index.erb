@@ -1,1 +1,9 @@
-hello world
+lets peep!
+<div>
+<% if @tweets.length %>
+<ul>
+<% for @tweet in @tweets %>
+<li><%= @tweet.message %></li>
+<% end %>
+</ul>
+<% end %></div>
