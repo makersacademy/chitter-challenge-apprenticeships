@@ -6,11 +6,10 @@ require 'pg'
 # in a browser
 feature 'See all messages' do 
 	scenario 'A user can see messages' do 
-		connection = PG.connect(dbname: 'chitter_test')
-
-    connection.exec("INSERT INTO peeps VALUES(1, 'Its fun here on chitter');")
-    connection.exec("INSERT INTO peeps VALUES(2, 'Come on chitter to have great banter');")
-    connection.exec("INSERT INTO peeps VALUES(3, 'This is a peep!');")
+		
+		Peep.compose(message: 'Its fun here on chitter')
+		Peep.compose(message: 'Come on chitter to have great banter')
+		Peep.compose(message:'This is a peep!')
 
 		visit('/peeps')
 
@@ -19,4 +18,3 @@ feature 'See all messages' do
 		expect(page).to have_content 'This is a peep!'
 	end
 end
-
