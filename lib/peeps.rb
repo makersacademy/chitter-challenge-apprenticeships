@@ -1,7 +1,6 @@
 require 'pg'
 
 class Peeps
- attr_reader
   def initialize
     @peep
   end
