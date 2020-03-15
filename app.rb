@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require '.lib/peeping'
+require 'peeping'
 
 class Chitter < Sinatra::Base
   get '/' do
