@@ -4,11 +4,16 @@
     #expect(page).to have_content "Test page"
   #end
 #end
+require 'pg'
 feature 'Shows all peeps in database' do
  scenario 'user presses a button and it shows peeps' do
    visit ('/')
    click_button('show all')
    #expect(page.current_path).to eq('/')
-   expect(page).to have_content "peeps"
+
+   #Peeps.create(peep: 'here is a new peep')
+   visit ('/all')
+   expect(page).to have_content "This is a peep!"
+   expect(page).to have_content "here is a new peep"
  end
 end

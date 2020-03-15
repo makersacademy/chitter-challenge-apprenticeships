@@ -1,44 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ayshababur/Desktop/makers/chitter-challenge-apprenticeships/spec/create_peeps_spec.rb": {
+      "/Users/ayshababur/Desktop/makers/chitter-challenge-apprenticeships/spec/features/adding_peeps_spec.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
           1,
           1,
           1,
           1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ayshababur/Desktop/makers/chitter-challenge-apprenticeships/lib/peeps.rb": {
-        "lines": [
-          1,
-          1,
-          null,
           null,
           1,
           1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -55,13 +29,43 @@
           1,
           1,
           1,
+          1,
+          null,
+          null,
           null,
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ayshababur/Desktop/makers/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1584107434
+    "timestamp": 1584288208
   }
 }
