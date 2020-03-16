@@ -13,6 +13,6 @@ class Tweet
 			connection = PG.connect(dbname: 'chitter_test')
 		end
 		result = connection.exec("SELECT * FROM peeps;")
-		result.map { |peep| Tweet.new(message: peep['message']) }
+		result.map { |tweet| Tweet.new(message: tweet['message']) }
 	end
 end
