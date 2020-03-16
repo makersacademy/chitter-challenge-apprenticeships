@@ -1,0 +1,42 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class='parent'>
+  <div class='child inline-block-child-1'><a href="/"><img src='rubber-duck.png'></a></div>
+  <div class='child inline-block-child-1'><h1>Welcome to Chitter!</h1></div>
+</div>
+<div class='parent'>
+<div class='child inline-block-child'>
+
+<h2>Filtered Peeps</h2>
+
+  <ul class="peep">
+    <% Peep.filtered_messages.each do |peep| %>
+    <div class="full-peep">
+      <li><%= peep.message %></li>
+      <ul class="timestamp">
+        <li><%= peep.timestamp %></li>
+      </ul>
+    </div>
+    <% end %>
+  
+  </ul>
+  </div>
+
+<div class='child inline-block-child'>
+
+  <h2>Post a new Peep</h2>
+  <form action="/post" method="post">
+    <input type="text" name="message" placeholder="Write peep"/>
+    <input type="submit" value="Post" />
+  </form>
+
+  <h2>Filter Peeps</h2>
+  <form action="/filter" method="post">
+    <input type="text" name="filter" placeholder="Enter keywords" />
+    <input type="submit" value="Filter" />
+  </form>
+  </div>
+</div>
+</body>
