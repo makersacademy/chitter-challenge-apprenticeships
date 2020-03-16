@@ -16,7 +16,7 @@ describe Peep do
   end
 
   it "can check the timestamp of a message" do
-    peep = Peep.post(message: "This is my first peep!")
+    peep = Peep.all.first
 
     expect(peep.timestamp).to include '2020-03-13'
   end
