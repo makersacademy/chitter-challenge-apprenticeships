@@ -1,0 +1,18 @@
+
+
+
+<h1> Peeps Timeline </h1>
+<body>
+<form action="/peeps" method="post">
+  <label for="message" >
+  	Share Your thoughts:
+  	<input type="text" name="message" placeholder="MESSAGE" />
+	</label>
+		<input type="submit" value="Share!" />
+</form>
+
+ <ul>
+    <% @peeps.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>

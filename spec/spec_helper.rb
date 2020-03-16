@@ -13,6 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
 ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
 # Bring in the contents of the `app.rb` file. The below is equivalent to: require_relative '../app.rb'
