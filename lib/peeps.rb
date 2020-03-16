@@ -26,4 +26,24 @@ def self.create(message:)
 result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}')")
   #connection.exec("INSERT INTO peeps (message) values ('This is a peep!');")
  end
+
+def self.date
+  if ENV['ENVIROMENT'] == 'test'
+    connection = PG.connect(dbname: 'chitter_test')
+    #this determines which database to connect to
+  else
+    connection = PG.connect(dbname: 'chitter')
+  end
+   result = connection.exec("SELECT * FROM peeps ORDER BY DESC")
 end
+
+end
+#SELECT FROM peeps ORDER BY (date?) DESC
+
+
+
+
+
+#SELECT column, column2, ...
+#FROM table
+#ORDER BY column ASC [DESC], column2 ASC [DESC],...;

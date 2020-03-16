@@ -17,3 +17,7 @@ feature 'Shows all peeps in database' do
    expect(page).to have_content "here is a new peep"
  end
 end
+#eature 'sort peeps according to date'
+#scenario 'user presses button to sort accoring to date' do
+  #visit('/')
+  #click_button

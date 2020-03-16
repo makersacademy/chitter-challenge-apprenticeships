@@ -1,9 +1,18 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
+</head>
+<body>
 <h1> Welcome to Chitter </h2>
 <h2> Click on the button below to view all peeps!</h2>
-
 <form action="/all" method="get">
 <label Click on the button below to view all peeps!>
   <input type="submit" value="show all"/>
+
 </form>
 
 <form action="/all" method="post">
@@ -11,3 +20,12 @@
   <input type="text" name="message" placeholder="add peep" />
   <input type ="submit" value="submit"/>
   </form>
+
+
+  <form action='/all' method="get">
+    <h2> Date message was posted </h2>
+    <input type="submit" value="Check!"/>
+    </form>
+
+</body>
+</html>
