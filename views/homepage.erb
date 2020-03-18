@@ -1,0 +1,23 @@
+<h1>Chitter</h1>
+<style>
+  .button {
+    background-color: #00BFFF;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+</style>
+
+<ul>
+  <% @message.each do |peep| %>
+    <li><%= peep %></li>
+  <% end %>
+</ul>
+
+<a href="/add_peep" class="button">Make a peep!</a>
