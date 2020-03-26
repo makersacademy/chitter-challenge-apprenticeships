@@ -1,4 +1,5 @@
 <h1> Peeps are here  </h1>
---<!!% @peeps.each do |peeps| %> <br>
-
-<%= @peeps %><br>
+ <% @peeps.each do |peep| %> <br>
+<li> <%= peep %>
+  </li>
+<% end %><br>
