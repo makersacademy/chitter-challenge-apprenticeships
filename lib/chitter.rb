@@ -1,9 +1,13 @@
 require 'pg'
 
 class Chits
-  def chits
+  def peeps
     connection = PG.connect(dbname: 'chitter')
     result = connection.exec('SELECT * FROM peeps')
-    result.map { |chits| chits['message'] }
+    messages = result.map { |message| message['message']}
   end
 end
+
+
+# array = %w(a b c)
+# array.map.with_index { |ch, idx| [ch, idx] }

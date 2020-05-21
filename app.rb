@@ -7,7 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    Chits.new.chits
+    Chits.new.peeps
   end
 
   get '/chitter' do
