@@ -1,4 +1,4 @@
-## Chitter Challenge
+## Chitter Challenge.
 
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
