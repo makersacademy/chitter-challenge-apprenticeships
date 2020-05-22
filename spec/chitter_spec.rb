@@ -8,11 +8,10 @@ describe '.all' do
     connection.exec("INSERT INTO peeps (message) VALUES ('Chitter is pretty cool!');")
     connection.exec("INSERT INTO peeps (message) VALUES ('I am really enjoying Makers!');")
 
-    messages = Chitter.all
+    peeps = Chitter.all
 
-    expect(messages).to include("Hey, how are you?")
-    expect(messages).to include("Chitter is pretty cool!")
-    expect(messages).to include("I am really enjoying Makers!")
+    expect(peeps).to include("Hey, how are you?")
+    expect(peeps).to include("Chitter is pretty cool!")
+    expect(peeps).to include("I am really enjoying Makers!")
   end
-
 end

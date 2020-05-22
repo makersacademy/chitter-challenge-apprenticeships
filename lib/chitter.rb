@@ -12,4 +12,4 @@ class Chitter
     result = connection.exec('SELECT * FROM peeps;')
     result = result.map { |peep| peep['message'] }
   end
-end
+end 

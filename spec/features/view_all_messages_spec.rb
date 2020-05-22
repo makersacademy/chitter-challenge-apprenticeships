@@ -8,7 +8,7 @@ feature 'Viewing all messages' do
     connection.exec("INSERT INTO peeps (message) VALUES('Chitter is pretty cool!');")
     connection.exec("INSERT INTO peeps (message) VALUES('I am really enjoying Makers!');")
 
-    visit('/all_messages')
+    visit('/peeps')
 
     expect(page).to have_content("Hey, how are you?")
     expect(page).to have_content("Chitter is pretty cool!")
