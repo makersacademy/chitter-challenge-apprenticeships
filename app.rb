@@ -19,18 +19,24 @@ class Chitter < Sinatra::Base
     erb :'chitter/new'
   end
 
-  post '/chitter/new' do
-    message = params['message']
-    connection = PG.connect(dbname: 'chitter')
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
-  end
 
   post '/chitter' do
     message = params['message']
-    p params
     Chits.create(message: message)
     redirect '/chitter'
   end
+
+  get '/chitter/find' do
+    erb :'chitter/find'
+  end
+
+  post '/chitter/result' do
+    message = params['message']
+   @chits = Chits.find(message: message)
+   erb :'chitter/result'
+ end
+
+
 
 
 

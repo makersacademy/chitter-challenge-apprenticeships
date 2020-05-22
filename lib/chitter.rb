@@ -21,9 +21,20 @@ class Chits
       connection = PG.connect(dbname: 'chitter')
     end
     connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  end
 
+  def self.find(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+      else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec("SELECT message FROM peeps WHERE message LIKE ('%#{message}%')")
+    result.map { |peep| {message: peep['message'], posted_at: peep['posted_at']}}
   end
 end
+
+
 
 
 
