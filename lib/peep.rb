@@ -1,3 +1,4 @@
+require 'date'
 class Peep
   attr_reader :id, :message, :created_at
 
@@ -14,8 +15,8 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-   result = connection.exec("SELECT * FROM peeps;")
-   result.map { |peep| Peep.new(id: peep['id'], message: peep['message'], created_at: peep['created_at']) }
+   result = connection.exec("SELECT * FROM peeps ORDER BY created_at DESC;")
+   result.map { |peep| Peep.new(id: peep['id'], message: peep['message'], created_at: DateTime.parse(peep['created_at'])) }
   end
 
   def self.create(message:)
@@ -26,7 +27,7 @@ class Peep
     end
 
     result = connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, message, created_at")
-    Peep.new(id: result[0]['id'], message: result[0]['message'], created_at: result[0]['created_at'])
+    p Peep.new(id: result[0]['id'], message: result[0]['message'], created_at: DateTime.parse(result[0]['created_at']))
   end
 
 end
