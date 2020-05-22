@@ -3,7 +3,7 @@ require './lib/peep.rb'
 require 'pg'
 
 class Chitter < Sinatra::Base
-  get '/test' do
+  get '/' do
     redirect '/messages'
   end
 
@@ -18,7 +18,6 @@ class Chitter < Sinatra::Base
 
   post '/messages/new' do
     Peep.create(message: params[:message])
-    p params
     redirect '/messages'
   end
 
