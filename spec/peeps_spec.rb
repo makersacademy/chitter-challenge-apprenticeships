@@ -35,11 +35,11 @@ RSpec.describe Peeps do
     it 'creates a new message' do
       peeps = Peeps.create(message: 'test')
       expect(peeps).to be_a Peeps
-      expect(peeps.add_date).to eq '2020/05/22'
+      expect(peeps.add_date).to eq '2020-05-22'
     end
   end
 
-  describe '.date' do
+  describe '.find' do
     it 'creates a new message' do
       peeps = Peeps.create(message: 'test')
       Peeps.create(message: 'test dev')
