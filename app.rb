@@ -6,7 +6,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/all_messages' do
-    erb :all_messages
+    @peeps = Chitter.all
+    erb :'peeps/all_messages'
   end
 
   run! if app_file == $0
