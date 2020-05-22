@@ -1,1 +1,3 @@
-<li><% @peep.message %> </li>
+<% @peep.each do |peep| %>
+    <%= peep.message %>
+    <% end %>

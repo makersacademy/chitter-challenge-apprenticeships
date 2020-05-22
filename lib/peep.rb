@@ -36,8 +36,8 @@ class Peep
     connection = PG.connect(dbname: 'chitter')
   end
   result = connection.exec("SELECT message FROM peeps WHERE message LIKE '%#{keyword}%';")
-  #result.map do |peep|
-  #  Peep.new(message: peep['message'], created_at: peep['created_at'])
-  Peep.new(message: result[0]['message'], created_at: result[0]['created_at'])
+  result.map do |peep|
+    Peep.new(message: peep['message'], created_at: peep['created_at'])
+  end 
   end
 end
