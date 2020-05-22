@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
     erb :new
   end
 
-  post '/peeps_add' do
+  post '/peeps/add' do
     Peep.add(message: params[:message])
     redirect '/peeps'
   end

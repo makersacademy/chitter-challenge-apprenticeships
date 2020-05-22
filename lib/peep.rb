@@ -13,7 +13,7 @@ class Peep
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    result = connection.exec("SELECT * FROM peeps ORDER BY id DESC;")
+    result = connection.exec("SELECT * FROM peeps ORDER BY created_at DESC;")
     result.map do |peep|
       Peep.new(message: peep['message'], created_at: peep['created_at'])
     end
