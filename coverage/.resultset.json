@@ -1,20 +1,129 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
+          1,
           1,
           null,
           1,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          13,
+          13,
+          null,
+          null,
+          1,
+          2,
+          2,
+          6,
+          null,
+          null,
+          null,
+          1,
+          7,
+          null,
+          7,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/lib/db_connection.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null
+        ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/lib/database_connection.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          10,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/spec/db_connection_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +132,71 @@
           null,
           null
         ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/spec/features/view_comments_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/student/Documents/Week6/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1590156004
   }
 }
