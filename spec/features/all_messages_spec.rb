@@ -1,5 +1,4 @@
 require 'pg'
-require 'peep'
 
 feature 'All messages' do
   scenario 'user can see all messages in a browser' do
