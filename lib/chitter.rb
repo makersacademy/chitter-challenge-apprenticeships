@@ -9,7 +9,7 @@ class Chits
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec('SELECT * FROM peeps')
+    result = connection.exec('SELECT * FROM peeps').reverse_each
     result.map { |peep| {message: peep['message'], posted_at: peep['posted_at']}}
     end
 
