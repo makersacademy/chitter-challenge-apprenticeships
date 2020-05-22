@@ -4,7 +4,7 @@ feature 'Adding a new peep' do
     visit('/messages/new')
     fill_in('Peep', with: 'This is another peep!')
     click_button('Peep!')
-   expect(page).to have_content 'This is another peep!'
+    expect(page).to have_content 'This is another peep!'
   end
 end
 
