@@ -2,6 +2,8 @@ require 'sinatra/base'
 require './lib/peep.rb'
 
 class Chitter < Sinatra::Base
+  enable :sessions
+
   get '/test' do
     'Test page'
   end
@@ -16,10 +18,18 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps_add' do
-    Peep.add(message: params[:message], date: params[:date])
+    Peep.add(message: params[:message])
     redirect '/peeps'
   end
 
+  get '/peeps/find' do
+    erb :find
+  end
+
+  post '/peeps/result' do
+    @peep = Peep.find(keyword: params[:keyword])
+    erb :result
+  end
 
   run! if app_file == $0
 end

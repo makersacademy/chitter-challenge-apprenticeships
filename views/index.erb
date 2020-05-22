@@ -1,6 +1,9 @@
 <% @peeps.each do |peep| %>
-    <li><%= peep.message %> <%= peep.date %></li>
+    <li><%= peep.message %> <%= peep.created_at %></li>
     <% end %>
 <form action="/peeps/new" method="get">
 <input type='submit' value='Add'/>
+</form>
+<form action="/peeps/find" method="get">
+<input type='submit' value='Keyword'/>
 </form>
