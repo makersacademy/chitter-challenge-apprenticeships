@@ -7,11 +7,29 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    Chits.new.peeps
+    "Homepage"
   end
 
   get '/chitter' do
-    @chitter.all
+    @chits = Chits.peeps
+    erb :'chitter/index'
+  end
+
+  get '/chitter/new' do
+    erb :'chitter/new'
+  end
+
+  post '/chitter/new' do
+    message = params['message']
+    connection = PG.connect(dbname: 'chitter')
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  end
+
+  post '/chitter' do
+    message = params['message']
+    p params
+    Chits.create(message: message)
+    redirect '/chitter'
   end
 
 
