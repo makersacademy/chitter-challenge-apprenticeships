@@ -5,5 +5,9 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/all_messages' do
+    erb :all_messages
+  end
+
   run! if app_file == $0
 end
