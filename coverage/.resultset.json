@@ -18,6 +18,10 @@
           null,
           null,
           1,
+          0,
+          null,
+          null,
+          1,
           null
         ]
       },
@@ -27,48 +31,38 @@
           1,
           null,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
+          0,
           0,
           null,
           null,
           1,
-          2,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
           null,
           null
         ]
       },
-      "/Users/student/Projects/Module5/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+      "/Users/student/Projects/Module5/chitter-challenge-apprenticeships/spec/features/create_peep.rb": {
         "lines": [
           1,
-          null,
-          1,
-          null,
           1,
           1,
           1,
-          null,
-          null,
           1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
+          0,
+          0,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1590141058
+    "timestamp": 1590141985
   }
 }
