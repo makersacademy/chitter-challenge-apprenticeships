@@ -1,6 +1,7 @@
 require 'PG'
 
-class Chitter
+class Peeps
+  attr_reader :id, :message
   def initialize(id:, message:)
     @id = id
     @message = message
@@ -13,9 +14,9 @@ class Chitter
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec('SELECT * FROM chitter;')
-    result.map do |chitter|
-      Chitter.new(id: chitter['id'], message: chitter['message'])
+    result = connection.exec('SELECT * FROM peeps;')
+    result.map do |peeps|
+      Peeps.new(id: peeps['id'], message: peeps['message'])
     end
   end
 end

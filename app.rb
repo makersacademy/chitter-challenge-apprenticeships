@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/chitter'
+require './lib/chitter_db'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -11,8 +11,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/view' do
-    @chitter = Chitter.all
-    erb :view 
+    @chitter = Peeps.all
+    erb :'view' 
   end
 
   run! if app_file == $0
