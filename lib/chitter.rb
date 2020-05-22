@@ -12,4 +12,14 @@ class Chitter
     result = connection.exec('SELECT * FROM peeps;')
     result = result.map { |peep| peep['message'] }
   end
-end 
+
+  def self.post_message(message:)
+    if ENV['RACK_ENV'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  end
+end

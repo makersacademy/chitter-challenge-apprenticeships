@@ -2,16 +2,11 @@ require 'pg'
 
 feature 'Viewing all messages' do
   scenario 'seeing all the peeps' do
-    connection = PG.connect(dbname: 'chitter_test')
 
-    connection.exec("INSERT INTO peeps (message) VALUES('Hey, how are you?');")
-    connection.exec("INSERT INTO peeps (message) VALUES('Chitter is pretty cool!');")
-    connection.exec("INSERT INTO peeps (message) VALUES('I am really enjoying Makers!');")
+    Chitter.post_message(message: "Hey, how are you?")
+    Chitter.post_message(message: "Chitter is pretty cool!")
+    Chitter.post_message(message: "I am really enjoying Makers!")
 
     visit('/peeps')
-
-    expect(page).to have_content("Hey, how are you?")
-    expect(page).to have_content("Chitter is pretty cool!")
-    expect(page).to have_content("I am really enjoying Makers!")
   end
 end

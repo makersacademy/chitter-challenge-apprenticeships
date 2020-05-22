@@ -14,4 +14,12 @@ describe '.all' do
     expect(peeps).to include("Chitter is pretty cool!")
     expect(peeps).to include("I am really enjoying Makers!")
   end
+
+  describe '.post_message' do
+    it 'posts a new message from a user' do
+      Chitter.post_message(message: 'I am getting to grips with coding.')
+
+      expect(Chitter.all).to include 'I am getting to grips with coding.'
+    end
+  end 
 end
