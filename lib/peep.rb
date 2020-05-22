@@ -30,14 +30,14 @@ class Peep
   end
 
   def self.find(keyword:)
-  if ENV['ENVIRONMENT'] == 'test'
-    connection = PG.connect(dbname: 'chitter_test')
-  else
-    connection = PG.connect(dbname: 'chitter')
-  end
-  result = connection.exec("SELECT message FROM peeps WHERE message LIKE '%#{keyword}%';")
-  result.map do |peep|
-    Peep.new(message: peep['message'], created_at: peep['created_at'])
-  end 
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec("SELECT message FROM peeps WHERE message LIKE '%#{keyword}%';")
+    result.map do |peep|
+      Peep.new(message: peep['message'], created_at: peep['created_at'])
+    end
   end
 end

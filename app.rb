@@ -4,9 +4,9 @@ require './lib/peep.rb'
 class Chitter < Sinatra::Base
   enable :sessions
 
-  get '/test' do
-    'Test page'
-  end
+  get '/' do
+    erb :welcome
+  end 
 
   get '/peeps' do
     @peeps = Peep.all

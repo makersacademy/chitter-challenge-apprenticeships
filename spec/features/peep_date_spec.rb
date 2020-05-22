@@ -9,6 +9,5 @@ feature 'Show peep date' do
     fill_in('message', with: "Party is here")
     click_button 'Submit'
     expect(page).to have_content "Party is here"
-
   end
 end
