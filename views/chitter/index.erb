@@ -1,5 +1,5 @@
 <ul>
 <% @chits.each do |chit| %>
-<li><%= chit%></li>
+<p><li><%= chit[:message]+ " || posted at (" + chit[:posted_at]%>)</li></p>
 <% end %>
 </ul>

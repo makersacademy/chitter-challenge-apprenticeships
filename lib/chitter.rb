@@ -10,8 +10,8 @@ class Chits
     end
 
     result = connection.exec('SELECT * FROM peeps')
-    result.map { |message| message['message']}
-  end
+    result.map { |peep| {message: peep['message'], posted_at: peep['posted_at']}}
+    end
 
 
   def self.create(message:)
