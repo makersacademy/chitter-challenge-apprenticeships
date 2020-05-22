@@ -23,5 +23,15 @@ class Chitter < Sinatra::Base
   end
 
 
+  get '/find' do
+    erb :find
+  end
+
+  post '/result' do
+    @comments = Peeps.find(keyword: params[:keyword])
+    erb :result
+  end
+
+
   run! if app_file == $0
 end

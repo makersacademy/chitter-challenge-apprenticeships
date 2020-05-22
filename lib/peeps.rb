@@ -2,24 +2,32 @@ require 'pg'
 
 class Peeps
 
-    attr_reader :id, :message
+    attr_reader :message, :add_date
 
-    def initialize(id: , message:)
-        @id = id
+    def initialize( message:, add_date: )
         @message = message
     end
 
     def self.all
-        result = DatabaseConnection.query("SELECT * FROM peeps")
+        result = DatabaseConnection.query("SELECT * FROM peeps ORDER BY add_date DESC;")
         result.map do |peep|
-            Peeps.new(id: peep['id'],message: peep['message'])
+            Peeps.new(message: peep['message'], add_date: peep['add_date']  )
         end
     end
 
     def self.create(message:)
-        result = DatabaseConnection.query("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id,  message")
-
-        Peeps.new(id: result[0]['id'],message: result[0]['message'])
+        result = DatabaseConnection.query("INSERT INTO peeps (message) VALUES('#{message}') RETURNING message, add_date")
+        Peeps.new(message: result[0]['message'], add_date: result[0]['add_date'] ) 
+       
     end
+
+    def self.find(keyword:)
+        result = DatabaseConnection.query("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
+        result.map do |peep|
+            Peeps.new(message: peep['message'], add_date: peep['add_date']  )
+        end
+    end
+
+
 
 end
