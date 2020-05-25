@@ -1,4 +1,4 @@
-require './lib/chitter_db.rb'
+require './lib/peeps.rb'
 
 describe Peeps do 
   it "should be an instance of itself" do
