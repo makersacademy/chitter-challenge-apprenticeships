@@ -6,21 +6,20 @@ class Chitter < Sinatra::Base
     'My Chitter App'
   end
 
-  get '/test' do
-    'Test page'
-  end
-
   get '/messages' do
     @messages = Message.all
+    # @messages variable called in the index view, iterated through and each element printed
     erb :index
   end
 
   get '/add_peep' do
     erb :play
+    # View contains forms html elements
   end
 
   post '/add' do
-    Message.add(message: params[:message])
+    Message.add(message: params[:message], date: params[:date])
+    #Adds values entered by user in the forms which are stored in the params hashes
     redirect '/messages'
   end
 
