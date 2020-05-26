@@ -13,9 +13,9 @@ describe Peep do
 
       expect(peeps.length).to eq 3
       expect(peeps.first).to be_a Peep
-      expect(peeps.first).to eq peep.id
+      expect(peeps.first.id).to eq peep.id
       expect(peeps.first.message).to eq 'This is a peep!'
-      expect(peeps.date).to eq Date.today
+      expect(peeps.first.date).to eq Date.today
     end
   end
   describe '.add' do
