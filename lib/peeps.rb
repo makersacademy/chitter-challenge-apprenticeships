@@ -2,6 +2,8 @@ require 'pg'
 
 class Peeps
 
+    enable :sessions
+
     attr_reader :message, :add_date
 
     def initialize( message:, add_date: )
