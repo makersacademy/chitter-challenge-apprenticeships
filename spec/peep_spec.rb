@@ -25,9 +25,6 @@ RSpec.describe Peep do
 
       peeps = Peep.all
 
-      expect(peeps.length).to eq 1
-      expect(peeps.first).to be_a Peep
-      expect(peeps.first.message).to eq 'This is a peep!'
       expect(peeps.first.created_at.nil?).to eq(false)
      end
 
