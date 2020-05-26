@@ -27,7 +27,7 @@ class Peep
     end
 
     result = connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, message, created_at")
-    p Peep.new(id: result[0]['id'], message: result[0]['message'], created_at: DateTime.parse(result[0]['created_at']))
+    Peep.new(id: result[0]['id'], message: result[0]['message'], created_at: DateTime.parse(result[0]['created_at']))
   end
 
 end
