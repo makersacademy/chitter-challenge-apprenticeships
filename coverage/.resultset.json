@@ -1,11 +1,30 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -14,7 +33,49 @@
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          12,
+          null,
+          null,
+          1,
+          8,
+          8,
+          null,
+          0,
+          null,
+          null,
+          8,
+          null,
+          null
+        ]
+      },
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/spec/features/creating_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +84,83 @@
           null,
           null
         ]
+      },
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/spec/features/viewing_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kqazi2/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1590480730
   }
 }
