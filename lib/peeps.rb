@@ -9,17 +9,8 @@ class Peeps
     @date = date
   end
 
-  def self.connect
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-  end
-
   def self.all
-    connection = connect
-    result = connection.exec("SELECT * FROM peeps;")
+    result = DatabaseConnection.query("SELECT * FROM peeps;")
 
     result.map do |peep|
       Peeps.new(peep['id'], peep['message'], peep['date'])
@@ -27,17 +18,13 @@ class Peeps
   end
 
   def self.add(new_message)
-    connection = connect
     date = Time.now.strftime("%Y-%m-%d")
-
-    result = connection.exec("INSERT INTO peeps (message, date) VALUES ('#{new_message}', '#{date}') RETURNING id, message, date;")
+    result = DatabaseConnection.query("INSERT INTO peeps (message, date) VALUES ('#{new_message}', '#{date}') RETURNING id, message, date;")
     Peeps.new(result[0]['id'], result[0]['message'], result[0]['date'])
   end
 
   def self.filter(keyword)
-    p "FILTERING"
-    connection = connect
-    result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
+    result = DatabaseConnection.query("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
 
     result.map do |peep|
       Peeps.new(peep['id'], peep['message'], peep['date'])

@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/peeps'
+require './database_connection_setup'
 
 class Chitter < Sinatra::Base
   get '/' do
@@ -16,14 +17,14 @@ class Chitter < Sinatra::Base
   end
 
   post '/' do
-    @message = params[:message]
-    Peeps.add(@message)
+    message = params[:message]
+    Peeps.add(message)
     redirect '/'
   end
 
   post '/filter' do
-    @keyword = params[:keyword]
-    @filtered_peeps = Peeps.filter(@keyword)
+    keyword = params[:keyword]
+    @filtered_peeps = Peeps.filter(keyword)
     erb :results
   end
 
