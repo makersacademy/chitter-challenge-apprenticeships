@@ -28,7 +28,6 @@ class Peeps
 
   def self.add(new_message)
     connection = connect
-    date = Time.now.strftime("%d/%m/%Y")
     date = Time.now.strftime("%Y-%m-%d")
 
     result = connection.exec("INSERT INTO peeps (message, date) VALUES ('#{new_message}', '#{date}') RETURNING id, message, date;")

@@ -16,12 +16,12 @@ feature 'Webpage displays content correctly' do
   end
 end
 
-feature "Displays peep entered by user" do
+feature "Displays peep and date entered by user" do
   scenario 'adding peeps to index page' do
     visit('/')
     click_on 'New Peep'
     fill_in "message", with: 'Test peep'
     click_button 'Submit'
-    expect(page).to have_content("Test peep")
+    expect(page).to have_content("Test peep: #{Time.now.strftime("%Y-%m-%d")}")
   end
 end
