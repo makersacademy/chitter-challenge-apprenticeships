@@ -8,4 +8,11 @@ describe Peeps do
       expect(Peeps.all).to include("This is a peep!")
     end
   end
+
+  describe '#add' do
+    it 'returns list of all names and messages' do
+      Peeps.add('This is a new test peep')
+      expect(Peeps.all).to include("This is a new test peep")
+    end
+  end
 end

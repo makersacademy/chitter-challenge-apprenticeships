@@ -2,6 +2,6 @@
 <form action="/peep">
   <input type="submit" value="New Peep"/>
 </form>
-<% @peeps.each do |peep|%>
+<% @peeps.reverse.each do |peep|%>
   <p><%= peep%></p>
 <% end %>

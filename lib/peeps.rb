@@ -1,13 +1,17 @@
 require 'pg'
 
 class Peeps
-  def self.all
+
+  def self.connect
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
+  end
 
+  def self.all
+    connection = connect
     result = connection.exec("SELECT * FROM peeps;")
 
     peeps = []
@@ -19,12 +23,7 @@ class Peeps
   end
 
   def self.add(new_message)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
+    connection = connect
     connection.exec("INSERT INTO peeps (message) VALUES('#{new_message}')")
   end
 end
