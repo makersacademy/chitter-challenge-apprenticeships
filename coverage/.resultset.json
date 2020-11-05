@@ -4,13 +4,39 @@
       "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
+          1,
           null,
           1,
           1,
-          1,
+          2,
+          2,
+          null,
+          0,
           null,
           null,
-          1,
+          2,
+          null,
+          2,
+          2,
+          2,
+          null,
+          null,
+          2,
+          null,
           null
         ]
       },
@@ -21,10 +47,16 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1604571410
+    "timestamp": 1604572638
   }
 }
