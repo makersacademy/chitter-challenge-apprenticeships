@@ -3,5 +3,5 @@
   <input type="submit" value="New Peep"/>
 </form>
 <% @peeps.reverse.each do |peep|%>
-  <p><%= peep%></p>
+  <p><%= peep.message%>: <%= peep.date%></p>
 <% end %>
