@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require './lib/peep.rb'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
+
+  attr_reader :peep
+
+  get '/' do
+    @peep = Peep.all
+    erb :'index'
   end
 
   run! if app_file == $0
