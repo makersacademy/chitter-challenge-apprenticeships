@@ -33,4 +33,14 @@ class Peeps
     result = connection.exec("INSERT INTO peeps (message, date) VALUES ('#{new_message}', '#{date}') RETURNING id, message, date;")
     Peeps.new(result[0]['id'], result[0]['message'], result[0]['date'])
   end
+
+  def self.filter(keyword)
+    p "FILTERING"
+    connection = connect
+    result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
+
+    result.map do |peep|
+      Peeps.new(peep['id'], peep['message'], peep['date'])
+    end
+  end
 end

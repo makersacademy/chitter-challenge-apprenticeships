@@ -21,4 +21,15 @@ describe Peeps do
       expect(Peeps.all.first.date).to eq(Time.now.strftime("%Y-%m-%d"))
     end
   end
+
+  describe '#filter' do
+    it 'displays all peeps containing a certain search phrase' do
+      Peeps.add("This is peep one")
+      Peeps.add("This is peep two")
+
+      result = Peeps.filter("one")
+
+      expect(Peeps.filter("one").first.message).to eq("This is peep one")
+    end
+  end
 end

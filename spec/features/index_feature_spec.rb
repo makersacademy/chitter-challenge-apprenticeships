@@ -9,6 +9,11 @@ feature 'Webpage displays content correctly' do
     expect(page).to have_button("New Peep")
   end
 
+  scenario 'index has a filter button' do
+    visit '/'
+    expect(page).to have_button("Filter")
+  end
+
   scenario 'message added to database is displayed to user' do
     add_row_to_test_database
     visit '/'

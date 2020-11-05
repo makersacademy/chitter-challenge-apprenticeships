@@ -2,6 +2,9 @@
 <form action="/peep">
   <input type="submit" value="New Peep"/>
 </form>
+<form action="/filter">
+  <input type="submit" value="Filter"/>
+</form>
 <% @peeps.reverse.each do |peep|%>
   <p><%= peep.message%>: <%= peep.date%></p>
 <% end %>
