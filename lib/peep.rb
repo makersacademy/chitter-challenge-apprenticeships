@@ -7,7 +7,7 @@ class Peep
         else
           connection = PG.connect(dbname: 'chitter')
         end
-        result = connection.exec('SELECT * FROM peeps')
-         result.map { |peep| peep['message'] }
+        result = connection.exec('SELECT * FROM peeps ORDER BY date DESC')
+         result.map { |peep| peep }
   end
 end

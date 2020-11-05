@@ -1,0 +1,26 @@
+body {
+  background-color: #faf6ac !important;
+}
+
+.buffer{
+  height: 20px;
+}
+
+.card-body{
+  background-color: #d7f0f7;
+}
+
+
+html{
+  height: 100%;
+}
+
+
+.title{
+font-family: 'Amatic SC', cursive;
+font-size: 40px;
+}
+
+.text{
+  font-family: 'Shadows Into Light Two', cursive;
+}
