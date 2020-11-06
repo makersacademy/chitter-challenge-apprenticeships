@@ -10,14 +10,15 @@ describe Peeps do
   end
 
   describe '#add' do
-    it 'adds message to peeps db table' do
+    before :each do
       Peeps.add('This is a new test peep')
+    end
+
+    it 'adds message to peeps db table' do
       expect(Peeps.all.first.message).to eq("This is a new test peep")
     end
 
     it 'adds date to peeps db table' do
-      Peeps.add('This is a new test peep')
-      expect(Peeps.all.first.message).to eq("This is a new test peep")
       expect(Peeps.all.first.date).to eq(Time.now.strftime("%Y-%m-%d"))
     end
   end

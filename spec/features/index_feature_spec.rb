@@ -1,16 +1,17 @@
 feature 'Webpage displays content correctly' do
-  scenario 'index displays title of Peeps' do
+  before :each do
     visit '/'
+  end
+
+  scenario 'index displays title of Peeps' do
     expect(page).to have_content("Peeps:")
   end
 
   scenario 'index has a new peep button' do
-    visit '/'
     expect(page).to have_button("New Peep")
   end
 
   scenario 'index has a filter button' do
-    visit '/'
     expect(page).to have_button("Filter")
   end
 
