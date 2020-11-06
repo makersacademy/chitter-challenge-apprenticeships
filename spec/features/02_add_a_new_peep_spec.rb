@@ -1,3 +1,7 @@
+# As a Maker
+# So that I can let people know what I am doing
+# I want to post a message (peep) to chitter
+
 feature 'Adds a new peep' do
   scenario 'when the maker visits /peeps/add' do
     add_2_rows_to_test_database()

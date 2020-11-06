@@ -1,3 +1,8 @@
+# As a Maker
+# So that I can see what people are doing
+# I want to see all the messages (peeps)
+# in a browser
+
 feature 'FEATURE: maker can view all peeps' do
   scenario 'maker goes to /peeps and sees some peeps' do
 
