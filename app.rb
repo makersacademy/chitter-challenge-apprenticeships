@@ -5,8 +5,16 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/' do
+    'Welcome to Peeps'
+  end
+
   get '/peeps' do
-    'All Messages'
+    peeps = [
+      'The weather is very gloomy',
+      'Back in lockdown!',
+      'Hope everyone is happy!'
+    ]
   end
 
   run! if app_file == $0

@@ -15,11 +15,27 @@
           null,
           null,
           1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           null
         ]
       },
       "/Users/melissakneale/Documents/End_of_week_challenges/Chitter/chitter-challenge-apprenticeships/spec/features/see_all_messages_spec.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -39,6 +55,6 @@
         ]
       }
     },
-    "timestamp": 1604654897
+    "timestamp": 1604655231
   }
 }
