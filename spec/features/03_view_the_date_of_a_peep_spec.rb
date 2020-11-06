@@ -4,7 +4,8 @@
 
 feature 'Show the date of the peep' do
   scenario 'on the peeps screen' do
-    visit('/')
-    expect(page).to have_content '01/01/1980'
+    add_2_rows_to_test_database()
+    visit('/peeps')
+    expect(page).to have_content '1980-01-01'
   end
 end

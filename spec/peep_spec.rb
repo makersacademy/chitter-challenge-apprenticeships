@@ -11,6 +11,12 @@ describe Peep do
       result = Peep.all
       expect(result.first).to be_a(Peep)
     end
+
+    it 'returns the date of the peep' do
+      add_2_rows_to_test_database()
+      result = Peep.all
+      expect(result.first.time_sent).to eq '1980-01-01'
+    end
   end
 
   describe '#message' do

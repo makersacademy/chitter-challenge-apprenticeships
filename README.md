@@ -41,6 +41,23 @@ Controller:
 get /peeps/new
 post /peeps
 
+```
+As a Maker
+So that I can see when people are doing things
+I want to see the date the message was posted
+```
+Feature: Expect when client visits /peeps to see the date of the peep
+Expect the page to return the date back from the DB
+
+Model:
+peep.all method
+
+View:
+/peeps/index.erb
+
+Controller:
+get /peeps
+
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
