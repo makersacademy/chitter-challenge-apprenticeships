@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    p params['message']
+    Peep.add(params['message'])
     redirect('/peeps')
   end
 
