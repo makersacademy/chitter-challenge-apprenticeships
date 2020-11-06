@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require 'sinatra/flash'
+
 require_relative 'lib/chitter'
+require_relative 'lib/database_connection_setup'
 
 class Chitter < Sinatra::Base
   enable :sessions
+  set :public_folder, 'public'
+  register Sinatra::Flash
 
   get '/test' do
     'Test page'
@@ -24,7 +29,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/new' do
-    Peeps.post(cheep: params[:new_peep])
+    flash[:notice] = "The peep you submitted is too long" unless Peeps.post(cheep: params[:new_peep])
     redirect '/HomePage'
   end
 

@@ -41,3 +41,6 @@ When on the home page the user can view all of the peeps that have been made, wi
 ```
 The user can post a new peep by clicking on the 'Make a new peep' button which takes them to a new view which adds their peep to the database and takes them back to the homepage.
 ```
+```
+If the user enters a peep that is too long, it will raise an error on the front page.
+```

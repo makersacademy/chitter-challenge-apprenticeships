@@ -11,7 +11,7 @@ feature 'Viewing peeps' do
   scenario 'users can see all exsisting peeps on the page' do
     sign_in
     add_peep
-    expect(current_path).to eq 'HomePage'
+    expect(current_path).to eq '/HomePage'
     expect(page).to have_content("This is a test peep")
     expect(page).to have_content("-")
   end

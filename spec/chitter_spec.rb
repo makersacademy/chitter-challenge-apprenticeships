@@ -2,9 +2,9 @@ require 'chitter'
 
 RSpec.describe Peeps do
   before [:each] do
-    @peep = Peeps.post(cheep: 'This is my first test')
+    Peeps.post(cheep: 'This is my first test')
     Peeps.post(cheep: 'I have decided to run another test!')
-    Peeps.post(cheep: 'Hopefully this test is added too')
+    @peep = Peeps.post(cheep: 'Hopefully this test is added too')
   end
   describe 'new' do
     it 'makes a new instance of peeps setting the id' do
@@ -14,7 +14,7 @@ RSpec.describe Peeps do
     end
     it 'makes a new instance of peeps setting the message' do
       peeps = Peeps.all
-      expect(peeps.first.message).to eq 'This is my first test'
+      expect(peeps.first.message).to eq 'Hopefully this test is added too'
     end
     it 'makes a new instance of peeps setting the new' do
       peeps = Peeps.all
