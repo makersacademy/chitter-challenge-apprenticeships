@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/peep'
+require 'date'
 
 class Chitter < Sinatra::Base
   get '/test' do

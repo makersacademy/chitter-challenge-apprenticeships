@@ -10,6 +10,7 @@
 
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep %></li>
+    <li><%= peep[:message].to_s %></li>
+    <li><%= peep[:date] %></li>
   <% end %>
 </ul>
