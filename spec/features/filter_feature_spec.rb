@@ -17,7 +17,6 @@ feature 'user can fill out form for filtering' do
   end
 end
 
-
 feature 'user can view filtered peeps' do
 
   before(:each) do

@@ -30,7 +30,7 @@ describe Peeps do
 
       result = Peeps.filter("one")
 
-      expect(Peeps.filter("one").first.message).to eq("This is peep one")
+      expect(result.first.message).to eq("This is peep one")
     end
   end
 end

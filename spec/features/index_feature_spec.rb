@@ -28,6 +28,6 @@ feature "Displays peep and date entered by user" do
     click_on 'New Peep'
     fill_in "message", with: 'Test peep'
     click_button 'Submit'
-    expect(page).to have_content("Test peep: #{Time.now.strftime("%Y-%m-%d")}")
+    expect(page).to have_content("Test peep\n#{Time.now.strftime("%Y-%m-%d")}")
   end
 end

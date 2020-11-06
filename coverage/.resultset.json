@@ -45,9 +45,9 @@
           1,
           null,
           1,
-          32,
-          32,
-          32,
+          31,
+          31,
+          31,
           null,
           null,
           1,
@@ -65,13 +65,14 @@
           1,
           11,
           11,
+          11,
           null,
           null,
           1,
-          5,
+          4,
           null,
-          5,
-          5,
+          4,
+          4,
           null,
           null,
           null
@@ -91,6 +92,7 @@
       "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/lib/database_connection.rb": {
         "lines": [
           1,
+          null,
           1,
           27,
           null,
@@ -100,7 +102,7 @@
           null,
           null,
           1,
-          43,
+          42,
           null,
           null
         ]
@@ -152,7 +154,6 @@
           null,
           1,
           1,
-          null,
           null,
           null,
           null,
@@ -289,6 +290,6 @@
         ]
       }
     },
-    "timestamp": 1604657247
+    "timestamp": 1604661482
   }
 }
