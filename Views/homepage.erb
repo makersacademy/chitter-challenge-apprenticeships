@@ -12,7 +12,16 @@
 <form action = '/new'>
   <input type = 'submit' name = 'Make New Peep' value = 'Make New Peep'>
 </form>
-
+<br>
+<h2> Search </h2>
+<form action = '/search' method = 'post'>
+  <label for 'search'>
+    Search for:
+  </label>
+  <input type = 'text' name = 'search'>
+  <input type = 'submit' name = 'Search' value = 'Search'>
+</form>
+<br>
 <h2> Newsfeed </h2>
   <ul class = "custom-list">
     <% @peeps.each do |cheep| %>
@@ -21,4 +30,4 @@
     </li>
     <% end %>
   </ul>
-  </center>
+</center>

@@ -44,3 +44,6 @@ The user can post a new peep by clicking on the 'Make a new peep' button which t
 ```
 If the user enters a peep that is too long, it will raise an error on the front page.
 ```
+```
+User can search for a keyword and will view a list of all of the results
+```

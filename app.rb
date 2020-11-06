@@ -37,5 +37,15 @@ class Chitter < Sinatra::Base
     erb :new
   end
 
+  post '/search' do
+    session[:search] = Peeps.search(search: params[:search])
+    redirect '/search'
+  end
+
+  get '/search' do
+    @peeps = session[:search]
+    erb :search
+  end
+
   run! if app_file == $0
 end

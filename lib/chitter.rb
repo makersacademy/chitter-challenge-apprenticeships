@@ -21,9 +21,16 @@ class Peeps
 
   def self.post(cheep:)
     return false unless self.message_length(message: cheep)
-    
+
     result = DatabaseConnection.query("INSERT INTO peeps (message, date) VALUES ('#{cheep}', '#{TODAY}') RETURNING id, message, date")
     Peeps.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['date'])
+  end
+
+  def self.search(search:)
+    result = DatabaseConnection.query("SELECT * FROM peeps WHERE message LIKE '%#{search}%'")
+    result.map do |peep|
+      Peeps.new(id: peep['id'], message: peep['message'], date: peep['date'])
+    end
   end
 
   private
