@@ -4,7 +4,7 @@
 <ul>
   <% @peeps.each do |peep| %>
     <li>
-      <div><%= peep.message %></div>
+      <div><%= peep.message %> <br></br>added on <%= peep.posttime %></div>
       <br></br>
     </li>
   <% end %>

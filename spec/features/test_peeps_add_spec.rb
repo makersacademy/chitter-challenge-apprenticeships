@@ -5,5 +5,6 @@ feature 'Adding a new peep' do
     click_button('Add')
 
     expect(page).to have_content 'We only allow peeps up to 60 characters!'
+    expect(page).to have_content "added on #{Time.now.strftime("%Y-%m-%d")}"
   end
 end
