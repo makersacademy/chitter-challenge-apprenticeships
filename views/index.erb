@@ -1,10 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 <body>
   <h1> Peeps: </h1>
-    <form action="/peep">
+    <form action="/peep" class="side">
       <input type="submit" value="New Peep"/>
     </form>
-    <form action="/filter">
+    <form action="/filter" class="side">
       <input type="submit" value="Filter"/>
     </form>
     <% if @peeps.empty? %>
@@ -12,9 +12,20 @@
     <% else %>
       <div class="allcontent">
         <% @peeps.reverse.each do |peep|%>
-          <p><%= peep.message%></p>
+        <li class="peep" id="peep-<%= peep.id %>">
+          <div class="white-background">
+            <p><%= peep.message%></p>
+            <form action="/<%= peep.id %>/edit" method="get">
+              <input type="submit" value="Edit" />
+            </form>
+            <form action="/<%= peep.id %>" method="post">
+              <input type='hidden' name='_method' value='DELETE'/>
+              <input type="submit" value="Delete" class="delete"/>
+            </form>
+            </div>
           <p class="date"><%= peep.date%></p>
           <br>
+        </li>
         <% end %>
       </div>
     <% end %>

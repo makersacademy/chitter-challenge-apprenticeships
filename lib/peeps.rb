@@ -34,4 +34,8 @@ class Peeps
       Peeps.new(id: peep['id'], message: peep['message'], date: peep['date'])
     end
   end
+
+  def self.delete(id:)
+    DatabaseConnection.query("DELETE FROM peeps WHERE id = #{id}")
+  end
 end

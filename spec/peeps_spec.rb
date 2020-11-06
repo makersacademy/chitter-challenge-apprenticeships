@@ -33,4 +33,13 @@ describe Peeps do
       expect(result.first.message).to eq("This is peep one")
     end
   end
+
+  describe '.delete' do
+    it 'deletes the given bookmark' do
+      peep = Peeps.add('peep')
+      Peeps.delete(id: peep.id)
+
+      expect(Peeps.all.length).to eq 0
+    end
+  end
 end

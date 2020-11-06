@@ -25,7 +25,7 @@ p {
 }
 
 input, select{
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 input[type=submit] {
@@ -34,10 +34,12 @@ input[type=submit] {
   color:white;
   border:0 none;
   cursor:pointer;
+  width: 8vw;
 }
 
 .allcontent {
   margin: 0;
+  margin-top: 3vh;
   margin-bottom: 5vh;
   position: absolute;
   left: 12vw;
@@ -54,4 +56,27 @@ input[type=submit] {
   transform: translate(-50%, -50%);
   padding: 3vw;
   border: 3px double #02075d;
+}
+
+.side{
+  display: inline;
+}
+
+li{
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+.white-background{
+  margin: 0;
+  background-color: white;
+}
+
+form {
+  margin: 0;
+}
+
+.delete{
+  float: right;
 }
