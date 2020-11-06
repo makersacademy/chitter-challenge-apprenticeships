@@ -4,8 +4,12 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
+gem 'activerecord'
+gem 'bcrypt'
 gem 'pg'
+gem 'rake'
 gem 'sinatra'
+gem 'sinatra-activerecord'
 
 group :test do
   gem 'capybara'
