@@ -1,6 +1,6 @@
 feature 'Viewing test page' do
   scenario 'visiting the test page' do
-    visit('/test')
-    expect(page).to have_content "Test page"
+    visit('/Chitter')
+    expect(page).to have_content "This is my first post!"
   end
 end
