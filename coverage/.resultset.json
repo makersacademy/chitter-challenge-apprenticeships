@@ -4,19 +4,18 @@
       "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
           1,
           null,
           1,
-          9,
-          9,
-          9,
+          1,
+          1,
+          null,
+          1,
+          11,
+          11,
           null,
           null,
           1,
-          4,
           4,
           4,
           null,
@@ -25,11 +24,81 @@
           null
         ]
       },
+      "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          14,
+          14,
+          14,
+          null,
+          null,
+          1,
+          12,
+          12,
+          null,
+          0,
+          null,
+          12,
+          20,
+          null,
+          null,
+          null,
+          1,
+          6,
+          6,
+          null,
+          0,
+          null,
+          6,
+          6,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/spec/features/chitter_page_spec.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/spec/features/list_by_time_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/spec/features/peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
           1,
           1,
           null,
@@ -55,6 +124,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null,
           null
         ]
@@ -65,11 +136,33 @@
           3,
           3,
           3,
-          3,
+          null
+        ]
+      },
+      "/Users/josephkershaw/Projects/chitter-challenge-apprenticeships/spec/features/viewing_peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1604662073
+    "timestamp": 1604676594
   }
 }

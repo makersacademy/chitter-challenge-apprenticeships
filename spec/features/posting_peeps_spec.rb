@@ -7,13 +7,15 @@ feature 'User can post to the page' do
   end
   scenario 'expect the peep to be added to the Chitter page' do
     submit_a_message
-    expect(page).to have_content "Joe - This is my first post!"
+    expect(page).to have_content "This is my first post!"
   end
   scenario 'expect the peep to be added to the Chitter page' do
     submit_a_message
-    fill_in :name, with: "Abby"
     fill_in :peep, with: "This is my second post!"
     click_button 'Add a peep'
-    expect(page).to have_content "Abby - This is my second post!"
+    date = Time.now
+    expect(page).to have_content "This is my second post!"
+    expect(page).to have_content "This is my first post!"
+    expect(page).to have_content "#{date.day}/#{date.month}/#{date.year}"
   end
 end
