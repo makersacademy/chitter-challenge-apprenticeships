@@ -1,13 +1,18 @@
 <html>
 <head></head>
 <body>
-  <form action='/add'>
-    <input type='submit' value='Add'>
-  </form>
+  <header>
+    <form action='/add'>
+      <input type='submit' value='Add'>
+    </form>
+  </header>
   <ul>
-    <% @data.each do |cheep| %>
-      <li><%= cheep %></li>
+    <% @cheeps.each do |cheep| %>
+      <li class='cheep'><%= cheep %></li>
     <% end %>
   </ul>
 </body>
+<footer>
+  <div>This is a footer text for styling / information</div>
+</footer>
 </html>

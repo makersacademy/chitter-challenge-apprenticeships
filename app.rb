@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'cheep'
+require './lib/cheep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -11,11 +11,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/list' do
-    @data = Cheep.list
+    @cheeps = Cheep.list
     erb :list
   end
 
   post '/list' do
+    Cheep.add(message: params[:message])
     redirect '/list'
   end
 

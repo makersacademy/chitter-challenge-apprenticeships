@@ -21,4 +21,14 @@ feature 'able to view add page' do
     expect(page.has_field?('message')).to be_truthy
     expect(page.has_button?('Post')).to be_truthy
   end
+
+  scenario 'confirm new cheep message is listed' do
+    visit('/')
+    click_button('Add')
+    fill_in('message', with: 'This is a new test cheep!')
+    click_button('Post')
+
+    expect(page.current_path).to eq '/list'
+    expect(page).to have_content 'This is a new test cheep!'
+  end
 end

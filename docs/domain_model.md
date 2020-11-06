@@ -50,7 +50,7 @@ I want to see all the messages (cheeps) in a browser
 - interface (browser)
 
 ### Methods:
-- see all (cheeps)
+- list  (cheeps)
 
 ### Views:
 - list view (cheeps)
