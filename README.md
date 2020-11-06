@@ -40,27 +40,44 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
+|Domain Model|Message (to)                                                     |
+|:----------:|:---------------------------------------------------------------:|
+|User        |view peeps(Controller)                                           |
+|Controller  |get peeps(Model) --> send received peeps(View) ; show peeps(User)|
+|Model Layer |read peeps(Database) --> give peeps(Controller)                  |
+|View        |peeps display(Controller)                                        |
 
 ```
 As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 ```
+|Domain Model|Message (to)                                                     |
+|:----------:|:---------------------------------------------------------------:|
+|User        |send peep(Controller)                                            |
+|Controller  |add peep(Model) --> send confirmation(View) ; show confirmation(User)|
+|Model Layer |create peep(Database) --> confirm add(Controller)                |
+|View        |confirmation display(Controller)                                 |
 
 ```
 As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
+- add date to database columns and set as time of created peep
+- display date in peep view (add date to SELECT query)
 
 ```
 As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
+- display peeps in order of date/time posted descending
+- ORDER BY date DESC
+
 ```
 As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+- add keyword search which uses message LIKE '%keyword%' query to find relevant peeps
