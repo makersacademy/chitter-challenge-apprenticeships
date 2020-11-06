@@ -1,12 +1,6 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+Write a small Twitter clone that will allow the users to post messages to a public stream.
 
 ## Set up
 
@@ -64,3 +58,28 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+## Outcomes
+
+- Testing and coverage:
+Task has been completed in a TDD manner, feature testing with Capybara and unit testing with RSpec was involved. 
+The coverage of 99.19% was achieved. 
+Additionally, `rubocop` accepts the code as clean.
+
+- Reflection on blockers:
+The biggest blocker I have encountered while working on the project, was making sure to wrap Database data in program objects. It took me some time to understand properly how it works, but having to complete pair-programming challenge for this week along with trying to sovle same problem with `Chitter` has in the end made me deeply understand this initial blocker. 
+Additionally, I have also found some difficutlies in grasping how to write and design `REASTful` paths for my controllers. However, aftyer consulting it with my peers, reading around the topic (resources that helped me: [here](https://github.com/makersacademy/course/blob/master/pills/rest.md),  [here](http://makers-academy.slides.com/makersacademy/rest) and [here](https://github.com/sjmog/rest)) and consulting it with my coach, agian made me forge my struggler into a good learning activity. 
+
+- Code quality: 
+App controllers were ketp "skinny" and all the logic was kept in dedicated `Peep` class. 
+`HTML` views werre not involved in logic as advised, and I have had a chance to work on fine tunning simple `HTML` and `CSS` edditing. 
+Controllers' paths were designed wit `RESTful` convention. 
+
+## The app 
+
+Below, you can find examplar screens of the app functionality and its simplistic design. 
+
+![](public/chitter_feed.png)
+
+-------------------------
+
+![](public/chitter_post.png)
