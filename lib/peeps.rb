@@ -20,5 +20,9 @@ class Peep
     result = DatabaseConnection.query("INSERT INTO peeps (message, posttime) VALUES('#{message}', '#{posttime}') RETURNING id, message, posttime;")
     Peep.new(result[0]['id'], result[0]['message'], result[0]['posttime'])
   end
-
+  # filters thorugh meesages
+  def self.filter(search)
+    table  = DatabaseConnection.query("SELECT * FROM peeps WHERE message ILIKE '%#{search}%' ORDER BY posttime DESC;") # within database, connecting to table
+    table.map { |result| Peep.new(result['id'], result['message'], result['posttime']) }
+  end
 end

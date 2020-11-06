@@ -30,4 +30,16 @@ describe Peep do
       expect(peep.posttime).to eq '2020-11-09'
     end
   end
+  describe "#filter" do
+    it "filters thorugh messages by words" do
+      Peep.add('peep1', '2020-11-09')
+      Peep.add('peep2', '2020-11-08')
+      Peep.add('peep3', '2020-11-07')
+      peeps = Peep.all
+
+      expect(Peep.filter("peep1")[0].message).to eq 'peep1'
+      expect(Peep.filter("peep2")[0].message).to eq 'peep2'
+      expect(Peep.filter("peep")[3].message).to eq 'peep3'
+    end
+  end
 end
