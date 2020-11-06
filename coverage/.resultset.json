@@ -4,11 +4,7 @@
       "/Users/esthermakers/Documents/Projects/WEEK 6/Self Directed/chitter-challenge/app.rb": {
         "lines": [
           1,
-          null,
           1,
-          1,
-          1,
-          null,
           null,
           1,
           1,
@@ -16,6 +12,56 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/esthermakers/Documents/Projects/WEEK 6/Self Directed/chitter-challenge/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          17,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/esthermakers/Documents/Projects/WEEK 6/Self Directed/chitter-challenge/spec/features/add_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -48,23 +94,16 @@
           1,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/esthermakers/Documents/Projects/WEEK 6/Self Directed/chitter-challenge/lib/peep.rb": {
-        "lines": [
-          1,
           null,
           1,
-          2,
-          2,
-          4,
-          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1604667136
+    "timestamp": 1604673640
   }
 }

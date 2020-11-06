@@ -11,5 +11,15 @@ class Chitter < Sinatra::Base
     erb :timeline
   end
 
+  get '/new' do
+    erb :add
+  end
+
+  post '/success' do
+    new_peep = params[:new_peep]
+    Peep.add(new_peep)
+    erb :confirmation
+  end
+
   run! if app_file == $0
 end
