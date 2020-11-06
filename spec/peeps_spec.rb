@@ -3,6 +3,12 @@ require 'peeps'
 describe Peeps do
   describe '.all' do
     it 'gives a list of all peeps' do
+      connection = PG.connect(dbname: 'chitter_test')
+
+      connection.exec("INSERT INTO peeps (message) VALUES ('The weather is very gloomy');")
+      connection.exec("INSERT INTO peeps (message) VALUES ('Back in lockdown!');")
+      connection.exec("INSERT INTO peeps (message) VALUES ('Hope everyone is happy!!');")
+
       peeps = Peeps.all
 
       expect(peeps).to include('The weather is very gloomy')
