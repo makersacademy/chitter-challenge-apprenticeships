@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/peeps'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -10,11 +11,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    peeps = [
-      'The weather is very gloomy',
-      'Back in lockdown!',
-      'Hope everyone is happy!'
-    ]
+    @peeps = Peeps.all
+    erb :'peeps/index'
   end
 
   run! if app_file == $0

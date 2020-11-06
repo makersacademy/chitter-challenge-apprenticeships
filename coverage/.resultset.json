@@ -4,6 +4,16 @@
       "/Users/melissakneale/Documents/End_of_week_challenges/Chitter/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -11,18 +21,21 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/melissakneale/Documents/End_of_week_challenges/Chitter/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
           1,
           null,
-          null,
           1,
           null,
-          1,
+          2,
           null,
           null,
           null,
           null,
           null,
-          1,
           null
         ]
       },
@@ -53,8 +66,25 @@
           null,
           null
         ]
+      },
+      "/Users/melissakneale/Documents/End_of_week_challenges/Chitter/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1604655231
+    "timestamp": 1604659762
   }
 }
