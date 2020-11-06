@@ -1,1 +1,5 @@
-This is a peep!
+<ul>
+<% @peeps.each do |peep| %>
+  <li><%= peep.message %></li>
+<% end %>
+</ul>
