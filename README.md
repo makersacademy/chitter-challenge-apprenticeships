@@ -46,7 +46,6 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
 
 ```
 As a Maker
