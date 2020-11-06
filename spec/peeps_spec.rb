@@ -1,12 +1,21 @@
 require_relative '../lib/peeps'
 describe Peep do
+
   describe '.all' do
     it "returns all peeps" do
       peeps = Peep.all
       expect(peeps.length).to eq 1
-     expect(peeps.first).to be_a Peep
-     expect(peeps.first.id).to eq peeps[0].id
-     expect(peeps.first.message).to eq 'This is a peep!'
-   end
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.id).to eq peeps[0].id
+      expect(peeps.first.message).to eq 'This is a peep!'
+    end
+  end
+
+  describe "#add" do
+    it "creates new peep" do
+      peep = Peep.add('test peep')
+      expect(peep).to be_a Peep
+      expect(peep.message).to eq "test peep"
+    end
   end
 end

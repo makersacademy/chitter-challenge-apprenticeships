@@ -8,6 +8,14 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/peeps/new' do
+    erb(:peeps_new)
+  end
+  post '/peeps' do
+    Peep.add(params[:peep])
+    redirect '/peeps'
+  end
+
   get '/peeps' do
     @peeps = Peep.all
     erb(:index)

@@ -4,3 +4,6 @@ div {
   border: 5px solid gray;
   margin: 0;
 }
+textarea {
+    resize: none;
+}
