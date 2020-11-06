@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="my.css"/>
+<h1>Chitter</h1>
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      <div><%= peep.message %></div>
+    </li>
+  <% end %>
+</ul>
