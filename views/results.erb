@@ -1,8 +1,18 @@
-<h1> Results: </h1>
-<form action="/">
-  <input type="submit" value="Back"/>
-</form>
-
-<% @filtered_peeps.reverse.each do |peep|%>
-  <p><%= peep.message%>: <%= peep.date%></p>
-<% end %>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body>
+  <h1> Results: </h1>
+  <form action="/">
+    <input type="submit" value="Back"/>
+  </form>
+  <% if @filtered_peeps.empty? %>
+    <h4> No results </h4>
+  <% else %>
+    <div class="allcontent">
+      <% @filtered_peeps.reverse.each do |peep|%>
+        <p><%= peep.message%></p>
+        <p class="date"><%= peep.date%></p>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</body>
