@@ -7,7 +7,7 @@ describe Peeps do
 
       expect(peeps).to include('The weather is very gloomy')
       expect(peeps).to include('Back in lockdown!')
-      expect(peeps).to include('Hope everyone is happy!')
+      expect(peeps).to include('Hope everyone is happy!!')
     end
   end
 end
