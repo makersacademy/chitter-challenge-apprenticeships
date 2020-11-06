@@ -1,5 +1,29 @@
 ## Chitter Challenge
 
+My approach for this challenge is going to be to break down the requirements for each story and create a short domain model
+
+As a Maker
+So that I can see what people are doing
+I want to see all the messages (peeps)
+in a browser
+
+"peeps, all, messages, browser"
+
+Feature: Expect when client visits /peeps to list all of the peeps
+Rspec: consider dummy db data (possible db_helper)
+
+Model:
+Peeps class
+peeps.all method
+
+View:
+/peeps/index.erb
+
+Controller:
+client browser -> get -> /peeps
+
+
+
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
