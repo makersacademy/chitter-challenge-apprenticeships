@@ -10,9 +10,9 @@ class Peep
     @message = message
     @posttime = posttime
   end
-
+# .all method returns result in reverse chronological order
   def self.all
-    table  = DatabaseConnection.query('SELECT * FROM peeps;') # within database, connecting to table
+    table  = DatabaseConnection.query('SELECT * FROM peeps ORDER BY posttime DESC;') # within database, connecting to table
     table.map { |result| Peep.new(result['id'], result['message'], result['posttime']) }
   end
 

@@ -10,6 +10,16 @@ describe Peep do
       expect(peeps.first.message).to eq 'This is a peep!'
       expect(peeps.first.posttime).to eq '2020-11-09'
     end
+    it "returns peeps in reverse chronological order" do
+      Peep.add('peep1', '2020-11-09')
+      Peep.add('peep2', '2020-11-08')
+      Peep.add('peep3', '2020-11-07')
+      peeps = Peep.all
+
+      expect(peeps[1].message).to eq 'peep1'
+      expect(peeps[2].message).to eq 'peep2'
+      expect(peeps[3].message).to eq 'peep3'
+    end
   end
 
   describe "#add" do
