@@ -1,0 +1,11 @@
+language: ruby
+
+services:
+  -postgresql
+
+before_script:
+  - psql -c "CREATE DATABASE chitter_test;" -U travis
+  - psql -d chitter_test -c "CREATE TABLE cheeps(id SERIAL PRIMARY KEY, message VARCHAR(60));" -U travis
+
+script:
+  - bundle exec rspec

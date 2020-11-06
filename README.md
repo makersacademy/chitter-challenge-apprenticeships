@@ -1,5 +1,11 @@
 ## Chitter Challenge
 
+[Analysis of challenge](/docs/analysis.md)
+
+[Domain Model Discussion](/docs/domain_model.md)
+
+[Interface Discussion](/docs/interface.md)
+
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
