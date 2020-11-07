@@ -1,5 +1,12 @@
-<form action="/<%= @peep_id %>" method="post">
-  <input type="hidden" name="_method" value="PATCH" />
-  <input type="text" name="message" />
-  <input type="submit" value="Submit" />
-</form>
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body>
+  <div class="centercontent">
+    <h2> Update peep: </h2>
+    <form action="/<%= @peep.id %>" method="post">
+      <input type="hidden" name="_method" value="PATCH" />
+      <label for="message">New message: </label>
+      <input type="text" name="message" value="<%= @peep.message %>"/>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</body>

@@ -15,13 +15,15 @@
         <li class="peep" id="peep-<%= peep.id %>">
           <div class="white-background">
             <p><%= peep.message%></p>
-            <form action="/<%= peep.id %>/edit" method="get">
-              <input type="submit" value="Edit" />
-            </form>
             <form action="/<%= peep.id %>" method="post">
               <input type='hidden' name='_method' value='DELETE'/>
               <input type="submit" value="Delete" class="delete"/>
             </form>
+            
+            <form action="/<%= peep.id %>/edit" method="get">
+              <input type="submit" value="Edit" class="edit"/>
+            </form>
+
             </div>
           <p class="date"><%= peep.date%></p>
           <br>

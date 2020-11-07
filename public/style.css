@@ -80,3 +80,8 @@ form {
 .delete{
   float: right;
 }
+
+.edit{
+  float: right;
+  margin-right: 1vw;
+}
