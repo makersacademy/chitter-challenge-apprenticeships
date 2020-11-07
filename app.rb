@@ -4,7 +4,7 @@ require 'date'
 
 class Chitter < Sinatra::Base
 
-  attr_reader :peep
+  attr_reader :peep, :searched, :keyword
 
   get '/chitter' do
     @peep = Peep.all
@@ -15,13 +15,23 @@ class Chitter < Sinatra::Base
   erb :'new'
   end
 
+  get '/enter' do
+    redirect '/new'
+  end
+
+
   post '/new' do
-    message = params[:message]
-    date = Time.now.strftime("%d/%m/%Y")
-    connection = PG.connect(dbname: 'chitter_test')
-      connection.exec("INSERT INTO peeps (message) VALUES('#{message}', '#{date}')")
+  Peep.create(message: params[:message], date: Time.now.strftime("%d/%m/%Y %H:%M"))
     redirect '/chitter'
   end
+
+  post '/search' do
+  @searched = Peep.search(keyword: params[:keyword])
+  @keyword = params[:keyword]
+  connection = PG.connect(dbname: 'chitter_test')
+erb:'search_page'
+end
+
 
 
 

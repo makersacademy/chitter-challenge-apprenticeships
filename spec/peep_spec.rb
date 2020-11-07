@@ -18,10 +18,17 @@ describe '.all' do
       connection.exec("INSERT INTO peeps (message) VALUES ('This is message 3');")
 
       peep = Peep.all
+      m = "message"
+      expect(peep["message"]).to include('This is message 1')
+      expect(peep["message"]).to include('This is message 2')
+      expect(peep["message"]).to include('This is message 3')
+  end
+end
+describe '.create' do
+  it 'creates a new peep' do
+    Peep.create(message: 'Here is a newly created message', date: '12/10/20')
 
-      expect(peep).to include('This is message 1')
-      expect(peep).to include('This is message 2')
-      expect(peep).to include('This is message 3')
+    expect(Peep.all).to include 'Here is a newly created message'
   end
 end
 end

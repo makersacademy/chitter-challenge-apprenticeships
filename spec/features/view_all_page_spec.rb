@@ -2,15 +2,14 @@ feature 'Viewing test page' do
   scenario 'visiting the test page' do
     connection = PG.connect(dbname: 'chitter_test')
 
-        # Add the test data
-        connection.exec("INSERT INTO peeps (message, date) VALUES ('This is message 1', 'nil');")
-        connection.exec("INSERT INTO peeps (message, date) VALUES ('This is message 2', 'nil');")
-        connection.exec("INSERT INTO peeps (message, date) VALUES ('This is message 3', 'nil');")
+    Peep.create(message: "Crazy message here", date: '01/11/20')
+  Peep.create(message: "Crazy message there", date: '01/11/20')
+ Peep.create(message: "Crazy message everywhere", date: '01/11/20')
 
         visit('/chitter')
 
-        expect(page).to have_content('This is message 1')
-        expect(page).to have_content('This is message 2')
-        expect(page).to have_content('This is message 3')
+        expect(page).to have_content('Crazy message here')
+        expect(page).to have_content('Crazy message there')
+        expect(page).to have_content('Crazy message everywhere')
   end
 end

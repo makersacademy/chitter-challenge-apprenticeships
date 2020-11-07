@@ -2,10 +2,17 @@ body {
   background-color: #faf6ac !important;
 }
 
+.box{
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 150px;
+}
 .buffer{
   height: 20px;
 }
-
+.button-buffer{
+  margin: 25px;
+}
 .card-body{
   background-color: #d7f0f7;
 }
@@ -15,12 +22,20 @@ html{
   height: 100%;
 }
 
+.inline{
+  display: inline;
+}
 
 .title{
 font-family: 'Amatic SC', cursive;
 font-size: 40px;
+display: inline;
 }
 
 .text{
   font-family: 'Shadows Into Light Two', cursive;
+}
+
+.top-buffer{
+  margin: 50px;
 }
