@@ -8,6 +8,7 @@ before_script:
   - psql -d chitter_test -c "CREATE TABLE cheeps(id SERIAL PRIMARY KEY, message VARCHAR(60), date_post TIMESTAMP DEFAULT now());" -U travis
   - psql -c "CREATE DATABASE chitter;" -U travis
   - psql -d chitter -c "CREATE TABLE cheeps(id SERIAL PRIMARY KEY, message VARCHAR(60), date_post TIMESTAMP DEFAULT now());" -U travis
+  - psql -d chitter -c "INSERT INTO cheeps(message) VALUES ('This is a production cheep!');" -U travis
 
 script:
   - bundle exec rspec
