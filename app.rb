@@ -21,7 +21,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/list' do
-    Cheep.add(message: params[:message])
+    Cheep.add(message: params[:message]) if params[:message].length >= 1
     redirect '/list'
   end
 
