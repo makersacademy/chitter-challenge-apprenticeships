@@ -21,9 +21,10 @@ class Cheep
       date_post: result[0]['date_post'])
   end
 
-  def self.list
+  def self.list(filter)
     result = db_connection.exec("SELECT id, message,
-      TO_CHAR(date_post, 'DD-MON-YYYY') date_post_f FROM cheeps ORDER BY date_post DESC;")
+      TO_CHAR(date_post, 'DD-MON-YYYY') date_post_f FROM cheeps
+      WHERE message ILIKE '#{filter}' ORDER BY date_post DESC;")
     result.map do |cheep|
       Cheep.new(id: cheep['id'], date_post: cheep['date_post_f'],
         message: cheep['message'])

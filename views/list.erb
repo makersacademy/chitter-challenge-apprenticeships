@@ -2,11 +2,23 @@
 <head></head>
 <body>
   <header>
-    <form action='/add'>
-      <input type='submit' value='Add'>
-    </form>
+    <table name='header' style="width: 50%; text-align: center">
+      <tr>
+        <td>
+          <form action='/add'>
+            <input type='submit' value='Add'>
+          </form>
+        </td>
+        <td align='right'>
+          <form action='/filter' method='post'>
+            <input type='text' name='filter' placeholder='<%= @filter %>'>
+            <input type='submit' value='Apply Filter'>
+          </form>
+        </td>
+      </tr>
+    </table>
   </header>
-  <ul>
+  <ul style="margin-left: 30px">
     <% @cheeps.each do |cheep| %>
       <li class='cheep' value='<%=cheep.id %>'><%= cheep.date_post + ":  " + cheep.message %>
       </li>

@@ -7,7 +7,7 @@ RSpec.describe Cheep do
     it '- returns a list of messages' do
       result1 = add_row_to_test_database
       result2 = add_row_to_test_database
-      subject = Cheep.list
+      subject = Cheep.list('%%')
 
       expect(subject.size).to eq 2
       expect(subject[0].message).to eq result1[0]['message']
