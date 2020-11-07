@@ -1,3 +1,5 @@
+require_relative 'web_helpers'
+
 feature 'Viewing test page' do
   scenario 'visiting the test page' do
     visit('/test')
