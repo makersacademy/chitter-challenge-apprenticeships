@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: chitter
+  username: duncanmorrison
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name
+  pool: 2
+  username: your_username
+  password: your_password
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: chitter_test
+  username: duncanmorrison
