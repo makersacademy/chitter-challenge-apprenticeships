@@ -38,4 +38,16 @@ class Peeps
   def self.delete(id:)
     DatabaseConnection.query("DELETE FROM peeps WHERE id = #{id}")
   end
+
+  def self.update(id:, message:, date:)
+    result = DatabaseConnection.query("UPDATE peeps SET message = '#{message}', date = '#{date}' WHERE id = #{id} RETURNING id, message, date;")
+    Peeps.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['date'])
+  end
+
+  def self.find(id:)
+
+    result = DatabaseConnection.query("SELECT * FROM peeps WHERE id = #{id};")
+    Peeps.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['date'])
+  end
+
 end

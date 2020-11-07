@@ -42,4 +42,29 @@ describe Peeps do
       expect(Peeps.all.length).to eq 0
     end
   end
+
+  describe '.update' do
+    it 'updates the peep message' do
+      peep = Peeps.add('Old message')
+      updated_peep = Peeps.update(id: peep.id, message: 'New Message', date: Time.now.strftime("%Y-%m-%d"))
+
+      expect(updated_peep).to be_a Peeps
+      expect(updated_peep.id).to eq peep.id
+      expect(updated_peep.message).to eq 'New Message'
+      expect(updated_peep.date).to eq Time.now.strftime("%Y-%m-%d")
+    end
+  end
+
+  describe '.find' do
+    it 'returns the requested peep object' do
+      peep = Peeps.add('This is the message to find')
+
+      result = Peeps.find(id: peep.id)
+
+      expect(result).to be_a Peeps
+      expect(result.id).to eq peep.id
+      expect(result.message).to eq 'This is the message to find'
+    end
+  end
+
 end

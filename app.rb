@@ -41,7 +41,7 @@ class Chitter < Sinatra::Base
   end
 
   patch '/:id' do
-    DatabaseConnection.query("UPDATE peeps SET message = '#{params[:message]}' WHERE id = '#{params[:id]}'")
+    Peeps.update(id: params[:id], message: params[:message], date: Time.now.strftime("%Y-%m-%d"))
     redirect '/'
   end
 
