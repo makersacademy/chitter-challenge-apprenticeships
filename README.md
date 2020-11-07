@@ -66,7 +66,7 @@ Additionally, `rubocop` accepts the code as clean.
 
 - Reflection on blockers:
 The biggest blocker I have encountered while working on the project, was making sure to wrap Database data in program objects. It took me some time to understand properly how it works, but having to complete pair-programming challenge for this week along with trying to sovle same problem with `Chitter` has in the end made me deeply understand this initial blocker. 
-Additionally, I have also found some difficutlies in grasping how to write and design `REASTful` paths for my controllers. However, aftyer consulting it with my peers, reading around the topic (resources that helped me: [here](https://github.com/makersacademy/course/blob/master/pills/rest.md),  [here](http://makers-academy.slides.com/makersacademy/rest) and [here](https://github.com/sjmog/rest)) and consulting it with my coach, agian made me forge my struggler into a good learning activity. 
+Additionally, I have also found some difficutlies in grasping how to write and design `REASTful` paths for my controllers. However, aftyer consulting it with my peers, reading around the topic (resources that helped me: [here](https://github.com/makersacademy/course/blob/master/pills/rest.md),  [here](http://makers-academy.slides.com/makersacademy/rest) and [here](https://github.com/sjmog/rest)) and consulting it with my coach, again, it made me forge my struggle into a good learning activity. 
 
 - Code quality: 
 App controllers were ketp "skinny" and all the logic was kept in dedicated `Peep` class. 
