@@ -17,18 +17,20 @@
             <p><%= peep.message%></p>
           </div>
 
-            <form action="/<%= peep.id %>/comments/new" method="get">
-              <button type="submit" value="Comment" class="comment"><img src="/comment.png"/></button>
-            </form>
-
-            <form action="/<%= peep.id %>" method="post">
-              <input type='hidden' name='_method' value='DELETE'/>
-              <button type="submit" value="Delete" class="delete"><img src="/delete.png"/></button>
-            </form>
+          <form action="/<%= peep.id %>" method="post">
+            <input type='hidden' name='_method' value='DELETE'/>
+            <button type="submit" value="Delete" class="delete"><img src="/delete.png"/></button>
+          </form>
 
             <form action="/<%= peep.id %>/edit" method="get">
               <button type="submit" value="Edit" class="edit"><img src="/edit.png"/></button>
             </form>
+
+            <form action="/<%= peep.id %>/comments/new" method="get">
+              <button type="submit" value="Comment" class="comment"><img src="/comment.png"/></button>
+            </form>
+
+
 
             <p class="date"><%= peep.date%></p>
 

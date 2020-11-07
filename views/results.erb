@@ -9,9 +9,14 @@
   <% else %>
     <div class="allcontent">
       <% @filtered_peeps.reverse.each do |peep|%>
-        <p><%= peep.message%></p>
+      <li class="peep" id="peep-<%= peep.id %>">
+        <div class="white-background">
+          <p><%= peep.message%></p>
+        </div>
         <p class="date"><%= peep.date%></p>
-        <br>
+      <br>
+    </li>
+
       <% end %>
     <% end %>
   </div>

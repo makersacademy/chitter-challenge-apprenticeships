@@ -85,13 +85,18 @@ form {
   margin: 0;
 }
 
-.edit, .delete{
+.delete{
+  float: right;  
+}
+
+.edit{
   float: right;
   margin-right: 1vw;
 }
 
 .comment{
   float: right;
+  margin-right: 1vw;
 }
 
 .single{

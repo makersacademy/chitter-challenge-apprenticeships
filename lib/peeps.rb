@@ -36,7 +36,7 @@ class Peeps
   end
 
   def self.delete(id:)
-    #Removes comments for specific peep so peep itself can be deleted
+    # Removes comments for specific peep so peep itself can be deleted
     DatabaseConnection.query("DELETE FROM comments WHERE peep_id = #{id};")
     DatabaseConnection.query("DELETE FROM peeps WHERE id = #{id}")
   end
