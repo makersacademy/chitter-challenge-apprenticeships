@@ -13,28 +13,36 @@ h3{
 
 p {
   text-align: left;
-  background-color: white;
   padding: 5px;
   width: 70vw;
   margin: 0;
 }
 
+.comments{
+  font-size: 0.7em;
+}
+
 .date{
-  background-color: #afcfee;
+  background-color: #d3d3d3;
   font-size: 0.7em;
 }
 
-input, select{
-  font-size: 0.7em;
-}
-
-input[type=submit] {
+button{
   padding:5px 15px;
   background:#02075d;
   color:white;
   border:0 none;
   cursor:pointer;
-  width: 8vw;
+  height: 2.5vh;
+  font-size: 0.7em;
+}
+
+input{
+  font-size: 0.7em;
+}
+
+img{
+  height: 1.7vh;
 }
 
 .allcontent {
@@ -77,11 +85,17 @@ form {
   margin: 0;
 }
 
-.delete{
+.edit, .delete{
+  float: right;
+  margin-right: 1vw;
+}
+
+.comment{
   float: right;
 }
 
-.edit{
-  float: right;
-  margin-right: 1vw;
+.single{
+  margin-bottom: 1vh;
+  background-color: #afcfee;
+  width: 100%
 }

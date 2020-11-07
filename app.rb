@@ -23,6 +23,11 @@ class Chitter < Sinatra::Base
     erb :'/edit'
   end
 
+  get '/:id/comments/new' do
+    @peep_id = params[:id]
+    erb :'comments/new'
+  end
+
   post '/' do
     message = params[:message]
     Peeps.add(message)
@@ -33,6 +38,11 @@ class Chitter < Sinatra::Base
     keyword = params[:keyword]
     @filtered_peeps = Peeps.filter(keyword)
     erb :results
+  end
+
+  post '/:id/comments' do
+    DatabaseConnection.query("INSERT INTO comments (text, peep_id) VALUES('#{params[:comment]}', '#{params[:id]}');")
+    redirect '/'
   end
 
   delete '/:id' do

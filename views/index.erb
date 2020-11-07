@@ -2,10 +2,10 @@
 <body>
   <h1> Peeps: </h1>
     <form action="/peep" class="side">
-      <input type="submit" value="New Peep"/>
+      <button type="submit" value="New Peep"> New Peep </button>
     </form>
     <form action="/filter" class="side">
-      <input type="submit" value="Filter"/>
+      <button type="submit" value="Filter"> Filter </button>
     </form>
     <% if @peeps.empty? %>
       <h4> No peeps </h4>
@@ -15,19 +15,31 @@
         <li class="peep" id="peep-<%= peep.id %>">
           <div class="white-background">
             <p><%= peep.message%></p>
-            <form action="/<%= peep.id %>" method="post">
-              <input type='hidden' name='_method' value='DELETE'/>
-              <input type="submit" value="Delete" class="delete"/>
-            </form>
-            
-            <form action="/<%= peep.id %>/edit" method="get">
-              <input type="submit" value="Edit" class="edit"/>
+          </div>
+
+            <form action="/<%= peep.id %>/comments/new" method="get">
+              <button type="submit" value="Comment" class="comment"><img src="/comment.png"/></button>
             </form>
 
-            </div>
-          <p class="date"><%= peep.date%></p>
+            <form action="/<%= peep.id %>" method="post">
+              <input type='hidden' name='_method' value='DELETE'/>
+              <button type="submit" value="Delete" class="delete"><img src="/delete.png"/></button>
+            </form>
+
+            <form action="/<%= peep.id %>/edit" method="get">
+              <button type="submit" value="Edit" class="edit"><img src="/edit.png"/></button>
+            </form>
+
+            <p class="date"><%= peep.date%></p>
+
+            <ul class="comments">
+              <% peep.comments.each do |comment| %>
+                <li class="single"><p><%= comment['text'] %></p></li>
+              <% end %>
+            </ul>
           <br>
         </li>
+
         <% end %>
       </div>
     <% end %>

@@ -67,4 +67,15 @@ describe Peeps do
     end
   end
 
+  describe '#comments' do
+    it 'returns a list of comments on the peep' do
+      peep = Peeps.add('Peep to comment on')
+      DatabaseConnection.query("INSERT INTO comments (id, text, peep_id) VALUES(1, 'Test comment', #{peep.id})")
+
+      comment = peep.comments.first
+
+      expect(comment['text']).to eq 'Test comment'
+    end
+  end
+
 end
