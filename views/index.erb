@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="/style.css"/>
 <body>
+  <% if @user %>
+    <h1>Welcome, <%= @user.email %></h1>
+  <% end %>
   <h1> Peeps: </h1>
     <form action="/peep" class="side">
       <button type="submit" value="New Peep"> New Peep </button>

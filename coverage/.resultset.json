@@ -6,13 +6,15 @@
           1,
           1,
           1,
-          null,
-          1,
           1,
           null,
           1,
-          29,
-          29,
+          1,
+          null,
+          1,
+          30,
+          30,
+          30,
           null,
           null,
           1,
@@ -28,6 +30,16 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
           1,
           1,
           1,
@@ -78,9 +90,9 @@
           null,
           null,
           1,
-          33,
+          34,
           null,
-          33,
+          34,
           21,
           null,
           null,
@@ -127,6 +139,29 @@
           null
         ]
       },
+      "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/lib/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          32,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
       "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/database_connection_setup.rb": {
         "lines": [
           1,
@@ -145,7 +180,7 @@
           1,
           null,
           1,
-          34,
+          38,
           null,
           null,
           1,
@@ -153,7 +188,7 @@
           null,
           null,
           1,
-          85,
+          91,
           null,
           null
         ]
@@ -336,6 +371,20 @@
           null
         ]
       },
+      "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/spec/features/registration_feature_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/spec/features/updating_feature_spec.rb": {
         "lines": [
           1,
@@ -439,6 +488,48 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/spec/user_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/zoethomas/Projects/chitter-challenge-apprenticeships/spec/database_helpers.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
           null
         ]
       }
