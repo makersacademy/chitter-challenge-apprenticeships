@@ -6,6 +6,8 @@ services:
 before_script:
   - psql -c "CREATE DATABASE chitter_test;" -U travis
   - psql -d chitter_test -c "CREATE TABLE cheeps(id SERIAL PRIMARY KEY, message VARCHAR(60), date_post TIMESTAMP DEFAULT now());" -U travis
+  - psql -c "CREATE DATABASE chitter;" -U travis
+  - psql -d chitter -c "CREATE TABLE cheeps(id SERIAL PRIMARY KEY, message VARCHAR(60), date_post TIMESTAMP DEFAULT now());" -U travis
 
 script:
   - bundle exec rspec

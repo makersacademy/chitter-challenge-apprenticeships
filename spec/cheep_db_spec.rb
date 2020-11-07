@@ -21,7 +21,6 @@ RSpec.describe Cheep do
     end
   end
 
-
   describe 'able to access the data in database' do
     it '- connection returns the table data' do
       result = Cheep.db_connection.exec("SELECT * FROM cheeps;")

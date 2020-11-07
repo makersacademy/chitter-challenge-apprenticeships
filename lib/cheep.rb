@@ -13,7 +13,7 @@ class Cheep
     end
   end
 
-  def self.add(message:, date_post: Time.now.strftime('%Y-%m-%d %H:%M:%S'))
+  def self.add(message:)
     result = db_connection.exec("INSERT INTO cheeps(message)
       VALUES ('#{message}')
       RETURNING id, message, date_post;")
