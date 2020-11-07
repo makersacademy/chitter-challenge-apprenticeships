@@ -5,6 +5,6 @@ feature 'Able to see date of post' do
     add_row_to_test_database
     visit('/')
 
-    within('li') { expect(page).to have_content(/\d{2}-\d{2}-\d{4}/) }
+    within('li') { expect(page).to have_content(/\d{2}-...-\d{4}/) }
   end
 end

@@ -8,7 +8,7 @@
   </header>
   <ul>
     <% @cheeps.each do |cheep| %>
-      <li class='cheep'><%= cheep %></li>
+      <li class='cheep'><%= cheep.date_post + ":  " + cheep.message %></li>
     <% end %>
   </ul>
 </body>
