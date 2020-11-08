@@ -2,9 +2,8 @@ require 'sinatra/base'
 require './lib/peep'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
-  end
+  enable :sessions
+  set :session_secret, "here be dragons"
 
   get '/peeps' do
     @peeps = Peep.all
@@ -17,9 +16,6 @@ class Chitter < Sinatra::Base
 
   post '/peeps' do
     Peep.add(peep: params[:peep])
-    # peep = params['peep']
-    # connection = PG.connect(dbname: 'chitter_test')
-    # connection.exec("INSERT INTO peeps (message) VALUES('#{peep}')")
     redirect '/peeps'
   end
 
