@@ -1,0 +1,63 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+body {
+  background-color: #d7f0f7 !important;
+}
+
+.box{
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 150px;
+}
+.buffer{
+  height: 20px;
+}
+.button-buffer{
+  margin: 25px;
+}
+.card-body{
+  background-color: #faf6ac;
+}
+
+html{
+  height: 100%;
+}
+
+.inline{
+  display: inline;
+}
+.row{
+  margin: 0 auto;
+  width: 80%
+}
+#search_results{
+  margin: 0 auto;
+padding-left: 20%;
+  width: 100%;
+
+}
+.text{
+  margin-left: 20%;
+}
+
+.title{
+font-family: 'Amatic SC', cursive;
+font-size: 40px;
+display: inline;
+text-decoration: none !important;
+}
+
+.text{
+  font-family: 'Shadows Into Light Two', cursive;
+}
+
+.text-area{
+  background-color: #faf6ac !important;
+}
+.top-buffer{
+  padding: 25px;
+}
