@@ -7,9 +7,11 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dbimpkgan8ao50
-  username: ykywuglfjybhwf
-  password: d3d41b2ee3731def86a8c12a483606ace0d5016cbe25c7ec0048d1b1479941d5
+  pool: 5
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   adapter: postgresql
