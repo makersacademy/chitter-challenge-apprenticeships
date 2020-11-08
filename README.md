@@ -58,6 +58,22 @@ View:
 Controller:
 get /peeps
 
+```
+As a Maker
+So that I can easily see the latest peeps
+I want to see a list of peeps in reverse chronological order
+```
+
+Think this is easiest completed by ordering the SQL result.  This could be tested by expecting .first to be newer than .last
+
+```
+As a Maker
+So that I can find relevant peeps
+I want to filter on a specific keyword
+```
+
+can use where clause in SQL but will need to add a search text to the 
+
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day

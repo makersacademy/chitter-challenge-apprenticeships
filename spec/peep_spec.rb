@@ -15,7 +15,14 @@ describe Peep do
     it 'returns the date of the peep' do
       add_2_rows_to_test_database()
       result = Peep.all
-      expect(result.first.time_sent).to eq '1980-01-01'
+      expect(result.first.time_sent).to eq '1980-02-02'
+    end
+
+    it 'returns the peeps in reverse order' do
+      add_2_rows_to_test_database()
+
+      result = Peep.all
+      expect(result.first.message).to eq 'This is also a peep!'
     end
   end
 
@@ -23,7 +30,7 @@ describe Peep do
     it 'responds to message' do
       add_2_rows_to_test_database()
       result = Peep.all
-      expect(result[0].message).to eq "This is a peep!"
+      expect(result[1].message).to eq "This is a peep!"
     end
   end
 

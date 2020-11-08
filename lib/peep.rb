@@ -13,7 +13,7 @@ class Peep
 
   def self.all
 
-    result = DatabaseConnection.query("SELECT * FROM peeps;")
+    result = DatabaseConnection.query("SELECT * FROM peeps ORDER BY time_sent DESC;")
     result.map do |peep|
       Peep.new(id: peep['id'], message: peep['message'], time_sent: peep['time_sent'])
     end
