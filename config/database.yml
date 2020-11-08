@@ -7,10 +7,9 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: database_name
-  pool: 2
-  username: your_username
-  password: your_password
+  database: dbimpkgan8ao50
+  username: ykywuglfjybhwf
+  password: d3d41b2ee3731def86a8c12a483606ace0d5016cbe25c7ec0048d1b1479941d5
 
 test:
   adapter: postgresql
