@@ -29,11 +29,12 @@ p {
 
 button{
   padding:5px 15px;
+  /* line-height: 1em; */
   background:#02075d;
   color:white;
   border:0 none;
   cursor:pointer;
-  height: 2.5vh;
+  /* height: 2.5vh; */
   font-size: 0.7em;
 }
 
@@ -42,7 +43,7 @@ input{
 }
 
 img{
-  height: 1.7vh;
+  height: 1.2em;
 }
 
 .allcontent {
@@ -86,7 +87,7 @@ form {
 }
 
 .delete{
-  float: right;  
+  float: right;
 }
 
 .edit{
