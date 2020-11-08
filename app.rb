@@ -7,21 +7,13 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    'Welcome to Peeps'
-  end
-
-  get '/peeps' do
     @peeps = Peeps.all
     erb :'peeps/index'
   end
 
-  get '/peeps/new' do
-    erb :"peeps/new"
-  end
-
   post '/peeps' do
     Peeps.create(message: params[:peeps])
-    redirect '/peeps'
+    redirect '/'
 
 #    peep = params['peep']
 #    connection = PG.connect(dbname: 'chitter_test')

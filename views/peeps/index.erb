@@ -1,5 +1,13 @@
+Welcome to Peeps
+
+<form action="/peeps" method="post">
+  <input type="text" name="peeps" />
+  <input type="submit" name="Submit" />
+  </form>
+
+
 <ul>
   <% @peeps.each do |peep| %>
     <li><%= peep %></li>
   <% end %>
-</ul> 
+</ul>

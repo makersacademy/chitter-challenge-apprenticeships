@@ -11,7 +11,7 @@ feature 'see all messages' do
     Peeps.create(message: 'Back in lockdown!')
     Peeps.create(message: 'Hope everyone is happy!')
 
-    visit ('/peeps')
+    visit ('/')
 
     expect(page).to have_content 'The weather is very gloomy'
     expect(page).to have_content 'Back in lockdown!'
