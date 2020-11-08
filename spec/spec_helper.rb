@@ -19,6 +19,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'time'
 
 require_relative './setup_test_database'
 
@@ -42,6 +43,7 @@ RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
     add_row_to_test_database
+    allow(Time).to receive(:now).and_return(Time.new(2020, 11, 8, 15, 37, 37, '+02:00'))
   end
 end
 
