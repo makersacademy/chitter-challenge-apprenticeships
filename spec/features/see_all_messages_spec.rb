@@ -7,9 +7,9 @@ feature 'see all messages' do
 
   scenario 'a user can see all messages' do
 
-    Peeps.create(message: 'The weather is very gloomy')
-    Peeps.create(message: 'Back in lockdown!')
-    Peeps.create(message: 'Hope everyone is happy!')
+    Peeps.create(username: 'Melissa', message: 'The weather is very gloomy')
+    Peeps.create(username: 'Fiona', message: 'Back in lockdown!')
+    Peeps.create(username: 'Conner', message: 'Hope everyone is happy!')
 
     visit ('/')
 

@@ -6,4 +6,15 @@ feature 'Add a new peep' do
 
     expect(page).to have_content 'This is my first peep'
   end
+
+  scenario 'A users name can be identified with the peep' do
+    visit ('/')
+    fill_in('username', with: '@Melissa')
+    fill_in('peeps', with: 'Does this work?')
+    click_button('Submit')
+
+    expect(page).to have_content '@Melissa'
+    expect(page).to have_content 'Does this work?'
+  end
+
 end

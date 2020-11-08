@@ -1,6 +1,9 @@
-Welcome to Peeps
+<h1> Welcome to Peeps </h1>
 
 <form action="/peeps" method="post">
+  Username:
+  <input type="text" name="username" />
+  Message: 
   <input type="text" name="peeps" />
   <input type="submit" name="Submit" />
   </form>
@@ -8,6 +11,6 @@ Welcome to Peeps
 
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep %></li>
+    <p><%= peep.username%> says: <%= peep.message %></p>
   <% end %>
 </ul>
