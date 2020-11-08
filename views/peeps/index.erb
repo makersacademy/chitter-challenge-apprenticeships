@@ -1,5 +1,8 @@
-<h1> Welcome to Peeps </h1>
+<body style="background-color:powderblue;">
 
+<h1> <center> Welcome to Peeps </center> </h1>
+
+<center>
 <form action="/peeps" method="post">
   Username:
   <input type="text" name="username" />
@@ -7,11 +10,15 @@
   <input type="text" name="peeps" />
   <input type="submit" name="Submit" />
   </form>
+</center>
 
-
+<center>
 <ul>
   <% @peeps.each do |peep| %>
     <p><%= peep.username%> says: <%= peep.message %>
     <br> Date posted: <%= peep.date %></p>
   <% end %>
 </ul>
+</center>
+
+</body>
