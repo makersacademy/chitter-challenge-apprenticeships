@@ -1,0 +1,14 @@
+<h3>User Profile: <%= @user.username %></h3>
+
+<% @user.peeps.each do |peep| %>
+  <div class="peep">
+    <p class="message-header">By: <a href="/users/<%= peep.user.id %>"><%= peep.user.username %></a> at <%= peep.created_at %>
+    <p class="message-body"><%= peep.message %></p>
+    <% if peep.user.id == session[:user_id] %>
+      <form class="delete-peep" action="/peeps/<%= peep.id %>/delete" method="POST">
+        <input type="submit" value="delete">
+      </form>
+    
+    <% end %>
+  </div>
+<% end %>
