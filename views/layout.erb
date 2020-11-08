@@ -19,15 +19,15 @@
       <li><a href="/login">Login</a></li>
     <% end %>
   </ul>
-  
-  <% flash.keys.each do |type| %>
-    <p data-alert class="<%= type %>">
-      <%= flash[type] %>
-    </p>
-  <% end %>
+  <div class="container">
+    <% flash.keys.each do |type| %>
+      <p data-alert class="<%= type %>">
+        <%= flash[type] %>
+      </p>
+    <% end %>
 
-  <%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 
 </html>

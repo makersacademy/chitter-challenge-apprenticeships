@@ -30,7 +30,6 @@ class Chitter < Sinatra::Base
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      p session
       redirect to '/peeps'
     else
       flash[:error] = "Invalid username/password combination"
@@ -80,7 +79,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/users/:id' do
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
     erb :user, :layout => :layout
   end
 
