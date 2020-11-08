@@ -17,4 +17,13 @@ feature 'Add a new peep' do
     expect(page).to have_content 'Does this work?'
   end
 
+  scenario 'The date is displayed with a new peep' do
+    visit ('/')
+    fill_in('username', with: '@Frank')
+    fill_in('peeps', with: 'Gimme a date')
+    click_button('Submit')
+
+    expect(page).to have_content 'Date posted:'
+  end
+
 end

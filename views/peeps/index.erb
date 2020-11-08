@@ -3,7 +3,7 @@
 <form action="/peeps" method="post">
   Username:
   <input type="text" name="username" />
-  Message: 
+  Message:
   <input type="text" name="peeps" />
   <input type="submit" name="Submit" />
   </form>
@@ -11,6 +11,7 @@
 
 <ul>
   <% @peeps.each do |peep| %>
-    <p><%= peep.username%> says: <%= peep.message %></p>
+    <p><%= peep.username%> says: <%= peep.message %>
+    <br> Date posted: <%= peep.date %></p>
   <% end %>
 </ul>

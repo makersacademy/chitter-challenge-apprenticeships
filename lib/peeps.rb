@@ -2,10 +2,11 @@ require 'pg'
 
 class Peeps
 
-attr_reader :username, :message, :id, :result
+attr_reader :username, :message, :id, :result, :date
 
-  def initialize(id:, username:, message:)
+  def initialize(id:, date:, username:, message:)
     @id = id
+    @date = date
     @username = username
     @message = message
   end
@@ -18,7 +19,7 @@ attr_reader :username, :message, :id, :result
     end
 
     @result = connection.exec("SELECT * FROM peeps")
-    @result.map { |peep| Peeps.new(id: peep['id'], username: peep['username'], message: peep['message']) }
+    @result.map { |peep| Peeps.new(id: peep['id'], date: peep['date'], username: peep['username'], message: peep['message']) }
   end
 
   def self.create(username:, message:)
@@ -28,8 +29,8 @@ attr_reader :username, :message, :id, :result
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("INSERT INTO peeps (username, message) VALUES('#{username}', '#{message}') RETURNING id, username, message")
-    Peeps.new(id: result[0]['id'], username: result[0]['username'], message: result[0]['message'])
+    result = connection.exec("INSERT INTO peeps (username, date, message) VALUES('#{username}', 'NOW()', '#{message}') RETURNING id, date, username, message")
+    Peeps.new(id: result[0]['id'], date: result[0]['date'], username: result[0]['username'], message: result[0]['message'])
   end
 
 end

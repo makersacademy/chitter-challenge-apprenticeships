@@ -30,6 +30,7 @@ describe '.create' do
 
     expect(peeps).to be_a Peeps
     expect(peeps.id).to eq persisted_data.first['id']
+    expect(peeps.date).to eq persisted_data.first['date']
     expect(peeps.username).to eq 'Melissa'
     expect(peeps.message).to eq 'This is my first peep'
   end
