@@ -11,24 +11,27 @@
 <div class="container-fluid">
 
 
-      <h1 class="title">This is Chitter </h1>
+      <h1 class="title"><a href="/chitter">This is Chitter </a></h1>
 
 <h2>Search term: <%=@keyword%> </h2>
 
+<div id="search-results">
+  <% if @searched.length == 0 %>
+  <h1 class="text"> Sorry. No results found. Try again. </h1>
+  <%else%>
 
-      </div>
       <% @searched.each do | x| %>
         <div class="buffer"></div>
-
-        <div class="card" style= "width: 80%">
+        <div class="card mx-auto" style= "width: 80%">
           <div class="card-body">
-            <p class="text"><%= x["date"] %> </p>
-          <p class="text"> <%= x["message"] %> </p>
+            <p class="text"><%= x[2] %> </p>
+          <p class="text"> <%= x[1] %> </p>
 
 
       </div>
       </div>
       <% end %>
-
-
+      <% end %>
+</div>
+</div>
 </body>

@@ -12,28 +12,25 @@ class Chitter < Sinatra::Base
   end
 
   get '/new' do
-  erb :'new'
+    erb :'new'
   end
 
   get '/enter' do
     redirect '/new'
   end
 
-
   post '/new' do
-  Peep.create(message: params[:message], date: Time.now.strftime("%d/%m/%Y %H:%M"))
+    Peep.create(message: params[:message],
+      date: Time.now.strftime("%d/%m/%Y %H:%M"))
     redirect '/chitter'
   end
 
   post '/search' do
-  @searched = Peep.search(keyword: params[:keyword])
-  @keyword = params[:keyword]
-  connection = PG.connect(dbname: 'chitter_test')
-erb:'search_page'
-end
-
-
-
+    @searched = Peep.search(keyword: params[:keyword])
+    @keyword = params[:keyword].downcase
+    connection = PG.connect(dbname: 'chitter_test')
+    erb :'search_page'
+  end
 
   run! if app_file == $0
 end
