@@ -19,6 +19,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'orderly'
 
 require_relative './setup_test_database'
 

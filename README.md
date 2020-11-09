@@ -1,5 +1,79 @@
 ## Chitter Challenge
 
+My approach for this challenge is going to be to break down the requirements for each story and create a short domain model
+
+```
+As a Maker
+So that I can see what people are doing
+I want to see all the messages (peeps)
+in a browser
+```
+"peeps, all, messages, browser"
+
+Feature: Expect when client visits /peeps to list all of the peeps
+Rspec: consider dummy db data (possible db_helper)
+
+Model:
+Peep class
+peep.all method
+
+View:
+/peeps/index.erb
+
+Controller:
+client browser -> get -> /peeps
+
+```
+As a Maker
+So that I can let people know what I am doing  
+I want to post a message (peep) to chitter
+```
+Feature: Expect when client visits /peeps/add to see a form
+Expect the form to pass the data back to the DB
+
+Model:
+peep.new method
+
+View:
+/peeps/new.erb
+
+Controller:
+get /peeps/new
+post /peeps
+
+```
+As a Maker
+So that I can see when people are doing things
+I want to see the date the message was posted
+```
+Feature: Expect when client visits /peeps to see the date of the peep
+Expect the page to return the date back from the DB
+
+Model:
+peep.all method
+
+View:
+/peeps/index.erb
+
+Controller:
+get /peeps
+
+```
+As a Maker
+So that I can easily see the latest peeps
+I want to see a list of peeps in reverse chronological order
+```
+
+Think this is easiest completed by ordering the SQL result.  This could be tested by expecting .first to be newer than .last
+
+```
+As a Maker
+So that I can find relevant peeps
+I want to filter on a specific keyword
+```
+
+can use where clause in SQL but will need to add a search text to the 
+
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day

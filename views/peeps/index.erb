@@ -1,0 +1,5 @@
+<ul>
+<% @peeps.each do |peep| %>
+  <li><%= peep.message %> - <%= peep.time_sent %></li>
+<% end %>
+</ul>
