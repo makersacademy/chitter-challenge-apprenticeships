@@ -12,17 +12,18 @@ describe Peep do
 
       peeps = Peep.all
 
-      expect(peeps).to include "This is a peep!"
-      expect(peeps).to include "And this is a peep!"
-      expect(peeps).to include "And this is a peep too!"
+      expect(peeps.first.peep).to eq "This is a peep!"
+      expect(peeps[1].peep).to eq "And this is a peep!"
+      expect(peeps[2].peep).to eq "And this is a peep too!"
     end
   end
 
   describe '#self.add' do
     it 'adds a new peep' do
-      Peep.add(peep: 'Test peep')
+      Peep.add(peep: 'Test peep', time: Time.now)
 
-      expect(Peep.all).to include 'Test peep'
+      expect(Peep.all.first.peep).to eq "Test peep"
+      expect(Peep.all.first.time).to eq "#{Time.now}"
     end
   end
 
