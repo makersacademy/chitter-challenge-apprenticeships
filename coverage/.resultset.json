@@ -1,20 +1,124 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
+          1,
           1,
           null,
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/database_connection_setup.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null
+        ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/lib/database_connection.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          13,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          16,
+          16,
+          16,
+          null,
+          null,
+          1,
+          4,
+          4,
+          8,
+          null,
+          null,
+          null,
+          1,
+          8,
+          8,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/spec/database_connection_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +127,55 @@
           null,
           null
         ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/spec/features/view_all_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/fabihahassan/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1604872113
   }
 }
