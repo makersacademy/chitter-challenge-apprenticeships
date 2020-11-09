@@ -1,0 +1,26 @@
+<link rel="stylesheet" type="text/css" href="/css/formatting.css">
+<body>
+<div class="header">
+<h1> c h i t t e r   &#128035;</h1>
+</div>
+
+<div class="column">
+<form action='/' method='post'>
+  <input type="text" name="message" size="50", placeholder="Enter a message (max 60 characters)" />
+  <input type="submit" value="Submit" />
+</form>
+
+
+<h3> Peeps </h3>
+
+<% @peeps.each do |peep| %>
+  <p>
+  <%= peep.message %>
+  </p>
+  <footer>
+    <%= peep.time_posted %><br>
+  </footer>
+<% end %>
+
+</div>
+</body>
