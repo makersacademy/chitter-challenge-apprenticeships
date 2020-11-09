@@ -5,14 +5,6 @@ require 'pg'
 class Cheep
   attr_reader :id, :message, :date_post
 
-  def self.db_connection
-    if ENV['ENVIRONMENT'] == 'test'
-      PG.connect(dbname: 'chitter_test')
-    else
-      PG.connect(dbname: 'chitter')
-    end
-  end
-
   def self.add(message:)
     result = db_connection.exec("INSERT INTO cheeps(message)
       VALUES ('#{message}')
@@ -35,5 +27,14 @@ class Cheep
     @id = id
     @message = message
     @date_post = date_post
+  end
+
+  private
+  def self.db_connection
+    if ENV['ENVIRONMENT'] == 'test'
+      PG.connect(dbname: 'chitter_test')
+    else
+      PG.connect(dbname: 'chitter')
+    end
   end
 end
