@@ -1,0 +1,109 @@
+<style>
+    .boxed {
+        border: 3px solid blue ;
+    }
+
+    .preview {
+        border: 3px solid green ;
+    }
+
+    .red {
+        color:red
+    }
+
+    .green {
+        color:#00FF00
+    }
+
+    .white {
+        color:white
+    }
+    .blue {
+        color:blue
+    }
+    .grayblue {
+        color:#15202B
+    }
+    .gray {
+        color:#8899A6
+    }
+
+    body {background-color: #15202B;}
+</style>
+
+<!-- Title -->
+<h1 class="blue"> <del class="red"> Twitter </del> &nbsp; Chitter </h1>
+
+<!-- Last Refreshed -->
+<p class="gray"> Last Refreshed: <%= @time.hour %>:<%= @time.min %>, Day <%= @time.day %> of <%= @time.strftime("%B") %> </p>
+
+<!-- New Tweet -->
+<form action="/add-chirp" method="post" id="message">
+    <!-- Buttons and checkbox -->
+    <% @placehold = "No one is born hating another person because of the color of his skin or his background or his religion..." %>
+    <textarea name="content" rows="4" cols="60" maxlength="280" form="message" placeholder="<%=@placehold%>"><%=@preview%></textarea>
+    
+    <input type="checkbox" id="youtube" name="youtube" value="Bool">
+    <label for="youtube" class="white"> Youtube Embed</label><br>
+
+    <!-- Spacer -->
+    <div>
+      &nbsp;
+    </div>
+
+    <!-- Author -->
+    <input type="text" size=60 name="author" placeholder="@BarackObama">
+
+    <!-- Spacer -->
+    <div>
+        &nbsp;
+    </div>
+    <!-- Submit -->
+    <div>
+        <button type="submit" style="padding: 9px 11px; font-size:18px">Send Chirp</button>
+        <button type="submit" style="padding: 9px 11px; font-size:18px" formaction="/home" method="get">Preview</button>
+    </div>
+</form>
+
+<!-- Preview -->
+<% if !@preview.nil?%>
+    <div class="preview white">
+        <!-- Chirp -->
+        <h3>
+                &nbsp;&nbsp;&nbsp;<%= @preview %>
+            </form>
+        </h3>
+
+        <!-- Author and Date -->
+        <p class=gray> &nbsp;
+            <b>[Author Not Previewed]</b>
+            at 
+            <i>[Date Not Previewed]</i> 
+        </p>
+    </div>
+<% end %>
+
+<!-- Spacer -->
+<div>
+    &nbsp;
+</div>
+
+<!-- Chirp Display -->
+
+<% @chirps.reverse.each do |chirp| %>
+    <div class="boxed white">
+        <!-- Chirp -->
+        <h3>
+                &nbsp;&nbsp;&nbsp;<%= chirp.content %>
+            </form>
+        </h3>
+
+        <!-- Author and Date -->
+        <p class=gray> &nbsp;
+            <b><%= chirp.author%></b>
+            at 
+            <i><%= chirp.date%></i> 
+        </p>
+    </div>
+    &nbsp;
+<% end %>
