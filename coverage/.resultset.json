@@ -1,10 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
           1,
           1,
           1,
@@ -14,7 +31,32 @@
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          3,
+          3,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/spec/features/add_peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +65,33 @@
           null,
           null
         ]
+      },
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1610711761
   }
 }
