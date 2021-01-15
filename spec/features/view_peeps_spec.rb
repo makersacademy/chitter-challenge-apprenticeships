@@ -3,7 +3,5 @@ feature 'Viewing peeps' do
     visit('/peeps')
 
     expect(page).to have_content 'This is a peep!'
-    expect(page).to have_content 'This is another peep!'
-    expect(page).to have_content 'And this is also a peep!'
   end
 end
