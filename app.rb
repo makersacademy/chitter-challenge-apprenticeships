@@ -6,12 +6,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    peeps = [
+    @peeps = [
       'This is a peep!',
       'This is another peep!',
       'And this is also a peep!'
     ]
-    peeps.join
+    erb :'index'
   end
 
   run! if app_file == $0
