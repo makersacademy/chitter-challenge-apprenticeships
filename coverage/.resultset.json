@@ -12,6 +12,17 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -26,9 +37,21 @@
           null,
           1,
           1,
-          2,
-          2,
-          4,
+          3,
+          3,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/biancaiordache/Projects/chitter-challenge-apprenticeships/spec/features/add_peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -69,6 +92,6 @@
         ]
       }
     },
-    "timestamp": 1610710243
+    "timestamp": 1610711761
   }
 }
