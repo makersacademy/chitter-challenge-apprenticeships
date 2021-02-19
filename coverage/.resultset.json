@@ -11,6 +11,10 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
           null
         ]
       },
@@ -23,8 +27,18 @@
           null,
           null
         ]
+      },
+      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1613728912
+    "timestamp": 1613733452
   }
 }
