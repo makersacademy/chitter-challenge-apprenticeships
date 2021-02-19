@@ -4,17 +4,35 @@
       "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
           1,
           null,
-          null,
+          1,
           1,
           1,
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          8,
+          null,
           null
         ]
       },
@@ -64,24 +82,8 @@
           null,
           null
         ]
-      },
-      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          8,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1613736252
+    "timestamp": 1613736598
   }
 }
