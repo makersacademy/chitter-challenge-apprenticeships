@@ -1,13 +1,13 @@
-require 'chitter_timeline'
+require 'peeps'
 require 'setup_test_database'
 require 'pg'
 
-describe ChitterTimeline do
+describe Peeps do
 
   describe '.all' do
     it 'returns all of the peeps in the database' do
       add_row_to_test_database
-      peeps = ChitterTimeline.all
+      peeps = Peeps.all
 
       expect(peeps).to include '21/03/2006 Just setting up my chttr.'
     end
@@ -16,8 +16,8 @@ describe ChitterTimeline do
   describe '.add' do
     it 'adds a peep to the database' do
       add_row_to_test_database
-      ChitterTimeline.add(peep:'A test peep')
-      peeps = ChitterTimeline.all
+      Peeps.add(peep:'A test peep')
+      peeps = Peeps.all
 
       expect(peeps).to include '21/03/2006 Just setting up my chttr.'
       expect(peeps).to include "#{Time.new} A test peep"

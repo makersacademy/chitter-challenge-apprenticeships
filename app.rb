@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require_relative './lib/chitter_timeline'
+require_relative './lib/peeps'
 
 class Chitter < Sinatra::Base
   enable :sessions
@@ -9,12 +9,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    @timeline = ChitterTimeline
+    @timeline = Peeps
     erb :index
   end
 
   post '/' do
-    ChitterTimeline.add(peep: params[:peep])
+    Peeps.add(peep: params[:peep])
     redirect '/'
   end
 

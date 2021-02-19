@@ -1,6 +1,6 @@
 require 'pg'
 
-class ChitterTimeline
+class Peeps
 
   def self.all
     connection = self.environment

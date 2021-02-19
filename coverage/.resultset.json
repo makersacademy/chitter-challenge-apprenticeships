@@ -27,7 +27,7 @@
           null
         ]
       },
-      "/Users/Student/Projects/chitter-challenge-apprenticeships/lib/chitter_timeline.rb": {
+      "/Users/Student/Projects/chitter-challenge-apprenticeships/lib/peeps.rb": {
         "lines": [
           1,
           null,
@@ -49,36 +49,6 @@
           7,
           null,
           0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/Student/Projects/chitter-challenge-apprenticeships/spec/chitter_timeline_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
           null,
           null,
           null
@@ -122,8 +92,38 @@
           null,
           null
         ]
+      },
+      "/Users/Student/Projects/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1613748162
+    "timestamp": 1613748517
   }
 }
