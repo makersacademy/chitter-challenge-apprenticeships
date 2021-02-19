@@ -18,10 +18,9 @@ describe ChitterTimeline do
       add_row_to_test_database
       ChitterTimeline.add(peep:'A test peep')
       peeps = ChitterTimeline.all
-      time = Time.new.strftime('%d/%m/%Y') 
 
       expect(peeps).to include '21/03/2006 Just setting up my chttr.'
-      expect(peeps).to include "#{time} A test peep"
+      expect(peeps).to include "#{Time.new} A test peep"
     end
   end
 end

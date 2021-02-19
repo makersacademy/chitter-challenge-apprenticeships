@@ -8,10 +8,9 @@ class ChitterTimeline
     result.map { |peep| "#{peep['date']} #{peep['message']}" }
   end
 
-  def self.add(peep:)
+  def self.add(peep:, date: Time.new)
     connection = self.environment
-    time = Time.new.strftime('%d/%m/%Y')
-    connection.exec("INSERT INTO peeps (message, date) values ('#{peep}', '#{time}');")
+    connection.exec("INSERT INTO peeps (message, date) values ('#{peep}', '#{date}');")
   end
 
   def self.environment
