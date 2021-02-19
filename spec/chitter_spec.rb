@@ -18,4 +18,12 @@ RSpec.describe Peeps do
       expect(peeps).to include("Jack Dorsey would be proud of this.")
     end
   end
+
+  describe '.create' do
+    it 'creates a new peep' do
+      Peeps.create(message: 'test peep')
+
+      expect(Peeps.all).to include 'test peep'
+    end
+  end
 end
