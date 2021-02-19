@@ -13,8 +13,6 @@ class ChitterTimeline
     connection.exec("INSERT INTO peeps (message) values ('#{peep}');")
   end
 
-  private
-
   def self.environment
     if ENV['ENVIRONMENT'] == 'test'
       PG.connect(dbname: 'chitter_test')
