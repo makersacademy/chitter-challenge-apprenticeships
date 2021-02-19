@@ -7,6 +7,6 @@ class Peep
   end
 
   def keywords 
-    @message.split(" ").select{ |word| word.include?("#")}
+    @message.split(" ").select { |word| word.include?("#") }
   end
 end
