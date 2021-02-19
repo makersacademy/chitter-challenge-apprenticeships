@@ -1,12 +1,12 @@
 class Peep 
-  attr_reader :name, :content, :timestamp
-  def initialize(name:, content:, timestamp:)
+  attr_reader :name, :message, :timestamp
+  def initialize(name:, message:, timestamp:)
     @name = name
-    @content = content
+    @message = message
     @timestamp = timestamp
   end
 
   def keywords 
-    @content.split(" ").select{ |word| word.include?("#")}
+    @message.split(" ").select{ |word| word.include?("#")}
   end
 end
