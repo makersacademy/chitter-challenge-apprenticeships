@@ -4,6 +4,9 @@
 
 feature 'view peeps' do
   scenario 'view all peeps in a browser' do
+    Peeps.create(message: "Yesterday you said tomorrow. Just do it")
+    Peeps.create(message: "It always seems impossible until it is done")
+    
     visit('/peeps')
     expect(page).to have_content("Yesterday you said tomorrow. Just do it")
     expect(page).to have_content("It always seems impossible until it is done")

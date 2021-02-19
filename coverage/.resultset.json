@@ -4,6 +4,7 @@
       "/Users/Student/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
@@ -15,6 +16,17 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -23,15 +35,49 @@
           null
         ]
       },
+      "/Users/Student/Projects/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          4,
+          6,
+          null,
+          null,
+          null,
+          1,
+          3,
+          3,
+          null,
+          0,
+          null,
+          null,
+          3,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/Student/Projects/chitter-challenge-apprenticeships/spec/features/post_peep_spec.rb": {
         "lines": [
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -56,7 +102,10 @@
           1,
           1,
           1,
-          0,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -69,30 +118,26 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          1,
           null,
           1,
           1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/Student/Projects/chitter-challenge-apprenticeships/lib/peeps.rb": {
-        "lines": [
-          1,
           null,
           1,
           1,
-          2,
-          2,
-          2,
-          4,
+          1,
+          1,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1613733831
+    "timestamp": 1613744045
   }
 }
