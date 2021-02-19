@@ -1,6 +1,15 @@
 require 'pg'
 
 class Peeps
+  
+  attr_reader :id, :date, :message
+
+  def initialize(id:, date:, message:)
+      @id = id
+      @date = date
+      @message = message
+  end
+
   def self.all
 
     if ENV['ENVIRONMENT'] == 'test'
@@ -11,7 +20,7 @@ class Peeps
 
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep|
-      peep['message']
+      Peeps.new(id: peep['id'], date: peep['date'], message: peep['message']) 
     end
   end
 
@@ -22,7 +31,8 @@ class Peeps
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  result = connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, date, message")
+    Peeps.new(id: result[0]['id'], date: result[0]['date'], message: result[0]['message'])
   end
 
 end
