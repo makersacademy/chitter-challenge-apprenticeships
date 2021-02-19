@@ -12,6 +12,17 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -25,12 +36,15 @@
           1,
           null,
           1,
-          null,
           1,
-          2,
-          2,
-          8,
+          3,
+          3,
           null,
+          0,
+          null,
+          null,
+          3,
+          10,
           null,
           null
         ]
@@ -44,10 +58,31 @@
           1,
           1,
           null,
+          null,
           1,
           1,
           1,
           null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/floriov/Projects/Projects_Makers/chitter-challenge-apprenticeships/spec/features/creating_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -67,6 +102,12 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
           null,
           1,
           1,
@@ -76,6 +117,6 @@
         ]
       }
     },
-    "timestamp": 1613734880
+    "timestamp": 1613744823
   }
 }
