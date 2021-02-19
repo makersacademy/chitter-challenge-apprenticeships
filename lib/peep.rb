@@ -1,7 +1,7 @@
 class Peep 
-  attr_reader :user, :content, :timestamp
-  def initialize(user:, content:, timestamp:)
-    @user = user
+  attr_reader :name, :content, :timestamp
+  def initialize(name:, content:, timestamp:)
+    @name = name
     @content = content
     @timestamp = timestamp
   end

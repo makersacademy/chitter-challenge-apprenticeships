@@ -1,10 +1,10 @@
 require 'peep'
 
 describe Peep do
-  test_peep = Peep.new(user: 'Testguy', content: 'I love #testing', timestamp: '19/02/2021 1148')
+  test_peep = Peep.new(name: 'Testguy', content: 'I love #testing', timestamp: '19/02/2021 1148')
   describe "#init" do
-    it "has a user associated with the peep" do
-      expect(test_peep.user).to eq 'Testguy'
+    it "has a name associated with the peep" do
+      expect(test_peep.name).to eq 'Testguy'
     end
 
     it "has some content" do
@@ -16,7 +16,6 @@ describe Peep do
     end
 
     it "The keywords can be extracted from the content that are appended with #" do
-      p test_peep.keywords
       expect(test_peep.keywords).to eq ['#testing']
     end
   end

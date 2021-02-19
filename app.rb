@@ -7,7 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    @test_peep = Peep.new(user: 'Testguy', content: 'This is a peep!', timestamp: '19/02/2021 1148')
+    @test_peep = Peep.new(name: 'Testguy', content: 'This is a peep! #testing #TDD', timestamp: '19/02/2021 1148')
     erb(:index)
   end
 
