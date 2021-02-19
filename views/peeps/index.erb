@@ -1,0 +1,15 @@
+<h1> here are some peeps for you to see </h1>
+
+<form action="/peeps" method="post">
+  <label for="message" >
+  	what's on your mind?
+  	<input type="text" name="message" placeholder="PEEP" />
+	</label>
+		<input type="submit" value="Share" />
+</form>
+
+  <ul>
+    <% @peeps.each do |peep| %>
+    <li><%= peep %></li>
+    <% end %>
+  </ul>
