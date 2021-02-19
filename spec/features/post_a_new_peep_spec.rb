@@ -2,7 +2,6 @@ require 'setup_test_database'
 
 feature 'Posting a new peep' do
   scenario 'A user is able to post a new peep to the timeline' do
-    setup_test_database
     add_row_to_test_database
     visit '/'
     fill_in :peep, with: 'inviting my co-makers'
