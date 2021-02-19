@@ -4,7 +4,8 @@
 
 feature 'view peeps' do
   scenario 'view all peeps in a browser' do
-    visit('/')
-    expect(page).to have_content('This is a new peep')
+    visit('/peeps')
+    expect(page).to have_content("Yesterday you said tomorrow. Just do it")
+    expect(page).to have_content("It always seems impossible until it is done")
   end
 end
