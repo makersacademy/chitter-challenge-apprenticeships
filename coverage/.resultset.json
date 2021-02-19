@@ -7,11 +7,11 @@
           null,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
@@ -22,8 +22,8 @@
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -32,18 +32,56 @@
         "lines": [
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
       },
       "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
         "lines": [
-
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          8,
+          null,
+          null
         ]
       }
     },
-    "timestamp": 1613734877
+    "timestamp": 1613736252
   }
 }
