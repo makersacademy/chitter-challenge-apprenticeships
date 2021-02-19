@@ -1,4 +1,5 @@
 require 'sinatra/base'
+# require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -6,6 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/show' do
+    p Peep
     @peeps = Peep.all
     erb :index
   end
