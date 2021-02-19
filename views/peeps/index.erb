@@ -1,10 +1,18 @@
-<ul>
-  <% @peeps.each do |peep| %>
-    <li><%= peep %></li>
-  <% end %>
-</ul>
 
-<form action="/peeps" method="post">
+<div class="col-md-12 col-lg-6">
+  <form action="/peeps" method="post">
   <input type="text" name="message">
   <input type="submit" value="Post">
-</form>
+</form>   
+</div>
+<div class=" col-lg-6">
+  <ul>
+  <% @peeps.each do |peep| %>
+
+    <li><%= peep.date %>
+        <%= peep.message %>
+        
+    </li>
+    <% end %>
+  </ul>       
+</div>
