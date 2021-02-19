@@ -34,33 +34,41 @@ You should see 1 passing test.
 
 ## User stories
 
-```
-As a Maker
-So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
-```
+## FEATURE: view ALL the peeps  
+> As a Maker  
+> So that I can _see_ what people are doing  
+> I want to _see_ all the **messages** (**peeps**) in a browser  
+  
+- user visits `/chitter` and expects to see all peeps
+    - `Loader` talks to database and gets all peeps and sends to container
+    - `Container` sends all peeps to `Renderer`
+    - `Renderer` outputs peeps to the homepage
+- They see all the peeps
 
-```
-As a Maker
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
-```
+> As a Maker  
+> So that I can let people know what I am doing  
+> I want to _post_ a **message** (**peep**) to chitter  
+ 
+> As a Maker  
+> So that I can _see_ when people are doing things  
+> I want to _see_ the **date** the **message** was posted  
+  
+(Hint the database table will need to change to store the date too)  
+  
+> As a Maker  
+> So that I can easily _see_ the latest peeps  
+> I want to _see_ a **list** of peeps in reverse chronological order  
+ 
+> As a Maker  
+> So that I can _find_ relevant peeps  
+> I want to _filter_ on a specific **keyword**  
 
-```
-As a Maker
-So that I can see when people are doing things
-I want to see the date the message was posted
-```
-(Hint the database table will need to change to store the date too)
+## Objects, Messages and States
 
-```
-As a Maker
-So that I can easily see the latest peeps
-I want to see a list of peeps in reverse chronological order
-```
-```
-As a Maker
-So that I can find relevant peeps
-I want to filter on a specific keyword
-```
+|    Object     |                 Responsibility                 |      Message(s)      |           State(s)           |
+| :-----------: | :--------------------------------------------: | :------------------: | :--------------------------: |
+|     [Peep]      |      Raw object containing a single peep       |   `create`/`post`    | user, content, date, keyword |
+|  [PeepWriter   |      Writes Peeps to database on creation      |       `write`        |                              |
+|  PeepLoader]   | Loads Peeps from database on visiting homepage | `load_all`, `filter` |                              |
+| [PeepContainer] |   Holds Peeps for display on browser session   |      `display`       |             list             |
+| [PeepRenderer]  |            Renders Peeps into HTML             | `new` used by loader |                              |
