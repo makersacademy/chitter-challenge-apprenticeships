@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/peep.rb'
+require_relative './lib/loader_storer.rb'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -7,7 +8,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    @test_peep = Peep.new(name: 'Testguy', message: 'This is a peep! #testing #TDD', timestamp: '19/02/2021 1148')
+    @all_peeps = LoaderStorer.fetch
     erb(:index)
   end
 

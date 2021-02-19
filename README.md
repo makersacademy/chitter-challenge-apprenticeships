@@ -65,10 +65,10 @@ You should see 1 passing test.
 
 ## Objects, Messages and States
 
-|     Object      |                 Responsibility                 |       Message(s)       |           State(s)           |
-| :-------------: | :--------------------------------------------: | :--------------------: | :--------------------------: |
-|     [Peep]      |      Raw object containing a single peep       |    `create`/`post`     | user, content, date, keyword |
-|  [PeepWriter +  |      Writes Peeps to database on creation      |        `write`         |                              |
-|   PeepLoader]   | Loads Peeps from database on visiting homepage |  `load_all`, `filter`  |                              |
-| [PeepContainer] |   Holds Peeps for display on browser session   |       `display`        |             list             |
-| [PeepRenderer]  |            Renders Peeps into HTML             | `new` (used by loader) |                              |
+|         Object                     Responsibility          |       Message(s)       |             State(s)              |
+| :--------------------------------------------------------: | :--------------------: | :-------------------------------: |
+|         [Peep] Raw object containing a single peep         |    `create`/`post`     | user, content, timestamp, keyword |
+|     [PeepWriter + Writes Peeps to database on creation     |        `write`         |                                   |
+| PeepLoader] Loads Peeps from database on visiting homepage |  `load_all`, `filter`  |                                   |
+| [PeepContainer Holds Peeps for display on browser session  |       `display`        |               list                |
+|           [PeepRenderer] Renders Peeps into HTML           | `new` (used by loader) |                                   |

@@ -11,8 +11,7 @@ describe LoaderStorer do
   describe '#fetch' do
     it "'#fetch'es the peeps from the database as an array of Peep instances" do
       LoaderStorer.create(message: 'some peep', name: 'Testguy2', timestamp: Time.now.strftime("%d/%m/%Y %k%M"))
-
-      p LoaderStorer.fetch[0]
+      
       expect(LoaderStorer.fetch[0]).to be_a(Peep)
     end
   end
