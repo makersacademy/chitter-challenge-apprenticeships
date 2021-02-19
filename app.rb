@@ -12,5 +12,10 @@ class Chitter < Sinatra::Base
     erb(:index)
   end
 
+  post '/newpeep' do
+    LoaderStorer.create(message: params[:message], name: "Developer", timestamp: Time.new.strftime("%d/%m/%Y %k%M"))
+    redirect '/'
+  end
+
   run! if app_file == $0
 end

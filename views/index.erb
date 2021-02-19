@@ -6,10 +6,20 @@
   <title>Document</title>
 </head>
 <body>
+  <h1>Chitter</h1>
   <% @all_peeps.each do |peep|  %>
-      <strong><%= peep.name %></strong>
-      <p><%= peep.message %></p>
+    <div style='border: dotted red'>
+        <strong><%= peep.name %>:</strong>
+        <p><%= peep.message %></p>
+        <p><%= peep.timestamp %></p>
+    </div>
   <% end %>
+
+  <form action="/newpeep" method="post">
+    <input type="hidden" name="name">
+    <input type="text" placeholder="message" name="message">
+    <input type="submit" value="Post">
+  </form>
 </body>
 </html>
 
