@@ -1,9 +1,14 @@
+require 'pg'
+
 class Peep
   def self.all
-    [
-        "Pizza burned the inside of my mouth and I really don't understand why the things I love keep hurting me.",
-        "I need a room full of mirrors so I can be surrounded by winners",
-        "Caffeine doesn't do it anymore I need someone to text me 'We need to talk'"
-    ]
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    
+    result = connection.exec('SELECT * FROM peeps')
+    result.map { |peep| peep['message'] }
   end
 end
