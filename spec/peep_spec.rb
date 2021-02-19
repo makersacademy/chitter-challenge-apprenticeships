@@ -5,8 +5,8 @@ describe Peep do
   describe '.all' do
     it 'returns a list of all peeps' do
       
-      Peep.create(message: "Hello world")
       Peep.create(message: "Test")
+      Peep.create(message: "Hello world")
 
       peeps = Peep.all
 

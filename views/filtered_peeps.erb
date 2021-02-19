@@ -1,0 +1,12 @@
+
+  <% @peeps.each do |peep| %>
+      <p>
+        <% if peep.message.include?(@filter)%>  
+          <%= peep.message %> <%= peep.date %>
+        <% end %>
+      </p>
+  <% end %>
+
+<form action='/filter-peep' method='post'>
+  <input type="submit" name="<% nil %>" value="Clear">
+</form>
