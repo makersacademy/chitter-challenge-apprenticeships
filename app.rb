@@ -5,5 +5,10 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/show' do
+    @peeps = Peep.all
+    erb :index
+  end
+
   run! if app_file == $0
 end
