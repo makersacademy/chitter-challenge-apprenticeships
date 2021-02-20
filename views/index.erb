@@ -2,8 +2,8 @@
 
 <ul>
   <% @peeps.each do |peep| %>
-    <li style="text-decoration: none">
-      <%= peep %>
+    <li>
+      "<%= peep.message %>"
     </li>
   <% end %>
 </ul>
