@@ -11,9 +11,9 @@ class Peep
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
-      setup_test_database
+      connection = PG.connect(dbname: 'chitter_test')
     else
-      setup_database
+      connection = PG.connect(dbname: 'chitter')
     end 
 
     result = connection.exec("SELECT * FROM peeps;")
@@ -24,9 +24,9 @@ class Peep
 
   def self.create(message:)
     if ENV['ENVIRONMENT'] == 'test'
-      setup_test_database
+      connection = PG.connect(dbname: 'chitter_test')
     else
-      setup_database
+      connection = PG.connect(dbname: 'chitter')
     end
 
     # result = 
