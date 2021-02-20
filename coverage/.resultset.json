@@ -28,8 +28,8 @@
           1,
           null,
           1,
-          8,
-          8,
+          9,
+          9,
           null,
           null,
           1,
@@ -46,14 +46,14 @@
           null,
           null,
           1,
-          4,
-          4,
+          5,
+          5,
           null,
           0,
           null,
           null,
-          4,
-          4,
+          5,
+          5,
           null,
           null
         ]
@@ -87,9 +87,6 @@
         "lines": [
           1,
           1,
-          null,
-          1,
-          1,
           1,
           null,
           1,
@@ -97,16 +94,43 @@
           1,
           null,
           1,
+          1,
+          1,
           null,
           1,
           null,
           1,
+          null,
+          1,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/spec/database_helpers.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1613799344
+    "timestamp": 1613801372
   }
 }
