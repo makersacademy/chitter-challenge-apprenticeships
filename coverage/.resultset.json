@@ -44,8 +44,72 @@
           null,
           null
         ]
+      },
+      "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1613777470
+    "timestamp": 1613793527
   }
 }

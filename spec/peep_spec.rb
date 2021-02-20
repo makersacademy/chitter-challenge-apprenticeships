@@ -1,19 +1,19 @@
-require 'peep'
+require './lib/peep'
 require 'setup_test_database'
 
 describe '.all' do
   it 'returns list of peeps' do
     setup_test_database
 
-    message = Peep.create(message: "Here!")
+    message_test = Peep.create(message: "Here!")
     Peep.create(message: "Present!")
     Peep.create(message: "Ello!")
     
-    bookmarks = Bookmark.all
+    message_test = Peep.all
 
     expect(bookmarks.length).to eq 3
-    expect(bookmark.first).to be_a Bookmark
-    expect(bookmark.first.id).to eq bookmark.id
-    expect(bookmark.first.title).to eq 'Makers Academy'
+    expect(bookmark.first).to be_a Peep
+    expect(bookmark.first.id).to eq message_test.id
+    expect(bookmark.first.message).to eq 'Here!'
   end
 end

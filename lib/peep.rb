@@ -7,7 +7,7 @@ class Peep
 # TODO take off all default dates when doing 3rd user story
   def initialize(message:)
     @id = id
-    @message = message
+    @message = message 
   end
 
   def self.all
@@ -20,6 +20,7 @@ class Peep
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep| 
       Peep.new(id: peep['id'], message: peep['message']) 
+    end
   end
 
   def self.create(message:)
