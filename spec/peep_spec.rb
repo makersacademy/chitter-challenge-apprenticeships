@@ -13,7 +13,7 @@ describe '.all' do
     p message_test_1
     expect(message_test_2.length).to eq 3
     # expect(message_test_1).to be_a Peep
-    expect(message_test_1.first.id).to eq message_test.id
-    expect(message_test_1.first.message).to eq 'Here!'
+    expect(message_test_1.id).to eq message_test_1.id
+    expect(message_test_1.message).to eq 'Here!'
   end
 end
