@@ -34,41 +34,56 @@ You should see 1 passing test.
 
 ## User stories
 
-## FEATURE: view ALL the peeps  
+### FEATURE 1: view ALL the peeps (DONE)
 > As a Maker  
 > So that I can _see_ what people are doing  
 > I want to _see_ all the **messages** (**peeps**) in a browser  
   
-- user visits `/chitter` and expects to see all peeps
-    - `Loader` talks to database and gets all peeps and sends to container
-    - `Container` sends all peeps to `Renderer`
-    - `Renderer` outputs peeps to the homepage
+- user visits `/` and expects to see all peeps
+    - `LoaderWriter` talks to database and gets all peeps via `fetch`
+    - peeps rendered on page
 - They see all the peeps
 
+### FEATURE 2: post a peep (DONE)
 > As a Maker  
 > So that I can let people know what I am doing  
 > I want to _post_ a **message** (**peep**) to chitter  
- 
+
+- user visits `'/'` and expects to see all peeps AND a form to enter message and button to post
+- user enters message and presses 'post'
+    - form parameters sent via post request to `/newpeep` route
+        - `LoaderStorer` 'creates' a record in the database with certain data
+    - page redirected back to `'/'`
+        - `LoaderWriter` talks to database and gets all peeps via `fetch`
+    - peeps rendered on page
+- user sees peeps
+
+### FEATURE 3: peeps have a date (DONE)
 > As a Maker  
 > So that I can _see_ when people are doing things  
 > I want to _see_ the **date** the **message** was posted  
-  
-(Hint the database table will need to change to store the date too)  
-  
+> (Hint the database table will need to change to store the date too)  
+
+### FEATURE 4: peeps organized in rev. chronological order (DONE)
 > As a Maker  
 > So that I can easily _see_ the latest peeps  
 > I want to _see_ a **list** of peeps in reverse chronological order  
- 
+
+### FEATURE 5: filter tweets by keywords (TO DO)
 > As a Maker  
 > So that I can _find_ relevant peeps  
 > I want to _filter_ on a specific **keyword**  
 
 ## Objects, Messages and States
 
-|         Object                     Responsibility          |       Message(s)       |             State(s)              |
-| :--------------------------------------------------------: | :--------------------: | :-------------------------------: |
-|         [Peep] Raw object containing a single peep         |    `create`/`post`     | user, content, timestamp, keyword |
-|     [PeepWriter + Writes Peeps to database on creation     |        `write`         |                                   |
-| PeepLoader] Loads Peeps from database on visiting homepage |  `load_all`, `filter`  |                                   |
-| [PeepContainer Holds Peeps for display on browser session  |       `display`        |               list                |
-|           [PeepRenderer] Renders Peeps into HTML           | `new` (used by loader) |                                   |
+|        Object &                     Responsibility         |      Message(s)      |             State(s)              |
+| :--------------------------------------------------------: | :------------------: | :-------------------------------: |
+|         [Peep] Raw object containing a single peep         |   `create`/`post`    | user, content, timestamp, keyword |
+| [DatabaseConnection]  Writes Peeps to database on creation |       `write`        |                                   |
+|      + Loads Peeps from database on visiting homepage      | `load_all`, `filter` |                                   |
+
+#### Not yet in use
+|        Object &                     Responsibility         |       Message(s)       | State(s) |
+| :--------------------------------------------------------: | :--------------------: | :------: |
+| [PeepContainer] Holds Peeps for display on browser session |       `display`        |   list   |
+|           [PeepRenderer] Renders Peeps into HTML           | `new` (used by loader) |          |

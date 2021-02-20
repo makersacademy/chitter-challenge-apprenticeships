@@ -42,7 +42,7 @@
           null
         ]
       },
-      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/lib/loader_storer.rb": {
+      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -69,6 +69,28 @@
           null,
           null,
           3,
+          null,
+          null
+        ]
+      },
+      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/spec/database_connection_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           null,
           null
         ]
@@ -106,28 +128,6 @@
           null
         ]
       },
-      "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/spec/loader_storer_spec.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/alistairtait/Desktop/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
         "lines": [
           1,
@@ -155,6 +155,6 @@
         ]
       }
     },
-    "timestamp": 1613753768
+    "timestamp": 1613857090
   }
 }

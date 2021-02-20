@@ -1,6 +1,6 @@
 require 'pg'
 
-class LoaderStorer
+class DatabaseConnection
 
   def self.fetch
     if ENV['ENVIRONMENT'] == 'test'

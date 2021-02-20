@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/peep.rb'
-require_relative './lib/loader_storer.rb'
+require_relative './lib/database_connection.rb'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -8,12 +8,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    @all_peeps = LoaderStorer.fetch
+    @all_peeps = DatabaseConnection.fetch
     erb(:index)
   end
 
   post '/newpeep' do
-    LoaderStorer.create(message: params[:message], name: "Developer", timestamp: Time.new.strftime("%d/%m/%Y %k%M"))
+    DatabaseConnection.create(message: params[:message], name: "Developer", timestamp: Time.new.strftime("%d/%m/%Y %k%M"))
     redirect '/'
   end
 
