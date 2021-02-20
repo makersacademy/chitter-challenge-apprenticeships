@@ -86,4 +86,21 @@ You should see 1 passing test.
 |        Object &                     Responsibility         |       Message(s)       | State(s) |
 | :--------------------------------------------------------: | :--------------------: | :------: |
 | [PeepContainer] Holds Peeps for display on browser session |       `display`        |   list   |
-|           [PeepRenderer] Renders Peeps into HTML           | `new` (used by loader) |          |
+|           [PeepRenderer] Renders Peeps into HTML           | `new` (used by loader) |          |  
+  
+## Features to expand upon & bugs/errors to fix
+### Bugs/ errors
+- [ ] Order peeps by date rather than database id.
+  - A peep can be entered via the database and the date can be any value but still appear above a posted tweet with a more recent date  
+- [ ] Keywords list/ 'cloud' does not remove any punctuation
+  - User may want to separate keywords by comma etc.  
+  
+### Features
+- [ ] **Filter by keyword**
+- [ ] 'Like button'
+- [ ] Make it look more appealing! The style is atrocious right now.
+- [ ] Logo
+- [ ] User authentication
+  -  Database of users (database relationships?)
+- [ ] Navbar
+- [ ] Images embedded in peeps
