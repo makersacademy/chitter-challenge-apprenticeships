@@ -48,10 +48,6 @@
       "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
         "lines": [
           1,
-          null,
-          null,
-          1,
-          1,
           1,
           null,
           1,
@@ -59,10 +55,14 @@
           1,
           null,
           1,
+          1,
+          1,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
+          null,
+          1,
           0,
           null,
           null
@@ -71,14 +71,13 @@
       "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/lib/peep.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
           1,
           null,
           1,
-          4,
-          4,
+          8,
+          8,
           null,
           null,
           1,
@@ -101,24 +100,13 @@
           0,
           null,
           null,
-          null,
+          4,
           4,
           null,
-          null,
-          null
-        ]
-      },
-      "/Users/yearwoodr/Projects/chitter-challenge-apprenticeships/spec/setup_database.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          0,
-          0,
           null
         ]
       }
     },
-    "timestamp": 1613794760
+    "timestamp": 1613796870
   }
 }
