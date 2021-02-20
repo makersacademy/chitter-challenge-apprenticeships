@@ -1,5 +1,4 @@
 require './lib/peep'
-require 'setup_test_database'
 
 describe '.all' do
   it 'returns list of peeps' do
