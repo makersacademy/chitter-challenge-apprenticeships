@@ -10,7 +10,7 @@ describe '.all' do
     Peep.create(message: "Ello!")
     
     message_test_2 = Peep.all
-    p message_test_1
+    
     expect(message_test_2.length).to eq 3
     # expect(message_test_1).to be_a Peep
     expect(message_test_1.id).to eq message_test_1.id
