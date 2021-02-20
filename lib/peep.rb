@@ -1,11 +1,10 @@
 require 'pg'
-
-# require 'spec/setup_database'
+require './spec/setup_database'
 
 class Peep
-  attr_reader :message
+  attr_reader :id, :message
 # TODO take off all default dates when doing 3rd user story
-  def initialize(message:)
+  def initialize(id:, message:)
     @id = id
     @message = message 
   end
@@ -15,7 +14,7 @@ class Peep
       setup_test_database
     else
       setup_database
-    end
+    end 
 
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep| 
