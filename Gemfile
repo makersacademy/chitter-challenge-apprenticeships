@@ -8,10 +8,10 @@ gem 'pg'
 gem 'sinatra'
 
 group :test do
-  gem 'capybara'
-  gem 'rspec'
-  gem 'pry'
   gem 'byebug'
+  gem 'capybara'
+  gem 'pry'
+  gem 'rspec'
   gem 'rubocop', '0.79.0'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
