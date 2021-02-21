@@ -1,11 +1,25 @@
-<ul>
-  <% @peeps.each do |peep| %>
-    <li><%= peep.date %> <%= peep.message %></li>
-  <% end %>
-</ul>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<body>
+  <ul>
+    <% @peeps.each do |peep| %>
+      <li><%= peep.date %> <%= peep.message %></li>
+    <% end %>
+  </ul>
+<br>
+<br>
+<div id="horizontal-list">
+  <form method="post" action="/peeps">
+    <input type="text" name="message" placeholder="what's happening?" class="body"/>
+    <input type="submit" value="Post Peep" />
+  </form>
+</div>
 
-<form method="post" action="/peeps">
-  <input type="text" name="message" />
-  <input type="submit" name="Post Peep" />
-</form>
+
+<br>
+  <form method="get" action="/peeps/matches">
+    <input type="text" name="filter" placeholder="filter by"/>
+    <input type="submit" value="Filter By"  />
+  </form>
+</body>
+
 
