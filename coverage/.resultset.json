@@ -1,20 +1,129 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/harrycarton/Projects/better_chitter/app.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           1,
           null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          3,
+          3,
+          3,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          3,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/harrycarton/Projects/better_chitter/lib/user.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/lib/peeps_manager.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          12,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/features/all_peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/features/creating_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/features/home_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +132,72 @@
           null,
           null
         ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/features/links_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/peeps_manager_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/harrycarton/Projects/better_chitter/spec/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1613917952
   }
 }
