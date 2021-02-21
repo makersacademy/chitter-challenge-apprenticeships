@@ -1,0 +1,12 @@
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep %></li>
+  <% end %>
+</ul>
+<br/>
+<form action="/filtered_peeps" method="post">
+  <input type="text" name="filter_word" />
+  <input type="submit" value="Submit" />
+</form>
+<br/>
+<a href="/links_page">Go to links page</a>

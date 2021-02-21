@@ -38,5 +38,16 @@ class Chitter < Sinatra::Base
     PeepsManager.create(params[:message])
     redirect('/peeps')
   end
+
+  get '/filtered_peeps' do
+    @peeps = PeepsManager.all
+    erb(:filtered_peeps)
+  end
+
+  post '/filtered_peeps' do
+    @peeps = PeepsManager.filter(params[:filter_word])
+    erb(:filtered_peeps)
+  end
+
   run! if app_file == $0
 end
