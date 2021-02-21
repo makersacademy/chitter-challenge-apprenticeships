@@ -5,9 +5,9 @@ class Peeps
   attr_reader :id, :date, :message
 
   def initialize(id:, date:, message:)
-      @id = id
-      @date = date
-      @message = message
+    @id = id
+    @date = date
+    @message = message
   end
 
   def self.all
@@ -31,7 +31,7 @@ class Peeps
       connection = PG.connect(dbname: 'chitter')
     end
 
-  result = connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, date, message")
+    result = connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, date, message")
     Peeps.new(id: result[0]['id'], date: result[0]['date'], message: result[0]['message'])
   end
 
@@ -46,4 +46,3 @@ class Peeps
     result.map { |peep| Peeps.new(id: peep['id'], date: peep['date'], message: peep['message']) }
   end
 end
-

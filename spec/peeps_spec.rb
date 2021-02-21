@@ -3,9 +3,9 @@ require 'database_helpers'
 describe Peeps do
   describe '.all' do
     it 'returns all peeps' do
-      connection = PG.connect(dbname: 'chitter_test')
+      PG.connect(dbname: 'chitter_test')
       
-      peep  = Peeps.create(message: 'Yesterday you said tomorrow. Just do it')
+      peep = Peeps.create(message: 'Yesterday you said tomorrow. Just do it')
       Peeps.create(message: 'It always seems impossible until it is done')
       
       peeps = Peeps.all
