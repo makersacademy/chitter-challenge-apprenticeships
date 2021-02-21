@@ -23,6 +23,11 @@ class Chitter < Sinatra::Base
     Peeps.create(message: params[:message])
     redirect '/peeps'
   end
+  
+  get '/peeps/search' do
+    @search = Peeps.filter(params[:filter])
+    erb :'peeps/results'
+  end
 
   run! if app_file == $0
 end

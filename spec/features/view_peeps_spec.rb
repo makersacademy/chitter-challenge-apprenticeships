@@ -12,3 +12,15 @@ feature 'view peeps' do
     expect(page).to have_content("It always seems impossible until it is done")
   end
 end
+
+#  As a Maker
+#  So that I can easily see the latest peeps
+#  I want to see a list of peeps in reverse chronological order
+
+# feature 'order peeps chronologically' do
+#   scenario 'view peeps in reverse chronilogical order'
+#   Peeps.create(message: "Yesterday you said tomorrow. Just do it")
+#     Peeps.create(message: "It always seems impossible until it is done")
+    
+#     visit('/peeps')
+# end

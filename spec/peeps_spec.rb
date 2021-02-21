@@ -12,8 +12,8 @@ describe Peeps do
 
       expect(peeps.length).to eq 2
       expect(peeps.first).to be_a Peeps
-      expect(peeps.first.id).to eq peep.id
-      expect(peeps.first.message).to eq "Yesterday you said tomorrow. Just do it"
+      expect(peeps.last.id).to eq peep.id
+      expect(peeps.last.message).to eq "Yesterday you said tomorrow. Just do it"
     end
   end
 
