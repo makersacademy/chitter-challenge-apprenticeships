@@ -1,4 +1,5 @@
 require 'chitter'
+require 'database_helpers'
 
 RSpec.describe Peeps do
   describe '.all' do
@@ -6,24 +7,27 @@ RSpec.describe Peeps do
       connection = PG.connect(dbname: 'chitter_test')
       
       # Add the test data
-      connection.exec("INSERT INTO peeps (message) VALUES('This is a peep!');")
-      connection.exec("INSERT INTO peeps (message) VALUES('This is not Twitter btw.');")
-      connection.exec("INSERT INTO peeps (message) VALUES('Jack Dorsey would be proud of this.');")
+      peep = Peeps.create(message: "Jack Dorsey would be proud of this.")
+      Peeps.create(message: "This is not Twitter btw.")
 
 
       peeps = Peeps.all
 
-      expect(peeps).to include("This is a peep!")
-      expect(peeps).to include("This is not Twitter btw.")
-      expect(peeps).to include("Jack Dorsey would be proud of this.")
+      expect(peeps.length).to eq 2
+      expect(peeps.first).to be_a Peeps
+      expect(peeps.last.id).to eq peep.id
+      expect(peeps.last.message).to eq("Jack Dorsey would be proud of this.")
     end
   end
 
   describe '.create' do
     it 'creates a new peep' do
-      Peeps.create(message: 'test peep')
+      peep = Peeps.create(message: 'This is a test peep')
+      persisted_data = persisted_data(id: peep.id)
 
-      expect(Peeps.all).to include 'test peep'
+      expect(peep).to be_a Peeps
+      expect(peep.id).to eq persisted_data['id']
+      expect(peep.message).to eq('This is a test peep')
     end
   end
 end
