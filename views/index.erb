@@ -1,0 +1,11 @@
+<!-- So you can see all messages in the database on the browser -->
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      "<%= peep.message %>"
+    </li>
+  <% end %>
+</ul>
+
+<button type="button">Back to search</button>
