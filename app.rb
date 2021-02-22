@@ -9,7 +9,7 @@ class Chitter < Sinatra::Base
   get '/peeps' do
     @peeps = Peep.all
     @filter = session[:filter]
-    if @filter == nil
+    if @filter.nil?
       erb :peeps
     else
       erb :filtered_peeps

@@ -4,10 +4,10 @@ class DatabaseConnection
   
   def self.setup
     @connection = if ENV['ENVIRONMENT'] == 'test'
-      PG.connect(dbname: 'chitter_test')
+                    PG.connect(dbname: 'chitter_test')
     else
       PG.connect(dbname: 'chitter')
-    end
+                  end
   end
 
   def self.query(sql)
