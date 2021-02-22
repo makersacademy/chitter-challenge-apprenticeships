@@ -16,7 +16,7 @@ To setup the database:
 * Create the database using the psql command `CREATE DATABASE chitter;`
 * Connect to the database using the psql command `\c chitter`;
 * Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+* Populate your table with a row by running `INSERT INTO peeps (message, date_of_peep) values ('This is a peep!', 2020-05-09);`
 
 To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
 
