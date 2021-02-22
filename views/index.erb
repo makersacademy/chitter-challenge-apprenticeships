@@ -1,0 +1,15 @@
+<form action="/" method= "post">
+  <input type="text" name="peep" placeholder="What's happening?">
+  <input type="submit" value="Submit">
+  <br><br>
+</form>
+<form action ="/search" method="post">
+  <input type="text" name="search" placeholder="Search Chitter">
+  <input type="submit" value="Search">
+</form><br>
+<% @timeline.all.each do |peep| %>
+  <ul>
+    <%= peep.peep %><br>
+    <%= peep.date %><br>
+  </ul>
+<% end %>

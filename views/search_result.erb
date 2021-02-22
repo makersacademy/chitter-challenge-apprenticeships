@@ -1,0 +1,11 @@
+<a href="/">Home</a><br><br>
+<form action ="/search" method="post">
+  <input type="text" name="search" placeholder="Search Chitter">
+  <input type="submit" value="Search">
+</form><br>
+<% @results.search(keyword: @query).each do |peep| %>
+  <ul>
+    <%= peep.peep %><br>
+    <%= peep.date %><br>
+  </ul>
+<% end %>

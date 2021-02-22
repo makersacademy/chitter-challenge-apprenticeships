@@ -1,3 +1,26 @@
+## Chitter challenge
+
+# Issues
+
+* Users are able to enter blank peeps, would be nice to implement a guard condition to prevent this
+* Users currently post anonymously, it would be cool to have a table of users with log ins that was able to link to the peeps table, so it would be possible to search by peep keywords and usernames
+* The page has zero styling - I would like to try using bootstrap or similar frameworks to liven it up
+* My tests could be expanded to make completely sure of the functions, they are quite light and not particularly DRY
+
+# Successes
+
+(Trying to be a bit more positive about my work!)
+
+* I like the way the app uses only two pages and updates these as it is used, I feel like I have gotten a good grip on using Sinatra
+* I've tried used a private method to dry out my peeps class (although it doesn't seem to work as expected)
+* I've met the requirements all of the user stories
+
+Overall there is a lot of room for improvement - maybe another class could handle the private method?
+
+ORIGINAL README BELOW
+
+============
+
 ## Chitter Challenge
 
 * Challenge time: until the end of the day
