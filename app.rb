@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
     erb(:index)
   end
 
-  post '/newpeep' do
+  post '/peeps' do
     DatabaseConnection.create(message: params[:message], name: "Developer", timestamp: Time.new.strftime("%d/%m/%Y %k%M"))
     redirect '/'
   end
