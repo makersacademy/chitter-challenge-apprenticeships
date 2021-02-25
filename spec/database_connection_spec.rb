@@ -8,8 +8,11 @@ describe DatabaseConnection do
       peep = DatabaseConnection.create(message: "a peep", name: "tester", timestamp: Time.new.strftime("%d/%m/%Y %k%M"))
 
       persisted_data = persisted_data(id: peep.id)
+      peeps = DatabaseConnection.fetch
 
       expect(peep.id).to eq persisted_data['id']
+      expect(peeps.length).to eq 1
+      expect(peeps.first).to be_a Peep
     end
   end
 
