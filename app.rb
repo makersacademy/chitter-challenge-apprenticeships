@@ -13,7 +13,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/create_peeps' do
-    Peep.create(peep: params[:peep]) #<<<< keyword argument
+    Peep.create(peep: params[:peep]) # <<<< keyword argument
     redirect '/peeps'
   end
 
