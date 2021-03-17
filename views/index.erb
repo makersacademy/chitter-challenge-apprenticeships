@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Chitter</h1>
+  <% @all_peeps.each do |peep|  %>
+    <div style='border: dotted red'>
+        <strong><%= peep.name %>:</strong>
+        <p><%= peep.message %></p>
+        <p><%= peep.timestamp %></p>
+        <p style="color:blue"><%= peep.keywords.join(" ") %></p>
+    </div>
+  <% end %>
+
+  <form action="/peeps" method="post">
+    <input type="hidden" name="name">
+    <input type="text" placeholder="message" name="message">
+    <input type="submit" value="Post">
+  </form>
+</body>
+</html>
