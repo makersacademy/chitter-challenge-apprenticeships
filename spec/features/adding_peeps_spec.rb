@@ -9,5 +9,6 @@ feature 'adding peeps' do
 
     #reroute to the index page
     expect(page).to have_content "This is a new peep!"
+    expect(page).to have_content "2021-01-04"
   end
 end

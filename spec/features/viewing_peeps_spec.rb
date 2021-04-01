@@ -10,10 +10,12 @@ end
 feature 'viewing peeps' do
   scenario 'User can see the peeps' do
     connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps VALUES (1, 'This is a peep!');")
+    peep_date = Time.new.strftime("%Y-%d-%m")
+    Peep.create(message: 'This is a peep!', date: peep_date)
     
     visit('/peeps')
 
     expect(page).to have_content "This is a peep!"
+    expect(page).to have_content "2021-01-04"
   end
 end
