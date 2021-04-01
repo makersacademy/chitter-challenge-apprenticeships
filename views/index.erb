@@ -7,6 +7,9 @@
       <%= peep.date %> -
       <%= peep.message %>
     </li>
+    
   <% end %>
-  <form
+  <form action="/peeps/sort" method="get">
+    <input type="submit" value="Sort">
+  </form
 </ul>

@@ -20,5 +20,9 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
+  get '/peeps/sort' do
+    @peeps = Peep.sort
+  end
+
   run! if app_file == $0
 end

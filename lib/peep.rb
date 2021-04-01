@@ -29,7 +29,7 @@ class Peep
 
     def self.sort
         connection = PG.connect(dbname: 'chitter_test')
-        result = connection.exec("SELECT * FROM peeps ORDER_BY date [DESC | ASC];")
+        result = connection.exec("SELECT * FROM peeps ORDER_BY date DESC;")
         result.map do |peep|
             Peep.new(
                 id: peep['id'],
