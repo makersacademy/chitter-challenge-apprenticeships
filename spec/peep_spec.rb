@@ -3,7 +3,7 @@ require 'peep'
 describe Peep do
   describe '.all' do
     it 'returns a list of all the peeps' do
-      connection = PG.connect(dbname: 'chitter_test')
+      PG.connect(dbname: 'chitter_test')
 
       Peep.create(message: 'This is a peep!', date: "2021-01-04")
 
@@ -15,7 +15,7 @@ describe Peep do
     end
 
     it 'returns the list in reverse chronoological order' do
-      connection = PG.connect(dbname: 'chitter_test')
+      PG.connect(dbname: 'chitter_test')
 
       Peep.create(message: 'This is a peep!', date: '2021-01-04')
       Peep.create(message: 'This is another peep!', date: '2021-02-04')
@@ -34,8 +34,6 @@ describe Peep do
   describe '.create' do
     it 'adds a new peep to the db' do
       new_peep = Peep.create(message: 'This is a new peep!', date: "2021-01-04")
-
-      peeps = Peep.all
 
       expect(new_peep).to be_a Peep
       expect(new_peep.message).to eq 'This is a new peep!'

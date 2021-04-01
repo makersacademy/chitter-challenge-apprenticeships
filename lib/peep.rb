@@ -3,7 +3,7 @@ require 'pg'
 class Peep
   attr_reader :message, :date
 
-  def initialize(message:, date: )
+  def initialize(message:, date:)
     @message = message
     @date = date
   end
@@ -22,15 +22,16 @@ class Peep
 
   end
 
-  def self.create(message: , date:)
+  def self.create(message:, date:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}') RETURNING message, date;")
-    Peep.new(message:result[0]['message'], date:result[0]['date'])
+    result = connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}') 
+      RETURNING message, date;")
+    Peep.new(message: result[0]['message'], date: result[0]['date'])
   end
 
 end

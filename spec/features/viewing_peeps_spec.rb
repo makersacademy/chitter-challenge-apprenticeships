@@ -9,7 +9,7 @@ end
 
 feature 'viewing peeps' do
   scenario 'User can see the peeps' do
-    connection = PG.connect(dbname: 'chitter_test')
+    PG.connect(dbname: 'chitter_test')
     peep_date = Time.new.strftime("%Y-%d-%m")
     Peep.create(message: 'This is a peep!', date: peep_date)
     
@@ -20,7 +20,7 @@ feature 'viewing peeps' do
   end
 
   scenario 'User sees the peeps in reverse chronological order' do
-    connection = PG.connect(dbname: 'chitter_test')
+    PG.connect(dbname: 'chitter_test')
 
     Peep.create(message: 'This is a peep!', date: '2021-01-04')
     Peep.create(message: 'This is another peep!', date: '2021-02-04')
