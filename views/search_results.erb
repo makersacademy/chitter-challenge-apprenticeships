@@ -1,0 +1,7 @@
+<h1>Chitter</h1>
+<h2>Search results:</h2>
+<ul>
+  <% @search_results.each do |result| %>
+    <li><%= result.message %> (<%= result.timestamp %>)</li>
+  <% end %>
+</ul>
