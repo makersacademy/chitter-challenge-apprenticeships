@@ -1,0 +1,12 @@
+<h1> CHITTER </h1>
+
+<h2> All Peeps </h2>
+<ul>
+  <% @peeps.each do |peep| %>
+    <li class="peep" id="peep"-<%= peep.id %>">
+      <%= peep.date %> -
+      <%= peep.message %>
+    </li>
+  <% end %>
+  <form
+</ul>
