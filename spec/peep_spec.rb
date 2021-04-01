@@ -12,4 +12,14 @@ describe Peep do
       expect(peeps).to include("This is a peep!")
     end
   end
+
+  describe '.create' do
+    it 'adds a new peep to the db' do
+      Peep.create(message: 'This is a new peep!')
+
+      peeps = Peep.all
+
+      expect(peeps).to include 'This is a new peep!'
+    end
+  end
 end 
