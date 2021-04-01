@@ -12,9 +12,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = [
-      "This is a peep!"
-    ]
+    @peeps = Peep.all
     erb :'peeps/index'
   end
 
