@@ -45,7 +45,7 @@ Additional functionalities have been added for users to register and log in into
 
 * The motivation for this challenge was to put into practice the postgreSQL database skills that I learnt this week. This was an opportunity to further explore the MVC architerature and to build an app with a backend extension. 
 
-# Build statu
+# Build status
 
 https://travis-ci.com/travis-ci/travis-web.svg?branch=master
 
