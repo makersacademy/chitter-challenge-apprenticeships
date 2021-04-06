@@ -12,7 +12,7 @@ class Peep
 
     connection = PG.connect(dbname: database_name)
     peeps = connection.exec "SELECT * FROM peeps"
-    peeps.each { |row| p row }
+    peeps.map { |row| p row['message'] }
 
     end
 end
