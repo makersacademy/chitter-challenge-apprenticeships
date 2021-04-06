@@ -1,0 +1,24 @@
+<h1> CHITTER </h1>
+
+<h2> All Peeps </h2>
+<ul>
+  <% @peeps.each do |peep| %>
+    <li class="peep" id="peep"-<%= peep.id %>">
+      <%= peep.date %> -
+      <%= peep.message %>
+    </li>
+    
+  <% end %>
+
+  <form action="/peeps/new" method="get">
+    <input type="submit" value="Peep" />
+  </form>
+  
+  <form action="/peeps/sort" method="get">
+    <input type="submit" value="Sort">
+  </form>
+
+  <form action="/peeps/filter" method="get">
+    <input type="submit" value="Filter">
+  </form>
+</ul>
