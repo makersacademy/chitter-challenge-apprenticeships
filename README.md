@@ -1,36 +1,6 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
-
-## Set up
-
-To setup the database:
-
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
-
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
-
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
-
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
+* This is the Chitter Challenge and the ask was to build a small twitter clone that allows users to post messages to a public stream.
 
 ## User stories
 
@@ -64,3 +34,28 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+```
+Additional functionalities have been added for users to register and log in into their account to post peeps
+
+```
+
+
+# Motivation 
+
+* The motivation for this challenge was to put into practice the postgreSQL database skills that I learnt this week. This was an opportunity to further explore the MVC architerature and to build an app with a backend extension. 
+
+# Build status
+
+https://travis-ci.com/travis-ci/travis-web.svg?branch=master
+
+
+# Tech used
+
+* Ruby 
+* Bootstrap -v 5
+
+# Test
+
+* RSpec and Capybara have been used for unit and feature testing with a 95% coverage. 
+

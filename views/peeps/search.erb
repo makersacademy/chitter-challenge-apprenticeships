@@ -1,0 +1,22 @@
+<div class="card">
+
+  <img class="card-img-top" src="/assets/images/friends.jpg" alt="Card image cap">
+  <div class="card-body">
+    <div class="card-header">Chitter</div>
+    <form action='/peeps' method='post'>
+      <div class="wrapper">
+        <button type="submit" type="submit" name="Return Button" class="btn btn-outline-secondary">Peep</button>
+      </form>
+       <div class="card-body">
+          <% @peeps.each do |peep| %>
+            <p style="vertical-align: top";><img src="assets/images/avatar2.png" alt="Avatar" class="avatar"> </p>
+            <p class="card-text"> <%= peep.message %></p>
+            <p class="card-text" id="date-time"> <%= peep.post_date %></p>
+            </div>
+              <div class="card-footer text-muted"></div>
+            <% end %>
+    </div>
+  </div>
+</div>
+
+

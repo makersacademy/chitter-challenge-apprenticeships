@@ -1,0 +1,81 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.avatar {  
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  
+}
+
+.card {
+  margin: auto;
+  width: 50%;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+}
+
+.card-text {
+padding-left:70px;
+
+}
+
+.card-img-top{
+  opacity: 0.8;
+  width: 100%;
+  border-color: #ffffff;
+}
+
+.card-footer {
+
+  padding-bottom: 1px;
+  background-color: rgb(96, 96, 96);
+}
+
+textarea {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: rgb(223, 221, 221);
+  
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.return-btn {
+  width: 100%;
+}
+.card-body-sign-in {
+  resize: none;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+}
+
+.form-control {
+  text-align: center;
+  background-color: rgb(252, 252, 252);
+}
+
+
+
+
+
+
+
+
+
+
+
+

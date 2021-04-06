@@ -1,0 +1,36 @@
+<div class="card">
+<form action='/search' method='post'>
+<div class="input-group">
+  <input type="text" name="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    aria-describedby="search-addon" />
+  <button type="submit" value="Submit" class="btn btn-outline-secondary">search</button>
+</div>
+</form>
+  <img class="card-img-top" src="assets/images/friends.jpg" alt="Card image cap">
+  </div>
+  </div>
+  <div class="card text-left">
+  
+  <form action='/peeps/new'>
+        <button type="submit" type="submit" name="Submit-peep" class="btn btn-outline-secondary">Post a new Peep!</button>
+      </form>
+
+<div class="card-header"><% if @user %>
+<h5 class="card-title">Welcome, <%= @user.email %></h5>
+<% end %></div>
+ <% @peeps.each do |peep| %>
+  <div class="card-body">
+    <p style="vertical-align: top";><img src="assets/images/avatar2.png" alt="Avatar" class="avatar"> </p>
+    <p class="card-text"> <%= peep.message %></p>
+    <p class="card-text" id="date-time"> <%= peep.post_date %></p>
+  </div>
+  <div class="card-footer text-muted"></div>
+  <% end %>
+  </div>
+  
+  
+  
+   
+    
+
+
