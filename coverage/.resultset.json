@@ -1,11 +1,30 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/renaestlouis/Projects/Databases/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -14,7 +33,59 @@
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/renaestlouis/Projects/Databases/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          8,
+          8,
+          8,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          2,
+          2,
+          4,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/renaestlouis/Projects/Databases/chitter-challenge-apprenticeships/spec/features/creating_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/renaestlouis/Projects/Databases/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +94,34 @@
           null,
           null
         ]
+      },
+      "/Users/renaestlouis/Projects/Databases/chitter-challenge-apprenticeships/spec/features/viewing_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1617287450
   }
 }
