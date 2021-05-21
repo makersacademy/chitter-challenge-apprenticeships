@@ -9,4 +9,13 @@ feature 'Creating a peep' do
 
     expect(page).to have_content 'My first peep!'
   end
+
+  scenario 'the post contains a date' do
+    visit('new')
+    fill_in('message', with: 'My first peep!')
+    click_button('Send')
+
+    # expect(page).to have_content('2021-05-21')
+  end
+
 end

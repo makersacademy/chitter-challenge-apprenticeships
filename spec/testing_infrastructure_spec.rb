@@ -1,3 +1,4 @@
+require 'pg'
 # As a Maker
 # So that I can see what people are doing
 # I want to see all the messages (peeps)
