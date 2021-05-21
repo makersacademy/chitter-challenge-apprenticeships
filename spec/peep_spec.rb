@@ -31,4 +31,12 @@ describe Peep do
 
     end
   end
+
+  describe '.find' do
+    it 'searches for a peep by a specific keyword ' do
+
+
+
+    end
+  end
 end

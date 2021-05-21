@@ -33,5 +33,10 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
+  get '/peeps/find' do
+    @search = Peep.find(params['keyword'])
+    erb :'peeps/find'
+  end
+
   run! if app_file == $0
 end

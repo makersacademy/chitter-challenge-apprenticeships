@@ -1,0 +1,8 @@
+<ul>
+  <% @search.each do |peep| %>
+  <li class='peep' id='peep-<%= peep.id %>'>
+    <%= peep.message %>
+    <%= peep.posted_on %>
+  </li>
+  <% end %>
+</ul>
