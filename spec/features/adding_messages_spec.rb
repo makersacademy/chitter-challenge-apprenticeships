@@ -1,3 +1,4 @@
+
 feature 'Adding a message' do
   scenario 'When a user adds a message it adds it to the db' do
     visit('/messages/new')

@@ -12,13 +12,14 @@ class Messages
     result.map { |message| message['message']}
   end
 
-  def self.add(message:, user:)
+  def self.add(message:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message, user) VALUES('#{message}', '#{user}') RETURNING id, message, user")
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
   end
 end
+

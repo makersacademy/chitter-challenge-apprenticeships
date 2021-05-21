@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require './lib/messages'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -17,10 +16,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/messages' do
-    Messages.add(message: params[:message], user: params[:user])
+    Messages.add(message: params[:message])
     redirect '/messages'
   end
-
 
   run! if app_file == $0
 end
