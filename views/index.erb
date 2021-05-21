@@ -1,0 +1,10 @@
+<h1>Chitter</h1>
+<ul>
+  <% @messages.each do |entry|%>
+  <li> <%=entry.time%> <%=entry.message%> </li>
+  <%end%>
+</ul>
+
+<br><br>
+
+<a href='/new'>new post</a>

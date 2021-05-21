@@ -1,21 +1,115 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
+          1,
+          1,
           1,
           null,
           1,
+          null,
           1,
+          null,
           1,
+          4,
+          4,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/lib/message.rb": {
         "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          8,
+          8,
+          8,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          6,
+          6,
+          5,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          null,
+          3,
+          3,
+          null,
+          3,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          null,
+          5,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/lib/database_connection.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          9,
+          null,
+          null
+        ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/database_connection_setup.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/spec/features/display_all_messages_spec.rb": {
+        "lines": [
+          1,
           1,
           1,
           1,
@@ -23,8 +117,76 @@
           null,
           null
         ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/spec/features/display_time_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/spec/features/post_new_message_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mattedwards/Documents/MAKERS/PROJECTS/chitter-challenge-apprenticeships/spec/message_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1621615052
   }
 }
