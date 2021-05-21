@@ -34,9 +34,11 @@ describe Peep do
 
   describe '.find' do
     it 'searches for a peep by a specific keyword ' do
-
-
-
+      Peep.create(message: 'this is my first peep!')
+      Peep.create(message: 'this is my second peep!')
+      peep = Peep.find('first').to_s
+      expect(peep).not_to include 'this is my second peep!'
+      expect(peep).to include 'this is my first peep!'
     end
   end
 end
