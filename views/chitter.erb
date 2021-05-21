@@ -2,6 +2,7 @@
   <% @peeps.each do |peep| %>
     <li class="peeps" id="peep-<%= peep.id %>">
         <%= peep.message%>
+        <%= peep.datetime%>
       </li>
     <% end %>
 </ul>
