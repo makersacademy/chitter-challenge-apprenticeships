@@ -6,6 +6,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -22,6 +23,30 @@
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/liamkilkenny/Documents/GitHub/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          2,
+          4,
+          null,
+          null,
           null
         ]
       },
@@ -37,6 +62,7 @@
       },
       "/Users/liamkilkenny/Documents/GitHub/chitter-challenge-apprenticeships/spec/features/view_peeps_spec.rb": {
         "lines": [
+          1,
           null,
           null,
           null,
@@ -47,9 +73,32 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/liamkilkenny/Documents/GitHub/chitter-challenge-apprenticeships/spec/peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           null,
           null,
@@ -60,6 +109,6 @@
         ]
       }
     },
-    "timestamp": 1621582893
+    "timestamp": 1621589404
   }
 }
