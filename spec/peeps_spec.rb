@@ -11,6 +11,7 @@ describe Peeps do
 
       expect(peeps.length).to eq 1
       expect(peeps.first).to be_a Peeps
+      p peeps.first
       expect(peeps.first.id).to eq peep.id
       expect(peeps.first.datetime).to eq peep.datetime
       expect(peeps.first.message).to eq 'This is a peep!'

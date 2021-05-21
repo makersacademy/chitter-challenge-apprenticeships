@@ -4,7 +4,7 @@ require_relative 'database_connection'
 class Peeps
 
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM peeps ORDER BY datetime DESC;")
+    result = DatabaseConnection.query("SELECT id, message, date_trunc('second', datetime) AS datetime FROM peeps ORDER BY datetime DESC;")
     result.map do |peep|
       Peeps.new(
         id: peep['id'],
@@ -15,7 +15,7 @@ class Peeps
   end
 
   def self.create(message:)
-    result = DatabaseConnection.query("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, message, datetime")
+    result = DatabaseConnection.query("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, message, date_trunc('second', datetime) AS datetime")
     Peeps.new(id: result[0]['id'], message: result[0]['message'], datetime: result[0]['datetime'])
   end
 
