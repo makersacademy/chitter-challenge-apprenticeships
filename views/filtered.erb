@@ -1,0 +1,5 @@
+<h1> Hot and fresh peeps, right from the oven: </h1>
+
+  <% @filteredpeeps.each do |peep| %>
+    <li> <%= peep.message %> -- posted: <%= peep.date %> </li>
+  <% end %>
