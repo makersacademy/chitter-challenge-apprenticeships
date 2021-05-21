@@ -21,9 +21,19 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
-  get'/newpeep' do
+  get '/newpeep' do
     erb :newpeep
   end
+
+  get '/findpeep' do
+    erb :findpeep
+  end
+
+  post '/filteredpeeps' do
+    @filteredpeeps = Peep.find(params[:peep])
+    erb :filtered
+  end
+
 
   run! if app_file == $0
 end
