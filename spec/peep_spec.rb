@@ -28,7 +28,6 @@ describe Peep do
       expect(peep).to be_a Peep
       expect(peep.id).to eq persisted_data['id']
       expect(peep.message).to eq 'this is my first peep!'
-
     end
   end
 
@@ -37,6 +36,7 @@ describe Peep do
       Peep.create(message: 'this is my first peep!')
       Peep.create(message: 'this is my second peep!')
       peep = Peep.find('first').to_s
+
       expect(peep).not_to include 'this is my second peep!'
       expect(peep).to include 'this is my first peep!'
     end

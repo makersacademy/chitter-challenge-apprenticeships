@@ -21,11 +21,11 @@ end
   # So that I can easily see the latest peeps
   # I want to see a list of peeps in reverse chronological order
 
-  feature 'lists latest peeps first' do
-    scenario 'list of peeps in reverse chronological order' do
-      add_peep('This is my first peep')
-      add_peep('This is my latest peep')
+feature 'lists latest peeps first' do
+  scenario 'list of peeps in reverse chronological order' do
+    add_peep('This is my first peep')
+    add_peep('This is my latest peep')
 
-      expect(page.body.index('This is my latest peep')).to be < page.body.index('This is my first peep')
-    end
+    expect(page.body.index('This is my latest peep')).to be < page.body.index('This is my first peep')
   end
+end

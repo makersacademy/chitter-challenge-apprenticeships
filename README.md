@@ -21,12 +21,10 @@ Write a small Twitter clone that will allow the users to post messages to a publ
 
 ## Alter table
 
-* Connect to psql chitter
+* Connect to the database using psql chitter
 * Run the query we have saved in the file 02_add_date_column.sql
+* In TablePlus set posted_on default to now() & is_nullable to NO
 * Repeat the steps for the chitter_test database
-
-
-
 
 ## User stories
 
