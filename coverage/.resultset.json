@@ -4,6 +4,16 @@
       "/Users/jaymullen/Projects/EXERCISES/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -11,6 +21,18 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/jaymullen/Projects/EXERCISES/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -23,8 +45,48 @@
           null,
           null
         ]
+      },
+      "/Users/jaymullen/Projects/EXERCISES/chitter-challenge-apprenticeships/spec/features/viewing_peeps_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/jaymullen/Projects/EXERCISES/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jaymullen/Projects/EXERCISES/chitter-challenge-apprenticeships/spec/testing_infrastructure_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1621585341
+    "timestamp": 1621594111
   }
 }
