@@ -4,21 +4,71 @@
       "/Users/lukeczoboriek/Projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
           null,
           1,
           1,
           1,
           null,
           null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeczoboriek/Projects/chitter-challenge-apprenticeships/lib/messages.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          4,
+          null,
+          0,
+          null,
+          null,
+          4,
+          10,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          0,
+          null,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/lukeczoboriek/Projects/chitter-challenge-apprenticeships/spec/features/adding_messages_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           1,
           null,
-          null,
-          1,
-          null,
-          null,
-          1,
           null
         ]
       },
@@ -40,11 +90,42 @@
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lukeczoboriek/Projects/chitter-challenge-apprenticeships/spec/messages_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1621589527
+    "timestamp": 1621596114
   }
 }
