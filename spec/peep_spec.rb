@@ -1,22 +1,34 @@
 require 'peep'
-require 'setup_test_database'
+require 'database_helpers'
 
 describe Peep do
 
+
+
   describe '.all' do
     it 'returns a list of peeps' do
-      setup_test_database
-      add_row_to_test_database
+      peep = Peep.create(message: 'This is a peep!')
+      Peep.create(message: 'this is my first peep!')
 
       peeps = Peep.all
-      expect(peeps).to include('This is a peep!')
+
+      expect(peeps.length).to eq 2
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.id).to eq peep.id
+      expect(peeps.first.message).to eq 'This is a peep!'
+      expect(peeps.first.posted_on).to eq peep.posted_on
     end
   end
 
   describe '.create' do
     it 'posts a new peep' do
-      Peep.create(message: 'this is my first peep!')
-      expect(Peep.all).to include('this is my first peep!')
+      peep = Peep.create(message: 'this is my first peep!')
+      persisted_data = persisted_data(id: peep.id)
+
+      expect(peep).to be_a Peep
+      expect(peep.id).to eq persisted_data['id']
+      expect(peep.message).to eq 'this is my first peep!'
+
     end
   end
 end

@@ -1,1 +1,1 @@
-ALTER TABLE peeps ADD COLUMN posted_on VARCHAR(20);
+ALTER TABLE peeps ADD COLUMN posted_on DATE;
