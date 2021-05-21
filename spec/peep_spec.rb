@@ -14,8 +14,8 @@ describe Peep do
 
       expect(peeps.length).to eq 2
       expect(peeps.first).to be_a Peep
-      expect(peeps.first.id).to eq peep.id
-      expect(peeps.first.message).to eq 'This is a peep!'
+      expect(peeps.last.id).to eq peep.id
+      expect(peeps.last.message).to eq 'This is a peep!'
       expect(peeps.first.posted_on).to eq peep.posted_on
     end
   end

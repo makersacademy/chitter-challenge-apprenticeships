@@ -13,15 +13,19 @@ class Peep
 
   def self.all
     result = DatabaseConnection.query('SELECT * FROM peeps')
-    result.map do |peep|
+    list = result.map do |peep|
       Peep.new(
         id: peep['id'],
         message: peep['message'],
         posted_on: peep['posted_on']
       )
     end
+    list.reverse
   end
 
+  def self.list
+    DatabaseConnection.query("SELECT * FROM peeps ORDER BY id DESC")
+  end
 
   def self.create(message: )
     result = DatabaseConnection.query("INSERT INTO peeps (message) VALUES('#{message}') RETURNING id, message, posted_on;")
