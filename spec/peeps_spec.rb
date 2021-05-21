@@ -5,23 +5,25 @@ describe Peep do
     it 'returns all peeps' do
       connection = PG.connect(dbname: 'chitter_test')
 
-      connection.exec("INSERT INTO peeps (message) VALUES ('Oh, hi doggy');")
-      connection.exec("INSERT INTO peeps (message) VALUES ('Cheep cheep cheep cheep');")
-      connection.exec("INSERT INTO peeps (message) VALUES ('Anything for my princess');")
+      peep = Peep.create(message: 'Oh, hi doggy', date: "2021-05-19")
+      Peep.create(message: 'Cheep cheep cheep cheep', date: "2021-03-20")
+      Peep.create(message: 'Anything for my princess', date: "2021-05-15")
 
       peeps = Peep.all
 
-      expect(peeps).to include 'Oh, hi doggy'
-      expect(peeps).to include 'Cheep cheep cheep cheep'
-      expect(peeps).to include 'Anything for my princess'
+      expect(peeps.length).to eq 3
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.message).to eq 'Oh, hi doggy'
+      expect(peeps.first.date).to eq '2021-05-19'
     end
   end
 
   describe '.create' do
     it 'creates a new peep' do
-      Peep.create(message: 'test')
+      peep = Peep.create(message: 'test', date: '2021-05-21').first
 
-      expect(Peep.all).to include 'test'
+      expect(peep['message']).to eq 'test'
+      expect(peep['date']).to eq '2021-05-21'
     end
   end
 end
