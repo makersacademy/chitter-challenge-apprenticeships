@@ -16,9 +16,10 @@ describe Messages do
 
   describe '.add' do
     it 'adds a new message' do
-      Messages.add(message: 'Chitter is so amazing')
+      message = Messages.add(message: 'Chitter is so amazing', user: 'Bob').first
 
-      expect(Messages.all).to include 'Chitter is so amazing'
+      expect(message['message']).to eq 'Chitter is so amazing'
+      expect(message['user']).to eq 'Bob'
     end
   end 
 end

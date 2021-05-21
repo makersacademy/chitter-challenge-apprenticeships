@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/messages' do
-    Messages.add(message: params[:message])
+    Messages.add(message: params[:message], user: params[:user])
     redirect '/messages'
   end
 
