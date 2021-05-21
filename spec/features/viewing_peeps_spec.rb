@@ -1,10 +1,10 @@
 feature 'Viewing peeps' do
   scenario 'visiting the home page' do
     connection = PG.connect(dbname: 'chitter_test')
-
-    connection.exec("INSERT INTO peeps VALUES(1, 'Oh, hi doggy');")
-    connection.exec("INSERT INTO peeps VALUES(2, 'Cheep cheep cheep cheep');")
-    connection.exec("INSERT INTO peeps VALUES(3, 'Anything for my princess');")
+    
+    Peep.create(message: "Oh, hi doggy")
+    Peep.create(message: "Cheep cheep cheep cheep")
+    Peep.create(message: "Anything for my princess")
 
     visit('/')
 
