@@ -1,6 +1,6 @@
 feature 'Viewing peeps' do
   scenario 'visiting the home page' do
-    connection = PG.connect(dbname: 'chitter_test')
+    PG.connect(dbname: 'chitter_test')
     
     Peep.create(message: "Oh, hi doggy", date: "2021-05-19")
     Peep.create(message: "Cheep cheep cheep cheep", date: "2021-03-20")
@@ -26,7 +26,5 @@ feature 'Viewing peeps' do
 
     expect(page).to have_content "Oh, hi doggy -- posted: 2021-05-19 Anything for my princess -- posted: 2021-05-15"
     expect(page).to have_content "Anything for my princess -- posted: 2021-05-15 Cheep cheep cheep cheep -- posted: 2021-03-20"
-
   end
-
 end

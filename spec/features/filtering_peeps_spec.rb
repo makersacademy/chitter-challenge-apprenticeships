@@ -9,7 +9,6 @@ feature 'filtering peeps' do
     fill_in "peep", with: "doggy"
     click_button "Find my peep"
 
-
     expect(page).to have_content "Oh, hi doggy"
     expect(page).not_to have_content "Cheep cheep cheep cheep"
     expect(page).not_to have_content "Anything for my princess"
