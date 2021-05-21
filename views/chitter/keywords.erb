@@ -1,0 +1,16 @@
+<ul>
+<% if @peep %>
+  <%@peep.each do |peep|%>
+   <li class="peeps" id="peep-<%= peep.id %>">
+      <%=peep.message%>
+      <%= peep.datetime %>
+  <%end%>
+  <% else %>
+  <p> There are no peeps that match this keyword </p>
+  </li>
+<% end %>
+
+<form action="/chitter">
+<input type='submit' value='Return to Chitter Homepage'/>
+</form>
+</ul>

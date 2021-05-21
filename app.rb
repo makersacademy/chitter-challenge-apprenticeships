@@ -30,5 +30,15 @@ class Chitter < Sinatra::Base
     erb :'/chitter/new'
   end
 
+  post '/chitter/keywords/new' do
+    @peep = Peeps.like(keyword: params[:keyword])
+    redirect '/chitter/keywords'
+  end
+
+
+  get '/chitter/keywords' do
+    erb :'/chitter/keywords'
+  end
+
   run! if app_file == $0
 end

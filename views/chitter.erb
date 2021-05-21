@@ -2,7 +2,7 @@
   <% @peeps.each do |peep| %>
     <li class="peeps" id="peep-<%= peep.id %>">
         <%= peep.message%>
-        <%= peep.datetime%>
+        <%= peep.datetime %>
       </li>
     <% end %>
 </ul>
@@ -10,4 +10,11 @@
 <form action="/chitter/new">
 <input type='submit' value='Write a Peep'/>
 </form>
+
+<form action="/chitter/keywords/new" method='post'>
+<input type='text' name='keyword' placeholder='Search by keyword' />
+<input type='submit' value='Search'/>
+
+</form>
+  
   
