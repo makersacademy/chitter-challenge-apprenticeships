@@ -16,4 +16,17 @@ feature 'Viewing peeps' do
     expect(page).to have_content "Anything for my princess"
     expect(page).to have_content "2021-05-15"
   end
+
+  scenario 'peeps are viewed in reverse chronological order' do
+    Peep.create(message: "Cheep cheep cheep cheep", date: "2021-03-20")
+    Peep.create(message: "Anything for my princess", date: "2021-05-15")
+    Peep.create(message: "Oh, hi doggy", date: "2021-05-19")
+    
+    visit('/')
+
+    expect(page).to have_content "Oh, hi doggy -- posted: 2021-05-19 Anything for my princess -- posted: 2021-05-15"
+    expect(page).to have_content "Anything for my princess -- posted: 2021-05-15 Cheep cheep cheep cheep -- posted: 2021-03-20"
+
+  end
+
 end
