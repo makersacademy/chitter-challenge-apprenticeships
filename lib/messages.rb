@@ -12,7 +12,7 @@ class Messages
     result.map { |message| message['message']}
   end
 
-  def self.add(message)
+  def self.add(message:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
