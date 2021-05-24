@@ -58,13 +58,13 @@ body {
 
 <div class="content">
 <ul>
-<% if @search %>
+<% if @search.any? %>
   <% @search.each do |peep|%>
    <li class="peeps" id="peep-<%= peep.id %>">
       <%= peep.message %>
       <%= peep.datetime %>
   <%end%>
-  <% else %>
+<% else %>
   <p> There are no peeps that match this keyword </p>
   </li>
 <% end %>
