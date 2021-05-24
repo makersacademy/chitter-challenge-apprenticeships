@@ -20,8 +20,8 @@ class Peeps
   end
 
   def self.like(keyword:)
-    result = DatabaseConnection.query("SELECT id, message, date_trunc('second', datetime) AS datetime FROM peeps WHERE message LIKE ('%#{keyword}%') ORDER BY datetime DESC;")
-    result.map do |peep|
+    search = DatabaseConnection.query("SELECT id, message, date_trunc('second', datetime) AS datetime FROM peeps WHERE message LIKE ('%#{keyword}%') ORDER BY datetime DESC;")
+    search.map do |peep|
       Peeps.new(
         id: peep['id'],
         message: peep['message'],
