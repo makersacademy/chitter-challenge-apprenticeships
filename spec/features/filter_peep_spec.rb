@@ -10,5 +10,6 @@ feature 'search for peep by keyword' do
     click_button 'Search Peeps'
 
     expect(page).to have_content('This is peep one!')
+    expect(page).not_to have_content('This is peep two!')
   end
 end
