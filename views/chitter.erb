@@ -60,7 +60,8 @@ body {
 <ul>
   <% @peeps.each do |peep| %>
     <li class="peeps" id="peep-<%= peep.id %>">
-        <%= peep.message%>
+        <%= peep.message %>
+        <%= peep.date %>
         <%= peep.datetime %>
       </li>
     <% end %>

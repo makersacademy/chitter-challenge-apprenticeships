@@ -62,6 +62,7 @@ body {
   <% @search.each do |peep|%>
    <li class="peeps" id="peep-<%= peep.id %>">
       <%= peep.message %>
+       <%= peep.date %>
       <%= peep.datetime %>
   <%end%>
 <% else %>
