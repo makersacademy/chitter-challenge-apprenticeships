@@ -27,7 +27,7 @@ class Peeps
         id: peep['id'],
         message: peep['message'],
         datetime: peep['datetime'],
-        date: peep{'date'}
+        date: peep['date']
       )
     end
   end
