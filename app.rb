@@ -31,7 +31,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/chitter/keywords/new' do
-    @peep = Peeps.like(keyword: params[:keyword])
+    @search = Peeps.like(keyword: params[:keyword])
     redirect '/chitter/keywords'
   end
 

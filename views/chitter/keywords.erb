@@ -58,10 +58,10 @@ body {
 
 <div class="content">
 <ul>
-<% if @peep %>
-  <%@peep.each do |peep|%>
+<% if @search %>
+  <% @search.each do |peep|%>
    <li class="peeps" id="peep-<%= peep.id %>">
-      <%=peep.message%>
+      <%= peep.message%>
       <%= peep.datetime %>
   <%end%>
   <% else %>
