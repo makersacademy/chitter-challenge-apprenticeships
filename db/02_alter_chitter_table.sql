@@ -1,0 +1,2 @@
+ALTER TABLE peeps ADD COLUMN date DATE;
+ALTER TABLE peeps ADD COLUMN datetime TIME;
