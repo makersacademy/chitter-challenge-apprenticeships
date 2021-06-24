@@ -1,0 +1,8 @@
+
+
+<ul>
+  <% @peeps_all.each do |peep| %>
+    <li><span>Message: <%= peep["message"] %></span> <br>
+    <span>Date: <%= peep["date"] %></span></li>
+  <% end %>
+</ul>
