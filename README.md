@@ -70,13 +70,13 @@ I want to /filter/ on a specific /keyword/
 Methods:
 - peep.all
 - peep.add
-- peep.find
-- peep.delete ?
+- peep.search
+- peep.delete ? (user validation)
 
 Attributes:
 - peep.message
 - peep.date
-- peep.tags
+- peep.tags ??
 - peep.user ?
 
 Views:
@@ -94,4 +94,5 @@ Controller:
 - GET /peeps  :peeps
 - GET /peeps/new  :new_peep
 - POST /peeps/add (redirect /peeps)
-- GET /peeps/user ?
+- POST /peeps/:keyword (redirect /search_results)
+- GET /peeps/:user  :user_peeps  ?
