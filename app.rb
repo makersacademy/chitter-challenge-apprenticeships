@@ -1,15 +1,15 @@
 require 'sinatra/base'
 require './lib/tweets'
 
-
 class Chitter < Sinatra::Base
+  enable :sessions
   get '/test' do
     'Test page'
-  end
+  end    
 
-  get '/tweets' do
-    @tweets = Tweets.all
-    erb :'tweets/index'
+  get '/users/new' do
+    @user = User.new
+    erb :'/users/new'
   end
 
   get '/tweets/new' do
@@ -17,8 +17,14 @@ class Chitter < Sinatra::Base
   end
 
   post '/tweets' do
-    Tweets.create(user_id: params[:user_id], message: params[:message])
+    new_tweet = Tweets.create(user_id: session[:user_id], message: params[:message])
+    new_tweet.save
       redirect '/tweets'
+  end
+
+  get '/tweets' do
+    @tweets = Tweets.all
+    erb :'tweets/index'
   end
 
   run! if app_file == $0

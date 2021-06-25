@@ -29,7 +29,39 @@ def self.create(message:, user_id:)
     connection = PG.connect(dbname: 'chitter')
   end
 
-  result = connection.exec("INSERT INTO peeps (message, user_id) VALUES('#{message}', #{user_id}) RETURNING id, message, user_id")
+  result = connection.exec("INSERT INTO peeps(message, user_id) VALUES('#{message}', #{user_id}) RETURNING id, message, user_id")
   Tweets.new(id: result[0]['id'], message: result[0]['message'], user_id: result[0]['user_id'])
 end
+end
+
+class User
+
+ attr_reader :password
+ attr_accessor :password_confirmation
+
+ def self.all
+  if ENV['ENVIRONMENT'] == 'test'
+    connection = PG.connect(dbname: 'chitter_test')
+  else
+    connection = PG.connect(dbname: 'chitter')
+  end
+  result = connection.exec("SELECT * FROM peeps")
+  result.map do |user|
+    User.new(password: user['password'], email: user['email'])
+  end
+end
+
+  def password=(password)
+    @password = password
+    self.password_digest = BCrypt::Password.create(password)
+  end
+
+  def self.authenticate(email, password)
+    user = first(email: email)
+    if user && BCrypt::Password.new(user.password_digest) == password
+    user
+    else
+    nil
+    end
+  end
 end

@@ -1,5 +1,5 @@
 <ul>
-  <% @tweets.each do |tweets| %>
+  <% @tweets.reverse.each do |tweets| %>
     <li>
       <%= tweets.message %>
         <%= tweets.user_id %>
