@@ -1,12 +1,17 @@
+require 'time'
+
 class Peep
-  attr_reader :username, :message, :id
+  attr_reader :username, :message, :id, :date
 
   def self.add(username:, message:)
-    created = DatabaseConnection.query(sql: "INSERT INTO peeps (username, message) VALUES($1, $2) RETURNING id, username, message;", params: [username, message])
+    date_full = Time.new
+    date = "#{date_full.strftime("%m/%d/%Y at %I:%M%p")}"
+    created = DatabaseConnection.query(sql: "INSERT INTO peeps (username, message, date) VALUES($1, $2, $3) RETURNING id, username, message, date;", params: [username, message, date])
     Peep.new(
+      date: created[0]['date'],
       username: created[0]['username'],
       message: created[0]['message'],
-      id: created[0]['id']
+      id: created[0]['id'],
     )
   end
 
@@ -16,14 +21,16 @@ class Peep
       Peep.new(
         username: peep['username'],
         message: peep['message'],
-        id: peep['id']
+        id: peep['id'],
+        date: peep['date']
       )
     end
   end
 
-  def initialize(username:, message:, id:)
+  def initialize(username:, message:, id:, date:)
     @username = username
     @message = message
     @id = id
+    @date = date
   end
 end

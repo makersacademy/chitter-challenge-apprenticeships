@@ -34,12 +34,16 @@ So that I can see what people are doing
 I want to /see all/ the /messages/ (peeps)
 in a browser
 ```
+:white_check_mark:
+
 
 ```
 As a Maker
 So that I can let people know what I am doing  
 I want to /post/ a /message/ (peep) to chitter
 ```
+:white_check_mark:
+
 
 ```
 As a Maker
@@ -47,12 +51,17 @@ So that I can see when people are doing things
 I want to /see/ the /date/ the /message/ was posted
 ```
 (Hint the database table will need to change to store the date too)
+:white_check_mark:
+
 
 ```
 As a Maker
 So that I can easily see the latest peeps
 I want to /see/ a /list of peeps/ in reverse chronological order
 ```
+:construction:
+
+
 ```
 As a Maker
 So that I can find relevant peeps
@@ -69,7 +78,7 @@ Methods:
 
 Attributes:
 - peep.message :white_check_mark:
-- peep.date :construction:
+- peep.date :white_check_mark:
 - peep.tags ??
 - peep.username (display name) :white_check_mark:  
 - peep.username (v2) ? (dynamic/database username)

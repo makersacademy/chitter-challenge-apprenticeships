@@ -1,3 +1,4 @@
+require 'time'
 require 'peep'
 
 describe Peep do
@@ -25,5 +26,9 @@ describe Peep do
 
   end
 
-
+  it 'stores the date it was created' do
+    date = Time.new
+    peep = Peep.add(username: username, message: message)
+    expect(peep.date).to eq(date.strftime("%m/%d/%Y at %I:%M%p"))
+  end
 end
