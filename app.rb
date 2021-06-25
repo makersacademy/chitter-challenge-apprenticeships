@@ -4,7 +4,7 @@ require "sinatra/flash"
 require "./database_connection_setup"
 require "uri"
 require "./lib/peep"
-
+require "./lib/user"
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -58,7 +58,7 @@ class Chitter < Sinatra::Base
     end
 
     post '/users/add' do
-      session[:current_user] = User.new(username: params[:username], password: params[:password])
+      session[:current_user] = User.add(username: params[:username], password: params[:password])
       redirect('/peeps')
     end
 

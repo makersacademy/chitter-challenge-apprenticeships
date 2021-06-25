@@ -82,11 +82,16 @@ I would like to be able to log-in to Chitter
 :construction:
 
 ```
-As a Maker
+As a logged-in Maker
 So that I can manage my digital footprint
 I'd like to be able to delete my peeps
 ```
 
+```
+As a logged-in Maker
+So that I can protect my data
+I'd like my password to be encrypted
+```
 
 ### Analysis
 
