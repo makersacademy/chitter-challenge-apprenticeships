@@ -26,6 +26,20 @@ class User
     end
   end
 
+  def self.authenticate(username:, password:)
+    result = DatabaseConnection.query(sql: "SELECT * FROM users WHERE username = $1;", params: [username])
+    # check for existing username in database => return if no match
+    return unless result.any?
+    # user exists, so now check password correct else return
+    return unless BCrypt::Password.new(result[0]['password']) == password
+    # return the user for test assessments
+    User.new(
+      username: result[0]['username'],
+      password: result[0]['password'],
+      id: result[0]['id'],
+    )
+  end
+
   def initialize(username:, password:, id:)
     @username = username
     @password = password

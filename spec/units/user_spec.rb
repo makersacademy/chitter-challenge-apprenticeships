@@ -34,8 +34,17 @@ describe User do
     user = User.add(username: username, password: "password")
     result = connection.exec("SELECT password FROM users WHERE id = #{user.id}")
     database_password = result[0]['password']
-    p database_password
+
     expect(database_password).not_to eq("password")
+  end
+
+  it 'authenticates against an encrypted password' do
+    user = User.add(username: username, password: "password")
+    authenticated_user = User.authenticate(username: username, password: "password")
+    invalid_user = User.authenticate(username: username, password: "qwerty")
+
+    expect(user.id).to eq authenticated_user.id
+    expect(invalid_user).to be nil
   end
 
 end

@@ -93,11 +93,19 @@ I'd like to be able to log out
 
 
 ```
+As a logged-in Maker
+So that I can protect my data
+I'd like my password to be encrypted
+```
+:white_check_mark:
+
+
+```
 As a Maker
 So that I can access my registered account
 I would like to be able to log in
 ```
-
+:construction:
 
 
 ```
@@ -107,12 +115,7 @@ I'd like to be able to delete my peeps
 ```
 
 
-```
-As a logged-in Maker
-So that I can protect my data
-I'd like my password to be encrypted
-```
-:construction:
+
 
 
 ### Analysis
