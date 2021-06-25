@@ -3,7 +3,11 @@ require 'pg'
 class DatabaseConnection
 
   def self.setup(dbname)
-    @connection = PG.connect(dbname: dbname)
+    if ENV['ENVIRONMENT'] == "test"
+      @connection = PG.connect(dbname: 'chitter_test')
+    else
+      @connection = PG.connect(dbname: 'chitter')
+    end
   end
 
   def self.query(sql: ,params: )

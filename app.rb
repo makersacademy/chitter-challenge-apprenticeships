@@ -3,6 +3,7 @@ require "sinatra/reloader"
 require "sinatra/flash"
 require "./database_connection_setup"
 require "uri"
+require "./lib/peep"
 
 
 class Chitter < Sinatra::Base
@@ -22,6 +23,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
+    @peeps = Peep.all
+    # p @peeps
     erb :peeps
   end
 
@@ -30,7 +33,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps/add' do
-    Peep.add(username: params[:name], message: params[:message])
+    Peep.add(username: params[:username], message: params[:message])
     redirect('/peeps')
   end
 

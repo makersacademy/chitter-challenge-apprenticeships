@@ -11,6 +11,6 @@ feature 'So that a user can let people know what they are doing ' do
     click_button('Peep!')
 
     expect(current_path).to eq '/peeps'
-    expect(page).to have_content("just started my coding challenge!")
+    expect(page).to have_content("going to walk the dog")
   end
 end

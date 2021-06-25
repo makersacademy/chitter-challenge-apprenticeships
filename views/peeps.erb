@@ -7,7 +7,20 @@
   <body>
     <h1>Chitter - where the world shouts loudly into the void</h1>
     <br>
-    <p>"just started my coding challenge!"</p>
+    <br>
+    <div class="peeps-outer">
+      <div class="peeps-inner">
+        <% @peeps.each do |peep| %>
+          <div class="peep">
+            <br>
+            <h3><%= peep.username %> says...</h3>
+            <br>
+            <%= peep.message %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
     <br>
     <form class="" action="peeps/new" method="get">
       <input type="submit" name="Peep!" value="Peep!">
