@@ -65,5 +65,6 @@ feature 'a user can filter peeps on a specific keyword' do
     click_button 'Search Peeps'
     expect(page).to_not have_content 'This is a peep!'
     expect(page).to have_content 'This is another peep!'
+    expect(find_by_id("search_keyword").value).to eq 'another'
   end
 end

@@ -23,7 +23,8 @@ class Chitter < Sinatra::Base
     if session[:search_keyword].nil?
       @peeps = Peep.all
     else
-      @peeps = Peep.filtered(session[:search_keyword])
+      @search_keyword = session[:search_keyword]
+      @peeps = Peep.filtered(@search_keyword)
     end
     erb :peeps
   end
