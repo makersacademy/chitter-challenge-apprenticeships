@@ -19,7 +19,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = Peep.all(session[:search_keyword])
+    if session[:search_keyword].nil?
+      @peeps = Peep.all
+    else
+      @peeps = Peep.filtered(session[:search_keyword])
+    end
     erb :peeps
   end
 
