@@ -1,0 +1,6 @@
+
+<ul>
+<% @comments.each do |comment| %>
+     <li><%= comment.message %> <%= comment.add_date %> </li>
+     <% end %>
+</ul>

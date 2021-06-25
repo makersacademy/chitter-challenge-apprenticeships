@@ -4,3 +4,5 @@ feature 'Viewing test page' do
     expect(page).to have_content "Test page"
   end
 end
+
+
