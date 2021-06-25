@@ -37,30 +37,61 @@ You should see 1 passing test.
 ```
 As a Maker
 So that I can see what people are doing
-I want to see all the messages (peeps)
+I want to /see all/ the /messages/ (peeps)
 in a browser
 ```
 
 ```
 As a Maker
 So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
+I want to /post/ a /message/ (peep) to chitter
 ```
 
 ```
 As a Maker
 So that I can see when people are doing things
-I want to see the date the message was posted
+I want to /see/ the /date/ the /message/ was posted
 ```
 (Hint the database table will need to change to store the date too)
 
 ```
 As a Maker
 So that I can easily see the latest peeps
-I want to see a list of peeps in reverse chronological order
+I want to /see/ a /list of peeps/ in reverse chronological order
 ```
 ```
 As a Maker
 So that I can find relevant peeps
-I want to filter on a specific keyword
+I want to /filter/ on a specific /keyword/
 ```
+
+### Analysis
+
+Methods:
+- peep.all
+- peep.add
+- peep.find
+- peep.delete ?
+
+Attributes:
+- peep.message
+- peep.date
+- peep.tags
+- peep.user ?
+
+Views:
+- index (peeps)
+- new_peep
+- search_results
+- user_peeps ?
+
+Model:
+- peep.rb
+- database_connection.rb
+
+Controller:
+- GET / (redirect /peeps)
+- GET /peeps  :peeps
+- GET /peeps/new  :new_peep
+- POST /peeps/add (redirect /peeps)
+- GET /peeps/user ?
