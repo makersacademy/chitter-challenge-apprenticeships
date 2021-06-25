@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chitter</title>
+  </head>
+  <body>
+    <h1>&#128035; Chitter &#128038;</h1>
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li class="peeps">
+          <%= peep['message'] %>
+        </li>
+      <% end %>
+    </ul>
+    <form action="/new_peep" method="get">
+      <input type="submit" value="New Peep">
+    </form>
+  </body>
+</html>
