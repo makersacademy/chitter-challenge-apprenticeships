@@ -7,6 +7,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -82,9 +83,28 @@
           15,
           null,
           null,
-          null,
+          null
+        ]
+      },
+      "/Users/goncalogordo/Projects/chitter-challenge-apprenticeships/lib/database_connection.rb": {
+        "lines": [
           1,
-          12,
+          1,
+          13,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/goncalogordo/Projects/chitter-challenge-apprenticeships/spec/database_connection_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -220,6 +240,6 @@
         ]
       }
     },
-    "timestamp": 1624621311
+    "timestamp": 1624629458
   }
 }
