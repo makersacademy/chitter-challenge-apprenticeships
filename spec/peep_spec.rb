@@ -8,6 +8,15 @@ describe Peep do
     end
   end
 
+  describe '#create' do
+    it 'adds peep to db' do
+      Peep.create('A great peep indeed!')
+      connection = PG.connect(dbname: 'chitter_test')
+      result = connection.exec("SELECT * FROM peeps WHERE message = 'A great peep indeed!';")
+      expect(result.first['message']).to eq 'A great peep indeed!' 
+    end
+  end
+
   describe '#message' do
     it 'returns a Peep\'s message' do
       peep = Peep.new('3', 'Hello!')
