@@ -23,6 +23,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
+    @user = session[:current_user] if logged_in?
     if session[:keyword] != nil
       @peeps = Peep.reverse(session[:keyword])
     else
@@ -52,14 +53,18 @@ class Chitter < Sinatra::Base
     redirect('/peeps')
   end
 
-    # get '/users/new' do
-    #   erb :new_user
-    # end
-    #
-    # post '/users/add' do
-    #   # session[:current_user] = User.new(username: params[:username], password: params[:password])
-    #   redirect('/peeps')
-    # end
+    get '/users/new' do
+      erb :new_user
+    end
+
+    post '/users/add' do
+      session[:current_user] = User.new(username: params[:username], password: params[:password])
+      redirect('/peeps')
+    end
+
+    def logged_in?
+      !session[:current_user].nil?
+    end
 
   run! if app_file == $0
 end
