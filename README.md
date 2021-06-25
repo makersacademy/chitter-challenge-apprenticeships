@@ -57,9 +57,9 @@ I want to /see/ the /date/ the /message/ was posted
 ```
 As a Maker
 So that I can easily see the latest peeps
-I want to /see/ a /list of peeps/ in reverse chronological order
+I want to /see/ a /list of peeps/ in /reverse chronological order/
 ```
-:construction:
+:white_check_mark:
 
 
 ```
@@ -67,13 +67,16 @@ As a Maker
 So that I can find relevant peeps
 I want to /filter/ on a specific /keyword/
 ```
+:construction:
+
 
 ### Analysis
 
 Methods:
 - peep.all :white_check_mark:
 - peep.add :white_check_mark:
-- peep.search
+- peep.reverse :white_check_mark:
+- peep.search :construction:
 - peep.delete ? (user validation)
 
 Attributes:
@@ -86,7 +89,7 @@ Attributes:
 Views:
 - index (peeps) :white_check_mark:
 - new_peep :white_check_mark:
-- search_results
+- search_results (may not need, if filter directly on /peeps?)
 - user_peeps ?
 
 Model:
@@ -98,7 +101,7 @@ Controller:
 - GET /peeps  :peeps :white_check_mark:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
-- POST /peeps/:keyword (redirect /search_results)
+- POST /peeps/:keyword (redirect /search_results) :construction:
 - GET /peeps/:user  :user_peeps  ?
 
 

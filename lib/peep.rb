@@ -27,6 +27,18 @@ class Peep
     end
   end
 
+  def self.reverse
+    peeps = DatabaseConnection.query(sql: 'SELECT * FROM peeps ORDER BY date DESC;', params: [])
+    peeps.map do |peep|
+      Peep.new(
+        username: peep['username'],
+        message: peep['message'],
+        id: peep['id'],
+        date: peep['date']
+      )
+    end
+  end
+
   def initialize(username:, message:, id:, date:)
     @username = username
     @message = message
