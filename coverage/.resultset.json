@@ -1,20 +1,57 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/admin/Desktop/MAKERS/W6-Databases/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
+          1,
           1,
           null,
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/admin/Desktop/MAKERS/W6-Databases/chitter-challenge-apprenticeships/lib/peeps.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/admin/Desktop/MAKERS/W6-Databases/chitter-challenge-apprenticeships/spec/features/index_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/admin/Desktop/MAKERS/W6-Databases/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +60,27 @@
           null,
           null
         ]
+      },
+      "/Users/admin/Desktop/MAKERS/W6-Databases/chitter-challenge-apprenticeships/spec/peeps_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1624615966
   }
 }
