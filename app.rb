@@ -5,7 +5,7 @@ require './lib/peep'
 require './lib/database_connection'
 
 class Chitter < Sinatra::Base
-  enable :sessions
+  enable :sessions, :method_override
 
   configure :development do
     register Sinatra::Reloader
@@ -33,6 +33,11 @@ class Chitter < Sinatra::Base
     today = Time.now
     date = today.strftime('%Y%m%d')
     Peep.create(params[:message], date)
+    redirect '/peeps'
+  end
+
+  delete '/peeps/:id' do
+    Peep.delete(params[:id])
     redirect '/peeps'
   end
 

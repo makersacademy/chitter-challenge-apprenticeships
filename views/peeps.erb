@@ -7,6 +7,12 @@
 <br>
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep.message %> - <%= peep.date %></li>
+    <li>
+      <%= peep.message %> - <%= peep.date %>
+      <form action="/peeps/<%=peep.id%>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input id="<%=peep.id%>" type="submit" value="Delete">
+      </form>
+    </li>
   <% end %>
 </ul>

@@ -1,5 +1,5 @@
 class Peep
-  attr_reader :message, :date
+  attr_reader :id, :message, :date
 
   def initialize(id, message, date)
     @id = id
@@ -22,6 +22,11 @@ class Peep
   def self.create(message, date)
     connection = DatabaseConnection.start
     connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}');")
+  end
+
+  def self.delete(id)
+    connection = DatabaseConnection.start
+    connection.exec("DELETE FROM peeps WHERE id = '#{id}';")
   end
 
   private

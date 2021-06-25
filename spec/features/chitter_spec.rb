@@ -68,3 +68,19 @@ feature 'a user can filter peeps on a specific keyword' do
     expect(find_by_id("search_keyword").value).to eq 'another'
   end
 end
+
+# As a Maker
+# So that I can remove outdated peeps
+# I want to delete peeps
+feature 'a user can delete a peep' do
+  scenario 'at /peeps' do
+    add_rows_to_test_database
+    visit '/peeps'
+    connection = PG.connect(dbname: "chitter_test")
+    result = connection.exec("SELECT * FROM peeps WHERE message = 'This is another peep!';")
+    delete = "#{result.first['id']}"
+    click_button delete
+    expect(page).to have_content 'This is a peep!'
+    expect(page).to_not have_content 'This is another peep!'
+  end
+end
