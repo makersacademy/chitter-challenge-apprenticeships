@@ -47,6 +47,7 @@ As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 ```
+![MVC_model_user_story2](https://user-images.githubusercontent.com/62373855/123395077-b649cd00-d597-11eb-8076-6cc8a3d11d76.png)
 
 ```
 As a Maker
