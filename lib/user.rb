@@ -6,8 +6,11 @@ class User
 
 
   def self.add(username:, password:)
+    # encrypt user's password
     encrypted_password = BCrypt::Password.create(password)
+    # add a new record in user database with supplied username and encrypted password
     new_user = DatabaseConnection.query(sql: "INSERT INTO users (username, password) VALUES($1, $2) RETURNING id, username, password;", params: [username, encrypted_password])
+    # return user for tests
     User.new(
       username: new_user[0]['username'],
       password: new_user[0]['password'],

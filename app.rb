@@ -55,7 +55,7 @@ class Chitter < Sinatra::Base
   end
 
     get '/users/new' do
-      erb :new_user
+      erb :user_signup
     end
 
     post '/users/add' do
@@ -66,6 +66,27 @@ class Chitter < Sinatra::Base
     post '/users/logout' do
       session[:current_user] = nil
       redirect('/peeps')
+    end
+
+    get '/users/login' do
+      erb :user_login
+
+    end
+
+    post '/users/session' do
+      p params[:password]
+      p params[:username]
+      user = User.authenticate(username: params[:username], password: params[:password])
+      p "*" * 50
+      p user
+      p "*" * 50
+      if user
+        session[:current_user] = user
+        redirect('/peeps')
+      else
+        flash[:notice] = "Sorry something went wrong, please check your username and password and try again"
+        redirect('users/login')
+      end
     end
 
     def logged_in?

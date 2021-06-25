@@ -1,5 +1,7 @@
 feature 'Chitter has users' do
+  let(:username) { double(:username) }
   let(:password) { double(:password) }
+  let(:connection) { PG.connect(dbname: 'chitter_test' )}
 
   scenario 'a user can register' do
     visit('/')
@@ -30,6 +32,20 @@ feature 'Chitter has users' do
     expect(current_path).to eq('/peeps')
     expect(page).to have_link('Register')
     expect(page).to have_link('Login')
+  end
+
+  scenario 'a user can log back in' do
+    add_user(username, password)
+    visit('/')
+    click_link('Login')
+    expect(current_path).to eq('/users/login')
+
+    fill_in(:username, with: username)
+    fill_in(:password, with: password)
+    click_button('Login')
+
+    expect(current_path).to eq('/peeps')
+    expect(page).to have_content "Welcome, #{username}"
   end
 
  end

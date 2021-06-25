@@ -1,6 +1,10 @@
-## Chitter Challenge
+# Chitter Challenge
 
+Completed all user stories within the time limit (admittedly I lack the HTML and CSS knowledge to make it look pretty).
+I then went on to challenge myself by writing additional user stories for more functionality, including user logins.
+See icons below to see my progress. I've noted the point at which I hit the 'time limit' for the one-day challenge.
 
+![Screenshot](screenshot.png)
 
 ## Set up
 
@@ -76,7 +80,7 @@ let's try some user stories of my own:
 
 ```
 As a Maker
-So that I don't have to keep re-entering my name
+So that I can have personalisation
 I would like to be able to register an account with Chitter
 ```
 :white_check_mark:
@@ -105,7 +109,16 @@ As a Maker
 So that I can access my registered account
 I would like to be able to log in
 ```
+:white_check_mark:
+
+
+```
+As a logged-in Maker
+So that I do not need to re-enter my information
+I'd like the name field to pre-populate with my username
+```
 :construction:
+
 
 
 ```
@@ -128,7 +141,7 @@ Methods:
 - peep.delete ? (user validation)
 
 - user.add :white_check_mark:
-- user.authenticate :construction:
+- user.authenticate :white_check_mark:
 - user.update ?
 - user.find
 
@@ -138,7 +151,7 @@ Attributes:
 - peep.date :white_check_mark:
 - peep.tags x (not needed)
 - peep.username (display name) :white_check_mark:  
-- peep.username (v2) ? (dynamic/database username) :construction:
+- peep.username (v2) ? (dynamic/database username) :white_check_mark:
 
 - user.username
 
@@ -147,7 +160,7 @@ Views:
 - index (peeps) :white_check_mark:
 - new_peep :white_check_mark:
 - search_results (may not need, if filter directly on /peeps?) :white_check_mark:
-- new_user :construction:
+- new_user :white_check_mark:
 - user_peeps ?
 
 Model:
