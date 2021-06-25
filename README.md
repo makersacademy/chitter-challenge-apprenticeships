@@ -4,7 +4,13 @@ Completed all user stories within the time limit (admittedly I lack the HTML and
 I then went on to challenge myself by writing additional user stories for more functionality, including user logins.
 See icons below to see my progress. I've noted the point at which I hit the 'time limit' for the one-day challenge.
 
-![Screenshot](screenshot.png)
+=> Still need to update the SQL migration details and add app run instructions here.
+
+=> In future I would be interested to explore how to link the two databases using a foreign key, then use that to
+  query for that user's posts (rather than the more familiar username based query that would be fairly
+  straightforward to add).
+
+![Screenshot](screenshot2.png)
 
 ## Set up
 
@@ -117,7 +123,7 @@ As a logged-in Maker
 So that I do not need to re-enter my information
 I'd like the name field to pre-populate with my username
 ```
-:construction:
+:white_check_mark:
 
 
 
@@ -153,7 +159,8 @@ Attributes:
 - peep.username (display name) :white_check_mark:  
 - peep.username (v2) ? (dynamic/database username) :white_check_mark:
 
-- user.username
+- user.username :white_check_mark:
+- user.id :white_check_mark:
 
 
 Views:
