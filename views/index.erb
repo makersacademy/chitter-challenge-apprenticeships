@@ -1,5 +1,10 @@
 <h1>Chitter</h1>
 
+<form action='/addpeep' method='post'>
+  <input name='add_peep' type='text' placeholder='Write a peep'>
+  <button type='submit'>Add</button>
+</form>
+
 <ul> 
   <% @peeps.each do |peep| %>
     <li> <%= peep %> </li>
