@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'pg'
 require './lib/peep'
 
 class Chitter < Sinatra::Base
@@ -11,14 +12,18 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
-  get '/peeps' do
-    @peeps = Peep.all
-    erb :'peeps/index'
+  get '/' do
+    erb :index
   end
 
-  get '/peeps/new' do
-    erb :'peeps/new'
+  get '/peeps' do
+    @peeps = Peep.all
+    erb :peeps
   end
+
+  # get '/peeps' do
+  #   erb :'peeps/new'
+  # end
 
   post '/peeps' do
     message = params['message']

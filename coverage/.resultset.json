@@ -6,6 +6,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           1,
@@ -17,12 +18,16 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
           2,
           2,
           null,
           null,
-          1,
-          1,
+          null,
+          null,
           null,
           null,
           1,
@@ -67,12 +72,26 @@
       "/Users/leslie/makersacademy/chitter-challenge-apprenticeships/spec/features/posting_peep_spec.rb": {
         "lines": [
           1,
+          null,
+          1,
           1,
           1,
           1,
           1,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -102,6 +121,7 @@
           1,
           1,
           1,
+          null,
           null,
           null
         ]
@@ -141,6 +161,6 @@
         ]
       }
     },
-    "timestamp": 1624630362
+    "timestamp": 1624637957
   }
 }
