@@ -22,7 +22,16 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    "just started my coding challenge!"
+    erb :peeps
+  end
+
+  get '/peeps/new' do
+    erb :new_peep
+  end
+
+  post '/peeps/add' do
+    Peep.add(username: params[:name], message: params[:message])
+    redirect('/peeps')
   end
 
   run! if app_file == $0
