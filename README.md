@@ -70,6 +70,23 @@ I want to /filter/ on a specific /keyword/
 ```
 :white_check_mark:
 
+And just for fun, since I'm no front-end designer and would
+rather spend time building functionality over style,
+let's try some user stories of my own:
+
+```
+As a Maker
+So that I don't have to keep re-entering my name
+I would like to be able to log-in to Chitter
+```
+:construction:
+
+```
+As a Maker
+So that I can manage my digital footprint
+I'd like to be able to delete my peeps
+```
+
 
 ### Analysis
 
@@ -83,14 +100,14 @@ Methods:
 Attributes:
 - peep.message :white_check_mark:
 - peep.date :white_check_mark:
-- peep.tags ??
+- peep.tags x (not needed)
 - peep.username (display name) :white_check_mark:  
-- peep.username (v2) ? (dynamic/database username)
+- peep.username (v2) ? (dynamic/database username) :construction:
 
 Views:
 - index (peeps) :white_check_mark:
 - new_peep :white_check_mark:
-- search_results (may not need, if filter directly on /peeps?)
+- search_results (may not need, if filter directly on /peeps?) :white_check_mark:
 - user_peeps ?
 
 Model:
@@ -103,7 +120,7 @@ Controller:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
 - POST /peeps/search (redirect /peeps) :white_check_mark:
-- GET /peeps/:user  :user_peeps  ?
+- GET /peeps/:user  :user_peeps  ? :construction:
 
 
 # Original Instructions:
