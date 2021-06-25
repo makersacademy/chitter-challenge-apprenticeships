@@ -1,12 +1,6 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
 
 ## Set up
 
@@ -68,31 +62,43 @@ I want to /filter/ on a specific /keyword/
 ### Analysis
 
 Methods:
-- peep.all
-- peep.add
+- peep.all :white_check_mark:
+- peep.add :white_check_mark:
 - peep.search
 - peep.delete ? (user validation)
 
 Attributes:
-- peep.message
-- peep.date
+- peep.message :white_check_mark:
+- peep.date :construction:
 - peep.tags ??
-- peep.user ?
+- peep.username (display name) :white_check_mark:  
+- peep.username (v2) ? (dynamic/database username)
 
 Views:
-- index (peeps)
-- new_peep
+- index (peeps) :white_check_mark:
+- new_peep :white_check_mark:
 - search_results
 - user_peeps ?
 
 Model:
-- peep.rb
-- database_connection.rb
+- peep.rb :white_check_mark:
+- database_connection.rb :white_check_mark:
 
 Controller:
-- GET / (redirect /peeps)
-- GET /peeps  :peeps
-- GET /peeps/new  :new_peep
-- POST /peeps/add (redirect /peeps)
+- GET / (redirect /peeps) :white_check_mark:
+- GET /peeps  :peeps :white_check_mark:
+- GET /peeps/new  :new_peep :white_check_mark:
+- POST /peeps/add (redirect /peeps) :white_check_mark:
 - POST /peeps/:keyword (redirect /search_results)
 - GET /peeps/:user  :user_peeps  ?
+
+
+# Original Instructions:
+
+* Challenge time: until the end of the day
+* Feel free to use google, your notes, books etc but please work on your own
+* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
+* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
+* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+
+We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
