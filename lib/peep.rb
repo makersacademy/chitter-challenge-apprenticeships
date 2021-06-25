@@ -8,34 +8,19 @@ class Peep
   end
 
   def self.all
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
+    connection = Peep.connection
     result = connection.exec("SELECT * FROM peeps ORDER By date DESC;")
     Peep.peeps(result)
   end
 
   def self.filtered(search_keyword)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
+    connection = Peep.connection
     result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{search_keyword}%' ORDER By date DESC;")
     Peep.peeps(result)
   end
 
   def self.create(message, date)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-
+    connection = Peep.connection
     connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}');")
   end
 
@@ -44,5 +29,9 @@ class Peep
     result.map do |peep|
       Peep.new(peep['id'], peep['message'], peep['date'])
     end
+  end
+
+  def self.connection
+    ENV['ENVIRONMENT'] == 'test' ? PG.connect(dbname: 'chitter_test') : PG.connect(dbname: 'chitter')
   end
 end
