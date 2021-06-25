@@ -5,9 +5,10 @@ class Peep
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else 
+      p '***************************'
       connection = PG.connect(dbname: 'chitter')
     end
-
+    p "**************"
     result = connection.exec("SELECT * FROM peeps;")
     result.map { |peep| peep['message'] }
   end
@@ -19,6 +20,6 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection = PG.connect("INSERT INTO peeps (message) VALUES('#{message}')")
+    connection = connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
   end
 end
