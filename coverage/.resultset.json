@@ -1,9 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/emilyfitzsimmons/Documents/projects/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
           1,
@@ -14,7 +21,19 @@
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/emilyfitzsimmons/Documents/projects/chitter-challenge-apprenticeships/lib/tweets.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/emilyfitzsimmons/Documents/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +42,36 @@
           null,
           null
         ]
+      },
+      "/Users/emilyfitzsimmons/Documents/projects/chitter-challenge-apprenticeships/spec/features/viewing_tweets_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/emilyfitzsimmons/Documents/projects/chitter-challenge-apprenticeships/spec/tweets_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1624616314
   }
 }
