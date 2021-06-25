@@ -1,0 +1,22 @@
+<h1>
+  <a href='/'>
+    Chitter
+  </a>
+</h1>
+<form action='/post' method='post'>
+  <input type='text' name='message' placeholder='message'>
+  <input type='submit' value='Post'>
+</form>
+<form action='/search' method='get'>
+  <input type='text' name='search' placeholder='search text'>
+  <input type='submit' value='Search'>
+</form>
+<ul>
+  <% @peeps.reverse.each do |peep| %>
+    <li>
+      <p>
+        <%= peep[:message] %> - <%= peep[:time] %>
+      </p>
+    </li>
+  <% end %>
+</ul>
