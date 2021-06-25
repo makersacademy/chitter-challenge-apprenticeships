@@ -52,14 +52,14 @@ class Chitter < Sinatra::Base
     redirect('/peeps')
   end
 
-    get '/users/new' do
-      erb :new_user
-    end
-
-    post '/users/add' do
-      # session[:current_user] = User.new(username: params[:username], password: params[:password])
-      redirect('/peeps')
-    end
+    # get '/users/new' do
+    #   erb :new_user
+    # end
+    #
+    # post '/users/add' do
+    #   # session[:current_user] = User.new(username: params[:username], password: params[:password])
+    #   redirect('/peeps')
+    # end
 
   run! if app_file == $0
 end

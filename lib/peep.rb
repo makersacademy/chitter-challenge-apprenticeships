@@ -6,7 +6,7 @@ class Peep
 
   def self.add(username:, message:)
     date_full = Time.new
-    date = "#{date_full.strftime("%m/%d/%Y at %I:%M%p")}"
+    date = "#{date_full.strftime("%m/%d/%Y at %H:%M")}"
     created = DatabaseConnection.query(sql: "INSERT INTO peeps (username, message, date) VALUES($1, $2, $3) RETURNING id, username, message, date;", params: [username, message, date])
     Peep.new(
       date: created[0]['date'],

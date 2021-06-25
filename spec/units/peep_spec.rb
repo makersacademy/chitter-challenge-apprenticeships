@@ -29,7 +29,7 @@ describe Peep do
   it 'stores the date it was created' do
     date = Time.new
     peep = Peep.add(username: username, message: message)
-    expect(peep.date).to eq(date.strftime("%m/%d/%Y at %I:%M%p"))
+    expect(peep.date).to eq(date.strftime("%m/%d/%Y at %H:%M"))
   end
 
   it 'displays a list of peeps in reverse chronological order' do
