@@ -1,4 +1,5 @@
 require 'time'
+require_relative 'database_connection'
 
 class Peep
   attr_reader :username, :message, :id, :date
@@ -27,9 +28,9 @@ class Peep
     end
   end
 
-  def self.reverse
-    peeps = DatabaseConnection.query(sql: 'SELECT * FROM peeps ORDER BY date DESC;', params: [])
-    peeps.map do |peep|
+  def self.reverse(filter="%")
+    filtered_peeps = DatabaseConnection.query(sql: 'SELECT * FROM peeps WHERE message LIKE $1 ORDER BY date DESC;', params: ["%#{filter}%"])
+    filtered_peeps.map do |peep|
       Peep.new(
         username: peep['username'],
         message: peep['message'],
@@ -37,6 +38,9 @@ class Peep
         date: peep['date']
       )
     end
+  end
+
+  def self.search(keyword)
   end
 
   def initialize(username:, message:, id:, date:)

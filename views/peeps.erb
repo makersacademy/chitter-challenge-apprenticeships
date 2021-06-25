@@ -5,17 +5,28 @@
     <title>Peeps</title>
   </head>
   <body>
-    <h1>Chitter - where the world shouts loudly into the void</h1>
+    <h1>Chitter - where the world shouts loudly into the void </h1>
     <br>
     <br>
     <form class="" action="peeps/new" method="get">
       <input type="submit" name="Peep!" value="Peep!">
     </form>
     <br>
+    <form class="" action="peeps/search" method="post">
+      <input type="text" name="keyword" placeholder="Keyword Search">
+      <input type="submit" name="search" value="search">
+    </form>
+    <br>
     <br>
     <div class="peeps-outer">
       <div class="peeps-inner">
-        <% @peeps.each do |peep| %>
+        <% if
+            @peeps.length == 0
+          %>
+          <h3> No results match that search </h3>
+        <% else
+            @peeps.each do |peep|
+          %>
           <div class="peep">
             <br>
             <hr>
@@ -27,6 +38,7 @@
             <hr>
           </div>
         <% end %>
+      <% end %>
       </div>
     </div>
 

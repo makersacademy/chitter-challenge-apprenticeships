@@ -68,7 +68,7 @@ As a Maker
 So that I can find relevant peeps
 I want to /filter/ on a specific /keyword/
 ```
-:construction:
+:white_check_mark:
 
 
 ### Analysis
@@ -77,7 +77,7 @@ Methods:
 - peep.all :white_check_mark:
 - peep.add :white_check_mark:
 - peep.reverse :white_check_mark:
-- peep.search :construction:
+- peep.filter :white_check_mark:
 - peep.delete ? (user validation)
 
 Attributes:
@@ -102,7 +102,7 @@ Controller:
 - GET /peeps  :peeps :white_check_mark:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
-- POST /peeps/:keyword (redirect /search_results) :construction:
+- POST /peeps/search (redirect /peeps) :white_check_mark:
 - GET /peeps/:user  :user_peeps  ?
 
 

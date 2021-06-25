@@ -42,12 +42,26 @@ describe Peep do
     expect(peeps.length).to be 3
     expect(peeps.first).to be_a Peep
 
-    # I just don't understand why this isn't the case. I've confirmed
+    # I just don't understand why this isn't passing. I've confirmed
     # by p'ing that the reverse method does correctly return a sorted
     # array, and the peeps display in reverse chronology on the site
     # as expected. So why isn't index[0] of this array the most recent??
 
     # expect(peeps[0].message).to eq "recent"
+  end
+
+  it 'can filter results by a keyword' do
+    Peep.add(username: username, message: "oldest")
+    Peep.add(username: "testuser1", message: "older")
+    Peep.add(username: "testuser2", message: "recent message")
+
+    peeps = Peep.reverse
+    filtered_peeps = Peep.reverse("recent")
+
+    expect(peeps.length).to be 3
+    expect(filtered_peeps.length).to be 1
+
+    expect(filtered_peeps.first.message).to include "recent"
   end
 
 end

@@ -23,7 +23,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = Peep.reverse
+    if session[:keyword] != nil
+      @peeps = Peep.reverse(session[:keyword])
+    else
+      @peeps = Peep.reverse
+    end
+    session[:keyword] = nil
     erb :peeps
   end
 
@@ -35,6 +40,18 @@ class Chitter < Sinatra::Base
     Peep.add(username: params[:username], message: params[:message])
     redirect('/peeps')
   end
+
+  post '/peeps/search' do
+
+    if params[:keyword] == ""
+      session[:keyword] = "%"
+    else
+    session[:keyword] = "#{params[:keyword]}"
+    end
+
+    redirect('/peeps')
+  end
+
 
   run! if app_file == $0
 end
