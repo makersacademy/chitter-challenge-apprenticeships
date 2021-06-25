@@ -1,0 +1,12 @@
+<p>Welcome to Chitter!</p>
+
+<p>Posts:</p>
+
+<p><% @peeps.each do |entry|  %>
+<p><%= entry.peep %> <%= entry.time %></p>
+<% end %></p>
+
+<p><form action="/Chitter/add" method="post">
+  <input type="text" name="peep">
+  <input type="submit" value="Add a peep">
+</form></p>
