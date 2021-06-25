@@ -24,6 +24,7 @@ class Chitter < Sinatra::Base
 
   get '/peeps' do
     @user = session[:current_user] if logged_in?
+    
     if session[:keyword] != nil
       @peeps = Peep.reverse(session[:keyword])
     else
