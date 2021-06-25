@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="my.css"/>
+<h1 style="margin-left: 40px;" >Chitter</h1>
+<form style="margin-left: 40px;" action='/peeps/new' method="get">
+  <input type="submit" value="Chit-Chat-Away"/>
+</form>
+<form style="margin-left: 40px;" action='/peeps/:id' method="get">
+  <div>
+    <label>Filter peeps:</label>
+    <input type="text" name="filter" placeholder="keyword" required="required"/>
+  <input type="submit" value="Search"/>
+  </div>
+</form>
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      <div><%= peep.message %> <br></br>added on <%= peep.posttime %></div>
+      <br></br>
+    </li>
+  <% end %>
+</ul>
