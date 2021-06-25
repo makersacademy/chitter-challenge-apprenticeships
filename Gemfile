@@ -6,7 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem "pg"
 gem "sinatra"
-
+gem "bcrypt"
+gem "sinatra-flash"
 group :development, :test do
   gem "capybara"
   gem "rspec"
