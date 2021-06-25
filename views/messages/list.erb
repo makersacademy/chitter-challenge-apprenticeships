@@ -1,0 +1,7 @@
+<ul>
+    <% @message_list.each do |post| %>
+    <li>
+        <%= post.message %> <%= post.date %>
+    </li>
+    <% end %>
+</ul>

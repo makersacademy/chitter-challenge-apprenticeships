@@ -40,19 +40,21 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
+![MVC_model_user_story1](https://user-images.githubusercontent.com/62373855/123392978-90232d80-d595-11eb-869c-4729a6902ce6.png)
 
 ```
 As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 ```
+![MVC_model_user_story2](https://user-images.githubusercontent.com/62373855/123399848-04ad9a80-d59d-11eb-8596-2abdc79192eb.png)
 
 ```
 As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
+![MVC_model_user_story3](https://user-images.githubusercontent.com/62373855/123431300-04bf9180-d5c1-11eb-9e2f-d714c4edfe7d.png)
 
 ```
 As a Maker
