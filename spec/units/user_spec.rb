@@ -1,8 +1,10 @@
+require 'pg'
 require 'user'
 
 describe User do
   let(:username) { double(:username) }
   let(:password) { double(:password) }
+  let(:connection) { PG.connect(dbname: 'chitter_test') }
 
   it 'can be intialized with a username and password' do
     user = User.add(username: "testUser2", password: "password")
@@ -26,6 +28,14 @@ describe User do
     expect(users.first.username).to eq "#{username}"
     expect(users.first.id).to eq user.id
 
+  end
+
+  it 'encrypts a users password before adding it to the databse' do
+    user = User.add(username: username, password: "password")
+    result = connection.exec("SELECT password FROM users WHERE id = #{user.id}")
+    database_password = result[0]['password']
+    p database_password
+    expect(database_password).not_to eq("password")
   end
 
 end

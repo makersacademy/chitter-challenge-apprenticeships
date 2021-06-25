@@ -156,14 +156,16 @@
       "/Users/arranoakes/Projects/Ruby/individual-challenges/chitter-challenge-apprenticeships/lib/user.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
           1,
           null,
           null,
           1,
-          7,
-          7,
+          8,
+          8,
+          8,
           null,
           null,
           null,
@@ -182,9 +184,9 @@
           null,
           null,
           1,
-          10,
-          10,
-          10,
+          11,
+          11,
+          11,
           null,
           null,
           null,
@@ -445,10 +447,12 @@
       "/Users/arranoakes/Projects/Ruby/individual-challenges/chitter-challenge-apprenticeships/spec/units/user_spec.rb": {
         "lines": [
           1,
+          1,
           null,
           1,
+          4,
           3,
-          3,
+          2,
           null,
           1,
           1,
@@ -472,12 +476,20 @@
           1,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1624633183
+    "timestamp": 1624638610
   }
 }

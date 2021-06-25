@@ -77,9 +77,28 @@ let's try some user stories of my own:
 ```
 As a Maker
 So that I don't have to keep re-entering my name
-I would like to be able to log-in to Chitter
+I would like to be able to register an account with Chitter
 ```
-:construction:
+:white_check_mark:
+--This is as far as I got during daytime hours Friday, committing just before
+our cohort retro. Anything beyond here was done in evening and weekend time.--
+
+
+```
+As a logged-in Maker
+So that I can be sure someone else does not access my account
+I'd like to be able to log out
+```
+:white_check_mark:
+
+
+```
+As a Maker
+So that I can access my registered account
+I would like to be able to log in
+```
+
+
 
 ```
 As a logged-in Maker
@@ -87,11 +106,14 @@ So that I can manage my digital footprint
 I'd like to be able to delete my peeps
 ```
 
+
 ```
 As a logged-in Maker
 So that I can protect my data
 I'd like my password to be encrypted
 ```
+:construction:
+
 
 ### Analysis
 
@@ -101,6 +123,12 @@ Methods:
 - peep.reverse :white_check_mark:
 - peep.filter :white_check_mark:
 - peep.delete ? (user validation)
+
+- user.add :white_check_mark:
+- user.authenticate :construction:
+- user.update ?
+- user.find
+
 
 Attributes:
 - peep.message :white_check_mark:
@@ -131,8 +159,8 @@ Controller:
 - POST /peeps/search (redirect /peeps) :white_check_mark:
 - GET /peeps/:user  :user_peeps  ?
 
-- GET /users/new :new_user :construction:
-- POST /users/add (redirect /peeps)
+- GET /users/new :new_user :white_check_mark:
+- POST /users/add (redirect /peeps) :white_check_mark:
 
 # Original Instructions:
 
