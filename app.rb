@@ -24,10 +24,3 @@ class Chitter < Sinatra::Base
 
   run! if app_file == $0
 end
-
-
-
-  # get '/bookmarks/new' do
-  #   erb :"bookmarks/add"
-  # end
-
