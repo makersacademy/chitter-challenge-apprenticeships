@@ -5,9 +5,9 @@ describe Peeps do
     it 'returns all peeps' do
       peeps = Peeps.all
 
-      expect(peeps).to include("This is message 1.")
-      expect(peeps).to include("This is message 2.")
-      expect(peeps).to include("This is message 3.")
+      expect(peeps).to include("This is a peep!")
+      expect(peeps).to include("Welcome to Chitter!")
+      expect(peeps).to include("My first peep!")
     end
 
   end
