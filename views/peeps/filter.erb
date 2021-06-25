@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+<body>
+  <ul>
+    <% @filter.each do |peep| %>
+      <li><%= peep.date %> <%= peep.message %></li>
+    <% end %>
+  </ul>
+
+  <form>
+    <input type="button" value="Back to start page" onclick="history.go(-1)"/>
+  </form>
+</body>
