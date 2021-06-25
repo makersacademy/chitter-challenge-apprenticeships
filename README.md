@@ -54,7 +54,7 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
+![MVC_model_user_story3](https://user-images.githubusercontent.com/62373855/123430214-d1c8ce00-d5bf-11eb-9bb6-a255ec3aefdb.png)
 
 ```
 As a Maker
