@@ -16,8 +16,8 @@ class Message
 
         if ENV['ENVIRONMENT'] == 'test'
             connection = PG.connect(dbname: 'chitter_test')
-        # else 
-        #     connection = PG.connect(dbname: 'chitter')
+        else 
+            connection = PG.connect(dbname: 'chitter')
         end
 
         result = connection.exec('SELECT * FROM peeps')
@@ -30,8 +30,8 @@ class Message
     def self.create(message:)
         if ENV['ENVIRONMENT'] == 'test'
             connection = PG.connect(dbname: 'chitter_test')
-        # else 
-        #     connection = PG.connect(dbname: 'chitter')
+        else 
+            connection = PG.connect(dbname: 'chitter')
         end
 
         result = connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{CURRENT_DATE}') RETURNING id, message, date;")
