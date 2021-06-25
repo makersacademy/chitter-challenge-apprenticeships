@@ -1,0 +1,7 @@
+<h2>All Peeps Ever Created</h2>
+<br>
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep.message %></li>
+  <% end %>
+</ul>
