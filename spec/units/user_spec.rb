@@ -47,4 +47,9 @@ describe User do
     expect(invalid_user).to be nil
   end
 
+  it 'validates a new username against list of registered users' do
+    user = User.add(username: username, password: password)
+    expect(User.validate?(username: user.username)).to eq true
+  end
+
 end

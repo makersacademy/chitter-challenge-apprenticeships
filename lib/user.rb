@@ -43,6 +43,11 @@ class User
     )
   end
 
+  def self.validate?(username:)
+    result = DatabaseConnection.query(sql: "SELECT * FROM users WHERE username = $1;", params: [username])
+    return true if result.any?
+  end
+
   def initialize(username:, password:, id:)
     @username = username
     @password = password

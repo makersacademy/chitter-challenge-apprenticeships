@@ -48,4 +48,40 @@ feature 'Chitter has users' do
     expect(page).to have_content "Welcome, #{username}"
   end
 
+  scenario 'trying to sign up with the same username twice displays an error' do
+    add_user(username, password)
+
+    visit('/')
+    click_link('Register')
+    expect(current_path).to eq('/users/new')
+
+    fill_in(:username, with: username)
+    fill_in(:password, with: "secondpassword")
+    click_button('Register')
+
+    expect(page).to have_content "An account already exists with that username"
+  end
+
+  scenario 'a user cannot register with an empty field' do
+    visit('/')
+    click_link('Register')
+    expect(current_path).to eq('/users/new')
+
+    fill_in(:username, with: "testuser1")
+    fill_in(:password, with: "")
+    click_button('Register')
+    expect(page).to have_content "Field cannot be empty, please try again"
+  end
+
+  scenario 'registered user entering the wrong password displays an error' do
+    add_user(username, password)
+    visit('/')
+    click_link('Login')
+    expect(current_path).to eq('/users/login')
+
+    fill_in(:username, with: username)
+    fill_in(:password, with: "wrongPassword")
+    click_button('Login')
+    expect(page).to have_content "Sorry something went wrong, please check your username and password and try again"
+  end
  end

@@ -35,7 +35,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps/new' do
-    erb :new_peep
+    if logged_in?
+      @user = session[:current_user]
+      erb :new_peep
+    else
+      redirect('/users/new')
+    end
   end
 
   post '/peeps/add' do
@@ -44,8 +49,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps/search' do
-
-    if params[:keyword] == ""
+    if params[:keyword].empty?
       session[:keyword] = "%"
     else
     session[:keyword] = "#{params[:keyword]}"
@@ -59,8 +63,17 @@ class Chitter < Sinatra::Base
     end
 
     post '/users/add' do
-      session[:current_user] = User.add(username: params[:username], password: params[:password])
-      redirect('/peeps')
+      if User.validate?(username: params[:username])
+        flash[:notice] = "An account already exists with that username"
+        redirect('/users/new')
+      elsif
+        !params[:username].empty? && !params[:password].empty?
+        session[:current_user] = User.add(username: params[:username], password: params[:password])
+        redirect('/peeps')
+      else
+        flash[:notice] = "Field cannot be empty, please try again"
+        redirect('/users/new')
+      end
     end
 
     post '/users/logout' do
@@ -74,12 +87,7 @@ class Chitter < Sinatra::Base
     end
 
     post '/users/session' do
-      p params[:password]
-      p params[:username]
       user = User.authenticate(username: params[:username], password: params[:password])
-      p "*" * 50
-      p user
-      p "*" * 50
       if user
         session[:current_user] = user
         redirect('/peeps')

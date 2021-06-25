@@ -5,6 +5,9 @@
     <title>Register new user</title>
   </head> -->
   <body>
+    <h2>Please register here</h2>
+    <br>
+    <p><font color="red">  <%= flash[:notice] %> </font></p>
     <form action='/users/add' method='post'>
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
@@ -17,6 +20,7 @@
       </div>
       <button type="submit" class="btn btn-primary" name='register' value='Register'>Register</button>
     </form>
-
+    <br>
+    <h5>Already have an account? <a href="/users/login">Sign in here</a></h5>
   </body>
 </html>
