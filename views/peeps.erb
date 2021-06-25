@@ -11,7 +11,7 @@
       <%= peep.message %> - <%= peep.date %>
       <form action="/peeps/<%=peep.id%>" method="post">
         <input type="hidden" name="_method" value="DELETE">
-        <input id="<%=peep.id%>" type="submit" value="Delete">
+        <input id="delete-<%=peep.id%>" type="submit" value="Delete">
       </form>
     </li>
   <% end %>

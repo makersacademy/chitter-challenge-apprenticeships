@@ -78,7 +78,7 @@ feature 'a user can delete a peep' do
     visit '/peeps'
     connection = PG.connect(dbname: "chitter_test")
     result = connection.exec("SELECT * FROM peeps WHERE message = 'This is another peep!';")
-    delete = "#{result.first['id']}"
+    delete = "delete-#{result.first['id']}"
     click_button delete
     expect(page).to have_content 'This is a peep!'
     expect(page).to_not have_content 'This is another peep!'
