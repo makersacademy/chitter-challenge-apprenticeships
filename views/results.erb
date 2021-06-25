@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body>
+  <h1> Results: </h1>
+  <form action="/">
+    <button type="submit" value="Back"> Back </button>
+  </form>
+  <% if @filtered_peeps.empty? %>
+    <h4> No results </h4>
+  <% else %>
+    <div class="allcontent">
+      <% @filtered_peeps.reverse.each do |peep|%>
+      <li class="peep" id="peep-<%= peep.id %>">
+        <div class="white-background">
+          <p><%= peep.message%></p>
+        </div>
+        <p class="date"><%= peep.date%></p>
+      <br>
+    </li>
+
+      <% end %>
+    <% end %>
+  </div>
+</body>

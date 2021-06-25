@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<body>
+  <div class="centercontent">
+    <h2> Comment on peep: </h2>
+    <form action="/<%= @peep_id %>/comments" method="POST">
+      <label for="comment">New comment: </label>
+      <input name="comment" type="text" />
+      <button value="Submit" type="submit"> Submit </button>
+    </form>
+  </div>
+</body>

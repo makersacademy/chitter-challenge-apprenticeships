@@ -1,38 +1,6 @@
-## Chitter Challenge
+## Chitter Challenge ###
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
-
-## Set up
-
-To setup the database:
-
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
-
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
-
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
-
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
-
-## User stories
+This project is a database backed Sinatra web application that acts as a message board where users can add posts (called peeps), and edit, comment on or delete these posts. Users can also filter the peeps by a keyword and view their search results. It satisfies the user stories mentioned below:
 
 ```
 As a Maker
@@ -52,7 +20,6 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
 
 ```
 As a Maker
@@ -64,3 +31,58 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+#### Getting Started ####
+
+Fork and then clone this repo using:
+```
+git clone [path-to-your-repo]
+```
+
+Setup the database by:
+
+* Connecting to psql using `psql postgres`
+* Create the database using the psql command `CREATE DATABASE chitter;`
+* Connect to the database using the psql command `\c chitter;`
+* Run the queries saved in the folder `/db/migrations` in the order they appear in the folder to setup the database tables
+* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+
+If everything is setup corrently, you should see one row in the peeps table of the chitter database.  
+
+To setup the test database:
+* Connect to psql using `psql postgres`
+* Create the database using the psql command `CREATE DATABASE chitter_test;`;
+* Connect to the database using the psql command `\c chitter_test`
+* Run the queries saved in the folder `/db/migrations` in the order they appear in the folder to setup the database tables, ensuring to replace any references to the `chitter` database with `chitter_test`
+
+Install the necessary dependencies using:
+```
+bundle
+```
+
+#### Usage ####
+
+To start running the program, run:
+`rackup`
+
+Then navigate to the following address in your browser:
+```
+localhost:9292
+```
+
+#### Running Tests ####
+
+To run the tests:
+```
+rspec
+```
+
+#### Features I would like to add ####
+
+I would really like to add a user sign in feature so that users can see who has made each post and so users can comment on any post but can only delete and edit posts that were made from their own account. I didn't do this due to time constraints but it's definitely something I'd like to try out in the future!
+
+#### Things to note: ####
+
+At the moment, entering any apostophes into the forms on the web page causes an error. This is something I plan on fixing but again just ran out of time.
+
+There are a few rubocop offences that I didn't fix. I am open to suggestions on whether I should change the lines it is saying are too long or whether this would affect the readability of the code too much.
