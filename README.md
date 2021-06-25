@@ -54,7 +54,7 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-![MVC_model_user_story3](https://user-images.githubusercontent.com/62373855/123430214-d1c8ce00-d5bf-11eb-9bb6-a255ec3aefdb.png)
+![MVC_model_user_story3](https://user-images.githubusercontent.com/62373855/123431300-04bf9180-d5c1-11eb-9e2f-d714c4edfe7d.png)
 
 ```
 As a Maker
