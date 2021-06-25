@@ -1,6 +1,6 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
+* Challenge time: until the end of the day.
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
 * There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
