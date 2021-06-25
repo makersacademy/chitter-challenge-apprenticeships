@@ -24,8 +24,8 @@ class Chitter < Sinatra::Base
 
   get '/peeps' do
     @user = session[:current_user] if logged_in?
-    
-    if session[:keyword] != nil
+    # Logic tree for keyword search
+    if !session[:keyword].nil?
       @peeps = Peep.reverse(session[:keyword])
     else
       @peeps = Peep.reverse
@@ -63,9 +63,18 @@ class Chitter < Sinatra::Base
       redirect('/peeps')
     end
 
+    post '/users/logout' do
+      session[:current_user] = nil
+      redirect('/peeps')
+    end
+
     def logged_in?
       !session[:current_user].nil?
     end
+
+    # def logout
+    #   session
+    # end
 
   run! if app_file == $0
 end

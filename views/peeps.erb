@@ -9,12 +9,15 @@
     <br>
     <% if @user %>
       <p><h3>Welcome, <%= @user.username %></h3>
+        <form class=".form-inline" action="users/logout" method="post">
+            <input type="submit" class="btn btn-secondary" name="logout" value="logout">
+        </form>
     <% else %>
       <p><a href="/users/new">Register</a> | <a href="/users/new">Login</a></p>
     <% end %>
     <br>
     <form class="" action="peeps/new" method="get">
-      <input type="submit" name="Peep!" value="Peep!">
+      <input class="btn btn-primary" type="submit" name="Peep!" value="Peep!">
     </form>
     <br>
     <form class="" action="peeps/search" method="post">

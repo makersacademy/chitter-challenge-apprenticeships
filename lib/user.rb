@@ -24,10 +24,11 @@ class User
     end
   end
 
-
   def initialize(username:, password:, id:)
     @username = username
     @password = password
     @id = id
   end
+
+  
 end
