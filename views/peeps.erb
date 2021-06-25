@@ -1,0 +1,15 @@
+
+  <% @peeps.each do |peep| %>
+      <p>
+        <%= peep.message %> <%= peep.date %>
+      </p>
+  <% end %>
+<form action="/create-peep" method='post'>
+  <input type="text" name="message">
+  <input type="submit" value="Submit">
+</form>
+
+<form action='/filter-peep' method='post'>
+  <input type="text" name="filter">
+  <input type="submit" value="Filter">
+</form>
