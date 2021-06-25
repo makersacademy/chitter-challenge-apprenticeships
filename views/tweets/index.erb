@@ -1,0 +1,8 @@
+<ul>
+  <% @tweets.reverse.each do |tweets| %>
+    <li>
+      <%= tweets.message %>
+        <%= tweets.user_id %>
+    </li>
+  <% end %>
+</ul>

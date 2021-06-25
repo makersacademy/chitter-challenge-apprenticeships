@@ -1,0 +1,9 @@
+<form action=’/users’ method=’post’>
+ <label for=’email’> What is your email address? </label> <input type=’email’ name=’email’ value=’<%= @user.email %>’ required>
+ <br>
+ <label for=’password’> What will your password be?</label> <input type=’password’ name=’password’ required>
+ <br>
+ <label for=’password_confirmation’> Please confirm your password.</label> <input type=’password’ name=’password_confirmation’ required>
+ <br>
+ <input class=’button’ type=’submit’ value=’Sign up’>
+</form>
