@@ -4,9 +4,16 @@ describe Peep do
   describe '#all' do
     it 'returns all peeps' do
       add_rows_to_test_database
-      peeps = Peep.all
+      peeps = Peep.all()
       expect(peeps.first.message).to eq 'This is a peep!' 
       expect(peeps.last.message).to eq 'This is another peep!' 
+    end
+
+    it 'returns peeps filtered on a specific keyword' do
+      add_rows_to_test_database
+      peeps = Peep.all('another')
+      expect(peeps.first.message).to eq 'This is another peep!' 
+      expect(peeps.length).to eq 1 
     end
   end
 

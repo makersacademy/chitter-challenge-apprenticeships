@@ -1,5 +1,10 @@
 <h2>All Peeps Ever Created</h2>
 <br>
+<form action="/search" method="post">
+  <input type="text" name="search_keyword">
+  <input type="submit" value="Search Peeps">
+</form>
+<br>
 <ul>
   <% @peeps.each do |peep| %>
     <li><%= peep.message %> - <%= peep.date %></li>

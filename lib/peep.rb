@@ -7,14 +7,19 @@ class Peep
     @date = date  
   end
 
-  def self.all
+  def self.all(search_keyword = nil)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("SELECT * FROM peeps ORDER By date DESC;")
+    if search_keyword.nil? 
+      result = connection.exec("SELECT * FROM peeps ORDER By date DESC;")
+    else
+      result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{search_keyword}%' ORDER By date DESC;")
+    end
+
     result.map do |peep|
       Peep.new(peep['id'], peep['message'], peep['date'])
     end

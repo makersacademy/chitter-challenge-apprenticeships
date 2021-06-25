@@ -53,3 +53,17 @@ feature 'a user can see list of peeps in reverse chronological order' do
     expect(page.all('li').first).to have_content '2021-06-25'
   end
 end
+
+# As a Maker
+# So that I can find relevant peeps
+# I want to filter on a specific keyword
+feature 'a user can filter peeps on a specific keyword' do
+  scenario 'at /peeps' do
+    add_rows_to_test_database
+    visit '/peeps'
+    fill_in :search_keyword, with: 'another'
+    click_button 'Search Peeps'
+    expect(page).to_not have_content 'This is a peep!'
+    expect(page).to have_content 'This is another peep!'
+  end
+end

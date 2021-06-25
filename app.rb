@@ -4,6 +4,8 @@ require 'pg'
 require './lib/peep'
 
 class Chitter < Sinatra::Base
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -17,7 +19,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = Peep.all
+    @peeps = Peep.all(session[:search_keyword])
     erb :peeps
   end
 
@@ -25,6 +27,11 @@ class Chitter < Sinatra::Base
     today = Time.now
     date = today.strftime('%Y%m%d')
     Peep.create(params[:message], date)
+    redirect '/peeps'
+  end
+
+  post '/search' do
+    session[:search_keyword] =  params[:search_keyword]
     redirect '/peeps'
   end
 
