@@ -40,6 +40,7 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
+![MVC_model_user_story1](https://user-images.githubusercontent.com/62373855/123392978-90232d80-d595-11eb-869c-4729a6902ce6.png)
 
 ```
 As a Maker
