@@ -1,9 +1,10 @@
 class Peep
-  attr_reader :id, :message
+  attr_reader :id, :message, :date
 
-  def initialize(id, message)
+  def initialize(id, message, date)
     @id = id
     @message = message  
+    @date = date  
   end
 
   def self.all
@@ -15,17 +16,17 @@ class Peep
 
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep|
-      Peep.new(peep['id'], peep['message'])
+      Peep.new(peep['id'], peep['message'], peep['date'])
     end
   end
 
-  def self.create(message)
+  def self.create(message, date)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}');")
+    connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}');")
   end
 end
