@@ -41,3 +41,15 @@ feature 'a user can see the date a peep was posted' do
     expect(page).to have_content '2021-06-21'
   end
 end
+
+# As a Maker
+# So that I can easily see the latest peeps
+# I want to see a list of peeps in reverse chronological order
+feature 'a user can see list of peeps in reverse chronological order' do
+  scenario 'when navigating to /peeps' do
+    add_rows_to_test_database
+    Peep.create('The greatest peep', '20210625')
+    visit '/peeps'
+    expect(page.all('li').first).to have_content '2021-06-25'
+  end
+end
