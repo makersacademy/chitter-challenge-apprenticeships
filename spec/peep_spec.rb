@@ -18,4 +18,13 @@ describe Peep do
 
   end
 
+  describe '.create' do
+    it 'creates a new peep' do
+      Peep.create(message: 'I have arrived!')
+  
+      expect(Peep.all).to include 'I have arrived!'
+    end
+
+  end
+
 end
