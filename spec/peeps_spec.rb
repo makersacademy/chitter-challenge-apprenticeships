@@ -21,5 +21,11 @@ describe Peeps do
     end
   end
 
+  describe '.add' do
+    it 'adds a peep with a date' do
+      # need to stub in a date for the test
+    end
+  end
+
 
 end
