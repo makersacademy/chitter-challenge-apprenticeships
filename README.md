@@ -104,10 +104,14 @@ Attributes:
 - peep.username (display name) :white_check_mark:  
 - peep.username (v2) ? (dynamic/database username) :construction:
 
+- user.username
+
+
 Views:
 - index (peeps) :white_check_mark:
 - new_peep :white_check_mark:
 - search_results (may not need, if filter directly on /peeps?) :white_check_mark:
+- new_user :construction:
 - user_peeps ?
 
 Model:
@@ -120,8 +124,10 @@ Controller:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
 - POST /peeps/search (redirect /peeps) :white_check_mark:
-- GET /peeps/:user  :user_peeps  ? :construction:
+- GET /peeps/:user  :user_peeps  ?
 
+- GET /users/new :new_user :construction:
+- POST /users/add (redirect /peeps)
 
 # Original Instructions:
 

@@ -9,19 +9,19 @@
     <br>
     <br>
     <form class="" action="peeps/new" method="get">
-      <input type="submit" name="Peep!" value="Peep!">
+      <input type="submit" class="btn btn-primary" name="Peep!" value="Have your say - Peep!">
     </form>
     <br>
     <form class="" action="peeps/search" method="post">
-      <input type="text" name="keyword" placeholder="Keyword Search">
-      <input type="submit" name="search" value="search">
+      <input type="text" class="form-label" name="keyword" placeholder="Keyword Search">
+      <input type="submit" class="btn btn-secondary" name="search" value="search">
     </form>
     <br>
     <br>
     <div class="peeps-outer">
       <div class="peeps-inner">
         <% if
-            @peeps.length == 0
+            @peeps.empty?
           %>
           <h3> No results match that search </h3>
         <% else

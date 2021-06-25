@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Register new user</title>
+  </head> -->
+  <body>
+    <form action='/users/add' method='post'>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+        <div id="userHelp" class="form-text">Make sure to remember your chosen username!</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password">
+      </div>
+      <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div> -->
+      <button type="submit" class="btn btn-primary" name='register' value='Register'>Register</button>
+    </form>
+
+  </body>
+</html>
