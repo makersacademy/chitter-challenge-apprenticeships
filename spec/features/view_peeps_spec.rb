@@ -19,13 +19,13 @@ end
 # I want to see the date the message was posted
 # (Hint the database table will need to change to store the date too)
 
-# feature 'Adding date posted' do
-#   scenario 'user can see the date peeps were posted' do
-#     add_row_to_test_database
-#     visit('/')
-#     expect(page).to
-#   end
-# end
+feature 'Adding date posted' do
+  scenario 'user can see the date peeps were posted' do
+    add_row_to_test_database
+    visit('/')
+    expect(page).to have_content(2021)
+  end
+end
 
 #
 # As a Maker

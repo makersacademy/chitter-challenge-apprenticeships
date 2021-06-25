@@ -5,6 +5,7 @@ class Peep
   attr_reader :message
 
   def initialize(message:)
+    @id = id
     @message = message
   end
 
@@ -23,7 +24,7 @@ class Peep
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}');")
+    result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}')")
   end
 
 end

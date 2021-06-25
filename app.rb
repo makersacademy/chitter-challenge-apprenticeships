@@ -9,6 +9,7 @@ class Chitter < Sinatra::Base
   end
 
   enable :sessions
+  attr_reader :peep_date
 
   get '/test' do
     'Test page'
@@ -16,6 +17,8 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @peeps = Peep.all
+    time = Time.new
+    @peep_date = time.strftime("%d/%m/%Y")
     erb(:index)
   end
 
