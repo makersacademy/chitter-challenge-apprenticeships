@@ -1,9 +1,16 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require_relative "lib/peep"
 
 class Chitter < Sinatra::Base
-  get "/test" do
-    "Test page"
+  get "/" do
+    @peeps = Peep.all.reverse
+    erb :index
+  end
+
+  post "/peep" do
+    Peep.create(message: params[:message])
+    redirect "/"
   end
 
   run! if app_file == $0

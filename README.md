@@ -1,66 +1,54 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+Built a small Twitter clone that will allow the users to post messages.
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+- Sinatra
+- PostgreSQL
+- RSpec (unit testing)
+- Capybara (feature testing)
+- TablePlus (Database GUI)
 
-## Set up
+### Screenshots
 
-To setup the database:
+<img src = "/screenshots/peeps.png" width = "70%">
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+### User stories & MVC sequence diagram
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+[Planning & diagramming](/docs/planning.md)
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
+## How to
 
-* `bundle install`
-* `rspec`
+### Set up the project
 
-You should see 1 passing test.
-
-## User stories
+Clone this repository and install all the dependencies by running:
 
 ```
-As a Maker
-So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
+bundle install
 ```
 
-```
-As a Maker
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
-```
+To set up the databases, connect to psql:
 
 ```
-As a Maker
-So that I can see when people are doing things
-I want to see the date the message was posted
+psql
 ```
-(Hint the database table will need to change to store the date too)
+
+Create the `chitter` and `chitter_test` databases:
 
 ```
-As a Maker
-So that I can easily see the latest peeps
-I want to see a list of peeps in reverse chronological order
+CREATE DATABASE chitter;
+CREATE DATABASE chitter_test;
 ```
+
+Connect to each database:
 ```
-As a Maker
-So that I can find relevant peeps
-I want to filter on a specific keyword
+\c chitter;
+\c chitter_test;
 ```
+To create the tables, run the SQL queries in the `db/migrations` folder in the given order.
+
+Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+
+### Run the Chitter app
+
+- run ``` ruby app.rb ```
+- Visit http://localhost:4567/

@@ -1,9 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          3,
+          3,
+          null,
           null,
           1,
           1,
@@ -14,7 +22,65 @@
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/lib/peep.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          4,
+          4,
+          4,
+          3,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          7,
+          7,
+          null,
+          null,
+          1,
+          null,
+          1,
+          8,
+          8,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/spec/features/post_peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -23,8 +89,48 @@
           null,
           null
         ]
+      },
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/spec/units/peep_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/juelb/Desktop/Makers/chitter-challenge-apprenticeships/spec/units/user_spec.rb": {
+        "lines": [
+
+        ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1624632690
   }
 }
