@@ -15,9 +15,7 @@ class Peep
     end
 
     result = connection.exec("SELECT * FROM peeps ORDER By date DESC;")
-    result.map do |peep|
-      Peep.new(peep['id'], peep['message'], peep['date'])
-    end
+    Peep.peeps(result)
   end
 
   def self.filtered(search_keyword)
@@ -28,9 +26,7 @@ class Peep
     end
 
     result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{search_keyword}%' ORDER By date DESC;")
-    result.map do |peep|
-      Peep.new(peep['id'], peep['message'], peep['date'])
-    end
+    Peep.peeps(result)
   end
 
   def self.create(message, date)
@@ -41,5 +37,12 @@ class Peep
     end
 
     connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}');")
+  end
+
+  private
+  def self.peeps(result)
+    result.map do |peep|
+      Peep.new(peep['id'], peep['message'], peep['date'])
+    end
   end
 end
