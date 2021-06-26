@@ -9,7 +9,7 @@ See icons below to see my progress. I've noted the point at which I hit the 'tim
   query for that user's posts (rather than the more familiar username based query that would be fairly
   straightforward to add).
 
-![Screenshot](screenshot2.png)
+![Screenshot](Screenshot2.png)
 
 ## Set up
 
