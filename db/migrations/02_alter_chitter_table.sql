@@ -1,1 +1,1 @@
-ALTER TABLE peeps ADD COLUMN time VARCHAR(60);
+ALTER TABLE peeps ADD COLUMN create_time TIMESTAMP with time zone;

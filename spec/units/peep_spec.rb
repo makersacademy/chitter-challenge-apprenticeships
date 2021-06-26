@@ -11,7 +11,7 @@ describe Peep do
       expect(peep).to be_a Peep
       expect(peep.message).to eq msg
       expect(peep.id).to eq persisted_data.first["id"]
-      expect(peep.time).to eq persisted_data.first["time"]
+      expect(peep.time).to eq persisted_data.first["create_time"]
     end
   end
 
