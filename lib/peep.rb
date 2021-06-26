@@ -3,7 +3,11 @@ require "pg"
 class Peep
   def self.all
     self.environment
-    peeps = @connection.exec("SELECT id, message, to_char(create_time, 'DD Mon YYYY HH24:MI') as display_time FROM peeps ORDER BY create_time DESC;")
+    peeps = @connection.exec(
+      "SELECT id, message, to_char(create_time, 'DD Mon YYYY HH24:MI') as display_time 
+      FROM peeps 
+      ORDER BY create_time DESC;"
+    )
     peeps.map { |peep|
       Peep.new(id: peep["id"], message: peep["message"], time: peep["display_time"])
     }
@@ -26,8 +30,6 @@ class Peep
     @message = message
     @time = time
   end
-
-  private
 
   def self.environment
     if ENV["ENVIRONMENT"] == "test"
