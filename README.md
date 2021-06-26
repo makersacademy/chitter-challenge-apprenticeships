@@ -4,7 +4,6 @@ Completed all user stories within the time limit (admittedly I lack the HTML and
 I then went on to challenge myself by writing additional user stories for more functionality, including user logins.
 See icons below to see my progress. I've noted the point at which I hit the 'time limit' for the one-day challenge.
 
-=> Still need to update the SQL migration details and add app run instructions here.
 
 => In future I would be interested to explore how to link the two databases using a foreign key, then use that to
   query for that user's posts (rather than the more familiar username based query that would be fairly
@@ -14,13 +13,17 @@ See icons below to see my progress. I've noted the point at which I hit the 'tim
 
 ## Set up
 
-To setup the database:
+- Clone this repo
+- `bundle install`
+
+- Set up the public and test databases, two tables each, peeps and users:
 
 * Connect to psql
 * Create the database using the psql command `CREATE DATABASE chitter;`
 * Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+* Run the query we have saved in the file 01_create_peeps_table.sql
+* Run the query we have saved in the file 02_create_users_table.sql
+* Populate your table with a row by running `INSERT INTO peeps (message, date, username) values ('This is a peep!', '01/01/2021 at 11:11', 'TestUser');`
 
 To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
 
@@ -29,12 +32,11 @@ To setup the test database:
 * Create the database using the psql
 command `CREATE DATABASE chitter_test;`;
 * Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
+* Run the query we have saved in the file 01_create_peeps_table.sql
+* Run the query we have saved in the file 02_create_users_table.sql
 
-* `bundle install`
-* `rspec`
 
-You should see 1 passing test.
+- Run the app with `ruby app.rb` on the CLI
 
 ## User stories
 
