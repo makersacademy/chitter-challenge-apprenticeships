@@ -11,4 +11,5 @@ group :test do
   gem "simplecov-console", require: true
   gem "sinatra-contrib", :require => true
   gem "sinatra-flash"
+  gem "timecop"
 end
