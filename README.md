@@ -5,9 +5,11 @@ I then went on to challenge myself by writing additional user stories for more f
 See icons below to see my progress. I've noted the point at which I hit the 'time limit' for the one-day challenge.
 
 
-=> In future I would be interested to explore how to link the two databases using a foreign key, then use that to
-  query for that user's posts (rather than the more familiar username based query that would be fairly
-  straightforward to add).
+=> I've tried to link the tables with a foreign key on user_id, but this is
+  through experimentation and I'm not sure if I've used or done it correctly.
+  Things seem to be working though. Next idea would be to implement user profiles for
+  all users, and add hyperlinks to usernames in the peeps. Finally then allow for deletion
+  of one's own peeps when logged in.
 
 ![Screenshot](Screenshot2.png)
 
@@ -21,9 +23,9 @@ See icons below to see my progress. I've noted the point at which I hit the 'tim
 * Connect to psql
 * Create the database using the psql command `CREATE DATABASE chitter;`
 * Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_peeps_table.sql
-* Run the query we have saved in the file 02_create_users_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message, date, username) values ('This is a peep!', '01/01/2021 at 11:11', 'TestUser');`
+* Run the queries saved in the file full_database_creation.sql, either sequentially or all at once if possible
+* If not done so already with the above sql, manually populate your table with a row
+  by running `INSERT INTO peeps (message, date, username, date_time, user_id) values ('This is a peep!', '01/01/2021 at 11:11', 'test_user', '06/25/2021 at 11:30:18:958:958560000', 1);`
 
 To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
 
@@ -32,9 +34,12 @@ To setup the test database:
 * Create the database using the psql
 command `CREATE DATABASE chitter_test;`;
 * Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_peeps_table.sql
-* Run the query we have saved in the file 02_create_users_table.sql
+* Run the queries saved in the file full_database_creation.sql, either sequentially or all at once if possible
+* If not done so already with the above sql, manually populate your table with a row
+  by running `INSERT INTO users (username, password) VALUES (1, 'test_user', '$2a$12$5Q7bC9eq57VH./eHlj.aze7qN.GljTw9RhKGQWDml9WkRm08uo37a');`
 
+
+## Running the App
 
 - Run the app with `ruby app.rb` on the CLI
 
@@ -133,7 +138,13 @@ As a logged-in Maker
 So that I have visibility over what I say online
 I would like to be able to see all my peeps on my profile
 ```
-:construction:
+:white_check_mark:
+
+```
+As a Maker
+So that I can keep up with my favourite people
+I would like to be able to see all a users peeps on their profile page
+```
 
 
 ```
@@ -158,7 +169,7 @@ Methods:
 - user.add :white_check_mark:
 - user.authenticate :white_check_mark:
 - user.update ?
-- user.find
+- user.find :white_check_mark:
 
 
 Attributes:
@@ -177,7 +188,7 @@ Views:
 - new_peep :white_check_mark:
 - search_results (may not need, if filter directly on /peeps?) :white_check_mark:
 - new_user :white_check_mark:
-- user_peeps ?
+- user_peeps :white_check_mark:
 
 Model:
 - peep.rb :white_check_mark:
@@ -189,7 +200,7 @@ Controller:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
 - POST /peeps/search (redirect /peeps) :white_check_mark:
-- GET /peeps/:user  :user_peeps  ? :construction:
+- GET /peeps/:user  :user_peeps  ? :white_check_mark:
 
 - GET /users/new :new_user :white_check_mark:
 - POST /users/add (redirect /peeps) :white_check_mark:
