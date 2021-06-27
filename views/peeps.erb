@@ -9,6 +9,8 @@
     <br>
     <% if @user %>
       <p><h3>Welcome, <%= @user.username %></h3>
+        <p><a href="/users/:<%= @user.username %>">My Profile</a></p>
+          <br>
         <form class=".form-inline" action="users/logout" method="post">
             <input type="submit" class="btn btn-secondary" name="logout" value="logout">
         </form>

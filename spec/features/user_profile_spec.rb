@@ -3,7 +3,7 @@ feature 'Users have profiles' do
   let(:password) { double(:password) }
   let(:connection) { PG.connect(dbname: 'chitter_test' )}
 
-  scenario 'a user can see their own peeps on their profile' do
+  scenario 'a user can see their own peeps on their profile', :focus do
     add_user_add_peep("user1", password, "message 1")
     add_user_add_peep("user2", password, "message 2")
     add_user_add_peep("user3", password, "message 3")
