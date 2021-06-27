@@ -58,48 +58,54 @@ class Chitter < Sinatra::Base
     redirect('/peeps')
   end
 
-    get '/users/new' do
-      erb :user_signup
-    end
+  get '/users/new' do
+    erb :user_signup
+  end
 
-    post '/users/add' do
-      if User.validate?(username: params[:username])
-        flash[:notice] = "An account already exists with that username"
-        redirect('/users/new')
-      elsif
-        !params[:username].empty? && !params[:password].empty?
-        session[:current_user] = User.add(username: params[:username], password: params[:password])
-        redirect('/peeps')
-      else
-        flash[:notice] = "Field cannot be empty, please try again"
-        redirect('/users/new')
-      end
-    end
-
-    post '/users/logout' do
-      session[:current_user] = nil
+  post '/users/add' do
+    if User.validate?(username: params[:username])
+      flash[:notice] = "An account already exists with that username"
+      redirect('/users/new')
+    elsif
+      !params[:username].empty? && !params[:password].empty?
+      session[:current_user] = User.add(username: params[:username], password: params[:password])
       redirect('/peeps')
+    else
+      flash[:notice] = "Field cannot be empty, please try again"
+      redirect('/users/new')
     end
+  end
 
-    get '/users/login' do
-      erb :user_login
+  post '/users/logout' do
+    session[:current_user] = nil
+    redirect('/peeps')
+  end
 
+  get '/users/login' do
+    erb :user_login
+  end
+
+  post '/users/session' do
+    user = User.authenticate(username: params[:username], password: params[:password])
+    if user
+      session[:current_user] = user
+      redirect('/peeps')
+    else
+      flash[:notice] = "Sorry something went wrong, please check your username and password and try again"
+      redirect('users/login')
     end
+  end
 
-    post '/users/session' do
-      user = User.authenticate(username: params[:username], password: params[:password])
-      if user
-        session[:current_user] = user
-        redirect('/peeps')
-      else
-        flash[:notice] = "Sorry something went wrong, please check your username and password and try again"
-        redirect('users/login')
-      end
-    end
+  get '/users/:username' do
+    @user = session[:current_user]
+    user_id = User.find_id(username: (@user.username))
+    @peeps = Peep.find_by_user_id(user_id: user_id)
+    erb :user_peeps
+  end
 
-    def logged_in?
-      !session[:current_user].nil?
-    end
+  def logged_in?
+    !session[:current_user].nil?
+  end
 
 
   run! if app_file == $0

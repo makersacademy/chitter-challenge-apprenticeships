@@ -1,8 +1,9 @@
 feature 'So that a user can let people know what they are doing ' do
 
   scenario 'user can post a peep' do
-    add_user_add_peep("testUser123", "password", "going to walk the dog")
-
+    # add_user_add_peep("", "", )
+    register_and_log_in(username: "testUser123",password: "password")
+    post_peep(message: "going to walk the dog")
     visit('/peeps')
     expect(page).to have_content("going to walk the dog")
   end

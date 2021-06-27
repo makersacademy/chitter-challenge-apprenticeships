@@ -20,7 +20,7 @@ def add_user_add_peep(username, password, message)
 end
 
 def register_user(username, password)
-  visit('/')
+  visit('/peeps')
   click_link('Register')
   fill_in(:username, with: username)
   fill_in(:password, with: password)
@@ -28,9 +28,27 @@ def register_user(username, password)
 end
 
 def log_in_user(username, password)
-  visit('/')
+  visit('/peeps')
   click_link('Login')
   fill_in(:username, with: username)
   fill_in(:password, with: password)
   click_button('Login')
+end
+
+def log_out_user
+  visit('/peeps')
+  click_button('logout')
+end
+
+def register_and_log_in(username: , password: )
+  register_user(username, password)
+  log_out_user
+  log_in_user(username, password)
+end
+
+def post_peep(message: )
+  visit('/peeps')
+  click_button('Peep!')
+  fill_in(:message, with: message)
+  click_button('Peep!')
 end

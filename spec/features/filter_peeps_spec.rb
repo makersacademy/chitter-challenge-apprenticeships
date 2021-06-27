@@ -28,8 +28,8 @@ feature 'So that I can find relevant peeps' do
   end
 
   scenario 'doing an empty search returns all peeps' do
-    add_peep("hello, world")
-    visit('/')
+    register_and_log_in(username: "testUser123",password: "password")
+    post_peep(message: "hello, world")
     expect(page).to have_content("hello, world")
 
     fill_in(:keyword, with: "car")

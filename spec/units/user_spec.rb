@@ -60,10 +60,10 @@ describe User do
     end
   end
 
-  describe '.find', :focus do
+  describe '.find' do
     it 'returns the user id for a given username' do
       user = User.add(username: username, password: password)
-      expect(User.find_id(username: username)).to eq user.id
+      expect(User.find_id(username: username)).to eq (user.id).to_i
     end
   end
 

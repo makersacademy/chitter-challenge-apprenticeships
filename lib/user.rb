@@ -50,7 +50,9 @@ class User
 
   def self.find_id(username:)
     result = DatabaseConnection.query(sql: "SELECT id FROM users WHERE username = $1;", params: [username])
+    return "no user found for given id" unless result.any?
     id = result[0]['id']
+    id.to_i
   end
 
   def initialize(username:, password:, id:)
