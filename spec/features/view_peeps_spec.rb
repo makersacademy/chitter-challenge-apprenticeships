@@ -5,14 +5,13 @@
 
 feature 'Viewing peeps' do
   scenario 'user can view all peeps' do
-    Peep.add(message: 'This is a peep!')
-    Peep.add(message: 'Another peep, peeps!')
+    Peep.add('This is a peep!', '2021-06-27')
+    Peep.add('Another peep, peeps!', '2021-06-27')
     visit('/')
     expect(page).to have_content 'This is a peep!'
     expect(page).to have_content "Another peep, peeps!"
   end
 end
-
 
 # As a Maker
 # So that I can see when people are doing things
@@ -23,11 +22,12 @@ feature 'Adding date posted' do
   scenario 'user can see the date peeps were posted' do
     add_row_to_test_database
     visit('/')
-    expect(page).to have_content(2021)
+    today = Time.now
+    date = today.strftime("%Y-%m-%d")
+    expect(page).to have_content date
   end
 end
 
-#
 # As a Maker
 # So that I can easily see the latest peeps
 # I want to see a list of peeps in reverse chronological order

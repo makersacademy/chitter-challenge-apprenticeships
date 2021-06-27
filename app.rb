@@ -17,8 +17,6 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @peeps = Peep.all
-    time = Time.new
-    @peep_date = time.strftime("%d/%m/%Y")
     erb(:index)
   end
 
@@ -27,7 +25,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/post_peep' do
-    Peep.add(message: params[:message])
+    time = Time.new
+    @peep_date = time.strftime("%Y-%m-%d")
+    Peep.add(params[:message], @peep_date)
     redirect '/'
   end
 
