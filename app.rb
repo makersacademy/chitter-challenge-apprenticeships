@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "sinatra/reloader"
 require_relative "lib/peep"
+require "./db_connection_setup"
 
 class Chitter < Sinatra::Base
   get "/" do

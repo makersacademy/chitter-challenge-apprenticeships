@@ -1,9 +1,8 @@
-require "pg"
+require_relative "database_connection"
 
 class Peep
   def self.all
-    self.environment
-    peeps = @connection.exec(
+    peeps = DatabaseConnection.query(
       "SELECT id, message, to_char(create_time, 'DD Mon YYYY HH24:MI') as display_time 
       FROM peeps 
       ORDER BY create_time DESC;"
@@ -14,11 +13,9 @@ class Peep
   end
 
   def self.create(message:)
-    self.environment
     time = Time.new.strftime("%Y-%m-%d %H:%M:%S")
-    result = @connection.exec_params(
-      "INSERT INTO peeps (message, create_time)
-      VALUES ('#{message}', '#{time}') RETURNING id, message, create_time;"
+    result = DatabaseConnection.query(
+      "INSERT INTO peeps (message, create_time) VALUES ($1, $2) RETURNING id, message, create_time;", [message, time]
     )
     Peep.new(id: result[0]["id"], message: result[0]["message"], time: result[0]["create_time"])
   end
@@ -29,13 +26,5 @@ class Peep
     @id = id
     @message = message
     @time = time
-  end
-
-  def self.environment
-    if ENV["ENVIRONMENT"] == "test"
-      @connection = PG.connect(dbname: "chitter_test")
-    else
-      @connection = PG.connect(dbname: "chitter")
-    end
   end
 end
