@@ -10,9 +10,11 @@ Built a small Twitter clone that will allow the users to post messages.
 
 ### Screenshots
 
-<img src = "/screenshots/peeps.png" width = "70%">
+<img src = "/screenshots/chitter.png" width = "70%">
+<img src = "/screenshots/keyword-matches.png" width = "70%">
+<img src = "/screenshots/no-matches.png" width = "70%">
 
-### User stories & MVC sequence diagram
+### MVC sequence diagram & User stories
 
 [Planning & diagramming](/docs/planning.md)
 
@@ -46,7 +48,10 @@ Connect to each database:
 ```
 To create the tables, run the SQL queries in the `db/migrations` folder in the given order.
 
-Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+Populate your table with a row by running 
+```
+INSERT INTO peeps (message, create_time) VALUES ('hello, how are you?', '2021-06-26 12:00:01+01');
+```
 
 ### Run the Chitter app
 

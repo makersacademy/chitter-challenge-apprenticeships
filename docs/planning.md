@@ -1,21 +1,28 @@
-## Planning
+## Planning & Diagramming
 
-### 1 ✅
+### MVC sequence diagram
+
+![Chitter MVC sequence diagram](/screenshots/mvc-diagram.png)
+
+### User stories
+
+#### 1 ✅
+
 ```
 As a Maker
 So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
+I want to see all the messages (peeps) in a browser
 ```
 
-### 2 ✅
+#### 2 ✅
 
 ```
 As a Maker
-So that I can let people know what I am doing  
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 ```
-### 3 ✅
+
+#### 3 ✅
 
 ```
 As a Maker
@@ -23,14 +30,16 @@ So that I can see when people are doing things
 I want to see the date the message was posted
 ```
 
-### 4 ✅
+#### 4 ✅
+
 ```
 As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
 
-### 5 🚧
+#### 5 ✅
+
 ```
 As a Maker
 So that I can find relevant peeps
