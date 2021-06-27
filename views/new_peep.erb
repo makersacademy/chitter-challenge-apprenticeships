@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Peep to the World</title>
+  </head>
+  <body>
+    <h2>Remember to shout loudly, else they won't hear you</h2>
+    <br>
+    <div>
+      <form class="mb-3" action="/peeps/add" method="post">
+        <% if @user %>
+          <h4>Logged in as <strong><%= @user.username %></strong></h4>
+          <input type="hidden" name="username" value="<%= @user.username %>">
+        <% else %>
+          <p><input type="text" name="username" placeholder="name" align='left'></p>
+        <% end %>
+        <p><textarea name="message" rows="8" cols="80" placeholder="max 60 characters..."></textarea></p>
+        <p><input type="submit" name="Peep!" value="Peep!"></p>
+      </form>
+    <div>
+  </body>
+</html>

@@ -19,6 +19,8 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
+# require './database_connection_setup'
 
 require_relative './setup_test_database'
 
@@ -38,11 +40,18 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = Chitter
 
+# Truncate test tables before each test
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
   end
 end
+
+# Allow tagging of a test with it 'runs a test ', :focus do..end
+RSpec.configure do |config|
+  config.filter_run_when_matching :focus
+end
+
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

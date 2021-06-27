@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- <head>
+    <meta charset="utf-8">
+    <title>Register new user</title>
+  </head> -->
+  <body>
+    <h3>Welcome back, please log in here</h3>
+
+    <form action='/users/session' method='post'>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username">
+
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password">
+      </div>
+      <p> <font color="red">  <%= flash[:notice] %> </font></p>
+      <button type="submit" class="btn btn-primary" name='Login' value='Login'>Log in</button>
+    </form>
+    <br>
+    <h5>Need an account? <a href="/users/new">Sign up here</a></h5>
+  </body>
+</html>
