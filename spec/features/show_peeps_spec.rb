@@ -23,8 +23,8 @@ feature 'So that a user can see what people are doing' do
   end
 
   scenario 'user sees peeps displayed in reverse chronological order' do
-    connection.exec("INSERT INTO peeps (username, message, date) VALUES ('TestCoder420', 'working on sort order; I am older', '06/25/2021 at 11:00')")
-    connection.exec("INSERT INTO peeps (username, message, date) VALUES ('TestCoder999', 'working on sort order; I am more recent', '06/25/2021 at 11:09')")
+    connection.exec("INSERT INTO peeps (username, message, date, date_time) VALUES ('TestCoder420', 'working on sort order; I am older', '06/25/2021 at 11:00', '06/25/2021 at 11:00')")
+    connection.exec("INSERT INTO peeps (username, message, date, date_time) VALUES ('TestCoder999', 'working on sort order; I am more recent', '06/25/2021 at 11:09', '06/25/2021 at 11:09')")
 
     visit('/peeps')
 

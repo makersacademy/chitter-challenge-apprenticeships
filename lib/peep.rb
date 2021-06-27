@@ -7,7 +7,8 @@ class Peep
   def self.add(username:, message:)
     date_full = Time.new
     date = "#{date_full.strftime("%m/%d/%Y at %H:%M")}"
-    created = DatabaseConnection.query(sql: "INSERT INTO peeps (username, message, date) VALUES($1, $2, $3) RETURNING id, username, message, date;", params: [username, message, date])
+    date_time = "#{date_full.strftime("%m/%d/%Y at %H:%M:%S:%L:%N")}"
+    created = DatabaseConnection.query(sql: "INSERT INTO peeps (username, message, date, date_time) VALUES($1, $2, $3, $4) RETURNING id, username, message, date;", params: [username, message, date, date_time])
     Peep.new(
       date: created[0]['date'],
       username: created[0]['username'],
@@ -29,7 +30,7 @@ class Peep
   end
 
   def self.reverse(filter="%")
-    filtered_peeps = DatabaseConnection.query(sql: 'SELECT * FROM peeps WHERE message LIKE $1 ORDER BY date DESC;', params: ["%#{filter}%"])
+    filtered_peeps = DatabaseConnection.query(sql: 'SELECT * FROM peeps WHERE message LIKE $1 ORDER BY date_time DESC;', params: ["%#{filter}%"])
     filtered_peeps.map do |peep|
       Peep.new(
         username: peep['username'],

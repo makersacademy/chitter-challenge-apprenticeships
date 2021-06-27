@@ -47,9 +47,9 @@ RSpec.configure do |config|
   end
 end
 
-# Allow tagging of a test with it 'runs a test ', :focus do..end 
+# Allow tagging of a test with it 'runs a test ', :focus do..end
 RSpec.configure do |config|
-  config.filter_run_when_matching :focus
+  # config.filter_run_when_matching :focus
 end
 
 
