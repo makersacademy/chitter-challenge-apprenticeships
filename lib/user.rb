@@ -48,11 +48,15 @@ class User
     return true if result.any?
   end
 
+  def self.find(username:)
+    result = DatabaseConnection.query(sql: "SELECT id FROM users WHERE username = $1;", params: [username])
+    id = result[0]['id']
+  end
+
   def initialize(username:, password:, id:)
     @username = username
     @password = password
     @id = id
   end
-
 
 end
