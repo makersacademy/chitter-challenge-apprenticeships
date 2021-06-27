@@ -128,6 +128,13 @@ I'd like the name field to pre-populate with my username
 :white_check_mark:
 
 
+```
+As a logged-in Maker
+So that I have visibility over what I say online
+I would like to be able to see all my peeps on my profile
+```
+:construction:
+
 
 ```
 As a logged-in Maker
@@ -182,7 +189,7 @@ Controller:
 - GET /peeps/new  :new_peep :white_check_mark:
 - POST /peeps/add (redirect /peeps) :white_check_mark:
 - POST /peeps/search (redirect /peeps) :white_check_mark:
-- GET /peeps/:user  :user_peeps  ?
+- GET /peeps/:user  :user_peeps  ? :construction:
 
 - GET /users/new :new_user :white_check_mark:
 - POST /users/add (redirect /peeps) :white_check_mark:
