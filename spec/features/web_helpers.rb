@@ -10,8 +10,8 @@ def add_user(username, password)
   User.add(username: username, password: password)
 end
 
-def add_peep(message)
-  Peep.add(username: "test", message: message)
+def add_peep(username="test", message)
+  Peep.add(username: username, message: message)
 end
 
 def add_user_add_peep(username, password, message)
@@ -25,4 +25,12 @@ def register_user(username, password)
   fill_in(:username, with: username)
   fill_in(:password, with: password)
   click_button('Register')
+end
+
+def log_in_user(username, password)
+  visit('/')
+  click_link('Login')
+  fill_in(:username, with: username)
+  fill_in(:password, with: password)
+  click_button('Login')
 end
