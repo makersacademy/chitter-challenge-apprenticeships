@@ -1,5 +1,6 @@
 require 'time'
 require 'peep'
+require 'user'
 
 describe Peep do
   let(:username) { double(:username) }
@@ -75,6 +76,17 @@ describe Peep do
   describe '.find_by_user_id' do
 
     it 'returns peeps by a specific user' do
+      # need to come back and mock out the dependency on User
+      peep = Peep.add(username: username, message: message)
+      Peep.add(username: username, message: "message 2")
+
+      User.add(username: username, password: "password")
+      user_id = User.find_id(username: username)
+
+      user_peeps = Peep.find_by_user_id(user_id: user_id)
+
+      expect(user_peeps[0].message).to include message
+      expect(user_peeps[1].message).to include "message 2"
 
     end
   end

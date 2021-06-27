@@ -48,7 +48,7 @@ class User
     return true if result.any?
   end
 
-  def self.find(username:)
+  def self.find_id(username:)
     result = DatabaseConnection.query(sql: "SELECT id FROM users WHERE username = $1;", params: [username])
     id = result[0]['id']
   end
