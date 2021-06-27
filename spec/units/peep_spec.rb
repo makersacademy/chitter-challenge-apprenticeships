@@ -73,7 +73,7 @@ describe Peep do
     end
   end
 
-  describe '.find_by_user_id' do
+  describe '.find_by_user_id', :focus do
 
     it 'returns peeps by a specific user' do
       # need to come back and mock out the dependency on User

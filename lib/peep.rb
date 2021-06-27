@@ -41,7 +41,16 @@ class Peep
     end
   end
 
-  def self.search(keyword)
+  def self.find_by_user_id(user_id: )
+    user_peeps_sorted = DatabaseConnection.query(sql: 'SELECT * FROM peeps WHERE user_id LIKE $1 ORDER BY date_time DESC;', params: [user_id])
+    user_peeps_sorted.map do |peep|
+      Peep.new(
+        username: peep['username'],
+        message: peep['message'],
+        id: peep['id'],
+        date: peep['date']
+      )
+    end
   end
 
   def initialize(username:, message:, id:, date:)
