@@ -1,7 +1,9 @@
 require "peep"
 
 describe Peep do
-  let(:msg) { "This is a test peep" }
+  let(:msg) { "hello folks!" }
+  let(:msg_2) { "Good afternoon" }
+
   describe ".create" do
     it "creates a new peep record in chitter DB" do
       peep = Peep.create(message: msg)
@@ -26,6 +28,17 @@ describe Peep do
       expect(peeps.first).to be_a Peep
       expect(peeps.first.id).to eq peep.id
       expect(peeps.first.message).to eq msg
+    end
+  end
+
+  describe ".filter" do
+    it "filters peeps and returns keyword matches (case insensitive matches)" do
+      Peep.create(message: msg)
+      Peep.create(message: msg_2)
+
+      filter_matches = Peep.filter(keyword: "Hello")
+
+      expect(filter_matches.first.message).to eq msg
     end
   end
 end

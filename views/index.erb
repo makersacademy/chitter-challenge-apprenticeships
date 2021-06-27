@@ -10,6 +10,12 @@
 <body class="container">
     <h1>Chitter Chatter 💬</h1>
         <section>
+            <form action='/peep/matches' method='post' class="row">
+                <input type="text" name="search_field" placeholder="Keyword Search" required>
+                <input type="submit" name="search" class="search_btn" value="&#9740;" />
+            </form>
+        </section>
+        <section>
             <form action='/peep' method='post' class="form">
                 <textarea type="textbox" placeholder="What's happening?" name="message" rows="4" cols="50" required></textarea>
                 <input type="submit" value="Post" />
