@@ -18,7 +18,7 @@ feature "Reverse chronological order" do
     Timecop.return
   end
 
-  it "display peeps in reverse chronological order" do
+  scenario "display peeps in reverse chronological order" do
     expect(page).to have_content "#{msg_2}\n#{curr_time}\n#{msg_1}\n01 Jan 2020 00:00"
   end
 end

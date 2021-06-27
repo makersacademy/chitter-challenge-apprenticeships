@@ -1,4 +1,4 @@
-feature "Create peep" do
+feature "Creating peep" do
   scenario "display message added to database" do
     add_row_to_test_database
     visit "/"
