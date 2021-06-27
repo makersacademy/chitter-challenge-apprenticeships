@@ -1,28 +1,31 @@
 require 'peep'
+require 'database_helpers'
 
 describe Peep do
   describe '.all' do
     it 'returns all peeps' do
-      connection = PG.connect(dbname: 'chitter_test')
-
-      connection.exec("INSERT INTO peeps (message) VALUES('This is a peep!');")
-      connection.exec("INSERT INTO peeps (message) VALUES('Welcome to Chitter!');")
-      connection.exec("INSERT INTO peeps (message) VALUES('My first peep!');")
+      peep = Peep.create(message: 'This is a peep!')
+      Peep.create(message: 'Welcome to Chitter!')
+      Peep.create(message: 'My first peep!')
 
       peeps = Peep.all
 
-      expect(peeps).to include('This is a peep!')
-      expect(peeps).to include('Welcome to Chitter!')
-      expect(peeps).to include('My first peep!')
+      expect(peeps.length).to eq 3
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.id).to eq peep.id
+      expect(peeps.first.message).to eq 'This is a peep!'
     end
 
   end
 
   describe '.create' do
     it 'creates a new peep' do
-      Peep.create(message: 'I have arrived!')
+      peep = Peep.create(message: 'I have arrived!')
+      persisted_data = persisted_data(id: peep.id)
   
-      expect(Peep.all).to include 'I have arrived!'
+      expect(peep).to be_a Peep
+      expect(peep.id).to eq persisted_data.first['id']
+      expect(peep.message).to eq 'I have arrived!'
     end
 
   end
