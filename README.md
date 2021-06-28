@@ -1,3 +1,5 @@
+All user stories implemented but only half are tested as I knew I'd be short on time but wanted to see how it would be to use the functionality.
+
 ## Chitter Challenge
 
 * Challenge time: until the end of the day
