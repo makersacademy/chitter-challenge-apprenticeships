@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>All Peeps</title>
+<style>
+</style>
+</head>
+
+<body>
+
+<h1>🐣 Peeps</h1>
+
+  
+  
+    <% @peeps.each do |peep| %>
+
+    <p> <%= peep.date %> </p>
+    <p> <%= peep.message %> </p>
+    </br>
+    
+    <% end %>
+
+  
+
+</body>
+</html>
