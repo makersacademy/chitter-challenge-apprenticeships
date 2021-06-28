@@ -1,0 +1,1 @@
+DELETE FROM peeps WHERE message = 'This is a peep!';
