@@ -1,4 +1,4 @@
-All user stories implemented but only half are tested as I knew I'd be short on time but wanted to see how it would be to use the functionality.
+All user stories implemented but only half are tested as I knew I'd be short on time and wanted to see how it would be to use the functionality.
 
 ## Chitter Challenge
 
