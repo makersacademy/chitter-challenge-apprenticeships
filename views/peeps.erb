@@ -1,5 +1,13 @@
+<h1>
+Chitter feed:
+</h1>
 <ul>
   <%@peeps.each do |peep|%>
     <li><%= peep.message %> </li>
-   <%end%> 
+  <%end%> 
 </ul>
+
+<form action='new-peep' method='post'>
+  <input type="text" name="peep" placeholder="New Peep">
+  <input type="submit" value="Submit">
+</form>
