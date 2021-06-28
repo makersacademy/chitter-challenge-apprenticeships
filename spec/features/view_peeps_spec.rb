@@ -22,12 +22,19 @@ feature 'Adding date posted' do
   scenario 'user can see the date peeps were posted' do
     add_row_to_test_database
     visit('/')
-    today = Time.now
-    date = today.strftime("%Y-%m-%d")
-    expect(page).to have_content date
+    expect(page).to have_content '2021-06-27'
   end
 end
 
 # As a Maker
 # So that I can easily see the latest peeps
 # I want to see a list of peeps in reverse chronological order
+
+feature 'Reverse order' do
+  scenario 'user can see peeps in reverse chronological order' do
+    add_row_to_test_database
+    Peep.add('Another peep', '2021-06-28')
+    visit ('/')
+    expect(page.all('li').first).to have_content 'Another peep'
+  end
+end

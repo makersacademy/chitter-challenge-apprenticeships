@@ -2,8 +2,6 @@ require_relative '../setup_test_database.rb'
 
 describe Peep do
 
-  let(:peep) { Peep.new('Another peep', '2021-06-22') }
-
   it 'shows all peeps' do
     add_row_to_test_database
     peeps = Peep.all
