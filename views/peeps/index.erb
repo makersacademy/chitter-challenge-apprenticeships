@@ -1,0 +1,19 @@
+<link rel ="stylesheet" type="text/css" href="/style.css"/>
+
+<body>
+    <form action="/peeps" method="post">
+      <label for="message">
+  	  <p class="text-background">what's on your mind?</p>
+  	    <input class="peep_input" type="text" name="message" placeholder="PEEP" />
+	    </label>
+		<input class="btn" type="submit" value="Share" />
+</form>
+
+  <h1 class="text-background"> here are some peeps for you to see: </h1>
+
+  <ul>
+    <% @peeps.each do |peep| %>
+    <li class="text-background"><%= peep %></li>
+    <% end %>
+  </ul>
+</body>
