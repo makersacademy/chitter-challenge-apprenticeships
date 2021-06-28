@@ -11,7 +11,7 @@ describe Peeps do
     end
   end
 
-  describe '.add' do
+  describe '.add' do  
     it 'adds a new peep to the db' do
       new_peep = "Hi everyone"
       connection = PG.connect(dbname: 'chitter_test')
