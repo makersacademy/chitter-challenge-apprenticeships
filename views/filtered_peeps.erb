@@ -6,19 +6,17 @@
   </head>
   <body>
     <h1>&#128035; Chitter &#128038;</h1>
-    <form action="/search" method="post">
-      <input type="text" placeholder="Search by keyword" name="search">
-      <input type="submit" value="Search"></input>
-    </form>
     <ul>
       <% @peeps.each do |peep| %>
+      <% if peep['message'].downcase.include? @keyword.downcase%>
         <li class="peeps">
           <%= peep['message'] %> (<%= peep['peep_date'] %>)
         </li>
+        <% end %>
       <% end %>
     </ul>
-    <form action="/new_peep" method="get">
-      <input type="submit" value="New Peep">
+    <form action="/" method="get">
+      <input type="submit" value="Return home">
     </form>
   </body>
 </html>

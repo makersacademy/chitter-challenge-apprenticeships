@@ -31,5 +31,11 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
+  post '/search' do
+    @peeps = Peep.all
+    @keyword = params[:search]
+    erb(:filtered_peeps)
+  end
+
   run! if app_file == $0
 end
