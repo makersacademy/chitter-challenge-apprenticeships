@@ -5,5 +5,6 @@ feature 'Posting a peep' do
     click_button('Submit')
 
     expect(page).to have_content 'Example Peep'
+    expect(page).to have_content '2021-06-25'
   end
 end
