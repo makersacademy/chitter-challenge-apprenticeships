@@ -1,0 +1,11 @@
+<h1>Here is all the chitter</h1>
+
+<ul>
+  <% @chitter.each do |chitter| %>
+    <li>
+      <%= chitter.message %>
+    </li>
+  <%end%>
+</ul>
+
+<a href="/add">Add a new message</a>
