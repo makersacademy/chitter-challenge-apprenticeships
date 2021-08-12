@@ -8,7 +8,7 @@ attr_reader :id, :message, :date , :CURRENT_DATE
   def initialize(id:, message:, date:)
     @id = id
     @message = message
-    @date = date
+    @date = CURRENT_DATE
   end 
 
   def self.all

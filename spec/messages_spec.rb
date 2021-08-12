@@ -22,7 +22,7 @@ describe Messages do
     it 'Adds new message' do
     test1 = Messages.create(message: 'new message')
 
-    expect(test1).to include 'new message'
+    expect(test1.message).to eq 'new message'
     end 
   end 
 end 
