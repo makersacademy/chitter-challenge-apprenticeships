@@ -1,3 +1,9 @@
 <h1> Messages </h1>
 
-Message 1
+<!-- in views/bookmarks/index.erb -->
+
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>

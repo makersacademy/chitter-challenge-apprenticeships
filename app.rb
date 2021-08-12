@@ -7,6 +7,10 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
+    @messages = ["test1",
+                 "test2",
+                 "test3"
+    ]
     erb :messages
   end 
 
