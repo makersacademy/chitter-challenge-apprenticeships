@@ -6,7 +6,7 @@ require 'pg'
 class Chitter < Sinatra::Base
 
   get '/' do
-    'Test page'
+    erb :index
   end
 
   get '/messages' do
