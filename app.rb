@@ -1,6 +1,7 @@
 require 'sinatra/base'
-require 'sinatra/reloader'
+
 require './lib/messages'
+require 'pg'
 
 class Chitter < Sinatra::Base
 

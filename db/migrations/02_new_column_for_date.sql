@@ -1,0 +1,1 @@
+ALTER TABLE chitter ADD COLUMN date VARCHAR(60);

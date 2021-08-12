@@ -2,8 +2,10 @@
 
 <!-- in views/bookmarks/index.erb -->
 
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= message %></li>
-  <% end %>
+ <ul>
+    <% @messages.each do |message| %>
+    <li>
+        <%= message.message %> <%= message.date %>
+    </li>
+    <% end %>
 </ul>

@@ -1,6 +1,15 @@
 require 'pg'
 
 class Messages
+attr_reader :id, :message, :date , :CURRENT_DATE
+
+  CURRENT_DATE = Time.new.year.to_s + "-" + Time.new.month.to_s + "-" + Time.new.day.to_s
+
+  def initialize(id:, message:, date:)
+    @id = id
+    @message = message
+    @date = date
+  end 
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
@@ -9,9 +18,10 @@ class Messages
       connection = PG.connect(dbname: 'chitter')
     end 
 
-    results = connection.exec("SELECT * FROM peeps;")
-    results.map { |messages| messages['message'] }
- 
+    result = connection.exec("SELECT * FROM peeps;")
+    result.map do |message| 
+            Messages.new(id: message['id'], message: message['message'], date: message['date']) 
+    end 
   end  
 
   def self.create(message:)
@@ -21,6 +31,7 @@ class Messages
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message) VALUES ('#{message}')")
+     result = connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{CURRENT_DATE}') RETURNING id, message, date;")
+        Messages.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['date'])
   end 
 end
