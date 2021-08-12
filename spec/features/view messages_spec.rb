@@ -1,5 +1,8 @@
+require './spec/setup_test_database'
+
 feature 'Viewing messages' do 
   scenario 'A user can view messages' do
+    setup_test_database
 
     connection = PG.connect(dbname: 'chitter_test')
     connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")

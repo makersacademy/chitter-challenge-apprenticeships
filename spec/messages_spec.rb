@@ -1,9 +1,11 @@
 require 'messages'
+require_relative './setup_test_database'
 
 describe Messages do
 
   describe '.all' do
     it 'returns all messages' do
+      setup_test_database
       connection = PG.connect(dbname: 'chitter_test')
       connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")
       connection.exec("INSERT INTO peeps (message) VALUES ('Hello');")
