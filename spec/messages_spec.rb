@@ -18,4 +18,12 @@ describe Messages do
       expect(messages).to include('World')
     end
   end
+
+  describe '.create' do 
+    it 'Adds new message' do
+    Messages.create(message: 'new message')
+
+    expect(Messages.all).to include 'new message'
+    end 
+  end 
 end 
