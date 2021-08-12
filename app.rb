@@ -1,16 +1,18 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
+require './lib/messages'
 
 class Chitter < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   get '/test' do
     'Test page'
   end
 
   get '/messages' do
-    @messages = ["test1",
-                 "test2",
-                 "test3"
-    ]
+    @messages = Messages.all
     erb :messages
   end 
 
