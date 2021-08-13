@@ -3,4 +3,14 @@
 <input type="text" name="post" placeholder="Post" />
 <input type="submit" value="Add Post" />
 </form>
-<%= @messages %>
+<form method="get" action="/filter">
+<input type="submit" value="Add Filter" />
+</form>
+<% @messages.each do |message| %>
+    <li>
+      <%= message[0] %>
+      <%= message[1] %>
+      </a>
+    </li>
+  <% end %>
+</ul>

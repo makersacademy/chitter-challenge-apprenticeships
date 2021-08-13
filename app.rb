@@ -21,5 +21,16 @@ end
     redirect '/'
   end 
 
+  get '/filter' do
+   erb :screen2
+  end
+
+  post '/filter' do
+    p params
+    filter = params["filter"]
+    @messages = Messages.filter(filter)
+    erb :screen3
+  end
+
   run! if app_file == $0
 end

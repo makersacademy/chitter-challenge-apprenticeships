@@ -23,3 +23,10 @@ feature 'Adding a new chitter post' do
      end
   end  
 
+  feature 'User is directed to the filter page' do
+    scenario 'A user can see the filter page' do
+      visit('/filter')
+      expect(page).to have_button('Add filter')
+     end
+  end 
+

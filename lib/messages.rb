@@ -26,4 +26,18 @@ class Messages
         
       end
   end
+
+  def self.filter(filter)
+    if ENV['ENVIRONMENT'] == 'test'
+        connection = PG.connect(dbname: 'chitter_test')
+      else
+        connection = PG.connect(dbname: 'chitter')
+      end
+   
+      result = connection.exec("SELECT message, whenposted FROM peeps WHERE message LIKE('%#{filter}%') ORDER by whenposted desc")
+      return result.map do |posts|
+        posts = [posts['message'], posts['whenposted']]
+        
+      end
+  end
 end

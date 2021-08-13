@@ -14,8 +14,20 @@ describe Messages do
     post2 = Messages.create(post: "My second post by Joe Bloggs")
     post3 = Messages.create(post: "My first post by anonymous")
     posts = Messages.all
-   
     expect(Messages.all[0][0]).to include('My first post by anonymous')
+  end
+end
+
+describe Messages do
+  it 'can filter all the posts based on a keyword' do
+    connection = PG.connect(dbname: 'chitter_test')
+    post = Messages.create(post: "My first post by Joe Bloggs")
+    post2 = Messages.create(post: "My second post by Joe Bloggs")
+    post3 = Messages.create(post: "My first post by anonymous")
+    filter = "first"
+    posts = Messages.filter(filter)
+    expect(Messages.all[0][0]).to include('My first post by anonymous')
+    
   end
 end
 
