@@ -11,11 +11,14 @@ describe Peeps do
     end
   end 
 
-  # describe '#new_peep' do 
-  #   it 'should store the new peep in the table' do 
-  #     conn = PG.connect(dbname: 'chitter_test')
+  describe '#new_peep' do 
+    it 'should store the new peep in the table' do 
+      conn = PG.connect(dbname: 'chitter_test')
+      conn.exec("INSERT INTO peeps (message) VALUES ('Test newly stored peep for Unit test 2')")
 
-  #   end 
-  # end 
+      peep = Peeps.all_peeps
+      expect(peep).to include("Test newly stored peep for Unit test 2")
+    end 
+  end 
 
 end 
