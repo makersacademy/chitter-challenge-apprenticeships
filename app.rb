@@ -1,6 +1,6 @@
 require 'sinatra/base'
  require 'sinatra/reloader'
-
+require './lib/messages.rb'
 class Chitter < Sinatra::Base
   configure :development do
   register Sinatra::Reloader
@@ -14,8 +14,9 @@ end
   end
  
   post '/' do
-    p params
-    Messages.create(post: params[:post])
+    #p params[:post]
+    #p 'before messages'
+    @messages = Messages.create(post: params[:post])
     erb :screen1
   end 
 
