@@ -12,5 +12,14 @@ class Chitter < Sinatra::Base
     erb :homepage
   end
 
+  post '/addpost' do
+    HomePage.create(params[:post])
+    redirect '/'
+  end
+
+  get '/addpost' do
+    erb :addpost
+  end
+
   run! if app_file == $0
 end
