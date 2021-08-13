@@ -5,5 +5,10 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/' do
+    @manager = PeepManager.new()
+    erb :homepage
+  end
+
   run! if app_file == $0
 end
