@@ -10,4 +10,12 @@ describe Peeps do
       expect(peep).to include("Test peep for Unit test 1.")
     end
   end 
+
+  # describe '#new_peep' do 
+  #   it 'should store the new peep in the table' do 
+  #     conn = PG.connect(dbname: 'chitter_test')
+
+  #   end 
+  # end 
+
 end 
