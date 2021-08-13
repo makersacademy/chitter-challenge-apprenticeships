@@ -13,3 +13,13 @@ feature 'Adding a new chitter post' do
       expect(page).to have_button('Add Post') 
      end
   end  
+
+  feature 'Adding a new chitter post' do
+    scenario 'A user submits the new post and sees new screen' do
+      visit('/')
+      fill_in('post', with: 'A test post by Joe Bloggs')
+      click_button('Add Post')
+      expect(page).to have_content('A test post') 
+     end
+  end  
+
