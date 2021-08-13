@@ -20,5 +20,4 @@ describe Peeps do
       expect(peep).to include("Test newly stored peep for Unit test 2")
     end 
   end 
-
 end 

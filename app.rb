@@ -16,9 +16,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    Peep.new_peep(peep_text: params[:peep_text]) #Check here for if the param in creating a neww peep matches the name it has here. 
+    Peeps.new_peep(peep_text: params[:peep_text]) #Check here for if the param in creating a neww peep matches the name it has here. 
     redirect '/peeps'
-    #erb :peeps
+    erb :peeps
   end
 
   run! if app_file == $0
