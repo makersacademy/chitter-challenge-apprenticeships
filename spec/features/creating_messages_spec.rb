@@ -30,3 +30,21 @@ feature 'Adding a new chitter post' do
      end
   end 
 
+  feature 'User is enters their filter and gets list' do
+    scenario 'A user can see the filter page' do
+      visit('/filter')
+      fill_in('filter', with: "A marvellous day at the office")
+      click_button('Add filter')
+      expect(page).to have_content 'Filtered List'
+     end
+  end 
+
+  feature 'views filtered list' do
+    scenario 'clicks on return to main screen' do
+      visit('/filter')
+      fill_in('filter', with: "test")
+      click_button('Add filter')
+      click_button('Return to main screen')
+      expect(page).to have_content 'Chitter main screen'
+     end
+  end 
