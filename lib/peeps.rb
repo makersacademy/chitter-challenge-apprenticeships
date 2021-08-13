@@ -10,8 +10,7 @@ class Peeps
     end 
     
     all_entries = con.exec('SELECT * FROM peeps;')
-    p "HELLO"
-    p all_entries.map { |peep| peep ['message'] } 
+    all_entries.map { |peep| peep ['message'] } 
     
   end 
 
