@@ -2,32 +2,29 @@
 Project Title - Chitter (details at end of readme file)
 
 Requested outputs
-Sketch of each page of app that user sees
-List of requests / responses involved
+Sketch of each page of app that user sees (see Overview file folder)
+List of requests / responses involved (see Overview file in root folder)
 
 Motivation
 End of week 6 test to allow calibration of current learning status and allow setting of goals in future weeks.
 
 Build status
-
+Awaiting rubocopping and refactor. Base Model built, with additional formatting to be applied at a later version for the screens.
 
 Notes:
-
 
 Code style
 Ruby, RSpec, rubocop, Sinatra, Capybara, SimpleCov.
 
-Screenshots
-
 
 Installation
-lib folder 
-view folder 
+lib folder - messages.rb
+view folder - Screen[1-3].erb
 spec folder/features for feature tests
 
 Provide step by step series of examples and explanations about how to get a development env running. 
 e.g.
-Download of files.
+Download of files from git hub.
 Use Rackup to run webserver.
 Access server via the provided host (xxxx) on your terminal screen e.g. localhost:xxxx/
 
@@ -41,21 +38,13 @@ In PSQL: run the following:
     repeat for testing database: (replace chitter for chitter_test). No need to do the INSERT.
 
 API Reference
-
-
-Tests 
-
-
-expect shape of tests to be:
-
-
-Initial analyses
+n/a
 
 How to use?
 can be operated via rackup and the local host website address using / for the home page to navigate through the screens.
 
 Contribute
-
+Was really useful to have built the MessageBoard app ahead of this.
 
 Credits
 
@@ -66,9 +55,7 @@ License
 no known license requirements.
 
 Thoughts on the project:
-
-
-
+I really enjoyed the challenge, i would loved to have applied the styling to my web pages, but time at 4pm on Friday was not allowing for this. Rubocop was not working with the yml file and this is an outstanding task to tidy up the code and refactor it. There is a base model, and the reformatting should go around the time format. It was a plus that i used the databases own time function which includes time and date and was easily formattable via SQL. I did not choose to add a name as it was not explicitly asked for in the user stories, but is an easy addition.
 
 ## Chitter Challenge
 

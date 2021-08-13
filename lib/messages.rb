@@ -1,7 +1,6 @@
 require 'pg'
 
 class Messages
-
    
   def self.create(post:)
     if ENV['ENVIRONMENT'] == 'test'
