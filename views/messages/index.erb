@@ -1,0 +1,12 @@
+<h1> Messages </h1>
+
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message %></li>
+    <% print Time.now %>
+  <% end %>
+</ul>
+
+<form action="/messages/new" method="get">
+    <input type="submit" value="New message" />
+</form>
