@@ -7,6 +7,14 @@ end
 
 feature '/peeps route' do
   scenario 'displays all peeps' do
+    connection = PG.connect(dbname: 'chitter_test')
+
+    
+    connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")
+    connection.exec("INSERT INTO peeps (message) VALUES('We''re going to build a well!');")
+    connection.exec("INSERT INTO peeps (message) VALUES('Noone needs to pay for it- we got you!');")
+    connection.exec("INSERT INTO peeps (message) VALUES('Hang on who needs wells these days anyways?');")
+    
     visit('/peeps')
 
     expect(page).to have_content("This is a peep!")
