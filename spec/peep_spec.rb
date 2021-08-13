@@ -3,10 +3,7 @@ require 'peep'
 describe Peep do
   it "returns all the peeps" do
 
-    connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT into peeps (message) VALUES ('hi');")
-    connection.exec("INSERT into peeps (message) VALUES ('how r u');")
-    connection.exec("INSERT into peeps (message) VALUES ('bye');")
+    
 
 
     
