@@ -14,3 +14,11 @@ describe '.all' do
 
   end
 end
+
+describe '.create' do
+  it 'creates a new message' do
+    Message.create(message: 'Hello Chitter')
+
+    expect(Message.all).to include 'Hello Chitter'
+  end
+end
