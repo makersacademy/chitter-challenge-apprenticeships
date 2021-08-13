@@ -29,11 +29,17 @@
       "/Users/ben/Projects/chitter-challenge-apprenticeships/lib/message.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
+          1,
+          2,
+          2,
+          null,
+          0,
           null,
           null,
+          2,
+          6,
           null,
           null
         ]
@@ -62,7 +68,14 @@
       "/Users/ben/Projects/chitter-challenge-apprenticeships/spec/features/viewing_messages_spec.rb": {
         "lines": [
           1,
+          null,
           1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           1,
           null,
           1,
@@ -70,8 +83,28 @@
           null,
           null
         ]
+      },
+      "/Users/ben/Projects/chitter-challenge-apprenticeships/spec/message_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1628847003
+    "timestamp": 1628851874
   }
 }
