@@ -3,6 +3,14 @@ require 'peep'
 describe Peep do
   it "returns all the peeps" do
 
+   
+    connection = PG.connect(dbname: 'chitter_test')
+  
+      # Add the test data
+    connection.exec("INSERT into peeps (message) VALUES ('first peep');")
+    connection.exec("INSERT into peeps (message) VALUES ('second peep');")
+    connection.exec("INSERT into peeps (message) VALUES ('third peep');")
+
     
 
 
@@ -14,9 +22,9 @@ describe Peep do
 
 
     
-    expect(peeps).to include("hi")
-    expect(peeps).to include("how r u")
-    expect(peeps).to include("bye")
+    expect(peeps).to include("first peep")
+    expect(peeps).to include("second peep")
+    expect(peeps).to include("third peep")
   end
 
 end
