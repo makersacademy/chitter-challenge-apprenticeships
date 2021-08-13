@@ -1,6 +1,8 @@
 <ul>
   <% @messages.each do |message| %>
-    <li><%= message %></li>
+    <li><%= message.message %> <br><br>
+      <%= message.time %></li>
+      <br><br>
   <% end %>
 </ul>
 
