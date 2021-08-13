@@ -1,3 +1,5 @@
+require "spec_helper"
+
 feature 'Viewing test page' do
   scenario 'visiting the test page' do
     visit('/test')

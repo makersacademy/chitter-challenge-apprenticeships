@@ -1,3 +1,75 @@
+
+Project Title - Chitter (details at end of readme file)
+
+Requested outputs
+Sketch of each page of app that user sees
+List of requests / responses involved
+
+Motivation
+End of week 6 test to allow calibration of current learning status and allow setting of goals in future weeks.
+
+Build status
+
+
+Notes:
+
+
+Code style
+Ruby, RSpec, rubocop, Sinatra, Capybara, SimpleCov.
+
+Screenshots
+
+
+Installation
+lib folder 
+view folder 
+spec folder/features for feature tests
+
+Provide step by step series of examples and explanations about how to get a development env running. 
+e.g.
+Download of files.
+Use Rackup to run webserver.
+Access server via the provided host (xxxx) on your terminal screen e.g. localhost:xxxx/
+
+Database:
+In PSQL: run the following:
+    CREATE DATABASE chitter;
+    run contents of 01_create_chitter_table.sql 
+    ALTER TABLE peeps
+	ADD whenposted TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP;
+    INSERT INTO peeps (message) values ('This is a peep!');
+    repeat for testing database: (replace chitter for chitter_test). No need to do the INSERT.
+
+API Reference
+
+
+Tests 
+
+
+expect shape of tests to be:
+
+
+Initial analyses
+
+How to use?
+can be operated via rackup and the local host website address using / for the home page to navigate through the screens.
+
+Contribute
+
+
+Credits
+
+Thanks to my peer group team for their support (Danyaal, Annesa, Jessica)
+
+License
+
+no known license requirements.
+
+Thoughts on the project:
+
+
+
+
 ## Chitter Challenge
 
 * Challenge time: until the end of the day
