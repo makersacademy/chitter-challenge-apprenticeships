@@ -15,8 +15,9 @@ end
  
   post '/' do
     p params
+    Messages.create(post: params[:post])
     erb :screen1
   end 
-  
+
   run! if app_file == $0
 end

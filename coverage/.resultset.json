@@ -21,6 +21,7 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           1,
@@ -67,8 +68,32 @@
           null,
           null
         ]
+      },
+      "/Users/Student/wk6challenge/spec/messages_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/wk6challenge/lib/messages.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1628857131
+    "timestamp": 1628858178
   }
 }
