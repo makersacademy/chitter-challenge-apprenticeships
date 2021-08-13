@@ -1,7 +1,7 @@
 require_relative '../../lib/peeps.rb' #Check the syntax on this
 
 describe Peeps do 
-  describe '#add_peeps' do 
+  describe '#all_peeps' do 
     it 'should return a list of all peeps stored in the DB' do 
       conn = PG.connect(dbname: 'chitter_test')
       conn.exec("INSERT INTO peeps (message) VALUES ('Test peep for Unit test 1.');") #Check if this is values or value
