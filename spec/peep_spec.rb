@@ -11,20 +11,20 @@ describe Peep do
     connection.exec("INSERT into peeps (message) VALUES ('second peep');")
     connection.exec("INSERT into peeps (message) VALUES ('third peep');")
 
-    
-
-
-    
-
     peeps = Peep.all
 
     #atm we are running test database which empties everytime we run a test
 
-
-    
     expect(peeps).to include("first peep")
     expect(peeps).to include("second peep")
     expect(peeps).to include("third peep")
+  end
+
+
+
+  it "can add peeps to the database" do
+    Peep.post(peep: "another peep")
+    expect(Peep.all).to include "another peep"
   end
 
 end
