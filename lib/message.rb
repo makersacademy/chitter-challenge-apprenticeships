@@ -9,7 +9,7 @@ class Message
     end
 
     result = connection.exec('SELECT * FROM peeps')
-    result.map { |peep| peep['message'] }
+    result.map { |message| message['message'] }
   end
 
   def self.create(message:)
