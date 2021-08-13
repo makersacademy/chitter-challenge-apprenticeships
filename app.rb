@@ -10,14 +10,15 @@ end
   end
 
   get '/' do
+    @messages = Messages.all
     erb :screen1
   end
  
   post '/' do
     #p params[:post]
+    Messages.create(post: params[:post])
     #p 'before messages'
-    @messages = Messages.create(post: params[:post])
-    erb :screen1
+    redirect '/'
   end 
 
   run! if app_file == $0
