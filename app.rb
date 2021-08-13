@@ -6,7 +6,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do 
-    "This is my first peep"
+    @peeps = [
+      "This is my first peep",
+      "This is my second peep",
+      "This is my third peep"
+    ]
+    erb :peeps
   end 
 
   run! if app_file == $0
