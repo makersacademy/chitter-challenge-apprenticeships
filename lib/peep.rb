@@ -10,12 +10,14 @@ class Peep
     else
       connection = PG.connect(dbname:"chitter")
       result = connection.exec("SELECT * FROM peeps")
-    end    
+    end  
+    
+    p result
     
     peeps_list = []
     
     result.each do |peep|
-      peeps_list.push(peep["message"])
+      peeps_list.push([peep["message"],peep["created_at"]])
     end
     peeps_list
   end
