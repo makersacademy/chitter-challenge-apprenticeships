@@ -2,7 +2,9 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <li><%= post %></li>
+    <li><%= post.message %> <br><br>
+      <%= post.date %></li>
+      <br><br>
   <% end %>
 </ul>
 
