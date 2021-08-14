@@ -12,6 +12,17 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           null,
@@ -26,13 +37,26 @@
           null,
           1,
           1,
-          2,
-          2,
+          3,
+          3,
           null,
           0,
           null,
-          2,
-          4,
+          3,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/Desktop/Web/chitter-challenge-apprenticeships/spec/features/making_peep_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -81,6 +105,6 @@
         ]
       }
     },
-    "timestamp": 1628957734
+    "timestamp": 1628962281
   }
 }
