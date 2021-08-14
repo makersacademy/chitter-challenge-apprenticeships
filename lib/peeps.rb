@@ -19,9 +19,7 @@ class Peeps
     else
       con = PG.connect(dbname: 'chitter')
     end
-
     con.exec("INSERT INTO peeps (message) VALUES('#{peep_text}')") #Value or valueS ?    
+
   end 
-
-
 end 
