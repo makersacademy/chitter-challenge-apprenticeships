@@ -23,10 +23,12 @@
       "/Users/Student/Desktop/Web/chitter-challenge-apprenticeships/lib/peep.rb": {
         "lines": [
           1,
+          null,
           1,
-          null,
+          1,
           2,
-          null,
+          2,
+          4,
           null,
           null
         ]
@@ -68,6 +70,6 @@
         ]
       }
     },
-    "timestamp": 1628949063
+    "timestamp": 1628951199
   }
 }

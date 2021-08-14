@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
 
   get '/home' do
     @peep = Peep.all
-    erb :home
+    erb :'home'
   end
 
   run! if app_file == $0
