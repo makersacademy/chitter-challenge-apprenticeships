@@ -9,8 +9,8 @@ class Peeps
       con = PG.connect(dbname: 'chitter')
     end 
     
-    all_entries = con.exec('SELECT * FROM peeps;')
-    all_entries.map { |peep| peep ['message'] } 
+    p all_entries = con.exec('SELECT * FROM peeps;')
+    p all_entries.map { |peep| peep ['message'] } #[peep_date] is breaking 
   end 
 
   def self.new_peep(peep_text:)
