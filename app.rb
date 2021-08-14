@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -6,7 +7,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/home' do
-    "This is a peep!"
+    @peep = Peep.all
+    erb :home
   end
 
   run! if app_file == $0
