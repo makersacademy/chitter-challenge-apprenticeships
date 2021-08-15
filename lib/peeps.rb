@@ -16,12 +16,11 @@ class Peeps
       con = PG.connect(dbname: 'chitter')
     end 
     
-    all_entries = con.exec('SELECT message, peep_date FROM peeps;')
+    all_entries = con.exec('SELECT message, peep_date FROM peeps ORDER BY peep_date DESC;')
 
     all_entries.map do |peep| 
       Peeps.new(peep_text: peep['message'], peep_date: peep['peep_date']) 
     end
-
   end 
 
   def self.new_peep(peep_text:)
