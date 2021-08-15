@@ -1,5 +1,13 @@
+<div>
+  <form action= '/peeps' method ='post'>
+    <input type="text" name="peep_filter" placeholder="Write your peep here!">
+    <input type="submit" name="Submit">
+  </form>
+</div>
+
 <ul style="list-style-type:none">
   <% @peeps.each do |peep| %>
+  ---------
     <li><%= peep.peep_text  %> Posted on: <%= peep.peep_date  %></li>
   <% end %>
 </ul>
