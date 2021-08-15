@@ -16,14 +16,14 @@ feature "peeps page" do
   scenario "display peeps' date " do 
     visit '/peeps/new'
     conn = PG.connect(dbname: 'chitter_test')
-    current_date = Date.today
+    peep_date = Time.new.strftime("%Y-%m-%d")
     
-    conn.exec("INSERT INTO peeps (message, peep_date) VALUES ('Test peep for FEATURE test D.', '#{current_date}');")
+    conn.exec("INSERT INTO peeps (message, peep_date) VALUES ('Test peep for FEATURE test D.', '#{peep_date}');")
 
     visit '/peeps'
 
     expect(page).to have_content('Test peep for FEATURE test D.')
-    expect(page).to have_content(current_date)
+    expect(page).to have_content(peep_date)
     
   end 
 

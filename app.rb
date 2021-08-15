@@ -11,6 +11,11 @@ class Chitter < Sinatra::Base
     erb :peeps
   end 
 
+  get "/" do 
+    redirect '/peeps'
+    erb :peeps
+  end 
+
   get '/peeps/new' do 
     erb :"peeps/new"
   end

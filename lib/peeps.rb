@@ -17,15 +17,16 @@ class Peeps
     end 
     
     all_entries = con.exec('SELECT message, peep_date FROM peeps;')
+
     all_entries.map do |peep| 
-      Peeps.new(peep_text: peep['message'], peep_date: peep['peep_date'])  ##This may cause issue. Check peep / peeps
+      Peeps.new(peep_text: peep['message'], peep_date: peep['peep_date']) 
     end
+
   end 
 
   def self.new_peep(peep_text:)
-    peep_date = Time.new
-    peep_date = peep_date.strftime("%Y-%m-%d")
-    
+    peep_date = Time.new.strftime("%Y-%m-%d")
+
      if ENV['ENVIRONMENT'] == 'test' #Look into how to DRY this out
       con = PG.connect(dbname: 'chitter_test')
     else

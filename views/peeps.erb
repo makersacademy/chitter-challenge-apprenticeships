@@ -1,6 +1,6 @@
-<ul>
+<ul style="list-style-type:none">
   <% @peeps.each do |peep| %>
-    <li><%= peep.peep_text  %></li>
-    <li><%= peep.peep_date  %></li>
+  -------------
+    <li><%= peep.peep_text  %>      Posted on: <%= peep.peep_date  %></li>
   <% end %>
 </ul>
