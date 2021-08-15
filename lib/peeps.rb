@@ -24,7 +24,8 @@ class Peeps
 
   def self.new_peep(peep_text:)
     peep_date = Time.new
-    peep_date.strftime("%d/%m/%Y")
+    peep_date = peep_date.strftime("%Y-%m-%d")
+    
      if ENV['ENVIRONMENT'] == 'test' #Look into how to DRY this out
       con = PG.connect(dbname: 'chitter_test')
     else
