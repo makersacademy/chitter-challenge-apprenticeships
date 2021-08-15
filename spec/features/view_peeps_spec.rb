@@ -1,31 +1,25 @@
 feature "peeps page" do 
-  scenario "display all peeps (content only)" do 
+  scenario "display all peeps (content only and date)" do 
+    peep_date = Time.new.strftime("%Y-%m-%d")
+
     visit '/peeps/new'
-    conn = PG.connect(dbname: 'chitter_test')
-    conn.exec("INSERT INTO peeps (message) VALUES ('Test peep for FEATURE test A.');") 
-    conn.exec("INSERT INTO peeps (message) VALUES ('Test peep for FEATURE test B.');") 
-    conn.exec("INSERT INTO peeps (message) VALUES ('Test peep for FEATURE test C.');") 
-    
+    fill_in('peep_text', with: 'Test peep for FEATURE test A.')
+    click_button('Submit')
+
+    visit '/peeps/new'
+    fill_in('peep_text', with: 'Test peep for FEATURE test B.')
+    click_button('Submit')
+
+    visit '/peeps/new'
+    fill_in('peep_text', with: 'Test peep for FEATURE test C.')
+    click_button('Submit')
+
     visit '/peeps'
 
-    expect(page).to have_content('Test peep for FEATURE test A.') 
+    expect(page).to have_content(peep_date) #All test peeps will have the same post date
+    expect(page).to have_content('Test peep for FEATURE test A.')  
     expect(page).to have_content('Test peep for FEATURE test B.') 
     expect(page).to have_content('Test peep for FEATURE test C.') 
   end 
-
-  scenario "display peeps' date " do 
-    visit '/peeps/new'
-    conn = PG.connect(dbname: 'chitter_test')
-    peep_date = Time.new.strftime("%Y-%m-%d")
-    
-    conn.exec("INSERT INTO peeps (message, peep_date) VALUES ('Test peep for FEATURE test D.', '#{peep_date}');")
-
-    visit '/peeps'
-
-    expect(page).to have_content('Test peep for FEATURE test D.')
-    expect(page).to have_content(peep_date)
-    
-  end 
-
   
 end 

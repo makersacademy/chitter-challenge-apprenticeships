@@ -13,7 +13,7 @@ peep_date = Time.new.strftime("%Y-%m-%d") #Date MUST be formatted like this, SQL
     it 'should return a list of all peeps stored in the DB' do 
       first_peep = Peeps.all_peeps
       expect(first_peep.first.peep_text).to include("Test peep for Unit test 1.") #What is .first and why does it work with the ORM?
-      expect(first_peep.first.peep_date).to include("#{peep_date}")
+      expect(first_peep.first.peep_date).to include(peep_date)
     end
   end 
 
@@ -23,7 +23,7 @@ peep_date = Time.new.strftime("%Y-%m-%d") #Date MUST be formatted like this, SQL
       unit_test_2 = Peeps.all_peeps
       
       expect(unit_test_2.first.peep_text).to include("Test peep for Unit test 2")
-      expect(unit_test_2.first.peep_date).to include("#{peep_date}")
+      expect(unit_test_2.first.peep_date).to include(peep_date)
     end 
   end 
 end 
