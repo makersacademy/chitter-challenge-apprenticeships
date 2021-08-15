@@ -20,7 +20,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-require_relative './setup_test_database'
+require_relative './setup_test_database.rb'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -35,7 +35,7 @@ ENV['ENVIRONMENT'] = 'test'
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
-    add_row_to_test_database
+    add_row_to_test_database 
   end
 end
 
