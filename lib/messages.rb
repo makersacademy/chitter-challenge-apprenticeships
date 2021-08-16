@@ -18,7 +18,7 @@ attr_reader :id, :message, :date , :CURRENT_DATE
       connection = PG.connect(dbname: 'chitter')
     end 
 
-    result = connection.exec("SELECT * FROM peeps;")
+    result = connection.exec("SELECT * FROM peeps ORDER BY id DESC;")
     result.map do |message| 
             Messages.new(id: message['id'], message: message['message'], date: message['date']) 
     end 

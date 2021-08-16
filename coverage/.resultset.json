@@ -11,7 +11,7 @@
           1,
           null,
           1,
-          1,
+          0,
           null,
           null,
           1,
@@ -87,10 +87,10 @@
       },
       "/Users/Student/projects/chitter/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -147,6 +147,6 @@
         ]
       }
     },
-    "timestamp": 1628783039
+    "timestamp": 1629101631
   }
 }
