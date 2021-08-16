@@ -1,0 +1,12 @@
+'Chitter Filtered List'
+<form method="get" action="/">
+<input type="submit" value="Return to main screen" />
+
+<% @messages.each do |message| %>
+    <li>
+    <br>post: <%= message[0] %>
+    <br>date: <%= message[1] %>
+      </a>
+    </li>
+  <% end %>
+</ul>

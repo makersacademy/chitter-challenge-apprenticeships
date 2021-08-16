@@ -1,0 +1,17 @@
+'Chitter main screen'
+<form method="post" action="/">
+<input type="text" name="post" placeholder="Post" />
+<input type="submit" value="Add Post" />
+</form>
+<form method="get" action="/filter">
+<input type="submit" value="Add Filter" />
+</form>
+<% @messages.each do |message| %>
+    <li>
+      <br>post: <%= message[0] %>
+      <br>date: <%= message[1] %>
+      
+      </a>
+    </li>
+  <% end %>
+</ul>
