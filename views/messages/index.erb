@@ -1,0 +1,11 @@
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message.message %> <br><br>
+      <%= message.time %></li>
+      <br><br>
+  <% end %>
+</ul>
+
+<a href="/messages/new">
+  <input type="submit" value = "Add message"/>
+</a>

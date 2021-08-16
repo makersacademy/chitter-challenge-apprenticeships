@@ -1,21 +1,126 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/app.rb": {
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/app.rb": {
         "lines": [
           1,
+          1,
+          1,
           null,
           1,
           1,
           1,
           null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
           null,
           1,
           null
         ]
       },
-      "/Users/joshhill/projects/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/lib/messages.rb": {
         "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          69,
+          69,
+          69,
+          null,
+          null,
+          null,
+          1,
+          4,
+          0,
+          null,
+          4,
+          null,
+          4,
+          4,
+          69,
+          null,
+          null,
+          null,
+          1,
+          2,
+          0,
+          null,
+          2,
+          null,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/spec/features/creating_messages_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/spec/features/messages_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/Student/Documents/chitter-challenge-apprenticeships/spec/messages_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           1,
@@ -25,6 +130,6 @@
         ]
       }
     },
-    "timestamp": 1584555713
+    "timestamp": 1628863238
   }
 }
