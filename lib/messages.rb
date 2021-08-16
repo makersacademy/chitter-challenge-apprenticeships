@@ -1,9 +1,10 @@
 require 'pg'
+require 'setup_test_database'
 
 class Messages
 attr_reader :id, :message, :date , :CURRENT_DATE
 
-  CURRENT_DATE = Time.new.year.to_s + "-" + Time.new.month.to_s + "-" + Time.new.day.to_s
+  CURRENT_DATE = Time.new.day.to_s + "-" + Time.new.month.to_s + "-" + Time.new.year.to_s
 
   def initialize(id:, message:, date:)
     @id = id

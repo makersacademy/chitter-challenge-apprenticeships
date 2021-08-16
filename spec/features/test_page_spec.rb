@@ -1,6 +1,6 @@
-# feature 'Viewing test page' do
-#   scenario 'visiting the test page' do
-#     visit('/')
-#     expect(page).to have_content "Test page"
-#   end
-# end
+feature 'Viewing home page' do
+  scenario 'visiting the home page' do
+    visit('/')
+    expect(page).to have_link ('View Chits')
+  end
+end
