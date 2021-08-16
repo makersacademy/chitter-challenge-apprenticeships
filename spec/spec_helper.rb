@@ -38,11 +38,11 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = Chitter
 
-RSpec.configure do |config|
-  config.before(:each) do
-    setup_test_database
-  end
-end
+# RSpec.configure do |config|
+#   config.before(:each) do
+#     setup_test_database
+#   end
+# end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
