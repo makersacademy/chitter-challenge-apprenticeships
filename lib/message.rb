@@ -2,6 +2,12 @@ require 'pg'
 
 class Message
 
+  def initialize(id: , message: , time:)
+    @message = message
+    @time = time
+    @id = id
+  end
+
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
@@ -20,8 +26,7 @@ class Message
     end
    
     date = Time.now
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
-    connection.exec("INSERT INTO peeps (date) VALUES('#{date}')")
+    connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}')")
   end
 
 end
