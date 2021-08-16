@@ -1,0 +1,8 @@
+<html>
+  <h1 align = center> Peep feed:</h1>
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li><%= (peep[0]).to_s + " ==== was peeped on ==== " + (peep[1]).to_s %></li>
+      <% end %>
+    </ul>
+</html>
