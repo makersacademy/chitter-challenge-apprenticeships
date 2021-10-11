@@ -14,9 +14,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    @messages = ["Today's first message", 
-    "Today's second message", 
-    "Today's third message"]
+    @messages = Message.all
     erb :messages
   end
 
