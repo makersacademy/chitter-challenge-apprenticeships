@@ -1,9 +1,9 @@
 require './lib/database_connection'
 
 if ENV['ENVIRONMENT'] == 'test'
-  DatabaseConnection.setup('bookmark_manager_test')
+  DatabaseConnection.setup('chitter_test')
 else
   # :nocov:
-  DatabaseConnection.setup('bookmark_manager')
+  DatabaseConnection.setup('chitter')
   # :nocov:
 end
