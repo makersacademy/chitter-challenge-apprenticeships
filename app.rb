@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    'Welcome to Chitter'
+    erb :homepage
   end
 
   get '/messages' do
