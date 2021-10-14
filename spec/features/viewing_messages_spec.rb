@@ -1,6 +1,6 @@
 feature 'Viewing messages: ' do
-  scenario 'visiting the index page' do
-    visit('/')
-    expect(page).to have_content "Chitter Messages"
+  scenario 'A user can see messages' do
+    visit('/messages')
+    expect(page).to have_content "Hi Michelle! How are you?"
   end
 end
