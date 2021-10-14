@@ -10,8 +10,8 @@ describe Message do
 
       messages = Message.all
 
-      expect(peeps).to include('Hi Michelle! How are you?')
-      expect(peeps).to include('What time is the theatre show?')
+      expect(messages).to include('Hi Michelle! How are you?')
+      expect(messages).to include('What time is the theatre show?')
     end
   end
 end
