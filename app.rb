@@ -3,9 +3,9 @@ require 'sinatra/reloader'
 require './lib/message'
 
 class Chitter < Sinatra::Base
-  # configure :development do
-  #   register Sinatra::Reloader
-  # end  
+  configure :development do
+    register Sinatra::Reloader
+  end  
 
   get '/test' do
     'Test page'
