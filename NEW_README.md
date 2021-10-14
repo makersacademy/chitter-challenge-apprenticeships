@@ -11,6 +11,12 @@ rackup
 ```
 Open localhost in your browser with the specified port (found in your terminal message once you've ran `rackup`).
 
+# Setting up the databse
+1. Connect to `psql`
+2. Create the database using the `psql` command `CREATE DATABASE chitter;`
+3. Connect to the database using the `pqsl` command `\c chitter;`
+4. Run the query saved in the file `01_create_chitter_table.sql`
+
 # User Stories
 ```
 As a Maker
