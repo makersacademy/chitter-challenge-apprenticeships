@@ -1,6 +1,7 @@
 <ul>
   <% @peeps.each do |peep| %>
     <li>
+        <%= peep.id %>
         <%= peep.message %>
     </li>
   <% end %>
