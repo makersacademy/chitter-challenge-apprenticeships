@@ -7,7 +7,7 @@ class Peep
   
   def self.all
     response = DatabaseConnection.query("SELECT * FROM peeps;")
-    response.map { | response | Peep.new(id: response['id'], message: response['message'], date: 'date') }
+    response.map { | response | Peep.new(id: response['id'], message: response['message'], date: response['date']) }
   end
 
   attr_reader :id, :message, :date
