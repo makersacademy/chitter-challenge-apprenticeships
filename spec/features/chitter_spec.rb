@@ -18,3 +18,13 @@ feature 'View all peeps' do
     end
   end
 end
+
+feature 'Create new peep' do
+  scenario 'User is able to create a new peep' do
+    visit('/')
+    fill_in 'message', with: 'This is a fun new peep!'
+    click_button 'Post'
+
+    expect(page).to have_content('This is a fun new peep!')
+  end
+end
