@@ -8,7 +8,7 @@ class Peep
   end
   
   def self.all
-    response = DatabaseConnection.query("SELECT * FROM peeps ORDER BY date DESC, id;")
+    response = DatabaseConnection.query("SELECT * FROM peeps ORDER BY date DESC, id DESC;")
     response.map { | response | Peep.new(id: response['id'], message: response['message'], date: response['date']) }
   end
 
