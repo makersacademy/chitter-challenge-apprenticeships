@@ -9,6 +9,6 @@ class Peep
   end
 
   def self.create(username:, message:)
-    DatabaseConnection.query("INSERT INTO peeps (username, message) VALUES ('#{username}', '#{message}');")
+    DatabaseConnection.query("INSERT INTO peeps (username, message) VALUES ($1, $2)", [username, message])
   end
 end
