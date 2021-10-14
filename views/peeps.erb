@@ -10,7 +10,7 @@
   <ol>
     <%@all_peeps.each do |peep| %>
       <li>
-        Username: <%= peep[:username] %> Peep: <%= peep[:message]%>
+        Username: <%= peep[:username] %> Peep: <%= peep[:message]%> Date: <%= peep[:post_date]%>
       </li>
     <% end %>
   </ol>
