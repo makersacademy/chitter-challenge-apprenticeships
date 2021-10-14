@@ -1,7 +1,21 @@
-<ol>
-  <%@all_peeps.each do |peep| %>
-    <li>
-      Username: <%= peep[:username] %> Peep: <%= peep[:post]%>
-    </li>
-  <% end %>
-</ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+</head>
+<body>
+  <ol>
+    <%@all_peeps.each do |peep| %>
+      <li>
+        Username: <%= peep[:username] %> Peep: <%= peep[:message]%>
+      </li>
+    <% end %>
+  </ol>
+  <form action="/create">
+    <input type="submit" value="Peep!">
+  </form>
+</body>
+</html>
