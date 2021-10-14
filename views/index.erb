@@ -1,6 +1,6 @@
 <% @peeps.each do | peep | %>
   <section id="<%= peep.id %>">
     <p class="peep"><%= peep.message %></p>
-    <p class="date"><%= peep.date %></p>
+    <p class="date"><%= Peep.format_date(peep.date) %></p>
   </section>
 <% end %>
