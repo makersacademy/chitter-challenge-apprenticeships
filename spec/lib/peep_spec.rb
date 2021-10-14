@@ -21,12 +21,22 @@ describe Peep do
 
   describe "#create" do
     it 'adds a new peep to the database, no date passed' do
-      Peep.create('This is a fun new peep')
+      peep = Peep.create('This is a fun new peep')
 
       response = DatabaseConnection.query("SELECT * FROM peeps;")
-      peep = response.first
+      database_peep = response.first
 
-      expect(peep.message).to eq 'This is a fun new peep'
+      expect(peep.message).to eq database_peep['message']
+    end
+
+    it 'adds a new peep to the database, date passed' do
+      peep = Peep.create('This is a fun new peep', '2020-10-19')
+      
+      response = DatabaseConnection.query("SELECT * FROM peeps;")
+      database_peep = response.first
+
+      expect(peep.message).to eq database_peep['message']
+      expect(peep.date).to eq database_peep['date']
     end
   end
 end

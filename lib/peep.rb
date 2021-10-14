@@ -12,6 +12,15 @@ class Peep
     response.map { | response | Peep.new(id: response['id'], message: response['message'], date: response['date']) }
   end
 
+  def self.create(message, date=nil)
+    if date.nil?
+      response = DatabaseConnection.query("INSERT INTO peeps(message) VALUES($1) RETURNING id, message, date", [message])
+    else
+      response = DatabaseConnection.query("INSERT INTO peeps(message, date) VALUES($1, $2) RETURNING id, message, date", [message, date])
+    end
+    Peep.new(id: response.first['id'], message: response.first['message'], date: response.first['date'])
+  end
+
   # Keeping the date in SQL format when creating object
   # Using this method to format on the main page
   # Can maybe make this private/differnt class and instantiate with formatted date?
