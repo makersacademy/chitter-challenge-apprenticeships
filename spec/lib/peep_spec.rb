@@ -18,4 +18,15 @@ describe Peep do
       expect(date).to eq '14/10/21'
     end
   end
+
+  describe "#create" do
+    it 'adds a new peep to the database, no date passed' do
+      Peep.create('This is a fun new peep')
+
+      response = DatabaseConnection.query("SELECT * FROM peeps;")
+      peep = response.first
+
+      expect(peep.message).to eq 'This is a fun new peep'
+    end
+  end
 end
