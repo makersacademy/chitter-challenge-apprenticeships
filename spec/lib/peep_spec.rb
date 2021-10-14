@@ -1,7 +1,7 @@
 require 'peep'
 
 describe Peep do
-  descibe '#all' do
+  describe '#all' do
     it 'returns a peep' do
       DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is a peep');")
 
