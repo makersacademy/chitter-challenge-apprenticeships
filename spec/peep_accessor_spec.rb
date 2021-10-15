@@ -24,4 +24,28 @@ describe PeepAccessor do
       expect(test_peep["message"]).to eq('this is another peep!')
     end
   end
+
+  describe "#add" do
+    it "should return an array" do
+      described_class.add_peep('this is another peep!')
+      described_class.add_peep('this is a peep that mentions Borat')
+      expect(described_class.filter_peeps_by_keyword('Borat').class).to eq(Array)
+    end
+
+    it "should return an array with one element" do
+      described_class.add_peep('this is another peep!')
+      described_class.add_peep('this is a peep that mentions Borat')
+      expect(described_class.filter_peeps_by_keyword('Borat')).to eq(
+        ['this is a peep that mentions Borat']
+      )
+    end
+
+    it "should return an empty array when it doesnt match" do
+      described_class.add_peep('this is another peep!')
+      described_class.add_peep('this is a peep that mentions Borat')
+      expect(described_class.filter_peeps_by_keyword('Bruno')).to eq(
+        []
+      )
+    end
+  end
 end
