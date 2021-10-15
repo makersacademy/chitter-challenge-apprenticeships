@@ -17,4 +17,14 @@ describe 'Message' do
       expect(messages).to include "Today's third peep"
     end
   end
+
+  describe '.create' do
+    it 'creates a new message' do
+      some_message = 'This is a new message'    
+      test_message = Message.create(some_message)
+  
+      expect(Message.all).to include some_message
+    end
+  end
+  
 end
