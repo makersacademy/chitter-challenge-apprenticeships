@@ -20,4 +20,14 @@ describe '.all' do
     expect(messages).to include ("Message 5")
 
     end
+
+    describe '.create' do
+      it 'creates a new message' do
+        connection = PG.connect(dbname: 'chitter_test')
+        connection.exec("INSERT INTO peeps (message) VALUES('Hello');")
+        message = Message.create
+        # Message.create(message: "Hello")
+        expect(message).to include ("Hello")
+      end
+    end
 end

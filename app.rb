@@ -1,3 +1,6 @@
+# CONTROLLER
+# Get data from the model and put it in the view
+
 require 'sinatra/base'
 require './lib/message'
 
@@ -18,9 +21,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    message = params['message']
-    connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    Message.create(message: params[:message])
     redirect '/peeps'
   end
 

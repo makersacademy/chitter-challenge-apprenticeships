@@ -4,7 +4,7 @@
 # I want to post a message (peep) to chitter
 
 feature 'Add a message to the browser' do
-  scenario 'Browser shows message I have added' do
+  scenario 'shows message I have added' do
     visit('/message/new')
     fill_in('message', with: "I have added a message")
     click_button('Submit')
