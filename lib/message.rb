@@ -1,9 +1,11 @@
 class Message
   def self.all
-    [
-      "Today's first peep", 
-      "Today's second peep", 
-      "Today's third peep"
-    ]
+    if ENV['ENVIRONTMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec('SELECT * FROM peeps;')
+    result.map { |peep| peep['message'] }
   end
 end
