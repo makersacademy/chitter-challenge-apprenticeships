@@ -13,8 +13,8 @@ describe Peep do
 
       expect(peeps.length).to eq 3
       expect(peeps.first).to be_a Peep
-      expect(peeps.first.id).to eq peep.id
-      expect(peeps.first.message).to eq "I'm ordering pizza tonight no shame"
+      expect(peeps.last.id).to eq peep.id
+      expect(peeps.last.message).to eq "I'm ordering pizza tonight no shame"
       expect(peeps.first.pretty_date).to eq "- Peeped on 15/10/2021"
     end
   end
