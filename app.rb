@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'peep_accessor'
 
 class Chitter < Sinatra::Base
   get '/' do
@@ -6,7 +7,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/test' do
-    'Test page'
+    @peeps = ['Test page']
+    erb(:index)
   end
   run! if app_file == $0
 end
