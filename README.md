@@ -19,5 +19,6 @@ See `/public/images` for images of how the app is used.
 
 ## Improvement points
 
+- Currently no user or username assigned to each peep. This was by choice, since user stories did not explicitly mention that the user/username should be included in a peep, so I developed this as an anonymous posting board - but it might have been nice to include username too!
 - I would like to add some authentication to the app. One way of doing this would be to create a `Users` table, storing username and password data (which would be encrypted for security). To use the website, a user would either need to sign in or create an account, and the app would store the current userId in the session storage. When new peeps were created, the app would automatically know the author, and this would also allow editing/deleting of peeps if the peep is owned by the current user. The peeps and user tables would be joined by the `peep.user_id` and `user.id`
 - The CSS/HTML is very basic, with more time I would have liked to apply more advanced CSS functionality to the app
