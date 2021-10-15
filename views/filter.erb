@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"/>
   <title>Chitter</title>
 </head>
 <body>
@@ -13,8 +14,8 @@
     </h1>
   </header>
   <main class="peeps">
-    <h2>Found <%= @peeps.length %> peeps for your request.</h2>
-    <a href="/">Back to all peeps</a>
+    <h4 class="title_found">Found <%= @peeps.length %> peeps for your request.</h4>
+    <a class="link" href="/">Back to all peeps</a>
     <% @peeps.each do |peep| %>
       <article class="peep" id="peep-<%= peep.id %>">
         <span class="date">
