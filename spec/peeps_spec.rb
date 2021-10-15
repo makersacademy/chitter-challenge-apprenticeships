@@ -9,4 +9,12 @@ describe Peeps do
       expect(Peeps.all.first).to eq "This is a peep!"
     end
   end
+
+  describe "#.create" do
+    it "creates a new peep" do
+      setup_test_database
+      Peeps.create("This is a new peep!")
+      expect(Peeps.all.first).to eq "This is a new peep!"
+    end
+  end
 end
