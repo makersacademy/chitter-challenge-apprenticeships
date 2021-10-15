@@ -51,4 +51,14 @@ feature 'Filtering on a specific keyword' do
     expect(page).to have_content 'This is a newer peep'
     expect(page).to have_content 'This is an older peep'
   end
+
+  scenario "user is told that there are no peeps if search doesn't return anything" do
+    visit('/')
+    click_button 'Search'
+
+    fill_in 'query', with: 'peep'
+    click_button 'Search'
+
+    expect(page).to have_content "No results found for 'peep'"
+  end
 end
