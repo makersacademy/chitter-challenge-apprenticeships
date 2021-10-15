@@ -12,13 +12,6 @@ describe Peep do
     end
   end
 
-  describe "#format_date" do
-    it 'formats the date in the correct format' do
-      date = Peep.format_date('2021-10-14')
-      expect(date).to eq '14/10/21'
-    end
-  end
-
   describe "#create" do
     it 'adds a new peep to the database, no date passed' do
       peep = Peep.create('This is a fun new peep')
