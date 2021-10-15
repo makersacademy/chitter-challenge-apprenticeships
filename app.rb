@@ -12,10 +12,10 @@ class Chitter < Sinatra::Base
 
   get '/all-messages' do
     
-    all_peeps = [
-                 "hey peeps ",
-                 "peeps 123",
-                 "peeps back"]
+    @all_peeps = [
+                 "peep 1",
+                 "peep 2",
+                 "peep 3"]
     erb :'peeps/index'
 
   end   
