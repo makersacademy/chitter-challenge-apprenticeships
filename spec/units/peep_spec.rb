@@ -29,4 +29,15 @@ describe Peep do
       expect(all_peeps).to include "I play the keyboard"
     end
   end
+
+  describe "#sort_by_date" do
+    it "returns the peeps in reverse chronological order" do
+      connection = PG.connect dbname: "chitter_test"
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('TinaB', 'I love Jimmy Jnr');")
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('Teddy', 'Bobby is my best friend');")
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('Bob', 'You should come to my restaurant');")
+      date_sorted_peeps = Peep.sort_by_date
+      expect(date_sorted_peeps[0][:message]).to eq "You should come to my restaurant"
+    end
+  end
 end

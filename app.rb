@@ -27,6 +27,15 @@ class Chitter < Sinatra::Base
     Peep.create(username: @username, message: @message)
     redirect "/peeps"
   end
+  
+  post "/sort-by-date" do
+    redirect "/sorted-peeps"
+  end
+
+  get "/sorted-peeps" do
+    @date_sorted_peeps = Peep.sort_by_date
+    erb(:date_sorted_peeps)
+  end
 
   run! if app_file == $0
 end
