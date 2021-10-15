@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peeps</title>
+    <title>Chitter</title>
 </head>
 <body>
-<ul>
-<% @peeps.each do |peep| %>
-  <li><%= peep %></li>
-<% end %>
-</ul>
+<h1>This is Chitter. </h1>
+<h3>Why don't you start by checking your daily feed below?</h3>
+<form action='/peeps' method='get'><input type='submit' value="Check your feed"></form>
 </body>
 </html>

@@ -11,7 +11,11 @@ class Chitter < Sinatra::Base
     "Test page"
   end
 
-  get "/chitter/messages" do
+  get "/" do
+    erb :index
+  end
+
+  get "/peeps" do
     @peeps = Peep.all
     erb :peeps
   end
