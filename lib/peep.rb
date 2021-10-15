@@ -1,6 +1,5 @@
 class Peep
-
   def self.all
-    ["Message1"]
+    "Message1"
   end
 end
