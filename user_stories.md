@@ -8,6 +8,7 @@ I want to see all the messages (peeps)
 in a browser
 ```
 -VIEW
+-COMPLETED
 
 ## User Story 2
 ```
