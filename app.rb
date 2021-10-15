@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/database_connection_setup'
 require './lib/peep'
+require './lib/date_formatter'
 
 class Chitter < Sinatra::Base
   enable :sessions
