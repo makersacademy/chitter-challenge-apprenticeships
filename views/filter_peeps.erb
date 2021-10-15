@@ -1,6 +1,11 @@
-<% @peeps.each_with_index do | peep, index |%>
-  <section id=<%=index%>>
-    <p> <%= peep.message %></p>
-    <%= peep.username %> | <%= peep.date %></p> 
-  </section>
-<% end %>
+<div class="centered-content">
+<h2>Search Results:</h2>
+  <% @peeps.each_with_index do | peep, index |%>
+    <section id=<%=index%>>
+      <p class="peep-message"> <%= peep.message %></p>
+      <div class="user-details">
+        <%= peep.username %> - <%= peep.date %></p> 
+      <div>
+    </section>
+  <% end %>
+</div>

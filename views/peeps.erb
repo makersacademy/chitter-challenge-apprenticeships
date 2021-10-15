@@ -1,11 +1,16 @@
-<form method="post" action="/filtered-peeps">
-  <input type="text" name="filter" placeholder="Search peeps by keyword" required>
-  <input type="submit" value="Search">
-</form>
+<div class="centered-content">
 
-<% @peeps.each_with_index do | peep, index |%>
-  <section id=<%=index%>>
-    <p> <%= peep.message %></p>
-    <%= peep.username %> | <%= peep.date %></p> 
-  </section>
-<% end %>
+  <form method="post" action="/filtered-peeps">
+    <input type="text" name="filter" id="filter" placeholder="Search peeps by keyword" maxlength="60" required>
+    <input type="submit" value="Search" id="filter-button">
+  </form>
+
+  <% @peeps.each_with_index do | peep, index |%>
+    <section id=<%=index%>>
+      <p class="peep-message">" <%= peep.message %> "</p>
+      <div class="user-details">
+        <%= peep.username %> - <%= peep.date %></p> 
+      <div>
+    </section>
+  <% end %>
+</div>
