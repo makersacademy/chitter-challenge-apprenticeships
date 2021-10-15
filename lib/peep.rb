@@ -9,7 +9,8 @@ class Peep
   "INSERT INTO peeps(message) VALUES($1) RETURNING id, message, date".freeze
   INSERT_QUERY = 
   "INSERT INTO peeps(message, date) VALUES($1, $2) RETURNING id, message, date".freeze
-  ALL_PEEPS_QUERY = "SELECT * FROM peeps ORDER BY date DESC, id DESC;".freeze
+  ALL_PEEPS_QUERY =
+  "SELECT * FROM peeps ORDER BY date DESC, id DESC;".freeze
 
   def initialize(id:, message:, date:)
     @id = id
