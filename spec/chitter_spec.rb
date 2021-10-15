@@ -11,4 +11,12 @@ describe Chitter do
       expect(messages).to eq (["This is a peep!"])
     end
   end
+
+  describe "#post" do
+    it "adds a new message to the database" do
+      connection = PG.connect(dbname: 'chitter_test')
+      ChitterMessage.post("Hello world")
+      expect(ChitterMessage.all).to include "Hello world"
+    end
+  end
 end
