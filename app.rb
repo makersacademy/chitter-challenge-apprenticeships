@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
   end
 
   get "/test" do
-    "Teste page"
+    "Test page"
   end
 
   get "/messages" do
