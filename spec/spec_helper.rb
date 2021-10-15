@@ -38,6 +38,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # Tell Capybara to talk to Chitter
 Capybara.app = Chitter
 
+# Runs the script inside setup_test_database before each test - "clean" the test database
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
