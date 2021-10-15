@@ -12,7 +12,7 @@ class Peeps
 
   def self.all
     connection = Peeps.connect
-    peeps = connection.exec 'SELECT * FROM peeps;'
+    peeps = connection.exec 'SELECT * FROM peeps ORDER BY created_at DESC;'
     peeps.map do |peep| 
       Peeps.new(
         peep['message'],

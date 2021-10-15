@@ -3,15 +3,24 @@
   %head
     %title Chitter
     %link(href="css/app.css" rel="stylesheet" type="text/css" )
+  %body
+    %div
+      #header
+        %h1 Chitter 🤐
+        %h3 What u been peepin?
+    %section
+      %form{ action:'/send-peep', method:'post' }
+        .peep-box
+          %div
+            %input{ class:'inputtext', type:'text', name:'new_peep', placeholder:'Say what you been peepin...' }
+            %input{ class:'button', type:'submit', value:'Send Peep' }
+    %section
+      %ul
+        - @peeps.each do |peep|
+          %li{ style: "list-style-type:none" }
+            %div
+              .peeps-list
+                %p= peep.message
+                %div{ class: 'time'}= peep.timestamp
+          
 
-  %h1 Chitter - Your peeps
-
-  %form{ action:'/send-peep', method:'post' }
-    %input{ type:'text', name:'new_peep', placeholder:'What u peepin?' }
-    %input{ type:'submit', value:'Send Peep' }
-
-  %div
-    - @peeps.each do |peep|
-      %p= peep.message
-      %div= peep.timestamp
-     

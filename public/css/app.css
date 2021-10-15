@@ -1,8 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+
 body {
-  background: blue;
+  background-color:rgba(98,219,252,0.5);
   color: white;
+  align: center;
+}
+
+section {
+  min-height: 150px;
 }
 
 div {
-  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  position: relative;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Bungee', Arial;
+  margin-bottom: 2px;
+  align: center;
+}
+
+h3 {
+  margin-top: 2px;
+  font-family: 'Bungee', Arial;
+}
+
+#header {
+  text-align: center;
+  color: white;
+  font-size: 30px;;
+}
+
+.peep-box {
+  font-size: 18px;
+  padding: 10px;
+  position: relative;
+}
+
+.inputtext {  
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 15px 12px;
+    outline: none;
+    width: 105%;
+    position: relative;
+}
+
+.button {
+  background-color: rgb(73, 94, 209);
+  border: 1px solid #eee;
+  border-radius: 10px;
+  color: #fefefe;
+  font-size: 15px;
+  float: right;
+  margin-top: 10px;
+  padding: 10px 25px;
+}
+
+.peeps-list {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border-bottom: rgba(98,219,252,0.5);
+  box-sizing: content-box;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: gray;
+  padding: 10px 12px;
+  outline: none;
+  position: relative;
+}
+
+.time {
+  float: right;
+  text-align: right;
+  font-size: 10px
 }

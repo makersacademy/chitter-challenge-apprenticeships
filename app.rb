@@ -15,7 +15,7 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @peeps = Peeps.all
-    erb (:index)
+    haml :index
   end
 
   post '/send-peep' do
