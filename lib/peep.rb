@@ -18,7 +18,6 @@ class Peep
     end
 
     result = connection.exec("SELECT * FROM peeps")
-    # reverse_result = result.reverse
     result.map do |peep|
        Peep.new(id: peep['id'], message: peep['message'], time: peep['time'])
     end
