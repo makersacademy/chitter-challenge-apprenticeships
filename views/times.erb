@@ -9,7 +9,7 @@
 <body>
     <ul>
     <% @peep_time.each do |peep| %>
-        <li>Message: <%= peep[:message] %> - <%= peep[:date] %></li>
+        <li><%= peep[:date] %></li>
     <% end %>
     </ul>
 </body>

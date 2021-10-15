@@ -23,7 +23,7 @@ class Chitter < Sinatra::Base
   end
 
   get "/times" do
-    @peep_time = Peeps.view
+    @peep_time = Peeps.date
     erb(:times)
   end
 
