@@ -1,6 +1,7 @@
 <head> 
   <link href="<%= url("/stylesheets/app.css") %>" rel="stylesheet" type="text/css" />
-  <ul>
+  </head>
+ <ul>
   <% @peeps.each do |peep| %>
     <li>
       <%= peep.message %>
@@ -8,3 +9,7 @@
     </li>
   <% end %>
 </ul>
+
+<form method="post" action="/go">
+  <button class="button button-primary" type="submit">Create</button>
+</form>
