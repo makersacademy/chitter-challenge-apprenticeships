@@ -15,11 +15,12 @@ class Peeps
   end
 
   def self.create(message)
+    @message = message
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
     else
       connection = PG.connect(dbname: "chitter")
     end
-    result = connection.exec("INSERT INTO peeps (message) VALUES ('This is a new peep!');")
+    result = connection.exec("INSERT INTO peeps (message) VALUES ('#{message}');")
   end
 end

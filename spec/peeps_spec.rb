@@ -15,6 +15,7 @@ describe Peeps do
       setup_test_database
       Peeps.create("This is a new peep!")
       expect(Peeps.all.first).to eq "This is a new peep!"
+      setup_test_database
     end
   end
 end
