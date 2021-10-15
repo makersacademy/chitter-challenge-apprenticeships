@@ -16,7 +16,7 @@ feature 'View all messages in browser' do
     connection.exec("INSERT INTO peeps (message) VALUES('Message 4');")
     connection.exec("INSERT INTO peeps (message) VALUES('Message 5');")
 
-    visit('/messages')
+    visit('/peeps')
 
     expect(page).to have_content "Message 1"
     expect(page).to have_content "Message 2"

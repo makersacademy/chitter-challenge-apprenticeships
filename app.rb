@@ -2,16 +2,26 @@ require 'sinatra/base'
 require './lib/message'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-
+  get '/index' do
     erb :index
   end
 
-  get '/messages' do
+  get '/peeps' do
     p ENV
 
     @messages = Message.all
-    erb :messages
+    erb :peeps
+  end
+
+  get '/message/new' do
+    erb :"/message/new"
+  end
+
+  post '/peeps' do
+    message = params['message']
+    connection = PG.connect(dbname: 'chitter_test')
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    redirect '/peeps'
   end
 
   run! if app_file == $0
