@@ -8,8 +8,10 @@ class Peep
       connection = PG.connect(dbname: "chitter")
     end
 
-    result = connection.exec("SELECT * FROM peeps;")
-    result.map { |peep| peep["message"] }
+    result = connection.exec("SELECT message, posted_date, TO_CHAR(posted_date, 'dd/mm/yyyy') FROM peeps;")
+    result.map do |peep|
+      { message: peep["message"], posted_date: peep["to_char"] }
+    end
   end
 
   def self.post(message:)
