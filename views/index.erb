@@ -3,6 +3,8 @@
   <input type="submit" value="Post">
 </form>
 
+<%= flash[:empty] %>
+
 <% @peeps.each do | peep | %>
   <section id="<%= peep.id %>">
     <p class="peep"><%= peep.message %></p>

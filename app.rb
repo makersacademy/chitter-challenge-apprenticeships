@@ -13,7 +13,11 @@ class Chitter < Sinatra::Base
   end
 
   post '/new' do
-    Peep.create(params[:message])
+    if params[:message].empty?
+      flash[:empty] = "You must enter a message!"
+    else
+      Peep.create(params[:message])
+    end
     redirect('/')
   end
 
