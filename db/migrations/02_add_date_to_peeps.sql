@@ -1,0 +1,2 @@
+ALTER TABLE peeps ADD COLUMN date_posted TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP;
+set timezone = 'GMT';

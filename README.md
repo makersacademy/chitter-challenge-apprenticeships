@@ -1,12 +1,8 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+# Task
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+* Create a Twitter clone called 'Chitter' where a user can post 'peeps' (tweets), view a list of peeps.
 
 ## Set up
 

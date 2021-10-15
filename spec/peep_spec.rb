@@ -10,8 +10,8 @@ describe Peep do
 
       peeps = Peep.all
 
-      expect(peeps).to include("This is a peep!")
-      expect(peeps).to include("This is another peep!")
+      expect(peeps).to include({ :date_posted => "15/10/2021", :message => "This is a peep!" })
+      expect(peeps).to include({ :date_posted => "15/10/2021", :message => "This is another peep!" })
     end
   end
 
@@ -19,7 +19,7 @@ describe Peep do
     it "posts a new peep to Chitter" do
       Peep.post(message: "Working on Friday challenge")
 
-      expect(Peep.all).to include "Working on Friday challenge"
+      expect(Peep.all).to include({ :date_posted => "15/10/2021", :message => "Working on Friday challenge" })
     end
   end
 end

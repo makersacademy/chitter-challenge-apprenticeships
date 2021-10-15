@@ -4,6 +4,6 @@ feature "Posting a peep to Chitter" do
     fill_in("message", with: "Working on Friday challenge")
     click_button("Submit")
 
-    expect(page).to have_content("Working on Friday challenge")
+    expect(page).to have_content("Working on Friday challenge - Posted on 15/10/2021")
   end
 end

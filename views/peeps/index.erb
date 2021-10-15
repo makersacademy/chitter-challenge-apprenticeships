@@ -1,5 +1,5 @@
 <ul>
   <% @peeps.each do |peep| %>
-    <li><%= peep %></li>
+    <li><%= peep[:message] %> - Posted on <%= peep[:date_posted] %></li>
   <% end %>
 </ul>
