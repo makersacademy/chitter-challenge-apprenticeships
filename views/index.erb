@@ -13,6 +13,10 @@
     </h1>
   </header>
   <main class="peeps">
+    <form action="/add" method="post">
+      <input class="input_peep_text" name="new_peep" type="text" minlength="1" maxlength="60" placeholder="What's new?" required />
+      <input class="btn_add_peep" type="submit" value="post" />
+    </form>
     <% @peeps.each do |peep| %>
       <article class="peep" id="peep-<%= peep.id %>">
         <span class="date">

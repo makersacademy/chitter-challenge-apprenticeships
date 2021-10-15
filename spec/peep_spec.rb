@@ -13,7 +13,7 @@ describe Peep do
       Peep.create(msg: 'peep 2')
       sleep(1)
       Peep.create(msg: 'peep 3')
-      p Peep.all
+      
       peep_msgs = Peep.all.map { |peep| peep.msg }
       expect(peep_msgs).to eq ['peep 3', 'peep 2', 'peep 1']
     end
