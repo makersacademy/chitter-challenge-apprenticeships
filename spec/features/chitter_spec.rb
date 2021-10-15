@@ -45,7 +45,7 @@ feature 'Filtering on a specific keyword' do
     visit('/')
     click_button 'Search'
 
-    fill_in 'search', with: 'peep'
+    fill_in 'query', with: 'peep'
     click_button 'Search'
 
     expect(page).to have_content 'This is a newer peep'
