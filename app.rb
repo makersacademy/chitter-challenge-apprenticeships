@@ -1,9 +1,14 @@
 require "sinatra/base"
+require "sinatra/contrib"
 require_relative "lib/peeps"
 
 class Chitter < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
+
   get "/test" do
-    "Test page"
+    "Teste page"
   end
 
   get "/messages" do
