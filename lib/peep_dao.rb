@@ -4,7 +4,7 @@ class PeepDao
     def all
       all_peeps = []
       connection = connect_to_db
-      result = connection.exec("SELECT * FROM peeps")
+      result = connection.exec("SELECT * FROM peeps;")
       result.each do |peep|
         all_peeps << Peep.new(peep['message'], peep['date'])
       end
@@ -13,6 +13,17 @@ class PeepDao
 
     def create(peep)
       connect_to_db.exec_params("INSERT INTO peeps(message, date) VALUES ($1, $2);", [peep.message, peep.date])
+    end
+
+    def all_reverse_time_order
+      all_peeps = []
+      connection = connect_to_db
+      result = connection.exec("SELECT * FROM peeps;")
+      result = connection.exec("SELECT * FROM peeps ORDER BY date DESC;")
+      result.each do |peep|
+        all_peeps << Peep.new(peep['message'], peep['date'])
+      end
+      all_peeps
     end
 
     private
