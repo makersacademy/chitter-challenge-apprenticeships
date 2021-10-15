@@ -5,6 +5,10 @@
 
 <%= flash[:empty] %>
 
+<form method="get" action="/search">
+  <input type="submit" value="Search">
+</form>
+
 <% @peeps.each do | peep | %>
   <section id="<%= peep.id %>">
     <p class="peep"><%= peep.message %></p>
