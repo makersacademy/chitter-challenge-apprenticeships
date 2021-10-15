@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"/>
+  <title>Chitter</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">
+      Anonymous Peeps with "<%= @keyword %>"
+    </h1>
+  </header>
+  <main class="peeps">
+    <h4 class="title_found">Found <%= @peeps.length %> peeps for your request.</h4>
+    <a class="link" href="/">Back to all peeps</a>
+    <% @peeps.each do |peep| %>
+      <article class="peep" id="peep-<%= peep.id %>">
+        <span class="date">
+          <%= peep.date %>
+        </span>
+        <p class="msg"> 
+          <%= peep.msg %>
+        </p>
+      </article>
+    <% end %>
+  </main>
+</body>
+</html>

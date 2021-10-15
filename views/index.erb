@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"/>
+  <title>Chitter</title>
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">
+      Anonymous Peeps
+    </h1>
+    <form action="/filter" method="post" class="filter_form">
+      <input class="input input_filter" name="keyword" type="text" minlength="1" maxlength="60" placeholder="What're you looking for?" required />
+      <input class="btn" type="submit" value="find" />
+    </form>
+  </header>
+  <main class="peeps">
+    <form action="/add" method="post" class="post_peep_form">
+      <textarea class="input input_peep_text" name="new_peep" type="text" rows="2" cols="30" maxlength="60" placeholder="What's new?" required></textarea>
+      <input class="btn" type="submit" value="post" />
+    </form>
+    <% @peeps.each do |peep| %>
+      <article class="peep" id="peep-<%= peep.id %>">
+        <span class="date">
+          <%= peep.date %>
+        </span>
+        <p class="msg"> 
+          <%= peep.msg %>
+        </p>
+      </article>
+    <% end %>
+  </main>
+</body>
+</html>
