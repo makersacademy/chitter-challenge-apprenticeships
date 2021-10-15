@@ -76,3 +76,11 @@ feature 'Filtering on a specific keyword' do
     expect(page).to have_content("This is a newer peep\n15/10/21\nThis is an older peep\n15/10/21")
   end
 end
+
+feature 'heading is clickable' do
+  scenario 'user clicks the heading and is returned home' do
+    visit('/search')
+    find('h1', text: 'Chitter').click_link
+    expect(page).to have_current_path('/')
+  end
+end
