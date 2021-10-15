@@ -1,8 +1,10 @@
 <head> 
   <link href="<%= url("/stylesheets/app.css") %>" rel="stylesheet" type="text/css" />
-  </head>
   <ul>
   <% @peeps.each do |peep| %>
-  <li><%= peep[:message] %> - Peeped on <%= peep[:posted_date] %></li>
+    <li>
+      <%= peep.message %>
+        <%= peep.pretty_date %>
+    </li>
   <% end %>
 </ul>

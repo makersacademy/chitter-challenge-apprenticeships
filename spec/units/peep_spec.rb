@@ -5,22 +5,29 @@ describe Peep do
     it "returns all peeps" do
       connection = PG.connect(dbname: "chitter_test")
 
-      connection.exec("INSERT INTO peeps (message) VALUES ('I''m ordering pizza tonight no shame');")
-      connection.exec("INSERT INTO peeps (message) VALUES('STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!');")
-      connection.exec("INSERT INTO peeps (message) VALUES('I like turtles');")
+      peep = Peep.post(message: "I''m ordering pizza tonight no shame")
+      Peep.post(message: "STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!")
+      Peep.post(message: "I like turtles")
 
       peeps = Peep.all
 
-      expect(peeps).to include({ :posted_date => "15/10/2021", :message => "I'm ordering pizza tonight no shame" })
-      expect(peeps).to include({ :posted_date => "15/10/2021", :message => "STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!" })
-      expect(peeps).to include({ :posted_date => "15/10/2021", :message => "I like turtles" })
+      expect(peeps.length).to eq 3
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.id).to eq peep.id
+      expect(peeps.first.message).to eq "I'm ordering pizza tonight no shame"
+      expect(peeps.first.pretty_date).to eq "- Peeped on 15/10/2021"
     end
   end
+
   describe "post" do
     it "posts a new peep" do
-      Peep.post(message: "This is an example")
+      peep = Peep.post(message: "This is an example")
+      persisted_data = PG.connect(dbname: "chitter_test").query("SELECT * FROM peeps WHERE id = #{peep.id};")
 
-      expect(Peep.all).to include({ :posted_date => "15/10/2021", :message => "This is an example" })
+      expect(peep).to be_a Peep
+      expect(peep.id).to eq persisted_data.first["id"]
+      expect(peep.message).to eq "This is an example"
+      expect(peep.pretty_date).to eq "- Peeped on 15/10/2021"
     end
   end
 end
