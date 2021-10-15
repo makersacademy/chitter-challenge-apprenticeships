@@ -8,6 +8,6 @@ feature "See date of Peeps" do
 
     visit("/messages")
 
-    expect(page).to have_content "#{Time.now}"
+    expect(page).to have_content "#{Time.now.strftime("%d/%m/%Y")}"
   end
 end

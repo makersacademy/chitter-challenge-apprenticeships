@@ -33,5 +33,5 @@ end
 private
 
 def date_posted
-  Time.now
+  Time.now.strftime("%d/%m/%Y")
 end
