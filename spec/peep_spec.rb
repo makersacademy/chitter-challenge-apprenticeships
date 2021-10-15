@@ -1,4 +1,5 @@
 require "peep"
+require "database_helpers"
 
 describe Peep do
   describe "all" do
@@ -29,10 +30,10 @@ describe Peep do
       peep = Peep.add(message: "Hello Peeps, This is my first peep!")
       current_time = Time.now
       time = current_time.strftime("%F %T")
-      presisted_data = PG.connect(dbname: 'chitter_test').query("SELECT * FROM peeps WHERE id=#{peep.id};")
+      presisted_data = presisted_data(id: peep.id)
 
     expect(peep).to be_a Peep
-    expect(peep.id).to eq presisted_data.first['id']
+    expect(peep.id).to eq presisted_data['id']
     expect(peep.message).to eq "Hello Peeps, This is my first peep!"
     expect(peep.time).to eq time
     end
