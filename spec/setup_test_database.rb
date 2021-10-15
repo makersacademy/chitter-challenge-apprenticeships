@@ -7,5 +7,5 @@ end
 
 def add_row_to_test_database
   connection = PG.connect(dbname: "chitter_test")
-  connection.exec("INSERT INTO peeps (message, date) values ('This is a peep!', '#{Time.now}');")
+  connection.exec("INSERT INTO peeps (message, date) values ('This is a peep!', '#{Time.now.strftime("%d/%m/%Y")}');")
 end
