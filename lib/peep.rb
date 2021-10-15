@@ -15,8 +15,11 @@ class Peep
 
   def self.all_with(keyword)
     connect = Peep.connect_db
-    query = "SELECT * FROM peeps WHERE LOWER(message) LIKE $1 ORDER BY date DESC, id DESC;"
-    result = connect.exec(query, ["%#{keyword.downcase}%"])
+    query = "SELECT * FROM peeps 
+            WHERE LOWER(message) LIKE $1 
+            OR LOWER(message) LIKE $2 
+            ORDER BY date DESC, id DESC;"
+    result = connect.exec(query, ["% #{keyword.downcase}%", "#{keyword.downcase}%"])
     return Peep.peeps_from(result)
   end
 
