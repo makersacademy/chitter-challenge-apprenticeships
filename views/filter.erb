@@ -9,19 +9,12 @@
 <body>
   <header class="header">
     <h1 class="title">
-      Anonymous Peeps
+      Anonymous Peeps with "<%= @keyword %>"
     </h1>
-    <form action="/filter" method="post">
-      <input class="input input_peep_text" name="keyword" type="text" minlength="1" maxlength="60" placeholder="What're you looking for?" required />
-      <input class="btn" type="submit" value="find" />
-    </form>
   </header>
   <main class="peeps">
-    <form action="/add" method="post">
-      <textarea class="input input_peep_text" name="new_peep" type="text" rows="3" cols="20" maxlength="60" placeholder="What's new?" required></textarea>
-      <br />
-      <input class="btn" type="submit" value="post" />
-    </form>
+    <h2>Found <%= @peeps.length %> peeps for your request.</h2>
+    <a href="/">Back to all peeps</a>
     <% @peeps.each do |peep| %>
       <article class="peep" id="peep-<%= peep.id %>">
         <span class="date">

@@ -39,5 +39,11 @@ describe Peep do
       expect(filtered[0].msg).to eq 'Still waiting for my owl from Hogwarts. Sasha, 27 years'
       expect(filtered[1].msg).to eq 'Owls are owlsome!'
     end
+
+    it 'returns an empty array if no results found' do
+      Peep.create(msg: 'Owls are owlsome!')
+      Peep.create(msg: 'Owls are definitely owlsome! (:')
+      expect(Peep.all_with('cat')).to eq []
+    end
   end
 end
