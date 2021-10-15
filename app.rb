@@ -7,11 +7,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    "Chitter TEST AGAIN" 
+    erb(:index)
   end
   
-  get '/peeps' do
-    "Hello, this is a new peep!"
+  post '/peeps' do
+    erb(:peeps)
   end
   
   get '/test' do
