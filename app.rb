@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/message'
 
 class Chitter < Sinatra::Base
   # :nocov:
@@ -8,7 +9,7 @@ class Chitter < Sinatra::Base
   end
   # :nocov:
 
-  get '/homepage' do
+  get '/' do
     @header = "Chitter"
     erb :homepage
   end
