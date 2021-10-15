@@ -3,8 +3,7 @@ class PeepDao
   class << self
     def all
       all_peeps = []
-      connection = connect_to_db
-      result = connection.exec("SELECT * FROM peeps;")
+      result = connect_to_db.exec("SELECT * FROM peeps;")
       result.each do |peep|
         all_peeps << Peep.new(peep['message'], peep['date'])
       end
@@ -17,13 +16,20 @@ class PeepDao
 
     def all_reverse_time_order
       all_peeps = []
-      connection = connect_to_db
-      result = connection.exec("SELECT * FROM peeps;")
-      result = connection.exec("SELECT * FROM peeps ORDER BY date DESC;")
+      result = connect_to_db.exec("SELECT * FROM peeps ORDER BY date DESC;")
       result.each do |peep|
         all_peeps << Peep.new(peep['message'], peep['date'])
       end
       all_peeps
+    end
+
+    def filter(keyword)
+      filtered_peeps = []
+      result = connect_to_db.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
+      result.each do |peep|
+        filtered_peeps << Peep.new(peep['message'], peep['date'])
+      end
+      filtered_peeps
     end
 
     private
