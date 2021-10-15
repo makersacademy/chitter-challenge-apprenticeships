@@ -13,7 +13,8 @@ describe Peep do
       Peep.create(msg: 'Owls are owlsome!')
       peeps = Peep.all
       expect(peeps.length).to eq 1
-      expect(peeps[0][:msg]).to eq 'Owls are owlsome!'
+      expect(peeps[0]).to be_instance_of Peep
+      expect(peeps[0].msg).to eq 'Owls are owlsome!'
     end
   end
 end
