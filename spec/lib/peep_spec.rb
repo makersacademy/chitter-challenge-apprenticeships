@@ -10,4 +10,12 @@ RSpec.describe Peep do
       expect(all_peeps).to include("Hello, this is a new peep!")
     end
   end
+
+  describe '#initialize' do
+    it 'returns a Peep instance' do
+      new_peep = Peep.new("Welcome peeps")
+      expect(new_peep.message).to eq("Welcome peeps")  
+    end
+  end
+
 end

@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
   end
   
   post '/peeps' do
-    @all_peeps= Peep.all
+    @all_peeps = Peep.all
     erb(:peeps)
   end
   
