@@ -1,0 +1,8 @@
+<head> 
+  <link href="<%= url("/stylesheets/app.css") %>" rel="stylesheet" type="text/css" />
+  </head>
+  <ul>
+  <% @peeps.each do |peep| %>
+  <li><%= peep %></li>
+  <% end %>
+</ul>
