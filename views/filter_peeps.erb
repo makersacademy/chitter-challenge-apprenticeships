@@ -1,0 +1,6 @@
+<% @peeps.each_with_index do | peep, index |%>
+  <section id=<%=index%>>
+    <p> <%= peep.message %></p>
+    <%= peep.username %> | <%= peep.date %></p> 
+  </section>
+<% end %>
