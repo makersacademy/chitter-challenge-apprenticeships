@@ -7,11 +7,25 @@
     <title>Chitter</title>
   </head>
   <body>
-  <% @peeps.each do |peep|%>
-    <div>
-      <p><%=peep.message%></p>
-      <p><%=peep.time_stamp%></p>
-    </div>
-  <%end%>
+  <form>
+      <input id="peep-filter" type="text" name="filter" placeholder="filter">
+      <input type=submit value="filter">
+      <input type=submit value="reset">
+  </form>
+  <form action="/new-peep">
+      <input id="add-peep-button" type=submit value="New Peep">
+  </form>
+  <form>
+    <input type="hidden" id="peep-order" name="peep-order" value="<%= @peep_order %>">
+    <input id="change-view" type=submit value="<%=@peep_order_button%>">
+  </form>
+  <div>
+    <% @peeps.each do |peep|%>
+      <div>
+        <p><%=peep.message%></p>
+        <p><%=peep.time_stamp%></p>
+      </div>
+    <%end%>
+  </div>
   </body>
 </html>

@@ -30,4 +30,11 @@ describe PeepRepository do
       expect(subject.find_all_peeps_with_filter("peep")).to include(peep1, peep2)
     end
   end
+
+  describe '#add_peep' do
+    it 'adds a new peep to the database' do
+      expect(DatabaseConnection).to receive(:query)
+      subject.add_peep(peep1)
+    end
+  end
 end
