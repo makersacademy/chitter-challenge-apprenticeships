@@ -16,4 +16,12 @@ describe Peep do
       expect(peeps).to include('message 3')
     end
   end
+
+  describe '.add' do
+    it 'adds a peep to the database' do
+      Peep.add(message: 'message ABC')
+
+      expect(Peep.all).to include('message ABC')
+    end
+  end
 end
