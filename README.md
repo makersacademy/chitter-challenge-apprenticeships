@@ -1,4 +1,7 @@
 # Chitter
+
+![Chitter homepage](https://github.com/lewiscj97/chitter-challenge-apprenticeships/blob/main/public/images/home.png)
+
 ## About
 
 This is a simple message board app, where a user is able to post and view 'peeps'. The app also includes functionality to filter the peeps by a keyword or a space-separated string. The app was built following behaviour-driven development, where a test was written for each application feature before any development. After writing the feature tests, any necessary changes to the models were developed following TDD. SQL queries handle most of the work in this app, including filtering and sorting chronologically. All results from SQL queries are wrapped in a `peep` object, using the `PeepFactory` class.
