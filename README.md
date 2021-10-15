@@ -70,6 +70,12 @@ So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
 
+## Domain Model
+
+Here are my domain models for the user stories
+
+![Domain model diagrams](https://github.com/feedXia/chitter-challenge-apprenticeships/blob/82768646647ac76aae49da9e5bfbad2dca658de8/images/Chitter%20Domain%20Model.drawio.png)
+
 ## Project To Do's
 
 ### Features
