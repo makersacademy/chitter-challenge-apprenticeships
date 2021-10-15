@@ -1,7 +1,7 @@
 <div class="new_post">
   <form method="post" action="/new">
-    <textarea name="message" cols='50' rows="2"></textarea><br>
-    <input type="submit" value="Post">
+    <textarea class="text-input" name="message" cols='50' rows="2"></textarea><br>
+    <input class="submit button" type="submit" value="Post">
   </form>
 
   <%= flash[:empty] %>
@@ -9,13 +9,13 @@
 
 <div class="search">
   <form method="get" action="/search">
-    <input type="submit" value="Search">
+    <input class="search button" type="submit" value="Search">
   </form>
 </div>
 
 <div class="peeps">
   <% @peeps.each do | peep | %>
-    <section id="<%= peep.id %>">
+    <section class="container" id="<%= peep.id %>">
       <p class="peep"><%= peep.message %></p>
       <p class="date"><%= DateFormatter.format_date(peep.date) %></p>
     </section>
