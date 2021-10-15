@@ -18,3 +18,11 @@ describe Peeps do
     end
   end
 end
+
+describe '.create' do
+    it 'creates a new message' do
+      Peeps.create(message: 'hello chitter')
+  
+      expect(Peeps.all).to include 'hello chitter'
+    end
+  end
