@@ -11,3 +11,14 @@ We are going to write a small Twitter clone that will allow the users to post me
 
 https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md
 
+## Database setup
+
+
+## User stories
+```
+As a Maker
+So that I can see what people are doing
+I want to see all the messages (peeps)
+in a browser
+```
+
