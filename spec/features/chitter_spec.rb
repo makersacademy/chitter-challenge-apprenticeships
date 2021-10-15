@@ -61,4 +61,18 @@ feature 'Filtering on a specific keyword' do
 
     expect(page).to have_content "No results found for 'peep'"
   end
+
+  scenario 'most recent peeps are returned first' do
+    DatabaseConnection.query("INSERT INTO peeps(message, date) VALUES('This is a tweet', '2021-10-15');")
+    DatabaseConnection.query("INSERT INTO peeps(message, date) VALUES('This is an older peep', '2021-10-15');")
+    DatabaseConnection.query("INSERT INTO peeps(message, date) VALUES('This is a newer peep', '2021-10-15');")
+
+    visit('/')
+    click_button 'Search'
+
+    fill_in 'query', with: 'peep'
+    click_button 'Search'
+
+    expect(page).to have_content("This is a newer peep\n15/10/21\nThis is an older peep\n15/10/21")
+  end
 end
