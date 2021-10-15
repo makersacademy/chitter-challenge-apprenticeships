@@ -23,7 +23,7 @@ class PeepDao
       all_peeps
     end
 
-    def filter(keyword)
+    def filter(keyword="")
       filtered_peeps = []
       result = connect_to_db.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
       result.each do |peep|

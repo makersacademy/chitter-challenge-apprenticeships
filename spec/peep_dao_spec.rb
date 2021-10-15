@@ -33,7 +33,7 @@ describe PeepDao do
       allow(peep).to receive(:date).and_return(time_now + 100) ## adds 100 seconds to date of new post to make sure it is later
 
       described_class.create(peep)
-      
+
       expect(described_class.all[0].message).to_not eq("message")
       expect(described_class.all_reverse_time_order[0].message).to eq("message")
     end
@@ -52,6 +52,20 @@ describe PeepDao do
 
       expect(described_class.all.length).to eq(3)
       expect(described_class.filter("peep").length).to eq(2)
+    end
+
+    it 'should return all of the records if no keyword is passed in' do
+      allow(peep_with_no_peep).to receive(:message).and_return("message without keyword")
+      allow(peep_with_no_peep).to receive(:date).and_return(time_now)
+
+      allow(peep).to receive(:message).and_return("This is a message containing the keyword 'peep'")
+      allow(peep).to receive(:date).and_return(time_now)
+
+      described_class.create(peep)
+      described_class.create(peep_with_no_peep)
+
+      expect(described_class.all.length).to eq(3)
+      expect(described_class.filter.length).to eq(3)
     end
   end
 end
