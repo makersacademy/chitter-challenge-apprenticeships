@@ -6,6 +6,6 @@ feature "Viewing peeps" do
 
     visit("/peeps")
 
-    expect(page).to have("This is a peep!")
+    expect(page).to have_content("This is a peep!")
   end
 end
