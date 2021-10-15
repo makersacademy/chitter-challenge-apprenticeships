@@ -1,0 +1,13 @@
+<ul>
+  <% @message.each do |peep| %>
+    <li class="message" id="message-<%= peep.id %>">
+      ID: <%= peep.id %><br>
+      Message: <%= peep.message %>
+      </a>
+      <form action="/delete-peep/<%= peep.id %>" method="post">
+        <input type='hidden' name='_method' value='DELETE'/>
+        <input type="submit" value="Delete"/>
+      </form>
+    </li>
+  <% end %>
+</ul>

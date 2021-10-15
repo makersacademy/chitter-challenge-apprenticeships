@@ -36,7 +36,7 @@ ENV['ENVIRONMENT'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 # Tell Capybara to talk to BookmarkManager
-Capybara.app = Chitter
+Capybara.app = ChitterController
 
 RSpec.configure do |config|
   config.before(:each) do
