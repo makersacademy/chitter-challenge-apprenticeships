@@ -8,7 +8,8 @@ class Chitter < Sinatra::Base
   end
 
   get "/view" do
-    @peeps = Peep.view
+    @peeps = Peeps.view
+    erb(:view)
   end
 
   run! if app_file == $0
