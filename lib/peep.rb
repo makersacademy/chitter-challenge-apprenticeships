@@ -9,7 +9,7 @@ class Peep
     end
     peeps = connection.exec("SELECT * FROM peeps")
     peeps.map do |peep|
-      { :id => "1", :message => "Testing, Testing 123" }
+      { :message => peep["message"] }
     end
   end
 end
