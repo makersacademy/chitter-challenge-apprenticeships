@@ -4,8 +4,8 @@
 # I want to see all the messages (peeps)
 # in a browser
 
-feature 'View all messages from everyone in browser' do
-  scenario 'browser shows all messages posted from everyone' do
+feature 'View all messages in browser' do
+  scenario 'Browser shows all messages posted' do
     visit('/messages')
 
     expect(page).to have_content "Message 1 from user 1"
