@@ -12,7 +12,7 @@ class Chitter < Sinatra::Base
   end
 
   get "/messages" do
-    @messages = Peeps.all
+    @peeps = Peeps.all
     erb :messages
   end
 

@@ -6,7 +6,7 @@ describe Peeps do
     it "returns a list of all peeps" do
       setup_test_database
       add_row_to_test_database
-      expect(Peeps.all.first).to eq "This is a peep!"
+      expect(Peeps.all.first.message).to eq "This is a peep!"
     end
   end
 
@@ -14,7 +14,7 @@ describe Peeps do
     it "creates a new peep" do
       setup_test_database
       Peeps.create("This is a new peep!")
-      expect(Peeps.all.first).to eq "This is a new peep!"
+      expect(Peeps.all.first.message).to eq "This is a new peep!"
       setup_test_database
     end
   end

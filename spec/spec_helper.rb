@@ -19,6 +19,7 @@ require "capybara/rspec"
 require "rspec"
 require "simplecov"
 require "simplecov-console"
+require "setup_test_database"
 # require "sinatra/base"
 # require "sinatra/contrib"
 

@@ -1,8 +1,12 @@
 require "pg"
 
 class Peeps
-  # def initialize
-  # end
+  attr_reader :id, :message
+
+  def initialize(id:, message:)
+    @id = id
+    @message = message
+  end
 
   def self.all
     if ENV["ENVIRONMENT"] == "test"
@@ -10,12 +14,11 @@ class Peeps
     else
       connection = PG.connect(dbname: "chitter")
     end
-    result = connection.exec("SELECT message FROM peeps;")
-    result.map { |peep| peep["message"] }
+    result = connection.exec("SELECT * FROM peeps;")
+    result.map { |message| Peeps.new(id: message["id"], message: message["message"]) }
   end
 
   def self.create(message)
-    @message = message
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
     else
