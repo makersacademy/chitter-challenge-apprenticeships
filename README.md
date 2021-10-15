@@ -49,7 +49,7 @@ As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 
-post_peep
+post_peeps
 
 ```
 
@@ -58,7 +58,7 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 
-date_peep
+date_peeps
 
 ```
 (Hint the database table will need to change to store the date too)
