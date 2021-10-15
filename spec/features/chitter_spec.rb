@@ -35,3 +35,20 @@ feature 'Create new peep' do
     expect(page).to have_content('You must enter a message!')
   end
 end
+
+feature 'Filtering on a specific keyword' do
+  scenario 'User is shown peeps containing a specific keyword' do
+    DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is a tweet');")
+    DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is an older peep');")
+    DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is a newer peep');")
+    
+    visit('/')
+    click_button 'Search'
+
+    fill_in 'search', with: 'peep'
+    click_button 'Search'
+
+    expect(page).to have_content 'This is a newer peep'
+    expect(page).to have_content 'This is an older peep'
+  end
+end
