@@ -2,6 +2,7 @@ require "sinatra/base"
 require "./lib/peep"
 
 class Chitter < Sinatra::Base
+
   get "/" do
     @peeps = Peep.all
     erb :index
@@ -11,7 +12,7 @@ class Chitter < Sinatra::Base
     erb :new
   end
 
-  post "/new" do
+  post "/" do
     Peep.add(message: params[:message])
     redirect "/"
   end
