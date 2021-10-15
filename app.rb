@@ -10,7 +10,9 @@ class Chitter < Sinatra::Base
     "Chitter TEST AGAIN" 
   end
   
-  
+  get '/peeps' do
+    "Hello, this is a new peep!"
+  end
   
   get '/test' do
     'Test page'
