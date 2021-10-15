@@ -30,8 +30,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/search/:query' do
-    query = params[:query]
-    @peeps = Peep.filter(query)
+    @query = params[:query]
+    @peeps = Peep.filter(@query)
     erb(:result)
   end
 
