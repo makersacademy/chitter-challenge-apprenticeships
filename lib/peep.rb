@@ -5,7 +5,12 @@ class Peep
   def self.all
     connect = Peep.connect_db
     result = connect.exec("SELECT * FROM peeps;")
-    result.map { |peep| { msg: peep.msg } }
+    return result.map { |peep| { msg: peep['message'] } }
+  end
+
+  def self.create(msg:)
+    connect = Peep.connect_db
+    connect.exec('INSERT INTO peeps (message) VALUES($1)', [msg])
   end
 
   def self.connect_db
