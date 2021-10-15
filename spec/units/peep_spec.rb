@@ -15,4 +15,11 @@ describe Peep do
       expect(peeps).to include("I like turtles")
     end
   end
+  describe "post" do
+    it "posts a new peep" do
+      Peep.post(message: "this is an example")
+
+      expect(Peep.all).to include "this is an example"
+    end
+  end
 end

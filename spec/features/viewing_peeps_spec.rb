@@ -2,10 +2,9 @@ require "pg"
 
 feature "viewing peeps" do
   scenario "A Maker can view peeps" do
-    connection = PG.connect(dbname: "chitter_test")
-    connection.exec("INSERT INTO peeps (message) VALUES ('I''m ordering pizza tonight no shame');")
-    connection.exec("INSERT INTO peeps (message) VALUES('STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!');")
-    connection.exec("INSERT INTO peeps (message) VALUES('I like turtles');")
+    Peep.post(message: "I''m ordering pizza tonight no shame")
+    Peep.post(message: "STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!")
+    Peep.post(message: "I like turtles")
 
     visit("/peeps")
 
