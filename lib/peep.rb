@@ -12,4 +12,12 @@ class Peeps
       { :message => peep["message"] }
     end
   end
+  def self.add
+    if ENV["ENVIRONMENT"] == "test"
+      connection = PG.connect(dbname: "chitter_test")
+    else
+      connection = PG.connect(dbname: "chitter")
+    end
+    connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{time}')")
+  end
 end
