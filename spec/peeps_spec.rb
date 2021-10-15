@@ -3,11 +3,18 @@ require 'peeps'
 describe Peeps do
   describe '.all' do
     it 'returns al list of peeps messages' do
-      peeps = Peeps.all
+        connection = PG.connect(dbname: 'chitter_test')
 
-      expect(peeps).to include("peep1")
-      expect(peeps).to include("peep2")
-      expect(peeps).to include("peep3")
+          # Add the test data
+        connection.exec("INSERT INTO peeps (message) VALUES ('peep1');")
+        connection.exec("INSERT INTO peeps (message) VALUES('peep2');")
+        connection.exec("INSERT INTO peeps (message) VALUES('peep3');")
+     
+        peeps = Peeps.all
+
+        expect(peeps).to include("peep1")
+        expect(peeps).to include("peep2")
+        expect(peeps).to include("peep3")
     end
   end
 end
