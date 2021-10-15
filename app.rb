@@ -16,5 +16,10 @@ class Chitter < Sinatra::Base
     erb (:index)
   end
 
+  post '/send-peep' do
+    @peep = Peeps.create(params[:new_peep])
+    redirect to('/')
+  end
+
   run! if app_file == $0
 end
