@@ -1,5 +1,5 @@
-require 'peep'
-require 'helpers/db_connector'
+require_relative 'peep'
+require_relative 'helpers/db_connector'
 class PeepAccessor
   def initialize; end
 
@@ -9,16 +9,11 @@ class PeepAccessor
     rs = db_connection.exec 'SELECT * FROM peeps'
 
     rs.each do |row|
-      peeps_arr << Peep.new(row)
+      peeps_arr << Peep.new(row).text
     end
     peeps_arr
-
-  # :nocov: 
-  rescue PG::Error => e
-    puts e.message
-  # :nocov:
   end
-
+  
   def self.add_peep(text)
     db_connection.exec "INSERT INTO peeps(message) VALUES (\'#{text}\') "
   end

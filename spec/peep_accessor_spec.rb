@@ -21,7 +21,7 @@ describe PeepAccessor do
     it "should add another peep to the db with correct message" do
       described_class.add_peep('this is another peep!')
       test_peep = described_class.all[1]
-      expect(test_peep.text["message"]).to eq('this is another peep!')
+      expect(test_peep["message"]).to eq('this is another peep!')
     end
   end
 end
