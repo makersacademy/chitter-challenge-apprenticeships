@@ -76,9 +76,20 @@ feature 'Filtering on a specific keyword' do
     expect(page).to have_content("This is a newer peep\n15/10/21\nThis is an older peep\n15/10/21")
   end
 
-  scenario 'user is able to go back to the homepage' do
+  scenario 'user is able to go back to the homepage before searching' do
     visit('/search')
     click_button('Go back')
+
+    expect(page).to have_current_path('/')
+  end
+
+  scenario 'user is able to go back to the homepage after searching' do
+    visit('/search')
+    fill_in 'query', with: 'peep'
+    click_button 'Search'
+
+    expect(page).to have_button('Go back')
+    click_button 'Go back'
 
     expect(page).to have_current_path('/')
   end
