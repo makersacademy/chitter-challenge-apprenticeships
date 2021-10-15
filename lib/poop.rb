@@ -14,4 +14,13 @@ class Poop
     end
     poops
   end
+
+  def self.create(message)
+    if ENV["ENVIRONMENT"] == "test"
+      connection = PG.connect(dbname: 'shtter_test')
+    else
+      connection = PG.connect(dbname: 'shtter')
+    end
+    connection.exec("INSERT INTO poops (message) VALUES ('#{message}');")
+  end
 end

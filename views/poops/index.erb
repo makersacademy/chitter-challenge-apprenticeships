@@ -1,5 +1,6 @@
-<%= @poops.each do |poop|%>
+<h1> Poops </h1>
 <ul>
-  <li><%= poop %></li>
+  <% @poops.each do |poop| %>
+    <li><%= poop %></li>
+  <% end %>
 </ul>
-<%= end %>
