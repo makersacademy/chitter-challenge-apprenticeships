@@ -1,10 +1,8 @@
 feature 'See all messages in a browser' do
   scenario 'To see what people are doing, I want to see all the messages' do
-    connection = PG.connect(dbname: 'chitter_test')
-
-    connection.exec("INSERT INTO peeps (message) VALUES('message 1');")
-    connection.exec("INSERT INTO peeps (message) VALUES('message 2');")
-    connection.exec("INSERT INTO peeps (message) VALUES('message 3');")
+    Peep.add(message: 'message 1')
+    Peep.add(message: 'message 2')
+    Peep.add(message: 'message 3')
 
     visit('/peeps')
     expect(page).to have_content 'message 1'
