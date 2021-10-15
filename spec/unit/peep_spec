@@ -1,0 +1,32 @@
+require 'peep'
+
+describe Peep do
+  describe '.all' do
+    it 'returns all peeps' do
+      peep = Peep.create(message: "1 - This is an example message")
+      Peep.create(message: "2 - This is an example message")
+      Peep.create(message: "3 - This is an example message")
+
+      peeps = Peep.all
+
+      expect(peeps.length).to eq 3
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.id).to eq peep.id
+      expect(peeps.first.message).to eq '1 - This is an example message'
+    end
+  end
+
+  describe '.create' do
+    it 'creates a new message' do
+      peep = Peep.create(message: "1 - This is an example message")
+  
+      persisted_data = persisted_data(id: peep.id)
+
+      expect(peep).to be_a Peep
+      expect(peep.id).to eq persisted_data.first['id']
+
+      expect(peeps.message).to eq '1 - This is an example message'
+    end
+  end
+  
+end
