@@ -3,7 +3,6 @@
 body {
   background-color:rgba(98,219,252,0.5);
   color: white;
-  align: center;
 }
 
 section {
@@ -21,7 +20,7 @@ div {
 h1 {
   font-family: 'Bungee', Arial;
   margin-bottom: 2px;
-  align: center;
+  text-align: center;
 }
 
 h3 {
@@ -39,6 +38,11 @@ h3 {
   font-size: 18px;
   padding: 10px;
   position: relative;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 0.6;
 }
 
 .inputtext {  
