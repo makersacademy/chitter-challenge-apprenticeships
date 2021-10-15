@@ -8,11 +8,6 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/test' do
-    @peeps = Peeps.all
-    haml :index
-  end
-
   get '/' do
     @peeps = Peeps.all
     haml :index
