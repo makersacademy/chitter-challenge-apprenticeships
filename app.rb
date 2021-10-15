@@ -27,11 +27,12 @@ class Chitter < Sinatra::Base
   end
 
   post '/search' do
-    redirect("search/#{params[:query]}")
+    formatted_query = params[:query].gsub(" ", "_")
+    redirect("search/#{formatted_query}")
   end
 
   get '/search/:query' do
-    @query = params[:query]
+    @query = params[:query].gsub("_", " ")
     @peeps = Peep.filter(@query)
     erb(:result)
   end
