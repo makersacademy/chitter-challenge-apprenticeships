@@ -8,7 +8,7 @@ class Peep
       connection = PG.connect(dbname: "chitter")
     end
 
-    result = connection.exec("SELECT message, date_posted, TO_CHAR(date_posted, 'dd/mm/yyyy') FROM peeps;") # ORDER BY date_posted DESC
+    result = connection.exec("SELECT message, date_posted, TO_CHAR(date_posted, 'dd/mm/yyyy') FROM peeps ORDER BY date_posted DESC;")
     result.map do |peep|
       { message: peep["message"], date_posted: peep["to_char"] }
     end

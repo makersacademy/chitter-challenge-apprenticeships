@@ -1,32 +1,15 @@
-## Chitter Challenge
+# Chitter Challenge
 
-# Task
+## Task
 
-* Create a Twitter clone called 'Chitter' where a user can post 'peeps' (tweets), view a list of peeps.
+* Create a Twitter clone called 'Chitter' where a user can:
+  * View a list of peeps
+  * Post 'peeps' (tweets)
+  * See the date posted for each peep
+  * See the peeps in reverse chronological order
+  * Be able to filter through peeps using a keyword
 
-## Set up
-
-To setup the database:
-
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
-
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
-
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
-
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
+---
 
 ## User stories
 
@@ -60,3 +43,13 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+---
+
+## Progress
+
+- [x] View peeps
+- [x] Post peeps
+- [x] Add date they were posted
+- [x] Sort list of peeps in reverse chronological order
+- [ ] Filter specific keywords
