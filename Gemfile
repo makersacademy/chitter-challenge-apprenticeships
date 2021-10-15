@@ -8,6 +8,8 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-reloader'
 gem 'webrick'
+gem 'timecop'
+gem 'haml'
 
 group :test do
   gem 'capybara'

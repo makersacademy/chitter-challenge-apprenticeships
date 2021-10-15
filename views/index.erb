@@ -5,7 +5,9 @@
 </form>
 <div><% @peeps.each do |peep| %>
   <div>
-    <%= peep %>
+    <%= peep.message %>
+    <br>
+    <%= peep.timestamp %>
   </div>
   <%end%>
 </div>

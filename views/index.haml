@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Chitter
+    %link(href="css/app.css" rel="stylesheet" type="text/css" )
+
+  %h1 Chitter - Your peeps
+
+  %form{ action:'/send-peep', method:'post' }
+    %input{ type:'text', name:'new_peep', placeholder:'What u peepin?' }
+    %input{ type:'submit', value:'Send Peep' }
+
+  %div
+    - @peeps.each do |peep|
+      %p= peep.message
+      %div= peep.timestamp
+     

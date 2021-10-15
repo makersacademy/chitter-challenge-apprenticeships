@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/peeps'
+require 'haml'
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -8,7 +9,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/test' do
-    'Test page'
+    @peeps = Peeps.all
+    haml :index
   end
 
   get '/' do
