@@ -10,6 +10,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  border-radius: 10px;
 
   width: 75%;
 }
@@ -40,4 +41,14 @@ body {
   padding: 2px;
   background-color: gray;
   border-color: gray;
+}
+
+.search-input {
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 0 10px;
+}
+
+.search {
+  padding: 3px 25px;
 }
