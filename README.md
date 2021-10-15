@@ -44,8 +44,11 @@ I want to filter on a specific keyword
 
 # User stories plan
 ## User story 1 - completed
+![user story 1](https://user-images.githubusercontent.com/80968551/137552333-823927bd-4d8f-408a-be25-0194d173f4be.JPG)
 ## User story 2 - completed
+![User story 2](https://user-images.githubusercontent.com/80968551/137552335-33e05e55-7d76-45f3-a436-e8b08670bd04.JPG)
 ## User story 3 
+![user story 3](https://user-images.githubusercontent.com/80968551/137552336-bffe956f-6a0e-4bd2-b361-4056ada50f85.JPG)
 1. I would look into using the timecop gem in the tests - https://andycroll.com/ruby/replace-timecop-with-rails-time-helpers-in-rspec/ 
 2. First, we would write a feature test that would check that our /messages also contains a date for the shown messages   
 3. We pass the test by adding ruby code in our erb file
@@ -59,6 +62,7 @@ I want to filter on a specific keyword
 5. We need to change the code in our ChitterMessage class to include the presence of time as well
 6. Our erb code and app.rb should also be changed to reflect the presence of the date column
 ## User story 4 
+![user story 4](https://user-images.githubusercontent.com/80968551/137552339-f9efbcb9-a1bc-4b92-bdbe-3d054c4c9fec.JPG)
 1. We write a feature test that would check for the presence of a button that organises the messages in reverse chronological order
 2. We create the button in an erb file 
 2. We also need to write a unit test for a new method in the ChitterMessage class that returns messages in reverse chronological order
@@ -67,6 +71,7 @@ I want to filter on a specific keyword
 5. Additional unit tests may be necessary to ensure we are testing all areas of our code
 
 ## User story 5
+![user story 5](https://user-images.githubusercontent.com/80968551/137552340-72d8097b-e64d-489f-b3f1-31e7ad163d20.JPG)
 1. We need to add a tag column to our table
 2. We write a feature test for a form that accepts a tag and returns a page that has the messages containing said tag
 3. We need to refactor our ChitterMessage to include a tag when creating a new message
@@ -74,7 +79,7 @@ I want to filter on a specific keyword
 5. Additional unit tests may be necessary to ensure we are testing all areas of our code
 
 # Diagram
-
+![diagram](https://user-images.githubusercontent.com/80968551/137552732-312aff29-bd16-460b-bea4-2c71da5ce6db.jpg)
 
 
 
@@ -83,4 +88,9 @@ I want to filter on a specific keyword
 - [ ] Code needs refactoring
 - [ ] Need to design the webpage, implement bootstrap
 - [ ] Get the coverage to 100%
+- [ ] Perhaps add a people column in the table as well, so that we can see who wrote the messages
 * Need to figure a way to somehow test the else statements from the class methods ( the ones that direct to the actual database that the user interacts with) in order to get full coverage of the code
+
+# Coverage table
+
+![Image 15-10-2021 at 22 00](https://user-images.githubusercontent.com/80968551/137553087-437b5db7-2319-4694-a6e2-2e0870eb05a0.jpg)
