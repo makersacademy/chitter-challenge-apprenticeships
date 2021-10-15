@@ -1,2 +1,4 @@
 Chitter - Your peeps
-<%= @peeps %>
+<p><% @peeps.each do |peep| %>
+  <%= peep %>
+  <%end%></p>
