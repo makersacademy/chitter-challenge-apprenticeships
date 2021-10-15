@@ -8,23 +8,24 @@ You are going to write a small Twitter clone that will allow the users to post m
 
 To setup the database:
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+- Connect to psql
+- Create the database using the psql command `CREATE DATABASE chitter;`
+- Connect to the database using the psql command `\c chitter`;
+- Run the query we have saved in the file 01_create_chitter_table.sql
+- Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.
 
 To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
 
-* `bundle install`
-* `rspec`
+- Connect to psql
+- Create the database using the psql
+  command `CREATE DATABASE chitter_test;`;
+- Connect to the database using the psql command `\c chitter_test`
+- Run the query we have saved in the file 01_create_chitter_table.sql
+
+- `bundle install`
+- `rspec`
 
 You should see 1 passing test.
 
@@ -39,7 +40,7 @@ in a browser
 
 ```
 As a Maker
-So that I can let people know what I am doing  
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 ```
 
@@ -48,6 +49,7 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
+
 (Hint the database table will need to change to store the date too)
 
 ```
@@ -55,6 +57,7 @@ As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
+
 ```
 As a Maker
 So that I can find relevant peeps
@@ -85,3 +88,6 @@ I want to filter on a specific keyword
 - [ ] the user can see a list of messages in reverse chronological order
 - [ ] the user can filter by keywords
 
+## MVC Modelling
+
+![Server - MVC Model](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3289ba85-ac74-433d-9635-bb89ab2ee551/Screenshot_2021-10-15_at_14.46.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211015%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211015T134710Z&X-Amz-Expires=86400&X-Amz-Signature=2d44882fbc36891918fcef5903373d564b667f31bacddeb9081b5e06a69728d6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202021-10-15%2520at%252014.46.04.png%22))
