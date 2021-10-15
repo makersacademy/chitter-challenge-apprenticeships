@@ -11,11 +11,11 @@ class Chitter < Sinatra::Base
     erb :all_messages
   end
 
-  get '/add_message' do
-    erb :add_message
+  get '/messages/new' do
+    erb :"/messages/new"
   end
 
-  post '/new_message' do
+  post '/messages' do
     ChitterMessage.post(message: params[:message])
     redirect '/messages'
   end
