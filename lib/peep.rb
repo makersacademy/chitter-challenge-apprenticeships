@@ -31,7 +31,8 @@ class Peep
     # upcase to match message case-insensitive
     formatted_message = "%#{message.upcase}%"
     response = DatabaseConnection.query(
-      "SELECT * FROM peeps WHERE UPPER(message) LIKE $1;", [formatted_message])
+      "SELECT * FROM peeps WHERE UPPER(message) LIKE $1
+      ORDER BY date DESC, id DESC;", [formatted_message])
     response.map { |peep| PeepFactory.wrap_peep_response_in_object(peep) }
   end
 
