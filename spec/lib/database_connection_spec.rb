@@ -9,13 +9,6 @@ describe DatabaseConnection do
     end
   end
 
-  describe '#connection' do
-    it 'returns the connection' do
-      connection = DatabaseConnection.setup('chitter_test')
-      expect(DatabaseConnection.connection).to eq connection
-    end
-  end
-
   describe '#query' do
     it 'it able to execute a query' do
       DatabaseConnection.setup('chitter_test')
