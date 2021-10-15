@@ -19,6 +19,15 @@ body {
   color: rgb(3, 117, 184);
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited { 
+  text-decoration: none;
+  color: rgb(3, 117, 184);
+}
+
 .new_post {
   margin: 15px;
 }
