@@ -4,12 +4,7 @@ class Peep
   def self.all
     connect = Peep.connect_db
     result = connect.exec("SELECT * FROM peeps ORDER BY date DESC, id DESC;")
-
-    peeps = result.map do |peep| 
-      Peep.new(msg: peep['message'], date: peep['date'], id: peep['id']) 
-    end
-
-    return peeps
+    return Peep.peeps_from(result)
   end
 
   def self.create(msg:)
@@ -22,10 +17,13 @@ class Peep
     connect = Peep.connect_db
     query = "SELECT * FROM peeps WHERE LOWER(message) LIKE $1 ORDER BY date DESC, id DESC;"
     result = connect.exec(query, ["%#{keyword.downcase}%"])
-    peeps = result.map do |peep| 
+    return Peep.peeps_from(result)
+  end
+
+  def self.peeps_from(db_result)
+    peeps = db_result.map do |peep| 
       Peep.new(msg: peep['message'], date: peep['date'], id: peep['id']) 
     end
-
     return peeps
   end
 
