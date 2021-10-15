@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/message'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -6,7 +7,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    messages = ["Message 1 from user 1", "Message 2 from user 2", "Message 3 from user 3"]
+    @messages = Message.all
+    erb:'messages'
+
   end
+
   run! if app_file == $0
 end
+
