@@ -27,6 +27,18 @@ class Peep
       date: response.first['date'])
   end
 
+  def self.filter(message)
+    # upcase to match message case-insensitive
+    formatted_message = "%#{message.upcase}%"
+    response = DatabaseConnection.query(
+      "SELECT * FROM peeps WHERE UPPER(message) LIKE $1;", [formatted_message])
+    response.map do
+      |response| Peep.new(id: response['id'], message: response['message'], date: response['date'])
+    end
+  end
+
+  attr_reader :id, :message, :date
+
   # Keeping the date in SQL format when creating object
   # Using this method to format on the main page
   # Can maybe make this private/differnt class and instantiate with formatted date?
@@ -34,6 +46,4 @@ class Peep
     date = Date.strptime(date, '%Y-%m-%d')
     date.strftime('%d/%m/%y')
   end
-
-  attr_reader :id, :message, :date
 end
