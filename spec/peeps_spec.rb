@@ -21,8 +21,9 @@ end
 
 describe '.create' do
     it 'creates a new message' do
-      Peeps.create(message: 'hello chitter')
+      message = Peeps.create(message: 'hello chitter', date: '15/10/2021')
   
-      expect(Peeps.all).to include 'hello chitter'
+      expect(message['message']).to eq 'hello chitter'
+      expect(message['date']).to eq '15/10/2021'
     end
   end
