@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peeps</title>
+    <title>Times</title>
 </head>
 <body>
     <ul>
-    <% @peeps.each do |peep| %>
-        <li><%= peep[:message] %> </li>
+    <% @peep_time.each do |peep| %>
+        <li>Message: <%= peep[:message] %> - <%= peep[:date] %></li>
     <% end %>
     </ul>
 </body>

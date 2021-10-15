@@ -5,7 +5,7 @@ feature "view peeps" do
     connection = PG.connect(dbname: "chitter_test")
     visit("/add")
     fill_in :message, with: "He talks in maths"
-    click_button "Peep"
+    click_button "peep"
     visit "/view"
     expect(page).to have_content("He talks in maths")
   end

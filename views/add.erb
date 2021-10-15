@@ -8,8 +8,9 @@
 </head>
 <body>
   <form action='/create' method='post'>
-    <input type='text' name='message' placeholder="message">
-    <input type='submit' value='Peep'>
+    <input type='text' name='message' placeholder='message'>
+    <input type='hidden' name='timestamp' value='<%= Time.now %>''>
+    <input type='submit' value='peep'>
   </form>
 </body>
 </html>

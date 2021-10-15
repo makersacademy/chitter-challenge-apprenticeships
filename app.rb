@@ -17,8 +17,14 @@ class Chitter < Sinatra::Base
   end
 
   post "/create" do
-    Peeps.add(params[:message])
-    redirect "view"
+    p params[:timestamp]
+    Peeps.add(params[:message], params[:timestamp])
+    redirect "/view"
+  end
+
+  get "/times" do
+    @peep_time = Peeps.view
+    erb(:times)
   end
 
   run! if app_file == $0
