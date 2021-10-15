@@ -18,4 +18,9 @@ class PeepAccessor
     puts e.message
   # :nocov:
   end
+
+  def self.add_peep(text)
+    db_connection.exec "INSERT INTO peeps(message) VALUES (\'#{text}\') "
+  end
+
 end
