@@ -10,7 +10,7 @@ class Poop
     poops = []
     result = connection.exec("SELECT * FROM poops;")
     result.map do |poop|
-      poops << poop["message"]
+      poops.push(message: poop["message"], created_at: Time.parse(poop["created_at"]))
     end
     poops
   end

@@ -1,6 +1,7 @@
+<img src="images/sh-tter_logo_tag.jpeg" alt="Shtter" width="400">
 <h1> Poops </h1>
 <ul>
   <% @poops.each do |poop| %>
-    <li><%= poop %></li>
+    <li><h3><%= poop[:message] %> <br></h3><i>Pooped at <%= poop[:created_at].strftime("%I:%M %p %d of %B, %Y") %></i></li>
   <% end %>
 </ul>
