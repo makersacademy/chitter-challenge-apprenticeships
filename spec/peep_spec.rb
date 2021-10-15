@@ -14,4 +14,12 @@ describe Peep do
       expect(peeps).to include("This is another peep!")
     end
   end
+
+  describe ".post" do
+    it "posts a new peep to Chitter" do
+      Peep.post(message: "Working on Friday challenge")
+
+      expect(Peep.all).to include "Working on Friday challenge"
+    end
+  end
 end
