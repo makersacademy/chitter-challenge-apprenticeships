@@ -27,4 +27,11 @@ feature 'Create new peep' do
 
     expect(page).to have_content('This is a fun new peep!')
   end
+
+  scenario 'User cannot create a blank peep' do
+    visit('/')
+    click_button 'Post'
+
+    expect(page).to have_content('You must enter a message!')
+  end
 end
