@@ -1,17 +1,23 @@
-<form method="post" action="/new">
-  <input type="text" name="message">
-  <input type="submit" value="Post">
-</form>
+<div class="new_post">
+  <form method="post" action="/new">
+    <textarea name="message" cols='50' rows="2"></textarea><br>
+    <input type="submit" value="Post">
+  </form>
 
-<%= flash[:empty] %>
+  <%= flash[:empty] %>
+</div>
 
-<form method="get" action="/search">
-  <input type="submit" value="Search">
-</form>
+<div class="search">
+  <form method="get" action="/search">
+    <input type="submit" value="Search">
+  </form>
+</div>
 
-<% @peeps.each do | peep | %>
-  <section id="<%= peep.id %>">
-    <p class="peep"><%= peep.message %></p>
-    <p class="date"><%= DateFormatter.format_date(peep.date) %></p>
-  </section>
-<% end %>
+<div class="peeps">
+  <% @peeps.each do | peep | %>
+    <section id="<%= peep.id %>">
+      <p class="peep"><%= peep.message %></p>
+      <p class="date"><%= DateFormatter.format_date(peep.date) %></p>
+    </section>
+  <% end %>
+</div>

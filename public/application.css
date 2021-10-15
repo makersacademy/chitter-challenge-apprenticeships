@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+  background-color: rgb(32, 53, 53);
+  color: white;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+}
+
+.heading {
+  color: rgb(3, 117, 184);
+}
+
+.new_post {
+  margin: 15px;
+}
+
