@@ -6,6 +6,17 @@ describe Peep do
     it 'returns empty array if have no messages' do
       expect(Peep.all).to eq []
     end
+
+    it 'shows newest peeps first' do
+      Peep.create(msg: 'peep 1')
+      sleep(1)
+      Peep.create(msg: 'peep 2')
+      sleep(1)
+      Peep.create(msg: 'peep 3')
+      p Peep.all
+      peep_msgs = Peep.all.map { |peep| peep.msg }
+      expect(peep_msgs).to eq ['peep 3', 'peep 2', 'peep 1']
+    end
   end
 
   describe '#create' do

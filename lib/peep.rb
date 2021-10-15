@@ -3,13 +3,19 @@ require 'pg'
 class Peep
   def self.all
     connect = Peep.connect_db
-    result = connect.exec("SELECT * FROM peeps;")
-    return result.map { |peep| Peep.new(msg: peep['message'], id: peep['id']) }
+    result = connect.exec("SELECT * FROM peeps ORDER BY date DESC, id DESC;")
+
+    peeps = result.map do |peep| 
+      Peep.new(msg: peep['message'], date: peep['date'], id: peep['id']) 
+    end
+
+    return peeps
   end
 
   def self.create(msg:)
     connect = Peep.connect_db
-    connect.exec('INSERT INTO peeps (message) VALUES($1)', [msg])
+    date = Time.new
+    connect.exec('INSERT INTO peeps (message, date) VALUES($1, $2)', [msg, date])
   end
 
   def self.connect_db
@@ -17,10 +23,11 @@ class Peep
     return PG.connect(dbname: db_name)
   end
 
-  attr_reader :id, :msg
+  attr_reader :id, :msg, :date
 
-  def initialize(msg:, id:) 
+  def initialize(msg:, date:, id:) 
     @id = id
+    @date = date
     @msg = msg
   end
 end
