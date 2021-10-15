@@ -26,6 +26,23 @@ command `CREATE DATABASE chitter_test;`;
 
 You should see 1 passing test.
 
+### To run the Chitter app:
+
+```
+rackup -p 9292
+```
+To view peeps, navigate to `localhost:9292/peeps`.
+
+### To run tests:
+
+```
+rspec
+```
+### To run linting:
+```
+rubocop
+```
+
 ## User stories
 
 ```
@@ -58,3 +75,9 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+## Tasks
+- [x] Setting up a Database
+- [x] Viewing bookmarks
+- [x] Creating your First Table
+- [x]Creating bookmarks

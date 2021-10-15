@@ -8,8 +8,8 @@ feature "viewing peeps" do
 
     visit("/peeps")
 
-    expect(page).to have_content "I'm ordering pizza tonight no shame"
-    expect(page).to have_content "STOP PLAYING CHRISTMAS MUSIC IN OCTOBER!"
-    expect(page).to have_content "I like turtles"
+    expect(page).to have_content "I'm ordering pizza tonight no shame - Peeped on 15/10/2021"
+    expect(page).to have_content "STOP PLAYING CHRISTMAS MUSIC IN OCTOBER! - Peeped on 15/10/2021"
+    expect(page).to have_content "I like turtles - Peeped on 15/10/2021"
   end
 end
