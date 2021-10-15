@@ -4,7 +4,7 @@ feature "Viewing peeps" do
   scenario "User can see the peeps" do
     add_row_to_test_database
 
-    visit("/peeps")
+    visit("/")
 
     expect(page).to have_content("This is a peep!")
   end
