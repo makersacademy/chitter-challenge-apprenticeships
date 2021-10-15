@@ -1,7 +1,7 @@
 require './lib/peeps'
 
 describe Peeps do
-  let(:time) { double :time}
+  let(:time) { double :time }
 
   describe '#all' do
     it 'should return a list of peeps' do
