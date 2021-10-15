@@ -39,4 +39,18 @@ describe Peep do
       expect(peep.date).to eq database_peep['date']
     end
   end
+
+  describe '#filter' do
+    it 'returns an array of peep objects where the message contains the search string' do
+      DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is a peep');")
+      DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is another peep');")
+      DatabaseConnection.query("INSERT INTO peeps(message) VALUES('This is a tweet');")
+
+      result = Peep.filter('peep')
+
+      expect(result.length).to eq 2
+      expect(result[0].message).to include 'peep'
+      expect(result[1].message).to include 'peep'
+    end
+  end
 end
