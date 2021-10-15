@@ -37,5 +37,15 @@ class Chitter < Sinatra::Base
     erb(:date_sorted_peeps)
   end
 
+  post "/peeps-search" do
+    Peep.search(params[:search_peeps])
+    redirect "/search-results"
+  end
+
+  get "/search-results" do
+    @results = Peep.search_results
+    erb(:search_results)
+  end 
+
   run! if app_file == $0
 end

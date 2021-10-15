@@ -7,16 +7,13 @@
   <title>Homepage</title>
 </head>
 <body>
-  <ol class="sorted-peeps-list">
-    <%@date_sorted_peeps.each do |peep| %>
+  <ol class="">
+    <%@results.each do |peep| %>
       <li id="<%= peep[:id] %>">
         Username: <%= peep[:username] %> Peep: <%= peep[:message]%> Date: <%= peep[:post_date]%>
       </li>
     <% end %>
   </ol>
-  <form action="/create">
-    <input type="submit" value="Peep!">
-  </form>
   <form action="/peeps">
     <input type="submit" value="Back to Peeps">
   </form>

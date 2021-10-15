@@ -40,4 +40,15 @@ describe Peep do
       expect(date_sorted_peeps[0][:message]).to eq "You should come to my restaurant"
     end
   end
+
+  describe "#search" do
+    it "returns a searched for term" do
+      connection = PG.connect dbname: "chitter_test"
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('TinaB', 'I love Jimmy Jnr');")
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('Teddy', 'Bobby is my best friend');")
+      connection.exec("INSERT INTO peeps (username, message) VALUES ('Bob', 'You should come to my restaurant');")
+      search_peeps = Peep.search("restaurant")
+      expect(search_peeps[0][:message]).to eq "You should come to my restaurant"
+    end
+  end
 end

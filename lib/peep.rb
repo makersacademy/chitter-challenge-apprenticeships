@@ -1,6 +1,7 @@
 require_relative "database_connection"
 
 class Peep
+
   def self.show_peeps
     result = DatabaseConnection.query("SELECT id, username, message, post_date, TO_CHAR(post_date, 'dd/mm/yyyy') FROM peeps;")
     result.map do |row|
@@ -17,5 +18,16 @@ class Peep
     result.map do |row|
       { id: row["id"], username: row["username"], message: row["message"], post_date: row["to_char"] }
     end
+  end
+
+  def self.search(search_term)
+    result = DatabaseConnection.query("SELECT id, username, message, post_date, TO_CHAR(post_date, 'dd/mm/yyyy') FROM peeps WHERE message LIKE '%#{search_term}%';")
+    @@search_results = result.map do |row|
+      { id: row["id"], username: row["username"], message: row["message"], post_date: row["to_char"] }
+    end
+  end
+
+  def self.search_results
+    @@search_results
   end
 end
