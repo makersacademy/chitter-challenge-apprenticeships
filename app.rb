@@ -6,8 +6,8 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/test' do
-    'Test page'
+  get '/chitter' do
+    erb :peeps
   end
 
   run! if app_file == $0

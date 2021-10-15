@@ -1,1 +1,1 @@
-ALTER TABLE chitter ADD COLUMN
+ALTER TABLE chitter ADD COLUMN Date date
