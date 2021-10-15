@@ -7,7 +7,7 @@ feature "Viewing peeps" do
 
     visit("/peeps")
 
-    expect(page).to have_content("This is a peep!")
-    expect(page).to have_content("This is another peep!")
+    expect(page).to have_content("This is a peep! - Posted on 15/10/2021")
+    expect(page).to have_content("This is another peep! - Posted on 15/10/2021")
   end
 end
