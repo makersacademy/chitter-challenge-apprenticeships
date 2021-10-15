@@ -5,7 +5,7 @@ post new peeps to the forum
 
 The pages are views are written in HAML
 
-![Homepage Image for Chitter](https://drive.google.com/uc?export=view&id=13ByBUgamQ4j1SmZ_gw7G22zmG_CMh3kr
+![Homepage Image for Chitter](https://drive.google.com/uc?export=view&id=13ByBUgamQ4j1SmZ_gw7G22zmG_CMh3kr)
 
 ```
 bundle
