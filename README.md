@@ -1,14 +1,10 @@
-## Chitter Challenge
+# Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+## Task
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+You are going to write a small Twitter clone that will allow the users to post messages to a public stream.
 
-## Set up
+## Set up instructions
 
 To setup the database:
 
@@ -64,3 +60,28 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+## Project Planning
+
+1. Read all user stories
+2. Identify objects(classes) and methods
+3. Write down unit tests that fail
+4. Write methods to satisfy the requirements of the unit tests above, until they all pass
+5. Review code before submissions to ensure:
+
+- Is this code presentable? Am I proud to show it off to others?
+- Have I cleaned up things like whitespace, commented-out code, debugger statements from my code?
+- Does the indentation look right?
+- Have I conformed my code to styleguide rules?
+- Is it clear to someone unfamiliar with my codebase what's going on?
+
+6. Raise a pull request and commit updates
+
+## Project Features
+
+- [ ] the user can see all the messages in a browser
+- [ ] the user can post a message to chitter
+- [ ] the user can see the date of a message posted
+- [ ] the user can see a list of messages in reverse chronological order
+- [ ] the user can filter by keywords
+
