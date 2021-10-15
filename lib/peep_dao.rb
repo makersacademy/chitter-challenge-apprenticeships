@@ -11,6 +11,10 @@ class PeepDao
       all_peeps
     end
 
+    def create(peep)
+      connect_to_db.exec_params("INSERT INTO peeps(message, date) VALUES ($1, $2);", [peep.message, peep.date])
+    end
+
     private
 
     def connect_to_db
