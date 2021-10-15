@@ -1,3 +1,5 @@
+require "pg"
+
 class Peeps
   # def initialize
   # end
