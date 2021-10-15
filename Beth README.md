@@ -1,0 +1,13 @@
+## Chitter Challenge
+
+Solo project Makers Friday 15 Oct 2021
+
+https://github.com/makersacademy/chitter-challenge-apprenticeships
+
+
+We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+
+## Using Ruby Web project setup for guidance
+
+https://github.com/makersacademy/course/blob/main/pills/ruby_web_project_setup_list.md
+
