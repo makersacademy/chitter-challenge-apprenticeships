@@ -18,6 +18,17 @@ class Peep
     connect.exec('INSERT INTO peeps (message, date) VALUES($1, $2)', [msg, date])
   end
 
+  def self.all_with(keyword)
+    connect = Peep.connect_db
+    query = "SELECT * FROM peeps WHERE LOWER(message) LIKE $1 ORDER BY date DESC, id DESC;"
+    result = connect.exec(query, ["%#{keyword.downcase}%"])
+    peeps = result.map do |peep| 
+      Peep.new(msg: peep['message'], date: peep['date'], id: peep['id']) 
+    end
+
+    return peeps
+  end
+
   def self.connect_db
     db_name = ENV['ENVIRONMENT'] == 'test' ? 'chitter_test' : 'chitter'
     return PG.connect(dbname: db_name)

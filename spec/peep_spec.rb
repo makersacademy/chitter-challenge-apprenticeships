@@ -28,4 +28,16 @@ describe Peep do
       expect(peeps[0].msg).to eq 'Owls are owlsome!'
     end
   end
+
+  describe '#all_with' do
+    it 'finds all peeps containing keyword' do
+      Peep.create(msg: 'Owls are owlsome!')
+      Peep.create(msg: 'Cats are the best creatures ever!')
+      Peep.create(msg: 'Still waiting for my owl from Hogwarts. Sasha, 27 years')
+      filtered = Peep.all_with('owl')
+      expect(filtered.length).to eq 2
+      expect(filtered[0].msg).to eq 'Still waiting for my owl from Hogwarts. Sasha, 27 years'
+      expect(filtered[1].msg).to eq 'Owls are owlsome!'
+    end
+  end
 end
