@@ -18,4 +18,12 @@ class Peeps
     end
   end
 
+  def self.add_peep(message: , name:)
+    @message = message
+    @name = name
+    connection = PG.connect(dbname: 'chitter')
+    connection.exec("INSERT INTO peeps (message, name) VALUES ('#{@message}','#{@name}');")
+    
+  end
+
 end

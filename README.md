@@ -65,6 +65,6 @@ So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
 ## To do list
-[ ] make database show peoples name
-[ ] Allow posting of peeps
+[x] make database show peoples name
+[x] Allow posting of peeps
 [ ] see date posted.

@@ -7,9 +7,13 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    
     @peeps = Peeps.list_peeps
     erb(:home)
+  end
+
+  post '/addpeep' do
+    Peeps.add_peep(message: params[:message], name: params[:Uname])
+    redirect '/'
   end
 
   run! if app_file == $0
