@@ -1,6 +1,6 @@
 require "pg"
 
-feature "Viewing peeps" do
+feature "Viewing all the peeps" do
   scenario "User can view all the messages (peeps)" do
     Peep.post(message: "This is a peep!")
     Peep.post(message: "This is another peep!")
