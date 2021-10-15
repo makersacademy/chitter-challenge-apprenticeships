@@ -6,7 +6,7 @@ describe PeepService do
   let(:peep2) { double :peep2 }
   let(:peep3) { double :peep3 }
 
-  let(:subject) { described_class.new(peep_repository)}
+  let(:subject) { described_class.new(peep_repository) }
 
   describe '#all_peeps' do
     it 'returns an array of all peeps' do

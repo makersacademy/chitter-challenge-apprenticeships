@@ -3,7 +3,7 @@ class DatabaseConnection
     @connection = PG.connect(dbname: db_name)
   end
 
-  def self.query(sql)
-    @connection.exec(sql)
+  def self.query(query, params = [])
+    @connection.exec_params(query, params)
   end
 end

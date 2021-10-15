@@ -9,11 +9,10 @@ class Peep
     @time_stamp = time_stamp
   end
 
-
   def ==(other)
     if other.class == self.class
       return id == other.id
     end
-      false
+    false
   end
 end
