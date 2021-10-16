@@ -91,7 +91,7 @@ I want to filter on a specific keyword
 
 ## Demo
 
-![Chitter App Demo](https://user-images.githubusercontent.com/78110998/137589235-55b31f72-0d7b-4c31-8220-637e99202277.mov)
+https://user-images.githubusercontent.com/78110998/137589235-55b31f72-0d7b-4c31-8220-637e99202277.mov
 
 ## MVC Modelling
 
