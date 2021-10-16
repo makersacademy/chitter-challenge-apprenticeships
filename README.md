@@ -82,11 +82,16 @@ I want to filter on a specific keyword
 
 ## Project Features
 
-- [ ] the user can see all the messages in a browser
-- [ ] the user can post a message to chitter
-- [ ] the user can see the date of a message posted
-- [ ] the user can see a list of messages in reverse chronological order
+- [x] the user can see all the messages in a browser
+- [x] the user can post a message to chitter
+- [x] the user can see the date of a message posted
+- [x] the user can see a list of messages in reverse chronological order
 - [ ] the user can filter by keywords
+
+
+## Demo
+
+![Chitter App Demo]https://user-images.githubusercontent.com/78110998/137589235-55b31f72-0d7b-4c31-8220-637e99202277.mov
 
 ## MVC Modelling
 
