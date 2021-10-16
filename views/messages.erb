@@ -1,6 +1,6 @@
 <ul>
     <% @messages.each do |peep| %>
-        <li><%= peep %></li>
+        <li><%= peep.message %> posted at: <%= peep.time %> </li>
     <% end %>
 </ul>
 
