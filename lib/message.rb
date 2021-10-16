@@ -21,13 +21,24 @@ class Message
     end 
   end
 
-  def self.create(new_message)
-    p new_message
+  def self.create(new_message)      
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
     connection.exec_params("INSERT INTO peeps (message) VALUES($1);", [new_message])
+  end
+
+  def self.find(keyword)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec_params("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%' ORDER BY entrytime DESC;")
+    result.map do |peep|
+      Message.new(peep['message'],peep['entrytime'])
+    end 
   end
 end

@@ -24,5 +24,10 @@ class Chitter < Sinatra::Base
     redirect '/messages'
   end
 
+  get '/find' do
+    @filtered_messages = Message.find(params[:keyword])
+    erb :find
+  end
+
   run! if app_file == $0
 end

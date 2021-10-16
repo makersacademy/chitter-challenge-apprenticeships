@@ -1,0 +1,14 @@
+<ul>
+    <% @filtered_messages.each do |peep| %>
+        <li><%= peep.message %> posted at: <%= peep.time %> </li>
+    <% end %>
+</ul>
+
+<form action="/find" method="get">
+    <input type="text" name="keyword" placeholder="Keyword"/>
+    <input type="submit" value="Search other"/>
+</form>
+
+<form action="/messages" method="get">
+    <input type="submit" value="Return to Peeps" />
+</form>
