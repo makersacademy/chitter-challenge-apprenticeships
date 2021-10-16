@@ -15,10 +15,7 @@ class Message
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    result = connection.exec_params('SELECT * FROM peeps;')
-    # tuples = result.map { |peep| peep }
-    # @message_posted = result.map { |peep| peep['message'] } 
-    # @time_posted = result.map { |peep| peep['entrytime']}
+    result = connection.exec_params('SELECT * FROM peeps ORDER BY entrytime DESC;')
     result.map do |peep|
       Message.new(peep['message'],peep['entrytime'])
     end 
