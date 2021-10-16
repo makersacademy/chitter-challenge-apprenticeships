@@ -10,19 +10,24 @@
   <body>
   <div class="page-container">
    <h1 class="page-title">Chitter</h1>
+     
    <div class="menu-items">
-    <form>
-        <input id="peep-filter" type="text" name="filter" placeholder="filter">
-        <input type=submit value="filter">
-        <input type=submit value="reset">
+   <div>
+    <form  action="/new-peep">
+        <input class="new-peep-button" id="add-peep-button" type=submit value="New Peep">
     </form>
-    <form action="/new-peep">
-        <input id="add-peep-button" type=submit value="New Peep">
+    </div>
+    <div class="peep-display-options">
+      <form>
+        <input id="peep-filter" type="text" name="filter" placeholder="filter">
+        <input class="filter-button" type=submit value="filter">
+        <input class="reset-button" type=submit value="reset">
     </form>
     <form>
       <input type="hidden" id="peep-order" name="peep-order" value="<%= @peep_order %>">
-      <input id="change-view" type=submit value="<%=@peep_order_button%>">
+      <input class="order-button" id="change-view" type=submit value="<%=@peep_order_button%>">
     </form>
+    </div>
    </div>
  
     <div>

@@ -18,6 +18,8 @@
 }
 
 .menu-items {
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   margin: auto;
   margin-top: 10px;
@@ -34,8 +36,61 @@
   margin-top: 10px;
   margin-left: 5%;
   padding: 5px 20px;
-  /* background-color: white; */
+  background-color: lightgray;
   padding-bottom: 25px;
   border-radius: 10px;
   border: 1px gainsboro dashed;
+}
+
+.new-peep-button {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: white;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+.filter-button {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: white;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.reset-button {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: white;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.order-button {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: white;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.75rem;
+}
+
+.peep-display-options {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
