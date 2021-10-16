@@ -15,10 +15,18 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
-  get "/peeps" do
+  get "/peeps/all" do
     @peeps = Peep.all
-    erb :peeps
+    erb :"peeps/all"
   end
 
+  get "/peeps/new" do
+    erb :"peeps/new"
+  end
+
+  post "/peeps/add" do
+    Peep.add(params[:message])
+    redirect to ("/peeps/all")
+  end
   run! if app_file == $0
 end

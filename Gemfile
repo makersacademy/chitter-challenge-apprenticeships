@@ -7,6 +7,7 @@ ruby "3.0.2"
 gem "pg"
 gem "sinatra"
 gem "sinatra-contrib"
+gem "simplecov-rcov"
 
 group :test do
   gem "capybara"

@@ -11,4 +11,12 @@ RSpec.describe Peep do
       expect(peeps).to include "London was experiencing severe congestion in zone 1 today"
     end
   end
+
+  describe "#add" do
+    it "adds a peep to the list of messages posted" do
+      described_class.add("Today was not a great day")
+
+      expect(described_class.all).to include ("Today was not a great day")
+    end
+  end
 end
