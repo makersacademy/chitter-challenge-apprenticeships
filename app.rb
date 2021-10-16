@@ -47,7 +47,6 @@ class Chitter < Sinatra::Base
 
   def check_logged_in
     if session[:user] == nil
-      p 'hi'
       redirect '/'
     end
   end
