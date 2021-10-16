@@ -10,8 +10,9 @@
 <form action='/peeps/new' method='get'><input type='submit' value="Add a peep!"></form>
 <ul>
 <% @peeps.each do |peep| %>
-  <li><%= peep %></li>
-<% end %>
+  <li><%= peep.message %>
+   <br><i>Date posted: </i><%= peep.datetime %></li><br>
+<%end %>
 </ul>
 </body>
 </html>

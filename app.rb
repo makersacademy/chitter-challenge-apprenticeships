@@ -25,7 +25,7 @@ class Chitter < Sinatra::Base
   end
 
   post "/peeps/add" do
-    Peep.add(params[:message])
+    Peep.add(message: params[:message], datetime: params[:datetime])
     redirect to ("/peeps/all")
   end
   run! if app_file == $0
