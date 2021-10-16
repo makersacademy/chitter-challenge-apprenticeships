@@ -8,6 +8,8 @@ class Chitter < Sinatra::Base
   ORDER_CHRONOLOGICAL = "old-new"
   ORDER_REVERSE_CHRONOLOGICAL = "new-old"
 
+  enable :sessions
+
   def initialize(app = nil, peep_service = PeepService.new(PeepRepository.new))
     super(app)
     @peep_service = peep_service
@@ -19,8 +21,10 @@ class Chitter < Sinatra::Base
 
   get '/peeps' do
     filter = params[:filter]
+    session[:filter] = filter
     set_order_button_option
     get_peeps(filter)
+    puts session[:filter]
     erb :peeps
   end
 

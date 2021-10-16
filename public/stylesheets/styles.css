@@ -1,0 +1,41 @@
+.page-title {
+  margin: auto;
+  width: 80%;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  text-decoration: underline;
+}
+
+.page-container {
+  border-radius: 10px;
+  margin: auto;
+  width: 80%;
+  border: 1px solid;
+  padding: 10px;
+  background-color: azure;
+  padding-top: 10px;
+  padding-bottom: 25px;
+}
+
+.menu-items {
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px 20px;
+  background-color: white;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  border-radius: 10px;
+  border: 1px black solid;
+}
+
+.peep {
+  width: 60%;
+  margin-top: 10px;
+  margin-left: 5%;
+  padding: 5px 20px;
+  /* background-color: white; */
+  padding-bottom: 25px;
+  border-radius: 10px;
+  border: 1px gainsboro dashed;
+}
