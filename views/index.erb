@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../stylesheets/index.css">
+  </head>
+  <body>
+    <h1>Chitter Chitter (Bang Bang)</h1>
+
+    <% @peeps.each do |peep| %>
+      <div class="peep">
+        <h3><%= peep.message%></h3>
+        <p><%= peep.formatted_date%></p>
+      </div>
+    <% end %>
+  </body>
+</html>

@@ -1,3 +1,6 @@
+require_relative 'peep'
+require 'pg'
+
 class PeepDao
   
   class << self

@@ -7,4 +7,8 @@ class Peep
     @date = date
   end
 
+  def formatted_date
+    Time.parse(@date).strftime("%d of %B, %Y, %I:%M %p")
+  end
+
 end
