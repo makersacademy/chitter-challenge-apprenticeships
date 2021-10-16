@@ -22,4 +22,15 @@ RSpec.describe Peep do
       expect(peep.id).to eq persisted_data["id"]
     end
   end
+
+  describe "#sort" do
+    it "sorts messages by DESC date" do
+      connection = PG.connect(dbname: "chitter_test")
+      connection.exec ("SELECT * FROM peeps ORDER BY datetime DESC")
+      peep = Peep.add(message: "Today was not a great day", datetime: "2021-10-16")
+      peep = Peep.add(message: "Hello", datetime: "2021-10-15")
+      peeps = Peep.sort
+      expect(peeps.first.datetime).to eq "2021-10-16"
+    end
+  end
 end

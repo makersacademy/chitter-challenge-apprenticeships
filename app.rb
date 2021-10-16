@@ -28,5 +28,11 @@ class Chitter < Sinatra::Base
     Peep.add(message: params[:message], datetime: params[:datetime])
     redirect to ("/peeps/all")
   end
+
+  get "/peeps/order" do
+    @peeps_sorted = Peep.sort
+    erb :"peeps/order"
+  end
+
   run! if app_file == $0
 end

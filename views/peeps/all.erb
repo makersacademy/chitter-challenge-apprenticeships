@@ -7,12 +7,14 @@
     <title>Peeps</title>
 </head>
 <body>
-<form action='/peeps/new' method='get'><input type='submit' value="Add a peep!"></form>
 <ul>
 <% @peeps.each do |peep| %>
   <li><%= peep.message %>
    <br><i>Date posted: </i><%= peep.datetime %></li><br>
 <%end %>
 </ul>
+<form action='/peeps/new' method='get'><input type='submit' value="Add a peep!"></form>
+<br>
+<form action='/peeps/order' method='get'><input type='submit' value="Sort by Newest Date"></form>
 </body>
 </html>
