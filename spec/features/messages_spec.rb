@@ -34,7 +34,7 @@ end
 
 feature 'authentication' do
   it 'a user can sign in' do
-    Users.create(username: 'Bob', password: 'pass')
+    add_user
     visit '/'
     fill_in(:username, with: 'Bob')
     fill_in(:password, with: 'pass')

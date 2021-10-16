@@ -27,6 +27,18 @@ class Chitter < Sinatra::Base
 
   post '/login' do
     if !Users.authenticate(username: params[:user], password: params[:password])
+      redirect :"/"
+    end
+    session[:user] = params[:user]
+    redirect :messages
+  end
+
+  get '/login/new' do
+    erb :"login/new"
+  end
+
+  post '/login/new' do
+    if !Users.create(username: params[:user], password: params[:password])
       redirect :"/login/new"
     end
     session[:user] = params[:user]
