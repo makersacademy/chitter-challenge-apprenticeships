@@ -12,7 +12,8 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
-    @peeps = PeepDao.all
+    @button_value = session[:reverse].nil? ? "Reverse" : "Normal"
+    @peeps = session[:reverse].nil? ? PeepDao.all : PeepDao.all(true)
     erb(:index)
   end
 
@@ -22,6 +23,11 @@ class Chitter < Sinatra::Base
 
   post '/add_peep' do
     PeepDao.create(Peep.new(params[:message], Time.now))
+    redirect "/"
+  end
+
+  post '/reverse_peeps' do
+    session[:reverse] = session[:reverse].nil? ? true : nil
     redirect "/"
   end
 
