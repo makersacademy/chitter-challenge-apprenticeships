@@ -4,10 +4,10 @@ require 'pg'
 class PeepDao
   
   class << self
-    def all(reverse = false)
+    def all(reverse = false, keyword="")
       all_peeps = []
-      query = reverse ? "SELECT * FROM peeps ORDER BY date DESC;" : "SELECT * FROM peeps;"
-      result = connect_to_db.exec(query)
+      query_order = reverse ? "ORDER BY date DESC" : ""
+      result = connect_to_db.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%' #{query_order};")
       result.each do |peep|
         all_peeps << Peep.new(peep['message'], peep['date'])
       end
@@ -17,24 +17,6 @@ class PeepDao
     def create(peep)
       connect_to_db.exec_params("INSERT INTO peeps(message, date) VALUES ($1, $2);", 
 [peep.message, peep.date])
-    end
-
-    # def all_reverse_time_order
-    #   all_peeps = []
-    #   result = connect_to_db.exec("SELECT * FROM peeps ORDER BY date DESC;")
-    #   result.each do |peep|
-    #     all_peeps << Peep.new(peep['message'], peep['date'])
-    #   end
-    #   all_peeps
-    # end
-
-    def filter(keyword = "")
-      filtered_peeps = []
-      result = connect_to_db.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
-      result.each do |peep|
-        filtered_peeps << Peep.new(peep['message'], peep['date'])
-      end
-      filtered_peeps
     end
 
     private

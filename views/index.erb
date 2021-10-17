@@ -3,7 +3,11 @@
     <link rel="stylesheet" href="../stylesheets/index.css">
   </head>
   <body>
-    <h1>Chitter Chitter (Bang Bang)</h1>
+    <h1>Chitter Chitter</h1>
+    <form action="/filter" method="POST">
+      <input type="text" name="filter" placeholder="Search...">
+      <input type="submit" value="Filter">
+    </form>
 
     <% @peeps.each do |peep| %>
       <div class="peep">

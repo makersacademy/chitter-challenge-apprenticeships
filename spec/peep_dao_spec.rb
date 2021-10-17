@@ -24,20 +24,7 @@ describe PeepDao do
       expect(described_class.all[0].message).to_not eq("message")
       expect(described_class.all(true)[0].message).to eq("message")
     end
-  end
 
-  describe '#create' do
-    it 'should add a new record to peeps table' do
-      allow(peep).to receive(:message).and_return("message")
-      allow(peep).to receive(:date).and_return(time_now)
-      
-      expect { described_class.create(peep) }.to change { described_class.all.length }.from(1).to(2)
-      expect(described_class.all[1].message).to eq("message")
-      expect(described_class.all[1].date).to eq(time_now.to_s)
-    end
-  end
-
-  describe '#filter' do
     it 'should return an array of peeps that contain the keyword passed into the filter method' do
       allow(peep_with_no_peep).to receive(:message).and_return("message without keyword")
       allow(peep_with_no_peep).to receive(:date).and_return(time_now)
@@ -49,7 +36,7 @@ describe PeepDao do
       described_class.create(peep_with_no_peep)
 
       expect(described_class.all.length).to eq(3)
-      expect(described_class.filter("peep").length).to eq(2)
+      expect(described_class.all(false, "peep").length).to eq(2)
     end
 
     it 'should return all of the records if no keyword is passed in' do
@@ -63,7 +50,18 @@ describe PeepDao do
       described_class.create(peep_with_no_peep)
 
       expect(described_class.all.length).to eq(3)
-      expect(described_class.filter.length).to eq(3)
+      expect(described_class.all.length).to eq(3)
+    end
+  end
+
+  describe '#create' do
+    it 'should add a new record to peeps table' do
+      allow(peep).to receive(:message).and_return("message")
+      allow(peep).to receive(:date).and_return(time_now)
+      
+      expect { described_class.create(peep) }.to change { described_class.all.length }.from(1).to(2)
+      expect(described_class.all[1].message).to eq("message")
+      expect(described_class.all[1].date).to eq(time_now.to_s)
     end
   end
 end
