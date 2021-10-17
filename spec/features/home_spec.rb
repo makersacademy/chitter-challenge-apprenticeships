@@ -5,6 +5,9 @@ feature "Viewing home page" do
   end
 
   scenario "viewing latest peeps on home page" do
+    db = PG.connect(dbname: "chitter_test")
+    db.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")
+
     visit("/")
     expect(page).to have_content("This is a peep!")
   end

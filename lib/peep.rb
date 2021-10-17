@@ -2,7 +2,11 @@ require "pg"
 
 class Peep
   def self.all
-    db = PG.connect(dbname: "chitter")
+    if ENV["ENVIRONMENT"] == "test"
+      db = PG.connect(dbname: "chitter_test")
+    else
+      db = PG.connect(dbname: "chitter")
+    end
 
     peeps = db.exec("SELECT * FROM peeps;")
     peeps.map { |peep| peep["message"] }
