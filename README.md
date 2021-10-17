@@ -67,4 +67,7 @@ I want to filter on a specific keyword
 ## To do list
 [x] make database show peoples name
 [x] Allow posting of peeps
-[ ] see date posted.
+[x] see date posted.
+[ ] Update test database
+[ ] get test working
+
