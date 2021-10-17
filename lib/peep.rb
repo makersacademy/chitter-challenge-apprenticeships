@@ -31,7 +31,9 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("INSERT INTO peeps (name, message, date) VALUES('#{name}', '#{message}', '#{date}') RETURNING id, name, message, date")
+    result = connection.exec_params(
+      "INSERT INTO peeps (name, message, date) VALUES($1, $2, $3) RETURNING id, name, message, date;", [name, message, date]
+      )
     Peep.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'], date: result[0]['date'])
   end
 
