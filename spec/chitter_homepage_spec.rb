@@ -5,24 +5,21 @@ RSpec.describe Chitter_Page do
   describe '.view' do
     it "returns a list of peeps" do 
       connection = PG.connect(dbname: "chitter_test")
-      connection.exec("INSERT INTO peeps (message, message_date) VALUES ('This is a peep!', '10-10-2021');")
+      connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")
 
       view_peeps = Chitter_Page.view
+      time = Time.now.strftime("%Y-%m-%d")
 
-      expect(view_peeps).to include ({:message=>"This is a peep!", :message_date=>"10-10-2021"})
+      expect(view_peeps).to include ({:date_posted=>time, :message=>"This is a peep!"})
     end
   end
 
-  # describe '.date' do 
-  #   it 'add current time to table' do 
-
-  #     # connection = PG.connect(dbname: "chitter_test")
-
-  #     testing_time = Chitter_Page.date
-  #     # connection.exec("INSERT INTO peeps (message_date) VALUES (#{testing_time});")
-  #     # result = connection.exec("SELECT message_date FROM Peeps;")
-  #     expect(testing_time).to include testing_time
-  #   end
-  # end
+    describe '.create' do 
+      it 'adds a new peep to chitter' do 
+        peep = Chitter_Page.create("example peep")
+        connection = PG.connect(dbname: "chitter_test").query("SELECT * FROM peeps;")
+        expect(Chitter_Page.view).to_not be_nil
+      end
+    end
 
 end

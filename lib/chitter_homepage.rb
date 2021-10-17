@@ -7,34 +7,22 @@ class Chitter_Page
     else
       connection = PG.connect(dbname: "chitter")
     end
-    total = connection.exec("SELECT * FROM peeps ORDER BY message_date DESC;")
+    total = connection.exec("SELECT * FROM peeps ORDER BY id DESC;")
 
     total.map do |peep|
-      { message: peep["message"] , message_date: peep["message_date"] }
+      { message: peep["message"], date_posted: peep["date_posted"] }
     end
   end
 
 
-  def self.create(message, message_date)
+  def self.create(message)
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
     else
       connection = PG.connect(dbname: "chitter")
     end 
-    # message_date = Time.now.strftime("%m/%d/%Y")
-    # @message = message_date.to_s
-    connection.exec("INSERT INTO peeps (message, message_date) VALUES('#{message}', #{message_date})")
+
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
   end
-
-  # def self.date
-  #   if ENV["ENVIRONMENT"] == "test"
-  #     connection = PG.connect(dbname: "chitter_test")
-  #   else
-  #     connection = PG.connect(dbname: "chitter")
-  #   end 
-    
-  #   connection.exec("INSERT INTO peeps (message_date) VALUES('#{date}')")
-
-  # end
 
 end

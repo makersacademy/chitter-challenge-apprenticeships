@@ -11,12 +11,12 @@ class Chitter < Sinatra::Base
     erb :peeps
   end
 
-  get '/new' do
+  get '/chitter/new' do
     erb :"new_message"
   end
 
-  post '/create' do
-    Chitter_Page.create(params[:message], params[:message_date])
+  post '/chitter/create' do
+    Chitter_Page.create(params[:message])
     redirect "/chitter"
   end
 
