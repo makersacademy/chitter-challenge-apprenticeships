@@ -42,4 +42,29 @@ describe Peep do
       expect(peep.date).to eq '2021-10-17'
     end
   end
+
+  describe '.search' do
+    it 'search for keywords in the database' do
+      p1 = Peep.add(name: 'Patrick', message: 'message ABC123', date: '2021-10-17')
+      p2 = Peep.add(name: 'Patrick', message: 'message xyz', date: '2021-10-16')
+      p3 = Peep.add(name: 'Jane', message: 'message me', date: '2021-10-15')
+
+      peep_search = Peep.search('Patrick')
+
+      expect(peep_search.first.name).to include p1.name
+      expect(peep_search.first.message).to include p1.message
+      expect(peep_search.first.date).to include p1.date
+
+      expect(peep_search.last.name).to include p2.name
+      expect(peep_search.last.message).to include p2.message
+      expect(peep_search.last.date).to include p2.date
+
+      expect(peep_search.first.name).to_not include p3.name
+      expect(peep_search.first.message).to_not include p3.message
+      expect(peep_search.first.date).to_not include p3.date
+      expect(peep_search.last.name).to_not include p3.name
+      expect(peep_search.last.message).to_not include p3.message
+      expect(peep_search.last.date).to_not include p3.date
+    end
+  end
 end
