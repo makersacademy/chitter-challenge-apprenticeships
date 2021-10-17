@@ -1,7 +1,9 @@
 <ul>
   <% @peeps.each do |peep| %>
     <li>
-      <%= peep.name %>'s status: <%= peep.message %>
+      <%= peep.name %>'s status on <%= peep.date %>:
+      <br>
+      <%= peep.message %>
     </li>
   <% end %>
 </ul>
