@@ -7,12 +7,12 @@
   font-size: 50px;
 }
 
-#peeps-container {
+.peeps-container {
   background-color: #F34DBC;
   height: 50rem;
 }
 
-#peeps-content {
+.peeps-content {
   background-color: #E6D648;
   width: 50%;
   margin: auto;

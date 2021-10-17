@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
   <title>Homepage</title>
 </head>
 <body>
@@ -17,8 +16,8 @@
     <p>Chitter</p>
     <p>Chat some Chit!</p>
   </div>
-  <div id="peeps-container">
-    <div id="peeps-content">
+  <div class="peeps-container">
+    <div class="peeps-content">
       <form action="/peeps/add_peep" method="POST" id="add-peeps-form">
         <label for="username">Username:</label>
         <input type="text" name="username">
@@ -29,7 +28,10 @@
       <ol class="peeps-list list-group list-group-flush">
         <%@all_peeps.each do |peep| %>
           <li id="<%= peep[:id] %>" class="peep-item list-group-item">
-            <div><span class="username-title"><%= peep[:username] %></span> · <span class="date-title">peeped on <%= peep[:post_date]%></span></div> 
+            <div>
+              <span class="username-title"><%= peep[:username] %></span> · 
+              <span class="date-title">peeped on <%= peep[:post_date]%></span>
+            </div> 
             <div><%= peep[:message]%></div> 
           </li>
         <% end %>

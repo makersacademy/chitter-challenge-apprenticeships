@@ -1,7 +1,6 @@
 feature "Creating peeps" do
   scenario "There is a form through which users can submit input" do
     visit "/peeps"
-    # click_button "Peep some Chit!"
 
     expect(page).to have_content "Username"
     expect(page).to have_content "Peep"
@@ -12,7 +11,6 @@ feature "Creating peeps" do
 
   scenario "Users can add a new peep" do
     visit "/peeps"
-    # click_button "Peep some Chit!"
 
     fill_in :username, with: "LouiseB"
     fill_in :message, with: "My hat is the best"

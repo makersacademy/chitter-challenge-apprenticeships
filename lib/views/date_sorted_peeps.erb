@@ -16,11 +16,9 @@
     <p>Chitter</p>
     <p>Chat some Chit!</p>
   </div>
-  <div id="peeps-container">
-    <div id="peeps-content">
+  <div class="peeps-container">
+    <div class="peeps-content">
       <form action="/peeps/add_peep" method="POST" id="add-peeps-form">
-        <!-- <input type="submit" value="Peep some Chit!"> -->
-        <!-- <button type="submit" class="btn btn-light" value="Peep some Chit!">Peep some Chit!</button> -->
         <label for="username">Username:</label>
         <input type="text" name="username">
         <label for="message">Peep:</label>
@@ -30,14 +28,14 @@
       <ol class="sorted-peeps-list peeps-list list-group list-group-flush">
         <%@date_sorted_peeps.each do |peep| %>
         <li id="<%= peep[:id] %>" class="peep-item list-group-item">
-          <div><span class="username-title"><%= peep[:username] %></span> · <span class="date-title">peeped on <%= peep[:post_date]%></span></div> 
+          <div>
+            <span class="username-title"><%= peep[:username] %></span> · 
+            <span class="date-title">peeped on <%= peep[:post_date]%></span>
+          </div> 
           <div><%= peep[:message]%></div> 
         </li>
         <% end %>
       </ol>
-      <!-- <form action="/peeps/create">
-        <input type="submit" value="Peep!">
-      </form> -->
       <form action="/peeps">
         <button type="submit" class="btn btn-light" id="back-button" value="Back to Peeps">Back to Peeps</button>
       </form>
