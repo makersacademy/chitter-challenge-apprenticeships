@@ -6,6 +6,6 @@ class Chitter < Sinatra::Base
   end
 
   get "/" do
-    "<h1>chitter</h1>"
+    erb(:index)
   end
 end
