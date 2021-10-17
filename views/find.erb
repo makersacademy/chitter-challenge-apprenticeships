@@ -1,6 +1,6 @@
 <ul>
     <% @filtered_messages.each do |peep| %>
-        <li><%= peep.message %> posted at: <%= peep.time %> </li>
+        <li style="font-family:courier;font-size:100%;"><%= peep.message %> <div style="color:#B8B8B8;font-family:courier;font-size:80%;"> <%= peep.time %> </div></li>
     <% end %>
 </ul>
 

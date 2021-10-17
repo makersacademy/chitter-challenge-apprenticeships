@@ -10,8 +10,7 @@ class Chitter < Sinatra::Base
   # :nocov:
 
   get '/' do
-    @header = "Chitter"
-    erb :homepage
+    redirect '/messages'
   end
 
   get '/messages' do

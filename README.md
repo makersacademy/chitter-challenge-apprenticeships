@@ -2,6 +2,8 @@
 
 We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
 
+![Chitter Homepage](chitter.png)
+
 ## Set up
 
 To setup the database:
@@ -57,3 +59,4 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+

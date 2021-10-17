@@ -27,7 +27,9 @@ class Message
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    connection.exec_params("INSERT INTO peeps (message) VALUES($1);", [new_message])
+    if new_message.length >= 1
+      connection.exec_params("INSERT INTO peeps (message) VALUES($1);", [new_message])
+    end
   end
 
   def self.find(keyword)
