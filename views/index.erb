@@ -9,7 +9,9 @@
    <h1>chitter</h1> 
 
    <ul>
-   <li>This is a peep!</li>
+    <% @peeps.each do |peep| %>
+    <li><%= peep %></li> 
+    <%end%>
    </ul>
 </body>
 </html>
