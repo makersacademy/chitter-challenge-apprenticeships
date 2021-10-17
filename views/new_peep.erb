@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/styles.css" rel="stylesheet">
     <title>Chitter</title>
   </head>
   <body>
-    <form method="post" action="new-peep">
-      <div>
-        <textarea id="peep-text" type="text" name="peep-text" placeholder="..." required></textarea>
-      </div>
-      <input type=submit id="post-button" value="Post">
-    </form>
+    <div class="new-peep-content">
+      <form method="post" action="new-peep">
+        <div>
+          <textarea class="peep-textbox" id="peep-text" type="text" name="peep-text" placeholder="Your peep here..." required></textarea>
+        </div>
+        <input class="new-peep-button" type=submit id="post-button" value="Post">
+      </form>
+    </div>
   </body>
 </html>

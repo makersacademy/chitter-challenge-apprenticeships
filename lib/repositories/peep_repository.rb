@@ -23,6 +23,7 @@ class PeepRepository
   end
 
   def add_peep(peep)
-    DatabaseConnection.query("INSERT INTO peeps (message, time_stamp) values ($1, $2);", [peep, DateTime.now])
+    DatabaseConnection.query("INSERT INTO peeps (message, time_stamp) values ($1, $2);", 
+[peep, DateTime.now])
   end
 end

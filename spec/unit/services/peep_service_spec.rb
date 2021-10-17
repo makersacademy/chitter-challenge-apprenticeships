@@ -32,5 +32,4 @@ describe PeepService do
     end
   end
 
-
 end

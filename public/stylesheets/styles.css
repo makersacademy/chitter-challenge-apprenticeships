@@ -47,11 +47,11 @@
   border-radius: 10px;
   box-shadow: white;
   color: black;
-  padding: 5px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 2rem;
 }
 .filter-button {
   background-color: lightblue;
@@ -93,4 +93,20 @@
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+}
+
+.new-peep-content {
+  margin: auto;
+  width: 40%;
+  border: 5px solid;
+  padding: 10px;
+  background-color: cadetblue;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+.peep-textbox {
+  width: 70%;
+  height: 50px;
+  border: 1px solid #eee;
 }

@@ -42,17 +42,9 @@ class Chitter < Sinatra::Base
 
   def get_peeps(filter)
     if @peep_order == ORDER_CHRONOLOGICAL
-      get_peeps_chronological_order(filter)
-    else
-      get_peeps_reverce_chronological_order(filter)
-    end
-  end
-
-  def get_peeps_chronological_order(filter)
-    if filter.nil?
       @peeps = @peep_service.find_all_peeps
     else
-      @peeps = @peep_service.find_all_peeps_with_filter(filter)
+      get_peeps_reverce_chronological_order(filter)
     end
   end
 

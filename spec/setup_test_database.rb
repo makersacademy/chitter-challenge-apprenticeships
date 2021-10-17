@@ -32,6 +32,7 @@ def add_peep_for_filter
 end
 
 private
+
 def connect
   PG.connect(dbname: 'chitter_test')
 end
