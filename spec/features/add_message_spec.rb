@@ -6,8 +6,8 @@
 feature 'Add a message' do
   scenario 'shows message I have added' do
     visit('/message/new')
-    fill_in('message', with: "I have added a message")
+    fill_in('message', with: 'I have added a message')
     click_button('Submit')
-    expect(page).to have_content "I have added a message"
+    expect(page).to have_content 'I have added a message'
   end
 end
