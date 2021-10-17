@@ -83,11 +83,10 @@ I want to filter on a specific keyword
 filter_peeps
 ```
 Errors 
+![](images/image12345.png)
+
+![](images/image1234567.png)
 
 ![](images/image1234.png)
 
-![](images/image12345.png)
-
 ![](images/image123456.png)
-
-![](images/image1234567.png)
