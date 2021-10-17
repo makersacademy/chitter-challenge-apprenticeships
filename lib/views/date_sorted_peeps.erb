@@ -20,9 +20,9 @@
     <div class="peeps-content">
       <form action="/peeps/add_peep" method="POST" id="add-peeps-form">
         <label for="username">Username:</label>
-        <input type="text" name="username">
+        <input type="text" name="username" maxlength="60">
         <label for="message">Peep:</label>
-        <input type="text" name="message">
+        <input type="text" name="message" maxlength="60">
         <button type="submit" class="btn btn-light" value="Peep some Chit!">Peep some Chit!</button>
       </form>
       <ol class="sorted-peeps-list peeps-list list-group list-group-flush">
