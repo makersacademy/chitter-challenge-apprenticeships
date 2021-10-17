@@ -32,6 +32,10 @@ command `CREATE DATABASE chitter_test;`;
 
 You should see 1 passing test.
 
+Model
+
+![](images/image123.png)
+
 ## User stories
 
 ```
@@ -78,3 +82,12 @@ I want to filter on a specific keyword
 
 filter_peeps
 ```
+Errors 
+
+![](images/image1234.png)
+
+![](images/image12345.png)
+
+![](images/image123456.png)
+
+![](images/image1234567.png)
