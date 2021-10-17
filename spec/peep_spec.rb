@@ -15,9 +15,18 @@ describe Peep do
 
   describe '.create' do
     it 'creates a new peep' do
+      peep = Peep.create(message: 'Example peep', date: 'Test date')
+
+      expect(peep['message']).to eq 'Example peep'
+      expect(peep['date']).to eq 'Test date'
+
       Peep.create(message: 'Example peep')
   
-      expect(Peep.see_peeps).to include 'Example peep'
+      #expect(Peep.see_peeps).to include 'Example peep'
+
+      expect(peep).to be_a Peep
+      expect(peep.date).to eq 'Test date'
+      expect(peep.message).to eq 'Example peep'
     end
   end
 end
