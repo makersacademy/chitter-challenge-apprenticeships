@@ -1,12 +1,13 @@
 feature "Searching for specific peeps" do
-  scenario "there is a search bar for user input" do
+  before(:each) do
     visit "/peeps"
+  end
+  
+  scenario "there is a search bar for user input" do
     expect(page).to have_field("search_peeps")
   end
 
   scenario "users can search for peeps using keywords" do
-    visit "/peeps"
-
     fill_in :username, with: "LouiseB"
     fill_in :message, with: "My hat is the best"
     click_button "Peep some Chit!"
