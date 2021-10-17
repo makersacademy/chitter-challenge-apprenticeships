@@ -1,0 +1,21 @@
+<style>
+	h1 {text-align: center;}
+	div {
+			text-align:center;
+	}
+	body {
+			background-color:black;
+			color: white;
+			margin: 200px;}
+</style>
+
+
+<body>
+	<h1>Add New Peep</h1>
+	<div>
+		<form action="/chitter/create" method="post">
+			<textarea rows="3" type="text" name="message" placeholder="What's on your mind?"></textarea> <br>
+			<input type="submit" name="Submit"/>
+		</form>
+	</div>
+</body>

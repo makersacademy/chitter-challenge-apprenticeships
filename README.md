@@ -1,12 +1,5 @@
 ## Chitter Challenge
-
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+This week's challenge was to creat a small Twitter clone that will allow the users to post messages to a public stream.
 
 ## Set up
 
@@ -30,37 +23,43 @@ command `CREATE DATABASE chitter_test;`;
 * `bundle install`
 * `rspec`
 
-You should see 1 passing test.
+To View Chitter Page:
+* run rackup 
+* navigate to http://localhost:9292/chitter 
 
 ## User stories
 
-```
+1- ``
 As a Maker
 So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
 
-```
+2-``
 As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 ```
 
-```
+3-``
 As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
 (Hint the database table will need to change to store the date too)
 
-```
+4-``
 As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
-```
+
+5-``
 As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+User story 5 has not been completed yet so users are unable to filter.
+
+

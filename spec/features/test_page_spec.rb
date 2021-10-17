@@ -4,3 +4,10 @@ feature 'Viewing test page' do
     expect(page).to have_content "Test page"
   end
 end
+
+feature 'viewing chitter page' do
+  scenario 'viewing all posted peeps in browser' do
+    visit ('/chitter')
+    expect(page).to have_content "Chitter"
+  end
+end

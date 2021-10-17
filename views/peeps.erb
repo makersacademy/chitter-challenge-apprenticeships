@@ -1,0 +1,33 @@
+<style>
+    body {
+        background-color: black;
+    }
+    h1 {color: rgb(137,207,240);
+        text-align: center;}
+    #section1 {
+        color: white;
+        text-align: center;
+    }
+    ul {list-style: none;}
+    li {margin: 10px;}
+    form {text-align: center;}
+</style>
+
+<body>
+	<h1>Welcome to Chitter!</h1><br>
+	<div id="section1">
+		<ul>
+			<% @peeps.each do |peep| %>  
+				<li>
+					<%= peep[:message] %><br>
+					(Peeped on: <%= peep[:date_posted]%>)<br>
+					<hr color="137,207,240">
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+	<form action="/chitter/new" method="get">
+		<input type="submit" value="Add Peep"/>
+	</form>
+</body>
