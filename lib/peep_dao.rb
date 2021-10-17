@@ -14,7 +14,8 @@ class PeepDao
     end
 
     def create(peep)
-      connect_to_db.exec_params("INSERT INTO peeps(message, date) VALUES ($1, $2);", [peep.message, peep.date])
+      connect_to_db.exec_params("INSERT INTO peeps(message, date) VALUES ($1, $2);", 
+[peep.message, peep.date])
     end
 
     def all_reverse_time_order
@@ -26,7 +27,7 @@ class PeepDao
       all_peeps
     end
 
-    def filter(keyword="")
+    def filter(keyword = "")
       filtered_peeps = []
       result = connect_to_db.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
       result.each do |peep|

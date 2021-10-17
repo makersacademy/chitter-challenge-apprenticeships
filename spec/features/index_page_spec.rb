@@ -7,5 +7,6 @@ feature 'Viewing index page' do
   scenario 'See test post' do
     visit('/')
     expect(page).to have_content "This is a peep!"
+    expect(page).to have_button "Add peep"
   end
 end
