@@ -4,9 +4,10 @@ require 'pg'
 class PeepDao
   
   class << self
-    def all
+    def all(reverse = false)
       all_peeps = []
-      result = connect_to_db.exec("SELECT * FROM peeps;")
+      query = reverse ? "SELECT * FROM peeps ORDER BY date DESC;" : "SELECT * FROM peeps;"
+      result = connect_to_db.exec(query)
       result.each do |peep|
         all_peeps << Peep.new(peep['message'], peep['date'])
       end
@@ -18,14 +19,14 @@ class PeepDao
 [peep.message, peep.date])
     end
 
-    def all_reverse_time_order
-      all_peeps = []
-      result = connect_to_db.exec("SELECT * FROM peeps ORDER BY date DESC;")
-      result.each do |peep|
-        all_peeps << Peep.new(peep['message'], peep['date'])
-      end
-      all_peeps
-    end
+    # def all_reverse_time_order
+    #   all_peeps = []
+    #   result = connect_to_db.exec("SELECT * FROM peeps ORDER BY date DESC;")
+    #   result.each do |peep|
+    #     all_peeps << Peep.new(peep['message'], peep['date'])
+    #   end
+    #   all_peeps
+    # end
 
     def filter(keyword = "")
       filtered_peeps = []

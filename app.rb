@@ -9,6 +9,8 @@ class Chitter < Sinatra::Base
   end
   # :nocov:
 
+  enable :sessions
+
   get '/' do
     @peeps = PeepDao.all
     erb(:index)
