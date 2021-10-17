@@ -12,6 +12,8 @@ class Chitter < Sinatra::Base
   end  
 
   get '/peeps/new' do
+    p params
+    p "Form data submitted to the /peeps route!"
     erb :"peeps/new"
   end
 
