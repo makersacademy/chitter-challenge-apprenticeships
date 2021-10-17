@@ -7,10 +7,6 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get "/test" do
-    "Test page"
-  end
-
   get "/" do
     @peeps = Peep.all
     erb(:index)
