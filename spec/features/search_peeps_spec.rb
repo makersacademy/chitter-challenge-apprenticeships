@@ -6,16 +6,14 @@ feature "Searching for specific peeps" do
 
   scenario "users can search for peeps using keywords" do
     visit "/peeps"
-    click_button "Peep!"
 
     fill_in :username, with: "LouiseB"
     fill_in :message, with: "My hat is the best"
-    click_button "Add Peep"
+    click_button "Peep some Chit!"
 
-    click_button "Peep!"
     fill_in :username, with: "GeneB"
     fill_in :message, with: "I play the keyboard really well"
-    click_button "Add Peep"
+    click_button "Peep some Chit!"
 
     fill_in :search_peeps, with: "keyboard"
     click_button "Search Peeps"
