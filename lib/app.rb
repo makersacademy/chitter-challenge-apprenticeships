@@ -4,13 +4,6 @@ require_relative "./peep"
 require_relative "../database_connection_setup"
 
 class Chitter < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-
-  get '/test' do
-    'Test page'
-  end
 
   get "/peeps" do
     @all_peeps = Peep.show_peeps
