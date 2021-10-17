@@ -15,7 +15,7 @@ class Message
     result.map { |message| message['message'] }
   end
 
-  def self.create(message)
+  def self.create(message:)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else

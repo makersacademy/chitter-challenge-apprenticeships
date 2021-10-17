@@ -5,7 +5,9 @@ require 'sinatra/base'
 require './lib/message'
 
 class Chitter < Sinatra::Base
-  get '/index' do
+
+  get '/' do
+    # No path needed as homepage
     erb :index
   end
 
@@ -13,6 +15,8 @@ class Chitter < Sinatra::Base
     p ENV
 
     @messages = Message.all
+    # Borth erbs needed as messages moves from message/new to peeps
+    erb :"/message/new"
     erb :peeps
   end
 

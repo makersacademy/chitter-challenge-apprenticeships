@@ -3,7 +3,7 @@
 # So that I can let people know what I am doing  
 # I want to post a message (peep) to chitter
 
-feature 'Add a message to the browser' do
+feature 'Add a message' do
   scenario 'shows message I have added' do
     visit('/message/new')
     fill_in('message', with: "I have added a message")
