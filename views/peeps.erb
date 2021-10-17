@@ -14,21 +14,20 @@
 </style>
 
 <body>
-<h1>Welcome to Chitter!</h1><br>
-<div id="section1">
-  <ul>
-    <% @peeps.each do |peep| %>  
-      <li>
-          <%= peep[:message] %><br>
-          (Peeped on: <%= peep[:date_posted]%>)<br>
-          <hr color="137,207,240">
-      </li>
-    <% end %>
-  </ul>
-</div>
+	<h1>Welcome to Chitter!</h1><br>
+	<div id="section1">
+		<ul>
+			<% @peeps.each do |peep| %>  
+				<li>
+					<%= peep[:message] %><br>
+					(Peeped on: <%= peep[:date_posted]%>)<br>
+					<hr color="137,207,240">
+				</li>
+			<% end %>
+		</ul>
+	</div>
 
-<form action="/chitter/new" method="get">
-  <input type="submit" value="Add Peep"/>
-</form>
-
+	<form action="/chitter/new" method="get">
+		<input type="submit" value="Add Peep"/>
+	</form>
 </body>

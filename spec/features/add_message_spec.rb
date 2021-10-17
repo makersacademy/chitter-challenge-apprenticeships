@@ -20,10 +20,6 @@ feature 'add peep button' do
     fill_in("message", with: "im new on chitter!")
     click_button "Submit"
     date = Time.now.strftime("%Y-%m-%d")
-    expect(page).to have_content (("Peeped on: #{date}"))
+    expect(page).to have_content ("Peeped on: #{date}")
   end
-
-
 end
-
-

@@ -7,16 +7,16 @@ class Chitter < Sinatra::Base
   end
 
   get '/chitter' do
-    @peeps = Chitter_Page.view
+    @peeps = ChitterPage.view
     erb :peeps
   end
 
   get '/chitter/new' do
-    erb :"new_message"
+    erb :new_message
   end
 
   post '/chitter/create' do
-    Chitter_Page.create(params[:message])
+    ChitterPage.create(params[:message])
     redirect "/chitter"
   end
 

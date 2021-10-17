@@ -1,6 +1,6 @@
 require 'pg'
 
-class Chitter_Page
+class ChitterPage
   def self.view
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
@@ -14,7 +14,6 @@ class Chitter_Page
     end
   end
 
-
   def self.create(message)
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
@@ -24,5 +23,4 @@ class Chitter_Page
 
     connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
   end
-
 end
