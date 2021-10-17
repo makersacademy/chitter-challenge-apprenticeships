@@ -5,7 +5,7 @@ describe Peep do
     it 'returns all peeps' do
       connection = PG.connect(dbname: 'chitter_test')
 
-      connection.exec("INSERT INTO peeps (messages) VALUES ('This is a peep!')") 
+      connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');") 
 
       peeps = Peep.see_peeps
 
