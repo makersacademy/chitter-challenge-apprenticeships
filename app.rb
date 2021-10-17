@@ -31,6 +31,7 @@ class Chitter < Sinatra::Base
     redirect '/peeps/search-results'
   end 
   
+  # BUG doesn't work
   get '/peeps/search-results' do
     Peep.search(search: $search)
     Peep.search_results
