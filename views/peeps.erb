@@ -1,0 +1,27 @@
+<body>
+<style>
+    body {
+        background-color: black;
+        margin: 35px 70px 50px 90px;
+    }
+    h1 {color: white;}
+    #section1 {color: white;}
+</style>
+
+<h1>Chitter</h1>
+<div id="section1">
+  <ul>
+    <% @peeps.each do |peep| %>  
+      <li>
+          <%= peep[:message] %>
+      </li>
+        (<%= peep[:message_date]%>)
+    <% end %>
+  </ul>
+</div>
+
+<form action="/new" method="get">
+  <input type="submit" value="Add Peep"/>
+</form>
+
+</body>
