@@ -2,7 +2,7 @@ require 'pg'
 
 class Peep
 
-  attr_reader :id, :name, :message, :date
+  attr_reader :id, :name, :message, :date, :search_results
 
   def initialize(id:, name:, message:, date:)
     @id = id
@@ -37,4 +37,21 @@ class Peep
     Peep.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'], date: result[0]['date'])
   end
 
+  def self.search(search)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec("SELECT * FROM peeps WHERE name LIKE '%#{search}' OR message LIKE '%#{search}';")
+    @search = result.map do |peep|
+      Peep.new(id: peep['id'], name: peep['name'], message: peep['message'], date: peep['date'])
+    end
+  end
+
+  # BUG: below method does not work?
+  def search_results
+    @search_results = @search
+  end
 end
