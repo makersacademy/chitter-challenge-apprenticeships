@@ -1,0 +1,15 @@
+<head> 
+  <link href="<%= url("/stylesheets/app.css") %>" rel="stylesheet" type="text/css" />
+  </head>
+ <ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      <%= peep.message %>
+        <%= peep.pretty_date %>
+    </li>
+  <% end %>
+</ul>
+
+<form method="post" action="/go">
+  <button class="button button-primary" type="submit">Create</button>
+</form>
