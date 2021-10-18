@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../stylesheets/index.css">
+  </head>
+  <body>
+    <h1>Chitter Chitter</h1>
+    <form action="/filter" method="POST">
+      <input type="text" name="filter" placeholder="Search...">
+      <input type="submit" value="Filter">
+    </form>
+
+    <% @peeps.each do |peep| %>
+      <div class="peep">
+        <h3><%= peep.message%></h3>
+        <p><%= peep.formatted_date%></p>
+      </div>
+    <% end %>
+    <form action="/add_peep" method="GET">
+      <input type="submit" value="Add peep">
+    </form>
+    <form action="/reverse_peeps" method="POST">
+      <input type="submit" value="<%= @button_value %> Chronological Order">
+    </form>
+  </body>
+</html>

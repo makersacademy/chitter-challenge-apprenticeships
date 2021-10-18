@@ -41,6 +41,7 @@ Capybara.app = Chitter
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    add_row_to_test_database
   end
 
   config.after(:suite) do
@@ -134,4 +135,11 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+## Custom RSpec matcher to check whether content appears before other content
+RSpec::Matchers.define :appear_before do |later_content|
+  match do |earlier_content|
+    page.body.index(earlier_content) < page.body.index(later_content)
+  end
+end
 end
