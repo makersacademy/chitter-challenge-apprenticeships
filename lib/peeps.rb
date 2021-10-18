@@ -14,7 +14,11 @@ class Peeps
   end
 
   def self.list_peeps()
-    connection = PG.connect(dbname: 'chitter')
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
     result = connection.exec("SELECT * FROM peeps")
     result.map do |peep| 
       Peeps.new(id: peep['id'], message: peep['message'], name: peep['name'], date: peep['date'])

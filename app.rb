@@ -7,6 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
+    p ENV
     @peeps = Peeps.list_peeps
     erb(:home)
   end
