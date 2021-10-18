@@ -1,4 +1,4 @@
-require './lib/chitter'
+require './lib/chitter_model'
 
 feature 'view messages(peeps)' do
   scenario 'A maker can see peeps' do

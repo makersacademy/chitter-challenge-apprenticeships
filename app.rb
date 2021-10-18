@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/chitter'
+require './lib/chitter_model'
 require 'pg'
 
 class ChitterController < Sinatra::Base
@@ -23,6 +23,7 @@ class ChitterController < Sinatra::Base
   end
 
   delete 'delete-peep/:id' do
+    ChitterModel.delete_peeps(id: params[:id])
     redirect '/view-peeps'
   end
 
