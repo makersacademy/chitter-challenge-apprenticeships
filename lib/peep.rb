@@ -23,10 +23,13 @@ class Peep
   
     #connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}') RETURNING id, message, date", [message, date])
     result = connection.exec("INSERT INTO peeps (message, date) VALUES('#{message}', '#{date}') RETURNING id, date, message;")
-    Peep.new(id: result[0]['id'], date: result[0]['date'], message: result[0]['message'])
+    message = Peep.new(id: result[0]['id'], date: result[0]['date'], message: result[0]['message'])
+    p "created message"
+    p message
+    return message 
   end
   
-  attr_reader :id, :title, :url
+  attr_reader :id, :message, :date 
 
   def initialize(id:, date:, message:)
     @id  = id

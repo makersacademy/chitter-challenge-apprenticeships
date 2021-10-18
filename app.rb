@@ -8,13 +8,15 @@ class Chitter < Sinatra::Base
 
   get '/peeps' do
     @peeps = Peep.see_peeps 
+    p "see @peeps app.rb"
+    p @peeps
     erb :'peeps/index'
   end  
 
   get '/peeps/new' do
     p params
     p "Form data submitted to the /peeps route!"
-    erb :"peeps/new"
+    erb :'peeps/new'  
   end
 
   post '/peeps' do

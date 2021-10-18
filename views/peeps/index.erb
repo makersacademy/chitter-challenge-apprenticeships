@@ -1,10 +1,9 @@
 <h1>What's on your mind? </h1>
 <ul>
   <% @peeps.each do |peep| %>
-    <li>
-      <a href="<%= peep.message %>">
+    <li> <% " index line 4 #{peep}" %>
+       <%= peep.message %>
         <%= peep.date %>
-      </a>
     </li>
-  <% end %>
+  <% end %> 
 </ul>

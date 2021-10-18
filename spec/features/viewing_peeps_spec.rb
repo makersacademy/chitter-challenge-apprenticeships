@@ -1,4 +1,5 @@
 require 'pg'
+require 'peep.rb'
 
 feature 'Viewing peeps' do
     scenario 'A user can see peeps' do
@@ -10,7 +11,8 @@ feature 'Viewing peeps' do
 
       visit('/peeps')
   
-      #expect(page).to have_content 'This is a peep!'
-      expect(page).to have_link("15/10/2021", href: "This is a peep!")
+      expect(page).to have_content 'This is a peep!'
+      expect(page).to have_content '15/10/2021' 
+      #expect(page).to have_content("15/10/2021", href: "This is a peep!")
     end
   end

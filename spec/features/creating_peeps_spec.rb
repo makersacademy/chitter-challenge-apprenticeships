@@ -5,6 +5,7 @@ feature 'Adding a new peep' do
       fill_in('date', with: "Test date")
       click_button('Submit')
   
-      expect(page).to have_link('Test date', href: 'Example peep')
+      expect(page).to have_content('Test date') 
+      expect(page).to have_content('Example peep')
     end
   end
