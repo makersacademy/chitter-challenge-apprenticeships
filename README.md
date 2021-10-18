@@ -72,7 +72,7 @@ I want to filter on a specific keyword
 
 ## Domain Model
 
-Here are my domain models for the user stories
+Here are my domain models for the user stories:
 
 ![Domain model diagrams](https://github.com/feedXia/chitter-challenge-apprenticeships/blob/82768646647ac76aae49da9e5bfbad2dca658de8/images/Chitter%20Domain%20Model.drawio.png)
 
@@ -80,7 +80,7 @@ Here are my domain models for the user stories
 
 ### Features
 
-- [ ] Can view all messages (peeps) in a browser (.view)
+- [x] Can view all messages (peeps) in a browser (.view)
 - [ ] Can post a message (peep) to Chitter (.post)
 - [ ] Can see the date messages (peeps) were posted (.date)
 - [ ] Can see list of peeps in reverse chronological order (.sort_by_date)
