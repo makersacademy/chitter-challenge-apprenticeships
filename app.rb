@@ -5,5 +5,13 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/chitter' do
+    erb :chitter
+  end
+
+  get '/post-a-peep' do
+    erb :post_a_peep
+  end
+
   run! if app_file == $0
 end
