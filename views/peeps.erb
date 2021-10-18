@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/stylesheets/styles.css" rel="stylesheet">
+    <title>Chitter</title>
+  </head>
+  <body>
+  <div class="page-container">
+   <h1 class="page-title">Chitter</h1>
+     
+   <div class="menu-items">
+   <div>
+    <form  action="/new-peep">
+        <input class="new-peep-button" id="add-peep-button" type=submit value="New Peep">
+    </form>
+    </div>
+    <div class="peep-display-options">
+      <form>
+        <input id="peep-filter" type="text" name="filter" placeholder="filter">
+        <input class="filter-button" type=submit value="filter">
+        <input class="reset-button" type=submit value="reset">
+    </form>
+    <form>
+      <input type="hidden" id="peep-order" name="peep-order" value="<%= @peep_order %>">
+      <input class="order-button" id="change-view" type=submit value="<%=@peep_order_button%>">
+    </form>
+    </div>
+   </div>
+ 
+    <div>
+      <% @peeps.each do |peep|%>
+        <div class="peep">
+          <p><%=peep.message%></p>
+          <p><%=peep.time_stamp%></p>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  
+  </body>
+</html>
