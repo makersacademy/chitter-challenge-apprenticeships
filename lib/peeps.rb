@@ -26,10 +26,15 @@ class Peeps
   end
 
   def self.add_peep(message: , name:, date:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
     @message = message
     @name = name
     @date = date
-    connection = PG.connect(dbname: 'chitter')
+    
     connection.exec("INSERT INTO peeps (message, name, date) VALUES ('#{@message}','#{@name}','#{@date}');")
     
   end
