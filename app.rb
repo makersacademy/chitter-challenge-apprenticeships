@@ -32,15 +32,8 @@ class Chitter < Sinatra::Base
   post "/filtered" do
     Peep.filter(keyword: params["keyword"])
     @peeps = Peep.filter(keyword: params["keyword"])
-    #redirect "/filtered"
     erb(:filtered)
   end
-
-  # get "/filtered" do
-  #   Peep.filter(keyword: params["keyword"])
-  #   @peeps = Peep.filter(keyword: params["keyword"])
-  #   erb(:filtered)
-  # end
 
   run! if app_file == $0
 end
