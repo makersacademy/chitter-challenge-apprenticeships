@@ -43,11 +43,13 @@ class Peep
     else
       connection = PG.connect(dbname: 'chitter')
     end
-
+    
     result = connection.exec("SELECT * FROM peeps WHERE name LIKE '%#{search}' OR message LIKE '%#{search}';")
-    @search = result.map do |peep|
+    search_results = result.map do |peep|
       Peep.new(id: peep['id'], name: peep['name'], message: peep['message'], date: peep['date'])
     end
+    p 'search_results 1'
+    p search_results
   end
 
   # BUG: below method does not work?

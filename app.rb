@@ -7,6 +7,8 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get '/' do
     redirect '/peeps'
   end
@@ -26,16 +28,14 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps/search' do
-    $search = params[:search]
-    Peep.search(search: params[:search])
+    session[:search] = params[:search]
+    session[:search_results] = Peep.search(search: params[:search])
     redirect '/peeps/search-results'
   end 
   
   # BUG doesn't work
   get '/peeps/search-results' do
-    Peep.search(search: $search)
-    Peep.search_results
-    @search_results = Peep.search_results
+    @search_results = session[:search_results]
     erb :'peeps/search-results'
   end
 
