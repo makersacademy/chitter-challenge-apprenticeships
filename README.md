@@ -1,4 +1,6 @@
 ## Chitter Challenge
+click this link to see the CRC cards for this project. [CRC cards](/Users/mohammedmiah/chitter-challenge-apprenticeships/crc.drawing.png)  
+
 
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
