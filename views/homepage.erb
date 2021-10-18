@@ -1,4 +1,8 @@
-<h1 style="color:#5cd65c;font-family:courier;font-size:350%;"><%= @header %></h1>
+<!DOCTYPE html>
+<html>
+<head>
+h1 {color:#5cd65c;font-family:courier;font-size:350%;}
+<h1><%= Chitter %></h1>
 
 <form action="/messages" method="post">
     <input type="text" name="new_message", placeholder="New Peep", maxlength="60" />
@@ -12,3 +16,5 @@
         <input type="submit" value="CREATE A NEW ACCOUNT">
     </form>
 </div> %>
+</body>
+</html>

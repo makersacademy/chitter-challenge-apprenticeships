@@ -1,6 +1,6 @@
 ## Chitter Challenge
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+This is a small Twitter clone that will allow the users to post messages to a public stream.
 
 ![Chitter Homepage](chitter.png)
 

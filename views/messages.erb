@@ -1,30 +1,35 @@
- <div style="text-align:center;">   
-    <h1 style="color:#5cd65c;font-family:courier;font-size:350%;"> Chitter </h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {color:#4CAF50; font-family:courier; font-size:390%;}
+div {text-align:center;}
+input {font-family:courier; padding:13px 80px; text-align:center; font-size:16;}
+.button {font-family:courier; background-color:#4CAF50; border:none; color:white; padding:15px 32px; text-align:center; font-size:16}
+.message {border:1px; border-style:solid; border-color:#B8B8B8; padding: 20px; width:50%; margin: auto;}
+span {font-family:courier;}
+</style>
+<div>   
+    <h1> Chitter </h1>
 
     <form action="/messages" method="post">
-        <input style="font-family:courier;padding:13px 80px;text-align:center;font-size:16" type="text" name="new_message" placeholder="New Peep" maxlength="60" />
-        <input style="font-family:courier;background-color:#4CAF50;border:none;color:white;padding:15px 32px;text-align:center;font-size:16" type="submit" value="Post" />
+        <input class=input type="text" name="new_message" placeholder="New Peep" maxlength="60" />
+        <input class=button type="submit" value="Post" />
     </form>
 
     <ul>
         <% @messages.each do |peep| %>
 
-                <div style="border:1px; border-style:solid; border-color:#B8B8B8; padding: 20px; width:50%; margin: auto;">
-                    <span style="font-family:courier;font-size:18;"><%= peep.message %></span>  -  
-                    <span style="color:#B8B8B8;font-family:courier;font-size:80%;"> <%= peep.time %></span> 
+                <div class=message >
+                    <span style="font-size:18;"><%= peep.message %></span>  -  
+                    <span style="color:#B8B8B8;font-size:80%;"> <%= peep.time %></span> 
                 </div>
 
         <% end %>
     </ul>
 
-    <h1 style="color:#5cd65c;font-family:courier;font-size:350%;"><%= @header %></h1>
-
     <form action="/find" method="get">
-        <input style="font-family:courier;padding:13px 0;text-align:center;font-size:16" type="text" name="keyword", placeholder="Keyword"/>
-        <input style="font-family:courier;background-color:#4CAF50;border:none;color:white;padding:15px 32px;text-align:center;font-size:16" type="submit" value="Search"/>
-    </form>
-
-    <form action="/" method="get">
-        <input style="font-family:courier;background-color:#4CAF50;border:none;color:white;padding:15px 32px;text-align:center;font-size:16" type="submit" value="Return to Homepage" />
+        <input class=input style="padding:13px 0;" type="text" name="keyword", placeholder="Keyword"/>
+        <input class=button type="submit" value="Search"/>
     </form>
 </div>
