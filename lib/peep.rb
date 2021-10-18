@@ -22,13 +22,16 @@ class Peep
     end
   end
 
-  def self.add(message:, datetime:)
+  def self.add(message:)
     if ENV["ENVIRONMENT"] == "test"
       connection = PG.connect(dbname: "chitter_test")
     else
       connection = PG.connect(dbname: "chitter")
     end
-    result = connection.exec_params("INSERT INTO peeps (message, datetime) VALUES ('#{message}', '#{datetime}') RETURNING id, message, datetime;")
+    current_time = Time.now
+    time = current_time.strftime("%F %T")
+
+    result = connection.exec_params("INSERT INTO peeps (message, datetime) VALUES ('#{message}', '#{time}') RETURNING id, message, datetime;")
     Peep.new(id: result[0]["id"], message: result[0]["message"], datetime: result[0]["datetime"])
   end
 

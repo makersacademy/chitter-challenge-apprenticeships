@@ -14,11 +14,13 @@ RSpec.describe Peep do
 
   describe "#add" do
     it "adds a peep to the list of messages posted" do
-      peep = Peep.add(message: "Today was not a great day", datetime: "2021-10-16")
+      peep = Peep.add(message: "Today was not a great day")
+      current_time = Time.now
+      time = current_time.strftime("%F %T")
       persisted_data = persisted_data(id: peep.id)
 
       expect(peep.message).to eq "Today was not a great day"
-      expect(peep.datetime).to eq "2021-10-16"
+      expect(peep.datetime).to eq time
       expect(peep.id).to eq persisted_data["id"]
     end
   end
@@ -27,10 +29,12 @@ RSpec.describe Peep do
     it "sorts messages by DESC date" do
       connection = PG.connect(dbname: "chitter_test")
       connection.exec ("SELECT * FROM peeps ORDER BY datetime DESC")
-      peep = Peep.add(message: "Today was not a great day", datetime: "2021-10-16")
-      peep = Peep.add(message: "Hello", datetime: "2021-10-15")
+      peep = Peep.add(message: "Today was not a great day")
+      peep = Peep.add(message: "Hello")
+      current_time = Time.now
+      time = current_time.strftime("%F %T")
       peeps = Peep.sort
-      expect(peeps.first.datetime).to eq "2021-10-16"
+      expect(peeps.first.datetime).to eq time
     end
   end
 end
