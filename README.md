@@ -95,5 +95,5 @@ https://user-images.githubusercontent.com/78110998/137714572-d7ae0ef5-c419-4ee6-
 
 ## MVC Modelling
 
-![Server - MVC Model](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3289ba85-ac74-433d-9635-bb89ab2ee551/Screenshot_2021-10-15_at_14.46.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211018%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211018T103115Z&X-Amz-Expires=86400&X-Amz-Signature=6cab77d713cc7e79dc4a5d7372722cfcc4069c3988563974ef7f60bfe5287377&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202021-10-15%2520at%252014.46.04.png%22)
+![Server - MVC Model](https://github.com/delexii/chitter-challenge-apprenticeships/blob/8e6aad8f9cf10fec3a45a0e2c3eb9e9b547b6096/public/MVC%20Pattern%20copy.png)
 
