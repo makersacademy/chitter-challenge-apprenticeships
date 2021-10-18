@@ -20,7 +20,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
-require_relative './setup_test_database'
+require_relative './helpers/setup_test_database'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -36,7 +36,7 @@ ENV['ENVIRONMENT'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 # Tell Capybara to talk to BookmarkManager
-Capybara.app = Chitter
+Capybara.app = ChitterController
 
 RSpec.configure do |config|
   config.before(:each) do
