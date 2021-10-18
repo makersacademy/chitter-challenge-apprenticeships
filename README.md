@@ -68,6 +68,6 @@ I want to filter on a specific keyword
 [x] make database show peoples name
 [x] Allow posting of peeps
 [x] see date posted.
-[ ] Update test database
+[x] Update test database
 [ ] get test working
 
