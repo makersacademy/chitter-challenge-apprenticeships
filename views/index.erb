@@ -1,0 +1,18 @@
+<h1>Chitter</h1>
+<div id="peeps-feed">
+  <% @peeps.each do |peep| %>
+    <p><%= peep["message"] %></p>
+  <% end %>
+</div>
+
+<div id="add-another-peep"> 
+  <form method="GET" action="/add_peep">
+    <input type="submit" value="Add Peep">
+  </form>
+</div>
+
+<div id="filter-the-peeps"> 
+  <form method="GET" action="/filter_peeps">
+    <input type="submit" value="Filter Peeps">
+  </form>
+</div>
