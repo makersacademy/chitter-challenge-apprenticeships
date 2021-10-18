@@ -1,5 +1,7 @@
 I managed to set-up the website test page and a chitter feed 'page'. Made some mistakes in setting up the test database, and then misnaming the 'views' folder as 'view' also wasted a lot of time!
 
+I was planning as I went along, so my plan is less thorough than other weeks. Below, you can see how I was identifying the pages/assets needed for the first 2 user stories.
+
 <!-- As a Maker
 So that I can see what people are doing
 I want to see all the messages (peeps)
