@@ -2,7 +2,7 @@ require 'pg'
 
 class Message
   def self.all
-    if ENV['ENIRONMENT'] == 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
