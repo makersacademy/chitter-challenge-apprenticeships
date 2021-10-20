@@ -64,3 +64,10 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+## To do list
+[x] make database show peoples name
+[x] Allow posting of peeps
+[x] see date posted.
+[x] Update test database
+[ ] get test working
+
