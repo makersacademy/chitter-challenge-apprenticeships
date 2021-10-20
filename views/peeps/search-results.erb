@@ -1,0 +1,9 @@
+<ul>
+  <% @search_results.each do |peep| %>
+    <li>
+      <%= peep.name %>'s status on <%= peep.date %>:
+      <br>
+      <%= peep.message %>
+    </li>
+  <% end %>
+</ul>

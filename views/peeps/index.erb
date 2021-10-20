@@ -1,0 +1,14 @@
+<form action='/peeps/search' method='POST'>
+  <input type='text' name='search' placeholder='search for keywords' />
+  <input type='submit' value='Submit' />
+</form>
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+      <%= peep.name %>'s status on <%= peep.date %>:
+      <br>
+      <%= peep.message %>
+    </li>
+  <% end %>
+</ul>
