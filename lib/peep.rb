@@ -31,7 +31,8 @@ class Peep
     current_time = Time.now
     time = current_time.strftime("%F %T")
 
-    result = connection.exec_params("INSERT INTO peeps (message, datetime) VALUES ('#{message}', '#{time}') RETURNING id, message, datetime;")
+    result = connection.exec_params("INSERT INTO peeps (message, datetime) VALUES ($1, $2) RETURNING id, message, datetime;", [message, time])
+
     Peep.new(id: result[0]["id"], message: result[0]["message"], datetime: result[0]["datetime"])
   end
 
