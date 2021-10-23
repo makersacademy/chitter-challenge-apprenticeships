@@ -81,7 +81,7 @@ Here are my domain models for the user stories:
 ### Features
 
 - [x] Can view all messages (peeps) in a browser (.view)
-- [ ] Can post a message (peep) to Chitter (.post)
+- [x] Can post a message (peep) to Chitter (.post)
 - [ ] Can see the date messages (peeps) were posted (.date)
 - [ ] Can see list of peeps in reverse chronological order (.sort_by_date)
 - [ ] Can filter peeps by specific keyword to find relevant peeps (.filter)
