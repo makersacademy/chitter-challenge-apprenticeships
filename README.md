@@ -14,26 +14,25 @@ Write a small Twitter clone that will allow the users to post messages to a publ
 
 ## Set up
 
-To setup the database:
+- `bundle install`
+- `rspec`
+
+### Setup Database
 
 - Connect to psql
 - Create the database using the psql command `CREATE DATABASE chitter;`
 - Connect to the database using the psql command `\c chitter`;
-- Run the query we have saved in the file 01_create_chitter_table.sql
-- Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+- Follow the instructions in the `db/migrations` folder to setup tables
 
 To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.
 
-To setup the test database:
+### Setup Test Database
 
 - Connect to psql
 - Create the database using the psql
   command `CREATE DATABASE chitter_test;`;
 - Connect to the database using the psql command `\c chitter_test`
-- Run the query we have saved in the file 01_create_chitter_table.sql
-
-- `bundle install`
-- `rspec`
+- Follow the instructions in the `db/migrations` folder to setup tables
 
 ## User stories
 
