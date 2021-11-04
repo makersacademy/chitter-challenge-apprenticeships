@@ -6,6 +6,7 @@ class Peeps
 
   def list
     raise 'Empty List' if @list.empty?
+    @list
   end
 
   def last_record
