@@ -1,7 +1,8 @@
 class Peep
-  attr_reader :message
+  attr_reader :message, :date
 
-  def initialize(message = "")
+  def initialize(message = "", date = "")
     @message = message
+    @date = date
   end
 end
