@@ -12,5 +12,9 @@ class Chitter < Sinatra::Base
     @list = $peeps.list
     erb :display
   end
+  post '/message_box' do
+    $peeps.add(Peep.new(params[:message]))
+    redirect '/all_peeps'
+  end
   run! if app_file == $0
 end
