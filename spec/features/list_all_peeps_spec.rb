@@ -1,7 +1,11 @@
 feature 'Listing all peeps page' do
-  scenario 'listing all peeps has headers' do
+  scenario 'has headers' do
     visit('/all_peeps')
     expect(page).to have_content "Peep"
+  end
+  scenario 'lists all peeps' do
+    visit('/all_peeps')
+    expect(page).to have_content "This is a peep!"
   end
 end
 

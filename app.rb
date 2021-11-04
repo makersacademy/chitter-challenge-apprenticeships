@@ -5,6 +5,7 @@ class Chitter < Sinatra::Base
     'Test page'
   end
   get '/all_peeps' do
+    @list = @peeps.list
     erb :display
   end
   run! if app_file == $0
