@@ -6,6 +6,10 @@ class Chitter < Sinatra::Base
     erb :messages
   end
 
+  post '/messages' do
+    @peep = params[:peep]
+  end
+
   get '/post_message' do 
     erb :post_message
   end
