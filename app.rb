@@ -13,6 +13,13 @@ class Chitter < Sinatra::Base
     erb :index
   end 
 
- 
+  post '/messages' do 
+    p@message = params[:textarea] 
+    redirect '/show'
+  end 
+
+  get '/show' do 
+    erb :messages
+  end 
   run! if app_file == $0
 end

@@ -14,6 +14,10 @@ class PeepMessages
       connection = PG.connect(dbname: 'chitter')
     end
 
+    p result = connection.exec("SELECT * FROM peeps")
+    result.map { | message | message['message'] }
+  #  p result = DatabaseConnection.query('SELECT * FROM peeps;')
+  #   result.map {|message| PeepMessages.new(message['message'])}
   end 
 
 end 
