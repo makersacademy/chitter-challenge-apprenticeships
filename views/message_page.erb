@@ -1,10 +1,26 @@
-Welcome
-<% @result.each do |message_entry| %> 
-  <li>
-     Message: <%= message_entry.message %> Date: <%= message_entry.timestamp %> 
-  </li>
-<%end%>
-<form action="/filter" method="get">
-  <input type="submit" value="Filter">
-</form>
+<h1> Welcome to Chitter! </h1>
+<div style="width: 300px; height: 100px">
+  <% @result.each do |message_entry| %> 
+    <li style="border: dashed silver 3px">
+      Message: <%= message_entry.message %> <br>
+      > Date: <%= message_entry.timestamp %> 
+    </li>
+  <%end%>
+</div>
+
+<div>
+  <form style="display: inline;" action="/add" method="get">
+    <input type="submit" value="Add Entry">
+  </form>
+
+  <form style="display: inline;" action="/filter" method="get">
+    <input type="submit" value="Filter">
+  </form>
+
+  <form style="display: inline;" action="/filter_reset" method="post">
+    <input type="submit" value="Reset Filter">
+  </form>
+</div>
+
+
 

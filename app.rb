@@ -25,6 +25,10 @@ class Chitter < Sinatra::Base
     erb :filter
   end 
 
+  post '/filter_reset' do 
+    redirect '/message_page'
+  end 
+
   get '/message_page/filter' do 
     @result = Message_handler.all_filtered(filter: params[:filter])
     erb :message_page
