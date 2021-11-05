@@ -8,7 +8,7 @@ describe Peep do
       Peep.create('This is the final test!')
       all_peeps = Peep.all
       expect(all_peeps.length).to eq 3
-      expect(all_peeps.last[:peep]).to eq('This is the final test!')
+      expect(all_peeps.last.peep).to eq('This is the final test!')
     end
   end
   describe '.create' do
