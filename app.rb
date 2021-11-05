@@ -1,8 +1,13 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
+  configure :development do
+    register Sinatra::Reloader
+  end
+  
+  get '/home' do
+    erb :index
   end
 
   run! if app_file == $0
