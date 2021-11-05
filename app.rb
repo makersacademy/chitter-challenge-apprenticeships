@@ -6,7 +6,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    'This is a peep!'
+    erb :messages
   end
 
   run! if app_file == $0
