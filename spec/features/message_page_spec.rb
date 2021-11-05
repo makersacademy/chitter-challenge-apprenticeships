@@ -23,4 +23,36 @@ feature 'message_page' do
     expect(page).to have_content Time.now.strftime("%d/%m/%Y")
   end 
 
+  scenario 'checks messages are ordered in desc order' do 
+    visit('/add')
+    fill_in('message', with: 'Hello World!')
+    click_on 'Submit Message'
+    visit('/add')
+    fill_in('message', with: 'Bye World!')
+    click_on 'Submit Message'
+    expect(Message_handler.all.first.message).to eq 'Bye World!'
+
+  end 
+
+  scenario 'checks we can filter messages' do
+    visit('/add')
+
+    fill_in('message', with: 'Hello World!')
+    click_on 'Submit Message'
+
+    visit('/add')
+
+    fill_in('message', with: 'Bye World!')
+    click_on 'Submit Message'
+
+    visit('/filter')
+
+    fill_in('filter', with: 'Hello')
+    click_on 'Filter Messages'
+
+    expect(page).to have_content 'Hello World!'
+    expect(page).to_not have_content 'Bye World!'
+
+  end 
+
 end 

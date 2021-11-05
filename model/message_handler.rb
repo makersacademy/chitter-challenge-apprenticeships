@@ -9,11 +9,17 @@ class Message_handler
 
   def self.all 
     connection = PG.connect(dbname: 'chitter_test')
-    result = connection.exec('SELECT * FROM peeps ;')
+    result = connection.exec('SELECT * FROM peeps ORDER BY id DESC;')
     result.map { |message_entry| Message_handler.new( id: message_entry['id'], message: message_entry['messages'], timestamp: message_entry['timestamp']) }
   end 
 
-  def self.add(message:)
+  def self.all_filtered(filter:)
+    connection = PG.connect(dbname: 'chitter_test')
+    result = connection.exec("SELECT * FROM peeps WHERE messages LIKE '%#{filter}%'")
+    result.map { |message_entry| Message_handler.new( id: message_entry['id'], message: message_entry['messages'], timestamp: message_entry['timestamp']) }
+  end 
+
+    def self.add(message:)
     time = Time.now
     time = time.strftime("%d/%m/%Y")
     connection = PG.connect(dbname: 'chitter_test')

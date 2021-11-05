@@ -21,5 +21,14 @@ class Chitter < Sinatra::Base
     redirect 'message_page'
   end 
 
+  get '/filter' do 
+    erb :filter
+  end 
+
+  get '/message_page/filter' do 
+    @result = Message_handler.all_filtered(filter: params[:filter])
+    erb :message_page
+  end
+
   run! if app_file == $0
 end
