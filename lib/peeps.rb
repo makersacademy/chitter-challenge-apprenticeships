@@ -21,4 +21,7 @@ class Peeps
     @list = @list.sort_by { |peep| peep.date }.reverse
   end
 
+  def filter(keyword)
+    @list.sort_by { |peep| peep.date }.reverse.select { |peep| peep.message.include? keyword }
+  end
 end

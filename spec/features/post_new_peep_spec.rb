@@ -12,5 +12,4 @@ feature 'Adding new peep' do
     click_button 'Add'
     expect(page).to have_content 'new peep'
   end
- end
-
+end

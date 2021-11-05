@@ -13,4 +13,3 @@ feature 'list_sorted_by_descending_date' do
     end
   end
 end
-

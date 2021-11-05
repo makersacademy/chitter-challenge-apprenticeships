@@ -15,4 +15,3 @@ feature 'Listing all peeps page' do
     expect(page).to have_content "This is a peep!"
   end
 end
-
