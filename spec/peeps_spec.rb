@@ -20,12 +20,14 @@ describe Peeps do
 
     context '.create' do
         it 'creates a new peep' do
-            peep = Peeps.create(message: "This is a test peep!")
-            persisted_data = persisted_data(id: peep.id)
-
-            expect(peep).to be_a Peeps
-            expect(peep.id).to eq persisted_data.first['id']
-            expect(peep.message).to eq 'This is a test peep!'
+          peep = Peeps.create(message: "This is a test peep!")
+          persisted_data = persisted_data(id: peep.id)
+          allow(Time).to receive(:now).and_return(peep.created_at)
+          
+          expect(peep).to be_a Peeps
+          expect(peep.id).to eq persisted_data.first['id']
+          expect(peep.message).to eq 'This is a test peep!'
+          expect(peep.created_at).to eq(Time.now)
         end
     end
 end

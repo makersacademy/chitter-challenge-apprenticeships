@@ -2,7 +2,7 @@
   <% @peeps.each do |peep| %>
     <li class="peep" id="peep-<%= peep.id %>">
       <a>
-        <%= peep.message %>
+        <%= peep.message %>   <%= peep.created_at%>
       </a>
       </li>
   <% end %>
