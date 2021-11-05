@@ -5,5 +5,9 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/messages' do
+    'This is a peep!'
+  end
+
   run! if app_file == $0
 end
