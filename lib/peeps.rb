@@ -16,4 +16,9 @@ class Peeps
   def add(peep)
     @list << peep
   end
+
+  def sort_descending
+    @list = @list.sort_by { |peep| peep.date }.reverse
+  end
+
 end
