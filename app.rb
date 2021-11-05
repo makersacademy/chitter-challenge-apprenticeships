@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'peep'
+require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -13,12 +13,7 @@ class Chitter < Sinatra::Base
 
   post '/messages/peep' do
     new_peep = params[:new_peep]
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-    connection.exec_params("INSERT INTO peeps (message) VALUES($1);", [new_peep])
+    Peep.create(new_peep)
     redirect '/messages'
   end
 
