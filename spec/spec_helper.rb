@@ -1,6 +1,7 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'timecop'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -42,4 +43,10 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
   config.shared_context_metadata_behavior = :apply_to_host_groups
+end
+
+def add_peep(peep, test_time)
+  Timecop.freeze(test_time)
+  fill_in 'new_peep', with: peep
+  click_button('Peep!')
 end

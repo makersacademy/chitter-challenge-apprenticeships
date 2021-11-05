@@ -4,18 +4,9 @@ feature 'Show latest first' do
     peep1 = 'Databases are complicated :('
     peep2 = 'They are hard to understand!'
     peep3 = 'There are so many of them!!!'
-    test_time = Time.local(2021, 11, 5, 10, 5, 8)
-    Timecop.freeze(test_time)
-    fill_in 'new_peep', with: peep1
-    click_button('Peep!')
-    test_time = Time.local(2021, 11, 6, 10, 5, 8)
-    Timecop.freeze(test_time)
-    fill_in 'new_peep', with: peep2
-    click_button('Peep!')
-    test_time = Time.local(2021, 11, 7, 10, 5, 8)
-    Timecop.freeze(test_time)
-    fill_in 'new_peep', with: peep3
-    click_button('Peep!')
+    add_peep(peep1, Time.local(2021,11,5))
+    add_peep(peep2, Time.local(2021,11,6))
+    add_peep(peep3, Time.local(2021,11,7))
 
     expect(page.body.index(peep1)).to be > page.body.index(peep2)
     expect(page.body.index(peep2)).to be > page.body.index(peep3)
