@@ -6,7 +6,10 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    'messages'
+    @messages = [
+      "I am a frog"
+    ]
+    erb :'/messages/index'
   end
 
   run! if app_file == $0

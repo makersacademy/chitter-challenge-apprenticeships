@@ -6,6 +6,6 @@
 feature 'views all messages' do
     scenario 'user views all messages' do
       visit '/messages'
-      expect(page).to have_content 'messages'
+      expect(page).to have_content "I am a frog"
     end
 end
