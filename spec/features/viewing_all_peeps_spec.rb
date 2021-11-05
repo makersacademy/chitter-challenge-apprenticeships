@@ -1,6 +1,6 @@
 feature 'Viewing Peeps' do
     scenario 'A user can view all peeps' do
-        Peep.create(message: "First Peep, HELLO WORLD!")
+        #Peep.create(message: "First Peep, HELLO WORLD!")
         
         visit '/peeps'
         

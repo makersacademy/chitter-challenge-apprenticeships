@@ -17,6 +17,7 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'pg'
 require 'simplecov'
 require 'simplecov-console'
 
