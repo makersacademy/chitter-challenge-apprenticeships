@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Chitter < Sinatra::Base
 
-  get '/index' do
+  get '/messages' do
     'First Message'
   end
 
