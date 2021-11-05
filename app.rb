@@ -3,8 +3,6 @@ require_relative './lib/peeps'
 require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
-  $peeps = Peeps.new([Peep.new("This is a peep!","13Oct")])
-
   get '/test' do
     'Test page'
   end
