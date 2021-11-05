@@ -1,2 +1,8 @@
-<p>A peep's message</p>
-<p><%= @peep %></p>
+<h1>Recent Peeps</h1>
+<p><%= @message %></p>
+
+<p>
+<% @message.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</p>

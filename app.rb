@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -6,6 +7,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
+    @message = Peep.all
+
     erb :peeps
   end
 
@@ -14,10 +17,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    @peep = params[:peep]
-    p @peep
+    Peep.create(message: params[:message])
 
-    erb :peeps
+    redirect 'peeps'
   end
 
   run! if app_file == $0
