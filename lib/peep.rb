@@ -3,6 +3,7 @@ require 'pg'
 class Peep
 
   attr_reader :peep, :time_added
+  @@order_by = 'DESC'
 
   def initialize(peep:, time_added:)
     @peep = peep
@@ -19,13 +20,13 @@ class Peep
 
   def self.all(order_by: 'DESC')
     connection = Peep.connect
-    query = "SELECT * FROM peeps ORDER BY time_added #{order_by}"
+    query = "SELECT * FROM peeps ORDER BY time_added #{@@order_by}"
     all_peeps = connection.exec(query)
     all_peeps.map { |peep| Peep.new(peep: peep['message'], time_added: peep['time_added']) }
   end
 
-  def self.toggle_order(order)
-    order == 'DESC' ? 'ASC' : 'DESC'
+  def self.toggle_order
+    @@order_by = (@@order_by == 'DESC') ? 'ASC' : 'DESC'
   end
 
   def self.create(new_peep)

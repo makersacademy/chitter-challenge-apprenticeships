@@ -7,9 +7,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    sorting = params['sorting']
-    @sorting = Peep.toggle_order(sorting)
-    @all_peeps = Peep.all(order_by: @sorting)
+    Peep.toggle_order if params['sorting']
+    @all_peeps = Peep.all
     erb :messages
   end
 
