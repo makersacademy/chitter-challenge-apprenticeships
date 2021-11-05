@@ -2,7 +2,11 @@
   <input type='text' name='new_peep' placeholder='New Peep'>
   <input type='submit' value='Peep!'>
 </form>
-<ul>
+<form action='messages' method='get'>
+  <input type='submit' value='Toggle Newest/Oldest'>
+  <input type='hidden' name='sorting' value='<%= @sorting %>'>
+</form>
+<ul id='#peeps'>
   <% @all_peeps.each do |peep| %>
     <li> <%= peep.peep %> - <%= peep.time_added%> </li>
   <% end %>

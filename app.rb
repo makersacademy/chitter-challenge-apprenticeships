@@ -7,7 +7,9 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    @all_peeps = Peep.all
+    sorting = params['sorting']
+    @all_peeps = Peep.all(order: sorting)
+    @sorting = (sorting == 'newest') ? 'oldest' : 'newest'
     erb :messages
   end
 

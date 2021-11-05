@@ -17,9 +17,11 @@ class Peep
     end
   end
 
-  def self.all 
+  def self.all(order: 'oldest')
     connection = Peep.connect
-    all_peeps = connection.exec("SELECT * FROM peeps")
+    order_by = (order == 'newest') ? 'ASC' : 'DESC'
+    query = "SELECT * FROM peeps ORDER BY time_added #{order_by}"
+    all_peeps = connection.exec(query)
     all_peeps.map { |peep| Peep.new(peep: peep['message'], time_added: peep['time_added']) }
   end
 
