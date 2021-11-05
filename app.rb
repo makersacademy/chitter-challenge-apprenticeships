@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Chitter < Sinatra::Base
 
   get '/messages' do
-    'First Message'
+    erb :messages
   end
 
   run! if app_file == $0
