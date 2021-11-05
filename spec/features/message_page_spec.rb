@@ -42,7 +42,7 @@ feature 'message_page' do
     fill_in('message', with: 'Bye World!')
     click_on 'Submit Message'
 
-    expect(Message_handler.all.first.message).to eq 'Bye World!'
+    expect(MessageHandler.all.first.message).to eq 'Bye World!'
 
   end 
 

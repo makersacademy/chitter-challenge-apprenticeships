@@ -3,11 +3,8 @@ require 'pg'
 class Database
 
   def self.connect 
-    if ENV['RACK_ENV'] == 'test'
-      return PG.connect(dbname: 'chitter_test')
-    else 
-      return PG.connect(dbname: 'chitter')
-    end 
+    return PG.connect(dbname: 'chitter_test') if ENV['RACK_ENV'] == 'test'  
+    return PG.connect(dbname: 'chitter')
   end 
 
   def self.all
@@ -24,8 +21,8 @@ class Database
     connection = Database.connect
     time = Time.now
     time = time.strftime("%d/%m/%Y")
-    result = connection.exec('INSERT INTO peeps (messages, timestamp) VALUES($1,$2)',[message, time])
+    result = connection.exec('INSERT INTO peeps (messages, timestamp) VALUES($1,$2)',
+    [message, time])
   end 
-
 
 end

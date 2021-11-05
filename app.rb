@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/message_page' do 
-    @result = Message_handler.all
+    @result = MessageHandler.all
     erb :message_page
   end 
 
@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
   end 
 
   post '/add_entry' do 
-    Message_handler.add(message: params[:message])
+    MessageHandler.add(message: params[:message])
     redirect 'message_page'
   end 
 
@@ -30,7 +30,7 @@ class Chitter < Sinatra::Base
   end 
 
   get '/message_page/filter' do 
-    @result = Message_handler.all_filtered(filter: params[:filter])
+    @result = MessageHandler.all_filtered(filter: params[:filter])
     erb :message_page
   end
 
