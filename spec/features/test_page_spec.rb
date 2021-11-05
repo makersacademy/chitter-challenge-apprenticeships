@@ -12,11 +12,12 @@ feature 'show all message' do
   end
 end 
 
-feature 'show all message' do 
-  scenario 'send message' do
+feature 'Adding a new message' do
+  scenario 'A user can add a message' do
     visit('/')
-    fill_in :message, with: 'Hello'
-    click_button 'Submit'
-    expect(page).to have_content 'hello'
+    fill_in('message', with: 'this is beep 2')
+    click_button('Submit')
+    expect(page).to have_content 'this is beep 2'
   end
-end 
+end
+ 
