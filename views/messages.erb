@@ -1,1 +1,9 @@
-This is a peep!
+<ul>
+  <% @all_peeps.each do |peep| %>
+    <li> <%= peep %> </li>
+  <% end %>
+</ul>
+<form action='messages/peep' method='post'>
+  <input type='text' name='new_peep' placeholder='New Peep'>
+  <input type='submit' value='Peep!'>
+</form>
