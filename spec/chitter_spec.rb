@@ -12,4 +12,14 @@ describe Message do
       expect(messages).to eq (['This is a peep!'])
     end
   end
+
+  describe '#add' do 
+    it 'adds a new message to the db' do
+      connection = PG.connect(dbname: 'chitter_test')
+
+      Message.add('peeppeeppeep')
+
+      expect(Message.all).to include 'peeppeeppeep'
+    end
+  end
 end
