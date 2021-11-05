@@ -4,10 +4,9 @@ require 'message'
 feature 'Opens a message page' do
   scenario 'Visits messages' do
     visit('/')
-    expect(page).to have_content "Welcome to Chitter"
-    fill_in 'user_name', with: 'Scott'
-    click_button 'Add Peep'
-    expect(page).to have_content "Welcome to Chitter Scott"
-    expect(page).to have_content "This is a peep!"
+    PG.connect(dbname: 'chitter_test')
+    Message.create(message: 'Hello World!')
+    messages = Message.all
+    expect(page).to have_content 'Hello World!'
   end
 end

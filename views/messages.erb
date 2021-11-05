@@ -1,11 +1,12 @@
 <html>
 <h1>Welcome to Chitter <%= @user_name %></h1>
+<form action="/new" method="get">
+<input type="submit" value="Start a new Peep!">
+</form>
 <ul>
   <% @messages.each do |message| %>
     <li><%= message %></li>
   <% end %>
 </ul>
-<form action="/new" method="post">
-<input type="submit" value="Start a new Peep!">
-</form>
+
 

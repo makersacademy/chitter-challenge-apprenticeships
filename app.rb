@@ -8,17 +8,16 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-   erb :index
-  end
-
-  post '/messages' do
-    @user_name = (params[:user_name])
-    Message.create(message: params[:message])
     @messages = Message.all
     erb :messages
   end
 
-  post '/new' do
+  post '/' do
+    Message.create(message: params[:message])
+    redirect '/'
+  end
+
+  get '/new' do
     erb :new
   end
 
