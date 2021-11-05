@@ -7,4 +7,12 @@ feature 'message_page' do
 
   end 
 
+  scenario 'can view messages on page' do 
+    add_row_to_test_database
+
+    visit('/message_page')
+
+    expect(page).to have_content 'This is a peep!'
+  end 
+
 end 
