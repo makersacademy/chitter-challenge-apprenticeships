@@ -6,9 +6,10 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    @messages = [
-      "I am a frog"
-    ]
+    # @messages = [
+    #   "I am a frog"
+    # ]
+    @messages = Message.all
     erb :'/messages/index'
   end
 
