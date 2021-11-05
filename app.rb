@@ -13,7 +13,7 @@ class Chitter < Sinatra::Base
 
   post '/messages/peep' do
     new_peep = params[:new_peep]
-    Peep.create(new_peep)
+    Peep.create(new_peep) unless new_peep.empty?
     redirect '/messages'
   end
 
