@@ -13,4 +13,11 @@ class Message_handler
     result.map { |message_entry| Message_handler.new( id: message_entry['id'], message: message_entry['messages'], timestamp: message_entry['timestamp']) }
   end 
 
+  def self.add(message:)
+    time = Time.now
+    time = time.strftime("%d/%m/%Y")
+    connection = PG.connect(dbname: 'chitter_test')
+    result = connection.exec('INSERT INTO peeps (messages, timestamp) VALUES($1,$2)',[message, time])
+  end 
+
 end

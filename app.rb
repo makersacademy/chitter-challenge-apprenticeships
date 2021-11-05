@@ -12,5 +12,14 @@ class Chitter < Sinatra::Base
     erb :message_page
   end 
 
+  get '/add' do
+    erb :add
+  end 
+
+  post '/add_entry' do 
+    Message_handler.add(message: params[:message])
+    redirect 'message_page'
+  end 
+
   run! if app_file == $0
 end

@@ -1,6 +1,7 @@
 Welcome
-<li>
-  <% @result.each do |message_entry| %>
-    <%= message_entry.message %>
-  <%end%>
-</li>
+<% @result.each do |message_entry| %> 
+  <li>
+     Message: <%= message_entry.message %> Date: <%= message_entry.timestamp %> 
+  </li>
+<%end%>
+
