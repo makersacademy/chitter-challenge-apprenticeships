@@ -7,9 +7,9 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
-  get '/peeps' do
+  get '/chitter' do
     @peeps = Peeps.all
-    erb :'peeps/index'
+    erb :'chitter/index'
   end
 
   run! if app_file == $0
