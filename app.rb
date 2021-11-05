@@ -21,5 +21,11 @@ class Chitter < Sinatra::Base
     redirect '/chitter'
   end
 
+  get '/chitter/reverse' do
+    Peeps.all.reverse.sort_by { |peep| peep.id }
+    p @peeps
+    erb :'chitter/reverse'
+  end
+
   run! if app_file == $0
 end

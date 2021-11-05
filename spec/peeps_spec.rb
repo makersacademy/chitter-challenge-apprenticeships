@@ -5,16 +5,12 @@ describe Peeps do
     context '.all' do
         it 'returns a list of peeps' do
             connection = PG.connect(dbname: 'chitter_test')
-
-            Peeps.create(message: "First Peep, HELLO WORLD!")
-            Peeps.create(message: "Second Peep, HELLO WORLD!")
-            Peeps.create(message: "Third Peep, HELLO WORLD!")
-
+                
             peeps = Peeps.all
 
             expect(peeps.length).to eq 3
             expect(peeps.first).to be_a Peeps
-            expect(peeps.first.message).to eq 'First Peep, HELLO WORLD!'
+            expect(peeps.first.message).to eq 'First Peep, HELLO Aladdin!'
         end
     end
 

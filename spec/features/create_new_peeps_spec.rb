@@ -3,7 +3,7 @@ feature 'Can create new peeps' do
     visit('chitter/newpeep')
     fill_in('peep', with: 'This is my dummy peep')
     click_button('Peep')
-
+    
     expect(page).to have_content('This is my dummy peep')
   end
 end

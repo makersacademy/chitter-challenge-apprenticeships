@@ -21,6 +21,7 @@ require 'pg'
 require 'simplecov'
 require 'simplecov-console'
 
+
 require 'database_helpers'
 require_relative './setup_test_database'
 
@@ -40,9 +41,11 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = Chitter
 
+
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    add_row_to_test_database
   end
 
   config.after(:suite) do
