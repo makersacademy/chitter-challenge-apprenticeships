@@ -10,7 +10,7 @@ class Database
     end 
   end 
 
-  def self.all 
+  def self.all
     connection = Database.connect
     result = connection.exec('SELECT * FROM peeps ORDER BY id DESC;')
   end 

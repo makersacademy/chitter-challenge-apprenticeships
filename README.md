@@ -3,6 +3,12 @@
 # Work process
 To start this challenge I have first produced a CRC (Class Responsibility Collaborators) and a DB (Database) diagram. See links for this.
 
+The diagrams produced helped greatly with understanding how the application would communicate and interact. This saved a lot of confusion in the long run. I started working towards the user stories by writting the spec files and following the TDD process. I made sure to follow this process making small implementations as I go and choosing ideal points to refactor (making sure not to attempt this to early or to late). 
+
+I feel that most of my refactors had been timed correctly which alleviated most of the possible confusion. However when attempting to seperate the concerns of the database from message_handle it was clear that it was long overdue as this became a big mess very quickly.  
+
+Overall I feel that my working process was efficient, and that it has come a long way in the space of a week. If I was to carry this task out again I would focus on seperating the concerns through doubling in my spec files but I simply ran out of time.
+
 # Links 
 * CRC & DB diagram: https://wireframe.cc/SpI7VA
 
