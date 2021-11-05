@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './model/message_handler'
 
 class Chitter < Sinatra::Base
 
@@ -7,8 +8,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/message_page' do 
-    connection = PG.connect(dbname: 'chitter_test')
-    @result = connection.exec('SELECT messages FROM peeps ;')
+    @result = Message_handler.all
     erb :message_page
   end 
 
