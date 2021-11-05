@@ -5,7 +5,7 @@ class Message
     #   [
     #     "I am a frog",
     #    ]
-    result = connection = PG.connect(dbname: 'chitter')
+    connection = PG.connect(dbname: 'chitter')
     result = connection.exec("SELECT * FROM peeps;")
     result.map { |message| message['message'] }
     end
