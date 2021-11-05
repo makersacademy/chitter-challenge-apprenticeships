@@ -8,4 +8,9 @@ describe Message do
       expect(messages).to include("I am a frog")
     end
   end
+
+  describe '.add' do
+    Message.add(message: 'I am so happy')
+    expect(Message.add).to include 'I am so happy'
+  end
 end
