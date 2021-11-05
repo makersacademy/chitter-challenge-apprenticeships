@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 feature 'Adding a peep' do
   
   scenario 'can add a peep' do
