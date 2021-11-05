@@ -16,8 +16,16 @@ class PeepMessages
 
     p result = connection.exec("SELECT * FROM peeps")
     result.map { | message | message['message'] }
-  #  p result = DatabaseConnection.query('SELECT * FROM peeps;')
-  #   result.map {|message| PeepMessages.new(message['message'])}
   end 
+
+  def self.create(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+  
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+  end
 
 end 
