@@ -1,5 +1,12 @@
 ## Personal Entry
 
+# Work process
+To start this challenge I have first produced a CRC (Class Responsibility Collaborators) and a DB (Database) diagram. See links for this.
+
+# Links 
+* CRC & DB diagram: https://wireframe.cc/SpI7VA
+
+
 ## Chitter Challenge
 
 * Challenge time: until the end of the day
