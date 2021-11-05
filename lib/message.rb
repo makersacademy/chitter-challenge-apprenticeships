@@ -20,6 +20,8 @@ class Message
       connection = PG.connect(dbname: 'chitter')
       end
 
+      #connection.exec_params("INSERT INTO peeps (message) VALUES($1) RETURNING id, message;", [message])
+
       connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
   end
 
