@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'pg'
+require 'peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -7,13 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-    all_peeps = connection.exec("SELECT * FROM peeps")
-    @all_peeps = all_peeps.map { |peep| peep['message'] }
+    @all_peeps = Peep.all
     erb :messages
   end
 
