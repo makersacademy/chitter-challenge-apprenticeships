@@ -18,9 +18,9 @@ class Peep
     end
   end
 
-  def self.all(order_by: 'DESC')
+  def self.all(filter = "")
     connection = Peep.connect
-    query = "SELECT * FROM peeps ORDER BY time_added #{@@order_by}"
+    query = "SELECT * FROM peeps #{filter} ORDER BY time_added #{@@order_by}"
     all_peeps = connection.exec(query)
     all_peeps.map { |peep| Peep.new(peep: peep['message'], time_added: peep['time_added']) }
   end

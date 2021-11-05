@@ -4,7 +4,11 @@
 </form>
 <form action='messages' method='get'>
   <input type='submit' value='Toggle Newest/Oldest'>
-  <input type='hidden' name='sorting'>
+  <input type='hidden' name='sorting' value='switch'>
+</form>
+<form action='messages' method='get'>
+  <input type='text' name='filter_keyword' placeholder='Keyword for filtering'>
+  <input type='submit' value='Filter'>
 </form>
 <ul id='#peeps'>
   <% @all_peeps.each do |peep| %>
