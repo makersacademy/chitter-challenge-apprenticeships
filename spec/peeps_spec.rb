@@ -1,3 +1,4 @@
+require 'date'
 require 'peeps'
 require 'peep'
 TEST_PEEP = Peep.new("test_message")
@@ -22,5 +23,9 @@ describe Peeps do
     subject.add(PEEP_NEW)
     subject.add(PEEP_LAST)
     expect(subject.filter("test")).to eq [PEEP_LAST, TEST_PEEP]
+  end
+  it 'check added should have today\'s date' do
+    subject.add(TEST_PEEP)
+    expect(subject.last_record.date).to eq DateTime.now.day
   end
 end
