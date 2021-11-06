@@ -5,6 +5,6 @@ class Peep
 
   def initialize(message = "", date = "")
     @message = message
-    @date = date == "" ? Date.today.strftime("%m/%d/%Y") : date
+    @date = date == "" ? Date.today.strftime("%Y-%m-%d") : date
   end
 end

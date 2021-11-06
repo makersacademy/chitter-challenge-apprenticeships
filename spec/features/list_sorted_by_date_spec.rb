@@ -1,7 +1,7 @@
 require 'date'
-TODAY = Date.today.strftime("%m/%d/%Y")
-TODAY_1 = (Date.today - 1).strftime("%m/%d/%Y")
-TODAY_2 = (Date.today - 2).strftime("%m/%d/%Y")
+TODAY = Date.today.strftime("%Y-%m-%d")
+TODAY_1 = (Date.today - 1).strftime("%Y-%m-%d")
+TODAY_2 = (Date.today - 2).strftime("%Y-%m-%d")
 feature 'list_sorted_by_descending_date' do
   scenario 'list_descending_date' do
     $peeps = Peeps.new(

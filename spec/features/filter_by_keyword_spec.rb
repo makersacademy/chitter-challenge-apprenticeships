@@ -3,9 +3,9 @@ feature 'filter by keyword' do
   scenario 'display peep ones' do
     $peeps = Peeps.new(
       [
-        Peep.new("This is a peep!", Date.today.strftime("%m/%d/%Y")),
-        Peep.new("This is a poop!", Date.today.strftime("%m/%d/%Y")),
-        Peep.new("This is a peep!", Date.today.strftime("%m/%d/%Y")),
+        Peep.new("This is a peep!", Date.today.strftime("%Y-%m-%d")),
+        Peep.new("This is a poop!", Date.today.strftime("%Y-%m-%d")),
+        Peep.new("This is a peep!", Date.today.strftime("%Y-%m-%d")),
       ]
     )
     visit('/all_peeps')
