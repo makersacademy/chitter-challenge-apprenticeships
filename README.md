@@ -7,7 +7,7 @@ The diagrams produced helped greatly with understanding how the application woul
 
 I feel that most of my refactors had been timed correctly which alleviated most of the possible confusion. However when attempting to seperate the concerns of the database from message_handle it was clear that it was long overdue as this became a big mess very quickly.  
 
-Overall I feel that my working process was efficient, and that it has come a long way in the space of a week. If I was to carry this task out again I would focus on seperating the concerns through doubling in my spec files but I simply ran out of time.
+Overall I feel that my working process was efficient, and that it has come a long way in the space of a week. If I was to carry this task out again I would focus on improving the styling of the webpages overall however I am pretty happy with the results.
 
 # Links 
 * CRC & DB diagram: https://wireframe.cc/SpI7VA
