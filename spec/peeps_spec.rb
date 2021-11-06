@@ -26,6 +26,6 @@ describe Peeps do
   end
   it 'check added should have today\'s date' do
     subject.add(TEST_PEEP)
-    expect(subject.last_record.date).to eq DateTime.now.day
+    expect(subject.last_record.date).to eq Date.today
   end
 end
