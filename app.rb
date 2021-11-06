@@ -26,7 +26,7 @@ class Chitter < Sinatra::Base
 
   post '/messages' do
     Message.add(message: params[:message])
-    redirect '/messages/index'
+    redirect '/messages'
   end
 
   run! if app_file == $0

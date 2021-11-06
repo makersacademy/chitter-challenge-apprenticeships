@@ -10,7 +10,9 @@ describe Message do
   end
 
   describe '.add' do
-    Message.add(message: 'I am so happy')
-    expect(Message.add).to include 'I am so happy'
+    it 'creates new message' do
+    message = Message.add(message: 'I am so happy')
+    expect(Message.all).to include 'I am so happy'
+    end
   end
 end
