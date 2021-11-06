@@ -18,7 +18,7 @@ class Peeps
   end
 
   def sort_descending
-    @list = @list.sort_by { |peep| peep.date }.reverse
+    p @list = @list.sort_by { |peep| peep.date }.reverse
   end
 
   def filter(keyword)

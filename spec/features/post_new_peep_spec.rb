@@ -1,9 +1,10 @@
+require 'date'
 feature 'Adding new peep' do
   $peeps = Peeps.new(
     [
-      Peep.new("This is a peep!", '15Oct'),
-      Peep.new("This is a peep!", '14Oct'),
-      Peep.new("This is a peep!", '13Oct'),
+      Peep.new("This is a peep!", Date.today),
+      Peep.new("This is a peep!", Date.today - 1),
+      Peep.new("This is a peep!", Date.today - 2),
     ]
   )
   scenario 'includes new peep' do

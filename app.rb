@@ -3,13 +3,13 @@ require_relative './lib/peeps'
 require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
-  # $peeps = Peeps.new(
-  #   [
-  #     Peep.new("This is a peep!", '15Oct'),
-  #     Peep.new("This is a poop!", '14Oct'),
-  #     Peep.new("This is a peep!", '13Oct'),
-  #   ]
-  # )
+  $peeps = Peeps.new(
+    [
+      Peep.new("This is a peep!", Date.today),
+      Peep.new("This is a peep!", Date.today - 1),
+      Peep.new("This is a peep!", Date.today - 2),
+    ]
+  )
   get '/test' do
     'Test page'
   end

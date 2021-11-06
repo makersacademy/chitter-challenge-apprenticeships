@@ -1,10 +1,11 @@
+require 'date'
 feature 'filter by keyword' do
   scenario 'display peep ones' do
     $peeps = Peeps.new(
       [
-        Peep.new("This is a peep!", '15Oct'),
-        Peep.new("This is a poop!", '14Oct'),
-        Peep.new("This is a peep!", '13Oct'),
+        Peep.new("This is a peep!", Date.today),
+        Peep.new("This is a poop!", Date.today),
+        Peep.new("This is a peep!", Date.today),
       ]
     )
     visit('/all_peeps')

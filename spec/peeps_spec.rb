@@ -1,9 +1,9 @@
 require 'date'
 require 'peeps'
 require 'peep'
-TEST_PEEP = Peep.new("test_message")
-PEEP_LAST = Peep.new("test PEEP", "sept112")
-PEEP_NEW = Peep.new("LAST PEEP", "sept11")
+TEST_PEEP = Peep.new("test_message", Date.today)
+PEEP_LAST = Peep.new("test PEEP", Date.today)
+PEEP_NEW = Peep.new("LAST PEEP", Date.today)
 
 describe Peeps do
   it 'empty should report error' do
@@ -26,6 +26,8 @@ describe Peeps do
   end
   it 'check added should have today\'s date' do
     subject.add(TEST_PEEP)
+    a = subject.last_record.date
+    b = Date.today
     expect(subject.last_record.date).to eq Date.today
   end
 end
