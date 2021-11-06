@@ -7,7 +7,6 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-
   get '/test' do
     'Test page'
   end

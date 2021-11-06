@@ -8,6 +8,6 @@ feature 'posts a message to chitter' do
         fill_in('message', with: 'I am so happy!')
         click_button('Submit')
     
-        expect(page).to have_content 'I am so happy'
+        expect(page).to have_content 'I am so happy!'
     end
 end
