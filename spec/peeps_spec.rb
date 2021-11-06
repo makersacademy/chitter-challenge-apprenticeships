@@ -1,9 +1,9 @@
-require 'peeps'
+require 'peep'
 
-describe Peeps do
+describe Peep do
   describe '.all' do
     it 'returns a list of peeps' do
-      Peeps.create(message: "Test")
+      Peep.create(message: "Test")
     end
   end
 end
