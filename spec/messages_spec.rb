@@ -10,4 +10,13 @@ describe Messages do
       expect(messages).to eq ['This is a peep!']
     end
   end
+
+  describe '#create' do 
+    it 'saves the post into database' do
+      connection = PG.connect(dbname: 'chitter_test')
+      Messages.create('This is a peep!')
+      messages = Messages.all
+      expect(messages).to eq ['This is a peep!']
+    end
+  end
 end

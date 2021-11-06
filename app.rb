@@ -10,13 +10,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/messages' do
-    @peep = params[:peep]
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-    connection.exec("INSERT INTO peeps (message) VALUES('#{@peep}')")
+    Messages.create(params[:peep])
     redirect '/messages'
   end
 
