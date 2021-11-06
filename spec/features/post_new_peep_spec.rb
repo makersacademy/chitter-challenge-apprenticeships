@@ -2,9 +2,9 @@ require 'date'
 feature 'Adding new peep' do
   $peeps = Peeps.new(
     [
-      Peep.new("This is a peep!", Date.today),
-      Peep.new("This is a peep!", Date.today - 1),
-      Peep.new("This is a peep!", Date.today - 2),
+      Peep.new("This is a peep!", (Date.today).strftime("%m/%d/%Y")),
+      Peep.new("This is a peep!", (Date.today - 1).strftime("%m/%d/%Y")),
+      Peep.new("This is a peep!", (Date.today - 2).strftime("%m/%d/%Y")),
     ]
   )
   scenario 'includes new peep' do
