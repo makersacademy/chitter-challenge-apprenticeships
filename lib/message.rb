@@ -4,7 +4,7 @@ class Message
     attr_reader :id, :message
 
     def initialize(id:, message:)
-      @id  = id
+      @id = id
       @message = message
     end
 
@@ -18,6 +18,7 @@ class Message
         result.map do |message|
             Message.new(id: message['id'], message: message['message'])
         end
+         
     end
 
     def self.make(message:)

@@ -1,7 +1,11 @@
 
 <ul>
-<% @messages.each do |message| %>
- <h1> <li><%= message %></li></h1>
-<% end %>
+  <% @messages.each do |message| %>
+  <h4> <li><%=  message.message %></li></h4>
+  <% end %>
 </ul>
 
+<form method="post" action="/new_post">
+  <input type="text" name="message" placeholder="Type your Peep here 👈" />
+  <input type="submit" value="Post" />
+</form>
