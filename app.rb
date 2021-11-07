@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/home' do
-    @messages = Message.all
+    @messages = Message.all 
     erb :index
   end
 
@@ -16,6 +16,18 @@ class Chitter < Sinatra::Base
     Message.make(message: params[:message])
     redirect '/home'
   end
+
+  post '/sort' do
+    @messages = Message.sort
+    erb :index
+  end
+
+  post '/restore' do
+    redirect '/home'
+  end
+
+
+
 
   run! if app_file == $0
 end

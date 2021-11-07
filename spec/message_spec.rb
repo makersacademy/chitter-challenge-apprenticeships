@@ -23,12 +23,20 @@ describe Message do
         end
     end
     describe '#peeps with date' do 
-    it 'make a peep' do 
-        message = Message.make(message: "Do I have a date?")
-        date = Date.today.to_s
-    
-        expect(message.message).to eq("Do I have a date?")
-        expect(message.date).to eq(date)
+        it 'make a peep' do 
+            message = Message.make(message: "Do I have a date?")
+            date = Date.today.to_s
+        
+            expect(message.message).to eq("Do I have a date?")
+            expect(message.date).to eq(date)
+        end
     end
-end
+    describe "#filter " do 
+        it 'sorts peeps' do 
+            Message.make(message: "I'm a new peep 1")
+            Message.make(message: "I'm a new peep 2")
+            peep =  Message.make(message: "I'm a new peep 3")
+            expect(Message.sort.last.message).to eq peep.message
+        end
+    end
 end
