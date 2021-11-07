@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/messages'
+require './lib/message'
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -12,8 +12,18 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    @peeps = Messages.all
+    @peeps = Message.all
     erb :'messages/index'
   end
+  
+  get '/messages/new' do
+    erb :'messages/new'
+  end
+
+  post '/messages' do
+    Message.create(message: params[:message])
+    redirect '/messages'
+  end
+
   run! if app_file == $0
 end
