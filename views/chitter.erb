@@ -6,11 +6,15 @@
     <input type="submit" value="Write peep!" >
   </form>
 
+<table>
 
   <% @peeps.each do |peep| %>
-    <li> <%=peep%> </li>
-
-    <%# <li> <%= peep['message'] %> <%= peep['date'] %> </li> 
+    <tr>
+      <td> <p>  <%= peep[:message] %> </p> </td>
+      <td> <p> Date: <%= peep[:date] %> </p> </td>  
+    </tr>
   <% end %>
+
+</table>
 
 </html>
