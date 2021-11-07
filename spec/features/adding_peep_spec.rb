@@ -19,4 +19,13 @@ feature 'Adding a peep with page: ' do
     expect(page).to have_content "#{Time.now.year}-#{Time.now.month}-#{check_leading_zero(Time.now.day)}"
   end
 
+  scenario 'new peeps show in descending date order' do
+    visit('/chitter')
+    click_button('Write peep!')
+    fill_in 'peep_text', with: "Another test peep"
+    click_button('Peep!')
+    expect(page).to have_content "#{Time.now.year}-#{Time.now.month}-#{check_leading_zero(Time.now.day)}"
+  end
+
+
 end

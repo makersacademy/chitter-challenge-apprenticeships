@@ -1,3 +1,23 @@
+##
+Updates to the Readme.md by Dean Smythe
+See diagrams in Excel document and pdf.
+Chitter_Domain_Model.xlsx
+Chitter_Domain_Model.pdf
+
+Uses a test database for spec work.
+Truncates database before each test.
+Can pre populate test database in some tests.
+Database entries returned as array of hashes showing message and date.
+Uses a helper function/method to add the leading zero to the day if needed when constructing the date field for the databse entry.
+The list view is setup as an html table to allow two data items per row, 'message' and 'date'.
+
+Last git push includes descending date order filter with switch. (but no)
+
+Does not include word filter. Would be added using SQL Query modifiers.
+
+" SELECT * FROM peeps WHERE message LIKE '%filter_word%' "
+##
+
 ## Chitter Challenge
 
 * Challenge time: until the end of the day

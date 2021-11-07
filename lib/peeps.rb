@@ -3,17 +3,35 @@ require_relative './peep_support'
 
 class Peeps
 
-  def self.all
+  def self.all(order)
       if ENV['ENVIRONMENT'] == 'test'
         conn = PG.connect( dbname: 'chitter_test' )
       else
         conn = PG.connect( dbname: 'chitter')
       end
-    result = conn.exec('SELECT * FROM peeps;')
+    if order == :desc
+      result = conn.exec('SELECT * FROM peeps ORDER BY date DESC;')
+    else
+      result = conn.exec('SELECT * FROM peeps ORDER BY date ASC;')
+    end
     # map! doesn't seem to be a valid method
     results = result.map { |peep| {message: peep['message'], date: peep['date'] } }
     return results # Implicit return didnt; seem to work at some point
   end
+
+#   def self.all
+#     if ENV['ENVIRONMENT'] == 'test'
+#       conn = PG.connect( dbname: 'chitter_test' )
+#     else
+#       conn = PG.connect( dbname: 'chitter')
+#     end
+  
+#     result = conn.exec('SELECT * FROM peeps;')
+
+#   # map! doesn't seem to be a valid method
+#   results = result.map { |peep| {message: peep['message'], date: peep['date'] } }
+#   return results # Implicit return didnt; seem to work at some point
+# end
 
   def self.add(peep_text:)
     if ENV['ENVIRONMENT'] == 'test'
