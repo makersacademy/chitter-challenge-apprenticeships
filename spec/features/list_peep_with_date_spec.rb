@@ -1,14 +1,7 @@
 require 'date'
 feature 'Listing all peeps page' do
-  $peeps = Peeps.new(
-    [
-      Peep.new("This is a peep!", Date.today.strftime("%Y-%m-%d")),
-      Peep.new("This is a peep!", Date.today.strftime("%Y-%m-%d")),
-      Peep.new("This is a peep!", Date.today.strftime("%Y-%m-%d")),
-    ]
-  )
-  scenario 'has headers' do
-    visit('/all_peeps')
-    expect(page).to have_content Date.today.day
+  scenario 'has today\'s date' do
+    visit('/')
+    expect(page).to have_content (Date.today - 3).strftime("%Y-%m-%d")
   end
 end

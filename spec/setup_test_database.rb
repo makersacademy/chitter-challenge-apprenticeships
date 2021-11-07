@@ -1,7 +1,7 @@
 require_relative '../lib/database_connection'
 
 def setup_test_database
-  connection = DatabaseConnection.setup('chitter_test')
+  connection = DatabaseConnection.setup('chitter')
   # connection.query("TRUNCATE peeps;")
 end
 
