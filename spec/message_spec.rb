@@ -1,4 +1,5 @@
 require 'message'
+require 'date'
 describe Message do 
     describe '#messages' do 
         it 'returns a list of messages' do 
@@ -14,11 +15,20 @@ describe Message do
         end
     end
     describe '#peeps' do 
+        it 'make a peep' do 
+            message = Message.make(message: "Having fun day!")
+            
+            expect(message).to be_a Message
+            expect(message.message).to eq("Having fun day!")
+        end
+    end
+    describe '#peeps with date' do 
     it 'make a peep' do 
-        message = Message.make(message: "Having fun day!")
-        
-        expect(message).to be_a Message
-        expect(message.message).to eq("Having fun day!")
+        message = Message.make(message: "Do I have a date?")
+        date = Date.today.to_s
+    
+        expect(message.message).to eq("Do I have a date?")
+        expect(message.date).to eq(date)
     end
 end
 end
