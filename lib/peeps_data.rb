@@ -19,7 +19,7 @@ class PeepsData
   end
 
   def delete_peep(id)
-    DatabaseConnection.query("DELETE FROM peeps WHERE id=#{id.to_i};")
+    DatabaseConnection.query("DELETE FROM peeps WHERE id=#{id.to_i} ORDER BY date DESC;")
     list
   end
 
