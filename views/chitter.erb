@@ -9,7 +9,8 @@
 
   <% @peeps.each do |peep| %>
     <li> <%=peep%> </li>
-    <%# <li> <%=peep['message']%> </li>
+
+    <%# <li> <%= peep['message'] %> <%= peep['date'] %> </li> 
   <% end %>
 
 </html>
