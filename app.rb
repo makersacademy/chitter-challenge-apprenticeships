@@ -8,13 +8,11 @@ class Chitter < Sinatra::Base
     'Test page'
   end
   get '/' do
-    @peeps_data = PeepsData.new
-    @list = @peeps_data.list
+    @list = PeepsData.list
     erb :display
   end
   post '/message_box' do
-    @peeps_data = PeepsData.new
-    @peeps_data.add(Peep.new(params[:message]))
+    PeepsData.add(Peep.new(params[:message]))
     redirect '/'
   end
   post '/filter_box' do
@@ -22,8 +20,7 @@ class Chitter < Sinatra::Base
     redirect '/filtered_peeps'
   end
   get '/filtered_peeps' do
-    @peeps_data = PeepsData.new
-    @list = @peeps_data.list_by_keyword($keyword)
+    @list = PeepsData.list_by_keyword($keyword)
     erb :display_filtered
   end
   post '/return' do
