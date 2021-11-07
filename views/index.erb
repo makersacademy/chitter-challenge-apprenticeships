@@ -1,0 +1,26 @@
+
+<ul>
+  <% @messages.each do |message| %>
+  <h4> <li><%=  message.message %> </li></h2>
+  <i>Date posted: <%=  message.date %></i>
+  <% end %>
+</ul>
+
+
+<form method="post" action="/new_post">
+  <input type="text" name="message" placeholder="Type your Peep here 👈" />
+  <input type="submit" value="Post Peeps" />
+</form>
+
+<form method="post" action="/sort">
+  <input type="submit" value="New peeps on top" />
+</form>
+
+<form method="post" action="/restore">
+  <input type="submit" value="Old peeps on top" />
+</form>
+
+<form method="post" action="/filter">
+  <input type="text" name="filter" placeholder="Keyword here 👈" />
+  <input type="submit" value="Filter peeps" />
+</form>
