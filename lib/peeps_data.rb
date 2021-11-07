@@ -11,6 +11,13 @@ class PeepsData
     result.map { |peep_info| Peep.new(peep_info['message'], peep_info['date']) }
   end
 
+  def list_by_keyword(keyword)
+    result = DatabaseConnection.query(
+      "SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';"
+    )
+    result.map { |peep_info| Peep.new(peep_info['message'], peep_info['date']) }
+  end
+
   def delete_peep(id)
     DatabaseConnection.query("DELETE FROM peeps WHERE id=#{id.to_i};")
     list
