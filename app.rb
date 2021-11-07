@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/peeps'
+require './lib/sequence'
 require 'pg'
 
 class Chitter < Sinatra::Base
@@ -9,6 +10,8 @@ class Chitter < Sinatra::Base
 
   get '/chitter' do
     @peeps = Peeps.all
+    @orderby = Sequence.whatorder
+    @peepsreversechrono = Peeps.reverse
     erb :'chitter/index'
   end
 
@@ -21,10 +24,14 @@ class Chitter < Sinatra::Base
     redirect '/chitter'
   end
 
-  get '/chitter/reverse' do
-    Peeps.all.reverse.sort_by { |peep| peep.id }
-    p @peeps
-    erb :'chitter/reverse'
+  post '/chitter/reverse' do
+    Sequence.order(false)
+    redirect '/chitter'
+  end
+
+  post '/chitter/chrono' do
+    Sequence.order(true)
+    redirect '/chitter'
   end
 
   run! if app_file == $0

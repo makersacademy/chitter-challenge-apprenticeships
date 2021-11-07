@@ -20,6 +20,7 @@ require 'rspec'
 require 'pg'
 require 'simplecov'
 require 'simplecov-console'
+require 'orderly'
 
 
 require 'database_helpers'
