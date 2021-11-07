@@ -9,6 +9,7 @@ class Message
     @date = date
   end
 
+  
   def self.filter(keyword:) 
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')

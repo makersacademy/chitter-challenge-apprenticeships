@@ -1,5 +1,6 @@
 require 'message'
 require 'date'
+
 describe Message do 
   describe '#messages' do 
     it 'returns a list of messages' do 
