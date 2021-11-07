@@ -3,5 +3,6 @@ feature 'Viewing peeps' do
     visit('/chitter')
 
     expect(page).to have_content "This is peep 1"
+    expect(page).to have_content "This is peep 2"
   end
 end
