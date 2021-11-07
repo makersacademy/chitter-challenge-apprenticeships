@@ -9,6 +9,25 @@ class Message
       @date = date
     end
 
+    def self.filter(keyword:) 
+        if ENV['ENVIRONMENT'] == 'test'
+            connection = PG.connect(dbname: 'chitter_test')
+            else
+            connection = PG.connect(dbname: 'chitter')
+            end
+            result = connection.exec("SELECT * FROM peeps")
+            result.map do |message|
+                if message['message'].include?(keyword)
+                Message.new(id: message['id'], message: message['message'], date: message['_date'])
+                else
+                Message.new(id: nil, message: 'Not a  Match', date: nil)
+                end
+            end
+             
+            
+           
+    end
+
     def self.sort
         if ENV['ENVIRONMENT'] == 'test'
             connection = PG.connect(dbname: 'chitter_test')

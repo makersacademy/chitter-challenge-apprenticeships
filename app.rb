@@ -26,8 +26,10 @@ class Chitter < Sinatra::Base
     redirect '/home'
   end
 
-
-
+  post '/filter' do
+    @messages = Message.filter(keyword: params[:filter])
+    erb :index
+  end
 
   run! if app_file == $0
 end
