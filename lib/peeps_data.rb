@@ -1,12 +1,5 @@
 class PeepsData
-  attr_reader :id, :peep
-
-  def initialize(id = '', peep = '')
-    @id = id
-    @peep = peep
-  end
-
-  def list
+   def list
     result = DatabaseConnection.query('SELECT * FROM peeps ORDER BY date DESC;')
     result.map { |peep_info| Peep.new(peep_info['message'], peep_info['date']) }
   end
