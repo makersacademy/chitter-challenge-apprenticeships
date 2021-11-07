@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/message.rb'
+require './lib/message'
 
 class Chitter < Sinatra::Base
   configure :development do
