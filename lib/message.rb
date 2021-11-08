@@ -1,11 +1,7 @@
 require 'pg'
-require 'message'
 
 class Message
     def self.all
-    #   [
-    #     "I am a frog",
-    #    ]
       if ENV['ENVIRONMENT'] == 'test'
         connection = PG.connect(dbname: 'chitter_test')
       else
@@ -21,6 +17,6 @@ class Message
           else
             connection = PG.connect(dbname: 'chitter')
           end
-        connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+        connection.exec("INSERT INTO peeps (message) VALUES('#{message}') RETURNING message;")
     end
   end
