@@ -1,5 +1,8 @@
 require 'date'
 feature 'filter by keyword' do
+  subject.add(TEST_PEEP)
+  subject.add(TEST_POOP)
+  subject.add(TEST_CHOCOLATE)
   scenario 'display peep ones' do
     visit('/')
     fill_in :keyword, with: 'Peep'

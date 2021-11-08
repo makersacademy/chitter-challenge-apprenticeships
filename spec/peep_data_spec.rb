@@ -11,21 +11,30 @@ describe PeepsData do
     expect(response[0].date).to eq TEST_PEEP.date
   end
   it 'should add poop' do
+    subject.add(TEST_PEEP)
     response = subject.add(TEST_POOP)
     expect(response[0].message).to eq TEST_POOP.message
     expect(response[0].date).to eq TEST_POOP.date
   end
   it 'should add chocolate' do
+    subject.add(TEST_PEEP)
+    subject.add(TEST_POOP)
     response = subject.add(TEST_CHOCOLATE)
     expect(response[0].message).to eq TEST_CHOCOLATE.message
     expect(response[0].date).to eq TEST_CHOCOLATE.date
   end
   it 'should list Items' do
+    subject.add(TEST_PEEP)
+    subject.add(TEST_POOP)
+    subject.add(TEST_CHOCOLATE)
     response = subject.list
     expect(response[0].message).to eq TEST_CHOCOLATE.message
     expect(response[0].date).to eq TEST_CHOCOLATE.date
   end
   it 'should filter by keyword' do
+    subject.add(TEST_PEEP)
+    subject.add(TEST_POOP)
+    subject.add(TEST_CHOCOLATE)
     response = subject.list_by_keyword('is')
     expect(response).not_to include(TEST_CHOCOLATE)
     expect(response).not_to include(TEST_PEEP)
