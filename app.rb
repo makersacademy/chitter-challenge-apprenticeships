@@ -6,8 +6,7 @@ class Chitter < Sinatra::Base
 
   get '/messages' do
     Peep.toggle_order if params['sorting']
-    filter = " WHERE message LIKE '%#{params['filter_keyword']}%'"
-    @all_peeps = Peep.all(filter)
+    @all_peeps = Peep.all(params['filter_keyword'])
     erb :messages
   end
 
