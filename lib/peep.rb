@@ -11,10 +11,10 @@ class Peep
   end
 
   def self.all(filter = "")
-    query = "SELECT * FROM peeps" \
+    sql_string = "SELECT * FROM peeps" \
       " WHERE message LIKE '%#{filter}%'" \
       "ORDER BY time_added #{@@order}"
-    all_peeps = DatabaseConnection.query(query)
+    all_peeps = DatabaseConnection.query(sql_string)
     all_peeps.map { |peep| Peep.new(message: peep['message'], time_added: peep['time_added']) }
   end
 
@@ -25,9 +25,10 @@ class Peep
 
   def self.create(new_peep)
     time_of_peep = Time.now.strftime("%Y-%m-%d %H:%M:%S")
-    query = "INSERT INTO peeps (message, time_added)" \
-      " VALUES($1, $2) RETURNING message, time_added;"
-    DatabaseConnection.query(query, [new_peep, time_of_peep])
+    sql_string = "INSERT INTO peeps (message, time_added)" \
+      " VALUES($1, $2) " \
+      "RETURNING message, time_added;"
+    DatabaseConnection.query(sql_string, [new_peep, time_of_peep])
   end
 
 end
