@@ -7,10 +7,11 @@ describe DatabaseConnection do
       DatabaseConnection.setup('chitter_test')
     end
   end
-  describe '.connection' do
-    it 'this connection is persistent' do
+  describe '.query' do
+    it 'executes a query via PG' do
       connection = DatabaseConnection.setup('chitter_test')
-      expect(DatabaseConnection.connection).to eq connection
+      expect(connection).to receive(:exec_params).with("SELECT * FROM messages;", [])
+      DatabaseConnection.query("SELECT * FROM messages;")
     end
   end
 end

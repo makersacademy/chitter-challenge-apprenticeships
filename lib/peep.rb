@@ -1,4 +1,4 @@
-require 'pg'
+require 'database_connection'
 
 class Peep
 
@@ -10,18 +10,9 @@ class Peep
     @time_added = time_added
   end
 
-  def self.connect
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else
-      connection = PG.connect(dbname: 'chitter')
-    end
-  end
-
   def self.all(filter = "")
-    connection = Peep.connect
     query = "SELECT * FROM peeps #{filter} ORDER BY time_added #{@@order_by}"
-    all_peeps = connection.exec(query)
+    all_peeps = DatabaseConnection.query(query)
     all_peeps.map { |peep| Peep.new(peep: peep['message'], time_added: peep['time_added']) }
   end
 
@@ -30,10 +21,9 @@ class Peep
   end
 
   def self.create(new_peep)
-    connection = Peep.connect
     time_of_peep = Time.now.strftime("%Y-%m-%d %H:%M:%S")
     query = "INSERT INTO peeps (message, time_added) VALUES($1, $2) RETURNING message, time_added;"
-    connection.exec_params(query, [new_peep, time_of_peep])
+    DatabaseConnection.query(query, [new_peep, time_of_peep])
   end
 
 end

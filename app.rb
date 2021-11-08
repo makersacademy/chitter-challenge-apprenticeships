@@ -1,10 +1,8 @@
 require 'sinatra/base'
 require './lib/peep'
+require './database_connection_setup'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
-  end
 
   get '/messages' do
     Peep.toggle_order if params['sorting']
