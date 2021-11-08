@@ -18,8 +18,13 @@
       </a>
       </li>
   <% end %>
-<form method='post' action='chitter/reverse'>
+<form method='post' action='/chitter/reverse'>
   <input type="submit" value="Reverse Chronological Order">
 </form>
   <% end %>
+
+<form method='post' action='/chitter/filter'>
+  <input type='text' name='filter' placeholder="Filter by">
+  <input type="submit" value="Filter">
+</form>
 </ul>

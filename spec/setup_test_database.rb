@@ -10,5 +10,3 @@ def add_row_to_test_database
   Peeps.create(message: "Second Peep, HELLO Genie!")
   Peeps.create(message: "Third Peep, HELLO Rajah!")
 end
-
-
