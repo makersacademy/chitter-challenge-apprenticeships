@@ -15,8 +15,8 @@ class Chitter < Sinatra::Base
     erb :message_new
   end
 
-  post '/peeps/new' do
-    Message.add(message: params[:message])
+  post '/peeps' do
+    Message.add(params[:message])
     redirect '/peeps'
   end
   run! if app_file == $0
