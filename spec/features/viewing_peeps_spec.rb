@@ -8,7 +8,7 @@ feature 'Viewing peeps' do
   end
 end
 
-feature 'Posting a peeps' do
+feature 'Posting a peep' do
   scenario 'User can post a peep' do
     Peep.create(message: "Test peep!")
     visit('/peeps')
