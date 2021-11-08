@@ -1,15 +1,20 @@
 describe Message do 
   describe '.all'
     it 'returns all messages' do 
-      
-      # setup_test_database and add_row_to_test_database are automatically run when the test runs
+      connection = PG.connect(dbname: 'chitter_test')
 
       # Add test data
-      
-      messages = Message.all
-      
-      expect(messages).to include('Working with the test database')
-      expect(messages).to include('Adding test data within the tests')
-      expect(messages).to include('Saved as variable to instantiated Message class')
+      connection.exec("INSERT INTO peeps_test (message) VALUES('This is peeps!');")   
+      connection.exec("INSERT INTO peeps_test (message) VALUES('Adding test data within the tests');")   
+      connection.exec("INSERT INTO peeps_test (message) VALUES('Saved as variable to instantiated Message class');")   
+
+
+      test_message = Message.all
+
+      # p test_message
+
+      expect(test_message).to include('This is peeps!')
+      expect(test_message).to include('Adding test data within the tests')
+      expect(test_message).to include('Saved as variable to instantiated Message class')
   end 
 end 
