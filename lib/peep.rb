@@ -2,11 +2,11 @@ require 'database_connection'
 
 class Peep
 
-  attr_reader :peep, :time_added
+  attr_reader :message, :time_added
   @@order = 'DESC'
 
-  def initialize(peep:, time_added:)
-    @peep = peep
+  def initialize(message:, time_added:)
+    @message = message
     @time_added = time_added
   end
 
@@ -15,7 +15,7 @@ class Peep
       " WHERE message LIKE '%#{filter}%'" \
       "ORDER BY time_added #{@@order}"
     all_peeps = DatabaseConnection.query(query)
-    all_peeps.map { |peep| Peep.new(peep: peep['message'], time_added: peep['time_added']) }
+    all_peeps.map { |peep| Peep.new(message: peep['message'], time_added: peep['time_added']) }
   end
 
   def self.toggle_order

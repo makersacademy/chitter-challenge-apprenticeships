@@ -12,6 +12,6 @@
 </form>
 <ul id='#peeps'>
   <% @all_peeps.each do |peep| %>
-    <li> <%= peep.peep %> - <%= peep.time_added%> </li>
+    <li> <%= peep.message %> - <%= peep.time_added%> </li>
   <% end %>
 </ul>
