@@ -30,7 +30,7 @@ command `CREATE DATABASE chitter_test;`;
 * `bundle install`
 * `rspec`
 
-You should see 1 passing test.
+You should see 1 passing test. Completed !
 
 ## User stories
 
