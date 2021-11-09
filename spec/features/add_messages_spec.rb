@@ -7,7 +7,6 @@ feature 'posts a message to chitter' do
         visit '/messages/new'
         fill_in('message', with: 'I am so happy!')
         click_button('Submit')
-    
         expect(page).to have_content 'I am so happy!'
     end
 end
