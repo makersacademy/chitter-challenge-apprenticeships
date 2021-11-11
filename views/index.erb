@@ -11,7 +11,10 @@
    </tr>
   <% @peeps.each do |peep| %>
     <tr>
-      <td><%= peep %></td>
+      <td><%= peep.message[:message] %></td>
+    </tr>
+    <tr>
+      <td><%= peep.message[:date] %></td>
       </tr>
   <% end %>
 </table>

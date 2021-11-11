@@ -14,9 +14,10 @@ class Chitter < Sinatra::Base
   end 
 
   post '/messages' do 
-   p @message = params[:message] 
-   PeepMessages.create(message: params[:message])
-   redirect '/messages'
+    @message = params[:message] 
+    date = Time.now.strftime("%d/%m/%Y %H:%M")
+   PeepMessages.create(message: params[:message], date: date)
+   redirect '/'
    end 
 
   run! if app_file == $0
