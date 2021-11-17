@@ -1,4 +1,5 @@
 require 'pg'
+require 'database_connection'
 
 class Message
 
@@ -9,20 +10,22 @@ class Message
   end
 
   def self.all
-    if ENV['Environment'] == 'test'
+    if ENV['ENVIRONMENT'] == 'test'
+      puts 'connecting to test database'
       connection = PG.connect(dbname: 'chitter_test')
      else
+      puts 'connecting to database'
        connection = PG.connect(dbname: 'chitter')
      end 
 
     result = DatabaseConnection.query('SELECT * FROM peeps;')
-    result.map do |message| 
+     result.map do |message| 
          Message.new(message)
   end 
 end
 
-  # def self.create(new_post:)
-  #    DatabaseConnection.query("INSERT INTO peeps (message) VALUES('{#new_post}');")
+  # def self.create(post:)
+  #    DatabaseConnection.query("INSERT INTO peeps (message) VALUES('{#post}');")
   # end
 
 end 

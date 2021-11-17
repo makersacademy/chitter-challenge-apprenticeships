@@ -10,5 +10,8 @@ end
 
 def add_row_to_test_database
     connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps (message) values ('This is a peep!');")   
+    connection.exec("INSERT INTO peeps (message) VALUES('This is a peep!');") 
+    connection.exec("INSERT INTO peeps (message) VALUES('Adding test data within the tests');")   
+    connection.exec("INSERT INTO peeps (message) VALUES('Saved as variable to instantiated Message class');")   
+    connection.query('SELECT * FROM peeps;')
 end

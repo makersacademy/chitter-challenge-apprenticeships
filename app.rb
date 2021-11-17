@@ -1,16 +1,12 @@
 require 'sinatra/base'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require './database_connection_setup'
 require './lib/message'
 
 class Chitter < Sinatra::Base
 
-  # get '/test' do
-  #   'Test page'
-  # end
-
   get '/messages' do 
-    @messages = Message.all
+   p @messages = Message.all
     erb :'messages/index'
   end 
 
@@ -19,15 +15,12 @@ class Chitter < Sinatra::Base
   end 
 
   post '/messages/new' do 
-    params 
+    new_post = params['new_post']
+    connection = PG.connect(dbname: "chitter_test")
+    connection.exec("INSERT INTO peeps (message) values('#{new_post}');")
+    redirect '/messages'
   end
-    
-  # -- Unable to connect to test database 
-    # new_post = params['new_post']
-    # connection = PG.connect(dbname: "chitter_test")
-    # connection.exec("INSERT INTO peeps_test (message) values('#{new_post}');")
-    # redirect '/messages'
-  # end
+  
 
   run! if app_file == $0
 end
