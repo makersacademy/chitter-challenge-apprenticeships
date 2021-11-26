@@ -1,0 +1,16 @@
+<% if @peeps.empty? %>
+<p>No results found for '<%=@query%>'</p>
+<% end %>
+
+<form action="/">
+  <input class="button search-submit" type="submit" value="Go back">
+</form>
+
+<div class="peeps">
+  <% @peeps.each do | peep | %>
+    <section class="container" id="<%= peep.id %>">
+      <p class="peep"><%= peep.message %></p>
+      <p class="date"><%= DateFormatter.format_date(peep.date) %></p>
+    </section>
+  <% end %>
+</div>

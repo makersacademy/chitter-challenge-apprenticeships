@@ -1,66 +1,24 @@
-## Chitter Challenge
+# Chitter
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+![Chitter homepage](https://github.com/lewiscj97/chitter-challenge-apprenticeships/blob/main/public/images/home.png)
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+## About
 
-## Set up
+This is a simple message board app, where a user is able to post and view 'peeps'. The app also includes functionality to filter the peeps by a keyword or a space-separated string. The app was built following behaviour-driven development, where a test was written for each application feature before any development. After writing the feature tests, any necessary changes to the models were developed following TDD. SQL queries handle most of the work in this app, including filtering and sorting chronologically. All results from SQL queries are wrapped in a `peep` object, using the `PeepFactory` class.
 
-To setup the database:
+See `/public/images` for images of how the app is used.
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+## Setup
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+1. Clone repo
+2. Run `bundle install`
+3. Create two databases, `chitter` and `chitter_test`
+4. Run the command in `db/migrations/01_create_chitter_table.sql` to create the required relations
+     - **Note**: this command has been altered from the starter project, in order to include the date of each peep
+5. Run `rackup -p 4567` and access the Chitter app at `http://localhost:4567/`
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
+## Improvement points
 
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
-
-## User stories
-
-```
-As a Maker
-So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
-```
-
-```
-As a Maker
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
-```
-
-```
-As a Maker
-So that I can see when people are doing things
-I want to see the date the message was posted
-```
-(Hint the database table will need to change to store the date too)
-
-```
-As a Maker
-So that I can easily see the latest peeps
-I want to see a list of peeps in reverse chronological order
-```
-```
-As a Maker
-So that I can find relevant peeps
-I want to filter on a specific keyword
-```
+- Currently no user or username assigned to each peep. This was by choice, since user stories did not explicitly mention that the user/username should be included in a peep, so I developed this as an anonymous posting board - but it might have been nice to include username too!
+- I would like to add some authentication to the app. One way of doing this would be to create a `Users` table, storing username and password data (which would be encrypted for security). To use the website, a user would either need to sign in or create an account, and the app would store the current userId in the session storage. When new peeps were created, the app would automatically know the author, and this would also allow editing/deleting of peeps if the peep is owned by the current user. The peeps and user tables would be joined by the `peep.user_id` and `user.id`
+- The CSS/HTML is very basic, with more time I would have liked to apply more advanced CSS functionality to the app
