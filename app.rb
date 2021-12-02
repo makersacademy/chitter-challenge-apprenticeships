@@ -4,14 +4,18 @@ require './database_connection_setup'
 
 class Chitter < Sinatra::Base
 
+  get '/' do
+    erb :index
+  end
+
   get '/peeps' do
     @peeps = Peep.all
     erb :peeps
   end
 
-  post '/send-peep' do
-    Peep.create(message: params[:message])
-    redirect '/peeps'
+  post '/send-peeps' do
+    # Peep.create(message: params[:message])
+    erb :send_peeps
   end
 
   run! if app_file == $0
