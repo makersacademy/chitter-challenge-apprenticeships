@@ -1,0 +1,8 @@
+<% @peeps.each do |peep| %>
+  <li><%= peep.message %></li>
+<% end %>
+
+<form action="/peeps" method='post'>
+  <input type="text" name="test">
+  <input type="submit" value="Send peep">
+</form>
