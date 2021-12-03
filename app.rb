@@ -13,8 +13,12 @@ class Chitter < Sinatra::Base
     erb :peeps
   end
 
-  post '/send-peeps' do
-    # Peep.create(message: params[:message])
+  post '/peeps' do
+    Peep.create(params[:test])
+    redirect '/peeps'
+  end
+
+  get '/send-peeps' do
     erb :send_peeps
   end
 
