@@ -1,0 +1,12 @@
+<form action='/post-message' method='post' class="post_a_message_form">
+    <label for="post_message" class='post_text'>Post a message:</label>
+    <input type='text' name='post_message' class='post_input_box'>
+    <input value='post' type='submit' class='post_button'>
+</form>
+
+<% @messages.each_with_index do | message, index |%>
+    <section id=<%=index%>
+        <p> <%=message.date%> </p>
+        <p> <%=message.message%> </p>
+    </section>
+<% end %>

@@ -83,6 +83,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  x86_64-darwin-17
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -94,8 +95,5 @@ DEPENDENCIES
   simplecov-console
   sinatra
 
-RUBY VERSION
-   ruby 3.0.2p107
-
 BUNDLED WITH
-   2.2.26
+   2.2.29
