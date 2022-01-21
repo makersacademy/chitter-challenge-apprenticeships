@@ -1,0 +1,20 @@
+<html>
+
+<h1> Chitter </h1>
+
+  <form action = '/add_peep' method = post >
+    <input type="submit" value="Write peep!" >
+  </form>
+
+<table>
+
+  <% @peeps.each do |peep| %>
+    <tr>
+      <td> <p>  <%= peep[:message] %> </p> </td>
+      <td> <p> Date: <%= peep[:date] %> </p> </td>  
+    </tr>
+  <% end %>
+
+</table>
+
+</html>
