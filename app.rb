@@ -9,7 +9,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/peep/new' do
-    'I am currently singing under the shower'
+    Message.create(message: params[:peep])
+    redirect '/'
   end
 
   run! if app_file == $0
