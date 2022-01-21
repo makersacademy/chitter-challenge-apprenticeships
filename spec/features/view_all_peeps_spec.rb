@@ -21,7 +21,7 @@ feature "viewing all messages (peeps)" do
     today_date = Time.now.strftime("%Y-%m-%d")
 
     expect(page).to have_content("#{today_date}: This is a test peep!")
-    expect(page).to have_content("#{today_date}: This is another test peep!")
+    expect(page).to have_content("2022-01-01: This is another test peep!")
     expect(page).to have_content("2021-01-01: This is an old peep")
   end
 
@@ -32,7 +32,7 @@ feature "viewing all messages (peeps)" do
   scenario "view messages in chronological order" do
     visit('/peeps')
     today_date = Time.now.strftime("%Y-%m-%d")
-    expect(page).to have_content("#{today_date}: This is a test peep! #{today_date}: This is another test peep! 2021-01-01: This is an old peep")
+    expect(page).to have_content("#{today_date}: This is a test peep! 2022-01-01: This is another test peep! 2021-01-01: This is an old peep")
   end
     
 end
