@@ -16,9 +16,5 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
-  get '/test' do
-    'Test page'
-  end
-
   run! if app_file == $0
 end
