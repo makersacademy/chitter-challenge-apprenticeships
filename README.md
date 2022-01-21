@@ -28,7 +28,12 @@ To setup the test database:
 * Run the query we have saved in the file 01_create_chitter_table.sql in folder ./db/migrations
 * Run the query we have saved in the file 02_add_date_to_table.sql in folder ./db/migrations
 
+Install required GEMs
+
 * `bundle install`
+
+Run tests
+
 * `rspec`
 
 ## User stories
