@@ -3,8 +3,15 @@ require './lib/message'
 
 class Chitter < Sinatra::Base
 
+  enable :sessions
+
   get '/' do
-    @peeps = Message.all
+    filter = session[:filter]
+    if filter.nil? || filter.empty?
+      @peeps = Message.all
+    else
+      @peeps = Message.filter_by(tag: filter)
+    end
     erb(:board)
   end
 
@@ -14,7 +21,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/peep/filter' do
-    'I am a very important post!'
+    session[:filter] = params[:filter]
+    redirect '/'
   end
   
   run! if app_file == $0
