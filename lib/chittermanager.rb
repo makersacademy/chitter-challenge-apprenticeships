@@ -16,7 +16,7 @@ class Chittermanager
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    result = connection.exec("SELECT * FROM peeps;")
+    result = connection.exec("SELECT id, message, time FROM peeps order by time desc;")
     result.map do |peeps|
     Chittermanager.new(id: peeps['id'], peep: peeps['message'], time: peeps['time'])
     end
