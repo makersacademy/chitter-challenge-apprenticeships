@@ -3,6 +3,17 @@
   <input type='submit' value='Submit'>
 </form>
 
+<form action='/' method='get'>
+  <select name='order' id='order'>
+    <option value='ASC'>Oldest First</option>
+    <option value='DESC'>Newest First</option>
+  </select>
+  <input type='submit' value='Sort'>
+</form>
+
 <% @peeps.each do |peep|%>
-  <h1> <%= peep.message %> </h1>
+  <div class='peep'>
+    <h1> <%= peep.message %> </h1>
+    <h3> <%= Time.parse(peep.created_at).strftime('%d/%m/%Y %H:%M') %> </h3>
+  </div>
 <% end %>

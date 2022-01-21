@@ -3,7 +3,7 @@ require_relative 'lib/peep'
 
 class Chitter < Sinatra::Base
   get '/' do
-    @peeps = Peep.all
+    @peeps = Peep.all(params[:order])
     erb :index
   end
 

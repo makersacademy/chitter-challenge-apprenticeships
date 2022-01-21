@@ -7,11 +7,23 @@ describe Peep do
       add_row_to_test_database('Second Message')
       add_row_to_test_database('Third Message')
 
-      peeps = Peep.all
+      peeps = Peep.all('ASC')
 
       expect(peeps[0].message).to eq 'First Message'
       expect(peeps[1].message).to eq 'Second Message'
       expect(peeps[2].message).to eq 'Third Message'
+    end
+
+    it 'returns a list of all peeps with newest first' do
+      add_row_to_test_database('First Message')
+      add_row_to_test_database('Second Message')
+      add_row_to_test_database('Third Message')
+
+      peeps = Peep.all('DESC')
+
+      expect(peeps[0].message).to eq 'Third Message'
+      expect(peeps[1].message).to eq 'Second Message'
+      expect(peeps[2].message).to eq 'First Message'
     end
   end
 
