@@ -40,6 +40,7 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
+![Screenshot](DM_UserStory1.png)
 
 ```
 As a Maker
