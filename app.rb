@@ -2,7 +2,7 @@ require 'sinatra/base'
 require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
-  
+
   enable :sessions, :method_override
 
   get '/messageboard' do
@@ -19,5 +19,10 @@ class Chitter < Sinatra::Base
     redirect '/messageboard'
   end 
   
+  post '/messageboard/search' do 
+    @peeps = Peep.search(keyword: params['keyword'])
+    erb :'messageboard/results'
+  end 
+
   run! if app_file == $0
 end

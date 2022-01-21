@@ -36,4 +36,17 @@ class Peep
     Peep.new(message: new_post[0]['message'], time: new_post[0]['time'], id: new_post[0]['id'])
   end 
 
+  def self.search(keyword:)
+    if ENV['ENVIRONMENT'] == 'test'
+      con = PG.connect(dbname: 'chitter_test')
+    else
+      con = PG.connect(dbname: 'chitter')
+    end 
+
+    searched_peeps = con.exec_params("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%'")
+    searched_peeps.map do |peep|
+     p Peep.new(id: peep['id'], message: peep['message'], time: peep['time'])
+      
+    end 
+  end  
 end 

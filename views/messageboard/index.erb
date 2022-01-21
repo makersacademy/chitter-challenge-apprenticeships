@@ -1,6 +1,13 @@
 
 This is the homepage for Chitter 
-
+<br>
+<br> 
+<form action = 'messageboard/search' method ='post' >
+    <input type = 'text' name = 'keyword' >
+    <input type = 'submit' value = 'Search' > 
+</form>
+<br>
+<br> 
 <ul>
   <% @peeps.each do |peep| %>
     <li>
@@ -15,3 +22,5 @@ This is the homepage for Chitter
 <form action = 'messageboard/add' method ='get' >
     <input type = 'submit' value = 'Add' > 
   </form>
+
+

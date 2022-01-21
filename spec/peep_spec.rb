@@ -25,4 +25,18 @@ describe Peep do
     end 
   end
 
+  describe '#search' do 
+    it 'searches and returns peeps by keyword' do 
+      Peep.post(message: 'I like drinking coffee') 
+      Peep.post(message: 'I like drinking tea') 
+      Peep.post(message: 'I like eating sweets') 
+      
+      peeps = Peep.search(keyword: 'drinking')
+
+      expect(peeps.length).to eq 2
+      expect(peeps).to_not include "I like eating sweets"
+    end 
+  end
+
+
 end 
