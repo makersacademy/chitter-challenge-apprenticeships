@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/message'
 
 class Chitter < Sinatra::Base
 
