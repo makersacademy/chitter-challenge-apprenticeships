@@ -12,5 +12,3 @@ feature 'shows all of the peeps on the homepage' do
     expect(page).to have_content('This is my third test message')
   end 
 end 
-
-

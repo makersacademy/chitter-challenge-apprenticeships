@@ -32,7 +32,9 @@ class Peep
       con = PG.connect(dbname: 'chitter')
     end 
  
-    new_post = con.exec_params("INSERT INTO peeps (message, time) VALUES($1, $2) RETURNING id, message, time;", [message, (@t.strftime("Posted at %I:%M%p"))])
+    new_post = con.exec_params("INSERT INTO peeps (message, time) VALUES($1, $2) 
+      RETURNING id, message, time;", [message, @t.strftime("Posted at %I:%M%p")])
+
     Peep.new(message: new_post[0]['message'], time: new_post[0]['time'], id: new_post[0]['id'])
   end 
 
@@ -45,8 +47,7 @@ class Peep
 
     searched_peeps = con.exec_params("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%'")
     searched_peeps.map do |peep|
-     p Peep.new(id: peep['id'], message: peep['message'], time: peep['time'])
-      
+      Peep.new(id: peep['id'], message: peep['message'], time: peep['time'])
     end 
   end  
 end 
