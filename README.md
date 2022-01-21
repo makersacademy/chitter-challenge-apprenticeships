@@ -40,3 +40,4 @@ Completed steps:
 * Create new peep
 
 ## Domain Model
+![A screenshot of the domain model for the first two user storieas](./assets/Model.png)
