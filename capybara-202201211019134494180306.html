@@ -4,13 +4,7 @@
   <input type='submit' name='Submit'>
 </form>
 
-<% if @peeps.empty? %>
-There's nothing here yet... Why not post a peep?
-<% else %>
 Your Peep timeline:
-<% @peeps.each { |peep| %>
-User: <%= peep.username %>
-Message: <%= peep.message %>
-Posted on: <%= peep.datetime %>
-<% } %>
-<% end %>
+User: test user
+Message: test message
+Posted on: 2022-01-21 10:19:13
