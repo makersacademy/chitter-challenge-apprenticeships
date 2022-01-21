@@ -4,12 +4,12 @@
   <input type='submit' name='Submit'>
 </form>
 
-<% if $peep.peeps.empty? %>
+<% if @peeps.empty? %>
 There's nothing here yet... Why not post a peep?
 <% else %>
 Your Peep timeline:
-<% $peep.peeps.each { |peep| %>
-User: <%= peep[:user] %>
-Message: <%= peep[:message]%>
+<% @peeps.each { |peep| %>
+User: <%= peep.username %>
+Message: <%= peep.message%>
 <% } %>
 <% end %>

@@ -7,17 +7,13 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    $peep = Peep.new
+    @peeps = Peep.all
     erb(:index)
   end
 
   post '/new-peep' do
-    $peep.peeps << { user: params[:peep_user], message: params[:peep_message] }
-    redirect 'view-peeps'
-  end
-
-  get '/view-peeps' do
-    erb(:index)
+    Peep.add(username: params[:peep_user], message: params[:peep_message])
+    redirect '/'
   end
 
   run! if app_file == $0
