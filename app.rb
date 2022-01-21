@@ -8,5 +8,9 @@ class Chitter < Sinatra::Base
     erb(:board)
   end
 
+  post '/peep/new' do
+    'I am currently singing under the shower'
+  end
+
   run! if app_file == $0
 end
