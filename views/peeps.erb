@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <div style= 'border: 4mm ridge rgba(170, 50, 220, .6)'>
+      <h2><center><u> Here are the current Peeps! </u><center></h2>
+    </div>
+  </head>
+
+  <body>
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li><%= peep %></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
