@@ -1,36 +1,34 @@
 ## Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+This program simulates Twitter, with a list of 'peeps' viewable by the user, and the ability to 
+post new peeps to the forum
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+The views for this project are written in HAML
 
-## Set up
+![Homepage Image for Chitter](https://drive.google.com/uc?export=view&id=1cACmERMEiCh_tGGSFFF8MzDnIAccmd_S)
 
-To setup the database:
+```
+bundle
+rackup
+```
+To set up the database:
+```
+psql
+=> CREATE DATABASE chitter;
+=> \c chitter
+```
+Run the SQL scripts in `db/migrations` in order
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+You will also need to create a test database for running tests
+```
+=> CREATE DATABASE chitter_test;
+=> \c chitter_test
+```
+And run the SQL scripts in `db/migrations` in order
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+## Personal Critique
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
-
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
+I didn't know how to spec/mock for time, but the peeps return the time
 
 ## User stories
 
@@ -52,13 +50,13 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
 
 ```
 As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
+This user story was not yet built
 ```
 As a Maker
 So that I can find relevant peeps
