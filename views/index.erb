@@ -1,6 +1,4 @@
 <h1>My peeps</h1>
-<div>
-<div>My first peep</div>
-<div>Second peep</div>
-<div>Third peep</div>
-</div>
+<% @peeps.each do |peep|%>
+<div><%= peep.to_str %></div>
+<% end %>

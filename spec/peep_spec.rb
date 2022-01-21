@@ -4,9 +4,9 @@ describe Peep do
   it 'list all the peeps' do
     connection = PG.connect(dbname: 'chitter_test')
 
-    connection.exec("INSERT INTO peeps (message) VALUES ('First peep');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('Second peep');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('Third peep');")
+    connection.exec("INSERT INTO peeps VALUES (1, 'First peep');")
+    connection.exec("INSERT INTO peeps VALUES (2, 'Second peep');")
+    connection.exec("INSERT INTO peeps VALUES (3, 'Third peep');")
 
     peeps = Peep.all
 
