@@ -36,15 +36,15 @@ Users can also search the peeps database using the 'search by keyword' functiona
 1. Fork the repo on github, or clone it using the terminal command `git clone https://github.com/marcusventin/chitter-challenge-apprenticeships`.
 2. Run `bundle install` in the terminal to install the necessary gems.
 3. Create the project databases:
-  - Run `psql` in your terminal.
-  - Run `CREATE DATABASE chitter` to create a new database.
-      - Don't forget to create a test database too!
-  - Run the query saved in ./db/migrations/01_create_chitter_table.sql
-  - Run the query saved in ./db/migrations/02_add_datetime_column.sql
-    - This is what your database should look like in TablePlus once setup is complete:
+   * Run `psql` in your terminal.
+   * Run `CREATE DATABASE chitter` to create a new database.
+     * Don't forget to create a test database too!
+   * Run the query saved in ./db/migrations/01_create_chitter_table.sql
+   * Run the query saved in ./db/migrations/02_add_datetime_column.sql
+     * This is what your database should look like in TablePlus once setup is complete:
     ![ScreenShot](chitter_setup_database.png)  
 4. To start the program, run `app ruby.rb` in the terminal and visit http://localhost:4567/
-  - Alternatively, run `rackup` and visit http://localhost:9292/
+   * Alternatively, run `rackup` and visit http://localhost:9292/
 
 #### Homepage
 Upon starting the program, you will be greeted with the following page.  
