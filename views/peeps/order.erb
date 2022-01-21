@@ -1,0 +1,7 @@
+<p>Your posts have been sorted!</p>
+<ul>
+<% @peeps_sorted.each do |peep| %>
+  <li><%= peep.message %>
+   <br><i>Date posted: </i><%= peep.datetime %></li><br>
+<%end %>
+</ul>
