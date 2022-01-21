@@ -1,10 +1,10 @@
 require 'pg'
 
-class Chitter
+class Chittermanager
    
   attr_reader :id, :peep, :timestamp
 
-  def initialize(id:, peep:, timestamp:)
+  def initialize(id:, peep:, timestamp: nil)
     @id  = id
     @peep = peep
     @timestamp = timestamp
@@ -18,9 +18,7 @@ class Chitter
     end
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peeps|
-    Chitter.new(id: peeps['id'], peep: peeps['peep'], timestamp: peeps['timestamp'])
-
-    
+    Chittermanager.new(id: peeps['id'], peep: peeps['peep'], timestamp: peeps['timestamp'])
     end
   end
   
@@ -31,9 +29,9 @@ class Chitter
     else
       connection = PG.connect(dbname: 'chitter')
     end
-      
-      result = connection.exec("INSERT INTO peeps (peep, timestamp) VALUES('#{peep}', current_timestamp) RETURNING id, peep, timestamp;")
-      Chitter.new(id: result[0]['id'], peep: result[0]['peep'], timestamp: result[0]['timestamp'])
+    
+    result = connection.exec("INSERT INTO peeps (peep, timestamp) VALUES('#{peep}', current_timestamp) RETURNING id, peep, timestamp;")
+    Chittermanager.new(id: result[0]['id'], peep: result[0]['peep'], timestamp: result[0]['timestamp'])
       
   end
 
