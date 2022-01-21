@@ -19,6 +19,12 @@
         font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         padding: 15px;
       }
+      td.date {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 8pt;
+        color:dimgray;
+        padding: 15px;
+      }
     </style>
   </head>
   <body>
@@ -28,10 +34,24 @@
       <% @peeps.each do |peep| %>
       <tr>
         <td class="peeps">
-          <%= peep.message %>
+          <table>
+            <tr>
+              <td>
+                <%= peep.message %>
+              </td>
+            </tr>
+            <tr>
+              <td class="date">
+                Posted: <%= peep.date %>
+              </td>
+            </tr>
+          </table>       
         </td>
       </tr>
       <% end %>
     </table>
   </body>
 </html>
+
+
+
