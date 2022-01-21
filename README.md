@@ -1,4 +1,5 @@
 # Chitter Challenge
+### It's like Twitter, only Chitter
 
 ## Motivation
 This project enables a user to send messages (peeps) to an online message board, as well as search for existing messages by keyword.  
@@ -63,6 +64,8 @@ From the results page, you can either search again or return to the homepage.
 ![ScreenShot](chitter_project_diagram.png)  
 
 
+
+## Makers Instructions
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day

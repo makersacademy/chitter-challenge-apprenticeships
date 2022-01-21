@@ -46,7 +46,7 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec_params("SELECT * FROM peeps WHERE LOWER(message) LIKE LOWER($1) ORDER BY datetime DESC;", ["%#{keyword}%"])
+    result = connection.exec_params("SELECT * FROM peeps WHERE (message) iLIKE ($1) ORDER BY datetime DESC;", ["%#{keyword}%"])
     result.map do |peep|
       Peep.new(id: peep['id'], username: peep['username'],
         message: peep['message'], datetime: peep['datetime'])
