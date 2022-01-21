@@ -10,4 +10,11 @@ feature 'testing /view functions' do
     expect(page).to have_content "This is a peep!"
   end
 
+  scenario '- added peeps are visible' do
+            
+    Chittermanager.create(peep: "a new peep")
+    visit '/view'
+    expect(page).to have_content "a new peep"
+  end
+
 end

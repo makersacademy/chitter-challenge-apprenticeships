@@ -4,7 +4,7 @@ class Chittermanager
    
   attr_reader :id, :peep, :timestamp
 
-  def initialize(id:, peep:, time: nil)
+  def initialize(id: nil, peep:, time: nil)
     @id  = id
     @peep = peep
     @time = time

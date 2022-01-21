@@ -23,7 +23,7 @@ class Chitter < Sinatra::Base
   end
   
   post '/add' do
-    # code to add 
+    Chittermanager.create(peep: params[:message])
     redirect '/view'
   end
 
