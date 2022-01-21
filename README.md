@@ -7,6 +7,8 @@ Chitter is a web application adoption of Twitter. Here some key features.
   * You can filter by keyword hitting the 'Apply' button
   * To reset the filter, just hit 'Apply' again, without entering any text first
 
+![application](https://user-images.githubusercontent.com/76103162/150537635-3f2ed77a-74ba-4390-abe5-43ca6d109bfd.png)
+
 ## Set up
 
 To setup the production database:
