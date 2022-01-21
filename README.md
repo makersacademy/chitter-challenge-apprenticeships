@@ -19,9 +19,8 @@ To setup the production database:
 * Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
 * Run the query we have saved in the file 02_add_date_to_table.sql in folder ./db/migrations
 
-To setup test database 
-
 To setup the test database:
+
 * Connect to psql
 * Create the database using the psql command `CREATE DATABASE chitter_test;`
 * Connect to the database using the psql command `\c chitter_test`
