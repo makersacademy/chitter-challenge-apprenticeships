@@ -1,7 +1,14 @@
 <h1>Chitter View</h1>
-<br>
-<br>
+<p>***********************</p>
 
+<form action="/view" method="get">
+<p> Filter for messages: </p>
+<textarea name="filter" rows="1" cols="20"></textarea> 
+<br><br>
+<input type="submit" value="Submit" />
+<p>***********************</p>
+<br>
+<br>
 <ul>
   <% @peepsr.each do |result| %>
     <li>
@@ -11,4 +18,9 @@
     </li>
   <% end %>
 </ul>
+
+<br>
+<br>
+
+
 

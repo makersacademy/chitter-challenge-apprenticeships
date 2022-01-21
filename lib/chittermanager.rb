@@ -34,5 +34,18 @@ class Chittermanager
     Chittermanager.new(id: result[0]['id'], peep: result[0]['message'], time: result[0]['time'])
       
   end
+  
+  def self.filter(filter:)
+
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    result = connection.exec("SELECT id, message, time FROM peeps where message LIKE '%#{filter}%';")
+    result.map do |peeps|
+    Chittermanager.new(id: peeps['id'], peep: peeps['message'], time: peeps['time'])
+    end
+  end
 
 end 

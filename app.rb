@@ -14,7 +14,11 @@ class Chitter < Sinatra::Base
   end
   
   get '/view' do
-    @peepsr = Chittermanager.all   
+    if params[:filter]
+      @peepsr = Chittermanager.filter(filter: params[:filter])
+    else
+      @peepsr = Chittermanager.all 
+    end   
     erb :view
   end
 
