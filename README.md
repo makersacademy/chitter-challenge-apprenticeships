@@ -1,12 +1,11 @@
-## Chitter Challenge
+# Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+Chitter is a web application adoption of Twitter. Here some key features.
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+  * You will be shown the all posts in reverse chronological order
+  * You can add new posts to let the world know what you're currently doing
+  * You can filter by keyword hitting the 'Apply' button
+  * To reset the filter, just hit 'Apply' again, without entering any text first
 
 ## Set up
 
@@ -34,6 +33,10 @@ Install required GEMs
 Run tests
 
 * `rspec`
+
+Run application
+
+* `rackup`
 
 ## User stories
 
