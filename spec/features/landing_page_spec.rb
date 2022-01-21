@@ -11,7 +11,6 @@ feature 'landing page' do
     connection.exec("INSERT INTO peeps (message) values ('This is a peep!');")
     visit('/')
     expect(page).to have_content "This is a peep!- #{Time.now.strftime("%Y-%m-%d")}" 
-    # expect(page).to have_content 'This is a peep!- 2022-01-21' 
   end 
 
 end
