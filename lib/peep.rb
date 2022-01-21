@@ -2,7 +2,7 @@ require 'pg'
 
 class Peep 
 
-  t = Time.now
+  @t = Time.now
 
   attr_reader :id, :message, :time 
 
@@ -14,7 +14,6 @@ class Peep
 
   def self.view_peeps
     if ENV['ENVIRONMENT'] == 'test'
-  
       con = PG.connect(dbname: 'chitter_test')
     else
       con = PG.connect(dbname: 'chitter')
@@ -24,7 +23,17 @@ class Peep
     results.map do |peep| 
       Peep.new(id: peep['id'], message: peep['message'], time: peep['time'])
     end 
-
   end
+
+  def self.post(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      con = PG.connect(dbname: 'chitter_test')
+    else
+      con = PG.connect(dbname: 'chitter')
+    end 
+ 
+    new_post = con.exec_params("INSERT INTO peeps (message, time) VALUES($1, $2) RETURNING id, message, time;", [message, (@t.strftime("Posted at %I:%M%p"))])
+    Peep.new(message: new_post[0]['message'], time: new_post[0]['time'], id: new_post[0]['id'])
+  end 
 
 end 
