@@ -1,1 +1,14 @@
 <h1>Chitter View</h1>
+<br>
+<br>
+
+<ul>
+  <% @peepsr.each do |result| %>
+    <li>
+      <p> <%=result.peep %>
+       
+      </p>
+    </li>
+  <% end %>
+</ul>
+

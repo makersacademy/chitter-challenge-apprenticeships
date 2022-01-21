@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'sinatra/reloader' #start auto reload
+require 'sinatra/reloader' # start auto reload
 require_relative './lib/chittermanager' 
 
 class Chitter < Sinatra::Base
@@ -14,8 +14,7 @@ class Chitter < Sinatra::Base
   end
   
   get '/view' do
-   
-    
+    @peepsr = Chittermanager.all   
     erb :view
   end
 
@@ -24,7 +23,7 @@ class Chitter < Sinatra::Base
   end
   
   post '/add' do
-    #code to add 
+    # code to add 
     redirect '/view'
   end
 
