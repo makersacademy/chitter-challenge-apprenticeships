@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Chitter</title>
+    <style>
+      body {
+        background-color:rgb(69, 182, 192);
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+      }
+      table.main {
+        width:800px; 
+        margin-left: auto; 
+        margin-right: auto;
+        border-spacing: 30px;
+      }
+      td.peeps {
+        background-color: white;
+        border: 1px solid black;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 15px;
+      }
+      td.date {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 8pt;
+        color:dimgray;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chitter</h1>
+    <a href="/new">Add a Peep</a>
+    <table class="main">
+      <% @peeps.each do |peep| %>
+      <tr>
+        <td class="peeps">
+          <table>
+            <tr>
+              <td>
+                <%= peep.message %>
+              </td>
+            </tr>
+            <tr>
+              <td class="date">
+                Posted: <%= peep.date %>
+              </td>
+            </tr>
+          </table>       
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </body>
+</html>
+
+
+
