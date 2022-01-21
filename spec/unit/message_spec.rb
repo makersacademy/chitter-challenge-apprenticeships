@@ -29,14 +29,14 @@ RSpec.describe Message do
     end
   end
 
-  describe '.filter_by' do
+  describe '.all with filter' do
     it 'should return only messages that include the search keyword' do
       Message.create(message: 'I am singing under the shower')
       Message.create(message: 'Just finished my workout, taking a Shower now')
       Message.create(message: 'Just finished my workout, taking a ShoWer now')
       Message.create(message: 'I am in wellness mode, taking a bath :)')
 
-      results = Message.filter_by(tag: 'Shower')
+      results = Message.all(filter: 'Shower')
 
       expect(results.length).to eq(3)
 
@@ -46,7 +46,6 @@ RSpec.describe Message do
         test3 = result.message.include?('ShoWer')
         expect(test1 || test2 || test3).to be true
       end
-
     end
   end
   

@@ -21,17 +21,17 @@ class Message
     result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
   end
 
-  def self.filter_by(tag:)
-    result = connect_to_db.exec_params("SELECT * FROM peeps WHERE LOWER(message) 
-                                                            LIKE '%#{tag.downcase}%' 
-                                                            ORDER BY id DESC;", [])
-    result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
-  end
-
   private_class_method def self.connect_to_db
     database = 'chitter'
     database += '_test' if ENV['ENVIRONMENT'] == 'test'
     PG.connect(dbname: database)
+  end
+
+  private_class_method def self.filter_by(tag:)
+    result = connect_to_db.exec_params("SELECT * FROM peeps WHERE LOWER(message) 
+                                                            LIKE '%#{tag.downcase}%' 
+                                                            ORDER BY id DESC;", [])
+    result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
   end
 
 end
