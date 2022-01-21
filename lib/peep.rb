@@ -25,4 +25,8 @@ class Peep
     )
     Peep.new(id: new_peep[0]['id'], message: new_peep[0]['message'], date: new_peep[0]['date'])
   end
+
+  def self.chronological
+    (all.sort_by { |peep| peep.date }).reverse
+  end
 end

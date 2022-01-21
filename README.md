@@ -21,8 +21,6 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
-
 ```
 As a Maker
 So that I can easily see the latest peeps
@@ -40,6 +38,7 @@ Completed steps:
 * Create new peep
 * Peeps are time-stamped
 * Extracted DBConnection class from Peep class
+* Peeps are displayed in reverse chronological order
 
 ## Domain Model
 ![A screenshot of the domain model for the first two user storieas](./assets/Model.png)

@@ -30,4 +30,15 @@ describe Peep do
       expect(all_peeps.last.date).to eq peep[0]['date']
     end
   end
+
+  describe '.chronological' do
+    it 'sorts peeps to show latest peeps first' do 
+      add_row_to_test_database
+      Peep.create("This should be first")
+
+      peeps = Peep.chronological
+
+      expect(peeps.first.message).to eq "This should be first"
+    end
+  end
 end
