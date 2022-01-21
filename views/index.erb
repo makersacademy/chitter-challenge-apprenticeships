@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<head>
+  <html lang="en">
+  <meta charset="UTF-8">
+  <title>Chitter</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+  <div class='navbar'>
+    <div class='navbar-left'>
+      <form action='/new' method='post'>
+        <input class='text-input' type='text' name='message' placeholder='Enter message...'>
+        <input class='submit-input' type='submit' value='Submit'>
+      </form>
+    </div>
+
+    <div class='navbar-right'>
+      <form action='/' method='get'>
+        <select class='select-input' name='order' id='order'>
+          <option value='ASC'>Oldest First</option>
+          <option value='DESC'>Newest First</option>
+        </select>
+        <input class='submit-input' type='submit' value='Sort'>
+      </form>
+
+      <form action='/' method='get'>
+        <input class='text-input' type='text' name='keyword' placeholder='Enter Keyword...'>
+        <input class='submit-input' type='submit' value='Search'>
+      </form>
+    </div>
+  </div>
+  <div class='container'>
+    <% @peeps.each do |peep|%>
+      <div class='peep'>
+        <h1 class='peep-message'> <%= peep.message %> </h1>
+        <p class='peep-created-at'> <%= Time.parse(peep.created_at).strftime('%d/%m/%Y %H:%M') %> </p>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>
