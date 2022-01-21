@@ -1,18 +1,17 @@
 require 'sinatra/base'
 require 'pg'
+require_relative 'database_setup'
 
 class Chitter < Sinatra::Base
   get '/' do
-    connection = PG.connect(dbname: 'chitter_test')
-    result = connection.exec('SELECT message FROM peeps;')
+    result = Database.query('SELECT message FROM peeps;')
     @peeps = result.map { |row| row['message'] }
     erb :index
   end
 
   post '/' do
     message = params[:message]
-    connection = PG.connect(dbname: 'chitter_test')
-    result = connection.exec_params('INSERT INTO peeps (message) VALUES ($1);', [message])
+    result = Database.query('INSERT INTO peeps (message) VALUES ($1);', [message])
     redirect '/'
   end
 
