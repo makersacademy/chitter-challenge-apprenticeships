@@ -5,7 +5,7 @@ class Chitter < Sinatra::Base
   register Sinatra::Reloader
 
   get '/' do 
-    "My peeps"
+    erb :index
   end
 
   get '/test' do
