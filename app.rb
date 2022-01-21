@@ -13,5 +13,9 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
+  post '/peep/filter' do
+    'I am a very important post!'
+  end
+  
   run! if app_file == $0
 end
