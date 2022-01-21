@@ -33,8 +33,6 @@ feature "viewing all messages (peeps)" do
     visit('/peeps')
     today_date = Time.now.strftime("%Y-%m-%d")
     expect(page).to have_content("#{today_date}: This is a test peep! #{today_date}: This is another test peep! 2021-01-01: This is an old peep")
-    # expect last line on page to be the old peep
-    # could implement this by using ORDER BY when retrieving all peeps in peep.rb
   end
     
 end
