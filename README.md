@@ -39,6 +39,7 @@ Completed steps:
 * Ability to view peeps
 * Create new peep
 * Peeps are time-stamped
+* Extracted DBConnection class from Peep class
 
 ## Domain Model
 ![A screenshot of the domain model for the first two user storieas](./assets/Model.png)

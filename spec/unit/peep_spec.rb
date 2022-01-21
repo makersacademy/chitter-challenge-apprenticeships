@@ -21,14 +21,13 @@ describe Peep do
 
   describe '.create' do 
     it 'creates a new peep in the database' do 
-      connection = PG.connect(dbname: 'chitter_test')
-      peep = Peep.create("This is another peep!")
+      Peep.create("This is another peep!")
       all_peeps = Peep.all
-      peep_data = connection.exec("SELECT * FROM peeps WHERE message = 'This is another peep!';")
+      peep = DBConnection.query("SELECT * FROM peeps WHERE message = 'This is another peep!';")
 
-      expect(peep.message).to eq "This is another peep!"
-      expect(all_peeps.last.id).to eq peep_data[0]['id']
-      expect(all_peeps.last.date).to eq peep_data[0]['date']
+      expect(peep[0]['message']).to eq "This is another peep!"
+      expect(all_peeps.last.id).to eq peep[0]['id']
+      expect(all_peeps.last.date).to eq peep[0]['date']
     end
   end
 end
