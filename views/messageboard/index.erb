@@ -1,0 +1,11 @@
+
+This is the homepage for Chitter 
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+        <%=  peep.message  %> 
+         <%=  peep.time  %>
+    </li>
+  <% end %>
+</ul>

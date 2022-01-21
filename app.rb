@@ -1,8 +1,12 @@
 require 'sinatra/base'
+require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
+
+
+  get '/messageboard' do
+    @peeps = Peep.view_peeps
+    erb :'messageboard/index'
   end
 
   run! if app_file == $0
