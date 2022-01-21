@@ -3,7 +3,7 @@ require './lib/peep'
 
 class Chitter < Sinatra::Base
   enable :sessions
-  
+
   get '/test' do
     'Test page'
   end
@@ -25,6 +25,7 @@ class Chitter < Sinatra::Base
 
   get '/results' do
     @search = Peep.search(session[:keyword])
+    @keyword = session[:keyword]
     erb(:results)
   end
 

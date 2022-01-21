@@ -1,23 +1,43 @@
-<form action='/new-peep' method='post'>
-  <input type='text' placeholder='Enter username' name='peep_user'>
-  <input type='text' placeholder='Enter peep' name='peep_message'>
-  <input type='submit' name='Send'>
-</form>
+<style>
+  body {
+    text-align: center;
+  }
+</style>
 
-<form action='/search' method='post'>
-  <input type='text' placeholder='Search by keyword' name='search_keyword'>
-  <input type='submit' name='Search'>
-</form>
+<div id="body">
+  <div id="heading">
+    <h1 style="font-family: helvetica">CHITTER</h1>
+  </div>
 
-<% if @peeps.empty? %>
-There's nothing here yet... Why not post a peep?
-<% else %>
-Your Peep timeline:
-<% @peeps.each { |peep| %>
-<li>
-  User: <%= peep.username %>
-  Message: <%= peep.message %>
-  Posted on: <%= peep.datetime %>
-</li>
-<% } %>
-<% end %>
+  <div id="peep submission">
+    <form action='/new-peep' method='post'>
+      <input type='text' placeholder='Enter username' name='peep_user'>
+      <input type='text' placeholder='Enter peep' name='peep_message'>
+      <input type='submit' value='Send'>
+    </form>
+  </div>
+
+  <div id="new search">
+    <form action='/search' method='post'>
+      <input type='text' placeholder='Search by keyword' name='search_keyword'>
+      <input type='submit' value='Search'>
+    </form>
+  </div>
+
+  <div id="list of peeps">
+    <% if @peeps.empty? %>
+    <h3 style="font-family: helvetica">There's nothing here yet... Why not post a peep?</h3>
+    <% else %>
+      <h3 style="font-family: helvetica">Your Peep timeline:</h3>
+      <% @peeps.each do |peep| %>
+      <h4 style="font-family: helvetica">
+        <ul>
+          User: <%= peep.username %>
+          Message: <%= peep.message %>
+          Posted on: <%= peep.datetime %>
+        </ul>
+      </h4>
+      <% end %>
+    <% end %>
+  </div>
+</div>
