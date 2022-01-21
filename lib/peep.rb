@@ -21,4 +21,14 @@ class Peep
     end   
   end
 
+  def self.create(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    peep = connection.exec_params("INSERT INTO peeps (message) 
+      VALUES($1) RETURNING id, message", [message])
+  end
+
 end
