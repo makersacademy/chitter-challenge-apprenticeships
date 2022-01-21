@@ -40,7 +40,7 @@ Users can also search the peeps database using the 'search by keyword' functiona
   - Run `CREATE DATABASE chitter` to create a new database.
       - Don't forget to create a test database too!
   - Run the query saved in ./db/migrations/01_create_chitter_table.sql
-  - Run the query saved in ./db/migrations/02_add-datetime_column.sql
+  - Run the query saved in ./db/migrations/02_add_datetime_column.sql
     - This is what your database should look like in TablePlus once setup is complete:
     ![ScreenShot](chitter_setup_database.png)  
 4. To start the program, run `app ruby.rb` in the terminal and visit http://localhost:4567/
@@ -54,17 +54,17 @@ Fill in the 'Enter username' and 'Enter peep' inputs and click 'Send' to send yo
 As you post more peeps, you will see that your most recent posts are displayed first.
 ![ScreenShot](chitter_populated_timeline.png)  
 #### Search
-Use the search function to filter tweets by keyword (speeling mattters but this functionality is case insensitive). See below for a screenshot of a search for 'breaking news':
+Use the search function to filter tweets by keyword (speeling mattters but this functionality is case insensitive).
 ![ScreenShot](chitter_search.png)  
 
-From the results page, you can either search again or return to the homepage.
+From the results page, you can either search again or return to the homepage.  
 
 
 ## Project Diagram
 ![ScreenShot](chitter_project_diagram.png)  
-
-
-
+  
+  
+  
 ## Makers Instructions
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
