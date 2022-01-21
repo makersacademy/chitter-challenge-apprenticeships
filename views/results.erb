@@ -1,10 +1,10 @@
 Your search for <%= $keyword %> returned <%= @search.length %> results.
-<% if @search.empty? %>
-
-<% else %>
+<% unless @search.empty? %>
 <% @search.each { |peep| %>
-User: <%= peep.username %>
-Message: <%= peep.message %>
-Posted on: <%= peep.datetime %>
+<li>
+  User: <%= peep.username %>
+  Message: <%= peep.message %>
+  Posted on: <%= peep.datetime %>
+</li>
 <% } %>
 <% end %>

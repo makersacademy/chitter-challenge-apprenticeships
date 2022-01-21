@@ -2,6 +2,8 @@ require 'sinatra/base'
 require './lib/peep'
 
 class Chitter < Sinatra::Base
+  enable :sessions
+  
   get '/test' do
     'Test page'
   end
@@ -17,12 +19,12 @@ class Chitter < Sinatra::Base
   end
 
   post '/search' do
-    $keyword = params[:search_keyword]
+    session[:keyword] = params[:search_keyword]
     redirect '/results'
   end
 
   get '/results' do
-    @search = Peep.search($keyword)
+    @search = Peep.search(session[:keyword])
     erb(:results)
   end
 

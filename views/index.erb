@@ -14,8 +14,10 @@ There's nothing here yet... Why not post a peep?
 <% else %>
 Your Peep timeline:
 <% @peeps.each { |peep| %>
-User: <%= peep.username %>
-Message: <%= peep.message %>
-Posted on: <%= peep.datetime %>
+<li>
+  User: <%= peep.username %>
+  Message: <%= peep.message %>
+  Posted on: <%= peep.datetime %>
+</li>
 <% } %>
 <% end %>

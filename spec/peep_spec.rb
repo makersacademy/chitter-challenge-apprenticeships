@@ -26,7 +26,7 @@ describe Peep do
       Peep.add(username: 'red herring user one', message: 'red herring message one')
       Peep.add(username: 'red herring user two', message: 'red herring message two')
 
-      p search = Peep.search('test')
+      search = Peep.search('test')
 
       expect(search.length).to eq 3
       expect(search.first.username).to include 'test user'
