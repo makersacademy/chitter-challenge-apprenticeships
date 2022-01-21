@@ -8,22 +8,22 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
-  get '/' do
+  get '/peeps' do
     @peeps = Peep.all
     erb(:index)
   end
 
-  post '/new-peep' do
+  post '/peeps' do
     Peep.add(username: params[:peep_user], message: params[:peep_message])
-    redirect '/'
+    redirect '/peeps'
   end
 
-  post '/search' do
+  post '/peeps/search' do
     session[:keyword] = params[:search_keyword]
-    redirect '/results'
+    redirect '/peeps/results'
   end
 
-  get '/results' do
+  get '/peeps/results' do
     @search = Peep.search(session[:keyword])
     @keyword = session[:keyword]
     erb(:results)

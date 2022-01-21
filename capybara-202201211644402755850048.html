@@ -10,11 +10,9 @@
   </div>
   <div id="search heading">
     <div id="search feedback">
-      <% if @search.length == 1 %>
-      <h3 style="font-family: helvetica">Your search for <%= @keyword %> returned 1 result.</h3>
-      <% else %>
-      <h3 style="font-family: helvetica">Your search for <%= @keyword %> returned <%= @search.length %> results.</h3>
-      <% end %>
+      
+      <h3 style="font-family: helvetica">Your search for breaking news returned 2 results.</h3>
+      
     </div>
     <div id="new search">
       <h3 style="font-family: helvetica">Search again?</h3>
@@ -31,14 +29,22 @@
   </div>
 
   <div id="search results">
-    <% @search.each do |peep| %>
+    
         <h4 style="font-family: helvetica">
           <ul>
-            User: <%= peep.username %> <br>
-            Message: <%= peep.message %> <br>
-            Posted on: <%= peep.datetime %>
+            User: monkey_puzzle_tree_654 <br>
+            Message: I love breaking news <br>
+            Posted on: 2022-01-21 16:44:40
           </ul>
         </h4>
-    <% end %>
+    
+        <h4 style="font-family: helvetica">
+          <ul>
+            User: CBB News <br>
+            Message: Breaking news: something happened <br>
+            Posted on: 2022-01-21 16:44:40
+          </ul>
+        </h4>
+    
   </div>
 </div>
