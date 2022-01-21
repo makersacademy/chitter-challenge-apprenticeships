@@ -1,0 +1,18 @@
+<h1>Chitter!</h1>
+<form action='messages/peep' method='post'>
+  <input type='text' name='new_peep' placeholder='New Peep'>
+  <input type='submit' value='Peep!'>
+</form>
+<form action='messages' method='get'>
+  <input type='submit' value='Toggle Newest/Oldest'>
+  <input type='hidden' name='sorting' value='switch'>
+</form>
+<form action='messages' method='get'>
+  <input type='text' name='filter_keyword' placeholder='Keyword for filtering'>
+  <input type='submit' value='Filter'>
+</form>
+<ul id='#peeps'>
+  <% @all_peeps.each do |peep| %>
+    <li> <%= peep.message %> - <%= peep.time_added%> </li>
+  <% end %>
+</ul>
