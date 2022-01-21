@@ -1,6 +1,6 @@
-require 'chitter'
+require 'peeps'
 
-describe Chitter do
+describe Peeps do
 
   subject(:chitter) { described_class }
 

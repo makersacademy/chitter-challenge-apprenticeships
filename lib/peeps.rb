@@ -1,6 +1,6 @@
 require 'pg'
 
-class Chitter
+class Peeps
   # attr_reader :id , :message , :post_date
 
   # def initialize (id:, message:, post_date:)
@@ -19,7 +19,7 @@ class Chitter
 
     results = connection.exec("SELECT * FROM peeps;")
 
-    results.map { |row| p row["message"] }
+    results.map { |row| row["message"] }
     
     # results.map do |row|
     #   Chitter.new(id: row["id"], message: row["message"], post_date: row["post_date"])
