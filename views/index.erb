@@ -1,6 +1,6 @@
 <ul>
-<% @peeps.each do |message| %>
-  <li><%= message %></li>
+<% @peeps.each do |peep| %>
+  <li><%= peep[:message] %> (<%= peep[:date] %>) </li>
 <% end %>
 </ul>
 

@@ -6,8 +6,8 @@ class Chitter < Sinatra::Base
   MAX_PEEP_LENGTH = 281
 
   get '/' do
-    result = Database.query('SELECT message FROM peeps;')
-    @peeps = result.map { |row| row['message'] }
+    result = Database.query('SELECT message, posting_date FROM peeps;')
+    @peeps = result.map { |row| { message: row['message'], date: row['posting_date'] } }
     erb :index
   end
 
