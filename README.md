@@ -38,6 +38,7 @@ Completed steps:
 * Set up database
 * Ability to view peeps
 * Create new peep
+* Peeps are time-stamped
 
 ## Domain Model
 ![A screenshot of the domain model for the first two user storieas](./assets/Model.png)
