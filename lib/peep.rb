@@ -9,14 +9,14 @@ class Peep
     @created_at = created_at
   end
 
-  def self.all(order="ASC")
+  def self.all(order="ASC", keyword="")
     if ENV['RACK_ENV'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else
       connection = PG.connect(dbname: 'chitter')
     end
 
-    results = connection.exec("SELECT * FROM peeps ORDER BY created_at #{order};")
+    results = connection.exec("SELECT * FROM peeps WHERE LOWER(message) LIKE LOWER('%#{keyword}%') ORDER BY created_at #{order};")
 
     results.map { |peep| Peep.new(peep['id'], peep['message'], peep['created_at']) }
   end

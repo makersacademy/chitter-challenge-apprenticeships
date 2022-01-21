@@ -25,6 +25,18 @@ describe Peep do
       expect(peeps[1].message).to eq 'Second Message'
       expect(peeps[2].message).to eq 'First Message'
     end
+
+    it 'returns a list of peeps that contain a keyword' do
+      add_row_to_test_database('First Message')
+      add_row_to_test_database('Second Message')
+      add_row_to_test_database('Third Message')
+      add_row_to_test_database('I ran 100m in 10 seconds')
+
+      peeps = Peep.all('ASC', keyword="Second")
+      
+      expect(peeps[0].message).to eq 'Second Message'
+      expect(peeps[1].message).to eq 'I ran 100m in 10 seconds'
+    end
   end
 
   describe '.create' do

@@ -11,6 +11,11 @@
   <input type='submit' value='Sort'>
 </form>
 
+<form action='/' method='get'>
+  <input type='text' name='keyword' placeholder='keyword'>
+  <input type='submit' value='Search'>
+</form>
+
 <% @peeps.each do |peep|%>
   <div class='peep'>
     <h1> <%= peep.message %> </h1>
