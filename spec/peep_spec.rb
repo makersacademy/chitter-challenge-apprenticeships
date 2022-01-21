@@ -28,4 +28,16 @@ describe Peep do
       expect(messages).to include new_message
     end
   end
+
+  describe '.filtered' do
+    it 'returns only peeps with keyword' do
+      keyword = 'test'
+      peeps = Peep.filtered(keyword)
+      messages = peeps.map { |peep| peep.message }
+
+      expect(messages).to include 'This is a test peep!'
+      expect(messages).to include 'This is another test peep!'
+      expect(messages).to_not include 'This is an old peep'
+    end
+  end
 end

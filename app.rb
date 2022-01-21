@@ -13,7 +13,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = Peep.all
+    if params[:keyword] == nil
+      @peeps = Peep.all
+    else
+      @peeps = Peep.filtered(params[:keyword])
+    end
     erb :index
   end
 
