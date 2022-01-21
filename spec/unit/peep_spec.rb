@@ -14,4 +14,15 @@ describe Peep do
       expect(peeps[2].message).to eq 'Third Message'
     end
   end
+
+  describe '.create' do
+    it 'stores a new peep in the table' do
+      peep = Peep.create('A Message')
+
+      peep_from_db = Peep.all.first
+
+      expect(peep.id).to eq peep_from_db.id
+      expect(peep.message).to eq 'A Message'
+    end
+  end
 end

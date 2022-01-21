@@ -1,0 +1,8 @@
+<form action='/new' method='post'>
+  <input type='text' name='message' placeholder='message'>
+  <input type='submit' value='Submit'>
+</form>
+
+<% @peeps.each do |peep|%>
+  <h1> <%= peep.message %> </h1>
+<% end %>
