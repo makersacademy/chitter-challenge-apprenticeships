@@ -16,5 +16,13 @@ feature 'testing /view functions' do
     visit '/view'
     expect(page).to have_content "a new peep"
   end
+ 
+  scenario '- see a date of a message' do
+            
+    Chittermanager.create(peep: "a new peep")
+    visit '/view'
+    expect(page).to have_content "2022-01-21"
+  end
 
+  
 end

@@ -2,7 +2,7 @@ require 'pg'
 
 class Chittermanager
    
-  attr_reader :id, :peep, :timestamp
+  attr_reader :id, :peep, :time
 
   def initialize(id: nil, peep:, time: nil)
     @id  = id
