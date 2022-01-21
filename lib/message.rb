@@ -29,8 +29,8 @@ class Message
 
   private_class_method def self.filter_by(tag:)
     result = connect_to_db.exec_params("SELECT * FROM peeps WHERE LOWER(message) 
-                                                            LIKE '%#{tag.downcase}%' 
-                                                            ORDER BY id DESC;", [])
+                                                 LIKE $1 
+                                                 ORDER BY id DESC;", ["%#{tag.downcase}%"])
     result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
   end
 
