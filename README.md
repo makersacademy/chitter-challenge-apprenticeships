@@ -12,8 +12,8 @@ For the fourth user story of displaying the peeps in reverse chronological order
 
 ## Screenshots
 
-![All Peeps](https://github.com/alicegray33/bookmarks/blob/main/docs/allpeeps.png?raw=true)
-![New Peep](https://github.com/alicegray33/bookmarks/blob/main/docs/newpeep.png?raw=true)
+![All Peeps](https://github.com/alicegray33/chitter-challenge-apprenticeships/blob/main/docs/allpeeps.png?raw=true)
+![New Peep](https://github.com/alicegray33/chitter-challenge-apprenticeships/blob/main/docs/newpeep.png?raw=true)
 
 ## User stories
 
