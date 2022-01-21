@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {font-family:courier; text-align:center; }
+h1 {color:#4CAF50; font-size:390%;}
+input {padding:13px 80px; font-size:16;}
+.button {background-color:#4CAF50; border:none; color:white; padding:15px 32px; font-size:16}
+.message {border:1px; border-style:solid; border-color:#B8B8B8; padding: 20px; width:50%; margin: auto;}
+</style>
+</head>
+</body>
+<div>   
+    <h1> Chitter </h1>
+
+    <form action="/messages" method="post">
+        <input class=input type="text" name="new_message" placeholder="New Peep" maxlength="60" />
+        <input class=button type="submit" value="Post" />
+    </form>
+
+    <ul>
+        <% @messages.each do |peep| %>
+
+                <div class=message >
+                    <span style="font-size:18;"><%= peep.message %></span>  -  
+                    <span style="color:#B8B8B8;font-size:80%;"> <%= peep.time %></span> 
+                </div>
+
+        <% end %>
+    </ul>
+
+    <form action="/find" method="get">
+        <input class=input style="padding:13px 0;" type="text" name="keyword", placeholder="Keyword"/>
+        <input class=button type="submit" value="Search"/>
+    </form>
+</div>
+</body>
+</html>
