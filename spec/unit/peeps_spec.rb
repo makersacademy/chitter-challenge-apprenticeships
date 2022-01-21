@@ -1,3 +1,4 @@
+require 'pg'
 require 'peeps'
 
 describe Peep do
@@ -16,6 +17,15 @@ describe Peep do
       expect(peeps_list).to include "This is my second peep!"
       expect(peeps_list).to include "This is my third peep!"
 
+    end
+  end
+
+  describe '#create' do
+    it 'creates a new peep' do
+      new_peep = Peep.create(message: 'Here is a new peep')
+      peeps_list = Peep.all
+
+      expect(peeps_list).to include "Here is a new peep"
     end
   end
   

@@ -1,3 +1,5 @@
+require 'pg'
+
 feature 'Visiting the index page' do
   scenario 'User visits the index page' do
     visit('/')
@@ -7,11 +9,9 @@ end
 
 feature 'Viewing all peeps' do
   scenario 'User can view all the peeps (messages)' do
-    connection = PG.connect(dbname: 'chitter_test')
-
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is my first peep!');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is my second peep!');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is my third peep!');")
+    Peep.create(message: 'This is my first peep!')
+    Peep.create(message: 'This is my second peep!')
+    Peep.create(message: 'This is my third peep!')
     
     visit ('/peeps')
 
