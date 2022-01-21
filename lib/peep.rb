@@ -18,9 +18,9 @@ class Peep
     end
 
     result = connection.exec('SELECT * FROM peeps ORDER BY datetime DESC;')
-    result.map do |peep| 
-      Peep.new(id: peep['id'], username: peep['username'], 
-        message: peep['message'], datetime: peep['datetime'])
+    
+    result.map do |peep| Peep.new(id: peep['id'], username: peep['username'], 
+      message: peep['message'], datetime: peep['datetime'])
     end
   end
 
@@ -33,8 +33,8 @@ class Peep
 
     result = connection.exec_params(
       "INSERT INTO peeps (username, message, datetime) VALUES ($1, $2, '#{Time.new}') 
-      RETURNING id, username, message;", [username, message]
-    )
+      RETURNING id, username, message;", [username, message])
+    
     Peep.new(id: result[0]['id'], username: result[0]['username'], 
       message: result[0]['message'], datetime: result[0]['datetime'])
   end
@@ -47,10 +47,10 @@ class Peep
     end
 
     result = connection.exec_params("SELECT * FROM peeps WHERE (message) 
-    iLIKE ($1) ORDER BY datetime DESC;", ["%#{keyword}%"])
-    result.map do |peep|
-      Peep.new(id: peep['id'], username: peep['username'],
-        message: peep['message'], datetime: peep['datetime'])
+      iLIKE ($1) ORDER BY datetime DESC;", ["%#{keyword}%"])
+    
+    result.map do |peep| Peep.new(id: peep['id'], username: peep['username'], 
+      message: peep['message'], datetime: peep['datetime'])
     end
   end
 end
