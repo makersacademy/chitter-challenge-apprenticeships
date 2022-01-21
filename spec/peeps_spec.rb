@@ -22,7 +22,17 @@ describe Peeps do
       peeps = chitter.all
       expect(peeps.last.message).to eq('This is a new rspec peep!')
     end
-
   end
+
+    describe 'search' do 
+      it 'can filter results to serach' do
+        chitter.new_peep(message:'irb for search test')
+        chitter.new_peep(message:'irb for search test 2')
+
+        search_results = chitter.search(search:'irb')
+        expect(search_results.length).to eq 2
+      end
+
+    end
 
 end
