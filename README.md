@@ -33,7 +33,6 @@ command `CREATE DATABASE chitter_test;`;
 You should see 1 passing test.
 
 ## User stories
-<img src="https://user-images.githubusercontent.com/24737738/150529110-75b9ff6a-ed87-44b9-a056-e9dd0fec40a0.png" width="50%">
 ```
 As a Maker
 So that I can see what people are doing
