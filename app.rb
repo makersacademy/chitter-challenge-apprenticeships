@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    if params[:keyword] == nil
+    if params[:keyword].nil?
       @peeps = Peep.all
     else
       @peeps = Peep.filtered(params[:keyword])

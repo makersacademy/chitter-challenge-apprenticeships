@@ -12,16 +12,20 @@ class Peep
 
   def self.all
     results = connect.exec("SELECT * FROM peeps ORDER BY date DESC;")
-    results.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date'])}
+    results.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date']) }
   end
 
   def self.create(message)
-    connect.exec("INSERT INTO peeps (message, date) values ('#{message}', 'NOW()');")
+    connect.exec_params("INSERT INTO peeps (message, date) VALUES ($1, $2);", [message, 'NOW()'])
   end
 
   def self.filtered(keyword)
-    results = connect.exec("SELECT * FROM peeps WHERE LOWER(message) LIKE '%#{keyword.downcase}%' ORDER BY date DESC;")
-    results.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date'])}
+    results = connect.exec(
+      "SELECT * FROM peeps 
+      WHERE LOWER(message) LIKE '%#{keyword.downcase}%' 
+      ORDER BY date DESC;"
+      )
+    results.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date']) }
   end
 
   def self.connect
@@ -31,4 +35,5 @@ class Peep
       PG.connect(dbname: 'chitter')
     end
   end
+
 end
