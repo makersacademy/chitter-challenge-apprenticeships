@@ -6,6 +6,7 @@ ruby '3.0.2'
 
 gem 'pg'
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'
@@ -16,4 +17,5 @@ end
 
 group :development, :test do
   gem 'rubocop', '1.20'
+  gem 'webrick'
 end
