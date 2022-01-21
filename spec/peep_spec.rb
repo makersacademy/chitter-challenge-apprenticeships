@@ -3,8 +3,6 @@ require 'peep'
 describe Peep do
   describe '.all' do
     it 'returns all peeps' do
-      today_date = Time.now.strftime('%Y-%m-%d')
-
       peeps = Peep.all
       messages = peeps.map { |peep| peep.message }
       
@@ -32,6 +30,7 @@ describe Peep do
   describe '.filtered' do
     it 'returns only peeps with keyword' do
       keyword = 'test'
+      
       peeps = Peep.filtered(keyword)
       messages = peeps.map { |peep| peep.message }
 
@@ -40,4 +39,5 @@ describe Peep do
       expect(messages).to_not include 'This is an old peep'
     end
   end
+
 end
