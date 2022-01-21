@@ -14,7 +14,7 @@ class Chitter < Sinatra::Base
   end
   
   get '/view' do
-    if params[:filter]
+    if params[:filter] != "" 
       @peepsr = Chittermanager.filter(filter: params[:filter])
     else
       @peepsr = Chittermanager.all 
