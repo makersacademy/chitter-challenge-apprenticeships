@@ -10,19 +10,20 @@ class Chitter < Sinatra::Base
     "Chitter"
   end
 
-#   As a Maker
-# So that I can see what people are doing
-# I want to see all the messages (peeps)
-# in a browser
-
   get '/peeps' do
     @peeps = [
       "This is my first peep",
       "This is my second peep",
       "This is my third peep"
     ]
-  
-    erb :index
+  end
+
+  get '/peeps/new' do
+    erb :new
+  end
+
+  post '/peeps' do
+    p "Peep"
   end
 
   run! if app_file == $0
