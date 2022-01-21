@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/message'
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -10,7 +11,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messages' do
-    @messgages = ['Hi there', 'How are you today?']
+    @messages = Message.all
     erb :'messages/index'
    end
 
