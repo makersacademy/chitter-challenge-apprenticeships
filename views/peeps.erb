@@ -1,0 +1,13 @@
+<h1> PEEPS</h1>
+
+<form action="/peeps" method="post">
+  <input type="text" name="message" />
+  <input type="date" name="date" />
+  <input type="submit" value="Submit" />
+</form>
+
+<% @peeps.each do |peep| %>
+  <h2>  <%= peep.message %>
+ <%=peep.date %>
+ <% end %> 
+</h2>
