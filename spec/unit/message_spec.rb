@@ -16,4 +16,16 @@ RSpec.describe Message do
     end
   end
 
+  describe '.create' do
+    it 'adds a new record to the database' do
+      Message.create(message: 'I am singing under the shower')
+
+      connection = PG.connect(dbname: 'chitter_test')
+      result = connection.exec("SELECT * FROM peeps;").first
+
+      expect(result['id'].to_i).to be > 0
+      expect(result['message']).to eq('I am singing under the shower')
+      expect(result['time']).not_to eq('NULL')
+    end
+  end
 end

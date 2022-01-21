@@ -10,6 +10,11 @@ class Message
     @time = time
   end
 
+  def self.create(message:)
+    time = Time.now.strftime("Posted on %d.%m.%Y at %I:%M %p")
+    connect_to_db.exec_params("INSERT INTO peeps(message,time) VALUES($1, $2);", [message,time])
+  end
+
   def self.all
     result = connect_to_db.exec("SELECT * FROM peeps ORDER BY id DESC;")
     result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
