@@ -3,6 +3,8 @@ require 'pg'
 require_relative 'database_setup'
 
 class Chitter < Sinatra::Base
+  MAX_PEEP_LENGTH = 281
+
   get '/' do
     result = Database.query('SELECT message FROM peeps;')
     @peeps = result.map { |row| row['message'] }
@@ -11,6 +13,7 @@ class Chitter < Sinatra::Base
 
   post '/' do
     message = params[:message]
+    message = message[0, MAX_PEEP_LENGTH] if message.length > MAX_PEEP_LENGTH
     result = Database.query('INSERT INTO peeps (message) VALUES ($1);', [message])
     redirect '/'
   end
