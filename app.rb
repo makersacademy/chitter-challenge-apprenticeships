@@ -9,6 +9,13 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/' do
+    message = params[:message]
+    connection = PG.connect(dbname: 'chitter_test')
+    result = connection.exec_params('INSERT INTO peeps (message) VALUES ($1);', [message])
+    redirect '/'
+  end
+
   get '/test' do
     'Test page'
   end
