@@ -1,36 +1,19 @@
-## Chitter Challenge
+# Chitter Challenge
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+For week 6 on the web we have been given the task of writing a small Twitter clone that allows users to post messages to a public stream. The user stories can be seen below.
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+## Approach
 
-## Set up
+This task started relatively easily and similar to the bookmarks pairing challenge we have been working on. After setting up the development and test database and installing the required gems I started with a feature test aimed at the first user story of seeing all messages. From here it developed to unit testing the Peep object that could retreive all peeps from the database and then creating an erb file to display them. It was a similar case for the second user story which led me to do more unit testing on the Peeps class so it could create a new peep.
 
-To setup the database:
+The user story to see the date made things a bit more complicated but as before I started with the feature test which led to me updating the database. I initially added a date column with the timestamp data type so it would automatically input the date when a new record was created. However I struggled to think of a way to test that accurately and so I decided to change the datatype to a bigint and save the time as "number of seconds since the unix epoch." I felt that gave me more flexibility when it came to formatting the date, and meant I could test it using rspecs `expect ` call.
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+For the fourth user story of displaying the peeps in reverse chronological order: I found myself in a position where I didn't write a test first. It just meant changing the SQL query to the database to `ORDER BY date DESC` with nothing else needed changing. I ran out of time before figuring out how to write a test to see if the peeps were actually appearing in descending order but the current tests pass with 97.22% coverage. And the only reason they aren't 100% is due to the `if` statements that choose which database to use.
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+## Screenshots
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
-
-* `bundle install`
-* `rspec`
-
-You should see 1 passing test.
+![All Peeps](https://github.com/alicegray33/bookmarks/blob/main/docs/allpeeps.png?raw=true)
+![New Peep](https://github.com/alicegray33/bookmarks/blob/main/docs/newpeep.png?raw=true)
 
 ## User stories
 
