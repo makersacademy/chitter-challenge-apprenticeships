@@ -11,7 +11,16 @@ describe Peeps do
 
   describe "all" do 
     it 'displays all the posts' do
-      expect(chitter.all).to include ('This is a peep!')
+      peeps = chitter.all
+      expect(peeps.first.message).to include ('This is a peep!')
+    end
+  end
+
+  describe 'new_peep' do
+    it 'can create a new peep' do
+      chitter.new_peep(message:'This is a new rspec peep!')
+      peeps = chitter.all
+      expect(peeps.last.message).to eq('This is a new rspec peep!')
     end
 
   end

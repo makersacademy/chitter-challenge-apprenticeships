@@ -1,5 +1,15 @@
 <h1>Chitter </h1>
 <br>
-<% @peeps.each do |peep| %>
-  <%= peep %>
+<ul>
+<% @peeps.map do |peep| %>
+  <li>
+  <%= peep.message %>
+  </li>
 <% end %>
+</ul>
+<br>
+<br> 
+<br>
+<form action= '/new_peep' method= 'GET'>
+  <input type='submit' value= 'Post a peep'>
+</form>

@@ -1,13 +1,13 @@
 require 'pg'
 
 class Peeps
-  # attr_reader :id , :message , :post_date
+  attr_reader :id , :message , :post_date
 
-  # def initialize (id:, message:, post_date:)
-  #   @id = id
-  #   @message = message
-  #   @post_date = post_date 
-  # end
+  def initialize (id:, message:, post_date:)
+    @id = id
+    @message = message
+    @post_date = post_date 
+  end
 
   def self.all
 
@@ -19,22 +19,23 @@ class Peeps
 
     results = connection.exec("SELECT * FROM peeps;")
 
-    results.map { |row| row["message"] }
+    results.map { |post| post["message"] }
     
-    # results.map do |row|
-    #   Chitter.new(id: row["id"], message: row["message"], post_date: row["post_date"])
-    # end
+    results.map do |post|
+      Peeps.new(id: post["id"], message: post["message"], post_date: post["post_date"])
+    end
 
   end
 
-  # private 
+  def self.new_peep(message:)
 
-  # def test?
-  #   if ENV['ENVIRONMENT'] == 'test' 
-  #     connection = PG.connect(dbname: 'chitter_test')
-  #   else 
-  #     connection = PG.connect(dbname: 'chitter')
-  #   end
-  # end
+    if ENV['ENVIRONMENT'] == 'test' 
+      connection = PG.connect(dbname: 'chitter_test')
+    else 
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    connection.exec_params("INSERT INTO peeps (message) values ($1);", [message])
+  end 
 
 end
