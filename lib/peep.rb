@@ -38,4 +38,18 @@ class Peep
     Peep.new(id: result[0]['id'], username: result[0]['username'], 
       message: result[0]['message'], datetime: result[0]['datetime'])
   end
+
+  def self.search(keyword)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec("SELECT * FROM peeps WHERE LOWER(message) LIKE LOWER('%#{keyword}%') ORDER BY datetime DESC;")
+    result.map do |peep|
+      Peep.new(id: peep['id'], username: peep['username'],
+        message: peep['message'], datetime: peep['datetime'])
+    end
+  end
 end

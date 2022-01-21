@@ -1,7 +1,12 @@
 <form action='/new-peep' method='post'>
   <input type='text' placeholder='Enter username' name='peep_user'>
   <input type='text' placeholder='Enter peep' name='peep_message'>
-  <input type='submit' name='Submit'>
+  <input type='submit' name='Send'>
+</form>
+
+<form action='/search' method='post'>
+  <input type='text' placeholder='Search by keyword' name='search_keyword'>
+  <input type='submit' name='Search'>
 </form>
 
 <% if @peeps.empty? %>
