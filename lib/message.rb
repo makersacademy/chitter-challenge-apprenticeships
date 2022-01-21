@@ -15,13 +15,15 @@ class Message
     connect_to_db.exec_params("INSERT INTO peeps(message,time) VALUES($1, $2);", [message,time])
   end
 
-  def self.all
+  def self.all(filter: '')
+    return filter_by(tag: filter) unless (filter.nil? || filter.empty?)
     result = connect_to_db.exec("SELECT * FROM peeps ORDER BY id DESC;")
     result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
   end
 
   def self.filter_by(tag:)
-    result = connect_to_db.exec_params("SELECT * FROM peeps WHERE LOWER(message) LIKE '%#{tag}%' 
+    result = connect_to_db.exec_params("SELECT * FROM peeps WHERE LOWER(message) 
+                                                            LIKE '%#{tag.downcase}%' 
                                                             ORDER BY id DESC;", [])
     result.map { |peep| Message.new(id: peep['id'], message: peep['message'], time: peep['time']) }
   end
