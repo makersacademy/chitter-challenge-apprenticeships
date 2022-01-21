@@ -15,7 +15,6 @@ feature 'add peep (message) to chitter' do
   scenario 'can fill in a new post and see it displayed' do
     fill_in :new_post_message, with: 'This is a new post peep!'
     click_button 'Post'
-    # connection.exec("INSERT INTO peeps (message) values ('This is a new peep!');")
     visit ('/')
     expect(page).to have_content ('This is a new post peep!')
   end
