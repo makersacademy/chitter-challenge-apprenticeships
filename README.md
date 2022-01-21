@@ -32,6 +32,10 @@ command `CREATE DATABASE chitter_test;`;
 
 You should see 1 passing test.
 
+Model
+
+![](images/image123.png)
+
 ## User stories
 
 ```
@@ -39,18 +43,27 @@ As a Maker
 So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
+
+see_peeps 
+
 ```
 
 ```
 As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
+
+post_peeps
+
 ```
 
 ```
 As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
+
+date_peeps
+
 ```
 (Hint the database table will need to change to store the date too)
 
@@ -58,9 +71,22 @@ I want to see the date the message was posted
 As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
+
+list_peeps 
+
 ```
 ```
 As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
+
+filter_peeps
 ```
+Errors 
+![](images/image12345.png)
+
+![](images/image1234567.png)
+
+![](images/image1234.png)
+
+![](images/image123456.png)
