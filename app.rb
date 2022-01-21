@@ -6,8 +6,8 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
-    filter_tag = session[:filter]
-    @peeps = Message.all(filter: filter_tag)
+    @filter_tag = session[:filter]
+    @peeps = Message.all(filter: @filter_tag)
     erb(:board)
   end
 

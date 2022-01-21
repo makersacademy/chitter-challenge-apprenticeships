@@ -36,7 +36,7 @@ RSpec.describe Message do
       Message.create(message: 'Just finished my workout, taking a ShoWer now')
       Message.create(message: 'I am in wellness mode, taking a bath :)')
 
-      results = Message.filter_by(tag: 'shower')
+      results = Message.filter_by(tag: 'Shower')
 
       expect(results.length).to eq(3)
 
