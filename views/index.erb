@@ -1,7 +1,10 @@
 <ul>
-<% @peeps.each do |date, peep| %>
-  <li><%= date %></li>
+<% @peeps.each do |peep| %>
   <li><%= peep %><li>
   <% end %>
   </ul>
+
+  <form action='/peeps/add'>
+  <input type='submit' value='Add Peep'>
+  </form>
   
