@@ -14,7 +14,7 @@ class Chitter < Sinatra::Base
   end
   
   get '/view' do
-    if params[:filter] != "" 
+    if params[:filter] != "" && params[:filter] != nil
       @peepsr = Chittermanager.filter(filter: params[:filter])
     else
       @peepsr = Chittermanager.all 
@@ -27,7 +27,7 @@ class Chitter < Sinatra::Base
   end
   
   post '/add' do
-    Chittermanager.create(peep: params[:message])
+    Chittermanager.create(peep: params[:message], time: Time.now)
     redirect '/view'
   end
 
