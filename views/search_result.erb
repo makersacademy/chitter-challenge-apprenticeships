@@ -1,0 +1,17 @@
+<% @messages.each do |message| %>
+  <ul style="list-style-type:none;">
+    <li> 
+      <h2><%= message.message%></h2>
+      Posted at <%= message.date[0...-10]%>
+    </li>
+  </ul>
+<% end %>
+<br>
+
+<form method='get' action='/new'>
+  <input type='submit' value='New'>
+</form>
+
+<form method='get' action='/search'>
+  <input type='submit' value='Search'>
+</form>
