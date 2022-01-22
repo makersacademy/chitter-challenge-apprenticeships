@@ -1,0 +1,3 @@
+ALTER TABLE peeps
+ADD date_posted TIMESTAMP NOT NULL
+                DEFAULT CURRENT_TIMESTAMP;

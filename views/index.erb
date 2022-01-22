@@ -1,0 +1,10 @@
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+        <%= peep.message %><br>
+        <%= peep.date_posted %>
+    </li>
+  <% end %>
+</ul><br>
+
+<a href="/search" target="_self">Search for peep by keyword</a>

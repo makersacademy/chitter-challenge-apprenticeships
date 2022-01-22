@@ -1,0 +1,10 @@
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+        <%= peep.message %><br>
+        <%= peep.date_posted %>
+    </li>
+  <% end %>
+</ul><br>
+
+<a href="/" target="_self">Back to main page</a>
