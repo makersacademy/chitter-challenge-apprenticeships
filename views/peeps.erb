@@ -9,7 +9,10 @@
   <body>
     <ul>
       <% @peeps.each do |peep| %>
-        <li><%= peep %></li>
+        <li><b><%= peep.message %></b>
+        <br>Posted: <%= peep.date %>
+        </li>
+        <br>
       <% end %>
     </ul>
 

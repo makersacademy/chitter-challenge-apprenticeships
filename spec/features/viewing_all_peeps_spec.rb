@@ -20,4 +20,12 @@ feature 'Viewing all peeps' do
     expect(page).to have_content "This is my third peep!"
     
   end
+
+  scenario 'User can view the date peeps were posted' do
+    Peep.create(message: 'This is a peep!')
+
+    visit ('/peeps')
+
+    expect(page).to have_content Date.today.to_s
+  end
 end
