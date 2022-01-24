@@ -11,5 +11,10 @@ feature 'messages' do
     visit('/messages')
     expect(page).to have_content 'This is a test'
   end
+
+  scenario 'show the date' do
+    visit('/messages')
+    expect(page).to eq (Time.now)
+  end
 end
 
