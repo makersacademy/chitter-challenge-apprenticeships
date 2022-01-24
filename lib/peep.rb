@@ -29,6 +29,7 @@ class Peep
   end
 
   def self.connect
+    private_class_method
     if ENV['ENVIRONMENT'] == 'test'
       PG.connect(dbname: 'chitter_test')
     else
