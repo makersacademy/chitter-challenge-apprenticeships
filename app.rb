@@ -11,11 +11,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    @peeps = [
-      "This is my first peep",
-      "This is my second peep",
-      "This is my third peep"
-    ]
+    @peeps = Peep.all
+    erb :index
   end
 
   get '/peeps/new' do
@@ -23,7 +20,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    p "Peep"
+    Peep.create(message: params[:message])
+    redirect '/peeps'
   end
 
   run! if app_file == $0
