@@ -10,6 +10,11 @@ class Chitter < Sinatra::Base
     'Test page'
   end
 
+  get '/' do
+    erb :homepage
+  end
+
+
   get '/messages' do
     @messages = Message.all
     erb :'messages/index'
