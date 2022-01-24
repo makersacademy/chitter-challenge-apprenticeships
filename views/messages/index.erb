@@ -1,0 +1,10 @@
+<h1> Here are your Messages </h1>
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<form>
+    <button type="submit" formaction="http://localhost:9292/messages/new">Post a peep!</button>
+  </form>
