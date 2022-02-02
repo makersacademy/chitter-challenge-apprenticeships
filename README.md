@@ -28,7 +28,7 @@ It is intended to satisfy the following user stories:
 
 ## Features
 Users can submit peeps to the message board, where they are attributed to a user's name. Once submitted, peeps are presented in the order of most recent first.  
-Users can also search the peeps database using the 'search by keyword' functionality, which is case-insensitive.
+Users can also search the peeps database by keyword. Thanks to some snazzy coding, the search function is case-insensitive.
 
 ## How to Use
 
@@ -41,27 +41,46 @@ Users can also search the peeps database using the 'search by keyword' functiona
      * Don't forget to create a test database too!
    * Run the query saved in ./db/migrations/01_create_chitter_table.sql
    * Run the query saved in ./db/migrations/02_add_datetime_column.sql
-     * This is what your database should look like in TablePlus once setup is complete:
-    ![ScreenShot](chitter_setup_database.png)  
+     * This is what your database should look like in TablePlus once setup is complete:  
+  <p align="center">
+    <img src="chitter_setup_database.png" width="600">
+  </p>
 4. To start the program, run `app ruby.rb` in the terminal and visit http://localhost:4567/
    * Alternatively, run `rackup` and visit http://localhost:9292/
 
 #### Homepage
-Upon starting the program, you will be greeted with the following page.  
-![ScreenShot](chitter_initial_state.png)  
-Fill in the 'Enter username' and 'Enter peep' inputs and click 'Send' to send your first peep! You should be greeted with a page like this:  
-![ScreenShot](chitter_first_post.png)  
-As you post more peeps, you will see that your most recent posts are displayed first.
-![ScreenShot](chitter_populated_timeline.png)  
-#### Search
-Use the search function to filter tweets by keyword (speeling mattters but this functionality is case insensitive).
-![ScreenShot](chitter_search.png)  
+* Upon starting the program, you will be greeted with the following page:
 
-From the results page, you can either search again or return to the homepage.  
+<p align="center">
+  <img src="chitter_initial_state.png" width="600">  
+</p>
 
+* Fill in the 'Enter username' and 'Enter peep' inputs and click 'Send' to send your first peep! You should be greeted with a page like this:
+
+<p align="center">
+  <img src="chitter_first_post.png" width="600">  
+</p>
+
+* As you post more peeps, you will see that your most recent posts are displayed first:
+
+<p align="center">
+  <img src="chitter_populated_timeline.png" width="600">  
+</p>  
+
+#### Search  
+* Use the search function to filter tweets by keyword (speeling mattters but case does not).  
+
+<p align="center">
+  <img src="chitter_search.png" width="600">  
+</p>
+
+* From the results page, you can either search again or return to the homepage. 
+ 
 
 ## Project Diagram
-![ScreenShot](chitter_project_diagram.png)  
+<p align="center">
+  <img src="chitter_project_diagram.png" width="600">  
+</p>
   
   
   
