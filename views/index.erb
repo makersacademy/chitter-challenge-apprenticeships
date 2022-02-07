@@ -1,0 +1,24 @@
+<h1>Chitter </h1>
+<br>
+<form action= '/search' method='post'>
+<input type ='text' name = 'search'>
+<input type= 'submit' value = 'Search'>
+</form>
+<br>
+<ul>
+<% @peeps.map do |peep| %>
+  <li>
+  <%= peep.message%>- <%=peep.post_date%>
+  </li>
+<% end %>
+</ul>
+<br>
+<br> 
+<br>
+<form action= '/new_peep' method= 'GET'>
+  <input type='submit' value= 'Post a peep'>
+</form>
+<br>
+<form action='/' method='GET'>
+<input type='submit' value='Back to homepage'>
+</form>
