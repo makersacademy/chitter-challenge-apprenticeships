@@ -6,6 +6,8 @@ ruby '3.0.2'
 
 gem 'pg'
 gem 'sinatra'
+gem 'webrick' # for rackup 1
+gem 'sinatra-contrib' # for rackup 2
 
 group :test do
   gem 'capybara'

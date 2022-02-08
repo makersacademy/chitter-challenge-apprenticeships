@@ -1,0 +1,33 @@
+<h1>Chitter View</h1>
+<p>***********************</p>
+
+<form action="/add" method="get">
+<input type="submit" value="Add"/>
+<br>
+<br>
+<p>***********************</p>
+</form>
+<form action="/view" method="get">
+<p> Filter for messages: </p>
+<textarea name="filter" rows="1" cols="20"></textarea> 
+<br><br>
+<input type="submit" value="Submit" />
+</form>
+<p>***********************</p>
+<br>
+<br>
+<ul>
+  <% @peepsr.each do |result| %>
+    <li>
+      <p> <%=result.peep %> &nbsp;----&nbsp;  <%=result.time %>
+       
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<br>
+<br>
+
+
+
