@@ -10,6 +10,7 @@ We are going to write a small Twitter clone that will allow the users to post me
 
 ## Set up
 
+
 To setup the database:
 
 * Connect to psql
