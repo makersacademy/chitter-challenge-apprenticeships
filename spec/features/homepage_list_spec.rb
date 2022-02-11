@@ -4,7 +4,8 @@ feature 'homepage list' do
 
     DatabaseConnection.query(sql_query, ['Hello there'])
     DatabaseConnection.query(sql_query, ['General Kenobi'])
-
+    
+    visit('/')
 
     expect(page).to have_content 'Hello there'
     expect(page).to have_content 'General Kenobi'
