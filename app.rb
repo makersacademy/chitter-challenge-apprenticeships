@@ -6,7 +6,11 @@ class Chitter < Sinatra::Base
   end
 
   get '/messageboard' do
-    erb :peepform
+    erb :messageboard
+  end
+
+  get '/chatter' do
+    erb :chatter
   end
 
   run! if app_file == $0

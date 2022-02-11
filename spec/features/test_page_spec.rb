@@ -9,4 +9,7 @@ feature 'Viewing test page' do
     expect(page).to have_content "Welcome to the Chitter Channel"
   end
 
+  scenario 'opens chitter form to add peep' do
+    visit('/chatter')
+  end
 end
