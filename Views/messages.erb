@@ -1,10 +1,20 @@
-Messages
-
-
+Messages:<br>
+   <a href="new_peep">New peep!</a> <br>
+<br>
+<br>
+<% if @reversed %>
+  <a href="/messages">Sort by new.</a>
   <ul>
-
-    <% @results.each do |element| %>
-      <li> <%= element["date"] + ": " %> <%= element["message"] %> <li> 
+    <% @results.reverse_each do |element| %>
+      <li> <%= element["date"][5..18] + ":  " %> <%= element["message"] %> <li> 
     <% end %>
-
   </ul>
+
+<% else %>
+  <a href="/messages?reversed=true">Sort by old.</a>
+  <ul>
+    <% @results.each do |element| %>
+      <li> <%= element["date"][5..18] + ":  " %> <%= element["message"] %> <li> 
+    <% end %>
+  </ul>
+<% end %>

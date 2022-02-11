@@ -13,6 +13,7 @@ class Chitter < Sinatra::Base
   end
 
   get "/messages" do
+    @reversed = params[:reversed]
     connection = PG.connect(dbname: 'chitter_test', user: 'JMMakers', password: '1234')
     result = connection.exec('SELECT * FROM peeps')
     @results = result.map { |bm| bm }
