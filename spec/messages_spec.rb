@@ -14,3 +14,12 @@ describe Message do
     expect(messages).to include 'This is a peep!'
   end
 end
+
+
+describe '.create' do 
+  it " cretaes a new message" do 
+    Message.create(message: 'this is a new post')
+
+    expect(Message.all).to include 'this is a new post'
+  end
+end
