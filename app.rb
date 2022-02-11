@@ -8,7 +8,11 @@ class Chitter < Sinatra::Base
 
   get '/' do
     @peeps = Peep.all
-    erb :'peeps/index'
+    erb :index
+  end
+
+  post '/' do
+
   end
 
   run! if app_file == $0
