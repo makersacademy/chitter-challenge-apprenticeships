@@ -1,0 +1,16 @@
+@startuml View messages
+title View all messages
+skinparam Style strictuml
+collections Client
+collections Controller as app.rb
+collections Model as MessageBoard
+collections View as erb
+
+Client -> app.rb : GET
+app.rb -> MessageBoard : .all
+MessageBoard --> app.rb : [messages]
+app.rb -> erb : [messages]
+erb --> app.rb : html
+app.rb --> Client : response
+
+@enduml
