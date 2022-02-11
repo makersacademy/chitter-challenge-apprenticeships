@@ -32,6 +32,8 @@ command `CREATE DATABASE chitter_test;`;
 
 You should see 1 passing test.
 
+chitter databases both successfully setup with PSQL and tested with TablePlus as per instructions above.
+
 ## User stories
 
 ```
