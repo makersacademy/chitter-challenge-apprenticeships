@@ -1,0 +1,9 @@
+<h1> WELCOME TO CHITTER </h1>
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep %></li>
+  <% end %>
+</ul>
+
+<button class="button button1" onclick="location.href='http://localhost:9292/comment'" type='button'>Comment</button>
