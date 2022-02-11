@@ -64,3 +64,4 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+To view 'Entity Relationship Diagram', CRC Cards and database schema, please see 'initial_plan_for_chitter_challenge.jpg'
