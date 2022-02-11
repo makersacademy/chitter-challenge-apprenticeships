@@ -1,5 +1,11 @@
 <ul>
   <% @messages.each do |message| %>
-    <li><%= "#{message.name} - #{message.message}"  %></li>
+    <li class="message" id="message-<% message.id %>">
+      <%= "#{message.name} - #{message.message}" %>
+      <form action="/messageboard/<% message.id %>" method="post">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input type="submit" value="Delete" />
+      </form>
+    </li>
   <% end %>
 </ul>

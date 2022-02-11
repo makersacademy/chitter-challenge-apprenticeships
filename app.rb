@@ -2,6 +2,8 @@ require 'sinatra/base'
 require './lib/message'
 
 class Chitter < Sinatra::Base
+  enable :sessions, :method_override
+
   get '/test' do
     'Test page'
   end
@@ -18,6 +20,11 @@ class Chitter < Sinatra::Base
   post '/messageboard' do
     Message.create(name: params[:Name], message: params[:Message])
     redirect '/messageboard'
+  end
+
+  delete '/messageboard/:id' do
+    Bookmark.delete(id: [params[:id]])
+    redirect ('/messageboard')
   end
 
   run! if app_file == $0

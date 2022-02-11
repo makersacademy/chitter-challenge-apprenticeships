@@ -41,4 +41,14 @@ describe Message do
       expect(message.name).to eq 'Jon'
     end
   end
+
+  describe '.delete' do
+    it 'deletes the selected message from the messageboard' do
+      message = Message.create(name: 'Colin', message: 'Delete Colins message')
+
+      Message.delete(id: message.id)
+
+      expect(Message.all.length).to eq 0
+    end
+  end
 end
