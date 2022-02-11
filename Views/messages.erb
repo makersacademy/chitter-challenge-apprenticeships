@@ -1,0 +1,10 @@
+Messages
+
+
+  <ul>
+
+    <% @results.each do |element| %>
+      <%= element["date"] + ": " %> <%= element["message"] %>
+    <% end %>
+
+  </ul>
