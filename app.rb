@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -6,14 +7,9 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    @peeps = [
-      "I've got blisters on me fingers!",
-      "Oh, dress yourself, my urchin one, for I hear them on the rails"
-    ]
+    p ";kljasdf;kljasdf;klasj"
+    @peeps = Peep.all
     erb :'peeps/index'
-  end
-
-  get '/new' do
   end
 
   run! if app_file == $0
