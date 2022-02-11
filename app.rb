@@ -7,6 +7,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messageboard' do
+    p ENV
     @messages = Message.all
     erb :messageboard
   end
