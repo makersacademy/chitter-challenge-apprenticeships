@@ -36,7 +36,7 @@
 
 @startuml
 
-!theme superhero-outline
+!theme vibrant
 
 actor User
 boundary Browser

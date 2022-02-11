@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="139.5833px" preserveAspectRatio="none" style="width:209px;height:139px;background:#00000000;" version="1.1" viewBox="0 0 209 139" width="209.375px" zoomAndPan="magnify"><defs/><g><!--MD5=[48293da3331619a99a10ae7ba62eb900]
-class DatabaseChitter--><rect codeLine="4" height="125.7187" id="DatabaseChitter" rx="4.1667" ry="4.1667" style="stroke:#E58748;stroke-width:1.0416666666666667;fill:none;" width="194.7917" x="7.2917" y="7.2917"/><rect fill="#B25415" height="36.025" rx="4.1667" ry="4.1667" style="stroke:#B25415;stroke-width:1.0416666666666667;" width="194.7917" x="7.2917" y="7.2917"/><rect fill="#B25415" height="4.1667" style="stroke:#B25415;stroke-width:1.0416666666666667;" width="194.7917" x="7.2917" y="39.15"/><rect codeLine="4" fill="none" height="125.7187" id="DatabaseChitter" rx="4.1667" ry="4.1667" style="stroke:#E58748;stroke-width:1.0416666666666667;" width="194.7917" x="7.2917" y="7.2917"/><ellipse cx="42.0313" cy="25.3042" fill="#717D89" rx="10.4167" ry="10.4167" style="stroke:#3E4A56;stroke-width:1.0416666666666667;"/><path d="M43.9355,29.7312 Q43.5124,29.9428 43.0404,30.0568 Q42.5684,30.1707 42.0638,30.1707 Q40.2083,30.1707 39.2318,28.9663 Q38.2715,27.7456 38.2715,25.4506 Q38.2715,23.1394 39.2318,21.935 Q40.2083,20.7143 42.0638,20.7143 Q42.5684,20.7143 43.0404,20.8282 Q43.5286,20.9259 43.9355,21.1538 L43.9355,23.1557 Q43.4798,22.7325 43.0404,22.5372 Q42.6009,22.3256 42.1452,22.3256 Q41.1523,22.3256 40.6478,23.1232 Q40.1432,23.9044 40.1432,25.4506 Q40.1432,26.9806 40.6478,27.7618 Q41.1523,28.5431 42.1452,28.5431 Q42.6009,28.5431 43.0404,28.3478 Q43.4798,28.1525 43.9355,27.7293 L43.9355,29.7312 Z " fill="#000000"/><text fill="#ABB6C2" font-family="Verdana" font-size="12.5" lengthAdjust="spacing" textLength="108.3333" x="65.2604" y="30.2755">DatabaseChitter</text><line style="stroke:#E58748;stroke-width:1.0416666666666667;" x1="8.3333" x2="201.0417" y1="43.3167" y2="43.3167"/><text fill="#4E5D6C" font-family="Verdana" font-size="11.4583" lengthAdjust="spacing" textLength="39.5833" x="18.75" y="64.2115">field id</text><text fill="#4E5D6C" font-family="Verdana" font-size="11.4583" lengthAdjust="spacing" textLength="171.875" x="18.75" y="88.5539">field message VARCHAR 160</text><text fill="#4E5D6C" font-family="Verdana" font-size="11.4583" lengthAdjust="spacing" textLength="146.875" x="18.75" y="112.8962">field datetime DATETIME</text><line style="stroke:#E58748;stroke-width:1.0416666666666667;" x1="8.3333" x2="201.0417" y1="124.677" y2="124.677"/><!--MD5=[8888e7a329daaca5c45334f6acca12ea]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="137.5px" preserveAspectRatio="none" style="width:205px;height:137px;background:#00000000;" version="1.1" viewBox="0 0 205 137" width="205.2083px" zoomAndPan="magnify"><defs/><g><!--MD5=[48293da3331619a99a10ae7ba62eb900]
+class DatabaseChitter--><polygon fill="#474747" points="11.4583,7.2917,11.4583,7.5106,21.5856,6.8601,31.713,7.493,41.8403,7.708,51.9676,6.5485,62.0949,7.2107,72.2222,6.8474,82.3495,6.8922,92.4769,7.2207,102.6042,6.5715,112.7315,7.8684,122.8588,6.6351,132.9861,7.0857,143.1134,7.7416,153.2407,7.2023,163.3681,7.3627,173.4954,7.2584,183.6227,7.4776,193.75,7.2917,193.7818,7.3684,194.4171,7.7236,195.0177,7.9951,195.608,8.2418,196.1409,8.3497,196.6963,8.5121,196.845,8.5737,197.1656,9.1946,196.9531,9.5947,197.6462,10.37,197.5775,10.8297,197.9167,11.4583,198.4727,11.4583,197.401,21.9113,197.8453,32.3642,198.6892,42.8171,197.8659,53.27,198.0264,63.7229,198.2694,74.1758,198.3502,84.6288,197.9126,95.0817,198.2158,105.5346,197.3204,115.9875,197.9167,126.4404,198.0079,126.4782,197.8484,127.1025,197.5711,127.678,197.3811,128.2897,196.7854,128.7333,196.6963,129.3867,196.6096,129.1775,196.0245,129.4314,195.5099,129.856,194.9024,130.0559,194.4298,130.5816,193.75,130.6071,193.75,130.4251,183.6227,130.2497,173.4954,130.8449,163.3681,129.9125,153.2407,130.0663,143.1134,131.2831,132.9861,131.0609,122.8588,131.3722,112.7315,130.2719,102.6042,130.9396,92.4769,131.2221,82.3495,130.115,72.2222,130.5072,62.0949,130.7383,51.9676,131.286,41.8403,130.6027,31.713,131.0889,21.5856,130.0302,11.4583,130.6071,11.3683,130.3898,10.936,130.5246,10.1846,129.889,9.7582,130.0381,9.1288,129.6971,8.5121,129.3867,8.4261,129.3511,8.1545,128.7504,8.1711,128.2692,7.6838,127.5792,7.7256,127.1083,7.2917,126.4404,6.7159,126.4404,7.9348,115.9875,7.7961,105.5346,7.5468,95.0817,7.3409,84.6288,8.0486,74.1758,7.9308,63.7229,7.468,53.27,7.571,42.8171,7.156,32.3642,8.038,21.9113,7.2917,11.4583,7.3413,11.4789,7.5911,10.892,7.5847,10.199,7.8939,9.6367,8.4382,9.1718,8.5121,8.5121,8.5692,8.6499,9.0956,8.2542,9.6478,7.9206,10.2507,7.7096,10.7779,7.3156,11.4583,7.2917" style="stroke:#333333;stroke-width:1.0416666666666667;"/><polygon fill="#666666" points="51.0992,27.5175,49.5723,29.6038,47.7663,32.6596,45.1834,34.7189,42.4691,35.8451,40.3049,35.9428,37.5234,34.5344,34.8988,33.6143,32.9068,31.7462,31.8618,29.6076,31.2421,27.9047,30.635,25.6804,29.6496,23.7664,30.4068,21.8976,31.0703,19.8504,33.5599,18.2313,35.3115,16.1306,37.4795,15.433,40.0569,14.8323,43.3621,15.1892,45.1724,16.0429,47.2772,16.4299,49.8363,19.0519,50.7285,21.8199,51.1161,23.7085,50.677,26.8207" style="stroke:#4D4D4D;stroke-width:1.0416666666666667;"/><path d="M42.5293,29.4108 Q42.1061,29.6224 41.6341,29.7363 Q41.1621,29.8503 40.6576,29.8503 Q38.8021,29.8503 37.8255,28.6458 Q36.8652,27.4251 36.8652,25.1302 Q36.8652,22.819 37.8255,21.6146 Q38.8021,20.3939 40.6576,20.3939 Q41.1621,20.3939 41.6341,20.5078 Q42.1224,20.6055 42.5293,20.8333 L42.5293,22.8353 Q42.0736,22.4121 41.6341,22.2168 Q41.1947,22.0052 40.7389,22.0052 Q39.7461,22.0052 39.2415,22.8027 Q38.737,23.584 38.737,25.1302 Q38.737,26.6602 39.2415,27.4414 Q39.7461,28.2227 40.7389,28.2227 Q41.1947,28.2227 41.6341,28.0273 Q42.0736,27.832 42.5293,27.4089 L42.5293,29.4108 Z " fill="#000000"/><text fill="#FFFFFF" font-family="Segoe Print" font-size="12.5" lengthAdjust="spacing" textLength="107.2917" x="63.5417" y="29.3111">DatabaseChitter</text><path d="M8.3333,42.6758 L8.3333,42.9677 L18.8079,42.1003 L29.2824,42.9442 L39.7569,43.2309 L50.2315,41.685 L60.706,42.5678 L71.1806,42.0834 L81.6551,42.1431 L92.1296,42.5811 L102.6042,41.7155 L113.0787,43.4447 L123.5532,41.8004 L134.0278,42.4011 L144.5023,43.2757 L154.9769,42.5566 L165.4514,42.7706 L175.9259,42.6314 L186.4005,42.9237 L196.875,42.6758 " fill="#474747" style="stroke:#333333;stroke-width:1.0416666666666667;"/><text fill="#FFFFFF" font-family="Segoe Print" font-size="11.4583" lengthAdjust="spacing" textLength="39.5833" x="18.75" y="62.6867">field id</text><text fill="#FFFFFF" font-family="Segoe Print" font-size="11.4583" lengthAdjust="spacing" textLength="167.7083" x="18.75" y="86.4415">field message VARCHAR 160</text><text fill="#FFFFFF" font-family="Segoe Print" font-size="11.4583" lengthAdjust="spacing" textLength="142.7083" x="18.75" y="110.1964">field datetime DATETIME</text><path d="M8.3333,122.2738 L8.3333,122.5657 L18.8079,121.6983 L29.2824,122.5422 L39.7569,122.8289 L50.2315,121.2829 L60.706,122.1658 L71.1806,121.6814 L81.6551,121.7411 L92.1296,122.1791 L102.6042,121.3135 L113.0787,123.0427 L123.5532,121.3984 L134.0278,121.9991 L144.5023,122.8737 L154.9769,122.1546 L165.4514,122.3685 L175.9259,122.2294 L186.4005,122.5217 L196.875,122.2738 " fill="#474747" style="stroke:#333333;stroke-width:1.0416666666666667;"/><!--MD5=[3210e0bc8cf1ced7186e70ce884f0720]
 @startuml
 
-!theme superhero-outline
+!theme sketchy
 
 class DatabaseChitter {
 	field id
@@ -18,6 +18,8 @@ class DatabaseChitter {
 
 skinparam backgroundColor transparent
 skinparam useBetaStyle false
+skinparam handwritten true
+skinparam shadowing false
 
 
 
@@ -25,7 +27,7 @@ skinparam useBetaStyle false
 
 
 
-skinparam defaultFontName       "Verdana"
+skinparam defaultFontName       "Segoe Print"
 skinparam defaultFontSize       12
 skinparam dpi                   100
 skinparam shadowing             false
@@ -33,306 +35,301 @@ skinparam roundcorner           8
 skinparam ParticipantPadding    40
 skinparam BoxPadding            40
 skinparam Padding               5
-skinparam TitleFontColor	    #4E5D6C
-skinparam TitleFontSize	    	20
-skinparam TitleBorderThickness 	0
-skinparam ArrowColor            #4E5D6C
+skinparam ArrowColor            #555555
 skinparam stereotype {
-    CBackgroundColor #717d89
-    CBorderColor #3e4a56
-    ABackgroundColor #5F8F00
-    ABorderColor #4a934a
-    IBackgroundColor #AE423F
-    IBorderColor #e17572
-    EBackgroundColor #C08A3E
-    EBorderColor #f3bd71
-    NBackgroundColor #499AB2
-    NBorderColor #7ccde5
+    CBackgroundColor #666666
+    CBorderColor #4d4d4d
+    ABackgroundColor #3eb058
+    ABorderColor #24963e
+    IBackgroundColor #e04958
+    IBorderColor #c6303e
+    EBackgroundColor #ffc720
+    EBorderColor #e6ae06
+    NBackgroundColor #2eabbf
+    NBorderColor #1592a6
 }
 skinparam title {
-	FontColor	                 #DF691A
-	BorderColor	                 #717d89
+	FontColor	                 #ffffff
+	BorderColor	                 #4d4d4d
 	FontSize	    	         20
 	BorderRoundCorner            8
 	BorderThickness 	         1
-	BackgroundColor              transparent
+	BackgroundColor              #666666-#555555
 }
 
-
 skinparam legend {
-	BackgroundColor transparent
-	BorderColor #717d89
-	FontColor #abb6c2
+	BackgroundColor #555555
+	BorderColor #4d4d4d
+	FontColor #ffffff
 }
 
 skinparam swimlane {
-	BorderColor #5bc0de
+	BorderColor #17a2b8
 	BorderThickness 2
-	TitleBackgroundColor  #3e4a56-#4E5D6C
-	TitleFontColor #DF691A
+	TitleBackgroundColor  #666666-#555555
+	TitleFontColor #ffffff
 }
 
 
 skinparam activity {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	BarColor #5cb85c
-	StartColor #5bc0de
-	EndColor #5bc0de
-	DiamondBackgroundColor transparent
-  	DiamondBorderColor #717d89
-  	DiamondFontColor #717d89
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
+	BarColor #28a745
+	StartColor #17a2b8
+	EndColor #17a2b8
+	DiamondBackgroundColor #666666
+  	DiamondBorderColor #4d4d4d
+  	DiamondFontColor #ffffff
 }
 
 
 skinparam participant {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 	ParticipantBorderThickness 2
 }
 
 
 skinparam actor {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	FontColor #DF691A
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam arrow {
 	Thickness 3
-	Color #DF691A
-	FontColor #FFF
+	Color #333333
+	FontColor #ffffff
 }
 
 
 skinparam sequence {
-	BorderColor #DF691A
-	TitleFontColor #DF691A
+	BorderColor #333333
+	TitleFontColor #333333
 	BackgroundColor transparent
-	StartColor #DF691A
-	EndColor #DF691A
+	StartColor #333333
+	EndColor #333333
 	BoxBackgroundColor transparent
-	BoxBorderColor #4E5D6C
+	BoxBorderColor #555555
 	BoxFontColor $DARk
-	LifeLineBorderColor #4E5D6C
+	LifeLineBorderColor #555555
 	LifeLineBorderThickness 2
-	LifeLineBackgroundColor transparent
-	GroupBorderColor #4E5D6C
-	GroupFontColor #4E5D6C
-	GroupHeaderFontColor #5bc0de
-	GroupBackgroundColor transparent
+	LifeLineBackgroundColor #4d4d4d
+	GroupBorderColor #555555
+	GroupFontColor #555555
+	GroupHeaderFontColor #17a2b8
+	GroupBackgroundColor #555555
 	GroupHeaderBackgroundColor transparent
-	DividerBackgroundColor transparent
-    DividerBorderColor #4E5D6C
+	DividerBackgroundColor #555555
+    DividerBorderColor #555555
     DividerBorderThickness 2
-    DividerFontColor #abb6c2
+    DividerFontColor #ffffff
 	ReferenceBackgroundColor transparent
-	ReferenceBorderColor #abb6c2
-	ReferenceFontColor #abb6c2
-	ReferenceHeaderFontColor #5bc0de
-	ReferenceHeaderBackgroundColor transparent
+	ReferenceBorderColor #555555
+	ReferenceFontColor #555555
+	ReferenceHeaderFontColor #17a2b8
+	ReferenceHeaderBackgroundColor #555555
 }
 
 
 skinparam partition {
-	BorderColor #DF691A
-	FontColor #DF691A
+	BorderColor #333333
+	FontColor #333333
 	BackgroundColor transparent
 }
 
 
 skinparam collections {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam control {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam entity {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam boundary {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam agent {
-	BackgroundColor transparent
-	BorderColor #C08A3E
-	FontColor #4E5D6C
+	BackgroundColor #ffc107
+	BorderColor #ffc720
+	FontColor #555555
 }
 
 
 skinparam note {
 	BorderThickness 1
-	BackgroundColor transparent
-	BorderColor #7ccde5
-	FontColor #7ccde5
+	BackgroundColor #17a2b8
+	BorderColor #1592a6
+	FontColor #ffffff
 }
 
 
 skinparam artifact {
-	BackgroundColor transparent
-	BorderColor #717d89
-	FontColor #abb6c2
+	BackgroundColor #555555
+	BorderColor #4d4d4d
+	FontColor #ffffff
 }
 
 
 skinparam component {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam interface {
-	BackgroundColor  transparent
-	BorderColor  #d9534f
-	FontColor #4E5D6C
+	BackgroundColor  #c6303e
+	BorderColor  #dc3545
+	FontColor #555555
 }
 
 
 skinparam storage {
-	BackgroundColor transparent
-  	BorderColor #f3bd71
-	FontColor #f0ad4e
+	BackgroundColor #ffc107
+  	BorderColor #e6ae06
+	FontColor #ffffff
 }
 
 
 skinparam node {
-	BackgroundColor  transparent
-	BorderColor #abb6c2
-	FontColor #abb6c2
+	BackgroundColor  #555555
+	BorderColor #ffffff
+	FontColor #ffffff
 }
 
 
 skinparam cloud {
-	BackgroundColor transparent
+	BackgroundColor #F2FCFE-#eeeeee
 	BorderColor #F2FCFE
-	FontColor #4E5D6C
+	FontColor #555555
 }
 
 
 skinparam database {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	FontColor #DF691A
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam class {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	FontColor #abb6c2
-	HeaderBackgroundColor #b25415
-	StereotypeFontColor #4E5D6C
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
+	FontColor #ffffff
+	HeaderBackgroundColor #474747
+	StereotypeFontColor #555555
 	BorderThickness 1
-	AttributeFontColor #4E5D6C
+	AttributeFontColor #ffffff
 	AttributeFontSize 11
 }
 
 
 skinparam object {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	StereotypeFontColor #4E5D6C
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
+	StereotypeFontColor #555555
 	BorderThickness 1
-	AttributeFontColor #717d89
+	AttributeFontColor #ffffff
 	AttributeFontSize 11
 }
 
 
 skinparam usecase {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 	BorderThickness 2
-	StereotypeFontColor #DF691A
+	StereotypeFontColor #333333
 }
 
 
 skinparam rectangle {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
+	BackgroundColor #666666
 	BorderThickness 2
-	StereotypeFontColor #DF691A
+	StereotypeFontColor #333333
 }
 
 
 skinparam package {
-	BackgroundColor transparent
-  	BorderColor #DF691A
-	FontColor #DF691A
+	BackgroundColor #555555
+  	BorderColor #333333
+	FontColor #333333
 	BorderThickness 2
 }
 
 
 skinparam folder {
-	BackgroundColor transparent
-  	BorderColor #f0ad4e
-	FontColor #f0ad4e
+	BackgroundColor #666666
+  	BorderColor #ffc107
+	FontColor #ffc107
 	BorderThickness 2
 }
 
 
 skinparam frame {
-	BackgroundColor transparent
-  	BorderColor #5bc0de
-	FontColor #5bc0de
+	BackgroundColor #666666
+  	BorderColor #17a2b8
+	FontColor #17a2b8
 	BorderThickness 2
 }
 
 
 skinparam state {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
-	StartColor #5bc0de
-	EndColor #5bc0de
-	AttributeFontColor #717d89
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
+	StartColor #17a2b8
+	EndColor #17a2b8
+	AttributeFontColor #ffffff
 	AttributeFontSize 11
 }
 
 
 skinparam queue {
-		FontColor #DF691A
-	BorderColor #e58748
-	BackgroundColor transparent
+		FontColor #ffffff
+	BorderColor #333333
+	BackgroundColor #474747
 }
 
 
 skinparam card {
-	BackgroundColor transparent
-	BorderColor #5bc0de
-	FontColor #5bc0de
+	BackgroundColor #17a2b8
+	BorderColor #1592a6
+	FontColor #ffffff
 }
 
 
 skinparam file {
-	BackgroundColor transparent
-	BorderColor #abb6c2
-	FontColor #abb6c2
+	BackgroundColor #4d4d4d
+	BorderColor #ffffff
+	FontColor #ffffff
 }
 
 
