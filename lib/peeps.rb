@@ -1,6 +1,6 @@
 require 'pg'
 
-class Peeps
+class Peeps < Sinatra::Application
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       conn = PG.connect(dbname: 'chitter_test')
@@ -21,4 +21,5 @@ class Peeps
 
     conn.exec("INSERT INTO peeps (message) VALUES ('#{message}');")
   end
+
 end

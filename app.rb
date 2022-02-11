@@ -18,6 +18,10 @@ class Chitter < Sinatra::Base
     erb(:index)
   end
 
+  get '/comment' do
+    erb(:comment)
+  end
+
   post '/' do
     Peeps.create(message = params[:message])
 
