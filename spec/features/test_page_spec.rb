@@ -9,7 +9,7 @@ end
 feature 'view all the messages' do
   scenario 'user visits view messages page' do
     visit('/view_messages')
-    expect(page).to have_content "This is a peep"
+    expect(page).to have_content "This is a peep!"
     expect(page).to have_content "and another peep"
   end
 end
