@@ -7,6 +7,8 @@ Mathew Grimward
 Please list which user stories you've implemented (delete the ones that don't apply).
 
 - User story 1: "I want to see all the messages (peeps) in a browser"
+- User story 2: "I want to post a message (peep) to chitter"
+
 
 # README checklist
 
