@@ -28,9 +28,8 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-    connection.exec("INSERT INTO peeps (message, date)
-      VALUES('#{message}',
-      '#{Time.now.to_s[0, 9]}');"
+    connection.exec_params("INSERT INTO peeps (message, date)
+      VALUES($1, $2);", [message, Time.now.to_s[0, 9]]
     )
   end
 
@@ -41,7 +40,8 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%'")
+    result = connection.exec_params("SELECT * FROM peeps WHERE message LIKE($1)", ["%#{keyword}%"]
+    )
     result.map do |peep|
       Peep.new(message: peep['message'], date: peep['date'])
     end
