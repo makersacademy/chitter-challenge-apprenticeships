@@ -1,12 +1,17 @@
 require 'sinatra/base'
-require 'pg'
 require_relative './lib/peep'
 
 class Chitter < Sinatra::Base
 
+  def select_database
+    'chitter_test' if ENV['ENVIRONMENT'] == 'test'
+    'chitter'
+  end
+
   get '/peeps' do
-    Peep.connect('chitter')
+    Peep.connect(select_database)
     @result = Peep.list_peeps
+    p @result
     erb :peeps
   end
 
