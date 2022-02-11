@@ -1,5 +1,12 @@
+<h1> Chitter </h1>
+
 <ul>
   <% @peeps.each do |peep| %>
     <li><%= peep %></li>
     <% end %>
 </ul>
+
+<form action='/post' method='post'>
+  <input type="text" name="message" placeholder='Peep - max 60 chars' maxlength='60' required/>
+  <input type="submit" value="Post" />
+</form>

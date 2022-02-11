@@ -12,5 +12,10 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/post' do
+    ChitterManager.post(message: params[:message])
+    redirect '/chitter'
+  end
+
   run! if app_file == $0
 end

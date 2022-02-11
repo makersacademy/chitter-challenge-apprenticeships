@@ -16,4 +16,12 @@ describe ChitterManager do
     end
   end
 
+  describe '.post' do
+    it 'creates a new post' do
+      ChitterManager.post(message: 'This is my first peep')
+
+      expect(ChitterManager.all).to include 'This is my first peep'
+    end
+  end
+  
 end

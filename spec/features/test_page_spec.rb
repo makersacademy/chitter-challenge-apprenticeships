@@ -1,12 +1,22 @@
-feature 'Viewing test page' do
-  scenario 'visiting the test page' do
+feature 'Viewing Chitter page' do
+  scenario 'the user can see peeps' do
     connection = PG.connect(dbname: 'chitter_test')
 
-    connection.exec("INSERT INTO peeps (message) VALUES ('Hey there it''s Friday');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('Fri-Yay!');")
+    ChitterManager.post(message: 'This is my first peep')
+    ChitterManager.post(message: 'Fri-Yay!')
   
     visit('/chitter')
-    expect(page).to have_content "Hey there it's Friday"
+    expect(page).to have_content "This is my first peep"
     expect(page).to have_content "Fri-Yay!"
   end
+
+  scenario 'the user can add a peep' do
+    visit('/chitter')
+    fill_in('message', with: "This is my first peep")
+    click_button('Post')
+
+    expect(page).to have_content "This is my first peep"
+
+  end
+
 end
