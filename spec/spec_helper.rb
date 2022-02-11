@@ -20,7 +20,9 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 
+# test functions
 require_relative './setup_test_database'
+require_relative './web_helper'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,

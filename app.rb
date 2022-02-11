@@ -12,6 +12,11 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  get '/by_latest' do
+    @messages = Message.latest
+    erb :index
+  end
+
   get '/peep' do
     erb :peep
   end
