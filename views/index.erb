@@ -1,0 +1,41 @@
+<style>
+    body {background-color: #FEF5ED;}
+
+    small {
+      color: #79B4B7;
+  margin-left: 40%;
+    }
+
+    h4 {
+      color: #79B4B7;
+  margin-left: 40%;
+    }
+
+    h3 {
+      color: #79B4B7;
+  margin-left: 40%;
+    }
+    
+</style>
+
+
+<form action="/filtered" method = 'POST'>
+    <label for="filter">Filter by:</label>
+    <input type="text" id="filter" name="filter"><br>
+    <input type="submit" id="submit" name="submit"><br>
+</form>
+
+
+  <% @messages.each do |message| %>
+    <h4> <li>@<%= message[0] %></h4> </li>
+    <h3><%= message[1] %> </h3> 
+    <small><em>  <%= message[2] %> </em> </small> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <% end %>
+
+
+
