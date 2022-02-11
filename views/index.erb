@@ -7,8 +7,16 @@
   <body>
     <h1 style="text-align:center">Welcome to Chitter!</h1> <br>
 
-    <h2 style="text-align:center">Messages so far:</h2>
+    <h2 style="text-align:center">Chitters so far:</h2>
 
     <%= @list %>
+
+    <div id='input_message'>
+      <h2 style="text-align:center">You can send a Chitter below!</h1>
+      <form style="text-align:center" action="/send_message" method=post>
+      <input type="text" name="message" id='message'><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    </div>
   </body>
 </html>

@@ -13,6 +13,11 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/send_message' do
+    Chitter_message.save_message(params[:message])
+    redirect '/'
+  end
+
   get '/test' do
     'Test page'
   end
