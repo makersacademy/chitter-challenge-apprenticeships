@@ -6,7 +6,7 @@ feature "deleting a message" do
 
     first('.message').click_button 'Delete'
 
-    expect(current_path).to eq '/messageboard/'
+    expect(current_path).to eq '/messageboard'
     expect(page).not_to have_content('Harry - To be deleted')
   end
 end

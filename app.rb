@@ -23,8 +23,8 @@ class Chitter < Sinatra::Base
   end
 
   delete '/messageboard/:id' do
-    Bookmark.delete(id: [params[:id]])
-    redirect ('/messageboard')
+    Message.delete(id: params[:id])
+    redirect '/messageboard'
   end
 
   run! if app_file == $0
