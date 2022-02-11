@@ -9,7 +9,7 @@ class Peeps
     end
     
     result = connection.exec("SELECT * FROM peeps;")
-    result.map { |peep| peep['message'] }
+    result.map { |peep| peep['message'] + " " + peep['this_date'] }
   end
 
   def self.create(message:)

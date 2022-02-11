@@ -8,6 +8,7 @@ Please list which user stories you've implemented (delete the ones that don't ap
 
 - User story 1: "I want to see all the messages (peeps) in a browser"
 - User story 2: "I want to post a message (peep) to chitter"
+- User story 3: "I want to see the date the message was posted"
 
 
 # README checklist
