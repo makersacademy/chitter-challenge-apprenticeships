@@ -8,4 +8,5 @@ feature 'Viewing test page' do
     visit('/messageboard')
     expect(page).to have_content "Welcome to the Chitter Channel"
   end
+
 end

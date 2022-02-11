@@ -6,7 +6,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/messageboard' do
-    'Welcome to the Chitter Channel'
+    erb :peepform
   end
 
   run! if app_file == $0
