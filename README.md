@@ -32,6 +32,8 @@ rspec
 
 Create a post by writing your name and message in the root '/' directory.
 
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
 View all posts in '/messages'
 
 Don't SQL inject pls! It is very easy im sure.
