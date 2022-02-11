@@ -14,9 +14,15 @@ class Chitter < Sinatra::Base
 
   get "/messages" do
     @reversed = params[:reversed]
+    @find = params[:find]
     connection = PG.connect(dbname: 'chitter_test', user: 'JMMakers', password: '1234')
     result = connection.exec('SELECT * FROM peeps')
-    @results = result.map { |bm| bm }
+    @results = result.map { |entry| entry }
+    if @find
+      find_results = []
+      @results.each { |entry| find_results << entry if entry["message"].include? @find }
+      @results = find_results
+    end
     erb :messages
   end
 

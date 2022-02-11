@@ -1,12 +1,17 @@
 Messages:<br>
    <a href="new_peep">New peep!</a> <br>
 <br>
+  Search:
+  <form action="/messages" method="get">
+    <input type="text" name="find">
+    <input type="submit">
+  </form>
 <br>
 <% if @reversed %>
   <a href="/messages">Sort by new.</a>
   <ul>
     <% @results.reverse_each do |element| %>
-      <li> <%= element["date"][5..18] + ":  " %> <%= element["message"] %> <li> 
+      <li> <%= "(" << element["date"][5..18] << "):  " %> <%= element["message"] %> </li> 
     <% end %>
   </ul>
 
@@ -14,7 +19,7 @@ Messages:<br>
   <a href="/messages?reversed=true">Sort by old.</a>
   <ul>
     <% @results.each do |element| %>
-      <li> <%= element["date"][5..18] + ":  " %> <%= element["message"] %> <li> 
+      <li> <%= "(" << element["date"][5..18] << "):  " %> <%= element["message"] %> </li> 
     <% end %>
   </ul>
 <% end %>
