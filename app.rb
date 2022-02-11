@@ -8,10 +8,24 @@ class Chitter < Sinatra::Base
     'chitter'
   end
 
+  get '/' do
+    redirect '/post'
+  end
+
+  get '/post' do
+    erb :post
+  end
+  
   get '/peeps' do
     Peep.connect(select_database)
     @result = Peep.list_peeps
-    p @result
+    erb :peeps
+  end
+
+  post '/peeps' do
+    Peep.connect(select_database)
+    Peep.post_peep(params['peep'])
+    @result = Peep.list_peeps
     erb :peeps
   end
 

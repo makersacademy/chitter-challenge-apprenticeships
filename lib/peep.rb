@@ -12,4 +12,8 @@ class Peep
     result = @@connection.exec('SELECT * FROM peeps;')
     result.map { |peep| peep['message'] }
   end
+
+  def self.post_peep(peep)
+    @@connection.exec("INSERT INTO peeps (message) values ('#{peep}');")
+  end
 end
