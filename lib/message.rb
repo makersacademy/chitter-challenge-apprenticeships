@@ -38,7 +38,6 @@ class Message
   end
 
   def self.filter(word)
-    puts "word = #{word}"
 
     outputs = []
     connection = if ENV['ENVIRONMENT'] == 'test'
