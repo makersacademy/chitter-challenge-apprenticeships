@@ -6,11 +6,15 @@ describe DatabaseConnection do
       expect(PG).to receive(:connect).with(dbname: 'chitter_test')
       DatabaseConnection.setup('chitter_test')
     end
+  end
 
-    it 'has persistent connection' do
+  describe '.query' do
+    it 'exectues a query via PostgreSQL' do
       connection = DatabaseConnection.setup('chitter_test')
 
-      expect(DatabaseConnection.connection).to eq connection
+      expect(connection).to receive(:exec_params).with("SELECT * FROM peeps;", [])
+
+      DatabaseConnection.query("SELECT * FROM peeps;")
     end
   end
 end
