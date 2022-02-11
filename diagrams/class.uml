@@ -1,0 +1,20 @@
+@startuml
+
+!theme superhero-outline
+
+class Message {
+	date
+	message
+	list()
+	post()
+	posts_by_latest()
+	search_kword()
+}
+
+class DatabaseConnection {
+	setup()
+	connection()
+	query()
+}
+
+@enduml

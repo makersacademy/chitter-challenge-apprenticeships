@@ -1,0 +1,56 @@
+
+       ┌─┐
+       ║"│
+       └┬┘
+       ┌┼┐
+        │            ┌───────┐                       ┌──────────┐          ┌────────┐          ┌────┐
+       ┌┴┐           │Browser│                       │Controller│          │Database│          │View│
+      User           └───┬───┘                       └────┬─────┘          └───┬────┘          └────┘
+       │  homepage '/'   │                                │                    │                 │
+       │ ───────────────>│                                │                    │                 │
+       │                 │                                │                    │                 │
+       │                 │GET '/' route, list all messages│                    │                 │
+       │                 │────────────────────────────────>                    │                 │
+       │                 │                                │                    │                 │
+       │                 │                                │ SELECT * FROM table│                 │
+       │                 │                                │ ───────────────────>                 │
+       │                 │                                │                    │                 │
+       │                 │                                │    all messages    │                 │
+       │                 │                                │ <───────────────────                 │
+       │                 │                                │                    │                 │
+       │                 │                                │   for message in messages, display   │
+       │                 │                                │ ─────────────────────────────────────>
+       │                 │                                │                    │                 │
+       │                 │                                │        HTML rendered messages        │
+       │                 │                                │ <─────────────────────────────────────
+       │                 │                                │                    │                 │
+       │                 │    can see chitter messages    │                    │                 │
+       │                 │<────────────────────────────────                    │                 │
+      User           ┌───┴───┐                       ┌────┴─────┐          ┌───┴────┐          ┌────┐
+       ┌─┐           │Browser│                       │Controller│          │Database│          │View│
+       ║"│           └───────┘                       └──────────┘          └────────┘          └────┘
+       └┬┘
+       ┌┼┐
+        │
+       ┌┴┐
+
+@startuml
+
+!theme superhero-outline
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : homepage '/'
+Browser -> Controller : GET '/' route, list all messages
+Controller -> Database : SELECT * FROM table
+Database -> Controller : all messages
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages
+
+
+@enduml

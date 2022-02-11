@@ -1,0 +1,56 @@
+
+       ┌─┐
+       ║"│
+       └┬┘
+       ┌┼┐
+        │            ┌───────┐                ┌──────────┐                       ┌────────┐          ┌────┐
+       ┌┴┐           │Browser│                │Controller│                       │Database│          │View│
+      User           └───┬───┘                └────┬─────┘                       └───┬────┘          └────┘
+       │ homepage '/post'│                         │                                 │                 │
+       │ ────────────────>                         │                                 │                 │
+       │                 │                         │                                 │                 │
+       │                 │   POST '/post' message  │                                 │                 │
+       │                 │ ────────────────────────>                                 │                 │
+       │                 │                         │                                 │                 │
+       │                 │                         │ INSERT INTO table_name (column) │                 │
+       │                 │                         │ ────────────────────────────────>                 │
+       │                 │                         │                                 │                 │
+       │                 │                         │ if success redirect '/' else 404│                 │
+       │                 │                         │ <────────────────────────────────                 │
+       │                 │                         │                                 │                 │
+       │                 │                         │          for message in messages, display         │
+       │                 │                         │ ──────────────────────────────────────────────────>
+       │                 │                         │                                 │                 │
+       │                 │                         │               HTML rendered messages              │
+       │                 │                         │ <──────────────────────────────────────────────────
+       │                 │                         │                                 │                 │
+       │                 │ can see chitter messages│                                 │                 │
+       │                 │ <────────────────────────                                 │                 │
+      User           ┌───┴───┐                ┌────┴─────┐                       ┌───┴────┐          ┌────┐
+       ┌─┐           │Browser│                │Controller│                       │Database│          │View│
+       ║"│           └───────┘                └──────────┘                       └────────┘          └────┘
+       └┬┘
+       ┌┼┐
+        │
+       ┌┴┐
+
+@startuml
+
+!theme superhero-outline
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : homepage '/post'
+Browser -> Controller : POST '/post' message
+Controller -> Database : INSERT INTO table_name (column)
+Database -> Controller : if success redirect '/' else 404
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages
+
+
+@enduml

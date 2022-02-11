@@ -1,0 +1,56 @@
+
+       ┌─┐
+       ║"│
+       └┬┘
+       ┌┼┐
+        │            ┌───────┐                             ┌──────────┐                             ┌────────┐          ┌────┐
+       ┌┴┐           │Browser│                             │Controller│                             │Database│          │View│
+      User           └───┬───┘                             └────┬─────┘                             └───┬────┘          └────┘
+       │    '/search'    │                                      │                                       │                 │
+       │ ───────────────>│                                      │                                       │                 │
+       │                 │                                      │                                       │                 │
+       │                 │     GET? '/search' (args in url)     │                                       │                 │
+       │                 │──────────────────────────────────────>                                       │                 │
+       │                 │                                      │                                       │                 │
+       │                 │                                      │     send search param to database     │                 │
+       │                 │                                      │ ──────────────────────────────────────>                 │
+       │                 │                                      │                                       │                 │
+       │                 │                                      │ return messages containing search term│                 │
+       │                 │                                      │ <──────────────────────────────────────                 │
+       │                 │                                      │                                       │                 │
+       │                 │                                      │              for message in search messages             │
+       │                 │                                      │ ────────────────────────────────────────────────────────>
+       │                 │                                      │                                       │                 │
+       │                 │                                      │                  HTML rendered messages                 │
+       │                 │                                      │ <────────────────────────────────────────────────────────
+       │                 │                                      │                                       │                 │
+       │                 │can see chitter only searched messages│                                       │                 │
+       │                 │<──────────────────────────────────────                                       │                 │
+      User           ┌───┴───┐                             ┌────┴─────┐                             ┌───┴────┐          ┌────┐
+       ┌─┐           │Browser│                             │Controller│                             │Database│          │View│
+       ║"│           └───────┘                             └──────────┘                             └────────┘          └────┘
+       └┬┘
+       ┌┼┐
+        │
+       ┌┴┐
+
+@startuml
+
+!theme superhero-outline
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : '/search'
+Browser -> Controller : GET? '/search' (args in url)
+Controller -> Database : send search param to database
+Database -> Controller : return messages containing search term
+Controller -> View : for message in search messages
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter only searched messages
+
+
+@enduml
