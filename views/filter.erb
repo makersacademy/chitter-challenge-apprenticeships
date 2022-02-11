@@ -1,0 +1,27 @@
+<head>
+  <title>Chitter</title>
+  <style>
+    body {
+      background-color: lightskyblue;
+      text-align: center;
+    }
+    ul {
+      list-style-position: inside;
+    }
+  </style>
+</head>
+
+<h1> Filter peeps by a keyword </h1>
+<body>
+  <form action='/newsfeed/filter' method='post'>
+    <input type='text' name='filter' placeholder='Please enter a keyword'/>
+    <input type='submit' name='Submit'/>
+  </form>
+
+  <br>
+  <ul>
+    <% @peeps.reverse.each do |peep| %>
+      <li><%= peep.message %><br>Posted on: <%= peep.date %></li><br>
+    <% end %>
+  </ul>
+</body>
