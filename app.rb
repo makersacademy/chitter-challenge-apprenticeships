@@ -16,10 +16,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/messageboard' do
-    name = params["Name"]
-    message = params["Message"]
-    connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps (name, message) VALUES ('#{name}', '#{message}');")
+    Message.create(name: params[:Name], message: params[:Message])
     redirect '/messageboard'
   end
 
