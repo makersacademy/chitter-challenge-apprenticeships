@@ -12,6 +12,11 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/search' do
+    @messages = Message.search(params[:search])
+    erb :index
+  end
+
   get '/by_latest' do
     @messages = Message.latest
     erb :index

@@ -35,4 +35,13 @@ class Message
 
     Message.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['created_date'])
   end
+
+  def self.search(keyword)
+    sql_query = "SELECT id, message, date_trunc('second', created_date) FROM peeps WHERE message ILIKE '%' || $1 || '%';"
+
+    result = DatabaseConnection.query(sql_query, [keyword])
+    result.map do |message|
+      Message.new(id: message['id'], message: message['message'], date: message['date_trunc'])
+    end
+  end
 end

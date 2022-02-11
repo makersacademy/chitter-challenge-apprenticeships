@@ -8,6 +8,11 @@
   <h1>Chitter</h1>
   <h3>Can Meaning Exist, Within 160 Chars?</h3>
   <a href="/peep">Post-a-Peep</a>
+  <form action="/search" method="post">
+    <label for="search">Through the chronicled leaves:</label>
+    <input type="search" name="search" placeholder="looking for something?...">
+    <input type="submit" value="Search">
+  </form>
   <hr>
   <ul>
   <% @messages.each do |m| %>
