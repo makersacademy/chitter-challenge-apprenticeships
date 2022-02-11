@@ -1,3 +1,9 @@
+<form action='/newsfeed' method='post'>
+  <input type='text' name='message' placeholder='Please enter a peep'/>
+  <input type='submit' name='Submit'/>
+</form>
+
+<br>
 <ul>
   <% @peeps.each do |peep| %>
     <li><%= peep %></li>

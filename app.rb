@@ -16,5 +16,10 @@ class Chitter < Sinatra::Base
     erb(:newsfeed)
   end
 
+  post '/newsfeed' do
+    Peep.create(params['message'])
+    redirect '/newsfeed'
+  end
+
   run! if app_file == $0
 end
