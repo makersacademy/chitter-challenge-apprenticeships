@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+        <title> "Chitter" </title>
+        <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  <div class="container">
+      <center>
+      <div class="menu">
+      <ul>
+      <li><h1><font color="#a1d4c9">Chitter</font></h1></li>
+      </ul>
+      </div>
+      <div class="app-text"
+      <ul>
+          <% @peeps.each do | peep | %>
+            <li>
+            <%= peep.message %> (<font color="#a1d4c9">Posted on <%= peep.date %></font>)
+            </li>
+          <% end %>
+      </ul>
+      </div>
+      </center>
+</body>
+</html>
