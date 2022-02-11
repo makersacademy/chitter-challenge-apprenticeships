@@ -9,9 +9,12 @@ body {
   padding-right: 50px;
   padding-top: 20px;
   margin: auto;
-
-
   border-radius: 5px;
   background: white;
   box-shadow: rgba(254, 205, 211, 0.1) 0px 4px 16px, rgba(254,205,211,0.1) 0px 8px 24px, rgba(254,205,211, 0.1) 0px 16px 56px;
+}
+
+#alignleft {
+  padding-top: 25px;
+  float: right;
 }

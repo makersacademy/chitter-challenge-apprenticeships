@@ -9,6 +9,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
+    @list = Chitter_message.all
     erb :index
   end
 
