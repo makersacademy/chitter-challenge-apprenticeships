@@ -11,11 +11,11 @@ class Message
   end
 
   def self.all
-    sql_query = "SELECT * FROM peeps;"
+    sql_query = "SELECT id, message, date_trunc('second', created_date) FROM peeps;"
 
     result = DatabaseConnection.query(sql_query)
     result.map do |message|
-      Message.new(id: message['id'], message: message['message'], date: message['created_date'])
+      Message.new(id: message['id'], message: message['message'], date: message['date_trunc'])
     end
   end
 
