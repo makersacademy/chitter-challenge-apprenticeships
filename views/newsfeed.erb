@@ -12,10 +12,15 @@
 </head>
 
 <h1> Welcome to Chitter! </h1>
+
 <body>
   <form action='/newsfeed' method='post'>
     <input type='text' name='message' placeholder='Please enter a peep'/>
     <input type='submit' name='Submit'/>
+  </form>
+
+  <form action='/newsfeed/filter'>
+    <button type='submit'>Filter</button>
   </form>
 
   <br>
