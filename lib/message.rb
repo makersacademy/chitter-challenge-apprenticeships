@@ -1,9 +1,15 @@
 require 'pg'
 
-class Message 
-  def self.all 
-    connection = PG.connect(dbname: 'chitter')
-    result = connection.exec('SELECT * FROM peeps;')
+
+class Message
+  def self.all
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname:'chitter_test')
+    else 
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec("SELECT * FROM peeps")
     result.map { |messages| messages['message']}
   end
 end

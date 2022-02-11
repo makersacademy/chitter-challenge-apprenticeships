@@ -27,5 +27,7 @@ class Chitter < Sinatra::Base
    erb :'messages/index'
   end
 
+  
+
   run! if app_file == $0
 end
