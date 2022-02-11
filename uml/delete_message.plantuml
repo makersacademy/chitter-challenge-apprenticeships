@@ -1,0 +1,16 @@
+@startuml Delete messages
+title Delete a message
+skinparam Style strictuml
+collections Client
+collections app.rb
+collections MessageBoard
+collections erb
+
+Client -> app.rb : delete request
+app.rb -> MessageBoard : .delete
+MessageBoard --> app.rb : find and delete (SQL)
+app.rb -> erb : Update /messages
+erb --> app.rb : html
+app.rb --> Client : reponse
+
+@enduml
