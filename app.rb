@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/messages'
 # require 'sinatra/reloader'
 
 class Chitter < Sinatra::Base
@@ -11,10 +12,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/view_messages' do
-    messages = ['This is a peep',
-                'and another peep'
-              ]
-    messages.join
+    @messages = Messages.all
+    erb :'messages/index'
   end
 
   run! if app_file == $0
