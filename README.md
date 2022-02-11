@@ -1,66 +1,45 @@
-## Chitter Challenge
+# Set up
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+## To setup the database:
 
-We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
+Connect to psql
 
-## Set up
+Create the database using the psql command CREATE DATABASE messages_app;
 
-To setup the database:
+Connect to the database using the psql command \c messages_app;
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+Create a table using the line saved in 01_create_messages_table.sql
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
 
-* `bundle install`
-* `rspec`
+## To setup the test database:
 
-You should see 1 passing test.
+Connect to psql
 
-## User stories
+Create the database using the psql command CREATE DATABASE messages_app_test;;
 
-```
-As a Maker
-So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
-```
+Connect to the database using the psql command \c messages_app_test
 
-```
-As a Maker
-So that I can let people know what I am doing  
-I want to post a message (peep) to chitter
-```
+Create a table using the line saved in 01_create_messages_table.sql
 
-```
-As a Maker
-So that I can see when people are doing things
-I want to see the date the message was posted
-```
-(Hint the database table will need to change to store the date too)
+bundle install
 
-```
-As a Maker
-So that I can easily see the latest peeps
-I want to see a list of peeps in reverse chronological order
-```
-```
-As a Maker
-So that I can find relevant peeps
-I want to filter on a specific keyword
-```
+rspec
+
+
+
+# How to use
+
+Create a post by writing your name and message in the root '/' directory.
+
+<img width="1440" alt="Screenshot 2022-02-11 at 16 55 37" src="https://user-images.githubusercontent.com/84017149/153634387-7962e95e-02e4-42ae-9a66-6759e3954788.png">
+
+
+View all posts in '/messages'
+
+<img width="1440" alt="Screenshot 2022-02-11 at 16 56 31" src="https://user-images.githubusercontent.com/84017149/153634555-ae77424c-438e-4824-940d-0fd360f8c7e3.png">
+
+Filter messages using the submission form on the left of '/messages'
+
+<img width="1440" alt="Screenshot 2022-02-11 at 16 58 07" src="https://user-images.githubusercontent.com/84017149/153634837-8f73b858-2714-4f7b-85c7-c374e5bbfcd3.png">
+

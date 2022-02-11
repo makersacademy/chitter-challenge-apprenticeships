@@ -1,11 +1,12 @@
-require 'pg'
+# frozen_string_literal: true
 
 def setup_test_database
-  connection = PG.connect(dbname: 'chitter_test')
-  connection.exec("TRUNCATE peeps;")
-end
+  require 'pg'
 
-def add_row_to_test_database
-  connection = PG.connect(dbname: 'chitter_test')
-  connection.exec("INSERT INTO peeps (message) values ('This is a peep!');")
+  p 'Setting up test database...'
+
+  connection = PG.connect(dbname: 'messages_app_test')
+
+  # Clear the bookmarks table
+  connection.exec('TRUNCATE messages;')
 end
