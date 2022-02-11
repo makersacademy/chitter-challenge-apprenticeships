@@ -34,4 +34,16 @@ class Peep
     )
   end
 
+  def self.filter(keyword)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%'")
+    result.map do |peep|
+      Peep.new(message: peep['message'], date: peep['date'])
+    end
+  end
 end

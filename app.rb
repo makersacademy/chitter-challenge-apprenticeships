@@ -21,5 +21,15 @@ class Chitter < Sinatra::Base
     redirect '/newsfeed'
   end
 
+  get '/newsfeed/filter' do
+    @peeps = Peep.all
+    erb(:filter)
+  end
+
+  post '/newsfeed/filter' do
+    @peeps = Peep.filter(params['filter'])
+    erb(:filter)
+  end
+
   run! if app_file == $0
 end
