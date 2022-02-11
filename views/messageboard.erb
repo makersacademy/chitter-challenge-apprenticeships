@@ -11,24 +11,24 @@
       <table>
         <tr>
           <th>Peeper:</th>
-          <td>wallsrgreat</td>
+          <td><%= @username%></td>
         </tr>
         <tr>
           <th>Date:</th>
-          <td>11.02.2021</td>
+          <td><%= @date %></td>
         </tr>
         <tr>
           <th></th>
-          <td>OMG loving these bangers!</td>
+          <td><%= @message %></td>
         </tr>
         <tr>
           <th></th>
-          <td>#love, #sausages</td>
+          <td><%= @Keywords %></td>
         </tr>
       </table><br>
 
     <form action="/chatter">
-      <button type="submit">'Add a Peep'</button>
+      <button type="submit">Add a Peep</button>
     </form>
 
   </body>
