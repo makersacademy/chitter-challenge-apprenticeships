@@ -1,8 +1,7 @@
-# require 'pg'
-
-# class Message
-#   def self.all
-#     connection = PG.connection(dbname: 'chitter')
-#     connection.exec('SELECT * FROM peeps;')
-#   end
-# end
+class Message 
+  def self.all 
+    [
+      'This is a peep!'
+    ]
+  end
+end
