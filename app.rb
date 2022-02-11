@@ -20,7 +20,7 @@ class Chitter < Sinatra::Base
     @results = result.map { |entry| entry }
     if @find
       find_results = []
-      @results.each { |entry| find_results << entry if entry["message"].include? @find }
+      @results.each { |entry| find_results << entry if entry["message"].downcase.include? @find.downcase }
       @results = find_results
     end
     erb :messages
