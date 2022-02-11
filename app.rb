@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/chitter_manager'
 
 class Chitter < Sinatra::Base
   configure :development do
