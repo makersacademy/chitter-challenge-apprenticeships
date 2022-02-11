@@ -24,7 +24,9 @@ class Chitter < Sinatra::Base
   end
 
   post "/submit_new_peep" do
-    #do stuff
+    peep_text = params[:new_peep_text]
+    connection = PG.connect(dbname: 'chitter_test', user: 'JMMakers', password: '1234')
+    connection.exec("INSERT INTO peeps (message) VALUES ('#{peep_text}')")
     redirect :messages
   end
 
