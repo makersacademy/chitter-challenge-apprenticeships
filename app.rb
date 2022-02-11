@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
 
   get '/messageboard' do
     @messages = Message.all
-    erb :'messageboard'
+    erb :messageboard
   end
 
   run! if app_file == $0
