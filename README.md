@@ -37,9 +37,11 @@ You should see 1 passing test.
 ```
 As a Maker
 So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
+I want to see all the messages (peeps) in a browser
+
+* show/list all messages/peeps(db -> array -> .map to html) in a browser
 ```
+
 
 ```
 As a Maker
