@@ -1,8 +1,10 @@
 ## Chitter Challenge
 
-Today I have writen a small Twitter clone that will allow the users to post messages to a public stream. To install the app follow the setup instructions below and run it by entering the command 'rackup' in your terminal at the app root.
+Today I have writen a small Twitter clone that will allow the users to post messages to a public stream. To install the app follow the setup instructions below and run it by entering the command 'rackup' in your terminal at the app root. 
 
 ## Site usage
+
+For those of you who cant be bothered with all the faff and just want to have a quick glimpse I have included 3 screenshots which show the homepage displaying the list of peeps(You'll have to trust their reverse ordered), the filter peeps by keyword screen before execution, and the filter by peeps screen after execution.
 
 To use the site visit 'http://localhost:9292/newsfeed'.
 From that page you will see all peeps posted, displayed in reverse chronological order. You will also see a text box and submit button which can be used to submit your own peeps. If you wish to search through posted peeps for a specific keyword, visit 'http://localhost:9292/newsfeed/filter' and enter your keyword in the box and click submit.
