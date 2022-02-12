@@ -12,8 +12,10 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
+    p ENV
+
     @peeps = Peep.all
-    erb :peeps
+    erb :index
   end
 
   run! if app_file == $0
