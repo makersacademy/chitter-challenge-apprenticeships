@@ -13,7 +13,7 @@ class Chitter < Sinatra::Base
     @message = params[:message]
     @Keywords = params[:keywords]
                
-    erb :index
+    erb :messageboard
   end
 
   get '/chatter' do
