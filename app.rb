@@ -8,12 +8,10 @@ class Chitter < Sinatra::Base
   end
  
   get '/' do
-    'Hello'
+    redirect '/peeps'
   end
 
   get '/peeps' do
-    # p ENV
-
     @peeps = Peep.all
     erb :'peeps/index'
   end
