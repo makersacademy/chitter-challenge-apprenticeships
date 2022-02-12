@@ -15,6 +15,11 @@ class Chitter < Sinatra::Base
     Peep.create(peep: params[:message])
     redirect '/'
   end
+  
+  post '/filter' do
+    @peeps = Peep.filter(filter: params[:filter])
+    erb :index
+  end
 
   run! if app_file == $0
 end
