@@ -5,22 +5,22 @@ describe ChitterManager do
   describe '.all' do
     it 'returns a list of all messages' do
       connection = PG.connect(dbname: 'chitter_test')
-
-      connection.exec("INSERT INTO peeps (message) VALUES ('Hey there it''s Friday');")
-      connection.exec("INSERT INTO peeps (message) VALUES ('Fri-Yay!');")
+      ChitterManager.post(message: 'This is my first peep')
 
       peeps = ChitterManager.all
 
-      expect(peeps).to include("Hey there it's Friday")
-      expect(peeps).to include("Fri-Yay!")
+      expect(peeps[0]).to be_a ChitterManager
     end
   end
 
   describe '.post' do
     it 'creates a new post' do
-      ChitterManager.post(message: 'This is my first peep')
+      chitter = ChitterManager.post(message: 'This is my first peep')
+      
+      expect(chitter).to be_a ChitterManager
+      expect(chitter.message).to eq 'This is my first peep'
+      expect(DateTime.parse(chitter.date)).to be_an_instance_of(DateTime)
 
-      expect(ChitterManager.all).to include 'This is my first peep'
     end
   end
   

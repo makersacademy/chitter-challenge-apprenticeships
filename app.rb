@@ -13,7 +13,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/post' do
-    ChitterManager.post(message: params[:message])
+    message = params[:message]
+    post = message.gsub(/'/, "''")
+    ChitterManager.post(message: post)
     redirect '/chitter'
   end
 
