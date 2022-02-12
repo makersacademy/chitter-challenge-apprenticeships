@@ -62,5 +62,18 @@ describe Message do
       expect(updated_message.name).to eq 'Craig2'
       expect(updated_message.message).to eq 'Now updated'
     end
-  end 
+  end
+
+  describe '.find' do
+    it 'finds and returns the requested message object' do
+      message = Message.create(name: 'Norman', message: 'Find this message')
+
+      result = Message.find(id: message.id)
+
+      expect(result).to be_a Message
+      expect(result.id).to eq message.id
+      expect(result.name).to eq 'Norman'
+      expect(result.message).to eq 'Find this message'
+    end
+  end
 end

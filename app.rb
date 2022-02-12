@@ -28,13 +28,13 @@ class Chitter < Sinatra::Base
   end
 
   get '/messageboard/:id/edit' do
-    @message_id = params[:id]
+    @message = Message.find(id: params[:id])
     erb :'messageboard/edit'
   end
 
   patch '/messageboard/:id' do
     Message.update(id: params[:id], name: params[:Name], message: params[:Message])
-    redirect('/messageboard')
+    redirect '/messageboard'
   end
 
   run! if app_file == $0

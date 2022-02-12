@@ -55,4 +55,15 @@ class Message
     )
     Message.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'])
   end
+
+  def self.find(id:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec_params("SELECT * FROM peeps WHERE id= $1;", [id])
+    Message.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'])
+  end
 end
