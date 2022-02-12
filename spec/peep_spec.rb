@@ -13,4 +13,11 @@ describe Peep do
       
     end
   end
+
+  describe '.create' do
+    it 'posts a new peep' do
+      Peep.create(message: "Thinking of something funny to peep")
+      expect(Peep.all).to include "Thinking of something funny to peep"
+    end
+  end
 end
