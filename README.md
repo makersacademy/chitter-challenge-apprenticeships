@@ -65,7 +65,7 @@ I want to filter on a specific keyword
 
 ## Screenshots
 * Chitter homepage
-![alt text]( )
+![alt text](https://github.com/CristinaGonzalezVaro/chitter-challenge-apprenticeships/blob/main/Chitter%20homepage.png)
 
 * Posting new peep
-![alt text]( )
+![alt text](https://github.com/CristinaGonzalezVaro/chitter-challenge-apprenticeships/blob/main/Chitter%20new%20peep.png)
