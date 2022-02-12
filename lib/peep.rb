@@ -1,4 +1,5 @@
 require 'pg'
+require 'date'
 
 class Peep 
   def self.all 
@@ -9,8 +10,8 @@ class Peep
         connection = PG.connect(dbname: 'chitter')
       end
 
-    result = connection.exec('SELECT * FROM peeps;')
-    result.map { |peep| peep['message'] }
+    result = connection.exec('SELECT * FROM peeps ORDER BY created_at DESC;')
+    result.flat_map { |peep| [peep['message'] + ' - ' + Date.parse(peep['created_at']).to_s] }
   end 
 
   def self.create(peep:)
