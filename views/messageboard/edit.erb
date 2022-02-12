@@ -1,0 +1,6 @@
+<form action="/messageboard/<%= @message_id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH" />
+  <input type="text" name="Name" />
+  <input type="text" name="Message" />
+  <input type="submit" value="Submit" />
+</form>

@@ -51,4 +51,16 @@ describe Message do
       expect(Message.all.length).to eq 0
     end
   end
+
+  describe '.update' do
+    it 'updates the selected message on the messageboard' do
+      message = Message.create(name: 'Craig', message: 'To be updated')
+      updated_message = Message.update(id: message.id, name: 'Craig2', message: 'Now updated')
+
+      expect(updated_message).to be_a Message
+      expect(updated_message.id).to eq message.id
+      expect(updated_message.name).to eq 'Craig2'
+      expect(updated_message.message).to eq 'Now updated'
+    end
+  end 
 end

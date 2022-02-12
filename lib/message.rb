@@ -41,4 +41,18 @@ class Message
 
     connection.exec_params("DELETE FROM peeps WHERE id = $1", [id])
   end
+
+  def self.update(id:, name:, message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec_params(
+      "UPDATE peeps SET name = $1, message = $2 WHERE id = $3 RETURNING id, name, message;",
+      [name, message, id]
+    )
+    Message.new(id: result[0]['id'], name: result[0]['name'], message: result[0]['message'])
+  end
 end
