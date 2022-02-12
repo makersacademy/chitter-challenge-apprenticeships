@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    h1 {
+      color: darkTurquoise;
+      font-family: verdana;
+      font-size: 300%;
+    }
+
+    h2 {
+      color: black;
+      font-family: verdana;
+      font-size: 150%;
+    }
+
+    h3  {
+      color: steelBlue;
+      font-family: verdana;
+      font-size: 160%;
+    }
+
+    ul  {
+      color: black;
+      font-family: courier;
+      font-size: 130%;
+    }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align:center;"> Welcome to Chitter </h1>
+    <h2 style="text-align:center;"> See what's happening </h2>
+
+    <h3 style="text-align:center;"><a href="/peeps/new"> Peep Something </a></h3>
+
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li><%= peep %></li>
+        <br>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
+
+
