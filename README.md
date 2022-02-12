@@ -27,6 +27,9 @@ command `CREATE DATABASE chitter_test;`;
 * Connect to the database using the psql command `\c chitter_test`
 * Run the query we have saved in the file 01_create_chitter_table.sql
 
+Adding TIMESTAMP column:
+Use psql command `ALTER TABLE peeps ADD datecreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP;`
+
 * `bundle install`
 * `rspec`
 
