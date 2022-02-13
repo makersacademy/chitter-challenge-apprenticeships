@@ -4,7 +4,7 @@ Makers Academy challenge to build a small Twitter clone that allows users to pos
 
 The web app was written in Ruby using a TDD approach. Tests were written with Rspec and Capybara. It uses the Sinatra framework and a Postgresql database. I used Bootstrap to give the app some basic styling.
 
-![Chitter Screenshot](/docs/Screenshot 2022-02-13 at 16.37.05.png)
+![Chitter Screenshot](./docs/Screenshot 2022-02-13 at 16.37.05.png)
 
 ## Implementation
 
@@ -49,11 +49,11 @@ COVERAGE:  95.59% -- 65/68 lines in 4 files
 ## Feature still to implement
 
 I did not fully finish the challenge in the time given so I have improvements and enhancements I would like to make:
-- [] User story 5 - to be able to filter posts
-- [] Build a registration and authentication system
-- [] Implement a feature to delete posts
-- [] Work more on the styling of the page
-- [] Deploy the app with Heroku
+ - [] User story 5 - to be able to filter posts
+ - [] Build a registration and authentication system
+ - [] Implement a feature to delete posts
+ - [] Work more on the styling of the page
+ - [] Deploy the app with Heroku
 
 ## To set up the database
 
