@@ -1,5 +1,7 @@
 feature 'Viewing peeps' do 
   scenario 'A user can see peeps' do
+    add_row_to_test_database
+    
     visit('/peeps')
     expect(page).to have_content "This is a peep!"
     expect(page).to have_content "Meditate to evolve."
