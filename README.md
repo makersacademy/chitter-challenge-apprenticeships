@@ -4,7 +4,7 @@ Makers Academy challenge to build a small Twitter clone that allows users to pos
 
 The web app was written in Ruby using a TDD approach. Tests were written with Rspec and Capybara. It uses the Sinatra framework and a Postgresql database. I used Bootstrap to give the app some basic styling.
 
-![Chitter Screenshot](./docs/Screenshot 2022-02-13 at 16.37.05.png)
+<img width="1430" alt="Screenshot 2022-02-13 at 16 37 05" src="https://user-images.githubusercontent.com/60813754/153766396-d9c0e0cc-d32b-460d-86a7-394270333ab3.png">
 
 ## Implementation
 
