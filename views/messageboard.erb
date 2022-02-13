@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    h1 {
+      background-color: #6193B5;
+      font-family: verdana;
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px black;
+      }
+    ul {
+      background-color: #6193B5;
+      font-family: verdana;
+      color: white;
+      text-align: left;
+    }
+    body {
+      background-color: #6193B5;
+    }
+    h2 {
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <h1> Chitter Messageboard </h1>
+    <h2>
+      <form action="/messageboard/new" method="get">
+        <input type="submit" value="Submit a new message" />
+      </form>
+    </h2>
+    <ul>
+      <% @messages.each do |message| %>
+        <li class="message" id="message-<% message.id %>">
+          <%= "#{message.name} - #{message.message}" %>
+          <form action="/messageboard/<%= message.id %>" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            <input type="submit" value="Delete" />
+          </form>
+          <form action="/messageboard/<%= message.id %>/edit" method="get">
+            <input type="submit" value="Edit" />
+          </form>
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>

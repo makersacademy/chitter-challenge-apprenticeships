@@ -1,0 +1,16 @@
+@startuml Updating messages
+title Update a message
+skinparam Style strictuml
+collections Client
+collections app.rb
+collections MessageBoard
+collections erb
+
+Client -> app.rb : update request
+app.rb -> MessageBoard : .update
+MessageBoard --> app.rb : find and update (SQL)
+app.rb -> erb : Update /messages
+erb --> app.rb : html
+app.rb --> Client : reponse
+
+@enduml

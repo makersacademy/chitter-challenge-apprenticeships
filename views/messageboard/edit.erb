@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    h1 {
+      background-color: #6193B5;
+      font-family: verdana;
+      color: white;
+      text-align: center;
+      text-shadow: 1px 1px black;
+      }
+    body {
+      background-color: #6193B5;
+    }
+    </style>
+  </head>
+  <body>
+    <h1> Chitter Messageboard: Edit a Message... </h1>
+    <form action="/messageboard/<%= @message.id %>" method="post">
+      <input type="hidden" name="_method" value="PATCH" />
+      <input type="text" name="Name" value="<%= @message.name %>" />
+      <input type="text" name="Message" value="<%= @message.message %>" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+
