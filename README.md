@@ -59,3 +59,7 @@ So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
 ![Getting Started](./domain-models/chitter-view-all-messages.jpg)
+chitter-view-all-messages
+
+<img src="./domain-models/chitter-view-all-messages" alt="mvc model for user story 1" />
+
