@@ -58,8 +58,9 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
-![Getting Started](./domain-models/chitter-view-all-messages.jpg)
-chitter-view-all-messages
 
-<img src="./domain-models/chitter-view-all-messages" alt="mvc model for user story 1" />
+
+
+![chitter-view-all-messages](https://user-images.githubusercontent.com/68760004/153767538-081b855d-1af5-4c73-81a3-3e7c5aad6a2d.png)
+
 
