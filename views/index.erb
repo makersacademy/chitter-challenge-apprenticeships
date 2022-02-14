@@ -1,5 +1,5 @@
 <ul>
-  <% @messages.each do |message| %>
-    <li><%= message %></li>
+  <% @messages.each do |msg_content| %>
+    <li><%= msg_content['msg'] %> <%= msg_content['dt'] %></li>
   <% end %>
 </ul>
