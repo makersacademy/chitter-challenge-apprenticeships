@@ -72,14 +72,39 @@ provides access to id(int), message(string), date(string) on the object
 
 #### Message.all
 
+takes no arguments
+
+returns all messages from Postgres in order
+
 #### Message.latest
 
-#### Message.create
+**accessible at '/by_latest' url**
 
-#### Message.search
+takes no arguments
 
-tak
+returns all messages from the newest to oldest
+
+#### Message.create(message)
+
+takes a single string as a message
+
+inserts the message into DatabaseConnection.query
+
+#### Message.search(keyword)
+
+takes a single keyword to search against all messages in the peeps table. returns all messages of the search-term, case insensitive
+
+runs the sql query search with the parameter
 
 ## Views
 
-## Spec
+### index.erb
+
+displays all in messages in the peeps tables 
+
+has a search input
+
+### peep.erb
+
+allows the user to post a message
+
