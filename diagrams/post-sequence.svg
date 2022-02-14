@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="390px" preserveAspectRatio="none" style="width:694px;height:390px;background:#FFFFFF;" version="1.1" viewBox="0 0 694 390" width="694px" zoomAndPan="magnify"><defs/><g><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="24" x2="24" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="158.5" x2="158.5" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="347.5" x2="347.5" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="592" x2="592" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="663" x2="663" y1="84.2969" y2="308.2266"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="80.9951">User</text><ellipse cx="24" cy="15" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:2.0;"/><path d="M24,23 L24,50 M11,31 L37,31 M24,50 L11,65 M24,50 L37,65 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="320.2217">User</text><ellipse cx="24" cy="333.5234" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:2.0;"/><path d="M24,341.5234 L24,368.5234 M11,349.5234 L37,349.5234 M24,368.5234 L11,383.5234 M24,368.5234 L37,383.5234 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="127.5" y="80.9951">Browser</text><path d="M138.5,40 L138.5,64 M138.5,52 L155.5,52 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><ellipse cx="167.5" cy="52" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="127.5" y="320.2217">Browser</text><path d="M138.5,327.5234 L138.5,351.5234 M138.5,339.5234 L155.5,339.5234 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><ellipse cx="167.5" cy="339.5234" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="311.5" y="80.9951">Controller</text><ellipse cx="348" cy="52" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><polygon fill="#454645" points="344,40,350,35,348,40,350,45,344,40" style="stroke:#454645;stroke-width:1.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="311.5" y="320.2217">Controller</text><ellipse cx="348" cy="339.5234" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><polygon fill="#454645" points="344,327.5234,350,322.5234,348,327.5234,350,332.5234,344,327.5234" style="stroke:#454645;stroke-width:1.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="556" y="80.9951">Database</text><path d="M574,32 C574,22 592,22 592,22 C592,22 610,22 610,32 L610,58 C610,68 592,68 592,68 C592,68 574,68 574,58 L574,32 " fill="#00FFFF" style="stroke:#454645;stroke-width:1.5;"/><path d="M574,32 C574,42 592,42 592,42 C592,42 610,42 610,32 " fill="none" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="556" y="320.2217">Database</text><path d="M574,333.5234 C574,323.5234 592,323.5234 592,323.5234 C592,323.5234 610,323.5234 610,333.5234 L610,359.5234 C610,369.5234 592,369.5234 592,369.5234 C592,369.5234 574,369.5234 574,359.5234 L574,333.5234 " fill="#00FFFF" style="stroke:#454645;stroke-width:1.5;"/><path d="M574,333.5234 C574,343.5234 592,343.5234 592,343.5234 C592,343.5234 610,343.5234 610,333.5234 " fill="none" style="stroke:#454645;stroke-width:1.5;"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="642" y="49"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="638" y="53"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="645" y="72.9951">View</text><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="642" y="307.2266"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="638" y="311.2266"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="645" y="331.2217">View</text><polygon fill="#454645" points="147,111.4297,157,115.4297,147,119.4297,151,115.4297" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="24" x2="153" y1="115.4297" y2="115.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="31" y="110.3638">homepage '/post'</text><polygon fill="#454645" points="336,140.5625,346,144.5625,336,148.5625,340,144.5625" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="159" x2="342" y1="144.5625" y2="144.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="139" x="166" y="139.4966">POST '/post' message</text><polygon fill="#454645" points="580,169.6953,590,173.6953,580,177.6953,584,173.6953" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="348" x2="586" y1="173.6953" y2="173.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="220" x="355" y="168.6294">INSERT INTO table_name (column)</text><polygon fill="#454645" points="359,198.8281,349,202.8281,359,206.8281,355,202.8281" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="353" x2="591" y1="202.8281" y2="202.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="187" x="365" y="197.7622">if success redirect '/' else 404</text><polygon fill="#454645" points="651,227.9609,661,231.9609,651,235.9609,655,231.9609" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="348" x2="657" y1="231.9609" y2="231.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="355" y="226.895">for message in messages, display</text><polygon fill="#454645" points="359,257.0938,349,261.0938,359,265.0938,355,261.0938" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="353" x2="662" y1="261.0938" y2="261.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167" x="365" y="256.0278">HTML rendered messages</text><polygon fill="#454645" points="170,286.2266,160,290.2266,170,294.2266,166,290.2266" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="164" x2="347" y1="290.2266" y2="290.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="176" y="285.1606">can see chitter messages</text><!--MD5=[97c6de774008d30bbf2d988f144f1f1d]
+@startuml
+
+!theme vibrant
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : homepage '/post'
+Browser -> Controller : POST '/post' message
+Controller -> Database : INSERT INTO table_name (column)
+Database -> Controller : if success redirect '/' else 404
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages
+
+
+@enduml
+
+@startuml
+
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor FF6F61
+    FontColor FFFFFF
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 7FFFD4
+    FontColor 454645
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF6347
+    BorderColor FFFFFF
+    FontColor 454645
+}
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : homepage '/post'
+Browser -> Controller : POST '/post' message
+Controller -> Database : INSERT INTO table_name (column)
+Database -> Controller : if success redirect '/' else 404
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages
+
+
+@enduml
+
+PlantUML version 1.2021.9(Sun Jul 25 11:13:56 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

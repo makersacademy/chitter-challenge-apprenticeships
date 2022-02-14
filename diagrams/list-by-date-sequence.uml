@@ -1,0 +1,55 @@
+
+       ┌─┐
+       ║"│
+       └┬┘
+       ┌┼┐
+        │            ┌───────┐                               ┌──────────┐                         ┌────────┐          ┌────┐
+       ┌┴┐           │Browser│                               │Controller│                         │Database│          │View│
+      User           └───┬───┘                               └────┬─────┘                         └───┬────┘          └────┘
+       │ '/peeps_by_date'│                                        │                                   │                 │
+       │ ────────────────>                                        │                                   │                 │
+       │                 │                                        │                                   │                 │
+       │                 │ GET '/peeps_by_date' route, model logic│                                   │                 │
+       │                 │ ───────────────────────────────────────>                                   │                 │
+       │                 │                                        │                                   │                 │
+       │                 │                                        │      query messages by latest     │                 │
+       │                 │                                        │ ──────────────────────────────────>                 │
+       │                 │                                        │                                   │                 │
+       │                 │                                        │ return messages_by_latest || error│                 │
+       │                 │                                        │ <──────────────────────────────────                 │
+       │                 │                                        │                                   │                 │
+       │                 │                                        │           for message in messages, display          │
+       │                 │                                        │ ────────────────────────────────────────────────────>
+       │                 │                                        │                                   │                 │
+       │                 │                                        │                HTML rendered messages               │
+       │                 │                                        │ <────────────────────────────────────────────────────
+       │                 │                                        │                                   │                 │
+       │                 │   can see chitter messages by latest   │                                   │                 │
+       │                 │ <───────────────────────────────────────                                   │                 │
+      User           ┌───┴───┐                               ┌────┴─────┐                         ┌───┴────┐          ┌────┐
+       ┌─┐           │Browser│                               │Controller│                         │Database│          │View│
+       ║"│           └───────┘                               └──────────┘                         └────────┘          └────┘
+       └┬┘
+       ┌┼┐
+        │
+       ┌┴┐
+
+@startuml
+
+!theme vibrant
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : '/peeps_by_date'
+Browser -> Controller : GET '/peeps_by_date' route, model logic
+Controller -> Database : query messages by latest
+Database -> Controller : return messages_by_latest || error
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages by latest
+
+@enduml

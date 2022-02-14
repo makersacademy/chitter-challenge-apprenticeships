@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="390px" preserveAspectRatio="none" style="width:781px;height:390px;background:#FFFFFF;" version="1.1" viewBox="0 0 781 390" width="781px" zoomAndPan="magnify"><defs/><g><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="24" x2="24" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="154.5" x2="154.5" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="433.5" x2="433.5" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="679" x2="679" y1="84.2969" y2="308.2266"/><line style="stroke:#696969;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="750" x2="750" y1="84.2969" y2="308.2266"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="80.9951">User</text><ellipse cx="24" cy="15" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:2.0;"/><path d="M24,23 L24,50 M11,31 L37,31 M24,50 L11,65 M24,50 L37,65 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="5" y="320.2217">User</text><ellipse cx="24" cy="333.5234" fill="#454645" rx="8" ry="8" style="stroke:#454645;stroke-width:2.0;"/><path d="M24,341.5234 L24,368.5234 M11,349.5234 L37,349.5234 M24,368.5234 L11,383.5234 M24,368.5234 L37,383.5234 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="123.5" y="80.9951">Browser</text><path d="M134.5,40 L134.5,64 M134.5,52 L151.5,52 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><ellipse cx="163.5" cy="52" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="123.5" y="320.2217">Browser</text><path d="M134.5,327.5234 L134.5,351.5234 M134.5,339.5234 L151.5,339.5234 " fill="none" style="stroke:#454645;stroke-width:2.0;"/><ellipse cx="163.5" cy="339.5234" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="397.5" y="80.9951">Controller</text><ellipse cx="434" cy="52" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><polygon fill="#454645" points="430,40,436,35,434,40,436,45,430,40" style="stroke:#454645;stroke-width:1.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="397.5" y="320.2217">Controller</text><ellipse cx="434" cy="339.5234" fill="#FFE552" rx="12" ry="12" style="stroke:#454645;stroke-width:2.0;"/><polygon fill="#454645" points="430,327.5234,436,322.5234,434,327.5234,436,332.5234,430,327.5234" style="stroke:#454645;stroke-width:1.0;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="643" y="80.9951">Database</text><path d="M661,32 C661,22 679,22 679,22 C679,22 697,22 697,32 L697,58 C697,68 679,68 679,68 C679,68 661,68 661,58 L661,32 " fill="#00FFFF" style="stroke:#454645;stroke-width:1.5;"/><path d="M661,32 C661,42 679,42 679,42 C679,42 697,42 697,32 " fill="none" style="stroke:#454645;stroke-width:1.5;"/><text fill="#454645" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="643" y="320.2217">Database</text><path d="M661,333.5234 C661,323.5234 679,323.5234 679,323.5234 C679,323.5234 697,323.5234 697,333.5234 L697,359.5234 C697,369.5234 679,369.5234 679,369.5234 C679,369.5234 661,369.5234 661,359.5234 L661,333.5234 " fill="#00FFFF" style="stroke:#454645;stroke-width:1.5;"/><path d="M661,333.5234 C661,343.5234 679,343.5234 679,343.5234 C679,343.5234 697,343.5234 697,333.5234 " fill="none" style="stroke:#454645;stroke-width:1.5;"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="729" y="49"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="725" y="53"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="732" y="72.9951">View</text><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="729" y="307.2266"/><rect fill="#FF6347" height="30.2969" rx="3.5" ry="3.5" style="stroke:#FFFFFF;stroke-width:1.5;" width="46" x="725" y="311.2266"/><text fill="#FFFFFF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="732" y="331.2217">View</text><polygon fill="#454645" points="143,111.4297,153,115.4297,143,119.4297,147,115.4297" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="24" x2="149" y1="115.4297" y2="115.4297"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="31" y="110.3638">'/peeps_by_date'</text><polygon fill="#454645" points="422,140.5625,432,144.5625,422,148.5625,426,144.5625" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="155" x2="428" y1="144.5625" y2="144.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="255" x="162" y="139.4966">GET '/peeps_by_date' route, model logic</text><polygon fill="#454645" points="667,169.6953,677,173.6953,667,177.6953,671,173.6953" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="434" x2="673" y1="173.6953" y2="173.6953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="441" y="168.6294">query messages by latest</text><polygon fill="#454645" points="445,198.8281,435,202.8281,445,206.8281,441,202.8281" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="439" x2="678" y1="202.8281" y2="202.8281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="221" x="451" y="197.7622">return messages_by_latest || error</text><polygon fill="#454645" points="738,227.9609,748,231.9609,738,235.9609,742,231.9609" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="434" x2="744" y1="231.9609" y2="231.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="217" x="441" y="226.895">for message in messages, display</text><polygon fill="#454645" points="445,257.0938,435,261.0938,445,265.0938,441,261.0938" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="439" x2="749" y1="261.0938" y2="261.0938"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167" x="451" y="256.0278">HTML rendered messages</text><polygon fill="#454645" points="166,286.2266,156,290.2266,166,294.2266,162,290.2266" style="stroke:#454645;stroke-width:1.0;"/><line style="stroke:#454645;stroke-width:1.0;" x1="160" x2="433" y1="290.2266" y2="290.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="224" x="172" y="285.1606">can see chitter messages by latest</text><!--MD5=[85eab10f7f702055dc27ee554339dcc1]
+@startuml
+
+!theme vibrant
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : '/peeps_by_date'
+Browser -> Controller : GET '/peeps_by_date' route, model logic
+Controller -> Database : query messages by latest
+Database -> Controller : return messages_by_latest || error
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages by latest
+
+@enduml
+
+@startuml
+
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor FF6F61
+    FontColor FFFFFF
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 7FFFD4
+    FontColor 454645
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF6347
+    BorderColor FFFFFF
+    FontColor 454645
+}
+
+actor User
+boundary Browser
+control Controller
+database Database
+collections View
+
+User -> Browser : '/peeps_by_date'
+Browser -> Controller : GET '/peeps_by_date' route, model logic
+Controller -> Database : query messages by latest
+Database -> Controller : return messages_by_latest || error
+Controller -> View : for message in messages, display
+View -> Controller : HTML rendered messages
+Controller -> Browser : can see chitter messages by latest
+
+@enduml
+
+PlantUML version 1.2021.9(Sun Jul 25 11:13:56 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

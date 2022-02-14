@@ -1,0 +1,10 @@
+@startuml
+
+!theme sketchy
+
+class DatabaseChitter {
+	field id
+	field message VARCHAR 160
+	field datetime DATETIME 
+}
+@enduml
