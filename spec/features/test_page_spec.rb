@@ -1,3 +1,5 @@
+require 'pg'
+
 feature 'Viewing test page' do
   scenario 'visiting the test page' do
     visit('/test')

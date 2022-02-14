@@ -8,45 +8,18 @@
   </head>
   <body>
     <h1>Welcome to the Chitter Channel</h1>
-    <table>
-        <tr>
-          <th>Peeper:</th>
-          <td>cumberlands4eva</td>
-        </tr>
-        <tr>
-          <th>Date:</th>
-          <td>11/02/2022</td>
-        </tr>
-        <tr>
-          <th></th>
-          <td>OMG loving these bangers!</td>
-        </tr>
-        <tr>
-          <th></th>
-          <td>#sausages</td>
-        </tr>
-      </table><br>
-    <% if @message %>
-      <table>
-        <tr>
-          <th>Peeper:</th>
-          <td><%= @username%></td>
-        </tr>
-        <tr>
-          <th>Date:</th>
-          <td><%= @date %></td>
-        </tr>
-        <tr>
-          <th></th>
-          <td><%= @message %></td>
-        </tr>
-        <tr>
-          <th></th>
-          <td>#<%= @Keywords %></td>
-        </tr>
-      </table><br>
-      <% end %>
-
+        <table>
+        <% @peep.each do |peep| %>
+        <td height ="30">
+          <tr><th>Peep:</th><td><%= peep.message %></td></tr>
+          <tr><th>Date posted:</th><td><%= peep.date_added %></td></tr>
+          <tr><th>Peepwords:</th><td><%= peep.keywords %></td></tr>
+          <tr><th>Peeper:</th><td><%= peep.username %></td></tr>
+        
+        </td>
+        <% end %>
+    </table>
+    
     <form action="/chatter">
       <button type="submit">Add a Peep</button>
     </form>
