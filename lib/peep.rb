@@ -20,7 +20,12 @@ class Peep
     end
 
     result = connection.exec("SELECT * FROM peeps;")
-    result.map { |peep| peep['message'] }
+    output = []
+    result.map { 
+      |peep| output << peep['message'] 
+      output << peep['datecreated']
+    }
+    return output
   end
   
 end
