@@ -27,6 +27,9 @@ command `CREATE DATABASE chitter_test;`;
 * Connect to the database using the psql command `\c chitter_test`
 * Run the query we have saved in the file 01_create_chitter_table.sql
 
+Adding TIMESTAMP column:
+Use psql command `ALTER TABLE peeps ADD datecreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP;`
+
 * `bundle install`
 * `rspec`
 
@@ -37,14 +40,18 @@ You should see 1 passing test.
 ```
 As a Maker
 So that I can see what people are doing
-I want to see all the messages (peeps)
-in a browser
+I want to see all the messages (peeps) in a browser
+
+* show/list all messages/peeps(db -> array -> .map to html) in a browser
 ```
+
 
 ```
 As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
+
+* post(verb) a message (db entry string) to chitter(peeps column)
 ```
 
 ```

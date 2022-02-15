@@ -1,0 +1,11 @@
+<h1 align="center">Chitter</h1>
+<hr>
+<div style="text-align:center">
+  <a href="/new" align="center">Post a peep</a>
+</div>
+<hr>
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep %></li><hr>
+  <% end %>
+</ul>
