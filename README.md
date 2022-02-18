@@ -64,3 +64,7 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+## Below is a basic domain model for this challenge
+
+<img width="758" alt="Screenshot 2022-01-21 at 10 14 14" src="https://user-images.githubusercontent.com/94904399/150512927-445bb64e-9d61-4968-a83f-855c4b860607.png">
