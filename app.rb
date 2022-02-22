@@ -7,7 +7,7 @@ class Chitter < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get '/chitter' do
+  get '/' do
     @peeps = ChitterManager.all
     erb :index
   end
