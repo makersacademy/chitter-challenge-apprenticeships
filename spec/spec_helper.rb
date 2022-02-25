@@ -21,6 +21,7 @@ require 'simplecov'
 require 'simplecov-console'
 
 require_relative './setup_test_database'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -41,6 +42,7 @@ Capybara.app = Chitter
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    add_row_to_test_database
   end
 
   config.after(:suite) do

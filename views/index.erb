@@ -1,0 +1,43 @@
+<style>
+  body {
+    text-align: center;
+  }
+</style>
+
+<div id="body">
+  <div id="heading">
+    <h1 style="font-family: helvetica">CHITTER</h1>
+  </div>
+
+  <div id="peep submission">
+    <form action='/peeps' method='post'>
+      <input type='text' placeholder='Enter username' name='peep_user'>
+      <input type='text' placeholder='Enter peep' name='peep_message'>
+      <input type='submit' value='Send'>
+    </form>
+  </div>
+
+  <div id="new search">
+    <form action='/peeps/search' method='post'>
+      <input type='text' placeholder='Search by keyword' name='search_keyword'>
+      <input type='submit' value='Search'>
+    </form>
+  </div>
+
+  <div id="list of peeps">
+    <% if @peeps.empty? %>
+    <h3 style="font-family: helvetica">There's nothing here yet... Why not post a peep?</h3>
+    <% else %>
+      <h3 style="font-family: helvetica">Your Peep timeline:</h3>
+      <% @peeps.each do |peep| %>
+      <h4 style="font-family: helvetica">
+        <ul>
+          User: <%= peep.username %> <br>
+          Message: <%= peep.message %> <br>
+          Posted on: <%= peep.datetime %> <br>
+        </ul>
+      </h4>
+      <% end %>
+    <% end %>
+  </div>
+</div>
