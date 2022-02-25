@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <div style= 'border: 4mm ridge rgba(170, 50, 220, .6)'>
+      <h2><center><u> Here are the current Peeps! </u><center></h2>
+    </div>
+  </head>
+
+  <body>
+    <ul>
+      <% @peeps.each do |peep| %>
+        <li><b><%= peep.message %></b>
+        <br>Posted: <%= peep.date %>
+        </li>
+        <br>
+      <% end %>
+    </ul>
+
+    <form action=/peeps/new method='get'>
+      <input type='submit' value='New Peep'>
+    </form>
+  </body>
+</html>
