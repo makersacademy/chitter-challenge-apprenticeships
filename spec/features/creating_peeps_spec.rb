@@ -1,5 +1,5 @@
-feature 'Viewing peeps' do
-  scenario 'user can view all peeps' do
+feature 'Creating peeps' do
+  scenario 'user can add peeps and dates' do
     connection = PG.connect(dbname: 'chitter_test')
 
     Peeps.create(message: 'Test peep!', entry_date: "2021-03-18")
@@ -9,5 +9,7 @@ feature 'Viewing peeps' do
 
     expect(page).to have_content('Test peep!')
     expect(page).to have_content('Second test peep!')
+    expect(page).to have_content("2021-03-18")
+    expect(page).to have_content("2021-02-15")
   end
 end

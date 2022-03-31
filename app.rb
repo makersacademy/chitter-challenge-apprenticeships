@@ -2,6 +2,10 @@ require 'sinatra/base'
 require './lib/peeps'
 
 class Chitter < Sinatra::Base
+  get '/test' do
+    'Test page'
+  end
+  
   get '/' do
     'Welcome to Chitter!'
     erb :index
@@ -17,7 +21,7 @@ class Chitter < Sinatra::Base
   end
   
   post '/peeps' do
-    Peeps.create(message: params[:message])
+    Peeps.create(message: params[:message], entry_date: params[:entry_date])
     redirect '/peeps'
   end
 
