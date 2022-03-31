@@ -15,3 +15,16 @@ describe '.all' do
     expect(chitter.first.message).to eq "Test peep!"
   end
 end
+
+require 'database_helpers'
+
+describe '.create' do
+  it 'creates a new peep' do
+    chitter = Peeps.create(message: "Test peep!")
+    persisted_data = persisted_data(id: chitter.id)
+
+    expect(chitter).to be_a Peeps
+    expect(chitter.id).to eq persisted_data['id']
+    expect(chitter.message).to eq "Test peep!"
+  end
+end
