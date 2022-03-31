@@ -2,13 +2,14 @@ require 'sinatra/base'
 require './lib/peeps'
 
 class Chitter < Sinatra::Base
-  get '/test' do
-    'Test page'
+  get '/' do
+    'Welcome to Chitter!'
+    erb :index
   end
 
   get '/peeps' do
     @peeps = Peeps.all
-    erb :index
+    erb :peeps
   end
 
   get '/peeps/new' do
