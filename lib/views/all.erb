@@ -1,0 +1,9 @@
+<div class="post-container">
+  <% for pst in @posts %>
+    <div class="post">
+      <span class="username">Posted by: <%= pst.get_postee.username %> | <span class="date"><%= pst.created_on %></span>
+      <hr>
+      <p><%= pst.body %></p>
+    </div>
+  <% end %>
+</div>
