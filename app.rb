@@ -4,12 +4,12 @@ require './lib/post'
 class Chitter < Sinatra::Base
   get '/' do
     'Chitter App'
-    redirect '/posts/new'
+    erb :index
   end
   
   get '/posts' do
     @posts = Post.all
-    erb :index
+    erb :see_posts
   end
   
   get '/posts/new' do

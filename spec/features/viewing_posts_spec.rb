@@ -2,13 +2,15 @@ require 'pg'
 
 feature 'Welcome page' do
   scenario 'user visits homepage ' do
-    visit('/posts/new')
+    visit('/')
     expect(page).to have_content "Chitter App"
+    expect(page).to have_link(href: "/posts")
+    expect(page).to have_link(href: "/posts/new")
   end
 end
 
 feature 'Viewing posts' do
-  scenario 'visiting /posts shows message ' do
+  scenario 'visiting /posts shows message' do
     
     Post.create(date: "2022-04-01", author: "Kate", message: "How are you?")
 
