@@ -40,6 +40,24 @@ class Post
     posts
   end
 
+  def self.search_bodies(keywords)
+    query = 'SELECT * FROM peeps WHERE '
+
+    for kw in keywords
+      query << "body LIKE ('%#{kw}%') OR "
+    end
+    query.chomp!(' OR ')
+
+    r = DatabaseConnection.query(query)
+    p query
+    p r.to_a
+    posts = []
+    for res in r.to_a
+      posts.push(Post.new(res))
+    end
+    posts
+  end
+
   def self.create(body, user_id)
     DatabaseConnection.query("INSERT INTO peeps(body, user_id) VALUES('#{body}', '#{user_id}')")
     r = DatabaseConnection.query("SELECT * FROM peeps WHERE user_id='#{user_id}'").to_a[-1]

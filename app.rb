@@ -15,7 +15,14 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
+    @show_search = false
     @posts = Post.get_all
+    erb :all
+  end
+
+  get '/search' do
+    @show_search = true
+    @posts = Post.search_bodies(params[:search].split)
     erb :all
   end
 end
