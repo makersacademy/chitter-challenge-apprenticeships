@@ -1,0 +1,12 @@
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+        <%= peep.message %>
+    </li>
+  <% end %>
+</ul>
+Please enter a new peep below:
+<form action= "/chitter/peeps" method = "post">
+  <input type="text" name="message" placeholder="Peep"  />
+  <input type="submit" value="Submit" />
+</form>
