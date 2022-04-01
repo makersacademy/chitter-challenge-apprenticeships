@@ -30,5 +30,10 @@ class Chitter < Sinatra::Base
     erb :peeps_reverse
   end
 
+  get '/peeps/filter' do
+    @filtered_peeps = Peeps.filter(params[:filter])
+    erb :peeps_filter
+  end
+
   run! if app_file == $0
 end

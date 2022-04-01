@@ -30,3 +30,15 @@ describe '.create' do
     expect(chitter.entry_date).to eq "2021-02-15"
   end
 end
+
+describe '.filter' do
+  it 'filters peeps by keyword' do
+    chitter = Peeps.create(message: "Test peep!", entry_date: "2021-02-15")
+    Peeps.create(message: "Second test peep!", entry_date: "2021-02-13")
+    Peeps.create(message: "Third say hello!", entry_date: "2021-10-16")
+
+    filtered_results = Peeps.filter("Peep")
+    expect(filtered_results[0].message).to eq "Test peep!" 
+    expect(filtered_results[1].message).to eq "Second test peep!"
+  end
+end

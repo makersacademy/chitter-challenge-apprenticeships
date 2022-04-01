@@ -2,7 +2,7 @@ require 'pg'
 
 class Peeps
 
-  attr_reader :id, :message, :entry_date
+  attr_reader :id, :message, :entry_date, :filter
   
   def initialize(id:, message:, entry_date:)
     @id = id
@@ -27,7 +27,7 @@ class Peeps
 
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep|
-      row_to_peep(peep)
+    row_to_peep(peep)
     end
   end
 
@@ -46,4 +46,12 @@ class Peeps
       row_to_peep(peep)
     end
   end 
+
+  def self.filter(filter)
+    connection = open_connection
+    result = connection.exec("SELECT * FROM peeps WHERE lower(message) LIKE '%#{filter.downcase}%';")
+    result.map do |peep|
+      row_to_peep(peep)
+    end
+  end
 end

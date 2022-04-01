@@ -7,6 +7,8 @@ feature 'Reverse chronological peeps' do
 
     visit ('/peeps')
 
+    click_button "View Newest First"
+
     page.body.index("2021-03-18").should < page.body.index("2021-02-15")
   end
 end
