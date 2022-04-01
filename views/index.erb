@@ -5,6 +5,11 @@
 <input type='submit' value='Peep!'/>
 </form>
 
+<form action='/search' method='post'>
+<input type='text' name='search' placeholder='search peeps' />
+<input type='submit' value='Search'/>
+</form>
+
 <ul>
   <% @peeps.reverse.each do |peep| %>
     <li><%= peep.peep %> Posted on <%= peep.date %>.</li>

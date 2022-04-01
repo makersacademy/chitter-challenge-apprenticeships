@@ -23,11 +23,11 @@ describe Peeps do
     end
   end
 
-  it 'filters peeps on a specific keyword' do
+  it 'searches peeps on a specific keyword' do
     Peeps.create(peep: 'This is a peep!')
     Peeps.create(peep: 'This is another peep!')
     peep = Peeps.create(peep: 'This is a third peep!')
-    peeps = Peeps.filter_by_keyword(keyword: 'third')
+    peeps = Peeps.search_by_keyword(keyword: 'third')
 
     expect(peeps.length).to eq(1)
     expect(peeps.first).to be_a Peeps

@@ -18,11 +18,16 @@ class Chitter < Sinatra::Base
     @peeps = Peeps.all
     erb :index
   end
-
+  
   post '/add' do
     Peeps.create(peep: params[:peep])
     redirect '/'
   end
-
+  
+  post '/search' do
+    @peeps = Peeps.search_by_keyword(keyword: params[:search])
+    erb :search
+  end
+  
   run! if app_file == $0
 end

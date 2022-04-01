@@ -28,7 +28,7 @@ class Peeps
     end
   end
 
-  def self.filter_by_keyword(keyword:)
+  def self.search_by_keyword(keyword:)
     result = DatabaseConnection.query(
       "SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';"
     )
