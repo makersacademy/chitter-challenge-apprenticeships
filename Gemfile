@@ -6,6 +6,8 @@ ruby '3.0.2'
 
 gem 'pg'
 gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'launchy'
 
 group :test do
   gem 'capybara'
