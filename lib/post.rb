@@ -32,4 +32,4 @@ class Post
     result = connection.exec_params("INSERT INTO peeps (date, author, message) VALUES('#{date}', $1, $2) RETURNING id, date, author, message;", [author, message])
     Post.new(id: result[0]['id'], date: result[0]['date'], author: result[0]['author'], message: result[0]['message'])
   end
-  end
+end
