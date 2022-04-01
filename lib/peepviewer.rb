@@ -4,6 +4,8 @@ class PeepViewer
   def self.all
     connection = PG.connect(dbname: 'chitter')
     result = connection.exec("SELECT * FROM peeps;")
-    p result[0]['message']
+    result.map{ |peep|
+      peep['message']
+    }
   end
 end
