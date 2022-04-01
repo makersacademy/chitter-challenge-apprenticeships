@@ -18,7 +18,6 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
-(Hint the database table will need to change to store the date too)
 
 ```
 As a Maker
@@ -30,3 +29,8 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+- [x] User Story 1
+- [x] User Story 2
+- [ ] User Story 3
+- [ ] User Story 4
+- [ ] User Story 5 
