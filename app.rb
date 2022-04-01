@@ -22,7 +22,8 @@ class Chitter < Sinatra::Base
 
   get '/search' do
     @show_search = true
-    @posts = Post.search_bodies(params[:search].split)
+    @posts = Post.search_bodies(params[:search].split) if !params[:search].nil? and params[:search].is_a? (String)
+    @posts ||= Post.get_all
     erb :all
   end
 end
