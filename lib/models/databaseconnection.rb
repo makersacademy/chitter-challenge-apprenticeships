@@ -5,7 +5,6 @@ class DatabaseConnection
 
   @@host = String('0.0.0.0')
   @@name = String('chitter')
-  @@user = String(system('whomai'))
   @@port = String('5432')
   @@con = nil
 
@@ -14,7 +13,7 @@ class DatabaseConnection
   end
 
   def self.open
-    @@con = PG::Connection.new(host: @@host, user: @@user, dbname: @@name, port: @@port)
+    @@con = PG::Connection.new(host: @@host, dbname: @@name, port: @@port)
   end
 
   def self.close
