@@ -46,10 +46,14 @@
       textarea {
           margin: 1em;
       }
-      form > *:not(input[type=submit]) {
+      form#post-peep > *:not(input[type=submit]) {
           display: block;
           width: 100%;
           resize: vertical;
+      }
+      form#search-form {
+          display: inline;
+          float: right;
       }
   </style>
 </head>
@@ -57,6 +61,10 @@
 <header>
   <a href="/">Chitter</a>
   <button onclick="window.location.href='/post'">Post a Peep</button>
+  <form action="/search" id="search-form">
+    <input type="text" name="query" placeholder="Search">
+    <input type="submit" value="Search">
+  </form>
 </header>
 <div class="container">
   <%= yield :content %>

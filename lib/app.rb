@@ -13,6 +13,13 @@ class Chitter < Sinatra::Base
     render_page :index
   end
 
+  get '/search' do
+    @query = params[:query]
+    redirect '/' if @query.nil?
+    @peeps = Database.search(@query).sort { |a, b| a.created_at <=> b.created_at }.reverse!
+    render_page :index
+  end
+
   get '/post' do
     render_page :post
   end

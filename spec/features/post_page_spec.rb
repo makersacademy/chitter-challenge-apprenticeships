@@ -8,10 +8,20 @@ feature 'Viewing post page' do
   scenario 'submitting a peep' do
     content = rand.to_s
     visit('/post')
-    within 'form' do
+    within 'form#post-peep' do
       fill_in 'content', with: content
     end
-    find('input[type=submit]').click
+    find('#post-peep input[type=submit]').click
     expect(page).to have_content content
+  end
+
+  scenario 'search visited without a query' do
+    visit('/search')
+    expect(page).to have_current_path '/'
+  end
+
+  scenario 'search visited with a query' do
+    visit('/search?query=cheese')
+    expect(page).to have_content 'Search results for cheese'
   end
 end

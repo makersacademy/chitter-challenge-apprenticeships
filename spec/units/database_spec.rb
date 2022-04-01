@@ -8,4 +8,9 @@ describe 'Database class' do
     Database.peep('test peep')
     expect(Database.peeps[0].content).to eq 'test peep'
   end
+
+  it 'searches correctly' do
+    Database.peep('test peep')
+    expect(Database.search('does not exist').length).to eq 0
+  end
 end

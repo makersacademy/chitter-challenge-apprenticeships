@@ -1,3 +1,6 @@
+<% unless @query.nil? %>
+  <h4>Search results for <%= @query %></h4>
+<% end %>
 <% @peeps.each do |it| %>
   <div class="peep">
     <p><%= it.content %></p>
