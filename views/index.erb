@@ -6,22 +6,22 @@ body {
 }
 
 div {
-  background-color: white;
-  margin: 20px 20px;
-  padding: 60px 60px;
-  border: 2px solid green;
+  margin: 20px 60px;
+  padding: 50px 300px;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
 }
  h3 {
+   padding: 10px 10px;
    font-size: 26px;
    color: navy;
    text-align: center;
+  border: 1px solid black;
+  background-color: white;
  }
-
 ul {
   list-style: none;
 }
@@ -34,8 +34,9 @@ ul {
 <div>
 <li>
   <% @posts.each do |peep| %>
-    <h3>name: <%= peep.author %> </h3>
-   <h3>message: <%= peep.message %> </h3>
+  <h3> date: <%= peep.date %> <br><br>
+   name: <%= peep.author %> <br><br>
+   message: <%= peep.message %> </h3>
     <br>
   <% end %>
   </li>

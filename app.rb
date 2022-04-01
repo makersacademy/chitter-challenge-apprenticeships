@@ -17,7 +17,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/posts' do
-    Post.create(author: params[:author], message: params[:message])
+    Post.create(date: params[:date], author: params[:author], message: params[:message])
     redirect '/posts'
   end
 

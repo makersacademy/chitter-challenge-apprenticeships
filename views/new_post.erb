@@ -5,15 +5,15 @@ body {
   margin: 20px 20px;
   text-align: center;
 }
+h1 {
+  font-size: 50px;
+}
 .tweet {
   display: inline-block;
   background-color: white;
   margin: 20px 20px;
-  padding: 60px 60px;
-}
-form {
-  margin: 0 auto;
-  display: ;
+  padding: 30px 60px;
+  border: 2px solid black;
 }
 </style>
 </head>
@@ -21,8 +21,10 @@ form {
 <h1>Chitter App</h1>
 <form action="/posts" method="post">
 <div class="tweet">
+<h2>Create your first peep!</h2>
+<input type="date" id="date" name="date" value="2022-04-01" min="2012-01-01" max="2040-01-01">
 <input type="text" id="author" name="author" placeholder="Your name"><br><br>
-<textarea id="message" name="message" rows="5" cols="25" placeholder="Your message"></textarea><br><br>
+<textarea id="message" name="message" rows="5" cols="40" placeholder="Your message"></textarea><br><br>
  <input type="submit" value="Submit" />
  </div>
 </form>
