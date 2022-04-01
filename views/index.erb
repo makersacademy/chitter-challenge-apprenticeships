@@ -1,0 +1,10 @@
+<h1>Welcome to Chitter&trade;!</h1>
+<p style="text-align:center;">
+<img src="https://pbs.twimg.com/profile_images/700881309204238336/v7031RXd_400x400.jpg"></p>
+<h2>Here's your list of peeps:</h2>
+
+<ul>
+  <% @all_chits.each do |chits| %>
+    <li><%= chits %></li>
+  <% end %>
+</ul>
