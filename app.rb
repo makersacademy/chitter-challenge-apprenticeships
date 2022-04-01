@@ -13,7 +13,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/view_peeps/add' do
-    #PeepViewer.add(message: params['new_peep'])
+    PeepViewer.add(message: params['message'])
     redirect '/view_peeps'
   end
 

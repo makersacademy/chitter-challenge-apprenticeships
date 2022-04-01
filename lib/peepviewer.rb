@@ -21,6 +21,6 @@ class PeepViewer
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("INSERT INTO peeps (message) VALUES ($1);", [message])
+    result = connection.exec_params("INSERT INTO peeps (message) VALUES ($1);", [message])
   end
 end
