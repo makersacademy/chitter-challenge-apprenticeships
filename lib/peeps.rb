@@ -28,4 +28,16 @@ class Peeps
     end
   end
 
+  def self.filter_by_keyword(keyword:)
+    result = DatabaseConnection.query(
+      "SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';"
+    )
+    result.map do |peep|
+      Peeps.new(
+        id: peep['id'],
+        peep: peep['message'],
+        date: peep['date']
+      )
+    end
+  end
 end
