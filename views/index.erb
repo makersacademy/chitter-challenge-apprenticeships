@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <nav class="topnav">
+      <h1 class="logo">
+        <span>Chitter</span>
+      </h1>
+    </nav>
+    <div class="peepContainer">
+      <ul>
+        <% @peeps.each do |peep| %>
+        <div>
+          <li><%= peep.message %></li>
+          <p class="createdOn">Created on <%= peep.date %></p>
+        <div>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="createPeepCon">
+      <h3><a class="createPeep" href="/new_peep">New Peep</a></h3>
+    </div>
+  </body>
+</html>
