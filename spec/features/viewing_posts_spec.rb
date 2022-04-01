@@ -19,3 +19,17 @@ feature 'Viewing posts' do
 
   end
 end
+
+feature 'Viewing posts' do
+  scenario 'visiting /posts shows new messages first' do
+    
+    Post.create(date: "2022-04-01", author: "Kate", message: "How are you?")
+    Post.create(date: "2022-06-01", author: "Kate", message: "How are you?")
+    Post.create(date: "2022-08-01", author: "Kate", message: "How are you?")
+
+    visit('/posts')
+    expect(page).to have_content("2022-08-01")
+    expect(page).to have_content("2022-06-01")
+    expect(page).to have_content("2022-04-01")
+  end
+end

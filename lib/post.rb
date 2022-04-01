@@ -16,7 +16,7 @@ class Post
     else
       connection = PG.connect(dbname: 'chitter')
     end
-    result = connection.exec("SELECT * FROM peeps;")
+    result = connection.exec("SELECT * FROM peeps ORDER BY date DESC")
     result.map do |peep|
       Post.new(id: peep['id'], date: peep['date'], author: peep['author'], message: peep['message'])
     end

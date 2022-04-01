@@ -4,7 +4,7 @@ require 'database_helpers'
 
 RSpec.describe Post do
   describe '.all' do
-    it 'returns a list of posts' do
+    it 'returns a list of posts in a reverse chronological order' do
       connection = PG.connect(dbname: 'chitter_test')
 
       post = Post.create(date: "2022-04-01", author: 'Kate', message: 'This is my first post!')
@@ -14,10 +14,9 @@ RSpec.describe Post do
       messages = Post.all
       expect(messages.length).to eq 3
       expect(messages.first).to be_a Post
-      expect(messages.first.id).to eq post.id
-      expect(messages.first.date).to eq "2022-04-01"
-      expect(messages.first.author).to eq 'Kate'
-      expect(messages.first.message).to eq 'This is my first post!'
+      expect(messages.first.date).to eq "2022-04-03"
+      expect(messages.first.author).to eq 'Emma'
+      expect(messages.first.message).to eq 'Working from home'
     end
   end
 

@@ -11,8 +11,8 @@ div {
 }
 
 h1 {
-  margin-top: 20px;
-  font-size: 60px;
+  margin-top: 40px;
+  font-size: 80px;
   text-align: center;
   color: white;
   text-shadow: 2px 2px black;
@@ -33,16 +33,13 @@ ul {
 <body>
 <h1>Recent Peeps</h1>
 <form>
-<ul>
 <div>
-<li>
-  <% @posts.reverse_each do |peep| %>
+  <% @posts.each do |peep| %>
   <h3> date: <%= peep.date %><br><br>
    name: <%= peep.author %> <br><br>
    message: <%= peep.message %> </h3>
     <br>
   <% end %>
-  </li>
 </div>
 </form>
 </body>
