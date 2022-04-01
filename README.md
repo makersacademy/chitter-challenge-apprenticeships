@@ -15,6 +15,7 @@ As a Maker
 So that I can let people know what I am doing  
 I want to post a message (peep) to chitter
 ```
+[![MF0uJR.md.png](https://iili.io/MF0uJR.md.png)](https://freeimage.host/i/MF0uJR)
 
 ```
 As a Maker
