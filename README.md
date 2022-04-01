@@ -35,6 +35,7 @@ I want to see a list of peeps in reverse chronological order
 
 ```
 User Story 5
+
 As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
