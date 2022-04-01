@@ -1,0 +1,13 @@
+<h1>Peeps</h1>
+
+<ul>
+    <% @peeps_return.each do |peep| %>
+        <li>
+            <%= peep %>
+        </li>
+    <% end %>
+</ul>
+<br>
+<form action="/peeps/post">
+    <input type="submit" value="New Post">
+</form>
