@@ -12,13 +12,9 @@ class Chitter < Sinatra::Base
   end
 
   get '/chitter' do
-  @peeps = [
-            "Hello world!",
-            "This is a peep",
-            "Hi Chitter! This is my first peep!"
-           ]
-  erb :'chitter'
-end
+      @peeps = Peep.all
+      erb :'chitter'
+  end
 
   run! if app_file == $0
 end
