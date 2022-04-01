@@ -6,7 +6,7 @@ describe Peep do
     it 'creates a new peep' do
       peep = Peep.create(message: 'This is a peep!')
       persisted = persisted_data(id: peep.id)
-
+      
       expect(peep).to be_a Peep
       expect(peep.id).to eq persisted['id']
       expect(peep.message).to eq 'This is a peep!'
@@ -25,6 +25,7 @@ describe Peep do
       expect(peeps.first).to be_a Peep
       expect(peeps.first.id).to eq peep.id
       expect(peeps.first.message).to eq 'This is a peep!'
+      expect(peeps.first.date_posted).to eq "#{Date.today}"
     end
   end
 end
