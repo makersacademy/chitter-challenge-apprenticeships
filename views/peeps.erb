@@ -1,0 +1,36 @@
+<h1>- CHITTER -</h1>
+<h3>Latest Peeps </h3>
+<ul>
+  <% @peeps.each do |peeps| %>
+    <li><%= peeps %></li>
+  <% end %>
+</ul>
+
+<style>
+body {
+background-color: lightblue;
+}
+
+h1 {
+    font-family: "Gill Sans", sans-serif;
+    text-align: center;
+    font-size: 50px;
+    border-bottom-style: solid;
+    border-color: black;
+    border-width: 10px;
+}
+
+h3 {
+ font-family: "Gill Sans", sans-serif;
+
+}
+
+}
+
+
+li {
+    font-family: "Gill Sans", sans-serif;
+    list-style-type: none;
+    margin: 1%;
+}
+</style>
