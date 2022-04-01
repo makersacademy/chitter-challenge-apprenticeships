@@ -25,4 +25,16 @@ describe Peep do
       expect(peeps.first.date).to eq(Date.today.to_s)
     end
   end
+
+  describe "::sort_by_date" do
+    it "sorts peeps in reverse chronological order" do
+      first_peep = Peep.create(message: "Test peep 1", date: "2020-01-01")
+      second_peep = Peep.create(message: "Test peep 2", date: "2022-01-01")
+      third_peep = Peep.create(message: "Test peep 3", date: "2021-01-01")
+      sorted_peeps = Peep.sort_by_date
+      expect(sorted_peeps[0].id).to eq(second_peep.id)
+      expect(sorted_peeps[1].id).to eq(third_peep.id)
+      expect(sorted_peeps[2].id).to eq(first_peep.id)
+    end
+  end
 end
