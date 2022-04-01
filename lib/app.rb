@@ -18,11 +18,6 @@ class Chitter < Sinatra::Base
   end
 
   post '/post' do
-    if params[:content].nil?
-      status 400
-      '400 Bad Request - Content was missing'
-    end
-
     Database.peep(params[:content])
     redirect '/?success'
   end

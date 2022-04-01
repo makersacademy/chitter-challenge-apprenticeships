@@ -17,4 +17,9 @@ class Database
   def self.peep(content)
     @connection.exec_prepared('insert_peep', [content])
   end
+
+  # deletes all entries - used for testing only
+  def self.do_not_call_this_method_empty_the_database
+    @connection.exec('DELETE FROM peeps')
+  end
 end
