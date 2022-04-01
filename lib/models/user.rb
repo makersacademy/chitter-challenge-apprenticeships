@@ -1,3 +1,4 @@
+require_relative './post'
 require_relative './databaseconnection'
 
 class User
@@ -16,6 +17,15 @@ class User
       'username' => @username,
       'password' => @password,
     }
+  end
+
+  def get_all_posts
+    r = DatabaseConnection.query("SELECT * FROM peeps WHERE user_id='#{@id}' ORDER BY created_on DESC")
+    posts = []
+    for res in r.to_a
+      posts.push(Post.new(res))
+    end
+    posts
   end
 
   # Static Database Methods
