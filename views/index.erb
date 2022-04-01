@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/CSS/index.css">
+  </head>
+
   <body>
     <nav class="topnav">
       <h1 class="logo">
-        <span>Chitter</span>
+        <span>CHITTER</span>
       </h1>
     </nav>
+
     <div class="peepContainer">
+    <h2>Posts: </h2>
       <ul>
         <% @peeps.each do |peep| %>
-        <div>
-          <li><%= peep.message %></li>
+          <li class="peepMessage">
+          <%= peep.message %>
+          <br>
+          <br>
           <p class="createdOn">Created on <%= peep.date %></p>
-        <div>
+          </li>
         <% end %>
       </ul>
     </div>

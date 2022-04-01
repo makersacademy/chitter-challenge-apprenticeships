@@ -16,7 +16,7 @@ class Peeps
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec('SELECT * FROM peeps ORDER BY message ASC')
+    result = connection.exec('SELECT * FROM peeps ORDER BY peep_date DESC')
     result.map do |peep|
       Peeps.new(id: peep['id'], message: peep['message'], date: peep['peep_date'])
     end
@@ -33,4 +33,14 @@ class Peeps
     RETURNING id, message, peep_date;")
     Peeps.new(id: post[0]['id'], message: post[0]['message'], date: post[0]['peep_date'])
   end
+
+  # def self.filter(filter:)
+  #   if ENV['ENVIRONMENT'] == 'test'
+  #     connection = PG.connect(dbname: 'chitter_test')
+  #   else
+  #     connection = PG.connect(dbname: 'chitter')
+  #   end
+
+  #   connection.exec_params("SELECT * FROM peeps WHERE peeps.message LIKE '%#{filter}%'")
+  # end
 end
