@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chitter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      body {
+          margin: 0;
+          font-family: sans-serif;
+      }
+
+      header {
+          background: skyblue;
+          padding: 1em;
+      }
+
+      header > * {
+          margin: 0 0.5em;
+      }
+
+      .peep {
+          border: 1px solid grey;
+          padding: 1em;
+          border-radius: 1em;
+          margin-bottom: 0.5em;
+      }
+
+      .peep > * {
+          padding: 0.5em;
+          margin: 0;
+      }
+
+      .peep > small {
+          display: block;
+          text-align: right;
+      }
+
+      .container {
+          margin: 2em auto auto;
+          max-width: 40em;
+      }
+      form {
+          text-align: center;
+      }
+      textarea {
+          margin: 1em;
+      }
+      form > *:not(input[type=submit]) {
+          display: block;
+          width: 100%;
+          resize: vertical;
+      }
+  </style>
+</head>
+<body>
+<header>
+  <a href="/">Chitter</a>
+  <button onclick="window.location.href='/post'">Post a Peep</button>
+</header>
+<div class="container">
+  <%= yield :content %>
+</div>
+</body>
+</html>

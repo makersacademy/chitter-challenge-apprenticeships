@@ -10,6 +10,7 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'rack'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
@@ -17,3 +18,5 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+gem "webrick", "~> 1.7"
