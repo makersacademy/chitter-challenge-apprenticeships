@@ -1,11 +1,14 @@
 * {
   font-family: roboto;
   color: #232323;
+  max-width: 960px;
+  margin: auto;
 }
 
 h1 {
   font-size: 3em;
   font-style: italic;
+  color: lightseagreen;
 }
 
 ul.no-bullets {
@@ -15,19 +18,26 @@ ul.no-bullets {
 }
 
 .top-header {
+  display: flex;
+  width: 100%;
   position: fixed;
   top: 0;
-  height: auto;
-  display: flex;
-  overflow: hidden;
-  padding: 10px;
+  z-index: 1;
   border-bottom: 1px solid lightgrey;
   background-color: white;
 }
 
+.header-items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1em;
+}
+
 .main-content {
   position: relative;
-  margin-top: 200px;
+  margin-top: 75px;
 }
 
 .peep-container {
@@ -35,6 +45,7 @@ ul.no-bullets {
 }
 
 .peep {
+  font-size: large;
   border-bottom: solid;
   border-width: 2px;
   border-color: lightgray;
@@ -49,4 +60,34 @@ ul.no-bullets {
   margin-left: 20px;
   font-size: small;
   font-weight: lighter;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.chitter-button {
+  background-color: lightseagreen;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.chitter-button:hover {
+  background-color: darkred;
+}
+
+.chitter-button:active {
+  box-shadow: 0 0 0 0 darkred;
+  transform: scale(96%);
 }

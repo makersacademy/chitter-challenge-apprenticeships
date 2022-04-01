@@ -1,20 +1,22 @@
 <section class="top-header">
-<span>
+<div class="header-items">
+<div>
 <h1>Chitter</h1>
-</span>
+</div>
 
-<span class="search-box">
+<div class="search-box">
 <form action='/search' method='post'>
-<input type='text' name='search' placeholder='search peeps' />
-<input type='submit' value='Search'/>
+<input class='input' type='text' name='search' placeholder='search peeps' />
+<input class="chitter-button" type='submit' value='Search'/>
 </form>
-</span>
+</div>
+</div>
 </section>
 
 <div class="main-content">
 <form action='/add' method='post'>
-<input type='text' name='peep' placeholder='peep your thoughts!' />
-<input type='submit' value='Peep!'/>
+<input class='input' type='text' name='peep' placeholder='peep your thoughts!' />
+<input class="chitter-button" type='submit' value='Peep!'/>
 </form>
 
 <ul class="peep-container no-bullets">
