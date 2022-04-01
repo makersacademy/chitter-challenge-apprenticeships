@@ -15,5 +15,12 @@ class PeepViewer
   end
 
   def self.add(message:)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+
+    result = connection.exec("INSERT INTO peeps (message) VALUES ($1);", [message])
   end
 end
