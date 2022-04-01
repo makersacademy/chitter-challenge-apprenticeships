@@ -31,6 +31,15 @@ class Post
     Post.new(r.to_a[0])
   end
 
+  def self.get_all
+    r = DatabaseConnection.query("SELECT * FROM peeps ORDER BY created_on DESC")
+    posts = []
+    for res in r.to_a
+      posts.push(Post.new(res))
+    end
+    posts
+  end
+
   def self.create(body, user_id)
     DatabaseConnection.query("INSERT INTO peeps(body, user_id) VALUES('#{body}', '#{user_id}')")
     r = DatabaseConnection.query("SELECT * FROM peeps WHERE user_id='#{user_id}'").to_a[-1]
