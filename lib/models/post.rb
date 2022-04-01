@@ -1,4 +1,5 @@
 require_relative './databaseconnection'
+require_relative './user'
 
 class Post
   attr_reader :id, :body, :created_on, :user_id
@@ -9,6 +10,10 @@ class Post
     @body = hash.fetch('body')
     @created_on = hash.fetch('created_on')
     @user_id = hash.fetch('user_id')
+  end
+
+  def get_postee
+    User.get_by_id(@user_id)
   end
 
   def to_h

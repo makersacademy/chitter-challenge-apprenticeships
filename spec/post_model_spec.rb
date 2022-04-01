@@ -20,4 +20,13 @@ describe Post do
       expect(r.to_h).to eq ({ 'id' => post.id, 'body' => 'post body', 'user_id' => user.id, 'created_on' => post.created_on })
     end
   end
+
+  context 'Testing Instance Methods,' do
+    specify 'should get user postee from post' do
+      user = User.create('test', 'test') # just to generate a valid id
+      post = Post.create('post body', user.id)
+      r = post.get_postee
+      expect(r.to_h).to eq ({ 'id' => user.id, 'username' => 'test', 'password' => 'test' })
+    end
+  end
 end
