@@ -1,0 +1,52 @@
+* {
+  font-family: roboto;
+  color: #232323;
+}
+
+h1 {
+  font-size: 3em;
+  font-style: italic;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-header {
+  position: fixed;
+  top: 0;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+  background-color: white;
+}
+
+.main-content {
+  position: relative;
+  margin-top: 200px;
+}
+
+.peep-container {
+  border: 1px solid lightgray;
+}
+
+.peep {
+  border-bottom: solid;
+  border-width: 2px;
+  border-color: lightgray;
+  padding: 50px;
+}
+
+.peep-text {
+  text-align: left;
+}
+
+.date-text {
+  margin-left: 20px;
+  font-size: small;
+  font-weight: lighter;
+}

@@ -1,17 +1,25 @@
-<h1>Here are the peeps!</h1>
+<section class="top-header">
+<span>
+<h1>Chitter</h1>
+</span>
 
+<span class="search-box">
+<form action='/search' method='post'>
+<input type='text' name='search' placeholder='search peeps' />
+<input type='submit' value='Search'/>
+</form>
+</span>
+</section>
+
+<div class="main-content">
 <form action='/add' method='post'>
 <input type='text' name='peep' placeholder='peep your thoughts!' />
 <input type='submit' value='Peep!'/>
 </form>
 
-<form action='/search' method='post'>
-<input type='text' name='search' placeholder='search peeps' />
-<input type='submit' value='Search'/>
-</form>
-
-<ul>
+<ul class="peep-container no-bullets">
   <% @peeps.reverse.each do |peep| %>
-    <li><%= peep.peep %> Posted on <%= peep.date %>.</li>
+    <li class="peep"><span class="peep-text"><%= peep.peep %></span><span class="date-text">Posted on <%= peep.date %>.</span></li>
   <% end %>
 </ul>
+</div>
