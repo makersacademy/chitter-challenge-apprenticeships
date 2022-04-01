@@ -13,15 +13,17 @@
 </div>
 </section>
 
-<div class="main-content">
+<section class="new-peep">
 <form action='/add' method='post'>
 <input class='input' type='text' name='peep' placeholder='peep your thoughts!' />
 <input class="chitter-button" type='submit' value='Peep!'/>
 </form>
+</section>
 
+<section class="main-content">
 <ul class="peep-container no-bullets">
   <% @peeps.reverse.each do |peep| %>
     <li class="peep"><span class="peep-text"><%= peep.peep %></span><span class="date-text">Posted on <%= peep.date %>.</span></li>
   <% end %>
 </ul>
-</div>
+</section>

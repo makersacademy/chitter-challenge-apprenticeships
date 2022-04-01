@@ -40,7 +40,16 @@ ul.no-bullets {
   margin-top: 75px;
 }
 
+.new-peep {
+  position: fixed;
+  margin-top: 5px;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
 .peep-container {
+  margin-top: 50px;
   border: 1px solid lightgray;
 }
 
