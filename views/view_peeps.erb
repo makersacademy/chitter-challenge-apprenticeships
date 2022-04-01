@@ -1,6 +1,6 @@
 <h1>View All Peeps:</h1>
 <ul> <% @all_peeps.each do |peep| %> 
-  <li> <%= peep %> </li>
+  <li> <%= Peep.message %> - POSTED ON <%= Peep.date %> </li>
 <% end %>
 </ul>
 

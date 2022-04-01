@@ -22,5 +22,12 @@ RSpec.describe PeepViewer do
       result = PeepViewer.all
       expect(result).to include 'new peep!'
     end
+
+    it 'displays the date of creation next to the peep' do
+      PeepViewer.add(message: 'new peep!')
+      todays_date = Date.today
+      result = PeepViewer.all
+      expect(result).to include todays_date
+    end
   end
 end

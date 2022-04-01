@@ -9,8 +9,9 @@ class PeepViewer
     end
 
     result = connection.exec("SELECT * FROM peeps;")
+    p result
     result.map { |peep|
-      peep['message']
+      peep['date']
     }
   end
 
@@ -21,6 +22,7 @@ class PeepViewer
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec_params("INSERT INTO peeps (message) VALUES ($1);", [message])
+    todays_date = Date.today
+    result = connection.exec_params("INSERT INTO peeps (message, date) VALUES ($1, $2);", [message, todays_date])
   end
 end
