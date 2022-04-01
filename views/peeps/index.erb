@@ -1,0 +1,17 @@
+<form action="/peeps/filter" method="post">
+  <label for="keyword"> Filter by:</label>
+  <input type="text" name="keyword" />
+  <input type="submit" value="Search" />
+</form>
+<ul>
+  <% @peeps.reverse.each do |peep| %>
+  <li class="peep" id="peep-<%= peep.id %>">
+    <%= peep.message %><br><i>Posted on: <%= peep.date_posted %></i>
+  </li>
+  <% end %>
+</ul>
+<form action="/peeps" method="post">
+  <label for="peep_field">Post a peep:</label>
+  <textarea id="peep_field" name="message" rows="1" cols="50"></textarea>
+  <input type="submit" value="Submit" />
+</form>

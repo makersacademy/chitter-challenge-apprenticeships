@@ -1,0 +1,7 @@
+<ul>
+  <% @filtered_peeps.reverse.each do |peep| %>
+  <li class="filtered_peep" id="peep-<%= peep.id %>">
+    <%= peep.message %><br><i>Posted on: <%= peep.date_posted %></i>
+  </li>
+  <% end %>
+</ul>
