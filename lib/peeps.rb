@@ -10,40 +10,40 @@ class Peeps
     @entry_date = entry_date
   end
 
-  def self.all
+  def self.open_connection
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
     else  
       connection = PG.connect(dbname: 'chitter')
     end
+  end
+
+  def self.row_to_peep(row)
+    Peeps.new(id: row['id'], message: row['message'], entry_date: row['entry_date'])
+  end
+
+  def self.all
+    connection = open_connection
 
     result = connection.exec("SELECT * FROM peeps;")
     result.map do |peep|
-      Peeps.new(id: peep['id'], message: peep['message'], entry_date: peep['entry_date'])
+      row_to_peep(peep)
     end
   end
 
   def self.create(message:, entry_date:)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else  
-      connection = PG.connect(dbname: 'chitter')
-    end
+    connection = open_connection
 
     result = connection.exec_params("INSERT INTO peeps (message, entry_date) VALUES($1, $2) RETURNING id, message, entry_date;", [message, entry_date])
-    Peeps.new(id: result[0]['id'], message: result[0]['message'], entry_date: result[0]['entry_date'])
+    row_to_peep(result[0])
   end
 
   def self.reverse_chronology
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else  
-      connection = PG.connect(dbname: 'chitter')
-    end
+    connection = open_connection
 
     result = connection.exec("SELECT * FROM peeps ORDER BY entry_date DESC;")
     result.map do |peep|
-      Peeps.new(id: peep['id'], message: peep['message'], entry_date: peep['entry_date'])
+      row_to_peep(peep)
     end
-  end
+  end 
 end
