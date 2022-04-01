@@ -36,7 +36,7 @@ ul {
 <ul>
 <div>
 <li>
-  <% @posts.each do |peep| %>
+  <% @posts.reverse_each do |peep| %>
   <h3> date: <%= peep.date %><br><br>
    name: <%= peep.author %> <br><br>
    message: <%= peep.message %> </h3>
