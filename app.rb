@@ -25,5 +25,10 @@ class Chitter < Sinatra::Base
     redirect '/peeps'
   end
 
+  post '/peeps/filter' do
+    @filtered_peeps = Peep.filter(keyword: params[:keyword])
+    erb :'/peeps/filter'
+  end
+
   run! if app_file == $0
 end

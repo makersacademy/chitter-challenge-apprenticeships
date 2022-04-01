@@ -10,7 +10,10 @@ class Peep
   end
 
   def self.create(message:)
-    result = DatabaseConnection.query("INSERT INTO peeps (message, date_posted) VALUES($1, $2) RETURNING id, message;", [message, Date.today])
+    result = DatabaseConnection.query(
+      "INSERT INTO peeps (message, date_posted) VALUES($1, $2) RETURNING id, message;",
+      [message, Date.today]
+    )
     Peep.new(
       id: result[0]['id'],
       message: result[0]['message'],
@@ -20,6 +23,17 @@ class Peep
 
   def self.all
     result = DatabaseConnection.query("SELECT * FROM peeps;")
+    result.map do |peep|
+      Peep.new(
+        id: peep['id'],
+        message: peep['message'],
+        date_posted: peep['date_posted']  
+      )
+    end
+  end
+
+  def self.filter(keyword:)
+    result = DatabaseConnection.query("SELECT * FROM peeps WHERE message LIKE '%#{keyword}%';")
     result.map do |peep|
       Peep.new(
         id: peep['id'],

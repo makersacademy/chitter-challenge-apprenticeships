@@ -28,4 +28,18 @@ describe Peep do
       expect(peeps.first.date_posted).to eq "#{Date.today}"
     end
   end
+
+  describe '.filter' do
+    it 'returns a list of peeps filtered by a keyword' do
+      Peep.create(message: 'This is a peep!')
+      Peep.create(message: 'And this is another one!')
+      peep = Peep.create(message: 'Woah! And this is yet another!')
+
+      filtered_peeps = Peep.filter(keyword: 'yet')
+
+      expect(filtered_peeps.length).to eq 1
+      expect(filtered_peeps.first.id).to eq peep.id
+      expect(filtered_peeps.first.message).to eq 'Woah! And this is yet another!'
+    end
+  end
 end

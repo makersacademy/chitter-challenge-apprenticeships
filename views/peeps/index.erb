@@ -1,3 +1,8 @@
+<form action="/peeps/filter" method="post">
+  <label for="keyword"> Filter by:</label>
+  <input type="text" name="keyword" />
+  <input type="submit" value="Search" />
+</form>
 <ul>
   <% @peeps.reverse.each do |peep| %>
   <li class="peep" id="peep-<%= peep.id %>">

@@ -1,4 +1,29 @@
-## Chitter Challenge
+# Chitter Challenge
+
+## How to install
+
+Clone the repo to an empty directory.
+Then, in terminal.
+```
+bundle
+```
+
+## How to run
+
+```
+rackup
+```
+or
+```
+ruby app.rb
+```
+Explore in your browser on 'localhost:9292' or 'localhost:4567'.
+
+## How to test
+
+```
+rspec
+```
 
 ## User stories w/ diagrams
 
@@ -34,3 +59,4 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+[![MK3MWF.md.png](https://iili.io/MK3MWF.md.png)](https://freeimage.host/i/MK3MWF)
