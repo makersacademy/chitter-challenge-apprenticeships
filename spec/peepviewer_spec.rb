@@ -12,22 +12,21 @@ RSpec.describe PeepViewer do
       add_row_to_test_database
 
       result = PeepViewer.all
-      expect(result).to eq ['This is a peep!', 'This is a peep!']
+      expect(result.first.message).to eq 'This is a peep!'
+      expect(result.length).to eq 2
     end
   end
 
   context '.add' do
     it 'allows the user to add a peep to the list' do
-      PeepViewer.add(message: 'new peep!')
-      result = PeepViewer.all
-      expect(result).to include 'new peep!'
+      result = PeepViewer.add(message: 'new peep!')
+      expect(result.message).to include 'new peep!'
     end
 
     it 'displays the date of creation next to the peep' do
-      PeepViewer.add(message: 'new peep!')
-      todays_date = Date.today
-      result = PeepViewer.all
-      expect(result).to include todays_date
+      result = PeepViewer.add(message: 'new peep!')
+      todays_date = Date.today.to_s
+      expect(result.date).to include todays_date
     end
   end
 end

@@ -1,4 +1,5 @@
 require 'pg'
+require_relative 'peep'
 
 class PeepViewer
   def self.all
@@ -9,9 +10,9 @@ class PeepViewer
     end
 
     result = connection.exec("SELECT * FROM peeps;")
-    p result
+
     result.map { |peep|
-      peep['date']
+      Peep.new(id: peep['id'], message: peep['message'], date: peep['date'])
     }
   end
 
@@ -22,7 +23,10 @@ class PeepViewer
       connection = PG.connect(dbname: 'chitter')
     end
 
-    todays_date = Date.today
-    result = connection.exec_params("INSERT INTO peeps (message, date) VALUES ($1, $2);", [message, todays_date])
+    todays_date = Date.today.to_s
+
+    result = connection.exec_params("INSERT INTO peeps (message, date) VALUES ($1, $2) RETURNING id, message, date;", [message, todays_date])
+
+    Peep.new(id: result[0]['id'], message: result[0]['message'], date: result[0]['date'])
   end
 end

@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require './lib/peepviewer'
+require './lib/peep'
 
 class Chitter < Sinatra::Base
   get '/test' do
