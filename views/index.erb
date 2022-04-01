@@ -6,7 +6,7 @@
 </form>
 
 <ul>
-  <% @peeps.each do |peep| %>
-    <li><%= peep.peep %></li>
+  <% @peeps.reverse.each do |peep| %>
+    <li><%= peep.peep %> Posted on <%= peep.date %>.</li>
   <% end %>
 </ul>
