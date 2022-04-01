@@ -5,7 +5,7 @@ class Chitter < Sinatra::Base
   get '/test' do
     'Test page'
   end
-  
+
   get '/' do
     'Welcome to Chitter!'
     erb :index
@@ -23,6 +23,11 @@ class Chitter < Sinatra::Base
   post '/peeps' do
     Peeps.create(message: params[:message], entry_date: params[:entry_date])
     redirect '/peeps'
+  end
+
+  get '/peeps/reverse' do
+    @peeps = Peeps.reverse_chronology
+    erb :peeps_reverse
   end
 
   run! if app_file == $0

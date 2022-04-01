@@ -2,7 +2,7 @@ require 'peeps'
 
 describe '.all' do
   it 'returns a list of peeps' do
-    connection = PG.connect(dbname: 'chitter_test')
+    setup_test_database
 
     chitter = Peeps.create(message: "Test peep!", entry_date: "2021-02-15")
     Peeps.create(message: "Second test peep!", entry_date: "2021-02-13")
