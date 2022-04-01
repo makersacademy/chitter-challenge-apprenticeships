@@ -1,2 +1,12 @@
-<p>This is a peep!</p>
-<p>This is another peep!</p>
+<h1>Here are the peeps!</h1>
+
+<form action='/add' method='post'>
+<input type='text' name='peep' placeholder='peep your thoughts!' />
+<input type='submit' value='Peep!'/>
+</form>
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li><%= peep.peep %></li>
+  <% end %>
+</ul>
