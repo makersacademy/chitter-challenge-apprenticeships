@@ -17,9 +17,12 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'pg'
 require 'simplecov'
 require 'simplecov-console'
+require 'orderly'
 
+require 'database_helpers'
 require_relative './setup_test_database'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -41,6 +44,7 @@ Capybara.app = Chitter
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    add_row_to_test_database
   end
 
   config.after(:suite) do

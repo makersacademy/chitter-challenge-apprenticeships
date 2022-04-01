@@ -1,0 +1,30 @@
+<ul>
+  <% if @orderby == false %>
+  <% @peepsreversechrono.each do |peep| %>
+    <li class="peep" id="peep-<%= peep.id %>">
+      <a>
+        <%= peep.message %>   <%= peep.created_at%>
+      </a>
+      </li>
+  <% end %>
+<form method='post' action='/chitter/chrono'>
+  <input type="submit" value="Chronological Order">
+</form>
+  <% else %>
+  <% @peeps.each do |peep| %>
+    <li class="peep" id="peep-<%= peep.id %>">
+      <a>
+        <%= peep.message %>   <%= peep.created_at%>
+      </a>
+      </li>
+  <% end %>
+<form method='post' action='/chitter/reverse'>
+  <input type="submit" value="Reverse Chronological Order">
+</form>
+  <% end %>
+
+<form method='post' action='/chitter/filter'>
+  <input type='text' name='filter' placeholder="Filter by">
+  <input type="submit" value="Filter">
+</form>
+</ul>
