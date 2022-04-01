@@ -9,6 +9,7 @@ describe Peep do
       expect(peep).to be_a(Peep)
       expect(peep.id).to eq(persisted_data.first["id"])
       expect(peep.message).to eq("This is a peep")
+      expect(peep.date).to eq(Date.today.to_s)
     end
   end
 
@@ -21,6 +22,7 @@ describe Peep do
       expect(peeps.first).to be_a(Peep)
       expect(peeps.first.id).to eq(first_peep.id)
       expect(peeps.first.message).to eq("Test peep 1")
+      expect(peeps.first.date).to eq(Date.today.to_s)
     end
   end
 end
