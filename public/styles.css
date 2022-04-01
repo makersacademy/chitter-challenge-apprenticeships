@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+div {
+  margin: 100 auto;
+  width: 300px;
+  height: 100px;
+}
+
+form {
+  display: inline;
+}
