@@ -8,7 +8,7 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
-[![GbhMG4.md.png](https://iili.io/GbhMG4.md.png)](https://freeimage.host/i/GbhMG4)[![M3DfHu.md.png](https://iili.io/M3DfHu.md.png)](https://freeimage.host/i/M3DfHu)
+[![M3DfHu.md.png](https://iili.io/M3DfHu.md.png)](https://freeimage.host/i/M3DfHu)
 
 ```
 As a Maker
