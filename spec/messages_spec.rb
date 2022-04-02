@@ -6,9 +6,9 @@ describe Messages do
     it 'returns a list of messages' do
       connection = PG.connect(dbname: 'chitter_test')
 
-      connection.exec("INSERT INTO peeps (message) VALUES ('Hello');")
-      connection.exec("INSERT INTO peeps (message) VALUES('Hi!');")
-      connection.exec("INSERT INTO peeps (message) VALUES('Hiya.');")
+      Messages.create(message: 'Hello')
+      Messages.create(message: 'Hi!')
+      Messages.create(message: 'Hiya.')
       
       messages = Messages.all
   
@@ -18,4 +18,12 @@ describe Messages do
       expect(messages).to include "Hiya."
     end
   end
+
+  describe '.create' do 
+    it 'creates a new posted peep' do
+      Messages.create(message: "This is my first peep!")
+      
+      expect(Messages.all).to include 'This is my first peep!'
+  end 
 end 
+end

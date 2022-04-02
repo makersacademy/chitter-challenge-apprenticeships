@@ -5,15 +5,15 @@ feature 'Viewing messages' do
 
     connection = PG.connect(dbname: 'chitter_test')
 
-    connection.exec("INSERT INTO peeps (message) VALUES ('Hello');")
-    connection.exec("INSERT INTO peeps (message) VALUES('Hi!');")
-    connection.exec("INSERT INTO peeps (message) VALUES('Hiya.');")
-
+    Messages.create(message: 'Update - I am in Paris')
+    Messages.create(message: 'Just got back from the park!')
+    Messages.create(message: 'Hi Chitter.')
+    
     visit ('/peeps')
 
     expect(current_path).to eq '/peeps'
-    expect(page).to have_content 'Hello'
-    expect(page).to have_content 'Hi!'
-    expect(page).to have_content 'Hiya.'
+    expect(page).to have_content 'Update - I am in Paris'
+    expect(page).to have_content 'Just got back from the park!'
+    expect(page).to have_content 'Hi Chitter.'
   end
 end
