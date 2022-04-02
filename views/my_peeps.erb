@@ -35,13 +35,20 @@
         display: block;
     }
 
+    h2 {
+        font-family: Ubuntu;
+        font-size: 30px;
+        text-align: center;
+        font-weight:800;
+    }
+
     h3 {
         font-family: Ubuntu;
         font-size: 20px;
         text-align: center;
     }
 
-    .my-peeps{
+    .new-peep{
         color: white;
         background-color: #1A132F;
         border: none;
@@ -54,25 +61,34 @@
         display: block;
     }
 
-    .my-peeps:hover {
+    .new-peep:hover {
         color: white;
         background-color: rgb(26, 19, 47, 0.8);
         cursor: pointer;
+    }
+
+    .my-peeps-container {
+        padding: 10;
     }
 </style>
 
 <h1>Chitter</h1>
 
 <div class="navbar">
-    <form action='/my_peeps'>
-        <input type="submit" class="my-peeps" value="My Peeps">
+    <form action='/my_peeps/new_peep'>
+        <input type="submit" class="new-peep" value="New Peep">
     </form>
 </div>
 
-<div class="container">
-    <% @peeps.each do |peep| %>
-        <div class="peep">
-            <h3 class="peep-message"><%= peep.message %></h3>
-        </div>
-    <% end %>
+<div class="my-peeps-container">
+    <h2>My Peeps</h2>
+
+    <div class="container">
+        <% @peeps.each do |peep| %>
+            <div class="peep">
+                <h3 class="peep-message"><%= peep.message %></h3>
+            </div>
+        <% end %>
+    </div>
 </div>
+

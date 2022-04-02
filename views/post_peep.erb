@@ -26,35 +26,39 @@
         margin: 30;
     }
 
-    .peep {
-        background: rgb(255, 255, 255, 0.7);
+    .form {
         margin: 20 auto;
-        border: 1.5px solid rgb(97, 164, 188, 0.5);
-        border-radius: 5px; 
         width: 50%;
-        display: block;
-    }
-
-    h3 {
-        font-family: Ubuntu;
-        font-size: 20px;
+        display: flex;
         text-align: center;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .my-peeps{
+    .message {
+        font-family: Ubuntu;
+        width: 50%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 10;
+        resize: none;
+    }
+
+    .new-peep{
         color: white;
         background-color: #1A132F;
         border: none;
-        padding: 20;
+        padding: 15;
         font-family: Ubuntu;
         font-size: 20px;
         border-radius: 10px; 
-        margin: auto;
-        width: 10%;
+        margin: 20 auto;
+        width: 15%;
         display: block;
     }
 
-    .my-peeps:hover {
+    .new-peep:hover {
         color: white;
         background-color: rgb(26, 19, 47, 0.8);
         cursor: pointer;
@@ -63,16 +67,10 @@
 
 <h1>Chitter</h1>
 
-<div class="navbar">
-    <form action='/my_peeps'>
-        <input type="submit" class="my-peeps" value="My Peeps">
+<div class="container">
+    <form action='/my_peeps/create_peep' method='post' class="form">
+        <textarea id="message" class="message" name="message" placeholder="Type something..." style="height:100px"></textarea>
+        <input type="submit" class="new-peep" value="Post">
     </form>
 </div>
 
-<div class="container">
-    <% @peeps.each do |peep| %>
-        <div class="peep">
-            <h3 class="peep-message"><%= peep.message %></h3>
-        </div>
-    <% end %>
-</div>
