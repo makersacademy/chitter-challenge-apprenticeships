@@ -6,6 +6,11 @@ ruby '3.0.2'
 
 gem 'pg'
 gem 'sinatra'
+gem 'thin'
+gem 'puma'
+gem 'reel'
+gem 'http'
+gem 'webrick'
 
 group :test do
   gem 'capybara'
