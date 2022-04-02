@@ -16,7 +16,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    'No new messages'
+    @messages = Messages.all
+    erb :allpeeps
   end 
 
   run! if app_file == $0
