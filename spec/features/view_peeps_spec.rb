@@ -35,4 +35,24 @@ RSpec.describe "Peeps" do
             expect(page).to have_content Time.now.strftime("On %d-%m-%Y at %H:%M")
         end
     end
+
+    feature "back to all peeps from my peeps" do
+        scenario "user can go back to all peeps from their peeps" do
+            connection = PG.connect(dbname: 'chitter_test')
+
+             # Add the test data
+            connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Hello world!', 3);")
+            connection.exec("INSERT INTO peeps (message, author_id) VALUES('Hi Chitter! This is my first peep!', 2);")
+            connection.exec("INSERT INTO peeps (message, author_id) VALUES('This is a peep!', 2);")
+            
+            visit('/chitter')
+            click_button('My Peeps')
+            click_button('All Peeps')
+
+            expect(page).to have_content("Hello world!")
+            expect(page).to have_content("Hi Chitter! This is my first peep!")
+            expect(page).to have_content("This is a peep!")
+            expect(page).to have_content Time.now.strftime("On %d-%m-%Y at %H:%M")
+        end
+    end
 end

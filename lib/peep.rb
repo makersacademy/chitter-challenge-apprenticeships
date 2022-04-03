@@ -21,7 +21,8 @@ class Peep
         result = connection.exec(
             "SELECT peeps.id, peeps.message, author.name, peeps.created_at
             FROM peeps JOIN author ON peeps.author_id = author.id 
-            WHERE author.id != 1;")
+            WHERE author.id != 1
+            ORDER BY peeps.created_at DESC;")
         result.map { |peep| 
             Peep.new(id: peep['id'], message: peep['message'], name: peep['name'], created_at: peep['created_at'])
         }
@@ -36,7 +37,8 @@ class Peep
         result = connection.exec("
         SELECT peeps.id, peeps.message, author.name, peeps.created_at
         FROM peeps JOIN author ON peeps.author_id = author.id 
-        WHERE author_id = 1;")
+        WHERE author_id = 1
+        ORDER BY peeps.created_at DESC;")
         result.map { |peep|
             Peep.new(id: peep['id'], message: peep['message'], name: peep['name'], created_at: peep['created_at'])
         }
