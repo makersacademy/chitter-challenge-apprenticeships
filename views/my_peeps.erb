@@ -42,10 +42,26 @@
         font-weight:800;
     }
 
-    h3 {
+    h3, h4 {
         font-family: Ubuntu;
+    }
+
+    h3 {
         font-size: 20px;
         text-align: center;
+        margin: 5 5 20 5;
+    }
+
+    h4 {
+        font-size: 14px;
+        text-align: left;
+        margin: 5 5 0 5;
+        display: inline;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
     }
 
     .new-peep{
@@ -86,6 +102,10 @@
     <div class="container">
         <% @peeps.each do |peep| %>
             <div class="peep">
+                <div class="header">
+                    <h4 class="peep-author"><%= peep.name %> wrote:</h4>
+                    <h4 class="peep-time"><%= peep.created_at %></h4>
+                </div>
                 <h3 class="peep-message"><%= peep.message %></h3>
             </div>
         <% end %>

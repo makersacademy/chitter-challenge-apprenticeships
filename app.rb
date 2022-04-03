@@ -25,11 +25,6 @@ class Chitter < Sinatra::Base
     erb :post_peep
   end
 
-  post '/bookmarks/new' do
-        @bookmarks_added = Bookmark.add(title: params[:title], url: params[:url])
-        redirect '/bookmarks'
-    end
-
   post '/my_peeps/create_peep' do
     @peeps_posted = Peep.post(message: params[:message], author_id: params[:author_id])
     redirect ('/my_peeps')

@@ -1,4 +1,5 @@
 require 'peep'
+require 'database_helpers'
 
 describe Peep do
   describe '.all' do
@@ -8,30 +9,41 @@ describe Peep do
          # Add the test data
         connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Hello world!', 3);")
         connection.exec("INSERT INTO peeps (message, author_id) VALUES('Hi Chitter! This is my first peep!', 2);")
-        connection.exec("INSERT INTO peeps (message, author_id) VALUES('This is a peep!',3);")
+        connection.exec("INSERT INTO peeps (message, author_id) VALUES('This is a peep!', 3);")
 
         peeps = Peep.all
 
-        expect(peeps[0].message).to include("Hello world!")
-        expect(peeps[1].message).to include("Hi Chitter! This is my first peep!")
-        expect(peeps[2].message).to include("This is a peep!")
+        expect(peeps.length).to eq 3
+        expect(peeps.first).to be_a Peep
+        expect(peeps.first.message).to eq 'Hello world!'
+        expect(peeps.first.name).to eq 'Joe Blogg'
+        expect(peeps.first.created_at).to eq Time.now.strftime("On %d-%m-%Y at %H:%M")
     end
   end
 
     describe '.own_peeps' do
-    it 'returns all my peeps' do
-        connection = PG.connect(dbname: 'chitter_test')
+    it 'posts a peep and returns all my peeps' do
+      connection = PG.connect(dbname: 'chitter_test')
+      connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Can''t believe it''s snowing in April!', 1);")
 
-        # Add the test data
-        connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Can''t believe it''s snowing in April', 1);")
-        connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Happy Friday everyone!', 1);")
-        connection.exec("INSERT INTO peeps (message, author_id) VALUES ('Looking forward to the weekend!', 1);")
+      peeps = Peep.own_peeps
 
-        peeps = Peep.own_peeps
+      expect(peeps.first).to be_a Peep
+      expect(peeps.first.message).to eq 'Can\'t believe it\'s snowing in April!'
+      expect(peeps.first.name).to eq 'Laura Cab'
+      expect(peeps.first.created_at).to eq Time.now.strftime("On %d-%m-%Y at %H:%M")
+    end
+  end
 
-        expect(peeps[0].message).to include("Can't believe it's snowing in April")
-        expect(peeps[1].message).to include("Happy Friday everyone!")
-        expect(peeps[2].message).to include("Looking forward to the weekend!")
+  describe '.post' do
+    it 'creates a new peep' do
+      peep = Peep.post(message: 'Oh! It\'s raining today! Where is my umbrella?', author_id: 1)
+      persisted_data = persisted_data(id: peep.id)
+
+      expect(peep).to be_a Peep
+      expect(peep.message).to eq 'Oh! It\'s raining today! Where is my umbrella?'
     end
   end
 end
+
+    
