@@ -17,3 +17,5 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+gem "reloader", "~> 0.1.0"
