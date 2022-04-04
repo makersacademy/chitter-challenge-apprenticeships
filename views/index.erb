@@ -1,0 +1,12 @@
+
+<ul>
+  <% @peeps.each do |peep| %>
+    <li>
+    <big><%=peep.username%> says: "<%=peep.message%>"</big> 
+    <p style="color:#808080"> <smal><em> (posted on: <%=peep.posted_at%>) </em></smal></p>
+    </li>
+      <% end %>
+</ul>
+
+  
+
