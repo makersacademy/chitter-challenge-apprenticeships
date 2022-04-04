@@ -32,6 +32,10 @@ command `CREATE DATABASE chitter_test;`;
 
 You should see 1 passing test.
 
+## Testing
+To test this code run
+* rspec
+
 ## User stories
 
 ```
