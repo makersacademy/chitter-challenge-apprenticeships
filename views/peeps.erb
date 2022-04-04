@@ -1,0 +1,19 @@
+<h1> Welcome to Chitter! </h1>
+
+
+  <% @peeps.each do |peep| %>
+    <div class="Peeps" style="border: 3px solid aqua; width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;">
+      <q><%= peep.message %></q>
+     <i><%= peep.entry_date %></i>
+    </div>
+  <% end %>
+
+<form action="/peeps/reverse" method="get">
+  <input type="submit" value="View Newest First" />
+</form>
+
+<form action="/peeps/filter" method="get">
+  <input type="text" name="filter" placeholder="Filter keyword" />
+  <input type="submit" value="Filter" />
+</form>
+  
