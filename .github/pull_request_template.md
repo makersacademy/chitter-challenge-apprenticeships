@@ -1,7 +1,7 @@
 # Your name
 
 Please write your full name here to make it easier to find your pull request.
-
+Abdirizak Idris
 # User stories 
 
 Please list which user stories you've implemented (delete the ones that don't apply).
