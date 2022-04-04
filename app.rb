@@ -3,6 +3,7 @@ require './lib/peep'
 
 
 class Chitter < Sinatra::Base
+
   get '/test' do
     'Test page'
   end
@@ -28,6 +29,13 @@ class Chitter < Sinatra::Base
   post '/my_peeps/create_peep' do
     @peeps_posted = Peep.post(message: params[:message], author_id: params[:author_id])
     redirect ('/my_peeps')
+  end
+
+  post '/chitter/search' do
+    @keyword = params[:keyword]
+    p @keyword #Just to check if keyword comes through
+    @peeps_filtered = Peep.search(keyword: params[:keyword])
+    erb :filtered_results
   end
 
   run! if app_file == $0

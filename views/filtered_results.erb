@@ -27,8 +27,13 @@
     }
 
     .search {
-        display: flex;
+        display: flex
+        margin: 30;
         justify-content: center;
+    }
+
+    form {
+        margin: 20;
     }
 
     .peep {
@@ -40,8 +45,13 @@
         display: block;
     }
 
-    h3, h4 {
+    h2, h3, h4 {
         font-family: Ubuntu;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
     }
 
     h3 {
@@ -84,20 +94,9 @@
 
 <h1>Chitter</h1>
 
-<div class="navbar">
-    <form action='/my_peeps'>
-        <input type="submit" class="my-peeps" value="My Peeps">
-    </form>
-</div>
-
 <div class="container">
-    <div class="search">
-        <form action='/chitter/search' method='post'>
-            <input type="text"  name="filter" placeholder="Enter keyword">
-            <input type="submit" value="Filter">
-        </form>
-    </div>
-    <% @peeps.each do |peep| %>
+    <h2>Results including "<%= @keyword %>"</h2>
+    <% @peeps_filtered.each do |peep| %>
         <div class="peep">
             <div class="header">
                 <h4 class="peep-author"><%= peep.name %> wrote: </h4>

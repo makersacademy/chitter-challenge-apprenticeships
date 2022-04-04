@@ -55,4 +55,21 @@ class Peep
                 VALUES($1, $2) RETURNING id, message, author_id;", [message, 1]) 
                 Peep.new(id: result[0]['id'], message: result[0]['message'], name: result[0]['name'], created_at: result[0]['created_at'])
     end
+
+
+    def self.search(keyword:)
+        if ENV['ENVIRONMENT'] == 'test'
+            connection = PG.connect(dbname: 'chitter_test')
+        else
+            connection = PG.connect(dbname: 'chitter')
+        end
+        result = connection.exec(
+            "SELECT peeps.id, peeps.message, author.name, peeps.created_at
+            FROM peeps JOIN author ON peeps.author_id = author.id 
+            WHERE author.id != 1 AND peeps.message LIKE '%#{keyword}%'
+            ORDER BY peeps.created_at DESC;")
+        result.map { |peep| 
+            Peep.new(id: peep['id'], message: peep['message'], name: peep['name'], created_at: peep['created_at'])
+        }
+    end
 end

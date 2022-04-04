@@ -1,38 +1,34 @@
-## Chitter Challenge
-
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+## CHITTER CHALLENGE
 
 We are going to write a small Twitter clone that will allow the users to post messages to a public stream.
 
-## Set up
+## SETTING UP THE DATABASE
 
-To setup the database:
+1. Connect to `psql` (you may need to install postgresql first by running `brew install postgres`)
+2. Create the database using the psql command `CREATE DATABASE chitter`
+3. Connect to the database using the pqsl command `\c chitter`
+4. Run the query we have saved in the file **01_create_chitter_table.sql**
+5. Run the query we have saved in the file **02_create_author_table.sql**
+6. Run the query we have saved in the file **03_add_timestamp_to_peeps.sql**
+7. Populate your table by running the queries saved in the file **04_insert_data_to_peeps.sql** and **05_insert_data_to_author.sql**
 
-* Connect to psql
-* Create the database using the psql command `CREATE DATABASE chitter;`
-* Connect to the database using the psql command `\c chitter`;
-* Run the query we have saved in the file 01_create_chitter_table.sql
-* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+To check you have everything set up ok, please take a look at the peeps table and the author inside the chitter database.
 
-To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
+## SETTING UP THE TEST DATABASE
 
-To setup the test database:
-* Connect to psql
-* Create the database using the psql
-command `CREATE DATABASE chitter_test;`;
-* Connect to the database using the psql command `\c chitter_test`
-* Run the query we have saved in the file 01_create_chitter_table.sql
+1. Connect to `psql`
+2. Create the database using the psql command `CREATE DATABASE chitter_test`
+3. Connect to the database using the pqsl command `\c chitter_test`
+4. Run the query we have saved in the file **01_create_chitter_table.sql**
+5. Run the query we have saved in the file **02_create_author_table.sql**
+6. Run the query we have saved in the file **03_add_timestamp_to_peeps.sql**
 
-* `bundle install`
-* `rspec`
+## START THE APP
 
-You should see 1 passing test.
+- Run `bundle install` to add predefined package dependencies
+- Run `rackup` and run the app on localhost 9292
 
-## User stories
+## USER STORIES
 
 ```
 As a Maker
@@ -43,7 +39,7 @@ in a browser
 
 ```
 As a Maker
-So that I can let people know what I am doing  
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 ```
 
@@ -52,6 +48,7 @@ As a Maker
 So that I can see when people are doing things
 I want to see the date the message was posted
 ```
+
 (Hint the database table will need to change to store the date too)
 
 ```
@@ -59,6 +56,7 @@ As a Maker
 So that I can easily see the latest peeps
 I want to see a list of peeps in reverse chronological order
 ```
+
 ```
 As a Maker
 So that I can find relevant peeps
