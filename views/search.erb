@@ -1,0 +1,7 @@
+<h1>Search results</h1>
+
+<ul>
+  <% @peeps.reverse.each do |peep| %>
+    <li><%= peep.peep %> Posted on <%= peep.date %>.</li>
+  <% end %>
+</ul>
