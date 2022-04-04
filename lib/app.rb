@@ -25,7 +25,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/post' do
-    Database.peep(params[:content])
+    Database.peep(ERB::Util.html_escape(params[:content]))
     redirect '/?success'
   end
 
