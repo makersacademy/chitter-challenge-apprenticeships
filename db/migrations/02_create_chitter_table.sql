@@ -1,0 +1,14 @@
+CREATE TABLE users (
+  id serial PRIMARY KEY,
+  username VARCHAR ( 50 ) UNIQUE NOT NULL,
+  password VARCHAR ( 64 ) NOT NULL
+);
+
+CREATE TABLE peeps(
+  id SERIAL PRIMARY KEY,
+  body VARCHAR(60),
+  created_on TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  user_id INT NOT NULL,
+
+  FOREIGN KEY(user_id) REFERENCES users(id)
+);
