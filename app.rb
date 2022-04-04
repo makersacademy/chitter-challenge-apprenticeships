@@ -11,8 +11,8 @@ class Chitter < Sinatra::Base
   end
 
   get '/peeps' do
-    "This is a peep!"
-    erb: index
+    Chitter.add
+    erb: "index"
   end
 
 
