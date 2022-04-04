@@ -32,9 +32,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/chitter/search' do
-    @keyword = params[:keyword]
-    p @keyword #Just to check if keyword comes through
-    @peeps_filtered = Peep.search(keyword: params[:keyword])
+    @keyword = params[:filter]
+    p params #Just to check if keyword comes through
+    @peeps_filtered = Peep.search(keyword: params[:filter])
     erb :filtered_results
   end
 

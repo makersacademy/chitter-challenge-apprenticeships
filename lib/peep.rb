@@ -3,7 +3,7 @@ require './lib/database'
 
 class Peep
 
-    attr_reader :id, :message, :name, :date_time, :created_at
+    attr_reader :id, :message, :name, :created_at
 
     def initialize(id:, message:, name:, created_at:)
         @id  = id
