@@ -62,20 +62,41 @@
         justify-content: space-between;
     }
 
-    .my-peeps{
+    .my-peeps, .Filter{
         color: white;
         background-color: #1A132F;
         border: none;
-        padding: 20;
         font-family: Ubuntu;
-        font-size: 20px;
-        border-radius: 10px; 
         margin: auto;
-        width: 10%;
-        display: block;
     }
 
-    .my-peeps:hover {
+    .my-peeps {
+        padding: 20;
+        display: block;
+        font-size: 20px;
+        width: 10%;
+        border-radius: 10px; 
+    }
+
+    .filter {
+        padding: 10;
+        display: inline;
+        font-size: 14px;
+        width: 25%;
+        border-radius: 4px;
+    }
+
+    .filter-box {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .my-peeps:hover, .filter:hover {
         color: white;
         background-color: rgb(26, 19, 47, 0.8);
         cursor: pointer;
@@ -93,8 +114,8 @@
 <div class="container">
     <div class="search">
         <form action='/chitter/search' method='post'>
-            <input type="text"  name="filter" placeholder="Enter keyword">
-            <input type="submit" value="Filter">
+            <input type="text"  name="filter" class="filter-box" placeholder="Enter keyword">
+            <input type="submit" class = "filter" value="Filter">
         </form>
     </div>
     <% @peeps.each do |peep| %>
