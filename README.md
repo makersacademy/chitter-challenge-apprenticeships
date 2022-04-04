@@ -27,6 +27,7 @@ To check you have everything set up ok, please take a look at the peeps table an
 
 - Run `bundle install` to add predefined package dependencies
 - Run `rackup` and run the app on localhost 9292
+- Run `rspec` to test code
 
 ## USER STORIES
 
