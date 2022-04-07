@@ -10,10 +10,28 @@
 
 <body class="container">
 
-<h1 class="h1"> Welcome to Chitter! </h1>
+<h1>Welcome to Chitter!</h1>
 
-<div>
+<div class="row">
+  <% @result.each do |message_entry| %> 
+    <li style="border: dashed silver 3px">
+      Message: <%= message_entry.message %> <br>
+      > Date: <%= message_entry.timestamp %> 
+    </li>
+  <%end%>
+  <br>
+  <br>
+  <form action="/add" method="get">
+    <input type="submit" value="Add Entry">
+  </form>
 
+  <form action="/filter" method="get">
+    <input type="submit" value="Filter">
+  </form>
+
+  <form action="/filter_reset" method="post">
+    <input type="submit" value="Reset Filter">
+  </form>
 </div>
 
 </body>
