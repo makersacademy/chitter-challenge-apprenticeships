@@ -1,0 +1,10 @@
+<% if @email%>
+<h1>Welcome to Chitter <%= @email%></h1>
+<% end %>
+<form action="/peeps" method="get">
+  <input type="submit" value="View all Peeps"/>
+</form>
+
+<form action="/drafts" method='get'>
+  <input type="submit" value="Post a Peep">
+</form>
