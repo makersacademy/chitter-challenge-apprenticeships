@@ -7,10 +7,6 @@ class Chitter < Sinatra::Base
     enable :reloader
   end 
 
-  get '/test' do
-    'Test page'
-  end
-
   get '/chitter' do 
     erb :index
   end

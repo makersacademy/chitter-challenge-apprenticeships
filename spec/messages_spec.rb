@@ -22,7 +22,7 @@ describe Messages do
   describe '.create' do 
     it 'creates a new posted peep' do
       Messages.create(message: "This is my first peep!")
-      
+
       expect(Messages.all).to include 'This is my first peep!'
   end 
 end 
