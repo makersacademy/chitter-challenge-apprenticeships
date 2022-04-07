@@ -4,8 +4,6 @@ require 'pg'
 describe Messages do 
   describe '.all' do
     it 'returns a list of messages' do
-      connection = PG.connect(dbname: 'chitter_test')
-
       message1 = Messages.create(message: 'Hello')
       Messages.create(message: 'Hi!')
       Messages.create(message: 'Hiya.')
@@ -25,6 +23,6 @@ describe Messages do
       Messages.create(message: "This is my first peep!")
 
       expect(Messages.all).to include 'This is my first peep!'
+    end 
   end 
-end 
 end

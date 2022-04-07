@@ -1,6 +1,6 @@
 require './lib/database_connection'
 
-p "Reading the environment variable"
+p "Reading the Environment Variable"
 if ENV['ENVIRONMENT'] == 'test'
   DatabaseConnection.setup('chitter_test')
 else

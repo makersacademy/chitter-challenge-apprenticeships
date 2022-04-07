@@ -2,9 +2,6 @@ require 'pg'
 
 feature 'Viewing messages' do
   scenario 'shows all messages' do
-
-    connection = PG.connect(dbname: 'chitter_test')
-
     Messages.create(message: 'Update - I am in Paris')
     Messages.create(message: 'Just got back from the park!')
     Messages.create(message: 'Hi Chitter.')

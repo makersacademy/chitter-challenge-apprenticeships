@@ -11,11 +11,14 @@ class Messages
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
-    else 
+    else
       connection = PG.connect(dbname: 'chitter')
-    end 
-    result = connection.exec('SELECT * FROM peeps;')
-    result.map { |message| message['message'] }
+    end
+    result = connection.exec("SELECT * FROM peeps")
+    result.map do |m|
+      Messages.new(id: m['id'], message: m['message'])
+      m['message']
+    end
   end
 
   def self.create(message:)
@@ -23,6 +26,5 @@ class Messages
       "INSERT INTO peeps (message) VALUES ($1) RETURNING id, message;", [message]
     )
     Messages.new(id: result[0]['id'],message: result[0]['message'])
-    end
+  end
 end
-
