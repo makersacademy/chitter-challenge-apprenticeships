@@ -6,13 +6,14 @@ describe Messages do
     it 'returns a list of messages' do
       connection = PG.connect(dbname: 'chitter_test')
 
-      Messages.create(message: 'Hello')
+      message1 = Messages.create(message: 'Hello')
       Messages.create(message: 'Hi!')
       Messages.create(message: 'Hiya.')
       
       messages = Messages.all
   
       expect(messages.length).to eq 3
+      expect(message1).to be_a Messages
       expect(messages).to include "Hello"
       expect(messages).to include "Hi!"
       expect(messages).to include "Hiya."

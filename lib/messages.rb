@@ -1,6 +1,12 @@
 require 'pg'
 
 class Messages
+  attr_reader :id, :message
+
+  def initialize(id:, message:)
+    @id = id
+    @message = message
+  end
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
@@ -13,11 +19,10 @@ class Messages
   end
 
   def self.create(message:)
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'chitter_test')
-    else 
-      connection = PG.connect(dbname: 'chitter')
+    result = DatabaseConnection.query(
+      "INSERT INTO peeps (message) VALUES ($1) RETURNING id, message;", [message]
+    )
+    Messages.new(id: result[0]['id'],message: result[0]['message'])
     end
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
-  end 
 end
+

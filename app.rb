@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require './lib/messages'
+require './lib/database_connection'
+require './spec/db_setup_helper'
+
 
 class Chitter < Sinatra::Base
   enable :sessions
