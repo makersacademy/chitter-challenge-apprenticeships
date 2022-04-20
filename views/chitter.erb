@@ -1,0 +1,130 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Raleway:wght@100&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+<style>
+    html {
+        background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    }
+
+    h1 {
+        font-family: Barlow;
+        font-size: 100px;
+        color: #1A132F;
+        text-align: center;
+        margin: 5;
+        padding: 5;
+    }
+
+    .navbar, .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar {
+        margin: 30;
+    }
+
+    .search {
+        display: flex;
+        justify-content: center;
+    }
+
+    .peep {
+        background: rgb(255, 255, 255, 0.7);
+        margin: 20 auto;
+        border: 1.5px solid rgb(97, 164, 188, 0.5);
+        border-radius: 5px; 
+        width: 50%;
+        display: block;
+    }
+
+    h3, h4 {
+        font-family: Ubuntu;
+    }
+
+    h3 {
+        font-size: 20px;
+        text-align: center;
+        margin: 5 5 20 5;
+    }
+
+    h4 {
+        font-size: 14px;
+        text-align: left;
+        margin: 5 5 0 5;
+        display: inline;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .my-peeps, .Filter{
+        color: white;
+        background-color: #1A132F;
+        border: none;
+        font-family: Ubuntu;
+        margin: auto;
+    }
+
+    .my-peeps {
+        padding: 20;
+        display: block;
+        font-size: 20px;
+        width: 10%;
+        border-radius: 10px; 
+    }
+
+    .filter {
+        padding: 10;
+        display: inline;
+        font-size: 14px;
+        width: 25%;
+        border-radius: 4px;
+    }
+
+    .filter-box {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .my-peeps:hover, .filter:hover {
+        color: white;
+        background-color: rgb(26, 19, 47, 0.8);
+        cursor: pointer;
+    }
+</style>
+
+<h1>Chitter</h1>
+
+<div class="navbar">
+    <form action='/my_peeps'>
+        <input type="submit" class="my-peeps" value="My Peeps">
+    </form>
+</div>
+
+<div class="container">
+    <div class="search">
+        <form action='/chitter/search' method='post'>
+            <input type="text"  name="filter" class="filter-box" placeholder="Enter keyword">
+            <input type="submit" class = "filter" value="Filter">
+        </form>
+    </div>
+    <% @peeps.each do |peep| %>
+        <div class="peep">
+            <div class="header">
+                <h4 class="peep-author"><%= peep.name %> wrote: </h4>
+                <h4 class="peep-time"><%= peep.created_at %></h4>
+            </div>
+            <h3 class="peep-message"><%= peep.message %></h3>
+        </div>
+    <% end %>
+</div>

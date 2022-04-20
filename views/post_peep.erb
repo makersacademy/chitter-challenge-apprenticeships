@@ -1,0 +1,76 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Raleway:wght@100&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+<style>
+    html {
+        background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    }
+
+    h1 {
+        font-family: Barlow;
+        font-size: 100px;
+        color: #1A132F;
+        text-align: center;
+        margin: 5;
+        padding: 5;
+    }
+
+    .navbar, .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .navbar {
+        margin: 30;
+    }
+
+    .form {
+        margin: 20 auto;
+        width: 50%;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message {
+        font-family: Ubuntu;
+        width: 50%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 10;
+        resize: none;
+    }
+
+    .new-peep{
+        color: white;
+        background-color: #1A132F;
+        border: none;
+        padding: 15;
+        font-family: Ubuntu;
+        font-size: 20px;
+        border-radius: 10px; 
+        margin: 20 auto;
+        width: 15%;
+        display: block;
+    }
+
+    .new-peep:hover {
+        color: white;
+        background-color: rgb(26, 19, 47, 0.8);
+        cursor: pointer;
+    }
+</style>
+
+<h1>Chitter</h1>
+
+<div class="container">
+    <form action='/my_peeps/create_peep' method='post' class="form">
+        <textarea id="message" class="message" name="message" placeholder="Type something..." style="height:100px"></textarea>
+        <input type="submit" class="new-peep" value="Post">
+    </form>
+</div>
+
