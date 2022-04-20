@@ -4,10 +4,6 @@ require './lib/peep'
 
 class Chitter < Sinatra::Base
 
-  get '/test' do
-    'Test page'
-  end
-
   get '/' do
     'Chitter'
   end
@@ -33,7 +29,6 @@ class Chitter < Sinatra::Base
 
   post '/chitter/search' do
     @keyword = params[:filter]
-    p params #Just to check if keyword comes through
     @peeps_filtered = Peep.search(keyword: params[:filter])
     erb :filtered_results
   end
