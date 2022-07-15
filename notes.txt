@@ -1,5 +1,5 @@
 Next steps
-- security, e.g. SQL injection
+- refactor to use Date object, and supply current date/time
 - consolidate helper classes into one file?
 - merge or link '/' and 'peeps' routes?
 - pathing between routes
