@@ -1,8 +1,16 @@
-feature 'View all peeps' do
-  scenario 'visiting the index page' do
-    visit('/view_peeps')
-    expect(page).to have_content "This is a peep!"
-    expect(page).to have_content "So is this!"
-    expect(page).to have_content "Also this!"
+require 'peep'
+
+describe Peep do
+  describe '.all' do
+    it 'returns all peeps' do
+      peeps = Peep.all
+
+      expect(peeps).to include("This is a peep!")
+      #expect(peeps).to include("So is this!")
+      #expect(peeps).to include("Also this!")
+    end
   end
 end
+
+
+
