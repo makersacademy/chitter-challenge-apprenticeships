@@ -64,3 +64,51 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+
+# FIRST USER STORY
+
+```
+As a Maker
+So that I can see what people are doing
+I want to see all the messages (peeps)
+in a browser
+```
+
+class Message
+  def initialize # name is a string
+    @messages = []
+  end
+
+  def add(message)
+    # adds the message to @messages
+  end
+
+  def self.all
+    # Returns @messages
+  end
+end
+
+# TESTS
+
+# 1
+RSpec.describe Message do
+  context "so that I can see what people are doing" do
+    it "#all displays all messages do
+      message1 = Message.new
+      message2 = Message.new
+      message1.add("First message")
+      message2.add("Second message")
+      expect(Message.all).to eq ["First message", "Second message"]
+    end
+  end
+end
+
+# 2 -> feature test
+
+feature 'messages' do
+    scenario 'to have a messages on it' do
+      visit '/messages'
+      expect(page).to have_content "First message", "Second message"
+	  end
+  end
