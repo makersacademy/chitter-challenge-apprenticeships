@@ -3,9 +3,9 @@ require 'peep'
 describe Peep do
   describe '.all' do
     it 'returns all peeps' do
-      bookmarks = Peep.all
+      peep = Peep.all
 
-      expect(bookmarks).to include("This is a peep!")
+      expect(peep).to include("This is a peep!")
     end
   end
 end
