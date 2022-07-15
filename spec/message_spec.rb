@@ -17,3 +17,12 @@ RSpec.describe '.all' do
     end
   end
 end
+
+# RSpec.describe '.create' do
+#   context "so that I can create a new message" do
+#     it "#create adds a new message" do
+#       message = Message.create(message: 'Another message')
+#       expect(message.message).to eq "Another message"
+#     end
+#   end
+# end
