@@ -39,4 +39,18 @@ RSpec.describe Peep do
       expect(peep.date).to eq '2022-07-15'
     end
   end
+
+  describe '.filter' do
+    it 'returns sorted list of messages that include given keyword' do
+      Peep.add(message: 'Banana peep', date: '2022-07-05')
+      Peep.add(message: 'Apple', date: '2022-07-10')
+      Peep.add(message: 'Another banana peep', date: '2022-07-15')
+  
+      peeps = Peep.filter('banana')
+
+      expect(peeps.length).to eq 2
+      expect(peeps[0].message).to eq("Another banana peep")
+      expect(peeps[1].message).to eq("Banana peep")
+    end
+  end
 end

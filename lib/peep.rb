@@ -17,10 +17,8 @@ class Peep
       connection = PG.connect(dbname: 'chitter')
     end
     
-    result = connection.exec('SELECT * FROM peeps ORDER BY date DESC')
-    result.map do |peep|
-      Peep.new(id: peep['id'], message: peep['message'], date: peep['date'])
-    end
+    result = connection.exec("SELECT * FROM peeps ORDER BY date DESC")
+    result.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date']) }
   end
 
   def self.add(message:, date:)
@@ -35,5 +33,18 @@ class Peep
       [message, date]
       ).first
     Peep.new(id: result['id'], message: result['message'], date: result['date'])
+  end
+
+  def self.filter(keyword)
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'chitter_test')
+    else
+      connection = PG.connect(dbname: 'chitter')
+    end
+    
+    result = connection.exec(
+      "SELECT * FROM peeps WHERE message ILIKE '%#{keyword}%' ORDER BY date DESC"
+      )
+    result.map { |peep| Peep.new(id: peep['id'], message: peep['message'], date: peep['date']) }
   end
 end

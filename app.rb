@@ -24,5 +24,14 @@ class Chitter < Sinatra::Base
     erb :'peeps/new'
   end
 
+  get '/peeps/search' do
+    erb :'peeps/search'
+  end
+
+  get '/peeps/filtered' do
+    @peeps = Peep.filter(params[:keyword])
+    erb :'peeps/index'
+  end
+
   run! if app_file == $0
 end
