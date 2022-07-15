@@ -15,4 +15,12 @@ RSpec.describe Peep do
       expect(peeps).to include("This is a third peep!")
     end
   end
+
+  describe '.add' do
+    it 'add a new message' do
+      Peep.add(message: 'Example peep')
+  
+      expect(Peep.all).to include 'Example peep'
+    end
+  end
 end

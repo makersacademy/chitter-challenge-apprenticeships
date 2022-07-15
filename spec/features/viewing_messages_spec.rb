@@ -6,10 +6,9 @@ feature 'viewing messages' do
   end
   
   scenario 'a user can see messages' do
-    connection = PG.connect(dbname: 'chitter_test')
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is a peep!');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is also a peep!');")
-    connection.exec("INSERT INTO peeps (message) VALUES ('This is a third peep!');")
+    Peep.add(message: 'This is a peep!')
+    Peep.add(message: 'This is also a peep!')
+    Peep.add(message: 'This is a third peep!')
     
     visit('/peeps')
 
