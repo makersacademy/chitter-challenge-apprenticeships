@@ -16,4 +16,13 @@ feature 'viewing messages' do
     expect(page).to have_content "This is also a peep!"
     expect(page).to have_content "This is a third peep!"
   end
+
+  scenario 'a user can see messages sorted reverse chronologically' do
+    Peep.add(message: 'Old peep', date: '2020-01-01')
+    Peep.add(message: 'New peep', date: '2021-01-01')
+    
+    visit('/peeps')
+
+    expect(page).to have_content(/New peep.*Old peep/)
+  end
 end

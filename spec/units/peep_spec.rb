@@ -16,6 +16,16 @@ RSpec.describe Peep do
       expect(peeps.first.message).to eq("This is a peep!")
       expect(peeps.first.date).to eq("2022-07-15")
     end
+
+    it 'sorts messages reverse chronologically' do
+      Peep.add(message: 'Old peep', date: '2022-07-01')
+      Peep.add(message: 'New peep', date: '2022-07-15')
+      
+      peeps = Peep.all
+
+      expect(peeps[0].message).to eq("New peep")
+      expect(peeps[1].message).to eq("Old peep")
+    end
   end
 
   describe '.add' do
