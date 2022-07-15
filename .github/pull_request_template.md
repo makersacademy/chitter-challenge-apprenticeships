@@ -1,4 +1,4 @@
-# Your name
+# Amy O'Connor
 
 Please write your full name here to make it easier to find your pull request.
 
