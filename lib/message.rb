@@ -1,10 +1,10 @@
 class Message
   def initialize
-      @messages = []
+    @messages = []
   end
 
   def add(message)
-      @messages << message
+    @messages << message
   end
 
   def all
