@@ -30,7 +30,13 @@ command `CREATE DATABASE chitter_test;`;
 * `bundle install`
 * `rspec`
 
-You should see 1 passing test.
+You should see 3 passing tests.
+
+## Run
+
+run use ruby app.rb
+
+rackup is not working - currently unsure why
 
 ## User stories
 
