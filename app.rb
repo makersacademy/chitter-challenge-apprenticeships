@@ -1,20 +1,20 @@
 require 'sinatra/base'
 
 class Chitter < Sinatra::Base
+
+  enable :sessions
+
   get '/' do
     erb :index
   end
 
   post '/messages' do
-    p "________"
-    p params
-    p "________"
-    @message = params[:message]
+    session[:message] = params[:message]
     redirect '/messages'
   end
 
   get '/messages' do
-    
+    @message = session[:message]
     erb :messages
   end
 
