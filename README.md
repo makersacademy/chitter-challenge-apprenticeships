@@ -40,7 +40,6 @@ As a Maker
 So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
-```
 
 
 | Component  | Responsibility                              | Refactor                          |
@@ -48,11 +47,20 @@ in a browser
 | Model      | Encapsulate logic with relevant data        | Encapsulate peep data in a class  |
 | View       | Display the result to a user                | Show the peep data in a list      |
 | Controller | Get data from the model and put in the view | Render peep data into to the view |
+```
 
 ```
 As a Maker
 So that I can let people know what I am doing
 I want to post a message (peep) to chitter
+
+- Adding a new message - /peeps/new
+- Typing a message inot a form on that page
+- Submitting that form
+- Seeing the message just submitted
+
+
+
 ```
 
 ```
@@ -74,3 +82,25 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+
+
+
+# Hannah's Chitter Challenge
+
+Brief description of what the project is
+
+## Getting started
+
+`git clone path-to-your-repo`
+`command_to_install_dependencies` (e.g. `bundle`)
+
+## Usage
+
+`command_to_start` (e.g. `rackup` or `rails s`)
+Navigate to `http://localhost:4567/`
+
+
+## Running tests
+
+`test_command` (e.g. `rspec`)

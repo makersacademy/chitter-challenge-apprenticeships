@@ -12,8 +12,22 @@ class Chitter < Sinatra::Base
   # end
 
   get '/peeps' do
+    # p ENV
     @peeps = Peep.all
     erb :index
+  end
+
+  get '/peeps/new' do
+    erb :new
+  end
+
+  post '/peeps' do
+    # p params 
+    # p "Form data submitted to the /peeps route!"
+    message = params['message']
+    connection = PG.connect(dbname: 'chitter_test')
+    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    redirect '/peeps'    
   end
 
   run! if app_file == $0
