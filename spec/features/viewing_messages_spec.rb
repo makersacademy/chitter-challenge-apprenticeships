@@ -4,7 +4,7 @@ feature 'viewing messages' do
     expect(page).to have_content "Chitter"
   end
   
-  xscenario 'a user can see messages' do
+  scenario 'a user can see messages' do
     visit('/peeps')
 
     expect(page).to have_content "This is a peep!"
