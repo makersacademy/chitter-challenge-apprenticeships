@@ -1,6 +1,6 @@
-feature 'Viewing test page' do
-  scenario 'visiting the test page' do
-    visit('/test')
-    expect(page).to have_content "Test page"
+feature 'Viewing welcome page' do
+  scenario 'visiting the welcome page' do
+    visit('/')
+    expect(page).to have_content "Welcome to Chitter! It's like Twitter, but with Ch :P"
   end
 end
