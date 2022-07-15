@@ -1,5 +1,11 @@
+<form action="/posts/new" method="get">
+  <input type="submit" value="Create post" />
+</form>
+
 <ul>
-  <% @posts.each do |post| %>
-    <li><%= post %></li>
+  <% @posts.each do |peep| %>
+    <li>
+      <%= peep.peep %> <%= peep.time %>
+    </li>
   <% end %>
 </ul>
