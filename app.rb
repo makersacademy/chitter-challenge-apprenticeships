@@ -5,13 +5,13 @@ class Chitter < Sinatra::Base
     "Testing testing"
   end
 
-  get '/' do
+  get '/view_peeps' do
     @peeps = [
           "This is a peep!",
           "So is this!",
           "Also this!"
     ]
-    erb :index
+    erb :view_peeps
   end
 
   run! if app_file == $0
