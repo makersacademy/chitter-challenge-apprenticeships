@@ -1,6 +1,9 @@
-xfeature 'messages' do
-  scenario 'to have a messages on it' do
+feature '/' do
+  scenario 'to submit a form' do
+    visit '/'
+    fill_in 'Message', with: 'First Message'
+    click_on 'Submit'
     visit '/messages'
-    expect(page).to have_content "First message, Second message"
+    expect(page).to have_content "First Message"
   end
 end
