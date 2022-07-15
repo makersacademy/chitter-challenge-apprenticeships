@@ -5,7 +5,16 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
+  post '/messages' do
+    p "________"
+    p params
+    p "________"
+    @message = params[:message]
+    redirect '/messages'
+  end
+
   get '/messages' do
+    
     erb :messages
   end
 
