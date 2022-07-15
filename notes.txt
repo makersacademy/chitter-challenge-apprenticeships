@@ -1,0 +1,11 @@
+Next steps
+- security, e.g. SQL injection
+- consolidate helper classes into one file?
+- merge or link '/' and 'peeps' routes?
+- pathing between routes
+
+Additional features
+- message character limit validation
+- cf. Bookmark Manager extensions,
+    e.g. update (inc. logging?), delete, user authentication
+- equivilent of Twitter #
