@@ -6,7 +6,12 @@ class Chitter < Sinatra::Base
   end
 
   get '/' do
-    "Check out the lastest Peeps!"
+    @peeps = [
+          "This is a peep!",
+          "So is this!",
+          "Also this!"
+    ]
+    erb :index
   end
 
   run! if app_file == $0
