@@ -34,12 +34,16 @@ You should see 1 passing test.
 
 ## User stories
 
+
 ```
 As a Maker
 So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
+# First Story diagram
+
+![alt text](story1diagram.png "See all messages diagram")
 
 ```
 As a Maker

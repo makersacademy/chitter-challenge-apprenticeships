@@ -1,4 +1,3 @@
-# in lib/bookmark.rb
 
 require 'pg'
 
