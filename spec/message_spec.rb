@@ -1,13 +1,11 @@
 
 require 'message'
 
-RSpec.describe Message do
+RSpec.describe '.all' do
   context "so that I can see what people are doing" do
     it "#all displays all messages" do
-      message1 = Message.new
-      message1.add("First message")
-      message1.add("Second message")
-      expect(message1.all).to eq ["First message", "Second message"]
+      messages = Message.all
+      expect(messages).to include "This is a peep!"
     end
   end
 end

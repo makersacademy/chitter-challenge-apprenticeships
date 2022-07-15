@@ -1,13 +1,19 @@
+require 'pg'
+
 class Message
-  def initialize
-    @messages = []
-  end
+  # def initialize
+  #   @messages = []
+  # end
 
-  def add(message)
-    @messages << message
-  end
+  # def add(message)
+  #   @messages << message
+  # end
 
-  def all
-    return @messages
+  def self.all
+    connection = PG.connect(dbname: 'chitter')
+    result = connection.exec('SELECT * FROM peeps;')
+    #p result
+    result.map { |peep| peep['message'] }
+    # return @messages
   end
 end
