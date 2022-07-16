@@ -55,11 +55,9 @@ So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 
 - Adding a new message - /peeps/new
-- Typing a message inot a form on that page
+- Typing a message into a form on that page
 - Submitting that form
 - Seeing the message just submitted
-
-
 
 ```
 
@@ -83,9 +81,6 @@ So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
 
-
-
-
 # Hannah's Chitter Challenge
 
 Brief description of what the project is
@@ -93,14 +88,59 @@ Brief description of what the project is
 ## Getting started
 
 `git clone path-to-your-repo`
-`command_to_install_dependencies` (e.g. `bundle`)
+
+- list gems in the Gemfile:
+  source 'https://rubygems.org'
+
+ruby '3.0.2'
+
+gem 'pg'
+gem 'sinatra'
+
+group :test do
+gem 'capybara'
+gem 'rspec'
+gem 'simplecov', require: false
+gem 'simplecov-console', require: false
+end
+
+group :development, :test do
+gem 'rubocop', '1.20'
+end
+
+- bundle install
+- rspec --init
+- setup basic Sinatra app in app.rb (Root directory)
+
+# in app.rb
+
+require 'sinatra/base'
+require 'sinatra/reloader'
+
+class Chitter < Sinatra::Base
+configure :development do
+register Sinatra::Reloader
+end
+
+get '/' do
+'Hello World'
+end
+
+run! if app_file == $0
+end
+
+- configure 'rackup' command to run the app in app.rb via config.ru file
+
+# in config.ru
+
+require_relative "./app"
+
+run Chitter
 
 ## Usage
 
-`command_to_start` (e.g. `rackup` or `rails s`)
-Navigate to `http://localhost:4567/`
-
+- ruby app.rb => Navigate to `http://localhost:4567/`
 
 ## Running tests
 
-`test_command` (e.g. `rspec`)
+- rspec

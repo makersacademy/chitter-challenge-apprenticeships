@@ -3,9 +3,10 @@
 feature 'Adding a new peep' do
   scenario 'A user can add a peep to Chitter' do
     visit('/peeps/new')
+    fill_in('username', with: 'Username')
     fill_in('message', with: 'An example of a peep')
     click_button('Submit')
 
-    expect(page).to have_content 'An example of a peep'
+    expect(page).to have_content 'Username, An example of a peep'
   end
 end
