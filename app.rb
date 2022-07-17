@@ -33,6 +33,8 @@ class Chitter < Sinatra::Base
 
   post '/posts/search-by-keyword' do
     @search_result = Peeps.search_by_keyword(params['keyword'])
+    p @search_result
+    p @search_result.class
     erb :'posts/search-by'
   end
 

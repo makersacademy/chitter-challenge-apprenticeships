@@ -54,9 +54,15 @@ class Peeps
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec("SELECT message FROM peeps WHERE message LIKE '%#{keyword}%';") 
-    result.map do |peep|
-      Peeps.new(id: peep['id'], peep: peep['message'], time: peep['time'])
+    result = connection.exec("SELECT message FROM peeps WHERE message LIKE '%#{keyword}%';")
+    p result.class
+    
+    if result == [] #this isn't working currently.
+      result << "Its not looking good bruv, no posts match that keyword."
+    else
+      result.map do |peep|
+        Peeps.new(id: peep['id'], peep: peep['message'], time: peep['time'])
+      end
     end
   end
 end
