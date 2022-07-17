@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/peeps'
+require 'time'
 
 class Chitter < Sinatra::Base
   get '/test' do
@@ -19,8 +20,9 @@ class Chitter < Sinatra::Base
   post '/' do
     message = params['message']
     p params['message']
+    time = Time.now.httpdate
     connection = PG.connect(dbname: 'chitter')
-    connection.exec("INSERT INTO peeps (message) VALUES('#{message}')")
+    connection.exec("INSERT INTO peeps (message, posted) VALUES('#{message}', '#{time}')")
     redirect '/'
   end
 

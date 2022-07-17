@@ -1,5 +1,5 @@
 <ul>
-  <% @peeps.each do |peep| %>
+  <% @peeps.each do |peep| peep['message'] %>
     <li><%= peep %></li>
   <% end %>
 </ul>

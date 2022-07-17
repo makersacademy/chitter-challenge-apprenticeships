@@ -1,5 +1,6 @@
 
 require 'pg'
+require 'time'
 
 class Peeps
   def self.all
@@ -9,7 +10,9 @@ class Peeps
       connection = PG.connect(dbname: 'chitter')
     end
 
-    result = connection.exec('SELECT * FROM peeps')
-    result.map { |peep| peep['message'] }
+    result = connection.exec('SELECT message, posted FROM peeps')
+    # binding.irb
+    result.map { |peep| peep }
+
   end
 end
