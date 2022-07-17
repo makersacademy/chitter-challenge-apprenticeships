@@ -1,5 +1,4 @@
 Next steps
-- refactor to use Date object, and supply current date by default
 - review format in which date is displayed to user
 - add validation to forms
 - consolidate helper classes into one file?

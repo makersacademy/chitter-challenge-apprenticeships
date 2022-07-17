@@ -1,5 +1,5 @@
 <form action="/peeps" method="post">
   <input type="text" name="message" placeholder="Message"/>
-  <input type="date" name="date">
+  <input type="hidden" name="date" value="<%=Date.today%>">
   <input type="submit" value="Submit" />
 </form>

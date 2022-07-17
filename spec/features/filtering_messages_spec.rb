@@ -8,7 +8,7 @@ feature 'filtering messages' do
     fill_in('keyword', with: 'banana')
     click_button('Search')
 
-    expect(page).to have_content "2022-07-15: Banana peep"
-    expect(page).to have_content "2022-07-05: Another banana peep"
+    expect(page).to have_content "Banana peep (2022-07-15)"
+    expect(page).to have_content "Another banana peep (2022-07-05)"
   end
 end
