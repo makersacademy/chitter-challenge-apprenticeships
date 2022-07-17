@@ -61,6 +61,13 @@ I want to see the date the message was posted
 ```
 (Hint the database table will need to change to store the date too)
 
+# To do - Date of message 
+
+* to faciltate time of peep add column to the databases(dev and test)
+* Update Readme with how to set up database tables to include date and time column
+* add date and time to tests 
+* working through the tests, amend the app.rb and new peep files to capture the date and time of peeps
+
 ```
 As a Maker
 So that I can easily see the latest peeps
@@ -72,10 +79,5 @@ So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
 
-# To do
 
-* to faciltate time of peep add column to the databases(dev and test)
-* Update Readme with how to set up database tables to include date and time column
-* add date and time to tests 
-* working through the tests, amend the app.rb and new peep files to capture the date and time of peeps
 
