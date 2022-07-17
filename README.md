@@ -77,5 +77,5 @@ I want to filter on a specific keyword
 * to faciltate time of peep add column to the databases(dev and test)
 * Update Readme with how to set up database tables to include date and time column
 * add date and time to tests 
-* working thtrough the tests, amend the app.rb and new peep files to capture the date and time of peeps
+* working through the tests, amend the app.rb and new peep files to capture the date and time of peeps
 
