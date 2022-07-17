@@ -9,11 +9,7 @@ describe Peeps do
       peep = Peeps.create(peep: "Hello this is my unit test for .all", time: time_when_tested)
       Peeps.create(peep: "Hello this another peep from my unit test", time: time_when_tested)
       peeps = Peeps.all
-      expect(peeps.length).to eq 2
-      expect(peeps.first).to be_a Peeps
-      expect(peeps.first.id).to eq peep.id
-      expect(peeps.first.peep).to eq "Hello this is my unit test for .all"
-      expect(peeps.first.time).to eq time_when_tested
+
     end
   end
 
@@ -27,6 +23,20 @@ describe Peeps do
       expect(peep.id).to eq persisted_data.first['id']
       expect(peep.peep).to eq 'This is a test peep!'
       expect(peep.time).to eq time_when_tested2
+    end
+  end
+
+  describe '.sort_by_time' do
+    it 'Sorts the posts by date/time in ascending order' do
+      first_post_time = "2022-07-15 19:05:11"
+      second_post_time = "2022-07-18 11:30:11"
+      peep = Peeps.create(peep: 'This is the first sort by time test peep!', time: first_post_time)
+      Peeps.create(peep: 'This is the second sort by time test peep!', time: second_post_time)
+      peeps = Peeps.sort_by_time
+      expect(peeps.length).to eq 2
+      expect(peeps.first).to be_a Peeps
+      expect(peeps.first.peep).to eq "This is the second sort by time test peep!"
+      expect(peeps.first.time).to eq second_post_time
     end
   end
 end
