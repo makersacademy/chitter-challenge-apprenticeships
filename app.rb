@@ -14,7 +14,7 @@ class Chitter < Sinatra::Base
   end
 
   get '/posts/new' do
-    erb :"posts/new"
+    erb :'posts/new'
   end
 
   post '/posts' do
@@ -24,6 +24,11 @@ class Chitter < Sinatra::Base
     # connection = PG.connect(dbname: 'chitter_test')
     # connection.exec("INSERT INTO peeps (message) VALUES('#{peep}')")
     redirect '/posts'
+  end
+
+  get '/posts/sort-by' do
+    @sorted_posts = Peeps.sort_by_time
+    erb :'posts/sort-by'
   end
 
   run! if app_file == $0

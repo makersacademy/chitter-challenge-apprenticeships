@@ -1,0 +1,9 @@
+<p>Posts sorted by date/time:</p>
+
+<ul>
+  <% @sorted_posts.each do |peep| %>
+    <li>
+      <%= peep.peep %> <%= peep.time %>
+    </li>
+  <% end %>
+</ul>
