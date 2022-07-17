@@ -31,5 +31,10 @@ class Chitter < Sinatra::Base
     erb :'posts/sort-by'
   end
 
+  post '/posts/search-by-keyword' do
+    @search_result = Peeps.search_by_keyword(params['keyword'])
+    erb :'posts/search-by'
+  end
+
   run! if app_file == $0
 end

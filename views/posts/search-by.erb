@@ -1,0 +1,9 @@
+<p>Posts containing keyword:</p>
+
+<ul>
+  <% @search_result.each do |peep| %>
+    <li>
+      <%= peep.peep %> <%= peep.time %>
+    </li>
+  <% end %>
+</ul>
