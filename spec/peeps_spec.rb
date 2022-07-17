@@ -39,4 +39,18 @@ describe Peeps do
       expect(peeps.first.time).to eq second_post_time
     end
   end
+
+  describe '.search_by_keyword' do
+    it "Returns posts that contain the keyword provided" do
+      peep = Peeps.create(peep: 'This is the first sort by time test peep!', time: Time.new)
+      Peeps.create(peep: 'This is the second sort by time test peep!', time: Time.new)
+      Peeps.create(peep: 'Some other rubbish!', time: Time.new)
+      Peeps.create(peep: 'Yet more rubbish!', time: Time.new)
+      Peeps.create(peep: 'And one more for good measure!', time: Time.new)
+      peeps = Peeps.search_by_keyword("rubbish")
+      expect(peeps.length).to eq 2
+      expect(peeps.first).to be_a Peeps
+      expect(peeps.first.peep).to eq "Some other rubbish!"
+    end
+  end
 end
