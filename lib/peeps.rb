@@ -10,7 +10,6 @@ class Peeps
     @peep = peep
   end
 
-
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
@@ -21,8 +20,8 @@ class Peeps
     result = connection.exec("SELECT * FROM peeps")
     result.map do |peep| 
       Peeps.new(id: peep['id'], peep: peep['message'], time: peep['time'])
-      end
     end
+  end
 
   def self.create(peep:, time:)
     if ENV['ENVIRONMENT'] == 'test'
@@ -32,7 +31,6 @@ class Peeps
     end
   
     result = connection.exec("INSERT INTO peeps (time, message) VALUES('#{time}', '#{peep}') RETURNING id, message, time;")
-    Peeps.new(id: result[0]['id'], time: result[0]['time'], peep: result[0]['message'], )
-
+    Peeps.new(id: result[0]['id'], time: result[0]['time'], peep: result[0]['message'])
   end
 end

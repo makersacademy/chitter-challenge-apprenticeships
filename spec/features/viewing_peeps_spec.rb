@@ -8,5 +8,3 @@ feature 'Viewing posts page' do
     expect(page).to have_content "This is my first post!"
   end
 end
-
-
