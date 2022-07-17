@@ -41,7 +41,7 @@ So that I can see what people are doing
 I want to see all the messages (peeps)
 in a browser
 ```
-# First Story diagram
+
 
 ![alt text](story1diagram.png "See all messages diagram")
 
@@ -71,3 +71,11 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+# To do
+
+* to faciltate time of peep add column to the databases(dev and test)
+* Update Readme with how to set up database tables to include date and time column
+* add date and time to tests 
+* working thtrough the tests, amend the app.rb and new peep files to capture the date and time of peeps
+
