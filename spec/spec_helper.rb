@@ -19,6 +19,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'timecop'
 
 require_relative './setup_test_database'
 
@@ -41,6 +42,11 @@ Capybara.app = Chitter
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+
+#     new_time = Time.local(2008, 9, 1, 12, 0, 0)
+# Timecop.freeze(new_time)
+
+
   end
 
   config.after(:suite) do
