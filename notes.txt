@@ -1,0 +1,13 @@
+Next steps
+- review format in which date is displayed to user
+- add validation to forms
+- consolidate helper classes into one file?
+- merge or link '/' and 'peeps' routes?
+- pathing between routes
+
+Additional features
+- record time as well as date
+- message character limit validation
+- cf. Bookmark Manager extensions,
+    e.g. update (inc. logging?), delete, user authentication
+- equivilent of Twitter #
