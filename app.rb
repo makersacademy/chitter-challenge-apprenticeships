@@ -16,7 +16,6 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    p params
     Peep.add(message: params[:message], date: params[:date])
     redirect '/peeps'
   end
@@ -31,6 +30,7 @@ class Chitter < Sinatra::Base
 
   get '/peeps/filtered' do
     @peeps = Peep.filter(params[:keyword])
+    @view_all_button = 1
     erb :'peeps/index'
   end
 

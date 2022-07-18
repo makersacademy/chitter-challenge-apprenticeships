@@ -3,3 +3,25 @@
     <li><%= "#{peep.message} (#{peep.date})" %></li>
   <% end %>
 </ul>
+
+<form action="/peeps/new" method="get">
+  <input type="submit" value="Add a new peep" />
+</form>
+
+<%if @view_all_button == 1 %>
+
+<form action="/peeps/search" method="get">
+  <input type="submit" value="New search" />
+</form>
+
+<form action="/peeps" method="get">
+  <input type="submit" value="View all peeps" />
+</form>
+
+<%else%>
+
+<form action="/peeps/search" method="get">
+  <input type="submit" value="Filter peeps by keyword" />
+</form>
+
+<%end%>
