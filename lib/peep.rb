@@ -1,6 +1,10 @@
 require 'pg'
 
 class Peep
+  def self.create
+    
+  end
+
   def self.all
     connection = PG.connect(dbname: 'chitter')
     result = connection.exec("SELECT * FROM peeps;")
