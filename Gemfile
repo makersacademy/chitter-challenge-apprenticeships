@@ -8,6 +8,7 @@ gem 'pg'
 gem 'sinatra'
 
 group :test do
+  get 'timecop'
   gem 'capybara'
   gem 'rspec'
   gem 'simplecov', require: false
@@ -17,3 +18,5 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+gem "timecop", "~> 0.9.5"
