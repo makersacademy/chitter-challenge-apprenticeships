@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/message'
 
 class Chitter < Sinatra::Base
 
@@ -8,14 +9,14 @@ class Chitter < Sinatra::Base
     erb :index
   end
 
-  post '/messages' do
-    # Message.create(message: params[:message])
-    session[:message] = params[:message]
+  post '/message' do
+    Message.create(params[:message])
     redirect '/messages'
   end
 
   get '/messages' do
-    @message = session[:message]
+    @messages = Message.all
+    p @messages
     erb :messages
   end
 

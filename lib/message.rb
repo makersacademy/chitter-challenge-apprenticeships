@@ -1,14 +1,6 @@
 require 'pg'
 
 class Message
-  # def initialize
-  #   @messages = []
-  # end
-
-  # def add(message)
-  #   @messages << message
-  # end
-
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'chitter_test')
@@ -16,9 +8,7 @@ class Message
       connection = PG.connect(dbname: 'chitter')
     end
     result = connection.exec('SELECT * FROM peeps;')
-    #p result
     result.map { |peep| peep['message'] }
-    # return @messages
   end
 
   def self.create(message)
@@ -27,7 +17,6 @@ class Message
     else
       connection = PG.connect(dbname: 'chitter')
     end
-
     connection.exec("INSERT INTO peeps (message) VALUES ('#{message}');")
   end
 end
