@@ -17,6 +17,7 @@ To setup the database:
 * Connect to the database using the psql command `\c chitter`;
 * Run the query we have saved in the file 01_create_chitter_table.sql
 * Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+* Create the user table using the query saved in 02_create_user_table.sql
 
 To check you have everything set up ok, please take a look at the peeps table inside the chitter database. You should see one row in there.  
 
@@ -26,11 +27,17 @@ To setup the test database:
 command `CREATE DATABASE chitter_test;`;
 * Connect to the database using the psql command `\c chitter_test`
 * Run the query we have saved in the file 01_create_chitter_table.sql
+* Populate your table with a row by running `INSERT INTO peeps (message) values ('This is a peep!');`
+* Create the user table using the query saved in 02_create_user_table.sql
 
 * `bundle install`
 * `rspec`
 
-You should see 1 passing test.
+## Run
+
+run use ruby app.rb
+
+rackup is not working - currently unsure why
 
 ## User stories
 
@@ -64,3 +71,51 @@ As a Maker
 So that I can find relevant peeps
 I want to filter on a specific keyword
 ```
+
+
+# FIRST USER STORY
+
+```
+As a Maker
+So that I can see what people are doing
+I want to see all the messages (peeps)
+in a browser
+```
+
+class Message
+  def initialize # name is a string
+    @messages = []
+  end
+
+  def add(message)
+    # adds the message to @messages
+  end
+
+  def self.all
+    # Returns @messages
+  end
+end
+
+# TESTS
+
+# 1
+RSpec.describe Message do
+  context "so that I can see what people are doing" do
+    it "#all displays all messages do
+      message1 = Message.new
+      message2 = Message.new
+      message1.add("First message")
+      message2.add("Second message")
+      expect(Message.all).to eq ["First message", "Second message"]
+    end
+  end
+end
+
+# 2 -> feature test
+
+feature 'messages' do
+  scenario 'to have a messages on it' do
+    visit '/messages'
+    expect(page).to have_content "First message", "Second message"
+  end
+end
