@@ -1,4 +1,3 @@
-
 require 'message'
 
 RSpec.describe '.all' do

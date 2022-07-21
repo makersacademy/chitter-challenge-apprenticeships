@@ -11,7 +11,6 @@ class Chitter < Sinatra::Base
 
   post '/message' do
     Message.create(params[:message])
-    redirect '/messages'
   end
 
   get '/messages' do
